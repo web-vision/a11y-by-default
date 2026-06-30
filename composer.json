@@ -44,8 +44,8 @@
     "scripts": {
         "test:php:unit": "phpunit -c Build/phpunit/UnitTests.xml",
         "test:php:functional": "phpunit -c Build/phpunit/FunctionalTests.xml",
-        "analyze:php": "phpstan analyse --configuration Build/phpstan/phpstan.neon --ansi",
-        "cs:fix": "php-cs-fixer fix --config Build/php-cs-fixer/config.php"
+        "analyze:php": "phpstan analyse -c Build/phpstan/Core13/phpstan.neon --no-progress --ansi",
+        "cs:fix": "php-cs-fixer fix --config Build/php-cs-fixer/php-cs-rules.php"
     },
     "extra": {
         "typo3/cms": {
