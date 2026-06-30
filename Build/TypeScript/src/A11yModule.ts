@@ -11,7 +11,7 @@ import type {
 } from './types';
 
 function readSettings(): ModuleSettings | null {
-    const appEl = document.getElementById('pa11y-app');
+    const appEl = document.getElementById('a11y-app');
     if (appEl === null) {
         return null;
     }
@@ -31,14 +31,14 @@ function readSettings(): ModuleSettings | null {
 }
 
 function showLoading(container: HTMLElement): void {
-    container.innerHTML = `<div class="pa11y-loading" role="status" aria-live="polite">
+    container.innerHTML = `<div class="a11y-loading" role="status" aria-live="polite">
         <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
-        <span class="pa11y-loading__text">${getLabel('module.loading')}</span>
+        <span class="a11y-loading__text">${getLabel('module.loading')}</span>
     </div>`;
 }
 
 function showError(container: HTMLElement, message: string): void {
-    container.innerHTML = `<div class="callout callout-danger pa11y-error" role="alert">
+    container.innerHTML = `<div class="callout callout-danger a11y-error" role="alert">
         <div class="callout-body"><p>${escapeHtml(message)}</p></div>
     </div>`;
 }
@@ -74,7 +74,7 @@ function responsibilityBadgeClass(responsibility: string): string {
 
 function renderIssueList(issues: AccessibilityIssue[], classifier: ViolationClassifier): string {
     if (issues.length === 0) {
-        return `<p class="pa11y-results__empty">${getLabel('module.results.empty')}</p>`;
+        return `<p class="a11y-results__empty">${getLabel('module.results.empty')}</p>`;
     }
 
     return issues
@@ -84,23 +84,23 @@ function renderIssueList(issues: AccessibilityIssue[], classifier: ViolationClas
             const contentElementLink =
                 classification.contentElementUid !== undefined
                     ? `<a href="/typo3/record/edit?edit[tt_content][${classification.contentElementUid}]=edit&returnUrl=."
-                           class="btn btn-xs btn-default pa11y-issue__edit-link">Edit content element #${classification.contentElementUid}</a>`
+                           class="btn btn-xs btn-default a11y-issue__edit-link">Edit content element #${classification.contentElementUid}</a>`
                     : '';
 
-            return `<details class="pa11y-issue pa11y-issue--${escapeHtml(issue.impact)}">
-                <summary class="pa11y-issue__summary">
+            return `<details class="a11y-issue a11y-issue--${escapeHtml(issue.impact)}">
+                <summary class="a11y-issue__summary">
                     <span class="${impactBadgeClass(issue.impact)}">${escapeHtml(issue.impact)}</span>
                     <span class="${responsibilityBadgeClass(classification.responsibility)}">${escapeHtml(responsibilityLabel)}</span>
-                    <span class="pa11y-issue__help">${escapeHtml(issue.help)}</span>
+                    <span class="a11y-issue__help">${escapeHtml(issue.help)}</span>
                     <a href="${escapeHtml(issue.helpUrl)}" target="_blank" rel="noopener noreferrer"
-                       class="pa11y-issue__help-link">?</a>
+                       class="a11y-issue__help-link">?</a>
                 </summary>
-                <div class="pa11y-issue__body">
-                    <p class="pa11y-issue__description">${escapeHtml(issue.description)}</p>
-                    <p class="pa11y-issue__hint">${escapeHtml(classification.hint)}</p>
+                <div class="a11y-issue__body">
+                    <p class="a11y-issue__description">${escapeHtml(issue.description)}</p>
+                    <p class="a11y-issue__hint">${escapeHtml(classification.hint)}</p>
                     ${contentElementLink}
                     ${issue.nodes.map((node) =>
-                        `<pre class="pa11y-issue__node"><code>${escapeHtml(node.html)}</code></pre>`
+                        `<pre class="a11y-issue__node"><code>${escapeHtml(node.html)}</code></pre>`
                     ).join('')}
                 </div>
             </details>`;
@@ -116,19 +116,19 @@ function renderResults(container: HTMLElement, result: ScanResult, classifier: V
 
     container.innerHTML = `
         ${summary}
-        <section class="pa11y-results__section" aria-labelledby="pa11y-violations-heading">
-            <h2 id="pa11y-violations-heading" class="pa11y-results__heading">
+        <section class="a11y-results__section" aria-labelledby="a11y-violations-heading">
+            <h2 id="a11y-violations-heading" class="a11y-results__heading">
                 ${getLabel('module.results.violations')}
                 <span class="badge bg-danger">${totalViolations}</span>
             </h2>
-            <div class="pa11y-results__list">${renderIssueList(result.violations, classifier)}</div>
+            <div class="a11y-results__list">${renderIssueList(result.violations, classifier)}</div>
         </section>
-        <section class="pa11y-results__section" aria-labelledby="pa11y-incomplete-heading">
-            <h2 id="pa11y-incomplete-heading" class="pa11y-results__heading">
+        <section class="a11y-results__section" aria-labelledby="a11y-incomplete-heading">
+            <h2 id="a11y-incomplete-heading" class="a11y-results__heading">
                 ${getLabel('module.results.incomplete')}
                 <span class="badge bg-warning">${result.incomplete.length}</span>
             </h2>
-            <div class="pa11y-results__list">${renderIssueList(result.incomplete, classifier)}</div>
+            <div class="a11y-results__list">${renderIssueList(result.incomplete, classifier)}</div>
         </section>`;
 }
 
@@ -171,9 +171,9 @@ function initialize(): void {
         return;
     }
 
-    const resultsContainer = document.getElementById('pa11y-results');
-    const scanButton = document.getElementById('pa11y-scan-button');
-    const engineSelect = document.getElementById('pa11y-engine-select') as HTMLSelectElement | null;
+    const resultsContainer = document.getElementById('a11y-results');
+    const scanButton = document.getElementById('a11y-scan-button');
+    const engineSelect = document.getElementById('a11y-engine-select') as HTMLSelectElement | null;
 
     if (resultsContainer === null || scanButton === null) {
         return;

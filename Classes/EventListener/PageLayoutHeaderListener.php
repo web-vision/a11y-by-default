@@ -32,8 +32,8 @@ final class PageLayoutHeaderListener
         $escapedUrl = htmlspecialchars($moduleUrl, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
 
         return sprintf(
-            '<div class="pa11y-page-hint t3-page-ce-header">'
-            . '<a href="%s" class="btn btn-sm btn-default pa11y-page-hint__link" title="%s">'
+            '<div class="a11y-page-hint t3-page-ce-header">'
+            . '<a href="%s" class="btn btn-sm btn-default a11y-page-hint__link" title="%s">'
             . '<span class="t3-icon t3js-icon icon icon-size-small" aria-hidden="true">'
             . '<img src="/typo3/sysext/core/Resources/Public/Icons/T3Icons/svgs/actions/actions-check-circle.svg" alt="" />'
             . '</span> %s</a></div>',

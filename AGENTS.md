@@ -47,6 +47,10 @@ to check if the message is shown due to a fluid/HTML frontend rendering issue or
 current user can fix. The info, which person has to fix it, must be given. If the editor has to change, a helpful message,
 how to solve must be shown.
 
+### Backend
+
+Do not use Extbase in the Backend. Instead build the controller as a plain controller. Register ist with the attribute.
+
 ### What could the editor do
 
 The editor can fix issues related to content from the database. An example of this is the header tree. The extension should be
