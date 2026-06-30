@@ -307,5 +307,10 @@ function initialize() {
         }
     });
 }
-document.addEventListener('DOMContentLoaded', initialize);
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initialize);
+}
+else {
+    initialize();
+}
 //# sourceMappingURL=a11y-module.js.map
