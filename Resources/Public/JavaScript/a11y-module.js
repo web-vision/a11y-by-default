@@ -101,10 +101,12 @@ class HtmlCsEngine {
             help: msg.msg,
             helpUrl: `https://squizlabs.github.io/HTML_CodeSniffer/Standards/WCAG2/`,
             tags: ['wcag2aa'],
-            nodes: [{
+            nodes: [
+                {
                     html: msg.element.outerHTML ?? '',
                     target: [msg.element.tagName.toLowerCase()],
-                }],
+                },
+            ],
         }));
     }
 }
@@ -181,11 +183,7 @@ function getLabel(key) {
     return typo3?.lang?.[key] ?? key;
 }
 function escapeHtml(str) {
-    return str
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;');
+    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 function impactBadgeClass(impact) {
     const map = {
@@ -206,9 +204,7 @@ function renderIssueCard(issue, classifier) {
         ? `<a href="/typo3/record/edit?edit[tt_content][${classification.contentElementUid}]=edit&returnUrl=."
                    class="btn btn-sm btn-default mb-2 d-inline-block">Edit content element #${classification.contentElementUid}</a>`
         : '';
-    const nodes = issue.nodes
-        .map((node) => `<pre class="mb-1"><code>${escapeHtml(node.html)}</code></pre>`)
-        .join('');
+    const nodes = issue.nodes.map((node) => `<pre class="mb-1"><code>${escapeHtml(node.html)}</code></pre>`).join('');
     return `<div class="card mb-2">
         <div class="card-header d-flex align-items-center gap-2 flex-wrap">
             <span class="${impactBadgeClass(issue.impact)}">${escapeHtml(issue.impact)}</span>
@@ -260,13 +256,17 @@ async function runScan(settings, engine, resultsContainer) {
     try {
         await new Promise((resolve, reject) => {
             const timeout = window.setTimeout(() => reject(new Error('Iframe load timeout after 30s')), 30000);
-            iframe.addEventListener('load', () => { window.clearTimeout(timeout); resolve(); }, { once: true });
-            iframe.addEventListener('error', () => { window.clearTimeout(timeout); reject(new Error('Iframe failed to load')); }, { once: true });
+            iframe.addEventListener('load', () => {
+                window.clearTimeout(timeout);
+                resolve();
+            }, { once: true });
+            iframe.addEventListener('error', () => {
+                window.clearTimeout(timeout);
+                reject(new Error('Iframe failed to load'));
+            }, { once: true });
         });
         const classifier = new ViolationClassifier(settings.contentMetadata, settings.classificationRules);
-        const scanEngine = engine === 'axe'
-            ? new AxeEngine(iframe, settings.axeJsUrl)
-            : new HtmlCsEngine(iframe, settings.htmlcsJsUrl);
+        const scanEngine = engine === 'axe' ? new AxeEngine(iframe, settings.axeJsUrl) : new HtmlCsEngine(iframe, settings.htmlcsJsUrl);
         const result = await scanEngine.run();
         renderResults(resultsContainer, result, classifier);
     }

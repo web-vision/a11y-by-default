@@ -14,7 +14,8 @@ node_modules/
 composer.lock
 .claude/
 .composer/
-Resources/Public/JavaScript/a11y-module.js.map
+Resources/Public/JavaScript/*.js.map
+*.png
 *.log
 *.cache
 .php-cs-fixer.cache
