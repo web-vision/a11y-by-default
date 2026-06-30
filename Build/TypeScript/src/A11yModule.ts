@@ -72,64 +72,68 @@ function responsibilityBadgeClass(responsibility: string): string {
     return responsibility === 'editor' ? 'badge bg-primary' : 'badge bg-dark';
 }
 
-function renderIssueList(issues: AccessibilityIssue[], classifier: ViolationClassifier): string {
-    if (issues.length === 0) {
-        return `<p class="a11y-results__empty">${getLabel('module.results.empty')}</p>`;
-    }
+function renderIssueCard(issue: AccessibilityIssue, classifier: ViolationClassifier): string {
+    const classification: Classification = classifier.classify(issue);
+    const responsibilityLabel = getLabel(`module.responsibility.${classification.responsibility}`);
+    const contentElementLink =
+        classification.contentElementUid !== undefined
+            ? `<a href="/typo3/record/edit?edit[tt_content][${classification.contentElementUid}]=edit&returnUrl=."
+                   class="btn btn-sm btn-default mb-2 d-inline-block">Edit content element #${classification.contentElementUid}</a>`
+            : '';
 
-    return issues
-        .map((issue) => {
-            const classification: Classification = classifier.classify(issue);
-            const responsibilityLabel = getLabel(`module.responsibility.${classification.responsibility}`);
-            const contentElementLink =
-                classification.contentElementUid !== undefined
-                    ? `<a href="/typo3/record/edit?edit[tt_content][${classification.contentElementUid}]=edit&returnUrl=."
-                           class="btn btn-xs btn-default a11y-issue__edit-link">Edit content element #${classification.contentElementUid}</a>`
-                    : '';
-
-            return `<details class="a11y-issue a11y-issue--${escapeHtml(issue.impact)}">
-                <summary class="a11y-issue__summary">
-                    <span class="${impactBadgeClass(issue.impact)}">${escapeHtml(issue.impact)}</span>
-                    <span class="${responsibilityBadgeClass(classification.responsibility)}">${escapeHtml(responsibilityLabel)}</span>
-                    <span class="a11y-issue__help">${escapeHtml(issue.help)}</span>
-                    <a href="${escapeHtml(issue.helpUrl)}" target="_blank" rel="noopener noreferrer"
-                       class="a11y-issue__help-link">?</a>
-                </summary>
-                <div class="a11y-issue__body">
-                    <p class="a11y-issue__description">${escapeHtml(issue.description)}</p>
-                    <p class="a11y-issue__hint">${escapeHtml(classification.hint)}</p>
-                    ${contentElementLink}
-                    ${issue.nodes.map((node) =>
-                        `<pre class="a11y-issue__node"><code>${escapeHtml(node.html)}</code></pre>`
-                    ).join('')}
-                </div>
-            </details>`;
-        })
+    const nodes = issue.nodes
+        .map((node) => `<pre class="mb-1"><code>${escapeHtml(node.html)}</code></pre>`)
         .join('');
+
+    return `<div class="card mb-2">
+        <div class="card-header d-flex align-items-center gap-2 flex-wrap">
+            <span class="${impactBadgeClass(issue.impact)}">${escapeHtml(issue.impact)}</span>
+            <span class="${responsibilityBadgeClass(classification.responsibility)}">${escapeHtml(responsibilityLabel)}</span>
+            <span class="flex-grow-1">${escapeHtml(issue.help)}</span>
+            <a href="${escapeHtml(issue.helpUrl)}" target="_blank" rel="noopener noreferrer"
+               class="btn btn-sm btn-default" title="${escapeHtml(getLabel('module.results.violations'))}">
+                <span aria-hidden="true">?</span>
+                <span class="visually-hidden">${escapeHtml(issue.help)}</span>
+            </a>
+        </div>
+        <div class="card-body">
+            <p class="card-text">${escapeHtml(issue.description)}</p>
+            <p class="card-text text-body-secondary small">${escapeHtml(classification.hint)}</p>
+            ${contentElementLink}
+            ${nodes}
+        </div>
+    </div>`;
+}
+
+function renderIssueSection(
+    issues: AccessibilityIssue[],
+    headingId: string,
+    headingLabel: string,
+    badgeClass: string,
+    classifier: ViolationClassifier,
+): string {
+    const cards = issues.length === 0
+        ? `<p class="text-body-secondary">${getLabel('module.results.empty')}</p>`
+        : issues.map((issue) => renderIssueCard(issue, classifier)).join('');
+
+    return `<section class="mb-4" aria-labelledby="${headingId}">
+        <h2 id="${headingId}" class="h4 mb-3">
+            ${headingLabel}
+            <span class="badge ${badgeClass} ms-1">${issues.length}</span>
+        </h2>
+        ${cards}
+    </section>`;
 }
 
 function renderResults(container: HTMLElement, result: ScanResult, classifier: ViolationClassifier): void {
-    const totalViolations = result.violations.length;
-    const summary = totalViolations === 0
-        ? `<div class="callout callout-success"><div class="callout-body"><p>${getLabel('module.results.empty')}</p></div></div>`
+    const successCallout = result.violations.length === 0
+        ? `<div class="callout callout-success mb-4"><div class="callout-body"><p>${getLabel('module.results.empty')}</p></div></div>`
         : '';
 
     container.innerHTML = `
-        ${summary}
-        <section class="a11y-results__section" aria-labelledby="a11y-violations-heading">
-            <h2 id="a11y-violations-heading" class="a11y-results__heading">
-                ${getLabel('module.results.violations')}
-                <span class="badge bg-danger">${totalViolations}</span>
-            </h2>
-            <div class="a11y-results__list">${renderIssueList(result.violations, classifier)}</div>
-        </section>
-        <section class="a11y-results__section" aria-labelledby="a11y-incomplete-heading">
-            <h2 id="a11y-incomplete-heading" class="a11y-results__heading">
-                ${getLabel('module.results.incomplete')}
-                <span class="badge bg-warning">${result.incomplete.length}</span>
-            </h2>
-            <div class="a11y-results__list">${renderIssueList(result.incomplete, classifier)}</div>
-        </section>`;
+        ${successCallout}
+        ${renderIssueSection(result.violations, 'a11y-violations-heading', getLabel('module.results.violations'), 'bg-danger', classifier)}
+        ${renderIssueSection(result.incomplete, 'a11y-incomplete-heading', getLabel('module.results.incomplete'), 'bg-warning text-dark', classifier)}`;
 }
 
 async function runScan(
