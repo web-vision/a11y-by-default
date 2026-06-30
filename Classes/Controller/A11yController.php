@@ -5,13 +5,15 @@ declare(strict_types=1);
 namespace WebVision\A11yByDefault\Controller;
 
 use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface;
+use TYPO3\CMS\Backend\Attribute\AsController;
 use TYPO3\CMS\Backend\Routing\PreviewUriBuilder;
 use TYPO3\CMS\Backend\Template\ModuleTemplateFactory;
 use TYPO3\CMS\Core\Page\PageRenderer;
-use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use WebVision\A11yByDefault\Service\IssueClassificationService;
 
-final class A11yController extends ActionController
+#[AsController]
+final class A11yController
 {
     public function __construct(
         private readonly ModuleTemplateFactory $moduleTemplateFactory,
@@ -19,10 +21,9 @@ final class A11yController extends ActionController
         private readonly PageRenderer $pageRenderer,
     ) {}
 
-    public function indexAction(): ResponseInterface
+    public function index(ServerRequestInterface $request): ResponseInterface
     {
-        $moduleTemplate = $this->moduleTemplateFactory->create($this->request);
-        $pageUid = (int)($this->request->getQueryParams()['id'] ?? 0);
+        $pageUid = (int)($request->getQueryParams()['id'] ?? 0);
 
         $previewUri = '';
         $contentMetadata = [];
@@ -38,14 +39,13 @@ final class A11yController extends ActionController
             'classificationRules' => $this->classificationService->getClassificationRules(),
         ]);
 
-        $this->view->assignMultiple([
+        $moduleTemplate = $this->moduleTemplateFactory->create($request);
+        $moduleTemplate->assignMultiple([
             'pageUid' => $pageUid,
             'previewUri' => $previewUri,
             'contentMetadataJson' => json_encode($contentMetadata, JSON_THROW_ON_ERROR),
         ]);
 
-        $moduleTemplate->setContent($this->view->render());
-
-        return $this->htmlResponse($moduleTemplate->renderContent());
+        return $moduleTemplate->renderResponse('A11y/Index');
     }
 }
