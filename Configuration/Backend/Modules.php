@@ -16,8 +16,10 @@ return [
         'templateRootPaths' => ['EXT:a11y_by_default/Resources/Private/Templates/'],
         'partialRootPaths' => ['EXT:a11y_by_default/Resources/Private/Partials/'],
         'layoutRootPaths' => ['EXT:a11y_by_default/Resources/Private/Layouts/'],
-        'controllerActions' => [
-            A11yController::class => ['index'],
+        'routes' => [
+            '_default' => [
+                'target' => A11yController::class . '::index',
+            ],
         ],
     ],
 ];
