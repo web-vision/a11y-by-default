@@ -49,6 +49,7 @@ Options:
             - functional: functional tests
             - lintJs: javascript/typescript linting
             - phpstan: phpstan analyze
+            - renderDocs: render documentation using the PHP-based renderer
             - unit: PHP unit tests (default)
 
     -b <docker|podman>
@@ -102,6 +103,9 @@ Examples:
 
     # Run phpstan analysis
     ./Build/Scripts/runTests.sh -s phpstan
+
+    # Render documentation
+    ./Build/Scripts/runTests.sh -s renderDocs
 
     # Run javascript linting
     ./Build/Scripts/runTests.sh -s lintJs
@@ -207,6 +211,7 @@ if [[ -z "${CONTAINER_BIN}" ]]; then
 fi
 
 IMAGE_PHP="ghcr.io/typo3/core-testing-$(echo "php${PHP_VERSION}" | sed -e 's/\.//'):latest"
+IMAGE_DOCS="ghcr.io/typo3/guides-renderer:latest"
 IMAGE_NODEJS="ghcr.io/typo3/core-testing-nodejs24:1.1"
 IMAGE_MARIADB="docker.io/mariadb:${DBMS_VERSION}"
 IMAGE_MYSQL="docker.io/mysql:${DBMS_VERSION}"
@@ -349,6 +354,12 @@ case ${TEST_SUITE} in
             -e COMPOSER_CACHE_DIR=.Build/.cache/composer \
             -e COMPOSER_ROOT_VERSION=${COMPOSER_ROOT_VERSION} \
             ${IMAGE_PHP} "${COMMAND[@]}"
+        SUITE_EXIT_CODE=$?
+        ;;
+    renderDocs)
+        COMMAND=(guides --input=Documentation --output=var/documentation --format=html)
+        ${CONTAINER_BIN} run ${CONTAINER_COMMON_PARAMS} --name renderDocs-${SUFFIX} \
+            ${IMAGE_DOCS} "${COMMAND[@]}"
         SUITE_EXIT_CODE=$?
         ;;
     unit)
