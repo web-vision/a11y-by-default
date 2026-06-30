@@ -6,7 +6,7 @@ import typescript from '@rollup/plugin-typescript';
 export default {
     input: 'Build/TypeScript/src/Pa11yModule.ts',
     output: {
-        file: 'Resources/Public/JavaScript/pa11y-module.js',
+        file: 'Resources/Public/JavaScript/a11y-module.js',
         format: 'es',
         sourcemap: true,
     },

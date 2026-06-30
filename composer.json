@@ -1,5 +1,5 @@
 {
-    "name": "web-vision/pa11y",
+    "name": "web-vision/a11y-by-default",
     "description": "Accessibility checker backend module for TYPO3 using axe-core and HTML CodeSniffer",
     "type": "typo3-cms-extension",
     "license": "GPL-2.0-or-later",
@@ -26,12 +26,12 @@
     },
     "autoload": {
         "psr-4": {
-            "WebVision\\Pa11y\\": "Classes/"
+            "WebVision\\A11yByDefault\\": "Classes/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "WebVision\\Pa11y\\Tests\\": "Tests/"
+            "WebVision\\A11yByDefault\\Tests\\": "Tests/"
         }
     },
     "config": {
@@ -50,7 +50,7 @@
     },
     "extra": {
         "typo3/cms": {
-            "extension-key": "pa11y",
+            "extension-key": "a11y_by_default",
             "web-dir": ".Build/Web"
         }
     }

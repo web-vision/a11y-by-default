@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace WebVision\Pa11y\Tests\Functional\Service;
+namespace WebVision\A11yByDefault\Tests\Functional\Service;
 
 use PHPUnit\Framework\Attributes\Test;
 use TYPO3\TestingFramework\Core\Functional\FunctionalTestCase;
-use WebVision\Pa11y\Service\IssueClassificationService;
+use WebVision\A11yByDefault\Service\IssueClassificationService;
 
 final class IssueClassificationServiceTest extends FunctionalTestCase
 {
-    protected array $testExtensionsToLoad = ['pa11y'];
+    protected array $testExtensionsToLoad = ['a11y_by_default'];
 
     #[Test]
     public function getPageContentMetadataReturnsEmptyArrayForPageWithNoContent(): void

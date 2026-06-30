@@ -6,6 +6,6 @@ return [
     'dependencies' => ['backend', 'core'],
     'tags' => [],
     'imports' => [
-        '@web-vision/pa11y/' => 'EXT:pa11y/Resources/Public/JavaScript/',
+        '@web-vision/a11y-by-default/' => 'EXT:a11y_by_default/Resources/Public/JavaScript/',
     ],
 ];

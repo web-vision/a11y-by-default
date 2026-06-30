@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace WebVision\Pa11y\Controller;
+namespace WebVision\A11yByDefault\Controller;
 
 use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Backend\Routing\PreviewUriBuilder;
 use TYPO3\CMS\Backend\Template\ModuleTemplateFactory;
 use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
-use WebVision\Pa11y\Service\IssueClassificationService;
+use WebVision\A11yByDefault\Service\IssueClassificationService;
 
 final class Pa11yController extends ActionController
 {
@@ -33,8 +33,8 @@ final class Pa11yController extends ActionController
             $contentMetadata = $this->classificationService->getPageContentMetadata($pageUid);
         }
 
-        $this->pageRenderer->loadJavaScriptModule('@web-vision/pa11y/pa11y-module');
-        $this->pageRenderer->addInlineSettingArray('pa11y', [
+        $this->pageRenderer->loadJavaScriptModule('@web-vision/a11y-by-default/a11y-module');
+        $this->pageRenderer->addInlineSettingArray('a11yByDefault', [
             'classificationRules' => $this->classificationService->getClassificationRules(),
         ]);
 

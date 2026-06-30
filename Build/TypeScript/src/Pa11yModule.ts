@@ -17,7 +17,7 @@ function readSettings(): ModuleSettings | null {
     }
 
     const typo3Settings = (window as Record<string, unknown>).TYPO3 as
-        | { settings?: { pa11y?: { classificationRules?: ModuleSettings['classificationRules'] } } }
+        | { settings?: { a11yByDefault?: { classificationRules?: ModuleSettings['classificationRules'] } } }
         | undefined;
 
     return {
@@ -26,7 +26,7 @@ function readSettings(): ModuleSettings | null {
         contentMetadata: JSON.parse(appEl.dataset['contentMetadata'] ?? '[]') as ContentMetadataItem[],
         axeJsUrl: appEl.dataset['axeJsUrl'] ?? '',
         htmlcsJsUrl: appEl.dataset['htmlcsJsUrl'] ?? '',
-        classificationRules: typo3Settings?.settings?.pa11y?.classificationRules ?? {},
+        classificationRules: typo3Settings?.settings?.a11yByDefault?.classificationRules ?? {},
     };
 }
 

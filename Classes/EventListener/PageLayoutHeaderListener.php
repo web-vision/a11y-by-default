@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace WebVision\Pa11y\EventListener;
+namespace WebVision\A11yByDefault\EventListener;
 
 use TYPO3\CMS\Backend\Controller\Event\ModifyPageLayoutContentEvent;
 use TYPO3\CMS\Backend\Routing\UriBuilder;
 use TYPO3\CMS\Core\Attribute\AsEventListener;
 
-#[AsEventListener(identifier: 'pa11y/page-layout-header')]
+#[AsEventListener(identifier: 'a11y-by-default/page-layout-header')]
 final class PageLayoutHeaderListener
 {
     public function __construct(
@@ -23,7 +23,7 @@ final class PageLayoutHeaderListener
             return;
         }
 
-        $moduleUrl = (string)$this->uriBuilder->buildUriFromRoute('web_pa11y', ['id' => $pageId]);
+        $moduleUrl = (string)$this->uriBuilder->buildUriFromRoute('web_a11y_by_default', ['id' => $pageId]);
         $event->addHeaderContent($this->renderHeaderHtml($moduleUrl));
     }
 
