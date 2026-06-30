@@ -11,7 +11,7 @@ use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use WebVision\A11yByDefault\Service\IssueClassificationService;
 
-final class Pa11yController extends ActionController
+final class A11yController extends ActionController
 {
     public function __construct(
         private readonly ModuleTemplateFactory $moduleTemplateFactory,

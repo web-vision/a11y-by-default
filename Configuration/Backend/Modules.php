@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use WebVision\A11yByDefault\Controller\Pa11yController;
+use WebVision\A11yByDefault\Controller\A11yController;
 
 return [
     'web_a11y_by_default' => [
@@ -15,7 +15,7 @@ return [
         'labels' => 'LLL:EXT:a11y_by_default/Resources/Private/Language/locallang_mod.xlf',
         'extensionName' => 'A11yByDefault',
         'controllerActions' => [
-            Pa11yController::class => ['index'],
+            A11yController::class => ['index'],
         ],
     ],
 ];

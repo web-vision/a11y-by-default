@@ -3,25 +3,25 @@
 
 <f:if condition="{pageUid} == 0">
     <f:then>
-        <f:render partial="Pa11y/NoPage" />
+        <f:render partial="A11y/NoPage" />
     </f:then>
     <f:else>
-        <div class="module pa11y-module" id="pa11y-app"
+        <div class="module a11y-module" id="a11y-app"
              data-page-uid="{pageUid}"
              data-preview-uri="{previewUri}"
              data-content-metadata="{contentMetadataJson}"
              data-axe-js-url="{f:uri.resource(path: 'JavaScript/Vendor/axe.min.js', extensionName: 'a11y_by_default')}"
              data-htmlcs-js-url="{f:uri.resource(path: 'JavaScript/Vendor/HTMLCS.min.js', extensionName: 'a11y_by_default')}">
 
-            <div class="module-docheader-bar pa11y-module__toolbar">
-                <div class="pa11y-module__engine-selector" role="group"
+            <div class="module-docheader-bar a11y-module__toolbar">
+                <div class="a11y-module__engine-selector" role="group"
                      aria-label="{f:translate(key: 'LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:module.engineLabel')}">
-                    <label for="pa11y-engine-select"
-                           class="pa11y-module__engine-label">
+                    <label for="a11y-engine-select"
+                           class="a11y-module__engine-label">
                         <f:translate key="LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:module.engineLabel" />
                     </label>
-                    <select id="pa11y-engine-select"
-                            class="form-select form-select-sm pa11y-module__engine-select"
+                    <select id="a11y-engine-select"
+                            class="form-select form-select-sm a11y-module__engine-select"
                             aria-label="{f:translate(key: 'LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:module.engineLabel')}">
                         <option value="axe">
                             <f:translate key="LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:module.engine.axe" />
@@ -31,15 +31,15 @@
                         </option>
                     </select>
                     <button type="button"
-                            id="pa11y-scan-button"
-                            class="btn btn-primary btn-sm pa11y-module__scan-btn">
+                            id="a11y-scan-button"
+                            class="btn btn-primary btn-sm a11y-module__scan-btn">
                         <f:translate key="LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:module.scanButton" />
                     </button>
                 </div>
             </div>
 
-            <div id="pa11y-results"
-                 class="pa11y-module__results"
+            <div id="a11y-results"
+                 class="a11y-module__results"
                  role="region"
                  aria-live="polite"
                  aria-label="{f:translate(key: 'LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:module.results.violations')}">
