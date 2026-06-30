@@ -45,7 +45,7 @@ final class A11yController
             ];
         }
 
-        $this->pageRenderer->loadJavaScriptModule('@web-vision/a11y-by-default/a11y-module');
+        $this->pageRenderer->loadJavaScriptModule('@web-vision/a11y-by-default/a11y-module.js');
         $this->pageRenderer->addInlineSettingArray('a11yByDefault', [
             'classificationRules' => $resolvedRules,
         ]);
