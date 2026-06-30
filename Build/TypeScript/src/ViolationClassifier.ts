@@ -16,7 +16,10 @@ export class ViolationClassifier {
         const classification: Classification = { responsibility: rule.responsibility, hint: rule.hint };
 
         if (rule.responsibility === 'editor') {
-            classification.contentElementUid = this.findAffectedContentElement(violation);
+            const uid = this.findAffectedContentElement(violation);
+            if (uid !== undefined) {
+                classification.contentElementUid = uid;
+            }
         }
 
         return classification;

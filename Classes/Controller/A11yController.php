@@ -9,6 +9,7 @@ use Psr\Http\Message\ServerRequestInterface;
 use TYPO3\CMS\Backend\Attribute\AsController;
 use TYPO3\CMS\Backend\Routing\PreviewUriBuilder;
 use TYPO3\CMS\Backend\Template\ModuleTemplateFactory;
+use TYPO3\CMS\Core\Localization\LanguageServiceFactory;
 use TYPO3\CMS\Core\Page\PageRenderer;
 use WebVision\A11yByDefault\Service\IssueClassificationService;
 
@@ -19,6 +20,7 @@ final class A11yController
         private readonly ModuleTemplateFactory $moduleTemplateFactory,
         private readonly IssueClassificationService $classificationService,
         private readonly PageRenderer $pageRenderer,
+        private readonly LanguageServiceFactory $languageServiceFactory,
     ) {}
 
     public function index(ServerRequestInterface $request): ResponseInterface
@@ -34,9 +36,18 @@ final class A11yController
             $contentMetadata = $this->classificationService->getPageContentMetadata($pageUid);
         }
 
+        $languageService = $this->languageServiceFactory->createFromUserPreferences($GLOBALS['BE_USER']);
+        $resolvedRules = [];
+        foreach ($this->classificationService->getClassificationRules() as $ruleId => $rule) {
+            $resolvedRules[$ruleId] = [
+                'responsibility' => $rule['responsibility'],
+                'hint' => $languageService->sL($rule['hint']),
+            ];
+        }
+
         $this->pageRenderer->loadJavaScriptModule('@web-vision/a11y-by-default/a11y-module');
         $this->pageRenderer->addInlineSettingArray('a11yByDefault', [
-            'classificationRules' => $this->classificationService->getClassificationRules(),
+            'classificationRules' => $resolvedRules,
         ]);
 
         $moduleTemplate = $this->moduleTemplateFactory->create($request);
