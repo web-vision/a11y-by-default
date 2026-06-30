@@ -1,6 +1,7 @@
 .Build/
 .cache/
 node_modules/
+composer.lock
 .claude/
 Resources/Public/JavaScript/a11y-module.js
 Resources/Public/JavaScript/a11y-module.js.map
