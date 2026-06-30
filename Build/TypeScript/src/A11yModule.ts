@@ -64,11 +64,11 @@ function impactBadgeClass(impact: string): string {
         moderate: 'info',
         minor: 'secondary',
     };
-    return `badge bg-${map[impact] ?? 'secondary'}`;
+    return `badge text-bg-${map[impact] ?? 'secondary'}`;
 }
 
 function responsibilityBadgeClass(responsibility: string): string {
-    return responsibility === 'editor' ? 'badge bg-primary' : 'badge bg-dark';
+    return responsibility === 'editor' ? 'badge text-bg-primary' : 'badge text-bg-secondary';
 }
 
 function renderIssueCard(issue: AccessibilityIssue, classifier: ViolationClassifier): string {
@@ -131,8 +131,8 @@ function renderResults(container: HTMLElement, result: ScanResult, classifier: V
 
     container.innerHTML = `
         ${successCallout}
-        ${renderIssueSection(result.violations, 'a11y-violations-heading', getLabel('module.results.violations'), 'bg-danger', classifier)}
-        ${renderIssueSection(result.incomplete, 'a11y-incomplete-heading', getLabel('module.results.incomplete'), 'bg-warning text-dark', classifier)}`;
+        ${renderIssueSection(result.violations, 'a11y-violations-heading', getLabel('module.results.violations'), 'text-bg-danger', classifier)}
+        ${renderIssueSection(result.incomplete, 'a11y-incomplete-heading', getLabel('module.results.incomplete'), 'text-bg-warning', classifier)}`;
 }
 
 async function runScan(
