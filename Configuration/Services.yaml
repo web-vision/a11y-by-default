@@ -6,6 +6,3 @@ services:
 
   WebVision\A11yByDefault\:
     resource: '../Classes/*'
-
-  WebVision\A11yByDefault\Controller\A11yController:
-    public: true
