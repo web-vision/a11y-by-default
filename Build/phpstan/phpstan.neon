@@ -1,0 +1,18 @@
+includes:
+    - ../../.Build/vendor/saschaegerer/phpstan-typo3/extension.neon
+
+parameters:
+    phpVersion: 80200
+
+    tmpDir: ../../.cache/phpstan
+
+    level: 8
+
+    paths:
+        - ../../Classes
+        - ../../Tests
+
+    excludePaths:
+        - ../../.Build/*
+
+    ignoreErrors: []

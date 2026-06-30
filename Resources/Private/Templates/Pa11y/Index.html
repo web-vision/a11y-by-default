@@ -1,0 +1,51 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:if condition="{pageUid} == 0">
+    <f:then>
+        <f:render partial="Pa11y/NoPage" />
+    </f:then>
+    <f:else>
+        <div class="module pa11y-module" id="pa11y-app"
+             data-page-uid="{pageUid}"
+             data-preview-uri="{previewUri}"
+             data-content-metadata="{contentMetadataJson}"
+             data-axe-js-url="{f:uri.resource(path: 'JavaScript/Vendor/axe.min.js', extensionName: 'pa11y')}"
+             data-htmlcs-js-url="{f:uri.resource(path: 'JavaScript/Vendor/HTMLCS.min.js', extensionName: 'pa11y')}">
+
+            <div class="module-docheader-bar pa11y-module__toolbar">
+                <div class="pa11y-module__engine-selector" role="group"
+                     aria-label="{f:translate(key: 'LLL:EXT:pa11y/Resources/Private/Language/locallang.xlf:module.engineLabel')}">
+                    <label for="pa11y-engine-select"
+                           class="pa11y-module__engine-label">
+                        <f:translate key="LLL:EXT:pa11y/Resources/Private/Language/locallang.xlf:module.engineLabel" />
+                    </label>
+                    <select id="pa11y-engine-select"
+                            class="form-select form-select-sm pa11y-module__engine-select"
+                            aria-label="{f:translate(key: 'LLL:EXT:pa11y/Resources/Private/Language/locallang.xlf:module.engineLabel')}">
+                        <option value="axe">
+                            <f:translate key="LLL:EXT:pa11y/Resources/Private/Language/locallang.xlf:module.engine.axe" />
+                        </option>
+                        <option value="htmlcs">
+                            <f:translate key="LLL:EXT:pa11y/Resources/Private/Language/locallang.xlf:module.engine.htmlcs" />
+                        </option>
+                    </select>
+                    <button type="button"
+                            id="pa11y-scan-button"
+                            class="btn btn-primary btn-sm pa11y-module__scan-btn">
+                        <f:translate key="LLL:EXT:pa11y/Resources/Private/Language/locallang.xlf:module.scanButton" />
+                    </button>
+                </div>
+            </div>
+
+            <div id="pa11y-results"
+                 class="pa11y-module__results"
+                 role="region"
+                 aria-live="polite"
+                 aria-label="{f:translate(key: 'LLL:EXT:pa11y/Resources/Private/Language/locallang.xlf:module.results.violations')}">
+            </div>
+        </div>
+    </f:else>
+</f:if>
+
+</html>
