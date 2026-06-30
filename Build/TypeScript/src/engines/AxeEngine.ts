@@ -83,7 +83,7 @@ export class AxeEngine {
             nodes: result.nodes.map((node): IssueNode => ({
                 html: node.html,
                 target: node.target,
-                failureSummary: node.failureSummary,
+                ...(node.failureSummary !== undefined ? { failureSummary: node.failureSummary } : {}),
             })),
         }));
     }

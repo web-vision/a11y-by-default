@@ -19,6 +19,7 @@
     },
     "dependencies": {
         "axe-core": "^4.10.0",
-        "html_codesniffer": "^2.5.1"
+        "html_codesniffer": "^2.5.1",
+        "tslib": "^2.8.1"
     }
 }

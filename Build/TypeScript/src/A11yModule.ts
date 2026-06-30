@@ -16,7 +16,7 @@ function readSettings(): ModuleSettings | null {
         return null;
     }
 
-    const typo3Settings = (window as Record<string, unknown>).TYPO3 as
+    const typo3Settings = (window as unknown as Record<string, unknown>).TYPO3 as
         | { settings?: { a11yByDefault?: { classificationRules?: ModuleSettings['classificationRules'] } } }
         | undefined;
 
@@ -44,7 +44,7 @@ function showError(container: HTMLElement, message: string): void {
 }
 
 function getLabel(key: string): string {
-    const typo3 = (window as Record<string, unknown>).TYPO3 as
+    const typo3 = (window as unknown as Record<string, unknown>).TYPO3 as
         | { lang?: Record<string, string> }
         | undefined;
     return typo3?.lang?.[key] ?? key;
