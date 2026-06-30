@@ -187,7 +187,7 @@ function initialize(): void {
         return;
     }
 
-    scanButton.addEventListener('click', async () => {
+    const executeScan = async (): Promise<void> => {
         const engine: ScanEngine = (engineSelect?.value ?? 'axe') as ScanEngine;
         scanButton.setAttribute('disabled', 'disabled');
         showLoading(resultsContainer);
@@ -202,7 +202,10 @@ function initialize(): void {
         } finally {
             scanButton.removeAttribute('disabled');
         }
-    });
+    };
+
+    scanButton.addEventListener('click', executeScan);
+    executeScan();
 }
 
 if (document.readyState === 'loading') {
