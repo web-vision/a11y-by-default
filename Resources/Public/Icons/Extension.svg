@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" role="img" aria-label="Pa11y Accessibility Checker">
+    <circle cx="8" cy="8" r="7" fill="none" stroke="#0078D4" stroke-width="1.5"/>
+    <text x="8" y="11.5" font-family="Arial, sans-serif" font-size="8" font-weight="bold"
+          text-anchor="middle" fill="#0078D4">A</text>
+    <circle cx="11.5" cy="11.5" r="3.5" fill="#0078D4"/>
+    <text x="11.5" y="13.7" font-family="Arial, sans-serif" font-size="4.5" font-weight="bold"
+          text-anchor="middle" fill="#ffffff">✓</text>
+</svg>
