@@ -6,7 +6,7 @@
     "scripts": {
         "build": "npm run build:vendor && rollup -c rollup.config.mjs",
         "build:watch": "rollup -c rollup.config.mjs --watch",
-        "build:vendor": "cp node_modules/axe-core/axe.min.js Resources/Public/JavaScript/Vendor/axe.min.js && cp node_modules/html_codesniffer/build/HTMLCS.min.js Resources/Public/JavaScript/Vendor/HTMLCS.min.js",
+        "build:vendor": "cp node_modules/axe-core/axe.min.js Resources/Public/JavaScript/Vendor/axe.min.js && cp node_modules/html_codesniffer/build/HTMLCS.js Resources/Public/JavaScript/Vendor/HTMLCS.min.js",
         "test": "jest --passWithNoTests"
     },
     "devDependencies": {
@@ -19,6 +19,6 @@
     },
     "dependencies": {
         "axe-core": "^4.10.0",
-        "html_codesniffer": "^3.0.0"
+        "html_codesniffer": "^2.5.1"
     }
 }
