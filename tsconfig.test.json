@@ -1,0 +1,13 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "module": "CommonJS",
+        "moduleResolution": "node",
+        "rootDir": "./Build/TypeScript",
+        "noUnusedLocals": false,
+        "noUnusedParameters": false
+    },
+    "include": [
+        "Build/TypeScript/**/*.ts"
+    ]
+}

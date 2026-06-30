@@ -100,7 +100,7 @@ function renderSummary(container, result, moduleUrl) {
         container.innerHTML = `<div class="callout callout-success">
             <div class="callout-body d-flex align-items-center gap-3 flex-wrap">
                 <span>${escapeHtml(lll('module.results.empty'))}</span>
-                <a href="${escapeHtml(moduleUrl)}" class="btn btn-sm btn-default">${escapeHtml(lll('pageHint.label'))}</a>
+                <a href="${escapeHtml(moduleUrl)}" class="btn btn-sm btn-default"><typo3-backend-icon identifier="ext-a11y_by_default-check-accessibility" size="small"></typo3-backend-icon> ${escapeHtml(lll('pageHint.label'))}</a>
             </div>
         </div>`;
         return;
@@ -122,7 +122,7 @@ function renderSummary(container, result, moduleUrl) {
     container.innerHTML = `<div class="callout callout-warning">
         <div class="callout-body d-flex align-items-center gap-3 flex-wrap">
             <span class="d-flex gap-1 flex-wrap">${violationBadges}${incompleteBadge}</span>
-            <a href="${escapeHtml(moduleUrl)}" class="btn btn-sm btn-default">${escapeHtml(lll('pageHint.label'))}</a>
+            <a href="${escapeHtml(moduleUrl)}" class="btn btn-sm btn-default"><typo3-backend-icon identifier="ext-a11y_by_default-check-accessibility" size="small"></typo3-backend-icon> ${escapeHtml(lll('pageHint.label'))}</a>
         </div>
     </div>`;
 }
@@ -166,4 +166,6 @@ if (document.readyState === 'loading') {
 else {
     runAutoScan();
 }
+
+export { countByImpact, readSettings, renderSummary, runAutoScan };
 //# sourceMappingURL=page-layout-summary.js.map
