@@ -1,9 +1,19 @@
+# IDE
+.idea/
+.vscode/
+.junie/
+nbproject/
+
+# Build artifacts
 .Build
 !.Build/Web/.gitkeep
 .cache
 node_modules/
+
+# Generated / local
 composer.lock
 .claude/
+.composer/
 Resources/Public/JavaScript/a11y-module.js
 Resources/Public/JavaScript/a11y-module.js.map
 Resources/Public/JavaScript/Vendor/axe.min.js
