@@ -71,7 +71,7 @@ function responsibilityBadgeClass(responsibility: string): string {
     return responsibility === 'editor' ? 'badge text-bg-primary' : 'badge text-bg-secondary';
 }
 
-function renderIssueCard(issue: AccessibilityIssue, classifier: ViolationClassifier): string {
+export function renderIssueCard(issue: AccessibilityIssue, classifier: ViolationClassifier): string {
     const classification: Classification = classifier.classify(issue);
     const responsibilityLabel = getLabel(`module.responsibility.${classification.responsibility}`);
     const contentElementLink =
@@ -104,7 +104,7 @@ function renderIssueCard(issue: AccessibilityIssue, classifier: ViolationClassif
     </div>`;
 }
 
-function renderIssueSection(
+export function renderIssueSection(
     issues: AccessibilityIssue[],
     headingId: string,
     headingLabel: string,
@@ -124,7 +124,7 @@ function renderIssueSection(
     </section>`;
 }
 
-function renderResults(container: HTMLElement, result: ScanResult, classifier: ViolationClassifier): void {
+export function renderResults(container: HTMLElement, result: ScanResult, classifier: ViolationClassifier): void {
     const successCallout = result.violations.length === 0
         ? `<div class="callout callout-success mb-4"><div class="callout-body"><p>${getLabel('module.results.empty')}</p></div></div>`
         : '';
@@ -168,7 +168,7 @@ async function runScan(
     }
 }
 
-function initialize(): void {
+export function initialize(): void {
     const settings = readSettings();
     if (settings === null || settings.pageUid === 0) {
         return;

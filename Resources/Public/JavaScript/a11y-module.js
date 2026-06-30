@@ -312,4 +312,6 @@ if (document.readyState === 'loading') {
 else {
     initialize();
 }
+
+export { initialize, renderIssueCard, renderIssueSection, renderResults };
 //# sourceMappingURL=a11y-module.js.map

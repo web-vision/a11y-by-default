@@ -8,7 +8,7 @@ interface SummarySettings {
     moduleUrl: string;
 }
 
-function readSettings(): SummarySettings | null {
+export function readSettings(): SummarySettings | null {
     const appEl = document.getElementById('a11y-page-summary-app');
     if (appEl === null) {
         return null;
@@ -49,7 +49,7 @@ function showError(container: HTMLElement, message: string): void {
     </div>`;
 }
 
-function countByImpact(issues: ScanResult['violations']): Record<string, number> {
+export function countByImpact(issues: ScanResult['violations']): Record<string, number> {
     const counts: Record<string, number> = { critical: 0, serious: 0, moderate: 0, minor: 0 };
     for (const issue of issues) {
         if (issue.impact in counts) {
@@ -59,7 +59,7 @@ function countByImpact(issues: ScanResult['violations']): Record<string, number>
     return counts;
 }
 
-function renderSummary(container: HTMLElement, result: ScanResult, moduleUrl: string): void {
+export function renderSummary(container: HTMLElement, result: ScanResult, moduleUrl: string): void {
     const totalViolations = result.violations.length;
     const totalIncomplete = result.incomplete.length;
 
@@ -67,7 +67,7 @@ function renderSummary(container: HTMLElement, result: ScanResult, moduleUrl: st
         container.innerHTML = `<div class="callout callout-success">
             <div class="callout-body d-flex align-items-center gap-3 flex-wrap">
                 <span>${escapeHtml(lll('module.results.empty'))}</span>
-                <a href="${escapeHtml(moduleUrl)}" class="btn btn-sm btn-default">${escapeHtml(lll('pageHint.label'))}</a>
+                <a href="${escapeHtml(moduleUrl)}" class="btn btn-sm btn-default"><typo3-backend-icon identifier="ext-a11y_by_default-check-accessibility" size="small"></typo3-backend-icon> ${escapeHtml(lll('pageHint.label'))}</a>
             </div>
         </div>`;
         return;
@@ -95,12 +95,12 @@ function renderSummary(container: HTMLElement, result: ScanResult, moduleUrl: st
     container.innerHTML = `<div class="callout callout-warning">
         <div class="callout-body d-flex align-items-center gap-3 flex-wrap">
             <span class="d-flex gap-1 flex-wrap">${violationBadges}${incompleteBadge}</span>
-            <a href="${escapeHtml(moduleUrl)}" class="btn btn-sm btn-default">${escapeHtml(lll('pageHint.label'))}</a>
+            <a href="${escapeHtml(moduleUrl)}" class="btn btn-sm btn-default"><typo3-backend-icon identifier="ext-a11y_by_default-check-accessibility" size="small"></typo3-backend-icon> ${escapeHtml(lll('pageHint.label'))}</a>
         </div>
     </div>`;
 }
 
-async function runAutoScan(): Promise<void> {
+export async function runAutoScan(): Promise<void> {
     const settings = readSettings();
     if (settings === null || settings.pageUid === 0 || settings.previewUri === '') {
         return;
