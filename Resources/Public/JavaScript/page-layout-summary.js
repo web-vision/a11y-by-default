@@ -68,11 +68,7 @@ function lll(key) {
     return typo3?.lang?.[key] ?? key;
 }
 function escapeHtml(str) {
-    return str
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;');
+    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 function showLoading(container) {
     container.innerHTML = `<typo3-backend-progress-bar
@@ -146,8 +142,14 @@ async function runAutoScan() {
     try {
         await new Promise((resolve, reject) => {
             const timeout = window.setTimeout(() => reject(new Error('Iframe load timeout after 30s')), 30000);
-            iframe.addEventListener('load', () => { window.clearTimeout(timeout); resolve(); }, { once: true });
-            iframe.addEventListener('error', () => { window.clearTimeout(timeout); reject(new Error('Iframe failed to load')); }, { once: true });
+            iframe.addEventListener('load', () => {
+                window.clearTimeout(timeout);
+                resolve();
+            }, { once: true });
+            iframe.addEventListener('error', () => {
+                window.clearTimeout(timeout);
+                reject(new Error('Iframe failed to load'));
+            }, { once: true });
         });
         const engine = new AxeEngine(iframe, settings.axeJsUrl);
         const result = await engine.run();

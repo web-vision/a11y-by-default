@@ -44,7 +44,10 @@ Options:
             - clean: clean up build, cache and testing related files
             - cleanCache: clean up cache related files
             - composerInstall: "composer install", use after initial clone
+            - npmInstall: "npm ci", use after initial clone
+            - buildJs: "npm run build", build javascript assets
             - functional: functional tests
+            - lintJs: javascript/typescript linting
             - phpstan: phpstan analyze
             - unit: PHP unit tests (default)
 
@@ -82,6 +85,12 @@ Examples:
     # Install composer dependencies (required after initial clone)
     ./Build/Scripts/runTests.sh -s composerInstall
 
+    # Install npm dependencies (required after initial clone)
+    ./Build/Scripts/runTests.sh -s npmInstall
+
+    # Build javascript assets
+    ./Build/Scripts/runTests.sh -s buildJs
+
     # Run unit tests
     ./Build/Scripts/runTests.sh -s unit
 
@@ -93,6 +102,9 @@ Examples:
 
     # Run phpstan analysis
     ./Build/Scripts/runTests.sh -s phpstan
+
+    # Run javascript linting
+    ./Build/Scripts/runTests.sh -s lintJs
 
     # Check code style
     ./Build/Scripts/runTests.sh -s cgl -n
@@ -195,6 +207,7 @@ if [[ -z "${CONTAINER_BIN}" ]]; then
 fi
 
 IMAGE_PHP="ghcr.io/typo3/core-testing-$(echo "php${PHP_VERSION}" | sed -e 's/\.//'):latest"
+IMAGE_NODEJS="ghcr.io/typo3/core-testing-nodejs24:1.1"
 IMAGE_MARIADB="docker.io/mariadb:${DBMS_VERSION}"
 IMAGE_MYSQL="docker.io/mysql:${DBMS_VERSION}"
 IMAGE_POSTGRES="docker.io/postgres:${DBMS_VERSION}-alpine"
@@ -209,7 +222,7 @@ if [ "${CONTAINER_BIN}" == "docker" ]; then
     CONTAINER_COMMON_PARAMS="${CONTAINER_INTERACTIVE} --rm --network ${NETWORK} --add-host ${CONTAINER_HOST}:host-gateway ${USERSET} -v ${ROOT_DIR}:${ROOT_DIR} -w ${ROOT_DIR}"
 else
     CONTAINER_HOST="host.containers.internal"
-    CONTAINER_COMMON_PARAMS="${CONTAINER_INTERACTIVE} --rm --network ${NETWORK} ${USERSET} -v ${ROOT_DIR}:${ROOT_DIR} -w ${ROOT_DIR}"
+    CONTAINER_COMMON_PARAMS="${CONTAINER_INTERACTIVE} --rm --network ${NETWORK} ${USERSET} --userns=keep-id -v ${ROOT_DIR}:${ROOT_DIR} -w ${ROOT_DIR}"
 fi
 
 if [ ${PHP_XDEBUG_ON} -eq 0 ]; then
@@ -246,6 +259,31 @@ case ${TEST_SUITE} in
             -e COMPOSER_CACHE_DIR=.Build/.cache/composer \
             -e COMPOSER_ROOT_VERSION=${COMPOSER_ROOT_VERSION} \
             ${IMAGE_PHP} "${COMMAND[@]}"
+        SUITE_EXIT_CODE=$?
+        ;;
+    npmInstall)
+        COMMAND=(npm ci)
+        ${CONTAINER_BIN} run ${CONTAINER_COMMON_PARAMS} --name npm-install-${SUFFIX} \
+            -e npm_config_cache=.Build/.cache/npm \
+            ${IMAGE_NODEJS} "${COMMAND[@]}"
+        SUITE_EXIT_CODE=$?
+        ;;
+    buildJs)
+        COMMAND=(npm run build)
+        ${CONTAINER_BIN} run ${CONTAINER_COMMON_PARAMS} --name buildJs-${SUFFIX} \
+            -e npm_config_cache=.Build/.cache/npm \
+            ${IMAGE_NODEJS} "${COMMAND[@]}"
+        SUITE_EXIT_CODE=$?
+        ;;
+    lintJs)
+        if [ "${CGLCHECK_DRY_RUN}" -eq 1 ]; then
+            COMMAND="npm run lint:js"
+        else
+            COMMAND="npm run lint:js:fix"
+        fi
+        ${CONTAINER_BIN} run ${CONTAINER_COMMON_PARAMS} --name lintJs-${SUFFIX} \
+            -e npm_config_cache=.Build/.cache/npm \
+            ${IMAGE_NODEJS} /bin/sh -c "${COMMAND}"
         SUITE_EXIT_CODE=$?
         ;;
     functional)

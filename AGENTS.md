@@ -98,3 +98,6 @@ command 2
 
 * Use runTests.sh provided from TYPO3 core
 * use TYPO3 Testing Framework
+* Run `./Build/Scripts/runTests.sh -s npmInstall` once to install JS dependencies
+* Run `./Build/Scripts/runTests.sh -s lintJs` for JavaScript linting
+* Run `./Build/Scripts/runTests.sh -s buildJs` for JavaScript building
