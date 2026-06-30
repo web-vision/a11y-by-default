@@ -9,4 +9,8 @@ return [
         'provider' => SvgIconProvider::class,
         'source' => 'EXT:a11y_by_default/Resources/Public/Icons/Extension.svg',
     ],
+    'ext-a11y_by_default-check-accessibility' => [
+        'provider' => SvgIconProvider::class,
+        'source' => 'EXT:a11y_by_default/Resources/Public/Icons/actions-check-accessibility.svg',
+    ],
 ];
