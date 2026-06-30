@@ -1,28 +1,32 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
       data-namespace-typo3-fluid="true">
 
-<f:if condition="{pageUid} == 0">
-    <f:then>
-        <f:render partial="A11y/NoPage" />
-    </f:then>
-    <f:else>
-        <div class="module a11y-module" id="a11y-app"
-             data-page-uid="{pageUid}"
-             data-preview-uri="{previewUri}"
-             data-content-metadata="{contentMetadataJson}"
-             data-axe-js-url="{f:uri.resource(path: 'JavaScript/Vendor/axe.min.js', extensionName: 'a11y_by_default')}"
-             data-htmlcs-js-url="{f:uri.resource(path: 'JavaScript/Vendor/HTMLCS.min.js', extensionName: 'a11y_by_default')}">
+<f:layout name="Module" />
 
-            <div class="module-docheader-bar a11y-module__toolbar">
-                <div class="a11y-module__engine-selector" role="group"
+<f:section name="Content">
+    <h1><f:translate key="LLL:EXT:a11y_by_default/Resources/Private/Language/locallang_mod.xlf:mlang_labels_tablabel" /></h1>
+
+    <f:if condition="{pageUid} == 0">
+        <f:then>
+            <f:render partial="A11y/NoPage" />
+        </f:then>
+        <f:else>
+            <div id="a11y-app"
+                 data-page-uid="{pageUid}"
+                 data-preview-uri="{previewUri}"
+                 data-content-metadata="{contentMetadataJson}"
+                 data-axe-js-url="{f:uri.resource(path: 'JavaScript/Vendor/axe.min.js', extensionName: 'a11y_by_default')}"
+                 data-htmlcs-js-url="{f:uri.resource(path: 'JavaScript/Vendor/HTMLCS.min.js', extensionName: 'a11y_by_default')}">
+
+                <div class="d-flex align-items-center gap-2 mb-4"
+                     role="group"
                      aria-label="{f:translate(key: 'LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:module.engineLabel')}">
-                    <label for="a11y-engine-select"
-                           class="a11y-module__engine-label">
+                    <label for="a11y-engine-select" class="form-label mb-0 text-nowrap">
                         <f:translate key="LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:module.engineLabel" />
                     </label>
                     <select id="a11y-engine-select"
-                            class="form-select form-select-sm a11y-module__engine-select"
-                            aria-label="{f:translate(key: 'LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:module.engineLabel')}">
+                            class="form-select form-select-sm"
+                            style="width: auto;">
                         <option value="axe">
                             <f:translate key="LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:module.engine.axe" />
                         </option>
@@ -32,20 +36,19 @@
                     </select>
                     <button type="button"
                             id="a11y-scan-button"
-                            class="btn btn-primary btn-sm a11y-module__scan-btn">
+                            class="btn btn-primary btn-sm">
                         <f:translate key="LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:module.scanButton" />
                     </button>
                 </div>
-            </div>
 
-            <div id="a11y-results"
-                 class="a11y-module__results"
-                 role="region"
-                 aria-live="polite"
-                 aria-label="{f:translate(key: 'LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:module.results.violations')}">
+                <div id="a11y-results"
+                     role="region"
+                     aria-live="polite"
+                     aria-label="{f:translate(key: 'LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:module.results.violations')}">
+                </div>
             </div>
-        </div>
-    </f:else>
-</f:if>
+        </f:else>
+    </f:if>
+</f:section>
 
 </html>
