@@ -1,0 +1,4 @@
+"tt_content",,,,,,,,,
+,"uid","pid","sorting","deleted","hidden","CType","colPos","header","bodytext"
+,10,1,256,0,0,"textmedia",0,"First Heading","First body"
+,11,1,512,0,0,"text",4,"Second Heading","Second body"

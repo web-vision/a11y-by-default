@@ -29,8 +29,8 @@ final class IssueClassificationServiceTest extends UnitTestCase
     {
         $rules = $this->subject->getClassificationRules();
 
-        self::assertArrayHasKey('image-alt', $rules);
-        self::assertSame('editor', $rules['image-alt']['responsibility']);
+        $this->assertArrayHasKey('image-alt', $rules);
+        $this->assertSame('editor', $rules['image-alt']['responsibility']);
     }
 
     #[Test]
@@ -38,8 +38,8 @@ final class IssueClassificationServiceTest extends UnitTestCase
     {
         $rules = $this->subject->getClassificationRules();
 
-        self::assertArrayHasKey('color-contrast', $rules);
-        self::assertSame('developer', $rules['color-contrast']['responsibility']);
+        $this->assertArrayHasKey('color-contrast', $rules);
+        $this->assertSame('developer', $rules['color-contrast']['responsibility']);
     }
 
     #[Test]
@@ -47,8 +47,8 @@ final class IssueClassificationServiceTest extends UnitTestCase
     {
         $rules = $this->subject->getClassificationRules();
 
-        self::assertArrayHasKey('landmark-one-main', $rules);
-        self::assertSame('developer', $rules['landmark-one-main']['responsibility']);
+        $this->assertArrayHasKey('landmark-one-main', $rules);
+        $this->assertSame('developer', $rules['landmark-one-main']['responsibility']);
     }
 
     #[Test]
@@ -57,8 +57,30 @@ final class IssueClassificationServiceTest extends UnitTestCase
         $rules = $this->subject->getClassificationRules();
 
         foreach ($rules as $ruleId => $rule) {
-            self::assertArrayHasKey('hint', $rule, sprintf('Rule "%s" is missing a hint.', $ruleId));
-            self::assertNotEmpty($rule['hint'], sprintf('Rule "%s" has an empty hint.', $ruleId));
+            $this->assertArrayHasKey('hint', $rule, sprintf('Rule "%s" is missing a hint.', $ruleId));
+            $this->assertNotEmpty($rule['hint'], sprintf('Rule "%s" has an empty hint.', $ruleId));
+        }
+    }
+
+    #[Test]
+    public function getClassificationRulesReturnsExactlySixteenRules(): void
+    {
+        $rules = $this->subject->getClassificationRules();
+
+        $this->assertCount(16, $rules);
+    }
+
+    #[Test]
+    public function getClassificationRulesContainsOnlyValidResponsibilityValues(): void
+    {
+        $rules = $this->subject->getClassificationRules();
+
+        foreach ($rules as $ruleId => $rule) {
+            $this->assertContains(
+                $rule['responsibility'],
+                ['editor', 'developer'],
+                sprintf('Rule "%s" has unexpected responsibility "%s".', $ruleId, $rule['responsibility'])
+            );
         }
     }
 }
