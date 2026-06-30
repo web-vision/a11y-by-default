@@ -289,7 +289,7 @@ function initialize() {
         showError(resultsContainer, getLabel('module.error.noPreview'));
         return;
     }
-    scanButton.addEventListener('click', async () => {
+    const executeScan = async () => {
         const engine = (engineSelect?.value ?? 'axe');
         scanButton.setAttribute('disabled', 'disabled');
         showLoading(resultsContainer);
@@ -302,7 +302,9 @@ function initialize() {
         finally {
             scanButton.removeAttribute('disabled');
         }
-    });
+    };
+    scanButton.addEventListener('click', executeScan);
+    executeScan();
 }
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initialize);
