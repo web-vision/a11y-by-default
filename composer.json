@@ -1,6 +1,10 @@
 {
     "name": "web-vision/a11y-by-default",
     "description": "Accessibility checker backend module for TYPO3 using axe-core and HTML CodeSniffer",
+    "homepage": "https://github.com/web-vision/pa111y-typo3",
+    "support": {
+        "docs": "https://docs.typo3.org/p/web-vision/a11y-by-default/main/en-us/"
+    },
     "type": "typo3-cms-extension",
     "license": "GPL-2.0-or-later",
     "authors": [
