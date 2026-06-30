@@ -5,8 +5,8 @@ declare(strict_types=1);
 use TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider;
 
 return [
-    'tx_pa11y-module' => [
+    'tx_a11y_by_default-module' => [
         'provider' => SvgIconProvider::class,
-        'source' => 'EXT:pa11y/Resources/Public/Icons/Extension.svg',
+        'source' => 'EXT:a11y_by_default/Resources/Public/Icons/Extension.svg',
     ],
 ];

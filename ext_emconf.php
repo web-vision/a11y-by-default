@@ -1,7 +1,7 @@
 <?php
 
 $EM_CONF[$_EXTKEY] = [
-    'title' => 'Pa11y - Accessibility Checker',
+    'title' => 'A11y by default - Accessibility Checker',
     'description' => 'Backend module for page-level accessibility checking using axe-core and HTML CodeSniffer, with editor/developer issue classification.',
     'category' => 'module',
     'author' => 'Markus Hofmann',

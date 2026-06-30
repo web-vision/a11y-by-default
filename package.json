@@ -1,5 +1,5 @@
 {
-    "name": "@web-vision/pa11y",
+    "name": "@web-vision/a11y-by-default",
     "version": "0.1.0",
     "private": true,
     "description": "Accessibility checker TYPO3 backend module",

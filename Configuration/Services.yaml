@@ -4,8 +4,8 @@ services:
     autoconfigure: true
     public: false
 
-  WebVision\Pa11y\:
+  WebVision\A11yByDefault\:
     resource: '../Classes/*'
 
-  WebVision\Pa11y\Controller\Pa11yController:
+  WebVision\A11yByDefault\Controller\Pa11yController:
     public: true

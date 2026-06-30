@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace WebVision\Pa11y\Tests\Unit\Service;
+namespace WebVision\A11yByDefault\Tests\Unit\Service;
 
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\MockObject\MockObject;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
-use WebVision\Pa11y\Service\IssueClassificationService;
+use WebVision\A11yByDefault\Service\IssueClassificationService;
 
 final class IssueClassificationServiceTest extends UnitTestCase
 {

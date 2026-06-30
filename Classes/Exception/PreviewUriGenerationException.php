@@ -2,6 +2,6 @@
 
 declare(strict_types=1);
 
-namespace WebVision\Pa11y\Exception;
+namespace WebVision\A11yByDefault\Exception;
 
 final class PreviewUriGenerationException extends \Exception {}
