@@ -194,10 +194,10 @@ function impactBadgeClass(impact) {
         moderate: 'info',
         minor: 'secondary',
     };
-    return `badge bg-${map[impact] ?? 'secondary'}`;
+    return `badge text-bg-${map[impact] ?? 'secondary'}`;
 }
 function responsibilityBadgeClass(responsibility) {
-    return responsibility === 'editor' ? 'badge bg-primary' : 'badge bg-dark';
+    return responsibility === 'editor' ? 'badge text-bg-primary' : 'badge text-bg-secondary';
 }
 function renderIssueCard(issue, classifier) {
     const classification = classifier.classify(issue);
@@ -246,8 +246,8 @@ function renderResults(container, result, classifier) {
         : '';
     container.innerHTML = `
         ${successCallout}
-        ${renderIssueSection(result.violations, 'a11y-violations-heading', getLabel('module.results.violations'), 'bg-danger', classifier)}
-        ${renderIssueSection(result.incomplete, 'a11y-incomplete-heading', getLabel('module.results.incomplete'), 'bg-warning text-dark', classifier)}`;
+        ${renderIssueSection(result.violations, 'a11y-violations-heading', getLabel('module.results.violations'), 'text-bg-danger', classifier)}
+        ${renderIssueSection(result.incomplete, 'a11y-incomplete-heading', getLabel('module.results.incomplete'), 'text-bg-warning', classifier)}`;
 }
 async function runScan(settings, engine, resultsContainer) {
     const iframe = document.createElement('iframe');
