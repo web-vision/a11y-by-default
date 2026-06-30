@@ -167,10 +167,9 @@ function readSettings() {
     };
 }
 function showLoading(container) {
-    container.innerHTML = `<div class="a11y-loading" role="status" aria-live="polite">
-        <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
-        <span class="a11y-loading__text">${getLabel('module.loading')}</span>
-    </div>`;
+    container.innerHTML = `<typo3-backend-progress-bar
+        label="${escapeHtml(getLabel('module.loading'))}">
+    </typo3-backend-progress-bar>`;
 }
 function showError(container, message) {
     container.innerHTML = `<div class="callout callout-danger a11y-error" role="alert">

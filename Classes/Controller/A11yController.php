@@ -46,6 +46,8 @@ final class A11yController
         }
 
         $this->pageRenderer->loadJavaScriptModule('@web-vision/a11y-by-default/a11y-module.js');
+        $this->pageRenderer->loadJavaScriptModule('@typo3/backend/element/progress-bar-element.js');
+        $this->pageRenderer->addInlineLanguageLabelFile('EXT:a11y_by_default/Resources/Private/Language/locallang.xlf');
         $this->pageRenderer->addInlineSettingArray('a11yByDefault', [
             'classificationRules' => $resolvedRules,
         ]);
