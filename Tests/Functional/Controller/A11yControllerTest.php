@@ -66,4 +66,27 @@ final class A11yControllerTest extends FunctionalTestCase
 
         $this->assertSame(200, $response->getStatusCode());
     }
+
+    #[Test]
+    public function developerViewTabIsRenderedForAdmins(): void
+    {
+        $controller = $this->get(A11yController::class);
+        $response = $controller->index($this->createRequest(1));
+        $body = (string)$response->getBody();
+
+        $this->assertStringContainsString('id="a11y-view-tab-developer"', $body);
+    }
+
+    #[Test]
+    public function developerViewTabIsNotRenderedForEditorsWithoutDeveloperCornerAccess(): void
+    {
+        $this->importCSVDataSet(__DIR__ . '/../Fixtures/developer_corner_be_users_non_admin.csv');
+        $this->setUpBackendUser(4);
+
+        $controller = $this->get(A11yController::class);
+        $response = $controller->index($this->createRequest(1));
+        $body = (string)$response->getBody();
+
+        $this->assertStringNotContainsString('id="a11y-view-tab-developer"', $body);
+    }
 }
