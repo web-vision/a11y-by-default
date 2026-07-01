@@ -36,6 +36,11 @@ function mockTYPO3Lang(): void {
       'module.responsibility.developer': 'Developer must fix',
       'module.responsibility.unknown': 'Needs investigation',
     },
+    settings: {
+      FormEngine: {
+        moduleUrl: '/typo3/record/edit?token=abc123token',
+      },
+    },
   };
 }
 
@@ -149,6 +154,32 @@ describe('renderIssueCard', () => {
     });
     const html = renderIssueCard(issueWithCe, classifier);
     expect(html).toContain('edit[tt_content][5]');
+  });
+
+  it('builds the edit link from the pre-tokenized FormEngine module URL, not a raw guess', () => {
+    const classifier = new ViolationClassifier({
+      'image-alt': { responsibility: 'editor', hint: 'Add alt text.' },
+    });
+    const issueWithCe = makeIssue({
+      nodes: [{ html: '<img>', target: ['#c5 img'], contentElementUid: 5 }],
+    });
+    const html = renderIssueCard(issueWithCe, classifier);
+    expect(html).toContain('/typo3/record/edit?token=abc123token&amp;edit[tt_content][5]=edit');
+    expect(html).toContain('module=web_a11y_by_default');
+    expect(html).toContain('returnUrl=');
+  });
+
+  it('omits the content element link when no valid FormEngine module URL is available', () => {
+    const typo3 = (window as unknown as Record<string, unknown>)['TYPO3'] as { lang: Record<string, string> };
+    (window as unknown as Record<string, unknown>).TYPO3 = { lang: typo3.lang, settings: {} };
+    const classifier = new ViolationClassifier({
+      'image-alt': { responsibility: 'editor', hint: 'Add alt text.' },
+    });
+    const issueWithCe = makeIssue({
+      nodes: [{ html: '<img>', target: ['#c5 img'], contentElementUid: 5 }],
+    });
+    const html = renderIssueCard(issueWithCe, classifier);
+    expect(html).not.toContain('edit[tt_content]');
   });
 
   it('omits the content element link for developer responsibility', () => {
