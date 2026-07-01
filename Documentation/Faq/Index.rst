@@ -1,4 +1,4 @@
-.. include:: ../Includes.rst.txt
+.. include:: /Includes.rst.txt
 
 .. _faq:
 
@@ -33,3 +33,25 @@ Why do different engines show different results?
 ================================================
 
 Different engines (axe-core and HTML CodeSniffer) use different rule sets and algorithms to detect accessibility issues. It is common for them to highlight different aspects or have varying severity levels for the same issue. We recommend reviewing results from both engines for a comprehensive audit.
+
+.. _faq-no-developer-tab:
+
+Why don't I see a "For developers" tab?
+==========================================
+
+The developer-facing findings are only shown to backend users who have been
+explicitly granted **Developer Corner** access, either directly or through
+one of their backend groups. Administrators and system maintainers always
+have this access. See :ref:`configuration-developer-corner` for how to grant
+it to other users.
+
+.. _faq-certification:
+
+Can a green result be used as proof my site is accessible?
+==============================================================
+
+No. The module provides automated assistance only, and automated tools can
+only detect a subset of WCAG success criteria. A page without findings may
+still have accessibility problems that require human judgement to catch. If
+you need your site officially certified as accessible, that certification has
+to come from a qualified accessibility audit. See :ref:`introduction-disclaimer`.
