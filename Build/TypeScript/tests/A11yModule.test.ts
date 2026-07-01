@@ -626,6 +626,47 @@ describe('updateFilterCounts', () => {
     updateFilterCounts(container);
     expect((document.getElementById('a11y-filter-severity-minor') as HTMLInputElement).disabled).toBe(false);
   });
+
+  it('scopes severity counts to the active view tab instead of counting all findings', () => {
+    const tabs = document.createElement('div');
+    tabs.innerHTML = `
+      <button role="tab" data-view="editor" aria-selected="true"></button>
+      <button role="tab" data-view="developer" aria-selected="false"></button>`;
+    document.body.appendChild(tabs);
+
+    container.innerHTML = `
+      <div class="card" data-impact="critical" data-responsibility="editor"></div>
+      <div class="card" data-impact="minor" data-responsibility="developer"></div>
+      <div class="card" data-impact="minor" data-responsibility="developer"></div>`;
+
+    updateFilterCounts(container);
+
+    expect(document.querySelector('[data-severity-count="critical"]')?.textContent).toBe('1');
+    expect(document.querySelector('[data-severity-count="minor"]')?.textContent).toBe('0');
+
+    (tabs.querySelector('[data-view="editor"]') as HTMLElement).setAttribute('aria-selected', 'false');
+    (tabs.querySelector('[data-view="developer"]') as HTMLElement).setAttribute('aria-selected', 'true');
+    updateFilterCounts(container);
+
+    expect(document.querySelector('[data-severity-count="critical"]')?.textContent).toBe('0');
+    expect(document.querySelector('[data-severity-count="minor"]')?.textContent).toBe('2');
+  });
+
+  it('strips the color from a severity button once it is disabled, so it no longer looks clickable', () => {
+    const label = document.createElement('label');
+    label.setAttribute('for', 'a11y-filter-severity-minor');
+    label.className = 'btn btn-sm btn-secondary';
+    label.dataset['btnClass'] = 'btn-secondary';
+    document.body.appendChild(label);
+    (document.getElementById('a11y-filter-severity-minor') as HTMLInputElement).checked = true;
+
+    container.innerHTML = '';
+    updateFilterCounts(container);
+
+    expect((document.getElementById('a11y-filter-severity-minor') as HTMLInputElement).disabled).toBe(true);
+    expect(label.classList.contains('btn-secondary')).toBe(false);
+    expect(label.classList.contains('btn-default')).toBe(true);
+  });
 });
 
 // --- initialize auto-scan ---
@@ -795,5 +836,30 @@ describe('initialize', () => {
     expect(developerTab.getAttribute('aria-selected')).toBe('true');
     expect(editorTab.getAttribute('aria-selected')).toBe('false');
     expect(document.getElementById('a11y-results')?.getAttribute('aria-labelledby')).toBe('a11y-view-tab-developer');
+  });
+
+  it('recomputes the severity badge counts for the newly active tab, not the other tab', async () => {
+    setupMainDom();
+    mockIframeLoad();
+    MockAxeEngine.mockImplementation(
+      () =>
+        ({
+          run: jest.fn().mockResolvedValue({
+            ...EMPTY_RESULT,
+            violations: [makeIssue({ id: 'developer-rule', impact: 'critical' })],
+          }),
+        }) as unknown as AxeEngine,
+    );
+
+    initialize();
+    await flushPromises();
+
+    // The scanned issue defaults to the "developer" view (no editor classification rule configured),
+    // so the editor tab's critical badge should read 0 while it is active.
+    expect(document.querySelector('[data-severity-count="critical"]')?.textContent).toBe('0');
+
+    document.getElementById('a11y-view-tab-developer')!.click();
+
+    expect(document.querySelector('[data-severity-count="critical"]')?.textContent).toBe('1');
   });
 });
