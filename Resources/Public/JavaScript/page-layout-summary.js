@@ -136,6 +136,17 @@ function resolveContentMatch(ruleId, element, index) {
     return {};
 }
 
+/**
+ * axe-core preloads the CSSOM of every stylesheet on the page (fetching cross-origin
+ * ones via XHR) purely to feed the experimental "css-orientation-lock" rule. In the
+ * backend preview iframe this generates a flood of failed CSS requests for
+ * third-party/CDN stylesheets we have no CORS control over, so both the preload and
+ * the rule are disabled here.
+ */
+const AXE_RUN_OPTIONS = {
+    preload: { assets: ['media'] },
+    rules: { 'css-orientation-lock': { enabled: false } },
+};
 class AxeEngine {
     constructor(iframe, axeJsUrl, contentFactsIndex = EMPTY_CONTENT_FACTS_INDEX) {
         this.iframe = iframe;
@@ -171,7 +182,7 @@ class AxeEngine {
         if (iframeWindow?.axe === undefined) {
             throw new Error('axe-core not available in iframe');
         }
-        return iframeWindow.axe.run(iframeWindow.document);
+        return iframeWindow.axe.run(iframeWindow.document, AXE_RUN_OPTIONS);
     }
     normalizeResults(results) {
         return results.map((result) => ({

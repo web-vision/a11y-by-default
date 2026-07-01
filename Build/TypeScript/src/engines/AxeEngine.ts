@@ -25,11 +25,28 @@ interface AxeResults {
   url: string;
 }
 
+interface AxeRunOptions {
+  preload: { assets: string[] };
+  rules: Record<string, { enabled: boolean }>;
+}
+
 interface AxeWindow extends Window {
   axe?: {
-    run(context: Document): Promise<AxeResults>;
+    run(context: Document, options?: AxeRunOptions): Promise<AxeResults>;
   };
 }
+
+/**
+ * axe-core preloads the CSSOM of every stylesheet on the page (fetching cross-origin
+ * ones via XHR) purely to feed the experimental "css-orientation-lock" rule. In the
+ * backend preview iframe this generates a flood of failed CSS requests for
+ * third-party/CDN stylesheets we have no CORS control over, so both the preload and
+ * the rule are disabled here.
+ */
+const AXE_RUN_OPTIONS: AxeRunOptions = {
+  preload: { assets: ['media'] },
+  rules: { 'css-orientation-lock': { enabled: false } },
+};
 
 export class AxeEngine {
   constructor(
@@ -72,7 +89,7 @@ export class AxeEngine {
       throw new Error('axe-core not available in iframe');
     }
 
-    return iframeWindow.axe.run(iframeWindow.document);
+    return iframeWindow.axe.run(iframeWindow.document, AXE_RUN_OPTIONS);
   }
 
   private normalizeResults(results: AxeResult[]): AccessibilityIssue[] {
