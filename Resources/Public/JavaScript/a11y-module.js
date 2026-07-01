@@ -459,9 +459,7 @@ function renderResults(container, result, classifier) {
     const successCallout = result.violations.length === 0
         ? `<div class="callout callout-success mb-4"><div class="callout-body"><p>${getLabel('module.results.empty')}</p></div></div>`
         : '';
-    const incompleteInfoCallout = result.incomplete.length === 0
-        ? ''
-        : `<div class="callout callout-info mb-3"><div class="callout-body"><p>${getLabel('module.results.incomplete.info')}</p></div></div>`;
+    const incompleteInfoCallout = `<div class="callout callout-info mb-3"><div class="callout-body"><p>${getLabel('module.results.incomplete.info')}</p></div></div>`;
     container.innerHTML = `
         ${successCallout}
         ${renderIssueSection(result.violations, 'a11y-violations-heading', getLabel('module.results.violations'), 'text-bg-danger', 'a11y-violations-count', classifier)}
