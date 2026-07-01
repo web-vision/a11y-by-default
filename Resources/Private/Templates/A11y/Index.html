@@ -42,42 +42,46 @@
                     </button>
                 </div>
 
-                <div class="d-flex align-items-center gap-3 mb-3 flex-wrap"
+                <div class="d-flex align-items-center gap-2 mb-3 flex-wrap"
                      role="group"
                      aria-label="{f:translate(key: 'LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:module.filters.label')}">
                     <span class="fw-bold small text-nowrap">
                         <f:translate key="LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:module.filters.severityLabel" />
                     </span>
-                    <div class="form-check form-check-inline mb-0">
-                        <input class="form-check-input a11y-filter-severity" type="checkbox" id="a11y-filter-severity-critical" value="critical" checked="checked">
-                        <label class="form-check-label" for="a11y-filter-severity-critical">
-                            <f:translate key="LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:module.filters.severity.critical" />
-                        </label>
-                    </div>
-                    <div class="form-check form-check-inline mb-0">
-                        <input class="form-check-input a11y-filter-severity" type="checkbox" id="a11y-filter-severity-serious" value="serious" checked="checked">
-                        <label class="form-check-label" for="a11y-filter-severity-serious">
-                            <f:translate key="LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:module.filters.severity.serious" />
-                        </label>
-                    </div>
-                    <div class="form-check form-check-inline mb-0">
-                        <input class="form-check-input a11y-filter-severity" type="checkbox" id="a11y-filter-severity-moderate" value="moderate" checked="checked">
-                        <label class="form-check-label" for="a11y-filter-severity-moderate">
-                            <f:translate key="LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:module.filters.severity.moderate" />
-                        </label>
-                    </div>
-                    <div class="form-check form-check-inline mb-0">
-                        <input class="form-check-input a11y-filter-severity" type="checkbox" id="a11y-filter-severity-minor" value="minor" checked="checked">
-                        <label class="form-check-label" for="a11y-filter-severity-minor">
-                            <f:translate key="LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:module.filters.severity.minor" />
-                        </label>
-                    </div>
-                    <div class="form-check form-check-inline mb-0 ms-3">
-                        <input class="form-check-input" type="checkbox" id="a11y-filter-developer-tasks">
-                        <label class="form-check-label" for="a11y-filter-developer-tasks">
-                            <f:translate key="LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:module.filters.showDeveloperTasks" />
-                        </label>
-                    </div>
+
+                    <input class="btn-check a11y-filter-severity" type="checkbox" autocomplete="off"
+                           id="a11y-filter-severity-critical" value="critical" checked="checked">
+                    <label class="a11y-filter-toggle a11y-filter-toggle-critical" for="a11y-filter-severity-critical">
+                        <f:translate key="LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:module.filters.severity.critical" />
+                        <span class="a11y-filter-count" data-severity-count="critical">0</span>
+                    </label>
+
+                    <input class="btn-check a11y-filter-severity" type="checkbox" autocomplete="off"
+                           id="a11y-filter-severity-serious" value="serious" checked="checked">
+                    <label class="a11y-filter-toggle a11y-filter-toggle-serious" for="a11y-filter-severity-serious">
+                        <f:translate key="LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:module.filters.severity.serious" />
+                        <span class="a11y-filter-count" data-severity-count="serious">0</span>
+                    </label>
+
+                    <input class="btn-check a11y-filter-severity" type="checkbox" autocomplete="off"
+                           id="a11y-filter-severity-moderate" value="moderate" checked="checked">
+                    <label class="a11y-filter-toggle a11y-filter-toggle-moderate" for="a11y-filter-severity-moderate">
+                        <f:translate key="LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:module.filters.severity.moderate" />
+                        <span class="a11y-filter-count" data-severity-count="moderate">0</span>
+                    </label>
+
+                    <input class="btn-check a11y-filter-severity" type="checkbox" autocomplete="off"
+                           id="a11y-filter-severity-minor" value="minor" checked="checked">
+                    <label class="a11y-filter-toggle a11y-filter-toggle-minor" for="a11y-filter-severity-minor">
+                        <f:translate key="LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:module.filters.severity.minor" />
+                        <span class="a11y-filter-count" data-severity-count="minor">0</span>
+                    </label>
+
+                    <input class="btn-check" type="checkbox" autocomplete="off" id="a11y-filter-developer-tasks">
+                    <label class="a11y-filter-toggle a11y-filter-toggle-developer ms-2" for="a11y-filter-developer-tasks">
+                        <f:translate key="LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:module.filters.showDeveloperTasks" />
+                        <span class="a11y-filter-count" data-developer-count>0</span>
+                    </label>
                 </div>
 
                 <div id="a11y-results"
