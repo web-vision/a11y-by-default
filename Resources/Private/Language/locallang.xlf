@@ -41,6 +41,27 @@
             <trans-unit id="module.responsibility.unknown">
                 <source>Needs investigation</source>
             </trans-unit>
+            <trans-unit id="module.filters.label">
+                <source>Filters</source>
+            </trans-unit>
+            <trans-unit id="module.filters.severityLabel">
+                <source>Severity:</source>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.critical">
+                <source>Critical</source>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.serious">
+                <source>Serious</source>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.moderate">
+                <source>Moderate</source>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.minor">
+                <source>Minor</source>
+            </trans-unit>
+            <trans-unit id="module.filters.showDeveloperTasks">
+                <source>Show developer tasks</source>
+            </trans-unit>
             <trans-unit id="module.error.scanFailed">
                 <source>The accessibility scan could not be completed. Please try again.</source>
             </trans-unit>
