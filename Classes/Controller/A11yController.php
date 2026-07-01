@@ -10,10 +10,13 @@ use TYPO3\CMS\Backend\Attribute\AsController;
 use TYPO3\CMS\Backend\Controller\ContextualRecordEditController;
 use TYPO3\CMS\Backend\Routing\PreviewUriBuilder;
 use TYPO3\CMS\Backend\Routing\UriBuilder;
+use TYPO3\CMS\Backend\Template\ModuleTemplate;
 use TYPO3\CMS\Backend\Template\ModuleTemplateFactory;
+use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Core\Localization\LanguageService;
 use TYPO3\CMS\Core\Localization\LanguageServiceFactory;
 use TYPO3\CMS\Core\Page\PageRenderer;
+use TYPO3\CMS\Core\Type\Bitmask\Permission;
 use WebVision\A11yByDefault\Service\ContentFactsService;
 use WebVision\A11yByDefault\Service\IssueClassificationService;
 
@@ -36,12 +39,15 @@ final class A11yController
         $previewUri = '';
         $contentMetadata = [];
         $contentFacts = [];
+        $pageRecord = false;
 
         if ($pageUid > 0) {
             $builtUri = PreviewUriBuilder::create($pageUid)->buildUri();
             $previewUri = $builtUri !== null ? (string)$builtUri : '';
             $contentMetadata = $this->classificationService->getPageContentMetadata($pageUid);
             $contentFacts = $this->contentFactsService->getContentFacts($pageUid);
+            $permsClause = $GLOBALS['BE_USER']->getPagePermsClause(Permission::PAGE_SHOW);
+            $pageRecord = BackendUtility::readPageAccess($pageUid, $permsClause);
         }
 
         $languageService = $this->languageServiceFactory->createFromUserPreferences($GLOBALS['BE_USER']);
@@ -60,6 +66,7 @@ final class A11yController
         ]);
 
         $moduleTemplate = $this->moduleTemplateFactory->create($request);
+        $this->setModuleTitleAndMetaInformation($moduleTemplate, $languageService, $pageRecord);
         $moduleTemplate->assignMultiple([
             'pageUid' => $pageUid,
             'previewUri' => $previewUri,
@@ -68,6 +75,24 @@ final class A11yController
         ]);
 
         return $moduleTemplate->renderResponse('A11y/Index');
+    }
+
+    /**
+     * @param array<string, mixed>|false $pageRecord
+     */
+    private function setModuleTitleAndMetaInformation(
+        ModuleTemplate $moduleTemplate,
+        LanguageService $languageService,
+        array|false $pageRecord,
+    ): void {
+        $moduleTitle = $languageService->sL('LLL:EXT:a11y_by_default/Resources/Private/Language/locallang_mod.xlf:mlang_labels_tablabel');
+        if ($pageRecord === false) {
+            $moduleTemplate->setTitle($moduleTitle);
+            return;
+        }
+
+        $moduleTemplate->setTitle($moduleTitle, $pageRecord['title']);
+        $moduleTemplate->getDocHeaderComponent()->setMetaInformation($pageRecord);
     }
 
     /**
