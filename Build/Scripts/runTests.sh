@@ -211,7 +211,7 @@ if [[ -z "${CONTAINER_BIN}" ]]; then
 fi
 
 IMAGE_PHP="ghcr.io/typo3/core-testing-$(echo "php${PHP_VERSION}" | sed -e 's/\.//'):latest"
-IMAGE_DOCS="ghcr.io/typo3/guides-renderer:latest"
+IMAGE_DOCS="ghcr.io/typo3-documentation/render-guides:latest"
 IMAGE_NODEJS="ghcr.io/typo3/core-testing-nodejs24:1.1"
 IMAGE_MARIADB="docker.io/mariadb:${DBMS_VERSION}"
 IMAGE_MYSQL="docker.io/mysql:${DBMS_VERSION}"
@@ -357,8 +357,10 @@ case ${TEST_SUITE} in
         SUITE_EXIT_CODE=$?
         ;;
     renderDocs)
-        COMMAND=(guides --input=Documentation --output=var/documentation --format=html)
-        ${CONTAINER_BIN} run ${CONTAINER_COMMON_PARAMS} --name renderDocs-${SUFFIX} \
+        COMMAND=(--config=Documentation --output=var/documentation --no-progress)
+        ${CONTAINER_BIN} run ${CONTAINER_COMMON_PARAMS} \
+            -v ${ROOT_DIR}:/project -w /project \
+            --name renderDocs-${SUFFIX} \
             ${IMAGE_DOCS} "${COMMAND[@]}"
         SUITE_EXIT_CODE=$?
         ;;
