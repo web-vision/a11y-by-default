@@ -1,3 +1,96 @@
+import { EditorView, highlightSpecialChars } from '@codemirror/view';
+import { EditorState } from '@codemirror/state';
+import { html } from '@codemirror/lang-html';
+import { syntaxHighlighting, defaultHighlightStyle } from '@codemirror/language';
+
+const TAG_NAME = 'a11y-code-viewer';
+const STYLE_ID = 'a11y-code-viewer-style';
+// TYPO3's own <typo3-t3editor-codemirror> only exposes a `readonly` flag,
+// which still leaves the field focusable with a blinking caret and focus
+// ring — it reads as a disabled editor rather than a code display. Building
+// directly on the CodeMirror packages TYPO3's backend already loads via its
+// importmap (see EXT:backend Configuration/JavaScriptModules.php) lets us
+// combine EditorState.readOnly with EditorView.editable(false), which drops
+// the caret entirely instead of just rejecting edits.
+class A11yCodeViewer extends HTMLElement {
+    constructor() {
+        super(...arguments);
+        this.view = null;
+        this.observer = null;
+    }
+    connectedCallback() {
+        if (this.view !== null) {
+            return;
+        }
+        injectStyles();
+        if (typeof IntersectionObserver === 'undefined') {
+            this.mount();
+            return;
+        }
+        // Issue snippets sit inside collapsed accordion panels (zero height until
+        // expanded), so mount lazily on first visibility instead of paying for a
+        // CodeMirror instance per hidden issue. Matches the observer pattern
+        // TYPO3 core itself uses for lazy-loaded code editors.
+        this.observer = new IntersectionObserver((entries) => {
+            if (entries.some((entry) => entry.intersectionRatio > 0)) {
+                this.mount();
+            }
+        }, { root: document.body });
+        this.observer.observe(this);
+    }
+    disconnectedCallback() {
+        this.observer?.disconnect();
+        this.observer = null;
+        this.view?.destroy();
+        this.view = null;
+    }
+    mount() {
+        this.observer?.disconnect();
+        this.observer = null;
+        const source = this.textContent ?? '';
+        this.textContent = '';
+        this.view = new EditorView({
+            parent: this,
+            state: EditorState.create({
+                doc: source,
+                extensions: [
+                    EditorState.readOnly.of(true),
+                    EditorView.editable.of(false),
+                    EditorView.lineWrapping,
+                    highlightSpecialChars(),
+                    html(),
+                    syntaxHighlighting(defaultHighlightStyle, { fallback: true }),
+                ],
+            }),
+        });
+    }
+}
+function injectStyles() {
+    if (document.getElementById(STYLE_ID) !== null) {
+        return;
+    }
+    const style = document.createElement('style');
+    style.id = STYLE_ID;
+    style.textContent = `
+    ${TAG_NAME} {
+      display: block;
+      margin-bottom: .25rem;
+    }
+    ${TAG_NAME} .cm-editor {
+      border: var(--typo3-input-border-width, 1px) solid var(--typo3-input-border-color, #b3b3b3);
+      border-radius: var(--typo3-input-border-radius, .25rem);
+      font-size: .8125rem;
+    }
+    ${TAG_NAME} .cm-scroller {
+      max-height: 12rem;
+    }
+  `;
+    document.head.appendChild(style);
+}
+if (customElements.get(TAG_NAME) === undefined) {
+    customElements.define(TAG_NAME, A11yCodeViewer);
+}
+
 const EMPTY_CONTENT_FACTS_INDEX = { headings: [], links: [], images: [], tables: [] };
 function buildContentFactsIndex(facts) {
     const index = { headings: [], links: [], images: [], tables: [] };
@@ -353,15 +446,6 @@ function getLabel(key) {
 function escapeHtml(str) {
     return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
-// TYPO3's <typo3-t3editor-codemirror> element takes its language mode as a
-// JavaScriptModuleInstruction (see EXT:backend Configuration/Backend/T3editor/Modes.php
-// for the 'html' mode this mirrors), serialized as JSON into the `mode` attribute.
-const CODEMIRROR_HTML_MODE = JSON.stringify({
-    name: '@codemirror/lang-html',
-    exportName: 'html',
-    flags: 2,
-    items: [{ type: 'invoke', args: [] }],
-});
 // The same color family as the severity filter buttons (btn-danger/warning/
 // info/secondary), applied here via TYPO3's panel-* variants so the group
 // header background/text/caret pick up the matching theme-aware colors.
@@ -417,9 +501,7 @@ function renderIssueCard(issue, classifier, panelId) {
     const classification = classifier.classify(issue);
     const contentElementLink = classification.contentElementUid !== undefined ? buildContentElementEditLink(classification.contentElementUid) : '';
     const nodes = issue.nodes
-        .map((node) => `<typo3-t3editor-codemirror mode='${CODEMIRROR_HTML_MODE}' readonly class="mb-1">
-            <textarea readonly disabled class="form-control">${escapeHtml(node.html)}</textarea>
-        </typo3-t3editor-codemirror>`)
+        .map((node) => `<a11y-code-viewer class="mb-1">${escapeHtml(node.html)}</a11y-code-viewer>`)
         .join('');
     return `<div class="panel panel-default mb-1" data-impact="${escapeHtml(issue.impact)}" data-responsibility="${escapeHtml(classification.responsibility)}">
         <div class="panel-heading" role="tab">
