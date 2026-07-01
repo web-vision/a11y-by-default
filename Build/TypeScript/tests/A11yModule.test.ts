@@ -39,9 +39,10 @@ function mockTYPO3Lang(): void {
       'module.results.empty': 'No accessibility issues found.',
       'module.error.scanFailed': 'The scan could not be completed.',
       'module.error.noPreview': 'No preview URL available for this page.',
-      'module.responsibility.editor': 'Editor can fix',
-      'module.responsibility.developer': 'Developer must fix',
-      'module.responsibility.unknown': 'Needs investigation',
+      'module.filters.severity.critical': 'Critical',
+      'module.filters.severity.serious': 'Serious',
+      'module.filters.severity.moderate': 'Moderate',
+      'module.filters.severity.minor': 'Minor',
     },
     settings: {
       FormEngine: {
@@ -100,66 +101,45 @@ describe('renderIssueCard', () => {
     mockTYPO3Lang();
   });
 
-  it('renders the correct impact badge class for serious issues', () => {
-    const classifier = new ViolationClassifier({
-      'image-alt': { responsibility: 'editor', hint: 'Add alt text to images.' },
-    });
-    const html = renderIssueCard(makeIssue(), classifier);
-    expect(html).toContain('text-bg-warning');
-    expect(html).toContain('serious');
+  it('uses the task description as the collapsible header', () => {
+    const classifier = new ViolationClassifier({});
+    const html = renderIssueCard(makeIssue(), classifier, 'panel-1');
+    expect(html).toContain('panel-title">Images must have alternate text<');
   });
 
-  it('renders text-bg-danger badge for critical issues', () => {
-    const classifier = new ViolationClassifier({
-      'critical-rule': { responsibility: 'developer', hint: 'Fix this.' },
-    });
-    const html = renderIssueCard(makeIssue({ id: 'critical-rule', impact: 'critical' }), classifier);
-    expect(html).toContain('text-bg-danger');
-  });
-
-  it('renders text-bg-primary badge for editor responsibility', () => {
+  it('does not render editor/developer responsibility badges — that distinction lives in the view tabs now', () => {
     const classifier = new ViolationClassifier({
       'image-alt': { responsibility: 'editor', hint: 'Add alt text.' },
     });
-    const issue = makeIssue({
-      nodes: [{ html: '<img src="photo.jpg">', target: ['#main img'], contentElementUid: 5 }],
-    });
-    const html = renderIssueCard(issue, classifier);
-    expect(html).toContain('text-bg-primary');
-    expect(html).toContain('Editor can fix');
+    const html = renderIssueCard(makeIssue(), classifier, 'panel-1');
+    expect(html).not.toContain('text-bg-primary');
+    expect(html).not.toContain('text-bg-secondary');
   });
 
-  it('renders text-bg-secondary badge for developer responsibility', () => {
-    const classifier = new ViolationClassifier({
-      'image-alt': { responsibility: 'developer', hint: 'Fix in template.' },
-    });
-    const html = renderIssueCard(makeIssue(), classifier);
-    expect(html).toContain('text-bg-secondary');
-    expect(html).toContain('Developer must fix');
-  });
-
-  it('renders text-bg-secondary badge for unknown responsibility', () => {
+  it('wires the collapse target to the given panel id', () => {
     const classifier = new ViolationClassifier({});
-    const html = renderIssueCard(makeIssue({ id: 'unlisted-rule' }), classifier);
-    expect(html).toContain('text-bg-secondary');
-    expect(html).toContain('Needs investigation');
+    const html = renderIssueCard(makeIssue(), classifier, 'a11y-violations-group-critical-issue-0');
+    expect(html).toContain('data-bs-target="#a11y-violations-group-critical-issue-0"');
+    expect(html).toContain('id="a11y-violations-group-critical-issue-0"');
+    expect(html).toContain('aria-controls="a11y-violations-group-critical-issue-0"');
   });
 
-  it('shows the help text in the card header', () => {
+  it('starts collapsed', () => {
     const classifier = new ViolationClassifier({});
-    const html = renderIssueCard(makeIssue(), classifier);
-    expect(html).toContain('Images must have alternate text');
+    const html = renderIssueCard(makeIssue(), classifier, 'panel-1');
+    expect(html).toContain('panel-button collapsed');
+    expect(html).toContain('aria-expanded="false"');
   });
 
-  it('shows the issue description in the card body', () => {
+  it('shows the issue description in the panel body', () => {
     const classifier = new ViolationClassifier({});
-    const html = renderIssueCard(makeIssue(), classifier);
+    const html = renderIssueCard(makeIssue(), classifier, 'panel-1');
     expect(html).toContain('Ensures img elements have alternate text');
   });
 
   it('renders failing HTML nodes in code blocks', () => {
     const classifier = new ViolationClassifier({});
-    const html = renderIssueCard(makeIssue(), classifier);
+    const html = renderIssueCard(makeIssue(), classifier, 'panel-1');
     expect(html).toContain('<code>');
     expect(html).toContain('&lt;img src=&quot;photo.jpg&quot;&gt;');
   });
@@ -171,7 +151,7 @@ describe('renderIssueCard', () => {
     const issueWithCe = makeIssue({
       nodes: [{ html: '<img>', target: ['#c5 img'], contentElementUid: 5 }],
     });
-    const html = renderIssueCard(issueWithCe, classifier);
+    const html = renderIssueCard(issueWithCe, classifier, 'panel-1');
     expect(html).toContain('edit[tt_content][5]');
   });
 
@@ -182,7 +162,7 @@ describe('renderIssueCard', () => {
     const issueWithCe = makeIssue({
       nodes: [{ html: '<img>', target: ['#c5 img'], contentElementUid: 5 }],
     });
-    const html = renderIssueCard(issueWithCe, classifier);
+    const html = renderIssueCard(issueWithCe, classifier, 'panel-1');
     expect(html).toContain('/typo3/record/edit?token=abc123token&amp;edit[tt_content][5]=edit');
     expect(html).toContain('module=web_a11y_by_default');
     expect(html).toContain('returnUrl=');
@@ -197,7 +177,7 @@ describe('renderIssueCard', () => {
     const issueWithCe = makeIssue({
       nodes: [{ html: '<img>', target: ['#c5 img'], contentElementUid: 5 }],
     });
-    const html = renderIssueCard(issueWithCe, classifier);
+    const html = renderIssueCard(issueWithCe, classifier, 'panel-1');
     expect(html).not.toContain('edit[tt_content]');
   });
 
@@ -219,7 +199,7 @@ describe('renderIssueCard', () => {
     const issueWithCe = makeIssue({
       nodes: [{ html: '<img>', target: ['#c5 img'], contentElementUid: 5 }],
     });
-    const html = renderIssueCard(issueWithCe, classifier);
+    const html = renderIssueCard(issueWithCe, classifier, 'panel-1');
     expect(html).toContain('<typo3-backend-contextual-record-edit-trigger');
     expect(html).toContain('url="/typo3/record/edit/contextual?token=sidepaneltoken&amp;edit[tt_content][5]=edit');
     expect(html).toContain('edit-url="/typo3/record/edit?token=abc123token&amp;edit[tt_content][5]=edit');
@@ -233,7 +213,7 @@ describe('renderIssueCard', () => {
     const issueWithCe = makeIssue({
       nodes: [{ html: '<img>', target: ['#c5 img'], contentElementUid: 5 }],
     });
-    const html = renderIssueCard(issueWithCe, classifier);
+    const html = renderIssueCard(issueWithCe, classifier, 'panel-1');
     expect(html).not.toContain('<typo3-backend-contextual-record-edit-trigger');
     expect(html).toContain('<a href="/typo3/record/edit?token=abc123token&amp;edit[tt_content][5]=edit');
   });
@@ -242,7 +222,7 @@ describe('renderIssueCard', () => {
     const classifier = new ViolationClassifier({
       'image-alt': { responsibility: 'developer', hint: 'Fix in template.' },
     });
-    const html = renderIssueCard(makeIssue(), classifier);
+    const html = renderIssueCard(makeIssue(), classifier, 'panel-1');
     expect(html).not.toContain('edit[tt_content]');
   });
 
@@ -254,7 +234,7 @@ describe('renderIssueCard', () => {
       impact: 'critical',
       nodes: [{ html: '<img src="photo.jpg">', target: ['#main img'], contentElementUid: 5 }],
     });
-    const html = renderIssueCard(issue, classifier);
+    const html = renderIssueCard(issue, classifier, 'panel-1');
     expect(html).toContain('data-impact="critical"');
     expect(html).toContain('data-responsibility="editor"');
   });
@@ -278,7 +258,7 @@ describe('renderIssueSection', () => {
       classifier,
     );
     expect(html).toContain('No accessibility issues found.');
-    expect(html).not.toContain('<div class="card');
+    expect(html).not.toContain('data-severity-group');
   });
 
   it('shows the heading with a badge containing the issue count', () => {
@@ -309,7 +289,7 @@ describe('renderIssueSection', () => {
     expect(html).toContain('id="violations-count"');
   });
 
-  it('renders a card for each issue', () => {
+  it('renders a task panel for each issue', () => {
     const classifier = new ViolationClassifier({});
     const html = renderIssueSection(
       [makeIssue(), makeIssue({ id: 'color-contrast' })],
@@ -319,11 +299,30 @@ describe('renderIssueSection', () => {
       'violations-count',
       classifier,
     );
-    const cardCount = (html.match(/class="card /g) ?? []).length;
-    expect(cardCount).toBe(2);
+    const taskCount = (html.match(/data-impact="/g) ?? []).length;
+    expect(taskCount).toBe(2);
   });
 
-  it('sorts issues by severity, highest impact first', () => {
+  it('groups issues of the same severity under one collapsible group', () => {
+    const classifier = new ViolationClassifier({});
+    const issues = [
+      makeIssue({ id: 'image-alt', impact: 'critical' }),
+      makeIssue({ id: 'color-contrast', impact: 'critical' }),
+    ];
+    const html = renderIssueSection(
+      issues,
+      'violations-heading',
+      'Violations',
+      'text-bg-danger',
+      'violations-count',
+      classifier,
+    );
+    const groupCount = (html.match(/data-severity-group="critical"/g) ?? []).length;
+    expect(groupCount).toBe(1);
+    expect(html).toContain('data-severity-group-count>2<');
+  });
+
+  it('orders severity groups from critical down to minor, regardless of issue order', () => {
     const classifier = new ViolationClassifier({});
     const issues = [
       makeIssue({ id: 'minor-rule', impact: 'minor' }),
@@ -338,11 +337,24 @@ describe('renderIssueSection', () => {
       'violations-count',
       classifier,
     );
-    const criticalIndex = html.indexOf('data-impact="critical"');
-    const moderateIndex = html.indexOf('data-impact="moderate"');
-    const minorIndex = html.indexOf('data-impact="minor"');
+    const criticalIndex = html.indexOf('data-severity-group="critical"');
+    const moderateIndex = html.indexOf('data-severity-group="moderate"');
+    const minorIndex = html.indexOf('data-severity-group="minor"');
     expect(criticalIndex).toBeLessThan(moderateIndex);
     expect(moderateIndex).toBeLessThan(minorIndex);
+  });
+
+  it('omits a severity group entirely when no issue has that severity', () => {
+    const classifier = new ViolationClassifier({});
+    const html = renderIssueSection(
+      [makeIssue({ impact: 'critical' })],
+      'violations-heading',
+      'Violations',
+      'text-bg-danger',
+      'violations-count',
+      classifier,
+    );
+    expect(html).not.toContain('data-severity-group="minor"');
   });
 });
 
@@ -410,56 +422,84 @@ describe('applyFilters', () => {
     document.body.appendChild(filters);
   }
 
-  it('hides cards whose severity checkbox is unchecked', () => {
+  it('hides the whole severity group when its severity checkbox is unchecked', () => {
     appendFilterCheckboxes({ minor: false });
     container.innerHTML = `
-      <div class="card" data-impact="critical" data-responsibility="editor"></div>
-      <div class="card" data-impact="minor" data-responsibility="editor"></div>`;
+      <div data-severity-group="critical"><div data-impact="critical" data-responsibility="editor"></div></div>
+      <div data-severity-group="minor"><div data-impact="minor" data-responsibility="editor"></div></div>`;
 
     applyFilters(container);
 
-    const cards = container.querySelectorAll('.card');
-    expect(cards[0]?.classList.contains('d-none')).toBe(false);
-    expect(cards[1]?.classList.contains('d-none')).toBe(true);
+    const groups = container.querySelectorAll('[data-severity-group]');
+    expect(groups[0]?.classList.contains('d-none')).toBe(false);
+    expect(groups[1]?.classList.contains('d-none')).toBe(true);
   });
 
-  it('hides developer-responsibility cards on the editor tab so editors only see editor tasks', () => {
+  it('hides developer-responsibility tasks on the editor tab so editors only see editor tasks', () => {
     appendFilterCheckboxes();
     container.innerHTML = `
-      <div class="card" data-impact="critical" data-responsibility="editor"></div>
-      <div class="card" data-impact="critical" data-responsibility="developer"></div>`;
+      <div data-severity-group="critical">
+        <div data-impact="critical" data-responsibility="editor"></div>
+        <div data-impact="critical" data-responsibility="developer"></div>
+      </div>`;
 
     applyFilters(container);
 
-    const cards = container.querySelectorAll('.card');
-    expect(cards[0]?.classList.contains('d-none')).toBe(false);
-    expect(cards[1]?.classList.contains('d-none')).toBe(true);
+    const tasks = container.querySelectorAll('[data-impact]');
+    expect(tasks[0]?.classList.contains('d-none')).toBe(false);
+    expect(tasks[1]?.classList.contains('d-none')).toBe(true);
   });
 
-  it('shows only developer-responsibility cards once the developer tab is active', () => {
+  it('shows only developer-responsibility tasks once the developer tab is active', () => {
     appendFilterCheckboxes({ developer: true });
     container.innerHTML = `
-      <div class="card" data-impact="critical" data-responsibility="editor"></div>
-      <div class="card" data-impact="critical" data-responsibility="developer"></div>`;
+      <div data-severity-group="critical">
+        <div data-impact="critical" data-responsibility="editor"></div>
+        <div data-impact="critical" data-responsibility="developer"></div>
+      </div>`;
 
     applyFilters(container);
 
-    const cards = container.querySelectorAll('.card');
-    expect(cards[0]?.classList.contains('d-none')).toBe(true);
-    expect(cards[1]?.classList.contains('d-none')).toBe(false);
+    const tasks = container.querySelectorAll('[data-impact]');
+    expect(tasks[0]?.classList.contains('d-none')).toBe(true);
+    expect(tasks[1]?.classList.contains('d-none')).toBe(false);
   });
 
-  it('updates the violations and needs-review badge counts to reflect only visible cards', () => {
+  it('hides a severity group entirely once every task inside it is filtered out by the active view', () => {
+    appendFilterCheckboxes();
+    container.innerHTML = `
+      <div data-severity-group="critical"><div data-impact="critical" data-responsibility="developer"></div></div>`;
+
+    applyFilters(container);
+
+    expect(container.querySelector('[data-severity-group]')?.classList.contains('d-none')).toBe(true);
+  });
+
+  it("updates each severity group's own count badge to the number of currently visible tasks", () => {
+    appendFilterCheckboxes();
+    container.innerHTML = `
+      <div data-severity-group="critical">
+        <span data-severity-group-count>2</span>
+        <div data-impact="critical" data-responsibility="editor"></div>
+        <div data-impact="critical" data-responsibility="developer"></div>
+      </div>`;
+
+    applyFilters(container);
+
+    expect(container.querySelector('[data-severity-group-count]')?.textContent).toBe('1');
+  });
+
+  it('updates the violations and needs-review badge counts to reflect only visible tasks', () => {
     appendFilterCheckboxes({ minor: false });
     container.innerHTML = `
       <section aria-labelledby="a11y-violations-heading">
         <h2><span id="a11y-violations-count">2</span></h2>
-        <div class="card" data-impact="critical" data-responsibility="editor"></div>
-        <div class="card" data-impact="minor" data-responsibility="editor"></div>
+        <div data-severity-group="critical"><div data-impact="critical" data-responsibility="editor"></div></div>
+        <div data-severity-group="minor"><div data-impact="minor" data-responsibility="editor"></div></div>
       </section>
       <section aria-labelledby="a11y-incomplete-heading">
         <h2><span id="a11y-incomplete-count">1</span></h2>
-        <div class="card" data-impact="critical" data-responsibility="editor"></div>
+        <div data-severity-group="critical"><div data-impact="critical" data-responsibility="editor"></div></div>
       </section>`;
 
     applyFilters(container);
@@ -665,7 +705,7 @@ describe('initialize', () => {
 
     initialize();
     await flushPromises();
-    expect(document.getElementById('a11y-results')?.querySelector('.card')).not.toBeNull();
+    expect(document.getElementById('a11y-results')?.querySelector('[data-impact]')).not.toBeNull();
   });
 
   it('gives the severity toggle its colored button class to match its initial checked state', () => {

@@ -32,15 +32,6 @@
             <trans-unit id="module.results.empty">
                 <source>No accessibility issues found.</source>
             </trans-unit>
-            <trans-unit id="module.responsibility.editor">
-                <source>Editor can fix</source>
-            </trans-unit>
-            <trans-unit id="module.responsibility.developer">
-                <source>Developer must fix</source>
-            </trans-unit>
-            <trans-unit id="module.responsibility.unknown">
-                <source>Needs investigation</source>
-            </trans-unit>
             <trans-unit id="module.filters.label">
                 <source>Filters</source>
             </trans-unit>
