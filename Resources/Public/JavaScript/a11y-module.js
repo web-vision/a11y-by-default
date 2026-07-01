@@ -442,7 +442,7 @@ function renderSeverityGroup(level, issues, groupId, classifier) {
         </div>
     </div>`;
 }
-function renderIssueSection(issues, headingId, headingLabel, badgeClass, badgeId, classifier) {
+function renderIssueSection(issues, headingId, headingLabel, badgeClass, badgeId, classifier, headingInfoHtml = '') {
     const sectionId = headingId.replace(/-heading$/, '');
     const groups = issues.length === 0
         ? `<p class="text-body-secondary">${getLabel('module.results.empty')}</p>`
@@ -452,6 +452,7 @@ function renderIssueSection(issues, headingId, headingLabel, badgeClass, badgeId
             ${headingLabel}
             <span class="badge ${badgeClass} ms-1" id="${badgeId}">${issues.length}</span>
         </h2>
+        ${headingInfoHtml}
         ${groups}
     </section>`;
 }
@@ -463,8 +464,8 @@ function renderResults(container, result, classifier) {
     container.innerHTML = `
         ${successCallout}
         ${renderIssueSection(result.violations, 'a11y-violations-heading', getLabel('module.results.violations'), 'text-bg-danger', 'a11y-violations-count', classifier)}
-        ${incompleteInfoCallout}
-        ${renderIssueSection(result.incomplete, 'a11y-incomplete-heading', getLabel('module.results.incomplete'), 'text-bg-warning', 'a11y-incomplete-count', classifier)}`;
+        <hr class="my-4">
+        ${renderIssueSection(result.incomplete, 'a11y-incomplete-heading', getLabel('module.results.incomplete'), 'text-bg-warning', 'a11y-incomplete-count', classifier, incompleteInfoCallout)}`;
     updateFilterCounts(container);
     applyFilters(container);
 }
