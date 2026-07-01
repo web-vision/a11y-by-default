@@ -610,11 +610,15 @@ Options:
         Specifies the test suite to run
             - buildJs: build javascript assets
             - cgl: check and fix all php files
+            - checkBom: check UTF-8 files do not contain BOM
+            - checkExceptionCodes: check for duplicate exception codes
+            - checkIntegrityXliff: check integrity of .xlf files
             - clean: clean up build, cache and testing related files
             - cleanCache: clean up cache related files
             - composerInstall: "composer install", use after initial clone
             - functional: functional tests
             - lintJs: javascript/typescript linting
+            - lintPhp: PHP linting
             - npmInstall: "npm ci", use after initial clone
             - phpstan: phpstan analyze
             - renderDocs: render documentation using the PHP-based renderer
@@ -938,6 +942,18 @@ case ${TEST_SUITE} in
         ${CONTAINER_BIN} run ${CONTAINER_COMMON_PARAMS} --name composer-install-${SUFFIX} -e COMPOSER_CACHE_DIR=.Build/.cache/composer -e COMPOSER_ROOT_VERSION=${COMPOSER_ROOT_VERSION} ${IMAGE_PHP} "${COMMAND[@]}"
         SUITE_EXIT_CODE=$?
         ;;
+    checkBom)
+        ${CONTAINER_BIN} run ${CONTAINER_COMMON_PARAMS} --name check-utf8bom-${SUFFIX} ${IMAGE_PHP} Build/Scripts/checkUtf8Bom.sh
+        SUITE_EXIT_CODE=$?
+        ;;
+    checkExceptionCodes)
+        ${CONTAINER_BIN} run ${CONTAINER_COMMON_PARAMS} --name check-exception-codes-${SUFFIX} ${IMAGE_PHP} Build/Scripts/duplicateExceptionCodeCheck.sh
+        SUITE_EXIT_CODE=$?
+        ;;
+    checkIntegrityXliff)
+        ${CONTAINER_BIN} run ${CONTAINER_COMMON_PARAMS} --name check-integrity-xliff-${SUFFIX} ${IMAGE_PHP} php Build/Scripts/checkIntegrityXliff.php "$@"
+        SUITE_EXIT_CODE=$?
+        ;;
     functional)
         PHPUNIT_CONFIG_FILE="Build/phpunit/FunctionalTests.xml"
         COMMAND=(.Build/bin/phpunit -c ${PHPUNIT_CONFIG_FILE} --exclude-group not-core-${CORE_VERSION} "$@")
@@ -978,6 +994,11 @@ case ${TEST_SUITE} in
             COMMAND="npm run lint:js:fix"
         fi
         ${CONTAINER_BIN} run ${CONTAINER_COMMON_PARAMS} --name lintJs-${SUFFIX} -e npm_config_cache=.Build/.cache/npm ${IMAGE_NODEJS} /bin/sh -c "${COMMAND}"
+        SUITE_EXIT_CODE=$?
+        ;;
+    lintPhp)
+        COMMAND="php -v | grep '^PHP'; find . -name \\*.php -not -path \"./.Build/*\" -not -path \"./node_modules/*\" -not -path \"./var/*\" -print0 | xargs -0 -n1 -P\"$(nproc 2>/dev/null || echo 4)\" php -dxdebug.mode=off -l >/dev/null"
+        ${CONTAINER_BIN} run ${CONTAINER_COMMON_PARAMS} --name lint-php-${SUFFIX} ${IMAGE_PHP} /bin/sh -c "${COMMAND}"
         SUITE_EXIT_CODE=$?
         ;;
     npm)
