@@ -67,14 +67,35 @@ function responsibilityBadgeClass(responsibility: string): string {
   return responsibility === 'editor' ? 'badge text-bg-primary' : 'badge text-bg-secondary';
 }
 
+// The module runs inside the backend's content iframe. Only the outer/top backend
+// document carries a valid, signed route token for record/edit (set by TYPO3's
+// BackendController as TYPO3.settings.FormEngine.moduleUrl) — the same base URL
+// TYPO3 core itself reuses in multi-record-selection-edit-action.js. Minting a
+// token client-side is not possible, so this pre-tokenized URL must be extended.
+function getRecordEditModuleUrl(): string | undefined {
+  const topWindow = (window.top ?? window) as unknown as Record<string, unknown>;
+  const typo3 = topWindow['TYPO3'] as { settings?: { FormEngine?: { moduleUrl?: string } } } | undefined;
+  return typo3?.settings?.FormEngine?.moduleUrl;
+}
+
+function buildContentElementEditLink(contentElementUid: number): string {
+  const moduleUrl = getRecordEditModuleUrl();
+  if (moduleUrl === undefined || moduleUrl === '') {
+    return '';
+  }
+
+  const returnUrl = encodeURIComponent(window.location.href);
+  const href = `${moduleUrl}&edit[tt_content][${contentElementUid}]=edit&module=web_a11y_by_default&returnUrl=${returnUrl}`;
+
+  return `<a href="${escapeHtml(href)}"
+               class="btn btn-sm btn-default mb-2 d-inline-block">Edit content element #${contentElementUid}</a>`;
+}
+
 export function renderIssueCard(issue: AccessibilityIssue, classifier: ViolationClassifier): string {
   const classification: Classification = classifier.classify(issue);
   const responsibilityLabel = getLabel(`module.responsibility.${classification.responsibility}`);
   const contentElementLink =
-    classification.contentElementUid !== undefined
-      ? `<a href="/typo3/record/edit?edit[tt_content][${classification.contentElementUid}]=edit&returnUrl=."
-                   class="btn btn-sm btn-default mb-2 d-inline-block">Edit content element #${classification.contentElementUid}</a>`
-      : '';
+    classification.contentElementUid !== undefined ? buildContentElementEditLink(classification.contentElementUid) : '';
 
   const nodes = issue.nodes.map((node) => `<pre class="mb-1"><code>${escapeHtml(node.html)}</code></pre>`).join('');
 
