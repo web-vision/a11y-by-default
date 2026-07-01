@@ -78,17 +78,35 @@ function getRecordEditModuleUrl(): string | undefined {
   return typo3?.settings?.FormEngine?.moduleUrl;
 }
 
+// The contextual (side-panel) edit route is only available from TYPO3 v14 onward.
+// A11yController only emits this setting when the route exists on the running core.
+function getContextualEditModuleUrl(): string | undefined {
+  const typo3 = (window as unknown as Record<string, unknown>).TYPO3 as
+    { settings?: { a11yByDefault?: { contextualEditModuleUrl?: string } } } | undefined;
+  return typo3?.settings?.a11yByDefault?.contextualEditModuleUrl;
+}
+
 function buildContentElementEditLink(contentElementUid: number): string {
   const moduleUrl = getRecordEditModuleUrl();
   if (moduleUrl === undefined || moduleUrl === '') {
     return '';
   }
 
+  const label = `Edit content element #${contentElementUid}`;
+  const linkClasses = 'btn btn-sm btn-default mb-2 d-inline-block';
   const returnUrl = encodeURIComponent(window.location.href);
-  const href = `${moduleUrl}&edit[tt_content][${contentElementUid}]=edit&module=web_a11y_by_default&returnUrl=${returnUrl}`;
+  const editHref = `${moduleUrl}&edit[tt_content][${contentElementUid}]=edit&module=web_a11y_by_default&returnUrl=${returnUrl}`;
 
-  return `<a href="${escapeHtml(href)}"
-               class="btn btn-sm btn-default mb-2 d-inline-block">Edit content element #${contentElementUid}</a>`;
+  const contextualModuleUrl = getContextualEditModuleUrl();
+  if (contextualModuleUrl !== undefined && contextualModuleUrl !== '') {
+    const contextualHref = `${contextualModuleUrl}&edit[tt_content][${contentElementUid}]=edit&module=web_a11y_by_default&returnUrl=${returnUrl}`;
+
+    return `<typo3-backend-contextual-record-edit-trigger url="${escapeHtml(contextualHref)}" edit-url="${escapeHtml(editHref)}"
+               class="${linkClasses}">${label}</typo3-backend-contextual-record-edit-trigger>`;
+  }
+
+  return `<a href="${escapeHtml(editHref)}"
+               class="${linkClasses}">${label}</a>`;
 }
 
 export function renderIssueCard(issue: AccessibilityIssue, classifier: ViolationClassifier): string {
