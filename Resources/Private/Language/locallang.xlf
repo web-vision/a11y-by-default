@@ -26,6 +26,9 @@
             <trans-unit id="module.results.incomplete">
                 <source>Needs review</source>
             </trans-unit>
+            <trans-unit id="module.results.incomplete.info">
+                <source>Automated scanning could not determine whether these items pass or fail. Each one needs to be checked manually.</source>
+            </trans-unit>
             <trans-unit id="module.results.passes">
                 <source>Passes</source>
             </trans-unit>
