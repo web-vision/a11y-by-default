@@ -414,7 +414,7 @@ function renderIssueCard(issue, classifier) {
         </div>
     </div>`;
 }
-function renderIssueSection(issues, headingId, headingLabel, badgeClass, classifier) {
+function renderIssueSection(issues, headingId, headingLabel, badgeClass, badgeId, classifier) {
     const cards = issues.length === 0
         ? `<p class="text-body-secondary">${getLabel('module.results.empty')}</p>`
         : sortBySeverityDescending(issues)
@@ -423,7 +423,7 @@ function renderIssueSection(issues, headingId, headingLabel, badgeClass, classif
     return `<section class="mb-4" aria-labelledby="${headingId}">
         <h2 id="${headingId}" class="h4 mb-3">
             ${headingLabel}
-            <span class="badge ${badgeClass} ms-1">${issues.length}</span>
+            <span class="badge ${badgeClass} ms-1" id="${badgeId}">${issues.length}</span>
         </h2>
         ${cards}
     </section>`;
@@ -434,33 +434,37 @@ function renderResults(container, result, classifier) {
         : '';
     container.innerHTML = `
         ${successCallout}
-        ${renderIssueSection(result.violations, 'a11y-violations-heading', getLabel('module.results.violations'), 'text-bg-danger', classifier)}
-        ${renderIssueSection(result.incomplete, 'a11y-incomplete-heading', getLabel('module.results.incomplete'), 'text-bg-warning', classifier)}`;
+        ${renderIssueSection(result.violations, 'a11y-violations-heading', getLabel('module.results.violations'), 'text-bg-danger', 'a11y-violations-count', classifier)}
+        ${renderIssueSection(result.incomplete, 'a11y-incomplete-heading', getLabel('module.results.incomplete'), 'text-bg-warning', 'a11y-incomplete-count', classifier)}`;
     updateFilterCounts(container);
     applyFilters(container);
 }
 function updateFilterCounts(container) {
     const severityCounts = { critical: 0, serious: 0, moderate: 0, minor: 0 };
-    let developerTaskCount = 0;
+    const viewCounts = { editor: 0, developer: 0 };
     container.querySelectorAll('[data-impact]').forEach((card) => {
         const impact = card.dataset['impact'] ?? '';
         if (impact in severityCounts) {
             severityCounts[impact] += 1;
         }
-        if (card.dataset['responsibility'] !== 'editor') {
-            developerTaskCount += 1;
-        }
+        viewCounts[card.dataset['responsibility'] === 'editor' ? 'editor' : 'developer'] += 1;
     });
     Object.entries(severityCounts).forEach(([impact, count]) => {
         const countEl = document.querySelector(`[data-severity-count="${impact}"]`);
         if (countEl !== null) {
             countEl.textContent = String(count);
         }
+        const checkbox = document.getElementById(`a11y-filter-severity-${impact}`);
+        if (checkbox !== null) {
+            checkbox.disabled = count === 0;
+        }
     });
-    const developerCountEl = document.querySelector('[data-developer-count]');
-    if (developerCountEl !== null) {
-        developerCountEl.textContent = String(developerTaskCount);
-    }
+    Object.keys(viewCounts).forEach((view) => {
+        const countEl = document.querySelector(`[data-view-count="${view}"]`);
+        if (countEl !== null) {
+            countEl.textContent = String(viewCounts[view]);
+        }
+    });
 }
 function getActiveSeverityFilters() {
     const checkboxes = document.querySelectorAll('.a11y-filter-severity');
@@ -468,22 +472,37 @@ function getActiveSeverityFilters() {
         .filter((checkbox) => checkbox.checked)
         .map((checkbox) => checkbox.value));
 }
-function isDeveloperTasksFilterEnabled() {
-    return document.getElementById('a11y-filter-developer-tasks')?.checked ?? false;
+function getActiveResponsibilityView() {
+    const activeTab = document.querySelector('.a11y-view-tab[aria-selected="true"]');
+    return activeTab?.dataset['view'] === 'developer' ? 'developer' : 'editor';
 }
 // TYPO3's bundled backend CSS does not style the Bootstrap `.btn-check:checked+.btn`
 // state, so the toggle's pressed/unpressed look is driven explicitly here instead.
 function syncToggleActiveState(input) {
     document.querySelector(`label[for="${input.id}"]`)?.classList.toggle('active', input.checked);
 }
+function updateResultCounts(container) {
+    const countVisible = (headingId) => container.querySelectorAll(`[aria-labelledby="${headingId}"] [data-impact]:not(.d-none)`).length;
+    const violationsBadge = document.getElementById('a11y-violations-count');
+    if (violationsBadge !== null) {
+        violationsBadge.textContent = String(countVisible('a11y-violations-heading'));
+    }
+    const incompleteBadge = document.getElementById('a11y-incomplete-count');
+    if (incompleteBadge !== null) {
+        incompleteBadge.textContent = String(countVisible('a11y-incomplete-heading'));
+    }
+}
 function applyFilters(container) {
     const activeSeverities = getActiveSeverityFilters();
-    const showDeveloperTasks = isDeveloperTasksFilterEnabled();
+    const activeView = getActiveResponsibilityView();
     container.querySelectorAll('[data-impact]').forEach((card) => {
         const matchesSeverity = activeSeverities.has(card.dataset['impact'] ?? '');
-        const matchesResponsibility = showDeveloperTasks || card.dataset['responsibility'] === 'editor';
-        card.classList.toggle('d-none', !(matchesSeverity && matchesResponsibility));
+        const matchesView = activeView === 'developer'
+            ? card.dataset['responsibility'] !== 'editor'
+            : card.dataset['responsibility'] === 'editor';
+        card.classList.toggle('d-none', !(matchesSeverity && matchesView));
     });
+    updateResultCounts(container);
 }
 async function runScan(settings, engine, resultsContainer) {
     const iframe = document.createElement('iframe');
@@ -546,13 +565,49 @@ function initialize() {
             scanButton.removeAttribute('disabled');
         }
     };
-    document
-        .querySelectorAll('.a11y-filter-severity, #a11y-filter-developer-tasks')
-        .forEach((filterInput) => {
+    document.querySelectorAll('.a11y-filter-severity').forEach((filterInput) => {
         syncToggleActiveState(filterInput);
         filterInput.addEventListener('change', () => {
             syncToggleActiveState(filterInput);
             applyFilters(resultsContainer);
+        });
+    });
+    const viewTabs = Array.from(document.querySelectorAll('.a11y-view-tab'));
+    const activateViewTab = (tab) => {
+        viewTabs.forEach((otherTab) => {
+            const isActive = otherTab === tab;
+            otherTab.setAttribute('aria-selected', String(isActive));
+            otherTab.setAttribute('tabindex', isActive ? '0' : '-1');
+            otherTab.classList.toggle('active', isActive);
+        });
+        resultsContainer.setAttribute('aria-labelledby', tab.id);
+        applyFilters(resultsContainer);
+    };
+    viewTabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => activateViewTab(tab));
+        tab.addEventListener('keydown', (event) => {
+            const key = event.key;
+            let targetIndex = null;
+            if (key === 'ArrowRight' || key === 'ArrowDown') {
+                targetIndex = (index + 1) % viewTabs.length;
+            }
+            else if (key === 'ArrowLeft' || key === 'ArrowUp') {
+                targetIndex = (index - 1 + viewTabs.length) % viewTabs.length;
+            }
+            else if (key === 'Home') {
+                targetIndex = 0;
+            }
+            else if (key === 'End') {
+                targetIndex = viewTabs.length - 1;
+            }
+            if (targetIndex !== null) {
+                event.preventDefault();
+                const targetTab = viewTabs[targetIndex];
+                if (targetTab !== undefined) {
+                    targetTab.focus();
+                    activateViewTab(targetTab);
+                }
+            }
         });
     });
     scanButton.addEventListener('click', executeScan);

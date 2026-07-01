@@ -79,10 +79,14 @@ function setupMainDom(overrides: Partial<Record<string, string>> = {}): void {
             <label class="a11y-filter-toggle a11y-filter-toggle-critical" for="a11y-filter-severity-critical">
                 Critical<span class="a11y-filter-count" data-severity-count="critical">0</span>
             </label>
-            <input class="btn-check" type="checkbox" id="a11y-filter-developer-tasks">
-            <label class="a11y-filter-toggle a11y-filter-toggle-developer" for="a11y-filter-developer-tasks">
-                Show developer tasks<span class="a11y-filter-count" data-developer-count>0</span>
-            </label>
+            <button type="button" class="a11y-view-tab active" id="a11y-view-tab-editor" role="tab"
+                    aria-selected="true" tabindex="0" data-view="editor">
+                For editors<span class="a11y-filter-count" data-view-count="editor">0</span>
+            </button>
+            <button type="button" class="a11y-view-tab" id="a11y-view-tab-developer" role="tab"
+                    aria-selected="false" tabindex="-1" data-view="developer">
+                For developers<span class="a11y-filter-count" data-view-count="developer">0</span>
+            </button>
             <div id="a11y-results"></div>
         </div>`;
 }
@@ -265,7 +269,14 @@ describe('renderIssueSection', () => {
 
   it('shows an empty state message when there are no issues', () => {
     const classifier = new ViolationClassifier({});
-    const html = renderIssueSection([], 'violations-heading', 'Violations', 'text-bg-danger', classifier);
+    const html = renderIssueSection(
+      [],
+      'violations-heading',
+      'Violations',
+      'text-bg-danger',
+      'violations-count',
+      classifier,
+    );
     expect(html).toContain('No accessibility issues found.');
     expect(html).not.toContain('<div class="card');
   });
@@ -273,9 +284,29 @@ describe('renderIssueSection', () => {
   it('shows the heading with a badge containing the issue count', () => {
     const classifier = new ViolationClassifier({});
     const issues = [makeIssue(), makeIssue()];
-    const html = renderIssueSection(issues, 'violations-heading', 'Violations', 'text-bg-danger', classifier);
+    const html = renderIssueSection(
+      issues,
+      'violations-heading',
+      'Violations',
+      'text-bg-danger',
+      'violations-count',
+      classifier,
+    );
     expect(html).toContain('Violations');
     expect(html).toContain('>2<');
+  });
+
+  it('gives the count badge the provided id so it can be updated after filtering', () => {
+    const classifier = new ViolationClassifier({});
+    const html = renderIssueSection(
+      [makeIssue()],
+      'violations-heading',
+      'Violations',
+      'text-bg-danger',
+      'violations-count',
+      classifier,
+    );
+    expect(html).toContain('id="violations-count"');
   });
 
   it('renders a card for each issue', () => {
@@ -285,6 +316,7 @@ describe('renderIssueSection', () => {
       'violations-heading',
       'Violations',
       'text-bg-danger',
+      'violations-count',
       classifier,
     );
     const cardCount = (html.match(/class="card /g) ?? []).length;
@@ -298,7 +330,14 @@ describe('renderIssueSection', () => {
       makeIssue({ id: 'critical-rule', impact: 'critical' }),
       makeIssue({ id: 'moderate-rule', impact: 'moderate' }),
     ];
-    const html = renderIssueSection(issues, 'violations-heading', 'Violations', 'text-bg-danger', classifier);
+    const html = renderIssueSection(
+      issues,
+      'violations-heading',
+      'Violations',
+      'text-bg-danger',
+      'violations-count',
+      classifier,
+    );
     const criticalIndex = html.indexOf('data-impact="critical"');
     const moderateIndex = html.indexOf('data-impact="moderate"');
     const minorIndex = html.indexOf('data-impact="minor"');
@@ -359,13 +398,15 @@ describe('applyFilters', () => {
   });
 
   function appendFilterCheckboxes(overrides: Partial<Record<string, boolean>> = {}): void {
+    const activeView = overrides['developer'] === true ? 'developer' : 'editor';
     const filters = document.createElement('div');
     filters.innerHTML = `
       <input type="checkbox" class="a11y-filter-severity" value="critical" ${overrides['critical'] !== false ? 'checked' : ''}>
       <input type="checkbox" class="a11y-filter-severity" value="serious" ${overrides['serious'] !== false ? 'checked' : ''}>
       <input type="checkbox" class="a11y-filter-severity" value="moderate" ${overrides['moderate'] !== false ? 'checked' : ''}>
       <input type="checkbox" class="a11y-filter-severity" value="minor" ${overrides['minor'] !== false ? 'checked' : ''}>
-      <input type="checkbox" id="a11y-filter-developer-tasks" ${overrides['developer'] === true ? 'checked' : ''}>`;
+      <button type="button" class="a11y-view-tab" data-view="editor" aria-selected="${String(activeView === 'editor')}"></button>
+      <button type="button" class="a11y-view-tab" data-view="developer" aria-selected="${String(activeView === 'developer')}"></button>`;
     document.body.appendChild(filters);
   }
 
@@ -382,7 +423,7 @@ describe('applyFilters', () => {
     expect(cards[1]?.classList.contains('d-none')).toBe(true);
   });
 
-  it('hides developer-responsibility cards by default so editors only see editor tasks', () => {
+  it('hides developer-responsibility cards on the editor tab so editors only see editor tasks', () => {
     appendFilterCheckboxes();
     container.innerHTML = `
       <div class="card" data-impact="critical" data-responsibility="editor"></div>
@@ -395,13 +436,41 @@ describe('applyFilters', () => {
     expect(cards[1]?.classList.contains('d-none')).toBe(true);
   });
 
-  it('shows developer-responsibility cards once the developer-tasks filter is enabled', () => {
+  it('shows only developer-responsibility cards once the developer tab is active', () => {
     appendFilterCheckboxes({ developer: true });
-    container.innerHTML = '<div class="card" data-impact="critical" data-responsibility="developer"></div>';
+    container.innerHTML = `
+      <div class="card" data-impact="critical" data-responsibility="editor"></div>
+      <div class="card" data-impact="critical" data-responsibility="developer"></div>`;
 
     applyFilters(container);
 
-    expect(container.querySelector('.card')?.classList.contains('d-none')).toBe(false);
+    const cards = container.querySelectorAll('.card');
+    expect(cards[0]?.classList.contains('d-none')).toBe(true);
+    expect(cards[1]?.classList.contains('d-none')).toBe(false);
+  });
+
+  it('updates the violations and needs-review badge counts to reflect only visible cards', () => {
+    appendFilterCheckboxes({ minor: false });
+    container.innerHTML = `
+      <section aria-labelledby="a11y-violations-heading">
+        <h2><span id="a11y-violations-count">2</span></h2>
+        <div class="card" data-impact="critical" data-responsibility="editor"></div>
+        <div class="card" data-impact="minor" data-responsibility="editor"></div>
+      </section>
+      <section aria-labelledby="a11y-incomplete-heading">
+        <h2><span id="a11y-incomplete-count">1</span></h2>
+        <div class="card" data-impact="critical" data-responsibility="editor"></div>
+      </section>`;
+
+    applyFilters(container);
+
+    expect(document.getElementById('a11y-violations-count')?.textContent).toBe('1');
+    expect(document.getElementById('a11y-incomplete-count')?.textContent).toBe('1');
+
+    (document.querySelector('.a11y-filter-severity[value="minor"]') as HTMLInputElement).checked = true;
+    applyFilters(container);
+
+    expect(document.getElementById('a11y-violations-count')?.textContent).toBe('2');
   });
 });
 
@@ -416,11 +485,16 @@ describe('updateFilterCounts', () => {
 
     const filterButtons = document.createElement('div');
     filterButtons.innerHTML = `
+      <input type="checkbox" id="a11y-filter-severity-critical">
       <span data-severity-count="critical">0</span>
+      <input type="checkbox" id="a11y-filter-severity-serious">
       <span data-severity-count="serious">0</span>
+      <input type="checkbox" id="a11y-filter-severity-moderate">
       <span data-severity-count="moderate">0</span>
+      <input type="checkbox" id="a11y-filter-severity-minor">
       <span data-severity-count="minor">0</span>
-      <span data-developer-count>0</span>`;
+      <span data-view-count="editor">0</span>
+      <span data-view-count="developer">0</span>`;
     document.body.appendChild(filterButtons);
   });
 
@@ -441,7 +515,7 @@ describe('updateFilterCounts', () => {
     expect(document.querySelector('[data-severity-count="minor"]')?.textContent).toBe('1');
   });
 
-  it('counts non-editor issues as developer tasks', () => {
+  it('counts editor issues and non-editor issues separately for the view tabs', () => {
     container.innerHTML = `
       <div class="card" data-impact="critical" data-responsibility="editor"></div>
       <div class="card" data-impact="serious" data-responsibility="developer"></div>
@@ -449,7 +523,27 @@ describe('updateFilterCounts', () => {
 
     updateFilterCounts(container);
 
-    expect(document.querySelector('[data-developer-count]')?.textContent).toBe('2');
+    expect(document.querySelector('[data-view-count="editor"]')?.textContent).toBe('1');
+    expect(document.querySelector('[data-view-count="developer"]')?.textContent).toBe('2');
+  });
+
+  it('disables severity filter buttons that have zero findings', () => {
+    container.innerHTML = '<div class="card" data-impact="critical" data-responsibility="editor"></div>';
+
+    updateFilterCounts(container);
+
+    expect((document.getElementById('a11y-filter-severity-critical') as HTMLInputElement).disabled).toBe(false);
+    expect((document.getElementById('a11y-filter-severity-minor') as HTMLInputElement).disabled).toBe(true);
+  });
+
+  it('re-enables a severity filter button once matching findings appear again', () => {
+    container.innerHTML = '';
+    updateFilterCounts(container);
+    expect((document.getElementById('a11y-filter-severity-minor') as HTMLInputElement).disabled).toBe(true);
+
+    container.innerHTML = '<div class="card" data-impact="minor" data-responsibility="editor"></div>';
+    updateFilterCounts(container);
+    expect((document.getElementById('a11y-filter-severity-minor') as HTMLInputElement).disabled).toBe(false);
   });
 });
 
@@ -591,5 +685,32 @@ describe('initialize', () => {
     checkbox.dispatchEvent(new Event('change'));
 
     expect(label?.classList.contains('active')).toBe(false);
+  });
+
+  it('switches the active view tab and re-filters results when the developer tab is clicked', async () => {
+    setupMainDom();
+    mockIframeLoad();
+    MockAxeEngine.mockImplementation(
+      () =>
+        ({
+          run: jest.fn().mockResolvedValue({
+            ...EMPTY_RESULT,
+            violations: [makeIssue({ id: 'editor-rule' }), makeIssue({ id: 'developer-rule', impact: 'critical' })],
+          }),
+        }) as unknown as AxeEngine,
+    );
+
+    initialize();
+    await flushPromises();
+
+    const editorTab = document.getElementById('a11y-view-tab-editor') as HTMLElement;
+    const developerTab = document.getElementById('a11y-view-tab-developer') as HTMLElement;
+    expect(editorTab.getAttribute('aria-selected')).toBe('true');
+
+    developerTab.click();
+
+    expect(developerTab.getAttribute('aria-selected')).toBe('true');
+    expect(editorTab.getAttribute('aria-selected')).toBe('false');
+    expect(document.getElementById('a11y-results')?.getAttribute('aria-labelledby')).toBe('a11y-view-tab-developer');
   });
 });
