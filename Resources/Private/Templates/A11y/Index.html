@@ -42,32 +42,36 @@
                     </button>
                 </div>
 
-                <div class="a11y-tabs mb-3"
-                     role="tablist"
-                     aria-label="{f:translate(key: 'LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:module.filters.viewLabel')}">
-                    <button type="button"
-                            class="a11y-view-tab active"
-                            id="a11y-view-tab-editor"
-                            role="tab"
-                            aria-selected="true"
-                            aria-controls="a11y-results"
-                            tabindex="0"
-                            data-view="editor">
-                        <f:translate key="LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:module.filters.view.editor" />
-                        <span class="a11y-filter-count" data-view-count="editor">0</span>
-                    </button>
-                    <button type="button"
-                            class="a11y-view-tab"
-                            id="a11y-view-tab-developer"
-                            role="tab"
-                            aria-selected="false"
-                            aria-controls="a11y-results"
-                            tabindex="-1"
-                            data-view="developer">
-                        <f:translate key="LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:module.filters.view.developer" />
-                        <span class="a11y-filter-count" data-view-count="developer">0</span>
-                    </button>
-                </div>
+                <ul class="nav nav-tabs mb-3"
+                    role="tablist"
+                    aria-label="{f:translate(key: 'LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:module.filters.viewLabel')}">
+                    <li class="nav-item" role="presentation">
+                        <button type="button"
+                                class="nav-link active"
+                                id="a11y-view-tab-editor"
+                                role="tab"
+                                aria-selected="true"
+                                aria-controls="a11y-results"
+                                tabindex="0"
+                                data-view="editor">
+                            <f:translate key="LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:module.filters.view.editor" />
+                            <span class="badge text-bg-light ms-1" data-view-count="editor">0</span>
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button type="button"
+                                class="nav-link"
+                                id="a11y-view-tab-developer"
+                                role="tab"
+                                aria-selected="false"
+                                aria-controls="a11y-results"
+                                tabindex="-1"
+                                data-view="developer">
+                            <f:translate key="LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:module.filters.view.developer" />
+                            <span class="badge text-bg-light ms-1" data-view-count="developer">0</span>
+                        </button>
+                    </li>
+                </ul>
 
                 <div class="d-flex align-items-center gap-2 mb-3 flex-wrap"
                      role="group"
@@ -78,30 +82,30 @@
 
                     <input class="btn-check a11y-filter-severity" type="checkbox" autocomplete="off"
                            id="a11y-filter-severity-critical" value="critical" checked="checked">
-                    <label class="a11y-filter-toggle a11y-filter-toggle-critical" for="a11y-filter-severity-critical">
+                    <label class="btn btn-sm btn-danger" for="a11y-filter-severity-critical" data-btn-class="btn-danger">
                         <f:translate key="LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:module.filters.severity.critical" />
-                        <span class="a11y-filter-count" data-severity-count="critical">0</span>
+                        <span class="badge text-bg-light ms-1" data-severity-count="critical">0</span>
                     </label>
 
                     <input class="btn-check a11y-filter-severity" type="checkbox" autocomplete="off"
                            id="a11y-filter-severity-serious" value="serious" checked="checked">
-                    <label class="a11y-filter-toggle a11y-filter-toggle-serious" for="a11y-filter-severity-serious">
+                    <label class="btn btn-sm btn-warning" for="a11y-filter-severity-serious" data-btn-class="btn-warning">
                         <f:translate key="LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:module.filters.severity.serious" />
-                        <span class="a11y-filter-count" data-severity-count="serious">0</span>
+                        <span class="badge text-bg-light ms-1" data-severity-count="serious">0</span>
                     </label>
 
                     <input class="btn-check a11y-filter-severity" type="checkbox" autocomplete="off"
                            id="a11y-filter-severity-moderate" value="moderate" checked="checked">
-                    <label class="a11y-filter-toggle a11y-filter-toggle-moderate" for="a11y-filter-severity-moderate">
+                    <label class="btn btn-sm btn-info" for="a11y-filter-severity-moderate" data-btn-class="btn-info">
                         <f:translate key="LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:module.filters.severity.moderate" />
-                        <span class="a11y-filter-count" data-severity-count="moderate">0</span>
+                        <span class="badge text-bg-light ms-1" data-severity-count="moderate">0</span>
                     </label>
 
                     <input class="btn-check a11y-filter-severity" type="checkbox" autocomplete="off"
                            id="a11y-filter-severity-minor" value="minor" checked="checked">
-                    <label class="a11y-filter-toggle a11y-filter-toggle-minor" for="a11y-filter-severity-minor">
+                    <label class="btn btn-sm btn-secondary" for="a11y-filter-severity-minor" data-btn-class="btn-secondary">
                         <f:translate key="LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:module.filters.severity.minor" />
-                        <span class="a11y-filter-count" data-severity-count="minor">0</span>
+                        <span class="badge text-bg-light ms-1" data-severity-count="minor">0</span>
                     </label>
                 </div>
 
