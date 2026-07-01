@@ -335,14 +335,17 @@ function getLabel(key) {
 function escapeHtml(str) {
     return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
-function impactBadgeClass(impact) {
-    const map = {
-        critical: 'danger',
-        serious: 'warning',
-        moderate: 'info',
-        minor: 'secondary',
-    };
-    return `badge text-bg-${map[impact] ?? 'secondary'}`;
+// The same color family as the severity filter buttons (btn-danger/warning/
+// info/secondary), applied here via TYPO3's panel-* variants so the group
+// header background/text/caret pick up the matching theme-aware colors.
+const SEVERITY_COLORS = {
+    critical: 'danger',
+    serious: 'warning',
+    moderate: 'info',
+    minor: 'secondary',
+};
+function severityPanelClass(impact) {
+    return `panel-${SEVERITY_COLORS[impact] ?? 'secondary'}`;
 }
 const SEVERITY_LEVELS = ['critical', 'serious', 'moderate', 'minor'];
 // The module runs inside the backend's content iframe. Only the outer/top backend
@@ -421,14 +424,12 @@ function renderSeverityGroup(level, issues, groupId, classifier) {
         return '';
     }
     const items = issues.map((issue, index) => renderIssueCard(issue, classifier, `${groupId}-issue-${index}`)).join('');
-    return `<div class="panel panel-default mb-2" data-severity-group="${level}">
+    return `<div class="panel ${severityPanelClass(level)} mb-2" data-severity-group="${level}">
         <div class="panel-heading" role="tab">
             <div class="panel-heading-row">
                 <button class="panel-button" type="button" data-bs-toggle="collapse"
                         data-bs-target="#${groupId}" aria-controls="${groupId}" aria-expanded="true">
-                    <span class="panel-title">
-                        <span class="${impactBadgeClass(level)}">${escapeHtml(getLabel(`module.filters.severity.${level}`))}</span>
-                    </span>
+                    <span class="panel-title">${escapeHtml(getLabel(`module.filters.severity.${level}`))}</span>
                     <span class="badge text-bg-light ms-1" data-severity-group-count>${issues.length}</span>
                     <span class="caret"></span>
                 </button>
