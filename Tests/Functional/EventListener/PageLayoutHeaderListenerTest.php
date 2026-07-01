@@ -31,6 +31,9 @@ final class PageLayoutHeaderListenerTest extends FunctionalTestCase
         );
     }
 
+    /**
+     * @param array<array-key, mixed> $queryParams
+     */
     private function createEvent(array $queryParams): ModifyPageLayoutContentEvent
     {
         $route = new Route('/module/web/a11y-by-default', [
