@@ -19,3 +19,6 @@ Resources/Public/JavaScript/*.js.map
 *.log
 *.cache
 .php-cs-fixer.cache
+
+var/
+Documentation-GENERATED-temp/
