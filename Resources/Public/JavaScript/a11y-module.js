@@ -487,15 +487,40 @@ function renderResults(container, result, classifier) {
     updateFilterCounts(container);
     applyFilters(container);
 }
+function getActiveResponsibilityView() {
+    const activeTab = document.querySelector('[role="tab"][data-view][aria-selected="true"]');
+    return activeTab?.dataset['view'] === 'developer' ? 'developer' : 'editor';
+}
+// The severity toggle is a `.btn-check` input with a `.btn` label, TYPO3's own
+// pattern for button-styled options (see core's clipboard/localization panels).
+// Its "on" look is the label's real severity color class; "off" (including
+// disabled — a severity with zero findings in the active view) falls back to
+// the neutral `btn-default`, so a disabled button never looks clickable.
+function syncToggleActiveState(input) {
+    const label = document.querySelector(`label[for="${input.id}"]`);
+    const btnClass = label?.dataset['btnClass'];
+    if (label === null || label === undefined || btnClass === undefined) {
+        return;
+    }
+    const isActive = input.checked && !input.disabled;
+    label.classList.toggle(btnClass, isActive);
+    label.classList.toggle('btn-default', !isActive);
+}
+// Severity counts/toggles are scoped to the active view tab: editors and
+// developers each see counts for only the findings assigned to them. The view
+// tab counts themselves stay totals across both, so each tab shows how many
+// findings it holds overall.
 function updateFilterCounts(container) {
+    const activeView = getActiveResponsibilityView();
     const severityCounts = { critical: 0, serious: 0, moderate: 0, minor: 0 };
     const viewCounts = { editor: 0, developer: 0 };
     container.querySelectorAll('[data-impact]').forEach((card) => {
         const impact = card.dataset['impact'] ?? '';
-        if (impact in severityCounts) {
+        const responsibility = card.dataset['responsibility'] === 'editor' ? 'editor' : 'developer';
+        viewCounts[responsibility] += 1;
+        if (responsibility === activeView && impact in severityCounts) {
             severityCounts[impact] += 1;
         }
-        viewCounts[card.dataset['responsibility'] === 'editor' ? 'editor' : 'developer'] += 1;
     });
     Object.entries(severityCounts).forEach(([impact, count]) => {
         const countEl = document.querySelector(`[data-severity-count="${impact}"]`);
@@ -505,6 +530,7 @@ function updateFilterCounts(container) {
         const checkbox = document.getElementById(`a11y-filter-severity-${impact}`);
         if (checkbox !== null) {
             checkbox.disabled = count === 0;
+            syncToggleActiveState(checkbox);
         }
     });
     Object.keys(viewCounts).forEach((view) => {
@@ -519,23 +545,6 @@ function getActiveSeverityFilters() {
     return new Set(Array.from(checkboxes)
         .filter((checkbox) => checkbox.checked)
         .map((checkbox) => checkbox.value));
-}
-function getActiveResponsibilityView() {
-    const activeTab = document.querySelector('[role="tab"][data-view][aria-selected="true"]');
-    return activeTab?.dataset['view'] === 'developer' ? 'developer' : 'editor';
-}
-// The severity toggle is a `.btn-check` input with a `.btn` label, TYPO3's own
-// pattern for button-styled options (see core's clipboard/localization panels).
-// Its "on" look is the label's real severity color class; "off" falls back to
-// the neutral `btn-default` — both are TYPO3-themed, so no custom CSS is needed.
-function syncToggleActiveState(input) {
-    const label = document.querySelector(`label[for="${input.id}"]`);
-    const btnClass = label?.dataset['btnClass'];
-    if (label === null || label === undefined || btnClass === undefined) {
-        return;
-    }
-    label.classList.toggle(btnClass, input.checked);
-    label.classList.toggle('btn-default', !input.checked);
 }
 function updateResultCounts(container) {
     const countVisible = (headingId) => container.querySelectorAll(`[aria-labelledby="${headingId}"] [data-impact]:not(.d-none)`).length;
@@ -649,6 +658,7 @@ function initialize() {
             otherTab.classList.toggle('active', isActive);
         });
         resultsContainer.setAttribute('aria-labelledby', tab.id);
+        updateFilterCounts(resultsContainer);
         applyFilters(resultsContainer);
     };
     viewTabs.forEach((tab, index) => {
