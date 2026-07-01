@@ -357,15 +357,29 @@ function getRecordEditModuleUrl() {
     const typo3 = topWindow['TYPO3'];
     return typo3?.settings?.FormEngine?.moduleUrl;
 }
+// The contextual (side-panel) edit route is only available from TYPO3 v14 onward.
+// A11yController only emits this setting when the route exists on the running core.
+function getContextualEditModuleUrl() {
+    const typo3 = window.TYPO3;
+    return typo3?.settings?.a11yByDefault?.contextualEditModuleUrl;
+}
 function buildContentElementEditLink(contentElementUid) {
     const moduleUrl = getRecordEditModuleUrl();
     if (moduleUrl === undefined || moduleUrl === '') {
         return '';
     }
+    const label = `Edit content element #${contentElementUid}`;
+    const linkClasses = 'btn btn-sm btn-default mb-2 d-inline-block';
     const returnUrl = encodeURIComponent(window.location.href);
-    const href = `${moduleUrl}&edit[tt_content][${contentElementUid}]=edit&module=web_a11y_by_default&returnUrl=${returnUrl}`;
-    return `<a href="${escapeHtml(href)}"
-               class="btn btn-sm btn-default mb-2 d-inline-block">Edit content element #${contentElementUid}</a>`;
+    const editHref = `${moduleUrl}&edit[tt_content][${contentElementUid}]=edit&module=web_a11y_by_default&returnUrl=${returnUrl}`;
+    const contextualModuleUrl = getContextualEditModuleUrl();
+    if (contextualModuleUrl !== undefined && contextualModuleUrl !== '') {
+        const contextualHref = `${contextualModuleUrl}&edit[tt_content][${contentElementUid}]=edit&module=web_a11y_by_default&returnUrl=${returnUrl}`;
+        return `<typo3-backend-contextual-record-edit-trigger url="${escapeHtml(contextualHref)}" edit-url="${escapeHtml(editHref)}"
+               class="${linkClasses}">${label}</typo3-backend-contextual-record-edit-trigger>`;
+    }
+    return `<a href="${escapeHtml(editHref)}"
+               class="${linkClasses}">${label}</a>`;
 }
 function renderIssueCard(issue, classifier) {
     const classification = classifier.classify(issue);

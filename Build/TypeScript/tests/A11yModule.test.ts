@@ -182,6 +182,43 @@ describe('renderIssueCard', () => {
     expect(html).not.toContain('edit[tt_content]');
   });
 
+  it('uses the side-panel edit trigger when a contextual edit module URL is available (TYPO3 v14+)', () => {
+    const typo3 = (window as unknown as Record<string, unknown>)['TYPO3'] as {
+      lang: Record<string, string>;
+      settings: { FormEngine: { moduleUrl: string } };
+    };
+    (window as unknown as Record<string, unknown>).TYPO3 = {
+      lang: typo3.lang,
+      settings: {
+        ...typo3.settings,
+        a11yByDefault: { contextualEditModuleUrl: '/typo3/record/edit/contextual?token=sidepaneltoken' },
+      },
+    };
+    const classifier = new ViolationClassifier({
+      'image-alt': { responsibility: 'editor', hint: 'Add alt text.' },
+    });
+    const issueWithCe = makeIssue({
+      nodes: [{ html: '<img>', target: ['#c5 img'], contentElementUid: 5 }],
+    });
+    const html = renderIssueCard(issueWithCe, classifier);
+    expect(html).toContain('<typo3-backend-contextual-record-edit-trigger');
+    expect(html).toContain('url="/typo3/record/edit/contextual?token=sidepaneltoken&amp;edit[tt_content][5]=edit');
+    expect(html).toContain('edit-url="/typo3/record/edit?token=abc123token&amp;edit[tt_content][5]=edit');
+    expect(html).toContain('</typo3-backend-contextual-record-edit-trigger>');
+  });
+
+  it('falls back to the classic anchor when no contextual edit module URL is set (TYPO3 v13)', () => {
+    const classifier = new ViolationClassifier({
+      'image-alt': { responsibility: 'editor', hint: 'Add alt text.' },
+    });
+    const issueWithCe = makeIssue({
+      nodes: [{ html: '<img>', target: ['#c5 img'], contentElementUid: 5 }],
+    });
+    const html = renderIssueCard(issueWithCe, classifier);
+    expect(html).not.toContain('<typo3-backend-contextual-record-edit-trigger');
+    expect(html).toContain('<a href="/typo3/record/edit?token=abc123token&amp;edit[tt_content][5]=edit');
+  });
+
   it('omits the content element link for developer responsibility', () => {
     const classifier = new ViolationClassifier({
       'image-alt': { responsibility: 'developer', hint: 'Fix in template.' },
