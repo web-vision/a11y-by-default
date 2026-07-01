@@ -1,3 +1,5 @@
+import { EMPTY_CONTENT_FACTS_INDEX, type ContentFactsIndex } from '../ContentFacts';
+import { resolveContentMatch } from '../matchers';
 import type { AccessibilityIssue, IssueNode, ScanResult } from '../types';
 
 interface HtmlCsMessage {
@@ -23,6 +25,7 @@ export class HtmlCsEngine {
   constructor(
     private readonly iframe: HTMLIFrameElement,
     private readonly htmlcsJsUrl: string,
+    private readonly contentFactsIndex: ContentFactsIndex = EMPTY_CONTENT_FACTS_INDEX,
   ) {}
 
   async run(): Promise<ScanResult> {
@@ -80,6 +83,7 @@ export class HtmlCsEngine {
           {
             html: msg.element.outerHTML ?? '',
             target: [msg.element.tagName.toLowerCase()],
+            ...resolveContentMatch(msg.code, msg.element, this.contentFactsIndex),
           },
         ] satisfies IssueNode[],
       }));

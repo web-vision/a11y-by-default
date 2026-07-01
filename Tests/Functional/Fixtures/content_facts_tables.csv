@@ -1,0 +1,6 @@
+"pages",,,,,,
+,"uid","pid","sorting","deleted","hidden","title"
+,1,0,256,0,0,"Home"
+"tt_content",,,,,,
+,"uid","pid","header","header_layout","bodytext"
+,60,1,"",0,"<table><tr><th>Name</th><th>Age</th></tr><tr><td>Alice</td><td>30</td></tr></table>"

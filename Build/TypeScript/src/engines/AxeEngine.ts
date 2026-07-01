@@ -1,3 +1,5 @@
+import { EMPTY_CONTENT_FACTS_INDEX, type ContentFactsIndex } from '../ContentFacts';
+import { resolveContentMatch } from '../matchers';
 import type { AccessibilityIssue, IssueNode, ScanResult } from '../types';
 
 interface AxeNode {
@@ -33,6 +35,7 @@ export class AxeEngine {
   constructor(
     private readonly iframe: HTMLIFrameElement,
     private readonly axeJsUrl: string,
+    private readonly contentFactsIndex: ContentFactsIndex = EMPTY_CONTENT_FACTS_INDEX,
   ) {}
 
   async run(): Promise<ScanResult> {
@@ -80,11 +83,32 @@ export class AxeEngine {
       help: result.help,
       helpUrl: result.helpUrl,
       tags: result.tags,
-      nodes: result.nodes.map((node): IssueNode => ({
-        html: node.html,
-        target: node.target,
-        ...(node.failureSummary !== undefined ? { failureSummary: node.failureSummary } : {}),
-      })),
+      nodes: result.nodes.map((node): IssueNode => this.normalizeNode(result.id, node)),
     }));
+  }
+
+  private normalizeNode(ruleId: string, node: AxeNode): IssueNode {
+    const element = this.resolveElement(node.target);
+    const match = resolveContentMatch(ruleId, element, this.contentFactsIndex);
+
+    return {
+      html: node.html,
+      target: node.target,
+      ...(node.failureSummary !== undefined ? { failureSummary: node.failureSummary } : {}),
+      ...match,
+    };
+  }
+
+  private resolveElement(target: string[]): Element | null {
+    const selector = target[target.length - 1];
+    if (selector === undefined) {
+      return null;
+    }
+
+    try {
+      return this.iframe.contentDocument?.querySelector(selector) ?? null;
+    } catch {
+      return null;
+    }
   }
 }

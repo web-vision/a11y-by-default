@@ -10,13 +10,14 @@ use TYPO3\CMS\Core\Database\ConnectionPool;
 final class IssueClassificationService
 {
     private const CLASSIFICATION_RULES = [
-        'image-alt' => ['responsibility' => 'editor', 'hint' => 'LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:hint.image-alt'],
-        'input-image-alt' => ['responsibility' => 'editor', 'hint' => 'LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:hint.input-image-alt'],
-        'area-alt' => ['responsibility' => 'editor', 'hint' => 'LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:hint.area-alt'],
-        'empty-heading' => ['responsibility' => 'editor', 'hint' => 'LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:hint.empty-heading'],
-        'link-name' => ['responsibility' => 'editor', 'hint' => 'LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:hint.link-name'],
-        'td-headers-attr' => ['responsibility' => 'editor', 'hint' => 'LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:hint.td-headers-attr'],
-        'th-has-data-cells' => ['responsibility' => 'editor', 'hint' => 'LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:hint.th-has-data-cells'],
+        'image-alt' => ['responsibility' => 'editor', 'hint' => 'LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:hint.image-alt', 'developerHint' => 'LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:hint.image-alt.developer'],
+        'input-image-alt' => ['responsibility' => 'editor', 'hint' => 'LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:hint.input-image-alt', 'developerHint' => 'LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:hint.input-image-alt.developer'],
+        'area-alt' => ['responsibility' => 'editor', 'hint' => 'LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:hint.area-alt', 'developerHint' => 'LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:hint.area-alt.developer'],
+        'heading-order' => ['responsibility' => 'editor', 'hint' => 'LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:hint.heading-order', 'developerHint' => 'LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:hint.heading-order.developer'],
+        'empty-heading' => ['responsibility' => 'developer', 'hint' => 'LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:hint.empty-heading'],
+        'link-name' => ['responsibility' => 'editor', 'hint' => 'LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:hint.link-name', 'developerHint' => 'LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:hint.link-name.developer'],
+        'td-headers-attr' => ['responsibility' => 'editor', 'hint' => 'LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:hint.td-headers-attr', 'developerHint' => 'LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:hint.td-headers-attr.developer'],
+        'th-has-data-cells' => ['responsibility' => 'editor', 'hint' => 'LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:hint.th-has-data-cells', 'developerHint' => 'LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:hint.th-has-data-cells.developer'],
         'landmark-one-main' => ['responsibility' => 'developer', 'hint' => 'LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:hint.landmark-one-main'],
         'region' => ['responsibility' => 'developer', 'hint' => 'LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:hint.region'],
         'bypass' => ['responsibility' => 'developer', 'hint' => 'LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:hint.bypass'],
@@ -33,7 +34,7 @@ final class IssueClassificationService
     ) {}
 
     /**
-     * @return array<string, array{responsibility: string, hint: string}>
+     * @return array<string, array{responsibility: string, hint: string, developerHint?: string}>
      */
     public function getClassificationRules(): array
     {
