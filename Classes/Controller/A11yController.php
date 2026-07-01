@@ -7,7 +7,9 @@ namespace WebVision\A11yByDefault\Controller;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use TYPO3\CMS\Backend\Attribute\AsController;
+use TYPO3\CMS\Backend\Controller\ContextualRecordEditController;
 use TYPO3\CMS\Backend\Routing\PreviewUriBuilder;
+use TYPO3\CMS\Backend\Routing\UriBuilder;
 use TYPO3\CMS\Backend\Template\ModuleTemplateFactory;
 use TYPO3\CMS\Core\Localization\LanguageService;
 use TYPO3\CMS\Core\Localization\LanguageServiceFactory;
@@ -24,6 +26,7 @@ final class A11yController
         private readonly ContentFactsService $contentFactsService,
         private readonly PageRenderer $pageRenderer,
         private readonly LanguageServiceFactory $languageServiceFactory,
+        private readonly UriBuilder $uriBuilder,
     ) {}
 
     public function index(ServerRequestInterface $request): ResponseInterface
@@ -43,12 +46,17 @@ final class A11yController
 
         $languageService = $this->languageServiceFactory->createFromUserPreferences($GLOBALS['BE_USER']);
         $resolvedRules = $this->resolveClassificationRules($languageService);
+        $contextualEditModuleUrl = $this->buildContextualEditModuleUrl();
 
         $this->pageRenderer->loadJavaScriptModule('@web-vision/a11y-by-default/a11y-module.js');
         $this->pageRenderer->loadJavaScriptModule('@typo3/backend/element/progress-bar-element.js');
+        if ($contextualEditModuleUrl !== null) {
+            $this->pageRenderer->loadJavaScriptModule('@typo3/backend/element/contextual-record-edit-trigger.js');
+        }
         $this->pageRenderer->addInlineLanguageLabelFile('EXT:a11y_by_default/Resources/Private/Language/locallang.xlf');
         $this->pageRenderer->addInlineSettingArray('a11yByDefault', [
             'classificationRules' => $resolvedRules,
+            'contextualEditModuleUrl' => $contextualEditModuleUrl,
         ]);
 
         $moduleTemplate = $this->moduleTemplateFactory->create($request);
@@ -60,6 +68,19 @@ final class A11yController
         ]);
 
         return $moduleTemplate->renderResponse('A11y/Index');
+    }
+
+    /**
+     * The contextual (side-panel) record edit route was introduced in TYPO3 v14
+     * and is not available in v13, which this extension must also support.
+     */
+    private function buildContextualEditModuleUrl(): ?string
+    {
+        if (!class_exists(ContextualRecordEditController::class)) {
+            return null;
+        }
+
+        return (string)$this->uriBuilder->buildUriFromRoute('record_edit_contextual');
     }
 
     /**
