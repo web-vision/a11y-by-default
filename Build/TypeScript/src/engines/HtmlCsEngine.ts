@@ -62,10 +62,22 @@ export class HtmlCsEngine {
         return;
       }
 
-      iframeWindow.HTMLCS.process(HtmlCsEngine.STANDARD, iframeWindow.document, () => {
+      const onDone = (): void => {
         const messages = (iframeWindow as HtmlCsWindow).HTMLCS?.getMessages() ?? [];
         resolve(messages);
-      });
+      };
+
+      // HTMLCS only invokes the completion callback if `callback instanceof Function`
+      // is true, checked against its own realm's Function constructor. A callback
+      // created in the parent window fails that check silently (no error, no
+      // console output), so the scan hangs forever. Building the callback with the
+      // iframe's own Function constructor makes it pass that check.
+      const callback = (iframeWindow as unknown as { Function: FunctionConstructor }).Function(
+        'cb',
+        'return function () { cb(); };',
+      )(onDone) as () => void;
+
+      iframeWindow.HTMLCS.process(HtmlCsEngine.STANDARD, iframeWindow.document, callback);
     });
   }
 
