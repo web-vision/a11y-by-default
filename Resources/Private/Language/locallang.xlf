@@ -17,6 +17,9 @@
             <trans-unit id="module.engine.htmlcs">
                 <source>HTML CodeSniffer</source>
             </trans-unit>
+            <trans-unit id="module.auditDisclaimer">
+                <source>This module provides automated assistance for accessibility checks. It does not replace a full audit by qualified accessibility auditors, which is required to have a page officially certified as accessible.</source>
+            </trans-unit>
             <trans-unit id="module.engine.axeInfo">
                 <source>axe-core (recommended) checks the page against the WCAG accessibility guidelines — the standard that ensures people using screen readers, keyboard navigation, or other assistive technology can use your content. It is the actively maintained, industry-standard tool and produces very few incorrect warnings, so almost everything it reports is worth acting on.</source>
             </trans-unit>
