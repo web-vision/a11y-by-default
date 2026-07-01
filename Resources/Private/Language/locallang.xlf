@@ -59,8 +59,14 @@
             <trans-unit id="module.filters.severity.minor">
                 <source>Minor</source>
             </trans-unit>
-            <trans-unit id="module.filters.showDeveloperTasks">
-                <source>Show developer tasks</source>
+            <trans-unit id="module.filters.viewLabel">
+                <source>View</source>
+            </trans-unit>
+            <trans-unit id="module.filters.view.editor">
+                <source>For editors</source>
+            </trans-unit>
+            <trans-unit id="module.filters.view.developer">
+                <source>For developers</source>
             </trans-unit>
             <trans-unit id="module.error.scanFailed">
                 <source>The accessibility scan could not be completed. Please try again.</source>
