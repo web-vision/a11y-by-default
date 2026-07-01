@@ -48,6 +48,7 @@ final class A11yController
         $resolvedRules = $this->resolveClassificationRules($languageService);
         $contextualEditModuleUrl = $this->buildContextualEditModuleUrl();
 
+        $this->pageRenderer->addCssFile('EXT:a11y_by_default/Resources/Public/Css/a11y-module.css');
         $this->pageRenderer->loadJavaScriptModule('@web-vision/a11y-by-default/a11y-module.js');
         $this->pageRenderer->loadJavaScriptModule('@typo3/backend/element/progress-bar-element.js');
         if ($contextualEditModuleUrl !== null) {

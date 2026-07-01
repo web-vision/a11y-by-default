@@ -2,7 +2,14 @@ jest.mock('../src/engines/AxeEngine');
 jest.mock('../src/engines/HtmlCsEngine');
 
 import { AxeEngine } from '../src/engines/AxeEngine';
-import { applyFilters, initialize, renderIssueCard, renderIssueSection, renderResults } from '../src/A11yModule';
+import {
+  applyFilters,
+  initialize,
+  renderIssueCard,
+  renderIssueSection,
+  renderResults,
+  updateFilterCounts,
+} from '../src/A11yModule';
 import { ViolationClassifier } from '../src/ViolationClassifier';
 import type { AccessibilityIssue, ScanResult } from '../src/types';
 
@@ -68,6 +75,14 @@ function setupMainDom(overrides: Partial<Record<string, string>> = {}): void {
                 <option value="htmlcs">HTML CodeSniffer</option>
             </select>
             <button id="a11y-scan-button">Run Scan</button>
+            <input class="btn-check a11y-filter-severity" type="checkbox" id="a11y-filter-severity-critical" value="critical" checked>
+            <label class="a11y-filter-toggle a11y-filter-toggle-critical" for="a11y-filter-severity-critical">
+                Critical<span class="a11y-filter-count" data-severity-count="critical">0</span>
+            </label>
+            <input class="btn-check" type="checkbox" id="a11y-filter-developer-tasks">
+            <label class="a11y-filter-toggle a11y-filter-toggle-developer" for="a11y-filter-developer-tasks">
+                Show developer tasks<span class="a11y-filter-count" data-developer-count>0</span>
+            </label>
             <div id="a11y-results"></div>
         </div>`;
 }
@@ -390,6 +405,54 @@ describe('applyFilters', () => {
   });
 });
 
+// --- updateFilterCounts ---
+
+describe('updateFilterCounts', () => {
+  let container: HTMLElement;
+
+  beforeEach(() => {
+    container = document.createElement('div');
+    document.body.appendChild(container);
+
+    const filterButtons = document.createElement('div');
+    filterButtons.innerHTML = `
+      <span data-severity-count="critical">0</span>
+      <span data-severity-count="serious">0</span>
+      <span data-severity-count="moderate">0</span>
+      <span data-severity-count="minor">0</span>
+      <span data-developer-count>0</span>`;
+    document.body.appendChild(filterButtons);
+  });
+
+  afterEach(() => {
+    document.body.innerHTML = '';
+  });
+
+  it('counts found issues per severity', () => {
+    container.innerHTML = `
+      <div class="card" data-impact="critical" data-responsibility="editor"></div>
+      <div class="card" data-impact="critical" data-responsibility="editor"></div>
+      <div class="card" data-impact="minor" data-responsibility="editor"></div>`;
+
+    updateFilterCounts(container);
+
+    expect(document.querySelector('[data-severity-count="critical"]')?.textContent).toBe('2');
+    expect(document.querySelector('[data-severity-count="serious"]')?.textContent).toBe('0');
+    expect(document.querySelector('[data-severity-count="minor"]')?.textContent).toBe('1');
+  });
+
+  it('counts non-editor issues as developer tasks', () => {
+    container.innerHTML = `
+      <div class="card" data-impact="critical" data-responsibility="editor"></div>
+      <div class="card" data-impact="serious" data-responsibility="developer"></div>
+      <div class="card" data-impact="moderate" data-responsibility="unknown"></div>`;
+
+    updateFilterCounts(container);
+
+    expect(document.querySelector('[data-developer-count]')?.textContent).toBe('2');
+  });
+});
+
 // --- initialize auto-scan ---
 
 describe('initialize', () => {
@@ -509,5 +572,24 @@ describe('initialize', () => {
     initialize();
     await flushPromises();
     expect(document.getElementById('a11y-results')?.querySelector('.card')).not.toBeNull();
+  });
+
+  it('marks the severity toggle as active to match its initial checked state', () => {
+    setupMainDom();
+    initialize();
+    const label = document.querySelector('label[for="a11y-filter-severity-critical"]');
+    expect(label?.classList.contains('active')).toBe(true);
+  });
+
+  it('toggles the toggle button active class when the filter checkbox changes', () => {
+    setupMainDom();
+    initialize();
+    const checkbox = document.getElementById('a11y-filter-severity-critical') as HTMLInputElement;
+    const label = document.querySelector('label[for="a11y-filter-severity-critical"]');
+
+    checkbox.checked = false;
+    checkbox.dispatchEvent(new Event('change'));
+
+    expect(label?.classList.contains('active')).toBe(false);
   });
 });
