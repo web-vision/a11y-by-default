@@ -50,23 +50,47 @@
             <trans-unit id="hint.image-alt">
                 <source>Add an image description (alt text) in the content element editor.</source>
             </trans-unit>
+            <trans-unit id="hint.image-alt.developer">
+                <source>This image is not linked to editable content, or its alt text is set but not rendered. Check the template's image rendering (developer task).</source>
+            </trans-unit>
             <trans-unit id="hint.input-image-alt">
                 <source>Add an alt text to the image input element in the content editor.</source>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt.developer">
+                <source>This image input is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
             </trans-unit>
             <trans-unit id="hint.area-alt">
                 <source>Add alt text to the image map area in the content editor.</source>
             </trans-unit>
+            <trans-unit id="hint.area-alt.developer">
+                <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+            </trans-unit>
+            <trans-unit id="hint.heading-order">
+                <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
+            </trans-unit>
+            <trans-unit id="hint.heading-order.developer">
+                <source>This heading is rendered by the page template rather than a content element. Adjust the heading structure in the Fluid template (developer task).</source>
+            </trans-unit>
             <trans-unit id="hint.empty-heading">
-                <source>Edit the heading content element and provide a heading text.</source>
+                <source>A heading element is rendered with no text. Check the template's heading rendering; it should not output a heading tag when the source text is empty (developer task).</source>
             </trans-unit>
             <trans-unit id="hint.link-name">
                 <source>Edit the link in the content editor and provide a descriptive link text.</source>
             </trans-unit>
+            <trans-unit id="hint.link-name.developer">
+                <source>This link is rendered by the page template without link text and isn't linked to editable content. Add visible text or an aria-label in the Fluid template (developer task).</source>
+            </trans-unit>
             <trans-unit id="hint.td-headers-attr">
                 <source>Update the table structure in the content editor to associate data cells with headers.</source>
             </trans-unit>
+            <trans-unit id="hint.td-headers-attr.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so data cells reference their headers (developer task).</source>
+            </trans-unit>
             <trans-unit id="hint.th-has-data-cells">
                 <source>Update the table in the content editor so header cells have associated data cells.</source>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so header cells have associated data cells (developer task).</source>
             </trans-unit>
             <trans-unit id="hint.landmark-one-main">
                 <source>Add a main landmark element to the page template (developer task).</source>

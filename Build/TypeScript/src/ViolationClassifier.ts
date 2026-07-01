@@ -1,52 +1,23 @@
-import type { AccessibilityIssue, Classification, ClassificationRule, ContentMetadataItem } from './types';
+import type { AccessibilityIssue, Classification, ClassificationRule } from './types';
 
 export class ViolationClassifier {
-  constructor(
-    private readonly contentMetadata: ContentMetadataItem[],
-    private readonly rules: Record<string, ClassificationRule>,
-  ) {}
+  constructor(private readonly rules: Record<string, ClassificationRule>) {}
 
   classify(violation: AccessibilityIssue): Classification {
     const rule = this.rules[violation.id];
-
     if (rule === undefined) {
       return { responsibility: 'unknown', hint: 'This issue requires investigation by a developer.' };
     }
 
-    const classification: Classification = { responsibility: rule.responsibility, hint: rule.hint };
-
-    if (rule.responsibility === 'editor') {
-      const uid = this.findAffectedContentElement(violation);
-      if (uid !== undefined) {
-        classification.contentElementUid = uid;
-      }
+    if (rule.responsibility !== 'editor') {
+      return { responsibility: 'developer', hint: rule.hint };
     }
 
-    return classification;
-  }
-
-  private findAffectedContentElement(violation: AccessibilityIssue): number | undefined {
-    for (const node of violation.nodes) {
-      for (const target of node.target) {
-        const uid = this.extractContentElementUid(target);
-        if (uid !== undefined) {
-          return uid;
-        }
-      }
+    const match = violation.nodes.find((node) => node.contentElementUid !== undefined);
+    if (match?.contentElementUid === undefined || match.dataAvailable === true) {
+      return { responsibility: 'developer', hint: rule.developerHint ?? rule.hint };
     }
 
-    return undefined;
-  }
-
-  private extractContentElementUid(selector: string): number | undefined {
-    const match = selector.match(/#c(\d+)/);
-    if (match === null) {
-      return undefined;
-    }
-
-    const uid = parseInt(match[1], 10);
-    const exists = this.contentMetadata.some((item) => item.uid === uid);
-
-    return exists ? uid : undefined;
+    return { responsibility: 'editor', hint: rule.hint, contentElementUid: match.contentElementUid };
   }
 }

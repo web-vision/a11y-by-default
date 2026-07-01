@@ -77,7 +77,7 @@ describe('renderIssueCard', () => {
   });
 
   it('renders the correct impact badge class for serious issues', () => {
-    const classifier = new ViolationClassifier([], {
+    const classifier = new ViolationClassifier({
       'image-alt': { responsibility: 'editor', hint: 'Add alt text to images.' },
     });
     const html = renderIssueCard(makeIssue(), classifier);
@@ -86,7 +86,7 @@ describe('renderIssueCard', () => {
   });
 
   it('renders text-bg-danger badge for critical issues', () => {
-    const classifier = new ViolationClassifier([], {
+    const classifier = new ViolationClassifier({
       'critical-rule': { responsibility: 'developer', hint: 'Fix this.' },
     });
     const html = renderIssueCard(makeIssue({ id: 'critical-rule', impact: 'critical' }), classifier);
@@ -94,16 +94,19 @@ describe('renderIssueCard', () => {
   });
 
   it('renders text-bg-primary badge for editor responsibility', () => {
-    const classifier = new ViolationClassifier([], {
+    const classifier = new ViolationClassifier({
       'image-alt': { responsibility: 'editor', hint: 'Add alt text.' },
     });
-    const html = renderIssueCard(makeIssue(), classifier);
+    const issue = makeIssue({
+      nodes: [{ html: '<img src="photo.jpg">', target: ['#main img'], contentElementUid: 5 }],
+    });
+    const html = renderIssueCard(issue, classifier);
     expect(html).toContain('text-bg-primary');
     expect(html).toContain('Editor can fix');
   });
 
   it('renders text-bg-secondary badge for developer responsibility', () => {
-    const classifier = new ViolationClassifier([], {
+    const classifier = new ViolationClassifier({
       'image-alt': { responsibility: 'developer', hint: 'Fix in template.' },
     });
     const html = renderIssueCard(makeIssue(), classifier);
@@ -112,45 +115,44 @@ describe('renderIssueCard', () => {
   });
 
   it('renders text-bg-secondary badge for unknown responsibility', () => {
-    const classifier = new ViolationClassifier([], {});
+    const classifier = new ViolationClassifier({});
     const html = renderIssueCard(makeIssue({ id: 'unlisted-rule' }), classifier);
     expect(html).toContain('text-bg-secondary');
     expect(html).toContain('Needs investigation');
   });
 
   it('shows the help text in the card header', () => {
-    const classifier = new ViolationClassifier([], {});
+    const classifier = new ViolationClassifier({});
     const html = renderIssueCard(makeIssue(), classifier);
     expect(html).toContain('Images must have alternate text');
   });
 
   it('shows the issue description in the card body', () => {
-    const classifier = new ViolationClassifier([], {});
+    const classifier = new ViolationClassifier({});
     const html = renderIssueCard(makeIssue(), classifier);
     expect(html).toContain('Ensures img elements have alternate text');
   });
 
   it('renders failing HTML nodes in code blocks', () => {
-    const classifier = new ViolationClassifier([], {});
+    const classifier = new ViolationClassifier({});
     const html = renderIssueCard(makeIssue(), classifier);
     expect(html).toContain('<code>');
     expect(html).toContain('&lt;img src=&quot;photo.jpg&quot;&gt;');
   });
 
   it('includes a content element edit link when the classifier identifies one', () => {
-    const metadata = [{ uid: 5, CType: 'text', colPos: 0, header: 'Test', bodytext: '' }];
-    const classifier = new ViolationClassifier(metadata, {
+    const classifier = new ViolationClassifier({
       'image-alt': { responsibility: 'editor', hint: 'Add alt text.' },
     });
     const issueWithCe = makeIssue({
-      nodes: [{ html: '<img>', target: ['#c5 img'] }],
+      nodes: [{ html: '<img>', target: ['#c5 img'], contentElementUid: 5 }],
     });
     const html = renderIssueCard(issueWithCe, classifier);
     expect(html).toContain('edit[tt_content][5]');
   });
 
   it('omits the content element link for developer responsibility', () => {
-    const classifier = new ViolationClassifier([], {
+    const classifier = new ViolationClassifier({
       'image-alt': { responsibility: 'developer', hint: 'Fix in template.' },
     });
     const html = renderIssueCard(makeIssue(), classifier);
@@ -166,14 +168,14 @@ describe('renderIssueSection', () => {
   });
 
   it('shows an empty state message when there are no issues', () => {
-    const classifier = new ViolationClassifier([], {});
+    const classifier = new ViolationClassifier({});
     const html = renderIssueSection([], 'violations-heading', 'Violations', 'text-bg-danger', classifier);
     expect(html).toContain('No accessibility issues found.');
     expect(html).not.toContain('<div class="card');
   });
 
   it('shows the heading with a badge containing the issue count', () => {
-    const classifier = new ViolationClassifier([], {});
+    const classifier = new ViolationClassifier({});
     const issues = [makeIssue(), makeIssue()];
     const html = renderIssueSection(issues, 'violations-heading', 'Violations', 'text-bg-danger', classifier);
     expect(html).toContain('Violations');
@@ -181,7 +183,7 @@ describe('renderIssueSection', () => {
   });
 
   it('renders a card for each issue', () => {
-    const classifier = new ViolationClassifier([], {});
+    const classifier = new ViolationClassifier({});
     const html = renderIssueSection(
       [makeIssue(), makeIssue({ id: 'color-contrast' })],
       'violations-heading',
@@ -210,20 +212,20 @@ describe('renderResults', () => {
   });
 
   it('renders a success callout when there are no violations', () => {
-    const classifier = new ViolationClassifier([], {});
+    const classifier = new ViolationClassifier({});
     renderResults(container, EMPTY_RESULT, classifier);
     expect(container.querySelector('.callout-success')).not.toBeNull();
   });
 
   it('omits the success callout when violations are present', () => {
-    const classifier = new ViolationClassifier([], {});
+    const classifier = new ViolationClassifier({});
     const result: ScanResult = { ...EMPTY_RESULT, violations: [makeIssue()] };
     renderResults(container, result, classifier);
     expect(container.querySelector('.callout-success')).toBeNull();
   });
 
   it('always renders both violation and incomplete sections', () => {
-    const classifier = new ViolationClassifier([], {});
+    const classifier = new ViolationClassifier({});
     renderResults(container, EMPTY_RESULT, classifier);
     const sections = container.querySelectorAll('section');
     expect(sections.length).toBe(2);

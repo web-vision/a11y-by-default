@@ -52,6 +52,24 @@ final class IssueClassificationServiceTest extends UnitTestCase
     }
 
     #[Test]
+    public function getClassificationRulesReturnsEditorRuleForHeadingOrder(): void
+    {
+        $rules = $this->subject->getClassificationRules();
+
+        $this->assertArrayHasKey('heading-order', $rules);
+        $this->assertSame('editor', $rules['heading-order']['responsibility']);
+    }
+
+    #[Test]
+    public function getClassificationRulesReturnsDeveloperRuleForEmptyHeading(): void
+    {
+        $rules = $this->subject->getClassificationRules();
+
+        $this->assertArrayHasKey('empty-heading', $rules);
+        $this->assertSame('developer', $rules['empty-heading']['responsibility']);
+    }
+
+    #[Test]
     public function getClassificationRulesIncludesHintForEveryRule(): void
     {
         $rules = $this->subject->getClassificationRules();
@@ -63,11 +81,25 @@ final class IssueClassificationServiceTest extends UnitTestCase
     }
 
     #[Test]
-    public function getClassificationRulesReturnsExactlySixteenRules(): void
+    public function getClassificationRulesIncludesDeveloperHintForEveryEditorRule(): void
     {
         $rules = $this->subject->getClassificationRules();
 
-        $this->assertCount(16, $rules);
+        foreach ($rules as $ruleId => $rule) {
+            if ($rule['responsibility'] !== 'editor') {
+                continue;
+            }
+            $this->assertArrayHasKey('developerHint', $rule, sprintf('Editor rule "%s" is missing a developerHint.', $ruleId));
+            $this->assertNotEmpty($rule['developerHint'] ?? '', sprintf('Editor rule "%s" has an empty developerHint.', $ruleId));
+        }
+    }
+
+    #[Test]
+    public function getClassificationRulesReturnsExactlySeventeenRules(): void
+    {
+        $rules = $this->subject->getClassificationRules();
+
+        $this->assertCount(17, $rules);
     }
 
     #[Test]
