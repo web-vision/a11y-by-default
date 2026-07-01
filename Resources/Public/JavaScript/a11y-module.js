@@ -436,7 +436,31 @@ function renderResults(container, result, classifier) {
         ${successCallout}
         ${renderIssueSection(result.violations, 'a11y-violations-heading', getLabel('module.results.violations'), 'text-bg-danger', classifier)}
         ${renderIssueSection(result.incomplete, 'a11y-incomplete-heading', getLabel('module.results.incomplete'), 'text-bg-warning', classifier)}`;
+    updateFilterCounts(container);
     applyFilters(container);
+}
+function updateFilterCounts(container) {
+    const severityCounts = { critical: 0, serious: 0, moderate: 0, minor: 0 };
+    let developerTaskCount = 0;
+    container.querySelectorAll('[data-impact]').forEach((card) => {
+        const impact = card.dataset['impact'] ?? '';
+        if (impact in severityCounts) {
+            severityCounts[impact] += 1;
+        }
+        if (card.dataset['responsibility'] !== 'editor') {
+            developerTaskCount += 1;
+        }
+    });
+    Object.entries(severityCounts).forEach(([impact, count]) => {
+        const countEl = document.querySelector(`[data-severity-count="${impact}"]`);
+        if (countEl !== null) {
+            countEl.textContent = String(count);
+        }
+    });
+    const developerCountEl = document.querySelector('[data-developer-count]');
+    if (developerCountEl !== null) {
+        developerCountEl.textContent = String(developerTaskCount);
+    }
 }
 function getActiveSeverityFilters() {
     const checkboxes = document.querySelectorAll('.a11y-filter-severity');
@@ -446,6 +470,11 @@ function getActiveSeverityFilters() {
 }
 function isDeveloperTasksFilterEnabled() {
     return document.getElementById('a11y-filter-developer-tasks')?.checked ?? false;
+}
+// TYPO3's bundled backend CSS does not style the Bootstrap `.btn-check:checked+.btn`
+// state, so the toggle's pressed/unpressed look is driven explicitly here instead.
+function syncToggleActiveState(input) {
+    document.querySelector(`label[for="${input.id}"]`)?.classList.toggle('active', input.checked);
 }
 function applyFilters(container) {
     const activeSeverities = getActiveSeverityFilters();
@@ -519,7 +548,13 @@ function initialize() {
     };
     document
         .querySelectorAll('.a11y-filter-severity, #a11y-filter-developer-tasks')
-        .forEach((filterInput) => filterInput.addEventListener('change', () => applyFilters(resultsContainer)));
+        .forEach((filterInput) => {
+        syncToggleActiveState(filterInput);
+        filterInput.addEventListener('change', () => {
+            syncToggleActiveState(filterInput);
+            applyFilters(resultsContainer);
+        });
+    });
     scanButton.addEventListener('click', executeScan);
     executeScan();
 }
@@ -530,5 +565,5 @@ else {
     initialize();
 }
 
-export { applyFilters, initialize, renderIssueCard, renderIssueSection, renderResults };
+export { applyFilters, initialize, renderIssueCard, renderIssueSection, renderResults, updateFilterCounts };
 //# sourceMappingURL=a11y-module.js.map

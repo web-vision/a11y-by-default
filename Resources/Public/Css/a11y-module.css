@@ -1,0 +1,52 @@
+#a11y-app .a11y-filter-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.25rem 0.65rem;
+    border-radius: 0.25rem;
+    border: 1px solid var(--a11y-toggle-color);
+    color: var(--a11y-toggle-color);
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    user-select: none;
+}
+
+#a11y-app .a11y-filter-toggle.active {
+    background-color: var(--a11y-toggle-color);
+    color: #fff;
+}
+
+#a11y-app .btn-check:focus-visible + .a11y-filter-toggle {
+    outline: 2px solid var(--a11y-toggle-color);
+    outline-offset: 2px;
+}
+
+#a11y-app .a11y-filter-toggle .a11y-filter-count {
+    border-radius: 999px;
+    padding: 0 0.45em;
+    font-size: 0.75em;
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
+#a11y-app .a11y-filter-toggle.active .a11y-filter-count {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+#a11y-app .a11y-filter-toggle-critical {
+    --a11y-toggle-color: var(--bs-danger, #d64545);
+}
+
+#a11y-app .a11y-filter-toggle-serious {
+    --a11y-toggle-color: var(--bs-warning, #d98b1f);
+}
+
+#a11y-app .a11y-filter-toggle-moderate {
+    --a11y-toggle-color: var(--bs-info, #158097);
+}
+
+#a11y-app .a11y-filter-toggle-minor,
+#a11y-app .a11y-filter-toggle-developer {
+    --a11y-toggle-color: var(--bs-secondary, #6c757d);
+}

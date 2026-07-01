@@ -182,7 +182,35 @@ export function renderResults(container: HTMLElement, result: ScanResult, classi
         ${renderIssueSection(result.violations, 'a11y-violations-heading', getLabel('module.results.violations'), 'text-bg-danger', classifier)}
         ${renderIssueSection(result.incomplete, 'a11y-incomplete-heading', getLabel('module.results.incomplete'), 'text-bg-warning', classifier)}`;
 
+  updateFilterCounts(container);
   applyFilters(container);
+}
+
+export function updateFilterCounts(container: HTMLElement): void {
+  const severityCounts: Record<string, number> = { critical: 0, serious: 0, moderate: 0, minor: 0 };
+  let developerTaskCount = 0;
+
+  container.querySelectorAll<HTMLElement>('[data-impact]').forEach((card) => {
+    const impact = card.dataset['impact'] ?? '';
+    if (impact in severityCounts) {
+      severityCounts[impact] += 1;
+    }
+    if (card.dataset['responsibility'] !== 'editor') {
+      developerTaskCount += 1;
+    }
+  });
+
+  Object.entries(severityCounts).forEach(([impact, count]) => {
+    const countEl = document.querySelector(`[data-severity-count="${impact}"]`);
+    if (countEl !== null) {
+      countEl.textContent = String(count);
+    }
+  });
+
+  const developerCountEl = document.querySelector('[data-developer-count]');
+  if (developerCountEl !== null) {
+    developerCountEl.textContent = String(developerTaskCount);
+  }
 }
 
 function getActiveSeverityFilters(): Set<string> {
@@ -196,6 +224,12 @@ function getActiveSeverityFilters(): Set<string> {
 
 function isDeveloperTasksFilterEnabled(): boolean {
   return (document.getElementById('a11y-filter-developer-tasks') as HTMLInputElement | null)?.checked ?? false;
+}
+
+// TYPO3's bundled backend CSS does not style the Bootstrap `.btn-check:checked+.btn`
+// state, so the toggle's pressed/unpressed look is driven explicitly here instead.
+function syncToggleActiveState(input: HTMLInputElement): void {
+  document.querySelector(`label[for="${input.id}"]`)?.classList.toggle('active', input.checked);
 }
 
 export function applyFilters(container: HTMLElement): void {
@@ -289,7 +323,13 @@ export function initialize(): void {
 
   document
     .querySelectorAll<HTMLInputElement>('.a11y-filter-severity, #a11y-filter-developer-tasks')
-    .forEach((filterInput) => filterInput.addEventListener('change', () => applyFilters(resultsContainer)));
+    .forEach((filterInput) => {
+      syncToggleActiveState(filterInput);
+      filterInput.addEventListener('change', () => {
+        syncToggleActiveState(filterInput);
+        applyFilters(resultsContainer);
+      });
+    });
 
   scanButton.addEventListener('click', executeScan);
   executeScan();
