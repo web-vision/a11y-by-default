@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="tr" datatype="plaintext" original="messages" date="2026-07-01T11:52:00Z" product-name="a11y_by_default">
+        <body>
+            <trans-unit id="module.noPage">
+                <source>Please select a page from the page tree to run the accessibility check.</source>
+                <target>Erişilebilirlik denetimini çalıştırmak için sayfa ağacından bir sayfa seçin.</target>
+            </trans-unit>
+            <trans-unit id="module.scanButton">
+                <source>Run Accessibility Scan</source>
+                <target>Erişilebilirlik Taramasını Çalıştır</target>
+            </trans-unit>
+            <trans-unit id="module.engineLabel">
+                <source>Scanning engine:</source>
+                <target>Tarama motoru:</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axe">
+                <source>axe-core (recommended)</source>
+                <target>axe-core (önerilen)</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcs">
+                <source>HTML CodeSniffer</source>
+                <target>HTML CodeSniffer</target>
+            </trans-unit>
+            <trans-unit id="module.auditDisclaimer">
+                <source>This module provides automated assistance for accessibility checks. It does not replace a full audit by qualified accessibility auditors, which is required to have a page officially certified as accessible.</source>
+                <target>Bu modül, erişilebilirlik kontrolleri için otomatik destek sağlar. Bir sayfanın resmi olarak erişilebilir sertifikası alması için gereken, yetkili erişilebilirlik denetçileri tarafından yapılan kapsamlı bir denetimin yerini almaz.</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axeInfo">
+                <source>axe-core (recommended) checks the page against the WCAG accessibility guidelines — the standard that ensures people using screen readers, keyboard navigation, or other assistive technology can use your content. It is the actively maintained, industry-standard tool and produces very few incorrect warnings, so almost everything it reports is worth acting on.</source>
+                <target>axe-core (önerilen), sayfayı WCAG erişilebilirlik yönergelerine göre kontrol eder — ekran okuyucu, klavye navigasyonu veya diğer yardımcı teknolojileri kullanan kişilerin içeriğinizi kullanabilmesini sağlayan standart. Sektör standardı olan ve aktif olarak geliştirilmeye devam eden bu araç çok az sayıda hatalı uyarı üretir, bu nedenle bildirdiği neredeyse her şey üzerinde işlem yapmaya değer.</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcsInfo">
+                <source>HTML CodeSniffer checks the page against similar accessibility guidelines, but with an older, less refined method. It can occasionally point out issues axe-core misses, but it also produces many more results that need a closer manual look before you can tell whether something is really a problem. Use it only for a second opinion, not as your main scan.</source>
+                <target>HTML CodeSniffer, sayfayı benzer erişilebilirlik yönergelerine göre kontrol eder, ancak daha eski ve daha az gelişmiş bir yöntemle. Bazen axe-core'un gözden kaçırdığı sorunları işaret edebilir, ama gerçekten bir sorun olup olmadığını anlamak için daha yakından manuel inceleme gerektiren çok daha fazla sonuç üretir. Bunu yalnızca ikinci bir görüş almak için kullanın, ana taramanız olarak değil.</target>
+            </trans-unit>
+            <trans-unit id="module.loading">
+                <source>Loading page and running scan…</source>
+                <target>Sayfa yükleniyor ve tarama çalıştırılıyor…</target>
+            </trans-unit>
+            <trans-unit id="module.results.violations">
+                <source>Violations</source>
+                <target>İhlaller</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete">
+                <source>Needs review</source>
+                <target>İnceleme gerekiyor</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete.info">
+                <source>Automated scanning could not determine whether these items pass or fail. Each one needs to be checked manually.</source>
+                <target>Otomatik tarama, bu öğelerin geçip geçmediğini belirleyemedi. Her biri manuel olarak kontrol edilmelidir.</target>
+            </trans-unit>
+            <trans-unit id="module.results.passes">
+                <source>Passes</source>
+                <target>Geçenler</target>
+            </trans-unit>
+            <trans-unit id="module.results.empty">
+                <source>No accessibility issues found.</source>
+                <target>Erişilebilirlik sorunu bulunamadı.</target>
+            </trans-unit>
+            <trans-unit id="module.filters.label">
+                <source>Filters</source>
+                <target>Filtreler</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severityLabel">
+                <source>Severity:</source>
+                <target>Önem derecesi:</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.critical">
+                <source>Critical</source>
+                <target>Kritik</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.serious">
+                <source>Serious</source>
+                <target>Ciddi</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.moderate">
+                <source>Moderate</source>
+                <target>Orta</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.minor">
+                <source>Minor</source>
+                <target>Küçük</target>
+            </trans-unit>
+            <trans-unit id="module.filters.viewLabel">
+                <source>View</source>
+                <target>Görünüm</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.editor">
+                <source>For editors</source>
+                <target>Editörler için</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.developer">
+                <source>For developers</source>
+                <target>Geliştiriciler için</target>
+            </trans-unit>
+            <trans-unit id="module.error.scanFailed">
+                <source>The accessibility scan could not be completed. Please try again.</source>
+                <target>Erişilebilirlik taraması tamamlanamadı. Lütfen tekrar deneyin.</target>
+            </trans-unit>
+            <trans-unit id="module.error.noPreview">
+                <source>No preview URL available for this page. Ensure the page has a valid site configuration.</source>
+                <target>Bu sayfa için önizleme URL'si bulunamadı. Sayfanın geçerli bir site yapılandırmasına sahip olduğundan emin olun.</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt">
+                <source>Add an image description (alt text) in the content element editor.</source>
+                <target>İçerik öğesi editöründe bir görsel açıklaması (alt metni) ekleyin.</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt.developer">
+                <source>This image is not linked to editable content, or its alt text is set but not rendered. Check the template's image rendering (developer task).</source>
+                <target>Bu görsel düzenlenebilir içeriğe bağlı değil veya alt metni ayarlanmış ancak görüntülenmiyor. Şablonun görsel oluşturma işlemini kontrol edin (geliştirici görevi).</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt">
+                <source>Add an alt text to the image input element in the content editor.</source>
+                <target>İçerik editöründeki görsel giriş öğesine bir alt metni ekleyin.</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt.developer">
+                <source>This image input is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>Bu görsel giriş öğesi düzenlenebilir içeriğe bağlı değil veya alt metni ayarlanmış ancak görüntülenmiyor. Şablonun oluşturma işlemini kontrol edin (geliştirici görevi).</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt">
+                <source>Add alt text to the image map area in the content editor.</source>
+                <target>İçerik editöründeki görsel harita alanına alt metni ekleyin.</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt.developer">
+                <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>Bu görsel harita alanı düzenlenebilir içeriğe bağlı değil veya alt metni ayarlanmış ancak görüntülenmiyor. Şablonun oluşturma işlemini kontrol edin (geliştirici görevi).</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order">
+                <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
+                <target>İçerik öğesini düzenleyin ve başlık düzeylerinin bir adım atlamaması için Başlık Düzenini değiştirin.</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order.developer">
+                <source>This heading is rendered by the page template rather than a content element. Adjust the heading structure in the Fluid template (developer task).</source>
+                <target>Bu başlık, bir içerik öğesi tarafından değil sayfa şablonu tarafından oluşturuluyor. Başlık yapısını Fluid şablonunda düzenleyin (geliştirici görevi).</target>
+            </trans-unit>
+            <trans-unit id="hint.empty-heading">
+                <source>A heading element is rendered with no text. Check the template's heading rendering; it should not output a heading tag when the source text is empty (developer task).</source>
+                <target>Bir başlık öğesi metin olmadan oluşturuluyor. Şablonun başlık oluşturma işlemini kontrol edin; kaynak metin boş olduğunda bir başlık etiketi çıkarmamalıdır (geliştirici görevi).</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name">
+                <source>Edit the link in the content editor and provide a descriptive link text.</source>
+                <target>İçerik editöründeki bağlantıyı düzenleyin ve açıklayıcı bir bağlantı metni girin.</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name.developer">
+                <source>This link is rendered by the page template without link text and isn't linked to editable content. Add visible text or an aria-label in the Fluid template (developer task).</source>
+                <target>Bu bağlantı, bağlantı metni olmadan sayfa şablonu tarafından oluşturuluyor ve düzenlenebilir içeriğe bağlı değil. Fluid şablonuna görünür metin veya bir aria-label ekleyin (geliştirici görevi).</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr">
+                <source>Update the table structure in the content editor to associate data cells with headers.</source>
+                <target>Veri hücrelerini başlıklarla ilişkilendirmek için içerik editöründeki tablo yapısını güncelleyin.</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so data cells reference their headers (developer task).</source>
+                <target>Bu tablo düzenlenebilir içeriğe bağlı değil. Veri hücrelerinin başlıklarına referans vermesi için şablondaki tablo yapısını güncelleyin (geliştirici görevi).</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells">
+                <source>Update the table in the content editor so header cells have associated data cells.</source>
+                <target>Başlık hücrelerinin ilişkili veri hücrelerine sahip olması için içerik editöründeki tabloyu güncelleyin.</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so header cells have associated data cells (developer task).</source>
+                <target>Bu tablo düzenlenebilir içeriğe bağlı değil. Başlık hücrelerinin ilişkili veri hücrelerine sahip olması için şablondaki tablo yapısını güncelleyin (geliştirici görevi).</target>
+            </trans-unit>
+            <trans-unit id="hint.landmark-one-main">
+                <source>Add a main landmark element to the page template (developer task).</source>
+                <target>Sayfa şablonuna bir ana (main) landmark öğesi ekleyin (geliştirici görevi).</target>
+            </trans-unit>
+            <trans-unit id="hint.region">
+                <source>Ensure all page content is contained within appropriate landmark regions in the template (developer task).</source>
+                <target>Tüm sayfa içeriğinin şablondaki uygun landmark bölgeleri içinde yer aldığından emin olun (geliştirici görevi).</target>
+            </trans-unit>
+            <trans-unit id="hint.bypass">
+                <source>Add a skip navigation link to the page template (developer task).</source>
+                <target>Sayfa şablonuna bir gezinmeyi atlama bağlantısı ekleyin (geliştirici görevi).</target>
+            </trans-unit>
+            <trans-unit id="hint.html-has-lang">
+                <source>Set the lang attribute on the HTML element in the page template (developer task).</source>
+                <target>Sayfa şablonundaki HTML öğesine lang özniteliğini ayarlayın (geliştirici görevi).</target>
+            </trans-unit>
+            <trans-unit id="hint.html-lang-valid">
+                <source>Use a valid BCP 47 language tag on the HTML element (developer task).</source>
+                <target>HTML öğesinde geçerli bir BCP 47 dil etiketi kullanın (geliştirici görevi).</target>
+            </trans-unit>
+            <trans-unit id="hint.color-contrast">
+                <source>Adjust CSS color values to meet WCAG contrast requirements (developer task).</source>
+                <target>WCAG kontrast gereksinimlerini karşılamak için CSS renk değerlerini ayarlayın (geliştirici görevi).</target>
+            </trans-unit>
+            <trans-unit id="hint.meta-viewport">
+                <source>Remove user-scalable=no from the viewport meta tag in the template (developer task).</source>
+                <target>Şablondaki viewport meta etiketinden user-scalable=no ifadesini kaldırın (geliştirici görevi).</target>
+            </trans-unit>
+            <trans-unit id="hint.frame-title">
+                <source>Add a title attribute to all iframe elements in the template (developer task).</source>
+                <target>Şablondaki tüm iframe öğelerine bir title özniteliği ekleyin (geliştirici görevi).</target>
+            </trans-unit>
+            <trans-unit id="hint.scrollable-region-focusable">
+                <source>Make scrollable regions keyboard-accessible in the template (developer task).</source>
+                <target>Şablonda kaydırılabilir bölgeleri klavye ile erişilebilir hale getirin (geliştirici görevi).</target>
+            </trans-unit>
+            <trans-unit id="pageHint.label">
+                <source>Check Accessibility</source>
+                <target>Erişilebilirliği Kontrol Et</target>
+            </trans-unit>
+            <trans-unit id="pageHint.title">
+                <source>Check accessibility for this page</source>
+                <target>Bu sayfa için erişilebilirliği kontrol edin</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

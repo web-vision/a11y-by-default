@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="hi" datatype="plaintext" original="messages" date="2026-07-01T11:52:00Z" product-name="a11y_by_default">
+        <body>
+            <trans-unit id="module.noPage">
+                <source>Please select a page from the page tree to run the accessibility check.</source>
+                <target>सुगम्यता जाँच चलाने के लिए कृपया पेज ट्री से एक पेज चुनें।</target>
+            </trans-unit>
+            <trans-unit id="module.scanButton">
+                <source>Run Accessibility Scan</source>
+                <target>सुगम्यता स्कैन चलाएँ</target>
+            </trans-unit>
+            <trans-unit id="module.engineLabel">
+                <source>Scanning engine:</source>
+                <target>स्कैनिंग इंजन:</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axe">
+                <source>axe-core (recommended)</source>
+                <target>axe-core (अनुशंसित)</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcs">
+                <source>HTML CodeSniffer</source>
+                <target>HTML CodeSniffer</target>
+            </trans-unit>
+            <trans-unit id="module.auditDisclaimer">
+                <source>This module provides automated assistance for accessibility checks. It does not replace a full audit by qualified accessibility auditors, which is required to have a page officially certified as accessible.</source>
+                <target>यह मॉड्यूल सुगम्यता जाँच के लिए स्वचालित सहायता प्रदान करता है। यह योग्य सुगम्यता ऑडिटरों द्वारा किए जाने वाले संपूर्ण ऑडिट का विकल्प नहीं है, जो किसी पेज को आधिकारिक रूप से सुगम्य प्रमाणित करने के लिए आवश्यक होता है।</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axeInfo">
+                <source>axe-core (recommended) checks the page against the WCAG accessibility guidelines — the standard that ensures people using screen readers, keyboard navigation, or other assistive technology can use your content. It is the actively maintained, industry-standard tool and produces very few incorrect warnings, so almost everything it reports is worth acting on.</source>
+                <target>axe-core (अनुशंसित) पेज की जाँच WCAG सुगम्यता मार्गदर्शिकाओं के आधार पर करता है — यह वह मानक है जो सुनिश्चित करता है कि स्क्रीन रीडर, कीबोर्ड नेविगेशन या अन्य सहायक तकनीक का उपयोग करने वाले लोग आपकी सामग्री का उपयोग कर सकें। यह उद्योग-मानक, सक्रिय रूप से अनुरक्षित टूल है और बहुत कम गलत चेतावनियाँ देता है, इसलिए यह जो भी रिपोर्ट करे, उस पर कार्रवाई करना लगभग हमेशा उपयुक्त होता है।</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcsInfo">
+                <source>HTML CodeSniffer checks the page against similar accessibility guidelines, but with an older, less refined method. It can occasionally point out issues axe-core misses, but it also produces many more results that need a closer manual look before you can tell whether something is really a problem. Use it only for a second opinion, not as your main scan.</source>
+                <target>HTML CodeSniffer भी पेज की जाँच समान सुगम्यता मार्गदर्शिकाओं के आधार पर करता है, लेकिन एक पुरानी, कम परिष्कृत पद्धति से। यह कभी-कभी ऐसी समस्याएँ बता सकता है जिन्हें axe-core नहीं पकड़ता, लेकिन यह कई अधिक परिणाम भी देता है जिनकी सावधानीपूर्वक मैनुअल जाँच आवश्यक होती है, तभी पता चलता है कि वे वास्तविक समस्या हैं या नहीं। इसे केवल दूसरी राय के रूप में उपयोग करें, अपने मुख्य स्कैन के रूप में नहीं।</target>
+            </trans-unit>
+            <trans-unit id="module.loading">
+                <source>Loading page and running scan…</source>
+                <target>पेज लोड हो रहा है और स्कैन चल रहा है…</target>
+            </trans-unit>
+            <trans-unit id="module.results.violations">
+                <source>Violations</source>
+                <target>उल्लंघन</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete">
+                <source>Needs review</source>
+                <target>समीक्षा आवश्यक</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete.info">
+                <source>Automated scanning could not determine whether these items pass or fail. Each one needs to be checked manually.</source>
+                <target>स्वचालित स्कैनिंग यह निर्धारित नहीं कर सकी कि ये आइटम पास हैं या फेल। प्रत्येक की मैनुअल रूप से जाँच करना आवश्यक है।</target>
+            </trans-unit>
+            <trans-unit id="module.results.passes">
+                <source>Passes</source>
+                <target>उत्तीर्ण</target>
+            </trans-unit>
+            <trans-unit id="module.results.empty">
+                <source>No accessibility issues found.</source>
+                <target>कोई सुगम्यता समस्या नहीं मिली।</target>
+            </trans-unit>
+            <trans-unit id="module.filters.label">
+                <source>Filters</source>
+                <target>फ़िल्टर</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severityLabel">
+                <source>Severity:</source>
+                <target>गंभीरता:</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.critical">
+                <source>Critical</source>
+                <target>अति गंभीर</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.serious">
+                <source>Serious</source>
+                <target>गंभीर</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.moderate">
+                <source>Moderate</source>
+                <target>मध्यम</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.minor">
+                <source>Minor</source>
+                <target>मामूली</target>
+            </trans-unit>
+            <trans-unit id="module.filters.viewLabel">
+                <source>View</source>
+                <target>दृश्य</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.editor">
+                <source>For editors</source>
+                <target>संपादकों के लिए</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.developer">
+                <source>For developers</source>
+                <target>डेवलपर्स के लिए</target>
+            </trans-unit>
+            <trans-unit id="module.error.scanFailed">
+                <source>The accessibility scan could not be completed. Please try again.</source>
+                <target>सुगम्यता स्कैन पूरा नहीं हो सका। कृपया पुनः प्रयास करें।</target>
+            </trans-unit>
+            <trans-unit id="module.error.noPreview">
+                <source>No preview URL available for this page. Ensure the page has a valid site configuration.</source>
+                <target>इस पेज के लिए कोई पूर्वावलोकन URL उपलब्ध नहीं है। सुनिश्चित करें कि पेज में वैध साइट कॉन्फ़िगरेशन है।</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt">
+                <source>Add an image description (alt text) in the content element editor.</source>
+                <target>कंटेंट एलिमेंट एडिटर में इमेज विवरण (alt टेक्स्ट) जोड़ें।</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt.developer">
+                <source>This image is not linked to editable content, or its alt text is set but not rendered. Check the template's image rendering (developer task).</source>
+                <target>यह इमेज संपादन योग्य सामग्री से जुड़ी नहीं है, या इसका alt टेक्स्ट सेट है लेकिन प्रदर्शित नहीं हो रहा। टेम्पलेट की इमेज रेंडरिंग की जाँच करें (डेवलपर कार्य)।</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt">
+                <source>Add an alt text to the image input element in the content editor.</source>
+                <target>कंटेंट एडिटर में इमेज इनपुट एलिमेंट में alt टेक्स्ट जोड़ें।</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt.developer">
+                <source>This image input is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>यह इमेज इनपुट संपादन योग्य सामग्री से जुड़ा नहीं है, या इसका alt टेक्स्ट सेट है लेकिन प्रदर्शित नहीं हो रहा। टेम्पलेट की रेंडरिंग की जाँच करें (डेवलपर कार्य)।</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt">
+                <source>Add alt text to the image map area in the content editor.</source>
+                <target>कंटेंट एडिटर में इमेज मैप क्षेत्र में alt टेक्स्ट जोड़ें।</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt.developer">
+                <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>यह इमेज मैप क्षेत्र संपादन योग्य सामग्री से जुड़ा नहीं है, या इसका alt टेक्स्ट सेट है लेकिन प्रदर्शित नहीं हो रहा। टेम्पलेट की रेंडरिंग की जाँच करें (डेवलपर कार्य)।</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order">
+                <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
+                <target>कंटेंट एलिमेंट को संपादित करें और उसका हेडर लेआउट बदलें ताकि हेडिंग स्तर कोई चरण न छोड़ें।</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order.developer">
+                <source>This heading is rendered by the page template rather than a content element. Adjust the heading structure in the Fluid template (developer task).</source>
+                <target>यह हेडिंग किसी कंटेंट एलिमेंट के बजाय पेज टेम्पलेट द्वारा प्रदर्शित की जाती है। Fluid टेम्पलेट में हेडिंग संरचना को समायोजित करें (डेवलपर कार्य)।</target>
+            </trans-unit>
+            <trans-unit id="hint.empty-heading">
+                <source>A heading element is rendered with no text. Check the template's heading rendering; it should not output a heading tag when the source text is empty (developer task).</source>
+                <target>एक हेडिंग एलिमेंट बिना किसी टेक्स्ट के प्रदर्शित किया जा रहा है। टेम्पलेट की हेडिंग रेंडरिंग की जाँच करें; जब स्रोत टेक्स्ट खाली हो तो इसे हेडिंग टैग आउटपुट नहीं करना चाहिए (डेवलपर कार्य)।</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name">
+                <source>Edit the link in the content editor and provide a descriptive link text.</source>
+                <target>कंटेंट एडिटर में लिंक को संपादित करें और एक वर्णनात्मक लिंक टेक्स्ट प्रदान करें।</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name.developer">
+                <source>This link is rendered by the page template without link text and isn't linked to editable content. Add visible text or an aria-label in the Fluid template (developer task).</source>
+                <target>यह लिंक पेज टेम्पलेट द्वारा बिना लिंक टेक्स्ट के प्रदर्शित किया जाता है और संपादन योग्य सामग्री से जुड़ा नहीं है। Fluid टेम्पलेट में दृश्यमान टेक्स्ट या aria-label जोड़ें (डेवलपर कार्य)।</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr">
+                <source>Update the table structure in the content editor to associate data cells with headers.</source>
+                <target>डेटा सेल को हेडर से संबद्ध करने के लिए कंटेंट एडिटर में टेबल संरचना अपडेट करें।</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so data cells reference their headers (developer task).</source>
+                <target>यह टेबल संपादन योग्य सामग्री से जुड़ी नहीं है। टेम्पलेट में टेबल संरचना अपडेट करें ताकि डेटा सेल अपने हेडर को संदर्भित करें (डेवलपर कार्य)।</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells">
+                <source>Update the table in the content editor so header cells have associated data cells.</source>
+                <target>कंटेंट एडिटर में टेबल अपडेट करें ताकि हेडर सेल में संबद्ध डेटा सेल हों।</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so header cells have associated data cells (developer task).</source>
+                <target>यह टेबल संपादन योग्य सामग्री से जुड़ी नहीं है। टेम्पलेट में टेबल संरचना अपडेट करें ताकि हेडर सेल में संबद्ध डेटा सेल हों (डेवलपर कार्य)।</target>
+            </trans-unit>
+            <trans-unit id="hint.landmark-one-main">
+                <source>Add a main landmark element to the page template (developer task).</source>
+                <target>पेज टेम्पलेट में एक main लैंडमार्क एलिमेंट जोड़ें (डेवलपर कार्य)।</target>
+            </trans-unit>
+            <trans-unit id="hint.region">
+                <source>Ensure all page content is contained within appropriate landmark regions in the template (developer task).</source>
+                <target>सुनिश्चित करें कि पेज की सारी सामग्री टेम्पलेट में उचित लैंडमार्क क्षेत्रों के भीतर समाहित है (डेवलपर कार्य)।</target>
+            </trans-unit>
+            <trans-unit id="hint.bypass">
+                <source>Add a skip navigation link to the page template (developer task).</source>
+                <target>पेज टेम्पलेट में एक स्किप नेविगेशन लिंक जोड़ें (डेवलपर कार्य)।</target>
+            </trans-unit>
+            <trans-unit id="hint.html-has-lang">
+                <source>Set the lang attribute on the HTML element in the page template (developer task).</source>
+                <target>पेज टेम्पलेट में HTML एलिमेंट पर lang एट्रिब्यूट सेट करें (डेवलपर कार्य)।</target>
+            </trans-unit>
+            <trans-unit id="hint.html-lang-valid">
+                <source>Use a valid BCP 47 language tag on the HTML element (developer task).</source>
+                <target>HTML एलिमेंट पर एक मान्य BCP 47 भाषा टैग का उपयोग करें (डेवलपर कार्य)।</target>
+            </trans-unit>
+            <trans-unit id="hint.color-contrast">
+                <source>Adjust CSS color values to meet WCAG contrast requirements (developer task).</source>
+                <target>WCAG कंट्रास्ट आवश्यकताओं को पूरा करने के लिए CSS रंग मूल्यों को समायोजित करें (डेवलपर कार्य)।</target>
+            </trans-unit>
+            <trans-unit id="hint.meta-viewport">
+                <source>Remove user-scalable=no from the viewport meta tag in the template (developer task).</source>
+                <target>टेम्पलेट में viewport मेटा टैग से user-scalable=no हटाएँ (डेवलपर कार्य)।</target>
+            </trans-unit>
+            <trans-unit id="hint.frame-title">
+                <source>Add a title attribute to all iframe elements in the template (developer task).</source>
+                <target>टेम्पलेट में सभी iframe एलिमेंट्स में title एट्रिब्यूट जोड़ें (डेवलपर कार्य)।</target>
+            </trans-unit>
+            <trans-unit id="hint.scrollable-region-focusable">
+                <source>Make scrollable regions keyboard-accessible in the template (developer task).</source>
+                <target>टेम्पलेट में स्क्रॉल करने योग्य क्षेत्रों को कीबोर्ड से सुगम्य बनाएँ (डेवलपर कार्य)।</target>
+            </trans-unit>
+            <trans-unit id="pageHint.label">
+                <source>Check Accessibility</source>
+                <target>सुगम्यता जाँचें</target>
+            </trans-unit>
+            <trans-unit id="pageHint.title">
+                <source>Check accessibility for this page</source>
+                <target>इस पेज की सुगम्यता जाँचें</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

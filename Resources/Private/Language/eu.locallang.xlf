@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="eu" datatype="plaintext" original="messages" date="2026-07-01T11:52:00Z" product-name="a11y_by_default">
+        <body>
+            <trans-unit id="module.noPage">
+                <source>Please select a page from the page tree to run the accessibility check.</source>
+                <target>Mesedez, hautatu orri bat orri-zuhaitzetik irisgarritasun-egiaztapena exekutatzeko.</target>
+            </trans-unit>
+            <trans-unit id="module.scanButton">
+                <source>Run Accessibility Scan</source>
+                <target>Exekutatu irisgarritasun-analisia</target>
+            </trans-unit>
+            <trans-unit id="module.engineLabel">
+                <source>Scanning engine:</source>
+                <target>Analisi-motorra:</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axe">
+                <source>axe-core (recommended)</source>
+                <target>axe-core (gomendatua)</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcs">
+                <source>HTML CodeSniffer</source>
+                <target>HTML CodeSniffer</target>
+            </trans-unit>
+            <trans-unit id="module.auditDisclaimer">
+                <source>This module provides automated assistance for accessibility checks. It does not replace a full audit by qualified accessibility auditors, which is required to have a page officially certified as accessible.</source>
+                <target>Modulu honek irisgarritasun-egiaztapenetarako laguntza automatizatua eskaintzen du. Ez du ordezkatzen irisgarritasunean kualifikatutako auditoreek egindako auditoria oso bat, orri bat ofizialki irisgarri gisa ziurtatzeko beharrezkoa dena.</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axeInfo">
+                <source>axe-core (recommended) checks the page against the WCAG accessibility guidelines — the standard that ensures people using screen readers, keyboard navigation, or other assistive technology can use your content. It is the actively maintained, industry-standard tool and produces very few incorrect warnings, so almost everything it reports is worth acting on.</source>
+                <target>axe-core (gomendatua) orria WCAG irisgarritasun-jarraibideen arabera egiaztatzen du — pantaila-irakurgailuak, teklatu bidezko nabigazioa edo bestelako laguntza-teknologiak erabiltzen dituzten pertsonek zure edukia erabili ahal izatea bermatzen duen estandarra. Aktiboki mantentzen den eta sektorean estandarra den tresna da, eta oso abisu okerra gutxi sortzen ditu, beraz, jakinarazten duen ia guztia kontuan hartzea merezi du.</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcsInfo">
+                <source>HTML CodeSniffer checks the page against similar accessibility guidelines, but with an older, less refined method. It can occasionally point out issues axe-core misses, but it also produces many more results that need a closer manual look before you can tell whether something is really a problem. Use it only for a second opinion, not as your main scan.</source>
+                <target>HTML CodeSniffer-ek orria antzeko irisgarritasun-jarraibideen arabera egiaztatzen du, baina metodo zaharrago eta gutxiago findu batekin. Batzuetan axe-core-k ikusten ez dituen arazoak agerian utz ditzake, baina askoz emaitza gehiago ere sortzen ditu, arazo bat benetakoa den jakiteko eskuzko azterketa sakonagoa behar dutenak. Erabili bigarren iritzi gisa soilik, ez zure azterketa nagusi gisa.</target>
+            </trans-unit>
+            <trans-unit id="module.loading">
+                <source>Loading page and running scan…</source>
+                <target>Orria kargatzen eta analisia exekutatzen…</target>
+            </trans-unit>
+            <trans-unit id="module.results.violations">
+                <source>Violations</source>
+                <target>Urraketak</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete">
+                <source>Needs review</source>
+                <target>Berrikuspena behar du</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete.info">
+                <source>Automated scanning could not determine whether these items pass or fail. Each one needs to be checked manually.</source>
+                <target>Analisi automatizatuak ezin izan du zehaztu elementu hauek gainditzen ala huts egiten duten. Bakoitza eskuz egiaztatu behar da.</target>
+            </trans-unit>
+            <trans-unit id="module.results.passes">
+                <source>Passes</source>
+                <target>Gaindituak</target>
+            </trans-unit>
+            <trans-unit id="module.results.empty">
+                <source>No accessibility issues found.</source>
+                <target>Ez da irisgarritasun-arazorik aurkitu.</target>
+            </trans-unit>
+            <trans-unit id="module.filters.label">
+                <source>Filters</source>
+                <target>Iragazkiak</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severityLabel">
+                <source>Severity:</source>
+                <target>Larritasuna:</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.critical">
+                <source>Critical</source>
+                <target>Kritikoa</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.serious">
+                <source>Serious</source>
+                <target>Larria</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.moderate">
+                <source>Moderate</source>
+                <target>Ertaina</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.minor">
+                <source>Minor</source>
+                <target>Txikia</target>
+            </trans-unit>
+            <trans-unit id="module.filters.viewLabel">
+                <source>View</source>
+                <target>Ikuspegia</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.editor">
+                <source>For editors</source>
+                <target>Editoreentzat</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.developer">
+                <source>For developers</source>
+                <target>Garatzaileentzat</target>
+            </trans-unit>
+            <trans-unit id="module.error.scanFailed">
+                <source>The accessibility scan could not be completed. Please try again.</source>
+                <target>Ezin izan da irisgarritasun-analisia osatu. Mesedez, saiatu berriro.</target>
+            </trans-unit>
+            <trans-unit id="module.error.noPreview">
+                <source>No preview URL available for this page. Ensure the page has a valid site configuration.</source>
+                <target>Orri honentzako ez dago aurrebista URLrik erabilgarri. Ziurtatu orriak baliozko gune-konfigurazioa duela.</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt">
+                <source>Add an image description (alt text) in the content element editor.</source>
+                <target>Gehitu irudiaren deskribapena (alt testua) eduki-elementuaren editorean.</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt.developer">
+                <source>This image is not linked to editable content, or its alt text is set but not rendered. Check the template's image rendering (developer task).</source>
+                <target>Irudi hau ez dago editatu daitekeen edukira estekatuta, edo alt testua ezarrita du baina ez da errendatzen. Egiaztatu txantiloiaren irudi-errendatzea (garatzaile-eginkizuna).</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt">
+                <source>Add an alt text to the image input element in the content editor.</source>
+                <target>Gehitu alt testua irudi-sarrerako elementuari eduki-editorean.</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt.developer">
+                <source>This image input is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>Irudi-sarrera hau ez dago editatu daitekeen edukira estekatuta, edo alt testua ezarrita du baina ez da errendatzen. Egiaztatu txantiloiaren errendatzea (garatzaile-eginkizuna).</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt">
+                <source>Add alt text to the image map area in the content editor.</source>
+                <target>Gehitu alt testua irudi-mapako arearen eduki-editorean.</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt.developer">
+                <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>Irudi-mapako area hau ez dago editatu daitekeen edukira estekatuta, edo alt testua ezarrita du baina ez da errendatzen. Egiaztatu txantiloiaren errendatzea (garatzaile-eginkizuna).</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order">
+                <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
+                <target>Editatu eduki-elementua eta aldatu bere goiburu-diseinua, izenburu-mailek urrats bat ere ez salta dezaten.</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order.developer">
+                <source>This heading is rendered by the page template rather than a content element. Adjust the heading structure in the Fluid template (developer task).</source>
+                <target>Izenburu hau orriaren txantiloiak errendatzen du, eduki-elementu batek beharrean. Doitu izenburuen egitura Fluid txantiloian (garatzaile-eginkizuna).</target>
+            </trans-unit>
+            <trans-unit id="hint.empty-heading">
+                <source>A heading element is rendered with no text. Check the template's heading rendering; it should not output a heading tag when the source text is empty (developer task).</source>
+                <target>Izenburu-elementu bat testu gabe errendatzen da. Egiaztatu txantiloiaren izenburu-errendatzea; iturburu-testua hutsik dagoenean izenburu-etiketarik ez luke atera behar (garatzaile-eginkizuna).</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name">
+                <source>Edit the link in the content editor and provide a descriptive link text.</source>
+                <target>Editatu esteka eduki-editorean eta eman esteka-testu deskribatzaile bat.</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name.developer">
+                <source>This link is rendered by the page template without link text and isn't linked to editable content. Add visible text or an aria-label in the Fluid template (developer task).</source>
+                <target>Esteka hau orriaren txantiloiak errendatzen du esteka-testurik gabe, eta ez dago editatu daitekeen edukira estekatuta. Gehitu testu ikusgaia edo aria-label bat Fluid txantiloian (garatzaile-eginkizuna).</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr">
+                <source>Update the table structure in the content editor to associate data cells with headers.</source>
+                <target>Eguneratu taularen egitura eduki-editorean, datu-gelaxkak goiburuekin lotzeko.</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so data cells reference their headers (developer task).</source>
+                <target>Taula hau ez dago editatu daitekeen edukira estekatuta. Eguneratu taularen egitura txantiloian, datu-gelaxkek beren goiburuak erreferentzia dezaten (garatzaile-eginkizuna).</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells">
+                <source>Update the table in the content editor so header cells have associated data cells.</source>
+                <target>Eguneratu taula eduki-editorean, goiburu-gelaxkek lotutako datu-gelaxkak izan ditzaten.</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so header cells have associated data cells (developer task).</source>
+                <target>Taula hau ez dago editatu daitekeen edukira estekatuta. Eguneratu taularen egitura txantiloian, goiburu-gelaxkek lotutako datu-gelaxkak izan ditzaten (garatzaile-eginkizuna).</target>
+            </trans-unit>
+            <trans-unit id="hint.landmark-one-main">
+                <source>Add a main landmark element to the page template (developer task).</source>
+                <target>Gehitu main erreferentzia-elementu bat orriaren txantiloian (garatzaile-eginkizuna).</target>
+            </trans-unit>
+            <trans-unit id="hint.region">
+                <source>Ensure all page content is contained within appropriate landmark regions in the template (developer task).</source>
+                <target>Ziurtatu orriko eduki guztia txantiloiko erreferentzia-eskualde egokien barruan dagoela (garatzaile-eginkizuna).</target>
+            </trans-unit>
+            <trans-unit id="hint.bypass">
+                <source>Add a skip navigation link to the page template (developer task).</source>
+                <target>Gehitu nabigazioa saltatzeko esteka bat orriaren txantiloian (garatzaile-eginkizuna).</target>
+            </trans-unit>
+            <trans-unit id="hint.html-has-lang">
+                <source>Set the lang attribute on the HTML element in the page template (developer task).</source>
+                <target>Ezarri lang atributua HTML elementuan, orriaren txantiloian (garatzaile-eginkizuna).</target>
+            </trans-unit>
+            <trans-unit id="hint.html-lang-valid">
+                <source>Use a valid BCP 47 language tag on the HTML element (developer task).</source>
+                <target>Erabili baliozko BCP 47 hizkuntza-etiketa bat HTML elementuan (garatzaile-eginkizuna).</target>
+            </trans-unit>
+            <trans-unit id="hint.color-contrast">
+                <source>Adjust CSS color values to meet WCAG contrast requirements (developer task).</source>
+                <target>Doitu CSS kolore-balioak WCAG kontraste-eskakizunak betetzeko (garatzaile-eginkizuna).</target>
+            </trans-unit>
+            <trans-unit id="hint.meta-viewport">
+                <source>Remove user-scalable=no from the viewport meta tag in the template (developer task).</source>
+                <target>Kendu user-scalable=no txantiloiko viewport meta-etiketatik (garatzailearen ataza).</target>
+            </trans-unit>
+            <trans-unit id="hint.frame-title">
+                <source>Add a title attribute to all iframe elements in the template (developer task).</source>
+                <target>Gehitu title atributua txantiloiko iframe elementu guztiei (garatzaile-eginkizuna).</target>
+            </trans-unit>
+            <trans-unit id="hint.scrollable-region-focusable">
+                <source>Make scrollable regions keyboard-accessible in the template (developer task).</source>
+                <target>Egin txantiloiko korritu daitezkeen eskualdeak teklatu bidez erabilgarri (garatzaile-eginkizuna).</target>
+            </trans-unit>
+            <trans-unit id="pageHint.label">
+                <source>Check Accessibility</source>
+                <target>Egiaztatu irisgarritasuna</target>
+            </trans-unit>
+            <trans-unit id="pageHint.title">
+                <source>Check accessibility for this page</source>
+                <target>Egiaztatu orri honen irisgarritasuna</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

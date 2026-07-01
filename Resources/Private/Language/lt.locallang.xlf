@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="lt" datatype="plaintext" original="messages" date="2026-07-01T11:52:00Z" product-name="a11y_by_default">
+        <body>
+            <trans-unit id="module.noPage">
+                <source>Please select a page from the page tree to run the accessibility check.</source>
+                <target>Pasirinkite puslapį iš puslapių medžio, norėdami paleisti prieinamumo patikrą.</target>
+            </trans-unit>
+            <trans-unit id="module.scanButton">
+                <source>Run Accessibility Scan</source>
+                <target>Paleisti prieinamumo patikrą</target>
+            </trans-unit>
+            <trans-unit id="module.engineLabel">
+                <source>Scanning engine:</source>
+                <target>Tikrinimo variklis:</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axe">
+                <source>axe-core (recommended)</source>
+                <target>axe-core (rekomenduojama)</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcs">
+                <source>HTML CodeSniffer</source>
+                <target>HTML CodeSniffer</target>
+            </trans-unit>
+            <trans-unit id="module.auditDisclaimer">
+                <source>This module provides automated assistance for accessibility checks. It does not replace a full audit by qualified accessibility auditors, which is required to have a page officially certified as accessible.</source>
+                <target>Šis modulis teikia automatizuotą pagalbą prieinamumo patikroms. Jis nepakeičia visapusiško audito, kurį atlieka kvalifikuoti prieinamumo auditoriai ir kuris būtinas, norint puslapį oficialiai sertifikuoti kaip prieinamą.</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axeInfo">
+                <source>axe-core (recommended) checks the page against the WCAG accessibility guidelines — the standard that ensures people using screen readers, keyboard navigation, or other assistive technology can use your content. It is the actively maintained, industry-standard tool and produces very few incorrect warnings, so almost everything it reports is worth acting on.</source>
+                <target>axe-core (rekomenduojama) tikrina puslapį pagal WCAG prieinamumo gaires — standartą, kuris užtikrina, kad žmonės, naudojantys ekrano skaitytuvus, klaviatūros naršymą ar kitas pagalbines technologijas, galėtų naudotis jūsų turiniu. Tai aktyviai palaikomas, pramonės standartu tapęs įrankis, kuris pateikia labai mažai neteisingų įspėjimų, todėl beveik į visus jo praneštus dalykus verta atsižvelgti.</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcsInfo">
+                <source>HTML CodeSniffer checks the page against similar accessibility guidelines, but with an older, less refined method. It can occasionally point out issues axe-core misses, but it also produces many more results that need a closer manual look before you can tell whether something is really a problem. Use it only for a second opinion, not as your main scan.</source>
+                <target>HTML CodeSniffer tikrina puslapį pagal panašias prieinamumo gaires, tačiau naudoja senesnį, mažiau tikslų metodą. Kartais jis gali pastebėti problemų, kurių axe-core nepastebi, tačiau taip pat pateikia daug daugiau rezultatų, kuriuos reikia išsamiau patikrinti rankiniu būdu, kad būtų galima nustatyti, ar tai iš tikrųjų problema. Naudokite jį tik kaip papildomą nuomonę, o ne kaip pagrindinę patikrą.</target>
+            </trans-unit>
+            <trans-unit id="module.loading">
+                <source>Loading page and running scan…</source>
+                <target>Įkeliamas puslapis ir vykdoma patikra…</target>
+            </trans-unit>
+            <trans-unit id="module.results.violations">
+                <source>Violations</source>
+                <target>Pažeidimai</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete">
+                <source>Needs review</source>
+                <target>Reikia patikrinti</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete.info">
+                <source>Automated scanning could not determine whether these items pass or fail. Each one needs to be checked manually.</source>
+                <target>Automatinė patikra negalėjo nustatyti, ar šie elementai atitinka reikalavimus. Kiekvieną iš jų reikia patikrinti rankiniu būdu.</target>
+            </trans-unit>
+            <trans-unit id="module.results.passes">
+                <source>Passes</source>
+                <target>Atitinka reikalavimus</target>
+            </trans-unit>
+            <trans-unit id="module.results.empty">
+                <source>No accessibility issues found.</source>
+                <target>Prieinamumo problemų nerasta.</target>
+            </trans-unit>
+            <trans-unit id="module.filters.label">
+                <source>Filters</source>
+                <target>Filtrai</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severityLabel">
+                <source>Severity:</source>
+                <target>Svarba:</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.critical">
+                <source>Critical</source>
+                <target>Kritinė</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.serious">
+                <source>Serious</source>
+                <target>Rimta</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.moderate">
+                <source>Moderate</source>
+                <target>Vidutinė</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.minor">
+                <source>Minor</source>
+                <target>Nedidelė</target>
+            </trans-unit>
+            <trans-unit id="module.filters.viewLabel">
+                <source>View</source>
+                <target>Rodinys</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.editor">
+                <source>For editors</source>
+                <target>Redaktoriams</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.developer">
+                <source>For developers</source>
+                <target>Kūrėjams</target>
+            </trans-unit>
+            <trans-unit id="module.error.scanFailed">
+                <source>The accessibility scan could not be completed. Please try again.</source>
+                <target>Nepavyko baigti prieinamumo patikros. Bandykite dar kartą.</target>
+            </trans-unit>
+            <trans-unit id="module.error.noPreview">
+                <source>No preview URL available for this page. Ensure the page has a valid site configuration.</source>
+                <target>Šiam puslapiui nėra prieinamo peržiūros URL. Įsitikinkite, kad puslapis turi tinkamą svetainės konfigūraciją.</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt">
+                <source>Add an image description (alt text) in the content element editor.</source>
+                <target>Pridėkite paveikslėlio aprašymą (alt tekstą) turinio elemento redaktoriuje.</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt.developer">
+                <source>This image is not linked to editable content, or its alt text is set but not rendered. Check the template's image rendering (developer task).</source>
+                <target>Šis paveikslėlis nesusietas su redaguojamu turiniu, arba jo alt tekstas nustatytas, bet nerodomas. Patikrinkite šablono paveikslėlių atvaizdavimą (kūrėjo užduotis).</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt">
+                <source>Add an alt text to the image input element in the content editor.</source>
+                <target>Pridėkite alt tekstą paveikslėlio įvesties elementui turinio redaktoriuje.</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt.developer">
+                <source>This image input is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>Šis paveikslėlio įvesties elementas nesusietas su redaguojamu turiniu, arba jo alt tekstas nustatytas, bet nerodomas. Patikrinkite šablono atvaizdavimą (kūrėjo užduotis).</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt">
+                <source>Add alt text to the image map area in the content editor.</source>
+                <target>Pridėkite alt tekstą paveikslėlio žemėlapio sričiai turinio redaktoriuje.</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt.developer">
+                <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>Šis paveikslėlio žemėlapio srities elementas nesusietas su redaguojamu turiniu, arba jo alt tekstas nustatytas, bet nerodomas. Patikrinkite šablono atvaizdavimą (kūrėjo užduotis).</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order">
+                <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
+                <target>Redaguokite turinio elementą ir pakeiskite jo antraštės išdėstymą, kad antraščių lygiai nepraleistų žingsnio.</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order.developer">
+                <source>This heading is rendered by the page template rather than a content element. Adjust the heading structure in the Fluid template (developer task).</source>
+                <target>Šią antraštę atvaizduoja puslapio šablonas, o ne turinio elementas. Pakoreguokite antraščių struktūrą Fluid šablone (kūrėjo užduotis).</target>
+            </trans-unit>
+            <trans-unit id="hint.empty-heading">
+                <source>A heading element is rendered with no text. Check the template's heading rendering; it should not output a heading tag when the source text is empty (developer task).</source>
+                <target>Antraštės elementas atvaizduojamas be teksto. Patikrinkite šablono antraščių atvaizdavimą; jis neturėtų generuoti antraštės žymos, kai šaltinio tekstas tuščias (kūrėjo užduotis).</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name">
+                <source>Edit the link in the content editor and provide a descriptive link text.</source>
+                <target>Redaguokite nuorodą turinio redaktoriuje ir įrašykite aprašomąjį nuorodos tekstą.</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name.developer">
+                <source>This link is rendered by the page template without link text and isn't linked to editable content. Add visible text or an aria-label in the Fluid template (developer task).</source>
+                <target>Šią nuorodą atvaizduoja puslapio šablonas be nuorodos teksto, ir ji nesusieta su redaguojamu turiniu. Pridėkite matomą tekstą arba aria-label atributą Fluid šablone (kūrėjo užduotis).</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr">
+                <source>Update the table structure in the content editor to associate data cells with headers.</source>
+                <target>Atnaujinkite lentelės struktūrą turinio redaktoriuje, kad duomenų langeliai būtų susieti su antraštėmis.</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so data cells reference their headers (developer task).</source>
+                <target>Šia lentelė nesusieta su redaguojamu turiniu. Atnaujinkite lentelės struktūrą šablone taip, kad duomenų langeliai nurodytų savo antraštes (kūrėjo užduotis).</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells">
+                <source>Update the table in the content editor so header cells have associated data cells.</source>
+                <target>Atnaujinkite lentelę turinio redaktoriuje, kad antraščių langeliai turėtų susietus duomenų langelius.</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so header cells have associated data cells (developer task).</source>
+                <target>Šia lentelė nesusieta su redaguojamu turiniu. Atnaujinkite lentelės struktūrą šablone taip, kad antraščių langeliai turėtų susietus duomenų langelius (kūrėjo užduotis).</target>
+            </trans-unit>
+            <trans-unit id="hint.landmark-one-main">
+                <source>Add a main landmark element to the page template (developer task).</source>
+                <target>Pridėkite pagrindinį (main) žymos elementą į puslapio šabloną (kūrėjo užduotis).</target>
+            </trans-unit>
+            <trans-unit id="hint.region">
+                <source>Ensure all page content is contained within appropriate landmark regions in the template (developer task).</source>
+                <target>Įsitikinkite, kad visas puslapio turinys šablone yra tinkamose žymos srityse (kūrėjo užduotis).</target>
+            </trans-unit>
+            <trans-unit id="hint.bypass">
+                <source>Add a skip navigation link to the page template (developer task).</source>
+                <target>Pridėkite navigacijos praleidimo nuorodą į puslapio šabloną (kūrėjo užduotis).</target>
+            </trans-unit>
+            <trans-unit id="hint.html-has-lang">
+                <source>Set the lang attribute on the HTML element in the page template (developer task).</source>
+                <target>Nustatykite lang atributą HTML elementui puslapio šablone (kūrėjo užduotis).</target>
+            </trans-unit>
+            <trans-unit id="hint.html-lang-valid">
+                <source>Use a valid BCP 47 language tag on the HTML element (developer task).</source>
+                <target>Naudokite tinkamą BCP 47 kalbos žymą HTML elementui (kūrėjo užduotis).</target>
+            </trans-unit>
+            <trans-unit id="hint.color-contrast">
+                <source>Adjust CSS color values to meet WCAG contrast requirements (developer task).</source>
+                <target>Pakoreguokite CSS spalvų reikšmes, kad atitiktų WCAG kontrasto reikalavimus (kūrėjo užduotis).</target>
+            </trans-unit>
+            <trans-unit id="hint.meta-viewport">
+                <source>Remove user-scalable=no from the viewport meta tag in the template (developer task).</source>
+                <target>Pašalinkite user-scalable=no iš viewport meta žymos šablone (kūrėjo užduotis).</target>
+            </trans-unit>
+            <trans-unit id="hint.frame-title">
+                <source>Add a title attribute to all iframe elements in the template (developer task).</source>
+                <target>Pridėkite title atributą visiems iframe elementams šablone (kūrėjo užduotis).</target>
+            </trans-unit>
+            <trans-unit id="hint.scrollable-region-focusable">
+                <source>Make scrollable regions keyboard-accessible in the template (developer task).</source>
+                <target>Padarykite slenkamas sritis pasiekiamas klaviatūra šablone (kūrėjo užduotis).</target>
+            </trans-unit>
+            <trans-unit id="pageHint.label">
+                <source>Check Accessibility</source>
+                <target>Tikrinti prieinamumą</target>
+            </trans-unit>
+            <trans-unit id="pageHint.title">
+                <source>Check accessibility for this page</source>
+                <target>Patikrinti šio puslapio prieinamumą</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

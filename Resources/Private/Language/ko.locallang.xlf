@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="ko" datatype="plaintext" original="messages" date="2026-07-01T11:52:00Z" product-name="a11y_by_default">
+        <body>
+            <trans-unit id="module.noPage">
+                <source>Please select a page from the page tree to run the accessibility check.</source>
+                <target>접근성 검사를 실행하려면 페이지 트리에서 페이지를 선택하세요.</target>
+            </trans-unit>
+            <trans-unit id="module.scanButton">
+                <source>Run Accessibility Scan</source>
+                <target>접근성 검사 실행</target>
+            </trans-unit>
+            <trans-unit id="module.engineLabel">
+                <source>Scanning engine:</source>
+                <target>검사 엔진:</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axe">
+                <source>axe-core (recommended)</source>
+                <target>axe-core (권장)</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcs">
+                <source>HTML CodeSniffer</source>
+                <target>HTML CodeSniffer</target>
+            </trans-unit>
+            <trans-unit id="module.auditDisclaimer">
+                <source>This module provides automated assistance for accessibility checks. It does not replace a full audit by qualified accessibility auditors, which is required to have a page officially certified as accessible.</source>
+                <target>이 모듈은 접근성 검사를 위한 자동화된 지원 기능을 제공합니다. 페이지를 공식적으로 접근성 인증받기 위해서는 자격을 갖춘 접근성 감사 전문가의 전체 감사가 필요하며, 이 모듈이 이를 대체하지는 않습니다.</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axeInfo">
+                <source>axe-core (recommended) checks the page against the WCAG accessibility guidelines — the standard that ensures people using screen readers, keyboard navigation, or other assistive technology can use your content. It is the actively maintained, industry-standard tool and produces very few incorrect warnings, so almost everything it reports is worth acting on.</source>
+                <target>axe-core (권장)는 화면 낭독기, 키보드 탐색 또는 기타 보조 기술을 사용하는 사용자가 콘텐츠를 이용할 수 있도록 보장하는 표준인 WCAG 접근성 가이드라인을 기준으로 페이지를 검사합니다. 이는 활발히 관리되는 업계 표준 도구이며 잘못된 경고를 거의 생성하지 않으므로, 보고되는 거의 모든 항목에 대해 조치할 가치가 있습니다.</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcsInfo">
+                <source>HTML CodeSniffer checks the page against similar accessibility guidelines, but with an older, less refined method. It can occasionally point out issues axe-core misses, but it also produces many more results that need a closer manual look before you can tell whether something is really a problem. Use it only for a second opinion, not as your main scan.</source>
+                <target>HTML CodeSniffer는 유사한 접근성 가이드라인을 기준으로 페이지를 검사하지만, 더 오래되고 정교하지 않은 방식을 사용합니다. 이 도구는 axe-core가 놓친 문제를 간혹 찾아낼 수 있지만, 실제로 문제인지 판단하기 위해 더 자세한 수동 검토가 필요한 결과도 훨씬 많이 생성합니다. 주 검사 도구가 아니라 참고용 보조 의견으로만 사용하세요.</target>
+            </trans-unit>
+            <trans-unit id="module.loading">
+                <source>Loading page and running scan…</source>
+                <target>페이지를 불러오고 검사를 실행하는 중…</target>
+            </trans-unit>
+            <trans-unit id="module.results.violations">
+                <source>Violations</source>
+                <target>위반 사항</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete">
+                <source>Needs review</source>
+                <target>검토 필요</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete.info">
+                <source>Automated scanning could not determine whether these items pass or fail. Each one needs to be checked manually.</source>
+                <target>자동 검사만으로는 이 항목들이 통과했는지 실패했는지 판단할 수 없습니다. 각 항목을 수동으로 확인해야 합니다.</target>
+            </trans-unit>
+            <trans-unit id="module.results.passes">
+                <source>Passes</source>
+                <target>통과</target>
+            </trans-unit>
+            <trans-unit id="module.results.empty">
+                <source>No accessibility issues found.</source>
+                <target>발견된 접근성 문제가 없습니다.</target>
+            </trans-unit>
+            <trans-unit id="module.filters.label">
+                <source>Filters</source>
+                <target>필터</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severityLabel">
+                <source>Severity:</source>
+                <target>심각도:</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.critical">
+                <source>Critical</source>
+                <target>심각</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.serious">
+                <source>Serious</source>
+                <target>중대</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.moderate">
+                <source>Moderate</source>
+                <target>보통</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.minor">
+                <source>Minor</source>
+                <target>경미</target>
+            </trans-unit>
+            <trans-unit id="module.filters.viewLabel">
+                <source>View</source>
+                <target>보기</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.editor">
+                <source>For editors</source>
+                <target>편집자용</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.developer">
+                <source>For developers</source>
+                <target>개발자용</target>
+            </trans-unit>
+            <trans-unit id="module.error.scanFailed">
+                <source>The accessibility scan could not be completed. Please try again.</source>
+                <target>접근성 검사를 완료할 수 없습니다. 다시 시도하세요.</target>
+            </trans-unit>
+            <trans-unit id="module.error.noPreview">
+                <source>No preview URL available for this page. Ensure the page has a valid site configuration.</source>
+                <target>이 페이지에 사용할 수 있는 미리보기 URL이 없습니다. 페이지에 유효한 사이트 구성이 설정되어 있는지 확인하세요.</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt">
+                <source>Add an image description (alt text) in the content element editor.</source>
+                <target>콘텐츠 요소 편집기에서 이미지 설명(alt 텍스트)을 추가하세요.</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt.developer">
+                <source>This image is not linked to editable content, or its alt text is set but not rendered. Check the template's image rendering (developer task).</source>
+                <target>이 이미지는 편집 가능한 콘텐츠에 연결되어 있지 않거나, alt 텍스트가 설정되었지만 렌더링되지 않고 있습니다. 템플릿의 이미지 렌더링을 확인하세요 (개발자 작업).</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt">
+                <source>Add an alt text to the image input element in the content editor.</source>
+                <target>콘텐츠 편집기에서 이미지 입력 요소에 alt 텍스트를 추가하세요.</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt.developer">
+                <source>This image input is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>이 이미지 입력 요소는 편집 가능한 콘텐츠에 연결되어 있지 않거나, alt 텍스트가 설정되었지만 렌더링되지 않고 있습니다. 템플릿의 렌더링을 확인하세요 (개발자 작업).</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt">
+                <source>Add alt text to the image map area in the content editor.</source>
+                <target>콘텐츠 편집기에서 이미지 맵 영역에 alt 텍스트를 추가하세요.</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt.developer">
+                <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>이 이미지 맵 영역은 편집 가능한 콘텐츠에 연결되어 있지 않거나, alt 텍스트가 설정되었지만 렌더링되지 않고 있습니다. 템플릿의 렌더링을 확인하세요 (개발자 작업).</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order">
+                <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
+                <target>콘텐츠 요소를 편집하여 제목 레벨이 단계를 건너뛰지 않도록 헤더 레이아웃을 변경하세요.</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order.developer">
+                <source>This heading is rendered by the page template rather than a content element. Adjust the heading structure in the Fluid template (developer task).</source>
+                <target>이 제목은 콘텐츠 요소가 아니라 페이지 템플릿에 의해 렌더링됩니다. Fluid 템플릿에서 제목 구조를 조정하세요 (개발자 작업).</target>
+            </trans-unit>
+            <trans-unit id="hint.empty-heading">
+                <source>A heading element is rendered with no text. Check the template's heading rendering; it should not output a heading tag when the source text is empty (developer task).</source>
+                <target>제목 요소가 텍스트 없이 렌더링되고 있습니다. 템플릿의 제목 렌더링을 확인하세요. 원본 텍스트가 비어 있을 경우 제목 태그를 출력하지 않아야 합니다 (개발자 작업).</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name">
+                <source>Edit the link in the content editor and provide a descriptive link text.</source>
+                <target>콘텐츠 편집기에서 링크를 편집하고 설명이 포함된 링크 텍스트를 입력하세요.</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name.developer">
+                <source>This link is rendered by the page template without link text and isn't linked to editable content. Add visible text or an aria-label in the Fluid template (developer task).</source>
+                <target>이 링크는 페이지 템플릿에서 링크 텍스트 없이 렌더링되며 편집 가능한 콘텐츠에 연결되어 있지 않습니다. Fluid 템플릿에서 화면에 표시되는 텍스트나 aria-label을 추가하세요 (개발자 작업).</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr">
+                <source>Update the table structure in the content editor to associate data cells with headers.</source>
+                <target>콘텐츠 편집기에서 데이터 셀이 헤더와 연결되도록 표 구조를 수정하세요.</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so data cells reference their headers (developer task).</source>
+                <target>이 표는 편집 가능한 콘텐츠에 연결되어 있지 않습니다. 데이터 셀이 해당 헤더를 참조하도록 템플릿의 표 구조를 수정하세요 (개발자 작업).</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells">
+                <source>Update the table in the content editor so header cells have associated data cells.</source>
+                <target>헤더 셀에 연결된 데이터 셀이 있도록 콘텐츠 편집기에서 표를 수정하세요.</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so header cells have associated data cells (developer task).</source>
+                <target>이 표는 편집 가능한 콘텐츠에 연결되어 있지 않습니다. 헤더 셀에 연결된 데이터 셀이 있도록 템플릿의 표 구조를 수정하세요 (개발자 작업).</target>
+            </trans-unit>
+            <trans-unit id="hint.landmark-one-main">
+                <source>Add a main landmark element to the page template (developer task).</source>
+                <target>페이지 템플릿에 main 랜드마크 요소를 추가하세요 (개발자 작업).</target>
+            </trans-unit>
+            <trans-unit id="hint.region">
+                <source>Ensure all page content is contained within appropriate landmark regions in the template (developer task).</source>
+                <target>템플릿에서 모든 페이지 콘텐츠가 적절한 랜드마크 영역 안에 포함되도록 하세요 (개발자 작업).</target>
+            </trans-unit>
+            <trans-unit id="hint.bypass">
+                <source>Add a skip navigation link to the page template (developer task).</source>
+                <target>페이지 템플릿에 탐색 건너뛰기 링크를 추가하세요 (개발자 작업).</target>
+            </trans-unit>
+            <trans-unit id="hint.html-has-lang">
+                <source>Set the lang attribute on the HTML element in the page template (developer task).</source>
+                <target>페이지 템플릿의 HTML 요소에 lang 속성을 설정하세요 (개발자 작업).</target>
+            </trans-unit>
+            <trans-unit id="hint.html-lang-valid">
+                <source>Use a valid BCP 47 language tag on the HTML element (developer task).</source>
+                <target>HTML 요소에 유효한 BCP 47 언어 태그를 사용하세요 (개발자 작업).</target>
+            </trans-unit>
+            <trans-unit id="hint.color-contrast">
+                <source>Adjust CSS color values to meet WCAG contrast requirements (developer task).</source>
+                <target>WCAG 대비 요구 사항을 충족하도록 CSS 색상 값을 조정하세요 (개발자 작업).</target>
+            </trans-unit>
+            <trans-unit id="hint.meta-viewport">
+                <source>Remove user-scalable=no from the viewport meta tag in the template (developer task).</source>
+                <target>템플릿의 viewport 메타 태그에서 user-scalable=no를 제거하세요 (개발자 작업).</target>
+            </trans-unit>
+            <trans-unit id="hint.frame-title">
+                <source>Add a title attribute to all iframe elements in the template (developer task).</source>
+                <target>템플릿의 모든 iframe 요소에 title 속성을 추가하세요 (개발자 작업).</target>
+            </trans-unit>
+            <trans-unit id="hint.scrollable-region-focusable">
+                <source>Make scrollable regions keyboard-accessible in the template (developer task).</source>
+                <target>템플릿에서 스크롤 가능한 영역을 키보드로 접근할 수 있도록 만드세요 (개발자 작업).</target>
+            </trans-unit>
+            <trans-unit id="pageHint.label">
+                <source>Check Accessibility</source>
+                <target>접근성 검사</target>
+            </trans-unit>
+            <trans-unit id="pageHint.title">
+                <source>Check accessibility for this page</source>
+                <target>이 페이지의 접근성을 검사합니다</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="ru" datatype="plaintext" original="messages" date="2026-07-01T11:52:00Z" product-name="a11y_by_default">
+        <body>
+            <trans-unit id="module.noPage">
+                <source>Please select a page from the page tree to run the accessibility check.</source>
+                <target>Выберите страницу в дереве страниц, чтобы запустить проверку доступности.</target>
+            </trans-unit>
+            <trans-unit id="module.scanButton">
+                <source>Run Accessibility Scan</source>
+                <target>Запустить проверку доступности</target>
+            </trans-unit>
+            <trans-unit id="module.engineLabel">
+                <source>Scanning engine:</source>
+                <target>Механизм сканирования:</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axe">
+                <source>axe-core (recommended)</source>
+                <target>axe-core (рекомендуется)</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcs">
+                <source>HTML CodeSniffer</source>
+                <target>HTML CodeSniffer</target>
+            </trans-unit>
+            <trans-unit id="module.auditDisclaimer">
+                <source>This module provides automated assistance for accessibility checks. It does not replace a full audit by qualified accessibility auditors, which is required to have a page officially certified as accessible.</source>
+                <target>Этот модуль оказывает автоматизированную помощь при проверках доступности. Он не заменяет полный аудит, проводимый квалифицированными аудиторами по доступности, который необходим для официальной сертификации страницы как доступной.</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axeInfo">
+                <source>axe-core (recommended) checks the page against the WCAG accessibility guidelines — the standard that ensures people using screen readers, keyboard navigation, or other assistive technology can use your content. It is the actively maintained, industry-standard tool and produces very few incorrect warnings, so almost everything it reports is worth acting on.</source>
+                <target>axe-core (рекомендуется) проверяет страницу на соответствие рекомендациям по доступности WCAG — стандарту, который гарантирует, что люди, использующие программы чтения с экрана, навигацию с клавиатуры или другие вспомогательные технологии, могут пользоваться вашим контентом. Это активно поддерживаемый, отраслевой стандартный инструмент, который выдаёт очень мало ошибочных предупреждений, поэтому почти на всё, о чём он сообщает, стоит реагировать.</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcsInfo">
+                <source>HTML CodeSniffer checks the page against similar accessibility guidelines, but with an older, less refined method. It can occasionally point out issues axe-core misses, but it also produces many more results that need a closer manual look before you can tell whether something is really a problem. Use it only for a second opinion, not as your main scan.</source>
+                <target>HTML CodeSniffer проверяет страницу по схожим рекомендациям доступности, но с использованием более старого, менее совершенного метода. Он может иногда выявлять проблемы, которые пропускает axe-core, но также выдаёт гораздо больше результатов, требующих тщательной ручной проверки, прежде чем стать ясно, действительно ли это проблема. Используйте его только для получения второго мнения, а не как основной инструмент сканирования.</target>
+            </trans-unit>
+            <trans-unit id="module.loading">
+                <source>Loading page and running scan…</source>
+                <target>Загрузка страницы и выполнение сканирования…</target>
+            </trans-unit>
+            <trans-unit id="module.results.violations">
+                <source>Violations</source>
+                <target>Нарушения</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete">
+                <source>Needs review</source>
+                <target>Требует проверки</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete.info">
+                <source>Automated scanning could not determine whether these items pass or fail. Each one needs to be checked manually.</source>
+                <target>Автоматическое сканирование не смогло определить, соответствуют ли эти пункты требованиям. Каждый из них необходимо проверить вручную.</target>
+            </trans-unit>
+            <trans-unit id="module.results.passes">
+                <source>Passes</source>
+                <target>Пройдено</target>
+            </trans-unit>
+            <trans-unit id="module.results.empty">
+                <source>No accessibility issues found.</source>
+                <target>Проблем с доступностью не найдено.</target>
+            </trans-unit>
+            <trans-unit id="module.filters.label">
+                <source>Filters</source>
+                <target>Фильтры</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severityLabel">
+                <source>Severity:</source>
+                <target>Серьёзность:</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.critical">
+                <source>Critical</source>
+                <target>Критическая</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.serious">
+                <source>Serious</source>
+                <target>Серьёзная</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.moderate">
+                <source>Moderate</source>
+                <target>Умеренная</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.minor">
+                <source>Minor</source>
+                <target>Незначительная</target>
+            </trans-unit>
+            <trans-unit id="module.filters.viewLabel">
+                <source>View</source>
+                <target>Вид</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.editor">
+                <source>For editors</source>
+                <target>Для редакторов</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.developer">
+                <source>For developers</source>
+                <target>Для разработчиков</target>
+            </trans-unit>
+            <trans-unit id="module.error.scanFailed">
+                <source>The accessibility scan could not be completed. Please try again.</source>
+                <target>Не удалось завершить проверку доступности. Пожалуйста, попробуйте снова.</target>
+            </trans-unit>
+            <trans-unit id="module.error.noPreview">
+                <source>No preview URL available for this page. Ensure the page has a valid site configuration.</source>
+                <target>Для этой страницы недоступен URL предпросмотра. Убедитесь, что для страницы задана корректная конфигурация сайта.</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt">
+                <source>Add an image description (alt text) in the content element editor.</source>
+                <target>Добавьте описание изображения (альтернативный текст) в редакторе контент-элемента.</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt.developer">
+                <source>This image is not linked to editable content, or its alt text is set but not rendered. Check the template's image rendering (developer task).</source>
+                <target>Это изображение не связано с редактируемым контентом, либо его альтернативный текст задан, но не отображается. Проверьте отображение изображений в шаблоне (задача для разработчика).</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt">
+                <source>Add an alt text to the image input element in the content editor.</source>
+                <target>Добавьте альтернативный текст для элемента ввода-изображения в редакторе контента.</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt.developer">
+                <source>This image input is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>Этот элемент ввода-изображения не связан с редактируемым контентом, либо его альтернативный текст задан, но не отображается. Проверьте отображение в шаблоне (задача для разработчика).</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt">
+                <source>Add alt text to the image map area in the content editor.</source>
+                <target>Добавьте альтернативный текст для области карты изображения в редакторе контента.</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt.developer">
+                <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>Эта область карты изображения не связана с редактируемым контентом, либо её альтернативный текст задан, но не отображается. Проверьте отображение в шаблоне (задача для разработчика).</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order">
+                <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
+                <target>Отредактируйте контент-элемент и измените его макет заголовка, чтобы уровни заголовков не пропускали шаг.</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order.developer">
+                <source>This heading is rendered by the page template rather than a content element. Adjust the heading structure in the Fluid template (developer task).</source>
+                <target>Этот заголовок отображается шаблоном страницы, а не контент-элементом. Скорректируйте структуру заголовков в шаблоне Fluid (задача для разработчика).</target>
+            </trans-unit>
+            <trans-unit id="hint.empty-heading">
+                <source>A heading element is rendered with no text. Check the template's heading rendering; it should not output a heading tag when the source text is empty (developer task).</source>
+                <target>Элемент заголовка отображается без текста. Проверьте отображение заголовков в шаблоне: тег заголовка не должен выводиться, если исходный текст пуст (задача для разработчика).</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name">
+                <source>Edit the link in the content editor and provide a descriptive link text.</source>
+                <target>Отредактируйте ссылку в редакторе контента и укажите содержательный текст ссылки.</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name.developer">
+                <source>This link is rendered by the page template without link text and isn't linked to editable content. Add visible text or an aria-label in the Fluid template (developer task).</source>
+                <target>Эта ссылка отображается шаблоном страницы без текста ссылки и не связана с редактируемым контентом. Добавьте видимый текст или aria-label в шаблоне Fluid (задача для разработчика).</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr">
+                <source>Update the table structure in the content editor to associate data cells with headers.</source>
+                <target>Обновите структуру таблицы в редакторе контента, чтобы связать ячейки данных с заголовками.</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so data cells reference their headers (developer task).</source>
+                <target>Эта таблица не связана с редактируемым контентом. Обновите структуру таблицы в шаблоне так, чтобы ячейки данных ссылались на свои заголовки (задача для разработчика).</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells">
+                <source>Update the table in the content editor so header cells have associated data cells.</source>
+                <target>Обновите таблицу в редакторе контента так, чтобы у ячеек заголовков были связанные ячейки данных.</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so header cells have associated data cells (developer task).</source>
+                <target>Эта таблица не связана с редактируемым контентом. Обновите структуру таблицы в шаблоне так, чтобы у ячеек заголовков были связанные ячейки данных (задача для разработчика).</target>
+            </trans-unit>
+            <trans-unit id="hint.landmark-one-main">
+                <source>Add a main landmark element to the page template (developer task).</source>
+                <target>Добавьте основной элемент-ориентир (landmark) в шаблон страницы (задача для разработчика).</target>
+            </trans-unit>
+            <trans-unit id="hint.region">
+                <source>Ensure all page content is contained within appropriate landmark regions in the template (developer task).</source>
+                <target>Убедитесь, что весь контент страницы находится в подходящих областях-ориентирах (landmark) в шаблоне (задача для разработчика).</target>
+            </trans-unit>
+            <trans-unit id="hint.bypass">
+                <source>Add a skip navigation link to the page template (developer task).</source>
+                <target>Добавьте ссылку для пропуска навигации в шаблон страницы (задача для разработчика).</target>
+            </trans-unit>
+            <trans-unit id="hint.html-has-lang">
+                <source>Set the lang attribute on the HTML element in the page template (developer task).</source>
+                <target>Задайте атрибут lang для элемента HTML в шаблоне страницы (задача для разработчика).</target>
+            </trans-unit>
+            <trans-unit id="hint.html-lang-valid">
+                <source>Use a valid BCP 47 language tag on the HTML element (developer task).</source>
+                <target>Используйте корректный языковой тег по стандарту BCP 47 для элемента HTML (задача для разработчика).</target>
+            </trans-unit>
+            <trans-unit id="hint.color-contrast">
+                <source>Adjust CSS color values to meet WCAG contrast requirements (developer task).</source>
+                <target>Скорректируйте значения цвета в CSS в соответствии с требованиями к контрастности WCAG (задача для разработчика).</target>
+            </trans-unit>
+            <trans-unit id="hint.meta-viewport">
+                <source>Remove user-scalable=no from the viewport meta tag in the template (developer task).</source>
+                <target>Удалите user-scalable=no из мета-тега viewport в шаблоне (задача для разработчика).</target>
+            </trans-unit>
+            <trans-unit id="hint.frame-title">
+                <source>Add a title attribute to all iframe elements in the template (developer task).</source>
+                <target>Добавьте атрибут title ко всем элементам iframe в шаблоне (задача для разработчика).</target>
+            </trans-unit>
+            <trans-unit id="hint.scrollable-region-focusable">
+                <source>Make scrollable regions keyboard-accessible in the template (developer task).</source>
+                <target>Сделайте прокручиваемые области доступными с клавиатуры в шаблоне (задача для разработчика).</target>
+            </trans-unit>
+            <trans-unit id="pageHint.label">
+                <source>Check Accessibility</source>
+                <target>Проверить доступность</target>
+            </trans-unit>
+            <trans-unit id="pageHint.title">
+                <source>Check accessibility for this page</source>
+                <target>Проверить доступность для этой страницы</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
