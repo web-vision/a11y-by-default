@@ -344,18 +344,7 @@ function impactBadgeClass(impact) {
     };
     return `badge text-bg-${map[impact] ?? 'secondary'}`;
 }
-function responsibilityBadgeClass(responsibility) {
-    return responsibility === 'editor' ? 'badge text-bg-primary' : 'badge text-bg-secondary';
-}
-const SEVERITY_ORDER = {
-    critical: 3,
-    serious: 2,
-    moderate: 1,
-    minor: 0,
-};
-function sortBySeverityDescending(issues) {
-    return [...issues].sort((a, b) => (SEVERITY_ORDER[b.impact] ?? -1) - (SEVERITY_ORDER[a.impact] ?? -1));
-}
+const SEVERITY_LEVELS = ['critical', 'serious', 'moderate', 'minor'];
 // The module runs inside the backend's content iframe. Only the outer/top backend
 // document carries a valid, signed route token for record/edit (set by TYPO3's
 // BackendController as TYPO3.settings.FormEngine.moduleUrl) — the same base URL
@@ -390,42 +379,79 @@ function buildContentElementEditLink(contentElementUid) {
     return `<a href="${escapeHtml(editHref)}"
                class="${linkClasses}">${label}</a>`;
 }
-function renderIssueCard(issue, classifier) {
+// A per-task collapsible panel, TYPO3's own accordion pattern (see core's
+// ContentElement/ElementInformation.html panel-heading/panel-collapse markup).
+// Its header is just the task description — the editor/developer distinction
+// is handled by the view tabs, not a per-row badge.
+function renderIssueCard(issue, classifier, panelId) {
     const classification = classifier.classify(issue);
-    const responsibilityLabel = getLabel(`module.responsibility.${classification.responsibility}`);
     const contentElementLink = classification.contentElementUid !== undefined ? buildContentElementEditLink(classification.contentElementUid) : '';
     const nodes = issue.nodes.map((node) => `<pre class="mb-1"><code>${escapeHtml(node.html)}</code></pre>`).join('');
-    return `<div class="card mb-2" data-impact="${escapeHtml(issue.impact)}" data-responsibility="${escapeHtml(classification.responsibility)}">
-        <div class="card-header d-flex align-items-center gap-2 flex-wrap">
-            <span class="${impactBadgeClass(issue.impact)}">${escapeHtml(issue.impact)}</span>
-            <span class="${responsibilityBadgeClass(classification.responsibility)}">${escapeHtml(responsibilityLabel)}</span>
-            <span class="flex-grow-1">${escapeHtml(issue.help)}</span>
-            <a href="${escapeHtml(issue.helpUrl)}" target="_blank" rel="noopener noreferrer"
-               class="btn btn-sm btn-default" title="${escapeHtml(getLabel('module.results.violations'))}">
-                <span aria-hidden="true">?</span>
-                <span class="visually-hidden">${escapeHtml(issue.help)}</span>
-            </a>
+    return `<div class="panel panel-default mb-1" data-impact="${escapeHtml(issue.impact)}" data-responsibility="${escapeHtml(classification.responsibility)}">
+        <div class="panel-heading" role="tab">
+            <div class="panel-heading-row">
+                <button class="panel-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#${panelId}" aria-controls="${panelId}" aria-expanded="false">
+                    <span class="panel-title">${escapeHtml(issue.help)}</span>
+                    <span class="caret"></span>
+                </button>
+            </div>
         </div>
-        <div class="card-body">
-            <p class="card-text">${escapeHtml(issue.description)}</p>
-            <p class="card-text text-body-secondary small">${escapeHtml(classification.hint)}</p>
-            ${contentElementLink}
-            ${nodes}
+        <div id="${panelId}" class="panel-collapse collapse" role="tabpanel">
+            <div class="panel-body">
+                <p class="card-text">${escapeHtml(issue.description)}</p>
+                <p class="card-text text-body-secondary small">${escapeHtml(classification.hint)}</p>
+                <a href="${escapeHtml(issue.helpUrl)}" target="_blank" rel="noopener noreferrer"
+                   class="btn btn-sm btn-default mb-2 d-inline-block" title="${escapeHtml(getLabel('module.results.violations'))}">
+                    <span aria-hidden="true">?</span>
+                    <span class="visually-hidden">${escapeHtml(issue.help)}</span>
+                </a>
+                ${contentElementLink}
+                ${nodes}
+            </div>
+        </div>
+    </div>`;
+}
+// A per-severity group of tasks, mirroring TYPO3's RecordList table collapse
+// (recordlist-heading + collapse target per content type). Expanded by
+// default so task titles are visible at a glance; each task's own detail
+// panel stays collapsed until clicked.
+function renderSeverityGroup(level, issues, groupId, classifier) {
+    if (issues.length === 0) {
+        return '';
+    }
+    const items = issues.map((issue, index) => renderIssueCard(issue, classifier, `${groupId}-issue-${index}`)).join('');
+    return `<div class="panel panel-default mb-2" data-severity-group="${level}">
+        <div class="panel-heading" role="tab">
+            <div class="panel-heading-row">
+                <button class="panel-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#${groupId}" aria-controls="${groupId}" aria-expanded="true">
+                    <span class="panel-title">
+                        <span class="${impactBadgeClass(level)}">${escapeHtml(getLabel(`module.filters.severity.${level}`))}</span>
+                    </span>
+                    <span class="badge text-bg-light ms-1" data-severity-group-count>${issues.length}</span>
+                    <span class="caret"></span>
+                </button>
+            </div>
+        </div>
+        <div id="${groupId}" class="panel-collapse collapse show" role="tabpanel">
+            <div class="panel-body p-0">
+                ${items}
+            </div>
         </div>
     </div>`;
 }
 function renderIssueSection(issues, headingId, headingLabel, badgeClass, badgeId, classifier) {
-    const cards = issues.length === 0
+    const sectionId = headingId.replace(/-heading$/, '');
+    const groups = issues.length === 0
         ? `<p class="text-body-secondary">${getLabel('module.results.empty')}</p>`
-        : sortBySeverityDescending(issues)
-            .map((issue) => renderIssueCard(issue, classifier))
-            .join('');
+        : SEVERITY_LEVELS.map((level) => renderSeverityGroup(level, issues.filter((issue) => issue.impact === level), `${sectionId}-group-${level}`, classifier)).join('');
     return `<section class="mb-4" aria-labelledby="${headingId}">
         <h2 id="${headingId}" class="h4 mb-3">
             ${headingLabel}
             <span class="badge ${badgeClass} ms-1" id="${badgeId}">${issues.length}</span>
         </h2>
-        ${cards}
+        ${groups}
     </section>`;
 }
 function renderResults(container, result, classifier) {
@@ -503,12 +529,24 @@ function updateResultCounts(container) {
 function applyFilters(container) {
     const activeSeverities = getActiveSeverityFilters();
     const activeView = getActiveResponsibilityView();
-    container.querySelectorAll('[data-impact]').forEach((card) => {
-        const matchesSeverity = activeSeverities.has(card.dataset['impact'] ?? '');
-        const matchesView = activeView === 'developer'
-            ? card.dataset['responsibility'] !== 'editor'
-            : card.dataset['responsibility'] === 'editor';
-        card.classList.toggle('d-none', !(matchesSeverity && matchesView));
+    container.querySelectorAll('[data-severity-group]').forEach((group) => {
+        const severityActive = activeSeverities.has(group.dataset['severityGroup'] ?? '');
+        let visibleCount = 0;
+        group.querySelectorAll('[data-impact]').forEach((card) => {
+            const matchesView = activeView === 'developer'
+                ? card.dataset['responsibility'] !== 'editor'
+                : card.dataset['responsibility'] === 'editor';
+            const visible = severityActive && matchesView;
+            card.classList.toggle('d-none', !visible);
+            if (visible) {
+                visibleCount += 1;
+            }
+        });
+        group.classList.toggle('d-none', visibleCount === 0);
+        const countBadge = group.querySelector('[data-severity-group-count]');
+        if (countBadge !== null) {
+            countBadge.textContent = String(visibleCount);
+        }
     });
     updateResultCounts(container);
 }
