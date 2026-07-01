@@ -32,6 +32,13 @@ The extension uses two main engines for accessibility scanning:
 
 Both engines run client-side in the browser.
 
+.. _compatibility-handling:
+
+Compatibility Handling
+----------------------
+
+The extension is designed to work with both **TYPO3 v13** and **v14**. It handles version differences gracefully, for example by checking for the availability of the contextual record edit route which was introduced in v14.
+
 .. _build-process:
 
 Build Process

@@ -18,6 +18,7 @@ use TYPO3\CMS\Core\Localization\LanguageServiceFactory;
 use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Core\Type\Bitmask\Permission;
 use WebVision\A11yByDefault\Service\ContentFactsService;
+use WebVision\A11yByDefault\Service\DeveloperCornerAccessService;
 use WebVision\A11yByDefault\Service\IssueClassificationService;
 
 #[AsController]
@@ -30,6 +31,7 @@ final class A11yController
         private readonly PageRenderer $pageRenderer,
         private readonly LanguageServiceFactory $languageServiceFactory,
         private readonly UriBuilder $uriBuilder,
+        private readonly DeveloperCornerAccessService $developerCornerAccessService,
     ) {}
 
     public function index(ServerRequestInterface $request): ResponseInterface
@@ -53,6 +55,7 @@ final class A11yController
         $languageService = $this->languageServiceFactory->createFromUserPreferences($GLOBALS['BE_USER']);
         $resolvedRules = $this->resolveClassificationRules($languageService);
         $contextualEditModuleUrl = $this->buildContextualEditModuleUrl();
+        $hasDeveloperCornerAccess = $this->developerCornerAccessService->hasAccess($GLOBALS['BE_USER']);
 
         $this->pageRenderer->loadJavaScriptModule('@web-vision/a11y-by-default/a11y-module.js');
         $this->pageRenderer->loadJavaScriptModule('@typo3/backend/element/progress-bar-element.js');
@@ -72,6 +75,7 @@ final class A11yController
             'previewUri' => $previewUri,
             'contentMetadataJson' => json_encode($contentMetadata, JSON_THROW_ON_ERROR),
             'contentFactsJson' => json_encode($contentFacts, JSON_THROW_ON_ERROR),
+            'hasDeveloperCornerAccess' => $hasDeveloperCornerAccess,
         ]);
 
         return $moduleTemplate->renderResponse('A11y/Index');

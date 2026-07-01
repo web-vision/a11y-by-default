@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="messages" date="2026-07-01T00:00:00Z">
+        <body>
+            <trans-unit id="be_users.tab">
+                <source>Accessibility Checker</source>
+            </trans-unit>
+            <trans-unit id="be_users.tx_a11ybydefault_developer_corner">
+                <source>Grant access to developer corner</source>
+            </trans-unit>
+            <trans-unit id="be_users.tx_a11ybydefault_developer_corner.description">
+                <source>Allows this user to see the developer-facing accessibility findings in the Accessibility Checker module, in addition to the editor-facing ones. Administrators and system maintainers always have this access.</source>
+            </trans-unit>
+            <trans-unit id="be_groups.tab">
+                <source>Accessibility Checker</source>
+            </trans-unit>
+            <trans-unit id="be_groups.tx_a11ybydefault_developer_corner">
+                <source>Grant access to developer corner</source>
+            </trans-unit>
+            <trans-unit id="be_groups.tx_a11ybydefault_developer_corner.description">
+                <source>Allows members of this group to see the developer-facing accessibility findings in the Accessibility Checker module, in addition to the editor-facing ones. Administrators and system maintainers always have this access.</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

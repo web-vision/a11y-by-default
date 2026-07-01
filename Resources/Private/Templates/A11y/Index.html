@@ -55,36 +55,38 @@
                     </button>
                 </div>
 
-                <ul class="nav nav-tabs mb-3"
-                    role="tablist"
-                    aria-label="{f:translate(key: 'LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:module.filters.viewLabel')}">
-                    <li class="nav-item" role="presentation">
-                        <button type="button"
-                                class="nav-link active"
-                                id="a11y-view-tab-editor"
-                                role="tab"
-                                aria-selected="true"
-                                aria-controls="a11y-results"
-                                tabindex="0"
-                                data-view="editor">
-                            <f:translate key="LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:module.filters.view.editor" />
-                            <span class="badge text-bg-light ms-1" data-view-count="editor">0</span>
-                        </button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button type="button"
-                                class="nav-link"
-                                id="a11y-view-tab-developer"
-                                role="tab"
-                                aria-selected="false"
-                                aria-controls="a11y-results"
-                                tabindex="-1"
-                                data-view="developer">
-                            <f:translate key="LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:module.filters.view.developer" />
-                            <span class="badge text-bg-light ms-1" data-view-count="developer">0</span>
-                        </button>
-                    </li>
-                </ul>
+                <f:if condition="{hasDeveloperCornerAccess}">
+                    <ul class="nav nav-tabs mb-3"
+                        role="tablist"
+                        aria-label="{f:translate(key: 'LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:module.filters.viewLabel')}">
+                        <li class="nav-item" role="presentation">
+                            <button type="button"
+                                    class="nav-link active"
+                                    id="a11y-view-tab-editor"
+                                    role="tab"
+                                    aria-selected="true"
+                                    aria-controls="a11y-results"
+                                    tabindex="0"
+                                    data-view="editor">
+                                <f:translate key="LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:module.filters.view.editor" />
+                                <span class="badge text-bg-light ms-1" data-view-count="editor">0</span>
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button type="button"
+                                    class="nav-link"
+                                    id="a11y-view-tab-developer"
+                                    role="tab"
+                                    aria-selected="false"
+                                    aria-controls="a11y-results"
+                                    tabindex="-1"
+                                    data-view="developer">
+                                <f:translate key="LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:module.filters.view.developer" />
+                                <span class="badge text-bg-light ms-1" data-view-count="developer">0</span>
+                            </button>
+                        </li>
+                    </ul>
+                </f:if>
 
                 <div class="d-flex align-items-center gap-2 mb-3 flex-wrap"
                      role="group"
@@ -125,7 +127,7 @@
                 <div id="a11y-results"
                      role="tabpanel"
                      aria-live="polite"
-                     aria-labelledby="a11y-view-tab-editor">
+                     <f:if condition="{hasDeveloperCornerAccess}">aria-labelledby="a11y-view-tab-editor"</f:if>>
                 </div>
             </div>
         </f:else>

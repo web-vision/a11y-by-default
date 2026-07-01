@@ -43,5 +43,7 @@ a GNU/GPL CMS/Framework available from `www.typo3.org <https://www.typo3.org/>`_
 
    Introduction/Index
    Installation/Index
+   Configuration/Index
    UsersManual/Index
+   Faq/Index
    DeveloperCorner/Index
