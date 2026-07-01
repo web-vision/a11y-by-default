@@ -4,6 +4,11 @@ import typescript from '@rollup/plugin-typescript';
 
 const plugins = [nodeResolve(), commonjs(), typescript({ tsconfig: './tsconfig.json' })];
 
+// CodeViewer.ts loads these from TYPO3 backend's own importmap at runtime
+// (see EXT:backend Configuration/JavaScriptModules.php) rather than bundling
+// a copy of CodeMirror, so keep the bare imports untouched in the output.
+const codeMirrorExternals = [/^@codemirror\//];
+
 /** @type {import('rollup').RollupOptions[]} */
 export default [
   {
@@ -13,6 +18,7 @@ export default [
       format: 'es',
       sourcemap: true,
     },
+    external: codeMirrorExternals,
     plugins,
   },
   {

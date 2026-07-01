@@ -6,5 +6,8 @@ module.exports = {
     '^.+\\.tsx?$': ['ts-jest', { tsconfig: 'tsconfig.test.json' }],
   },
   moduleFileExtensions: ['ts', 'js'],
+  moduleNameMapper: {
+    '^@codemirror/.*$': '<rootDir>/Build/TypeScript/tests/__mocks__/codemirror.ts',
+  },
   clearMocks: true,
 };

@@ -1,3 +1,4 @@
+import './CodeViewer';
 import { buildContentFactsIndex } from './ContentFacts';
 import { AxeEngine } from './engines/AxeEngine';
 import { HtmlCsEngine } from './engines/HtmlCsEngine';
@@ -52,16 +53,6 @@ function getLabel(key: string): string {
 function escapeHtml(str: string): string {
   return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
-
-// TYPO3's <typo3-t3editor-codemirror> element takes its language mode as a
-// JavaScriptModuleInstruction (see EXT:backend Configuration/Backend/T3editor/Modes.php
-// for the 'html' mode this mirrors), serialized as JSON into the `mode` attribute.
-const CODEMIRROR_HTML_MODE = JSON.stringify({
-  name: '@codemirror/lang-html',
-  exportName: 'html',
-  flags: 2,
-  items: [{ type: 'invoke', args: [] }],
-});
 
 // The same color family as the severity filter buttons (btn-danger/warning/
 // info/secondary), applied here via TYPO3's panel-* variants so the group
@@ -131,12 +122,7 @@ export function renderIssueCard(issue: AccessibilityIssue, classifier: Violation
     classification.contentElementUid !== undefined ? buildContentElementEditLink(classification.contentElementUid) : '';
 
   const nodes = issue.nodes
-    .map(
-      (node) =>
-        `<typo3-t3editor-codemirror mode='${CODEMIRROR_HTML_MODE}' readonly class="mb-1">
-            <textarea readonly disabled class="form-control">${escapeHtml(node.html)}</textarea>
-        </typo3-t3editor-codemirror>`,
-    )
+    .map((node) => `<a11y-code-viewer class="mb-1">${escapeHtml(node.html)}</a11y-code-viewer>`)
     .join('');
 
   return `<div class="panel panel-default mb-1" data-impact="${escapeHtml(issue.impact)}" data-responsibility="${escapeHtml(classification.responsibility)}">

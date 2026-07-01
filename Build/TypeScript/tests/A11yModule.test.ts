@@ -137,10 +137,10 @@ describe('renderIssueCard', () => {
     expect(html).toContain('Ensures img elements have alternate text');
   });
 
-  it('renders failing HTML nodes in code blocks', () => {
+  it('renders failing HTML nodes in a read-only code viewer', () => {
     const classifier = new ViolationClassifier({});
     const html = renderIssueCard(makeIssue(), classifier, 'panel-1');
-    expect(html).toContain('<code>');
+    expect(html).toContain('<a11y-code-viewer');
     expect(html).toContain('&lt;img src=&quot;photo.jpg&quot;&gt;');
   });
 
