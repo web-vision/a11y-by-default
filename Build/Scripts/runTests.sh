@@ -16,7 +16,7 @@ printSummary() {
     echo "Container runtime: ${CONTAINER_BIN}" >&2
     echo "Container suffix: ${SUFFIX}"
     echo "PHP: ${PHP_VERSION}" >&2
-    if [[ ${TEST_SUITE} =~ ^(functional|e2e-install|e2e-install-prepare|e2e-install-browser)$ ]]; then
+    if [[ ${TEST_SUITE} == "functional" ]]; then
         case "${DBMS}" in
             mariadb|mysql|postgres)
                 echo "DBMS: ${DBMS}  version ${DBMS_VERSION}  driver ${DATABASE_DRIVER}" >&2
@@ -143,10 +143,12 @@ handleDbmsOptions() {
 }
 
 cleanBuildFiles() {
-    echo -n "Clean builds ... "
+    echo -n "Clean build files ... "
     rm -rf \
-        Build/JavaScript \
-        Build/node_modules
+        Resources/Public/JavaScript/a11y-module.js \
+        Resources/Public/JavaScript/a11y-module.js.map \
+        Resources/Public/JavaScript/page-layout-summary.js \
+        Resources/Public/JavaScript/page-layout-summary.js.map
     echo "done"
 }
 
@@ -205,398 +207,6 @@ getPhpImageVersion() {
     esac
 }
 
-# @todo: Add support for all available database engines (see -d option)
-runPlaywright() {
-    PREPAREPARAMS="-e TYPO3_DB_DRIVER=sqlite"
-    TESTPARAMS="-e typo3DatabaseDriver=pdo_sqlite"
-
-    if [ "${PLAYWRIGHT_USE_EXISTING_INSTANCE}x" = "x" ]; then
-        rm -rf "${CORE_ROOT}/typo3temp/var/tests/playwright-composer" "${CORE_ROOT}/typo3temp/var/tests/playwright-reports" "${CORE_ROOT}/typo3temp/var/tests/playwright-results"
-        ${CONTAINER_BIN} run ${CONTAINER_COMMON_PARAMS} --name playwright-prepare ${XDEBUG_MODE} -e COMPOSER_CACHE_DIR=${CORE_ROOT}/.cache/composer -e COMPOSER_ROOT_VERSION=${COMPOSER_ROOT_VERSION} -e XDEBUG_CONFIG="${XDEBUG_CONFIG}" ${PREPAREPARAMS} ${IMAGE_PHP} "${CORE_ROOT}/Build/Scripts/setupAcceptanceComposer.sh" "typo3temp/var/tests/playwright-composer"
-        if [[ $? -gt 0 ]]; then
-            kill -SIGINT -$$
-        fi
-    fi
-
-    [[ -e "${CORE_ROOT}/Build/node_modules/.bin/playwright" ]] || ${CONTAINER_BIN} run ${CONTAINER_COMMON_PARAMS} --name playwright-${SUFFIX}-npm-ci \
-        -e HOME=${CORE_ROOT}/.cache \
-        ${IMAGE_NODEJS_CHROME} \
-        npm --prefix=Build ci
-        if [[ $? -gt 0 ]]; then
-            kill -SIGINT -$$
-        fi
-
-    APACHE_OPTIONS="-e APACHE_RUN_USER=#${HOST_UID} -e APACHE_RUN_SERVERNAME=web -e APACHE_RUN_GROUP=#${HOST_PID} -e APACHE_RUN_DOCROOT=${CORE_ROOT}/typo3temp/var/tests/playwright-composer/public -e PHPFPM_HOST=phpfpm -e PHPFPM_PORT=9000"
-    if [[ ${PLAYWRIGHT_PREPARE_ONLY} -eq 1 || ${PLAYWRIGHT_BROWSER} -eq 1 ]]; then
-        APACHE_OPTIONS="${APACHE_OPTIONS} -p 127.0.0.1::80"
-    fi
-
-    if [ ${CONTAINER_BIN} = "docker" ]; then
-        ${CONTAINER_BIN} run --rm -d --name ac-phpfpm-${SUFFIX} --network ${NETWORK} --network-alias phpfpm --add-host "${CONTAINER_HOST}:host-gateway" ${USERSET} -e PHPFPM_USER=${HOST_UID} -e PHPFPM_GROUP=${HOST_PID} -e PHPFPM_PM_MAX_CHILDREN=50 -e PHPFPM_PM_START_SERVERS=10 -e PHPFPM_PM_MIN_SPARE_SERVERS=5 -e PHPFPM_PM_MAX_SPARE_SERVERS=15 -v ${CORE_ROOT}:${CORE_ROOT} ${IMAGE_PHP} php-fpm ${PHP_FPM_OPTIONS} >/dev/null
-        SUITE_EXIT_CODE=$? && [[ "${SUITE_EXIT_CODE}" -ne 0 ]] && printSummary
-        ${CONTAINER_BIN} run --rm -d --name ac-web-${SUFFIX} --network ${NETWORK} --network-alias web --add-host "${CONTAINER_HOST}:host-gateway" -v ${CORE_ROOT}:${CORE_ROOT} ${APACHE_OPTIONS} ${IMAGE_APACHE} >/dev/null
-        SUITE_EXIT_CODE=$? && [[ "${SUITE_EXIT_CODE}" -ne 0 ]] && printSummary
-    else
-        ${CONTAINER_BIN} run ${CI_PARAMS} -d --name ac-phpfpm-${SUFFIX} --network ${NETWORK} --network-alias phpfpm ${USERSET} -e PHPFPM_USER=0 -e PHPFPM_GROUP=0 -e PHPFPM_PM_MAX_CHILDREN=50 -e PHPFPM_PM_START_SERVERS=10 -e PHPFPM_PM_MIN_SPARE_SERVERS=5 -e PHPFPM_PM_MAX_SPARE_SERVERS=15 -v ${CORE_ROOT}:${CORE_ROOT} ${IMAGE_PHP} php-fpm -R ${PHP_FPM_OPTIONS} >/dev/null
-        SUITE_EXIT_CODE=$? && [[ "${SUITE_EXIT_CODE}" -ne 0 ]] && printSummary
-        ${CONTAINER_BIN} run --rm ${CI_PARAMS} -d --name ac-web-${SUFFIX} --network ${NETWORK} --network-alias web -v ${CORE_ROOT}:${CORE_ROOT} ${APACHE_OPTIONS} ${IMAGE_APACHE} >/dev/null
-        SUITE_EXIT_CODE=$? && [[ "${SUITE_EXIT_CODE}" -ne 0 ]] && printSummary
-    fi
-
-    waitFor web 80
-
-    PLAYWRIGHT_SHARD=""
-    if [ "${CHUNKS}" -gt 0 ]; then
-        PLAYWRIGHT_SHARD=" --shard=${THISCHUNK}/${CHUNKS}"
-    fi
-    COMMAND="npm --prefix=${CORE_ROOT}/Build run playwright:run -- ${PLAYWRIGHT_PROJECT}${PLAYWRIGHT_SHARD}"
-    COMMAND_UI="npm --prefix=${CORE_ROOT}/Build run playwright:open -- ${PLAYWRIGHT_PROJECT}"
-    PLAYWRIGHT_GUI_PORT=43837
-
-    if [[ ${PLAYWRIGHT_PREPARE_ONLY} -eq 0 && ${PLAYWRIGHT_BROWSER} -eq 1 ]]; then
-        PLAYWRIGHT_BASE_URL="http://$(${CONTAINER_BIN} port ac-web-${SUFFIX} 80/tcp)/typo3/"
-        ${CONTAINER_BIN} run -d ${CONTAINER_COMMON_PARAMS} --name ac-browser-${SUFFIX} -p $PLAYWRIGHT_GUI_PORT -e CHROME_SANDBOX=false -e PLAYWRIGHT_BASE_URL=http://web:80/typo3/ ${IMAGE_PLAYWRIGHT} ${COMMAND} --ui --ui-port=$PLAYWRIGHT_GUI_PORT --ui-host=0.0.0.0 > /dev/null 2>&1
-        SUITE_EXIT_CODE=$?
-        PLAYWRIGHT_BROWSER_URL="http://127.0.0.1:$(${CONTAINER_BIN} port ac-browser-${SUFFIX} ${PLAYWRIGHT_GUI_PORT}/tcp | head -n 1 | cut -d: -f2)"
-
-        echo -en "\033[32m✓\033[0m Playwright is ready..."
-        echo -en "\n  * Playwright GUI $PLAYWRIGHT_BROWSER_URL or press \"\033[32mo\033[0m\"."
-        echo -en "\n  * TYPO3 test installation $PLAYWRIGHT_BASE_URL or press \"\033[32mt\033[0m\"."
-        echo
-
-        if [ "$(uname)" = "Darwin" ]; then
-          OPEN_COMMAND=open
-        elif command -v xdg-open > /dev/null 2>&1; then
-          OPEN_COMMAND=xdg-open
-        fi
-
-        while true; do
-        read -rsn1 key
-        if [ "$key" = "o" ]; then
-            ${OPEN_COMMAND} "$PLAYWRIGHT_BROWSER_URL"
-        fi
-        if [ "$key" = "t" ]; then
-            ${OPEN_COMMAND} "$PLAYWRIGHT_BASE_URL"
-        fi
-        done </dev/tty
-    elif [[ ${PLAYWRIGHT_PREPARE_ONLY} -eq 0 ]]; then
-        ${CONTAINER_BIN} run ${CONTAINER_COMMON_PARAMS} --name playwright-${SUFFIX} -e CHROME_SANDBOX=false -e CI=1 ${IMAGE_PLAYWRIGHT} ${COMMAND}
-        SUITE_EXIT_CODE=$?
-    else
-        PLAYWRIGHT_BASE_URL="http://$(${CONTAINER_BIN} port ac-web-${SUFFIX} 80/tcp)/"
-        echo
-        echo -en "\033[32m✓\033[0m "
-        echo "Environment prepared. You can now press Enter to run all tests or run playwright locally with one of the following commands."
-        echo
-        echo "  Run with local playwright (headless):"
-        echo -n "    "
-        echo "PLAYWRIGHT_BASE_URL=${PLAYWRIGHT_BASE_URL}typo3/ ${COMMAND}"
-        echo
-        echo "  Open local playwright UI:"
-        echo -n "    "
-        echo "PLAYWRIGHT_BASE_URL=${PLAYWRIGHT_BASE_URL}typo3/ ${COMMAND_UI}"
-        echo
-        echo -e "(Press \033[31mControl-C\033[0m to quit, \033[32mEnter\033[0m to run tests in container)"
-        # maybe use https://stackoverflow.com/a/58508884/4223467
-        while read -r _; do
-            ${CONTAINER_BIN} run ${CONTAINER_COMMON_PARAMS} --name playwright-${SUFFIX} -e CHROME_SANDBOX=false -e CI=1 ${IMAGE_PLAYWRIGHT} ${COMMAND}
-            SUITE_EXIT_CODE=$?
-            echo
-            echo -e "(Press \033[31mControl-C\033[0m to quit, \033[32mEnter\033[0m to re-run tests in container)"
-        done </dev/tty
-    fi
-}
-
-# Builds an empty composer-installed TYPO3 instance (no `vendor/bin/typo3 setup` performed),
-# starts apache/phpfpm and an optional database container, then runs the playwright install
-# spec matching the selected -d database. Each invocation rebuilds the instance from scratch
-# since the installer mutates state irreversibly.
-runPlaywrightInstall() {
-    rm -rf "${CORE_ROOT}/typo3temp/var/tests/playwright-install-composer" "${CORE_ROOT}/typo3temp/var/tests/playwright-reports" "${CORE_ROOT}/typo3temp/var/tests/playwright-results"
-    ${CONTAINER_BIN} run ${CONTAINER_COMMON_PARAMS} --name playwright-install-prepare ${XDEBUG_MODE} -e COMPOSER_CACHE_DIR=${CORE_ROOT}/.cache/composer -e COMPOSER_ROOT_VERSION=${COMPOSER_ROOT_VERSION} -e XDEBUG_CONFIG="${XDEBUG_CONFIG}" ${IMAGE_PHP} "${CORE_ROOT}/Build/Scripts/setupAcceptanceInstallComposer.sh" "typo3temp/var/tests/playwright-install-composer"
-    if [[ $? -gt 0 ]]; then
-        kill -SIGINT -$$
-    fi
-
-    [[ -e "${CORE_ROOT}/Build/node_modules/.bin/playwright" ]] || ${CONTAINER_BIN} run ${CONTAINER_COMMON_PARAMS} --name playwright-${SUFFIX}-npm-ci \
-        -e HOME=${CORE_ROOT}/.cache \
-        ${IMAGE_NODEJS_CHROME} \
-        npm --prefix=Build ci
-        if [[ $? -gt 0 ]]; then
-            kill -SIGINT -$$
-        fi
-
-    INSTALL_ENV=""
-    PLAYWRIGHT_INSTALL_SPEC=""
-    case ${DBMS} in
-        mariadb)
-            ${CONTAINER_BIN} run --rm ${CI_PARAMS} --name mariadb-install-${SUFFIX} --network ${NETWORK} -d -e MYSQL_ROOT_PASSWORD=funcp --tmpfs /var/lib/mysql/:rw,noexec,nosuid ${IMAGE_MARIADB} >/dev/null
-            SUITE_EXIT_CODE=$? && [[ "${SUITE_EXIT_CODE}" -ne 0 ]] && printSummary
-            waitFor mariadb-install-${SUFFIX} 3306
-            INSTALL_ENV="-e typo3InstallMysqlDatabaseName=func_test -e typo3InstallMysqlDatabaseUsername=root -e typo3InstallMysqlDatabasePassword=funcp -e typo3InstallMysqlDatabaseHost=mariadb-install-${SUFFIX}"
-            PLAYWRIGHT_INSTALL_SPEC="e2e-install/install-mariadb.spec.ts"
-            ;;
-        mysql)
-            ${CONTAINER_BIN} run --rm ${CI_PARAMS} --name mysql-install-${SUFFIX} --network ${NETWORK} -d -e MYSQL_ROOT_PASSWORD=funcp --tmpfs /var/lib/mysql/:rw,noexec,nosuid ${IMAGE_MYSQL} >/dev/null
-            SUITE_EXIT_CODE=$? && [[ "${SUITE_EXIT_CODE}" -ne 0 ]] && printSummary
-            waitFor mysql-install-${SUFFIX} 3306
-            INSTALL_ENV="-e typo3InstallMysqlDatabaseName=func_test -e typo3InstallMysqlDatabaseUsername=root -e typo3InstallMysqlDatabasePassword=funcp -e typo3InstallMysqlDatabaseHost=mysql-install-${SUFFIX}"
-            PLAYWRIGHT_INSTALL_SPEC="e2e-install/install-mysql.spec.ts"
-            ;;
-        postgres)
-            ${CONTAINER_BIN} run --rm ${CI_PARAMS} --name postgres-install-${SUFFIX} --network ${NETWORK} -d -e POSTGRES_PASSWORD=funcp -e POSTGRES_USER=funcu -e POSTGRES_DB=func_test --tmpfs /var/lib/postgresql/data:rw,noexec,nosuid ${IMAGE_POSTGRES} >/dev/null
-            SUITE_EXIT_CODE=$? && [[ "${SUITE_EXIT_CODE}" -ne 0 ]] && printSummary
-            waitFor postgres-install-${SUFFIX} 5432
-            INSTALL_ENV="-e typo3InstallPostgresqlDatabasePort=5432 -e typo3InstallPostgresqlDatabaseName=func_test -e typo3InstallPostgresqlDatabaseHost=postgres-install-${SUFFIX} -e typo3InstallPostgresqlDatabaseUsername=funcu -e typo3InstallPostgresqlDatabasePassword=funcp"
-            PLAYWRIGHT_INSTALL_SPEC="e2e-install/install-postgresql.spec.ts"
-            ;;
-        sqlite)
-            PLAYWRIGHT_INSTALL_SPEC="e2e-install/install-sqlite.spec.ts"
-            ;;
-    esac
-
-    APACHE_OPTIONS="-e APACHE_RUN_USER=#${HOST_UID} -e APACHE_RUN_SERVERNAME=web -e APACHE_RUN_GROUP=#${HOST_PID} -e APACHE_RUN_DOCROOT=${CORE_ROOT}/typo3temp/var/tests/playwright-install-composer/public -e PHPFPM_HOST=phpfpm -e PHPFPM_PORT=9000"
-    if [[ ${PLAYWRIGHT_PREPARE_ONLY} -eq 1 || ${PLAYWRIGHT_BROWSER} -eq 1 ]]; then
-        APACHE_OPTIONS="${APACHE_OPTIONS} -p 127.0.0.1::80"
-    fi
-
-    if [ ${CONTAINER_BIN} = "docker" ]; then
-        ${CONTAINER_BIN} run --rm -d --name ac-phpfpm-${SUFFIX} --network ${NETWORK} --network-alias phpfpm --add-host "${CONTAINER_HOST}:host-gateway" ${USERSET} -e PHPFPM_USER=${HOST_UID} -e PHPFPM_GROUP=${HOST_PID} -e PHPFPM_PM_MAX_CHILDREN=50 -e PHPFPM_PM_START_SERVERS=10 -e PHPFPM_PM_MIN_SPARE_SERVERS=5 -e PHPFPM_PM_MAX_SPARE_SERVERS=15 -v ${CORE_ROOT}:${CORE_ROOT} ${IMAGE_PHP} php-fpm ${PHP_FPM_OPTIONS} >/dev/null
-        SUITE_EXIT_CODE=$? && [[ "${SUITE_EXIT_CODE}" -ne 0 ]] && printSummary
-        ${CONTAINER_BIN} run --rm -d --name ac-web-${SUFFIX} --network ${NETWORK} --network-alias web --add-host "${CONTAINER_HOST}:host-gateway" -v ${CORE_ROOT}:${CORE_ROOT} ${APACHE_OPTIONS} ${IMAGE_APACHE} >/dev/null
-        SUITE_EXIT_CODE=$? && [[ "${SUITE_EXIT_CODE}" -ne 0 ]] && printSummary
-    else
-        ${CONTAINER_BIN} run ${CI_PARAMS} -d --name ac-phpfpm-${SUFFIX} --network ${NETWORK} --network-alias phpfpm ${USERSET} -e PHPFPM_USER=0 -e PHPFPM_GROUP=0 -e PHPFPM_PM_MAX_CHILDREN=50 -e PHPFPM_PM_START_SERVERS=10 -e PHPFPM_PM_MIN_SPARE_SERVERS=5 -e PHPFPM_PM_MAX_SPARE_SERVERS=15 -v ${CORE_ROOT}:${CORE_ROOT} ${IMAGE_PHP} php-fpm -R ${PHP_FPM_OPTIONS} >/dev/null
-        SUITE_EXIT_CODE=$? && [[ "${SUITE_EXIT_CODE}" -ne 0 ]] && printSummary
-        ${CONTAINER_BIN} run --rm ${CI_PARAMS} -d --name ac-web-${SUFFIX} --network ${NETWORK} --network-alias web -v ${CORE_ROOT}:${CORE_ROOT} ${APACHE_OPTIONS} ${IMAGE_APACHE} >/dev/null
-        SUITE_EXIT_CODE=$? && [[ "${SUITE_EXIT_CODE}" -ne 0 ]] && printSummary
-    fi
-
-    waitFor web 80
-
-    COMMAND="npm --prefix=${CORE_ROOT}/Build run playwright:run -- ${PLAYWRIGHT_INSTALL_SPEC} ${PLAYWRIGHT_PROJECT}"
-    COMMAND_UI="npm --prefix=${CORE_ROOT}/Build run playwright:open -- ${PLAYWRIGHT_INSTALL_SPEC} ${PLAYWRIGHT_PROJECT}"
-    PLAYWRIGHT_GUI_PORT=43837
-
-    if [[ ${PLAYWRIGHT_PREPARE_ONLY} -eq 0 && ${PLAYWRIGHT_BROWSER} -eq 1 ]]; then
-        PLAYWRIGHT_BASE_URL="http://$(${CONTAINER_BIN} port ac-web-${SUFFIX} 80/tcp)/"
-        ${CONTAINER_BIN} run -d ${CONTAINER_COMMON_PARAMS} --name ac-browser-${SUFFIX} -p $PLAYWRIGHT_GUI_PORT -e CHROME_SANDBOX=false -e PLAYWRIGHT_BASE_URL=http://web:80/ ${INSTALL_ENV} ${IMAGE_PLAYWRIGHT} ${COMMAND} --ui --ui-port=$PLAYWRIGHT_GUI_PORT --ui-host=0.0.0.0 > /dev/null 2>&1
-        SUITE_EXIT_CODE=$?
-        PLAYWRIGHT_BROWSER_URL="http://127.0.0.1:$(${CONTAINER_BIN} port ac-browser-${SUFFIX} ${PLAYWRIGHT_GUI_PORT}/tcp | head -n 1 | cut -d: -f2)"
-
-        echo -en "\033[32m✓\033[0m Playwright is ready..."
-        echo -en "\n  * Playwright GUI $PLAYWRIGHT_BROWSER_URL or press \"\033[32mo\033[0m\"."
-        echo -en "\n  * TYPO3 test installation $PLAYWRIGHT_BASE_URL or press \"\033[32mt\033[0m\"."
-        echo
-
-        if [ "$(uname)" = "Darwin" ]; then
-          OPEN_COMMAND=open
-        elif command -v xdg-open > /dev/null 2>&1; then
-          OPEN_COMMAND=xdg-open
-        fi
-
-        while true; do
-        read -rsn1 key
-        if [ "$key" = "o" ]; then
-            ${OPEN_COMMAND} "$PLAYWRIGHT_BROWSER_URL"
-        fi
-        if [ "$key" = "t" ]; then
-            ${OPEN_COMMAND} "$PLAYWRIGHT_BASE_URL"
-        fi
-        done </dev/tty
-    elif [[ ${PLAYWRIGHT_PREPARE_ONLY} -eq 0 ]]; then
-        ${CONTAINER_BIN} run ${CONTAINER_COMMON_PARAMS} --name e2e-install-${SUFFIX} -e CHROME_SANDBOX=false -e CI=1 ${INSTALL_ENV} ${IMAGE_PLAYWRIGHT} ${COMMAND}
-        SUITE_EXIT_CODE=$?
-    else
-        PLAYWRIGHT_BASE_URL="http://$(${CONTAINER_BIN} port ac-web-${SUFFIX} 80/tcp)/"
-        echo
-        echo -en "\033[32m✓\033[0m "
-        echo "Environment prepared. The installer mutates state irreversibly: re-run \`runTests.sh -s e2e-install-prepare -d ${DBMS}\` to reset between iterations."
-        echo
-        echo "  Run with local playwright (headless):"
-        echo -n "    "
-        echo "PLAYWRIGHT_BASE_URL=${PLAYWRIGHT_BASE_URL} ${COMMAND}"
-        echo
-        echo "  Open local playwright UI:"
-        echo -n "    "
-        echo "PLAYWRIGHT_BASE_URL=${PLAYWRIGHT_BASE_URL} ${COMMAND_UI}"
-        echo
-        echo -e "(Press \033[31mControl-C\033[0m to quit, \033[32mEnter\033[0m to run tests in container)"
-        while read -r _; do
-            ${CONTAINER_BIN} run ${CONTAINER_COMMON_PARAMS} --name e2e-install-${SUFFIX} -e CHROME_SANDBOX=false -e CI=1 ${INSTALL_ENV} ${IMAGE_PLAYWRIGHT} ${COMMAND}
-            SUITE_EXIT_CODE=$?
-            echo
-            echo -e "(Press \033[31mControl-C\033[0m to quit, \033[32mEnter\033[0m to re-run tests in container)"
-        done </dev/tty
-    fi
-}
-
-executeRstRendering() {
-    local systemExtensionName="$1"
-    local systemExtensionFolder="typo3/sysext/${systemExtensionName}"
-    if [[ ! -d "${systemExtensionFolder}/Documentation" ]]; then
-        return 1
-    fi
-    echo "Processing RST directory: ${systemExtensionFolder}/Documentation"
-    ${CONTAINER_BIN} run ${CONTAINER_COMMON_PARAMS} --name check-rst-rendering-${systemExtensionName}-${SUFFIX}  -w /project -v "${CORE_ROOT}/${systemExtensionFolder}:/project" ${IMAGE_RSTRENDERING} --fail-on-log --fail-on-error --no-progress --config=Documentation Documentation
-    local exitCode=$?
-    echo "Render result for ${systemExtensionFolder}: ${exitCode}"
-    return ${exitCode}
-}
-
-executeRstRenderingWithWatch() {
-    local GREEN='\033[0;32m'
-    local YELLOW='\033[1;33m'
-    local RED='\033[1;31m'
-    local NC='\033[0m' # No Color
-
-    local systemExtensionName="$1"
-    local entryFile="$2"
-    local portOverride="$3"
-
-    if [[ "${portOverride}x" != "x" ]]; then
-        local actualRstPort="${portOverride}"
-    else
-        local actualRstPort="${RST_PORT}"
-    fi
-
-    local systemExtensionFolder="typo3/sysext/${systemExtensionName}"
-    if [[ ! -d "${systemExtensionFolder}/Documentation" ]]; then
-        return 1
-    fi
-
-    if [[ "${systemExtensionKey}" == "core" ]]; then
-        echo -e "${GREEN}Hint:${NC} For the 'core' documentation (Changelog), a second argument can directly create/use a new entry."
-        echo -e "Use '${YELLOW}interactive${NC}' for an interactive file creation process."
-        echo "Example:"
-        echo "# Create a new file (if the file already exists, it is utilized)"
-        echo "./Build/Scripts/runTests.sh -s watchRst core Changelog/${RST_TYPO3_MAIN_VERSION}/Feature-12343-MyFeature.rst"
-        echo "# Interactively ask for the target file, created in "${RST_TYPO3_MAIN_VERSION}" (branch dependent)"
-        echo "./Build/Scripts/runTests.sh -s watchRst core interactive"
-        echo "# Run on port different than ${RST_PORT}"
-        echo "./Build/Scripts/runTests.sh -s watchRst core interactive 4711"
-        echo ""
-
-        if [[ "${entryFile}x" != "x" ]]; then
-            if [[ "${entryFile}" == "interactive" ]]; then
-                echo "What kind of changelog should be created?"
-                echo "1) Feature"
-                echo "2) Breaking"
-                echo "3) Important"
-                echo "4) Deprecation"
-                echo -en "${GREEN}Enter your choice (1-4)${NC}: "
-                read -r choice
-
-                case $choice in
-                    1) local issueType="Feature" ;;
-                    2) local issueType="Breaking" ;;
-                    3) local issueType="Important" ;;
-                    4) local issueType="Deprecation" ;;
-                    *)
-                        echo -e "${RED}Invalid choice. Exiting.${NC}"
-                        return 1
-                        ;;
-                esac
-
-                echo -en "${GREEN}Enter issue number for this ${YELLOW}${issueType}${GREEN} file${NC}: "
-                read -r issueNumber
-                local issueNumber=$(echo "$issueNumber" | sed 's/[^0-9]//g')
-
-                echo -en "${GREEN}Enter title for issue #${issueNumber} (spaces are removed in filename) ${NC}: "
-                read -r issueTitle
-
-                local issueFileTitle=$(echo "$issueTitle" | sed 's/[^a-zA-Z_0-9-]//g')
-
-                local newFile="Changelog/${RST_TYPO3_MAIN_VERSION}/${issueType}-${issueNumber}-${issueFileTitle}.rst"
-            else
-                # non-interactive mode and file not existing. Let's evaluate some stuff!
-                local pattern='^Changelog/([0-9.]+)/(Breaking|Important|Feature|Deprecation)-([0-9]+)-(.+)\.rst$'
-                if [[ $entryFile =~ $pattern ]]; then
-                    local issueType="${BASH_REMATCH[2]}"
-                    local issueNumber="${BASH_REMATCH[3]}"
-                    local issueFileTitle="${BASH_REMATCH[4]}"
-                    local issueTitle="${issueFileTitle}"
-                else
-                    echo -e "${RED}Invalid filename, does not match changelog pattern: ${YELLOW}${pattern}${RED} - exiting.${NC}"
-                    return 1
-                fi
-                local newFile="${entryFile}"
-            fi
-
-            local fullTargetFile="${systemExtensionFolder}/Documentation/${newFile}"
-            local templateFile="../rstTemplates/rstTemplate${issueType}.rst"
-
-            # This will also be triggered for a filename "interactive", since this will not yet exist
-            if [[ ! -f "${fullTargetFile}" ]]; then
-                local fullTemplateFile="${THIS_SCRIPT_DIR}/${templateFile}"
-                echo -e "Creating: ${GREEN}${fullTargetFile}${NC}"
-                echo -e "Template: ${YELLOW}${fullTemplateFile}${NC}"
-
-                local escapedTitle=$(printf '%s\n' "$issueTitle" | sed 's/[&/\]/\\&/g')
-                local escapedIssue=$(printf '%s\n' "$issueNumber" | sed 's/[&/\]/\\&/g')
-                local escapedTimestamp=$(date +%s)
-
-                local creationPath=$(dirname "${fullTargetFile}")
-                if [[ ! -d "${creationPath}" ]]; then
-                    echo -e "${RED}${creationPath}${NC} is not a valid directory, no file could be created."
-                    return 1
-                fi
-
-                sed -e "s/{ISSUE}/$escapedIssue/g;" \
-                    -e "s/{TITLE}/$escapedTitle/g;" \
-                    -e "s/{TIMESTAMP}/$escapedTimestamp/g;" \
-                    "${fullTemplateFile}" > "${fullTargetFile}"
-
-                echo -e "${GREEN} ✓ New file created${NC}"
-                echo ""
-            fi
-
-            if [[ ! -f "${fullTargetFile}" ]]; then
-                echo -e "${RED}${fullTargetFile}${NC} could not be found and could not be created."
-                return 1
-            fi
-        fi
-    else
-        echo -e "${YELLOW}HINT: File creation only works for EXT:core context."
-        echo -e "For other manuals, please create files distinctively, because the follow no pattern."
-        echo -e "Filename input is ignored.${NC}"
-        echo ""
-    fi
-
-    echo -e "${YELLOW}NOTICE: Live documentation rendering is an experimental feature.${NC}"
-    echo "  - Adding new files after the process is running will not include them"
-    echo "  - Navigation / Menus on live-rendering may not fully work"
-    echo "  - Leaving the process running for a long time may cause memory leaks / consumption"
-    echo ""
-    echo "After the initial rendering is done, you can access the local browser and edit the file"
-    echo "simultaneously. Every time the file is changed, your browser will automatically reload"
-    echo "the page, and scroll to the last position."
-    echo ""
-
-    local htmlFile="${newFile%.rst}.html"
-    echo -e "Processing RST directory: ${GREEN}${systemExtensionFolder}/Documentation${NC}"
-    if [[ -f "${fullTargetFile}" ]]; then
-        echo -e "Working on: ${GREEN}${newFile}${NC}"
-        echo -e "Browser URL: ${GREEN}http://localhost:${actualRstPort}/${htmlFile}${NC}"
-    else
-        echo -e "Browser URL: ${GREEN}http://localhost:${actualRstPort}/${NC}"
-    fi
-
-    echo -e "(Press ${RED}Control-C${NC} when finished writing documentation)"
-    echo ""
-
-    # Command taken from Playwright example
-    if [ ${CONTAINER_BIN} = "docker" ]; then
-        ${CONTAINER_BIN} run -it --name watch-rst-rendering-${systemExtensionName}-${SUFFIX} -p ${actualRstPort}:${actualRstPort} --network ${NETWORK} --network-alias watch-rst --add-host "${CONTAINER_HOST}:host-gateway" -w /project -v "${CORE_ROOT}/${systemExtensionFolder}:/project" ${IMAGE_RSTRENDERING} --port ${actualRstPort} --watch --config=Documentation Documentation
-    else
-        ${CONTAINER_BIN} run -it ${CI_PARAMS} --name watch-rst-rendering-${systemExtensionName}-${SUFFIX} -p ${actualRstPort}:${actualRstPort} --network ${NETWORK} --network-alias watch-rst -w /project -v "${CORE_ROOT}/${systemExtensionFolder}:/project" ${IMAGE_RSTRENDERING} --port ${actualRstPort} --watch --config=Documentation Documentation
-    fi
-
-    local exitCode=$?
-    echo "Render result for ${systemExtensionFolder}: ${exitCode}"
-    return ${exitCode}
-}
-
 loadHelp() {
     # Load help text into $HELP
     read -r -d '' HELP <<EOF
@@ -613,8 +223,11 @@ Options:
             - checkBom: check UTF-8 files do not contain BOM
             - checkExceptionCodes: check for duplicate exception codes
             - checkIntegrityXliff: check integrity of .xlf files
+            - checkRst: check integrity of Documentation/*.rst files
             - clean: clean up build, cache and testing related files
+            - cleanBuild: clean up build related files
             - cleanCache: clean up cache related files
+            - cleanTests: clean up testing related files
             - composerInstall: "composer install", use after initial clone
             - functional: functional tests
             - lintJs: javascript/typescript linting
@@ -623,6 +236,7 @@ Options:
             - phpstan: phpstan analyze
             - renderDocs: render documentation using the PHP-based renderer
             - unit: PHP unit tests (default)
+            - update: same as -u, pull/prune ghcr.io/typo3/core-testing-* images
             - composer: "composer" command dispatcher, to execute various composer commands
             - npm: "npm" command dispatcher, to execute various npm commands directly
 
@@ -634,7 +248,7 @@ Options:
     -t <13|14>
         TYPO3 core version to use (default: 13)
 
-    -p <8.2|8.3|8.4>
+    -p <8.2|8.3|8.4|8.5>
         PHP minor version (default: 8.2)
 
     -a <mysqli|pdo_mysql>
@@ -666,7 +280,7 @@ Options:
         is not listening on default port.
 
     -n
-        Only with -s cgl
+        Only with -s cgl or -s lintJs
         Activate dry-run: do not modify files, only report issues.
 
     -u
@@ -725,8 +339,6 @@ PHP_XDEBUG_ON=0
 PHP_XDEBUG_PORT=9003
 CGLCHECK_DRY_RUN=""
 DATABASE_DRIVER=""
-CHUNKS=0
-THISCHUNK=0
 CONTAINER_BIN=""
 COMPOSER_ROOT_VERSION="0.1.0-dev"
 PHPSTAN_CONFIG_FILE="phpstan.neon"
@@ -745,7 +357,7 @@ CONTAINER_HOST="host.docker.internal"
 # Option parsing updates above default vars
 OPTIND=1
 INVALID_OPTIONS=()
-while getopts ":a:b:s:c:d:i:p:t:xy:nhu" OPT; do
+while getopts ":a:b:s:d:i:p:t:xy:nhu" OPT; do
     case ${OPT} in
         s)
             TEST_SUITE=${OPTARG}
@@ -764,14 +376,6 @@ while getopts ":a:b:s:c:d:i:p:t:xy:nhu" OPT; do
             ;;
         a)
             DATABASE_DRIVER=${OPTARG}
-            ;;
-        c)
-            if ! [[ ${OPTARG} =~ ^([0-9]+\/[0-9]+)$ ]]; then
-                INVALID_OPTIONS+=("${OPTARG}")
-            else
-                CHUNKS=${OPTARG%/*}
-                THISCHUNK=${OPTARG#*/}
-            fi
             ;;
         d)
             if ! [[ ${OPTARG} =~ ^(sqlite|mariadb|mysql|postgres)$ ]]; then
@@ -857,14 +461,9 @@ if ! type ${CONTAINER_BIN} >/dev/null 2>&1; then
     exit 1
 fi
 
-IMAGE_APACHE="ghcr.io/typo3/core-testing-apache24:1.7"
 IMAGE_PHP="ghcr.io/typo3/core-testing-$(echo "php${PHP_VERSION}" | sed -e 's/\.//'):$(getPhpImageVersion $PHP_VERSION)"
 
 IMAGE_NODEJS="ghcr.io/typo3/core-testing-nodejs24:1.1"
-IMAGE_NODEJS_CHROME="ghcr.io/typo3/core-testing-nodejs24-chrome:1.1"
-IMAGE_PLAYWRIGHT="mcr.microsoft.com/playwright:v1.56.1-noble"
-IMAGE_REDIS="docker.io/redis:4-alpine"
-IMAGE_MEMCACHED="docker.io/memcached:1.5-alpine"
 IMAGE_MARIADB="docker.io/mariadb:${DBMS_VERSION}"
 IMAGE_MYSQL="docker.io/mysql:${DBMS_VERSION}"
 IMAGE_POSTGRES="docker.io/postgres:${DBMS_VERSION}-alpine"
@@ -923,8 +522,12 @@ case ${TEST_SUITE} in
         SUITE_EXIT_CODE=$?
         ;;
     clean)
+        cleanBuildFiles
         cleanCacheFiles
         cleanTestFiles
+        ;;
+    cleanBuild)
+        cleanBuildFiles
         ;;
     cleanCache)
         cleanCacheFiles
@@ -952,6 +555,10 @@ case ${TEST_SUITE} in
         ;;
     checkIntegrityXliff)
         ${CONTAINER_BIN} run ${CONTAINER_COMMON_PARAMS} --name check-integrity-xliff-${SUFFIX} ${IMAGE_PHP} php Build/Scripts/checkIntegrityXliff.php "$@"
+        SUITE_EXIT_CODE=$?
+        ;;
+    checkRst)
+        ${CONTAINER_BIN} run ${CONTAINER_COMMON_PARAMS} --name check-rst-${SUFFIX} ${IMAGE_PHP} php -dxdebug.mode=off Build/Scripts/validateRstFiles.php "$@"
         SUITE_EXIT_CODE=$?
         ;;
     functional)
