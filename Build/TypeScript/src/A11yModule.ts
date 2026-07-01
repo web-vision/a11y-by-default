@@ -1,9 +1,11 @@
+import { buildContentFactsIndex } from './ContentFacts';
 import { AxeEngine } from './engines/AxeEngine';
 import { HtmlCsEngine } from './engines/HtmlCsEngine';
 import { ViolationClassifier } from './ViolationClassifier';
 import type {
   AccessibilityIssue,
   Classification,
+  ContentFacts,
   ContentMetadataItem,
   ModuleSettings,
   ScanEngine,
@@ -23,6 +25,7 @@ function readSettings(): ModuleSettings | null {
     pageUid: parseInt(appEl.dataset['pageUid'] ?? '0', 10),
     previewUri: appEl.dataset['previewUri'] ?? '',
     contentMetadata: JSON.parse(appEl.dataset['contentMetadata'] ?? '[]') as ContentMetadataItem[],
+    contentFacts: JSON.parse(appEl.dataset['contentFacts'] ?? '{}') as ContentFacts,
     axeJsUrl: appEl.dataset['axeJsUrl'] ?? '',
     htmlcsJsUrl: appEl.dataset['htmlcsJsUrl'] ?? '',
     classificationRules: typo3Settings?.settings?.a11yByDefault?.classificationRules ?? {},
@@ -159,9 +162,12 @@ async function runScan(settings: ModuleSettings, engine: ScanEngine, resultsCont
       );
     });
 
-    const classifier = new ViolationClassifier(settings.contentMetadata, settings.classificationRules);
+    const contentFactsIndex = buildContentFactsIndex(settings.contentFacts);
+    const classifier = new ViolationClassifier(settings.classificationRules);
     const scanEngine =
-      engine === 'axe' ? new AxeEngine(iframe, settings.axeJsUrl) : new HtmlCsEngine(iframe, settings.htmlcsJsUrl);
+      engine === 'axe'
+        ? new AxeEngine(iframe, settings.axeJsUrl, contentFactsIndex)
+        : new HtmlCsEngine(iframe, settings.htmlcsJsUrl, contentFactsIndex);
 
     const result = await scanEngine.run();
     renderResults(resultsContainer, result, classifier);

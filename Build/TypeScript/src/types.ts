@@ -12,13 +12,44 @@ export interface ContentMetadataItem {
 export interface ClassificationRule {
   responsibility: Responsibility;
   hint: string;
+  developerHint?: string;
 }
 
 export interface IssueNode {
   html: string;
   target: string[];
   failureSummary?: string;
+  contentElementUid?: number;
+  dataAvailable?: boolean;
 }
+
+export interface HeadingFact {
+  text: string;
+  level: number | null;
+}
+
+export interface LinkFact {
+  text: string;
+  href: string;
+}
+
+export interface ImageFact {
+  hasAltData: boolean;
+  matchers: string[];
+}
+
+export interface TableFact {
+  cellTexts: string[];
+}
+
+export interface ContentElementFacts {
+  headings: HeadingFact[];
+  links: LinkFact[];
+  images: ImageFact[];
+  tables: TableFact[];
+}
+
+export type ContentFacts = Record<number, ContentElementFacts>;
 
 export interface AccessibilityIssue {
   id: string;
@@ -47,6 +78,7 @@ export interface ModuleSettings {
   pageUid: number;
   previewUri: string;
   contentMetadata: ContentMetadataItem[];
+  contentFacts: ContentFacts;
   axeJsUrl: string;
   htmlcsJsUrl: string;
   classificationRules: Record<string, ClassificationRule>;

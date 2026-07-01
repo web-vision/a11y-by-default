@@ -1,7 +1,157 @@
+const EMPTY_CONTENT_FACTS_INDEX = { headings: [], links: [], images: [], tables: [] };
+function buildContentFactsIndex(facts) {
+    const index = { headings: [], links: [], images: [], tables: [] };
+    for (const [uidKey, elementFacts] of Object.entries(facts)) {
+        const contentElementUid = Number(uidKey);
+        elementFacts.headings.forEach((heading) => index.headings.push({ text: heading.text, contentElementUid }));
+        elementFacts.links.forEach((link) => index.links.push({ text: link.text, href: link.href, contentElementUid }));
+        elementFacts.images.forEach((image) => index.images.push({ ...image, contentElementUid }));
+        elementFacts.tables.forEach((table) => index.tables.push({ ...table, contentElementUid }));
+    }
+    return index;
+}
+function normalizeText(text) {
+    return text.trim().replace(/\s+/g, ' ').toLowerCase();
+}
+
+function matchHeadingText(text, index) {
+    const normalized = normalizeText(text);
+    if (normalized === '') {
+        return undefined;
+    }
+    const match = index.headings.find((heading) => normalizeText(heading.text) === normalized);
+    return match?.contentElementUid;
+}
+
+function matchImageSource(srcOrHref, index) {
+    const value = srcOrHref.trim();
+    if (value === '') {
+        return undefined;
+    }
+    const match = index.images.find((image) => image.matchers.some((matcher) => matcher !== '' && value.includes(matcher)));
+    if (match === undefined) {
+        return undefined;
+    }
+    return { contentElementUid: match.contentElementUid, hasAltData: match.hasAltData };
+}
+
+function matchTextAgainstKnownContent(text, index) {
+    const normalized = normalizeText(text);
+    if (normalized === '') {
+        return undefined;
+    }
+    const headingMatch = index.headings.find((heading) => normalizeText(heading.text) === normalized);
+    if (headingMatch !== undefined) {
+        return headingMatch.contentElementUid;
+    }
+    const linkMatch = index.links.find((link) => normalizeText(link.text) === normalized);
+    return linkMatch?.contentElementUid;
+}
+function matchHrefAgainstKnownLinks(href, index) {
+    const value = href.trim();
+    if (value === '') {
+        return undefined;
+    }
+    const match = index.links.find((link) => link.href !== '' && (value.includes(link.href) || link.href.includes(value)));
+    return match?.contentElementUid;
+}
+function matchLink(anchor, index) {
+    const text = anchor.textContent ?? '';
+    const ariaLabel = anchor.getAttribute('aria-label') ?? '';
+    const textMatch = matchTextAgainstKnownContent(text, index) ?? matchTextAgainstKnownContent(ariaLabel, index);
+    if (textMatch !== undefined) {
+        return { contentElementUid: textMatch, hasAltData: false };
+    }
+    const hrefMatch = matchHrefAgainstKnownLinks(anchor.getAttribute('href') ?? '', index);
+    if (hrefMatch !== undefined) {
+        return { contentElementUid: hrefMatch, hasAltData: false };
+    }
+    const image = anchor.querySelector('img');
+    return image !== null ? matchImageSource(image.getAttribute('src') ?? '', index) : undefined;
+}
+
+const OVERLAP_THRESHOLD = 0.6;
+function getLiveCellTexts(table) {
+    return Array.from(table.querySelectorAll('td, th'))
+        .map((cell) => normalizeText(cell.textContent ?? ''))
+        .filter((text) => text !== '');
+}
+function overlapRatio(liveCellTexts, knownCellTexts) {
+    if (liveCellTexts.length === 0) {
+        return 0;
+    }
+    const known = new Set(knownCellTexts.map((text) => normalizeText(text)));
+    const overlapping = liveCellTexts.filter((text) => known.has(text)).length;
+    return overlapping / liveCellTexts.length;
+}
+function matchTable(table, index) {
+    const liveCellTexts = getLiveCellTexts(table);
+    if (liveCellTexts.length === 0) {
+        return undefined;
+    }
+    let bestUid;
+    let bestRatio = OVERLAP_THRESHOLD;
+    for (const fact of index.tables) {
+        const ratio = overlapRatio(liveCellTexts, fact.cellTexts);
+        if (ratio >= bestRatio) {
+            bestRatio = ratio;
+            bestUid = fact.contentElementUid;
+        }
+    }
+    return bestUid;
+}
+
+const HEADING_RULES = new Set(['heading-order']);
+const IMAGE_RULES = new Set(['image-alt', 'input-image-alt', 'area-alt']);
+const LINK_RULES = new Set(['link-name']);
+const TABLE_RULES = new Set(['td-headers-attr', 'th-has-data-cells']);
+function resolveHeadingMatch(element, index) {
+    const uid = matchHeadingText(element.textContent ?? '', index);
+    return uid !== undefined ? { contentElementUid: uid } : {};
+}
+function resolveImageMatch(ruleId, element, index) {
+    const attribute = ruleId === 'area-alt' ? 'href' : 'src';
+    const match = matchImageSource(element.getAttribute(attribute) ?? '', index);
+    return match !== undefined ? { contentElementUid: match.contentElementUid, dataAvailable: match.hasAltData } : {};
+}
+function resolveLinkMatch(element, index) {
+    const match = matchLink(element, index);
+    return match !== undefined ? { contentElementUid: match.contentElementUid, dataAvailable: match.hasAltData } : {};
+}
+function resolveTableMatch(element, index) {
+    const table = element.closest('table');
+    const uid = table !== null ? matchTable(table, index) : undefined;
+    return uid !== undefined ? { contentElementUid: uid } : {};
+}
+/**
+ * Dispatches to the matcher appropriate for the given axe/HTML CodeSniffer rule id, correlating the live
+ * offending DOM element against known database content (see ContentFactsService on the PHP side) instead of
+ * relying on any particular template's markup conventions.
+ */
+function resolveContentMatch(ruleId, element, index) {
+    if (element === null) {
+        return {};
+    }
+    if (HEADING_RULES.has(ruleId)) {
+        return resolveHeadingMatch(element, index);
+    }
+    if (IMAGE_RULES.has(ruleId)) {
+        return resolveImageMatch(ruleId, element, index);
+    }
+    if (LINK_RULES.has(ruleId)) {
+        return resolveLinkMatch(element, index);
+    }
+    if (TABLE_RULES.has(ruleId)) {
+        return resolveTableMatch(element, index);
+    }
+    return {};
+}
+
 class AxeEngine {
-    constructor(iframe, axeJsUrl) {
+    constructor(iframe, axeJsUrl, contentFactsIndex = EMPTY_CONTENT_FACTS_INDEX) {
         this.iframe = iframe;
         this.axeJsUrl = axeJsUrl;
+        this.contentFactsIndex = contentFactsIndex;
     }
     async run() {
         await this.injectScript(this.axeJsUrl);
@@ -42,19 +192,38 @@ class AxeEngine {
             help: result.help,
             helpUrl: result.helpUrl,
             tags: result.tags,
-            nodes: result.nodes.map((node) => ({
-                html: node.html,
-                target: node.target,
-                ...(node.failureSummary !== undefined ? { failureSummary: node.failureSummary } : {}),
-            })),
+            nodes: result.nodes.map((node) => this.normalizeNode(result.id, node)),
         }));
+    }
+    normalizeNode(ruleId, node) {
+        const element = this.resolveElement(node.target);
+        const match = resolveContentMatch(ruleId, element, this.contentFactsIndex);
+        return {
+            html: node.html,
+            target: node.target,
+            ...(node.failureSummary !== undefined ? { failureSummary: node.failureSummary } : {}),
+            ...match,
+        };
+    }
+    resolveElement(target) {
+        const selector = target[target.length - 1];
+        if (selector === undefined) {
+            return null;
+        }
+        try {
+            return this.iframe.contentDocument?.querySelector(selector) ?? null;
+        }
+        catch {
+            return null;
+        }
     }
 }
 
 class HtmlCsEngine {
-    constructor(iframe, htmlcsJsUrl) {
+    constructor(iframe, htmlcsJsUrl, contentFactsIndex = EMPTY_CONTENT_FACTS_INDEX) {
         this.iframe = iframe;
         this.htmlcsJsUrl = htmlcsJsUrl;
+        this.contentFactsIndex = contentFactsIndex;
     }
     async run() {
         await this.injectScript(this.htmlcsJsUrl);
@@ -105,6 +274,7 @@ class HtmlCsEngine {
                 {
                     html: msg.element.outerHTML ?? '',
                     target: [msg.element.tagName.toLowerCase()],
+                    ...resolveContentMatch(msg.code, msg.element, this.contentFactsIndex),
                 },
             ],
         }));
@@ -113,8 +283,7 @@ class HtmlCsEngine {
 HtmlCsEngine.STANDARD = 'WCAG2AA';
 
 class ViolationClassifier {
-    constructor(contentMetadata, rules) {
-        this.contentMetadata = contentMetadata;
+    constructor(rules) {
         this.rules = rules;
     }
     classify(violation) {
@@ -122,34 +291,14 @@ class ViolationClassifier {
         if (rule === undefined) {
             return { responsibility: 'unknown', hint: 'This issue requires investigation by a developer.' };
         }
-        const classification = { responsibility: rule.responsibility, hint: rule.hint };
-        if (rule.responsibility === 'editor') {
-            const uid = this.findAffectedContentElement(violation);
-            if (uid !== undefined) {
-                classification.contentElementUid = uid;
-            }
+        if (rule.responsibility !== 'editor') {
+            return { responsibility: 'developer', hint: rule.hint };
         }
-        return classification;
-    }
-    findAffectedContentElement(violation) {
-        for (const node of violation.nodes) {
-            for (const target of node.target) {
-                const uid = this.extractContentElementUid(target);
-                if (uid !== undefined) {
-                    return uid;
-                }
-            }
+        const match = violation.nodes.find((node) => node.contentElementUid !== undefined);
+        if (match?.contentElementUid === undefined || match.dataAvailable === true) {
+            return { responsibility: 'developer', hint: rule.developerHint ?? rule.hint };
         }
-        return undefined;
-    }
-    extractContentElementUid(selector) {
-        const match = selector.match(/#c(\d+)/);
-        if (match === null) {
-            return undefined;
-        }
-        const uid = parseInt(match[1], 10);
-        const exists = this.contentMetadata.some((item) => item.uid === uid);
-        return exists ? uid : undefined;
+        return { responsibility: 'editor', hint: rule.hint, contentElementUid: match.contentElementUid };
     }
 }
 
@@ -163,6 +312,7 @@ function readSettings() {
         pageUid: parseInt(appEl.dataset['pageUid'] ?? '0', 10),
         previewUri: appEl.dataset['previewUri'] ?? '',
         contentMetadata: JSON.parse(appEl.dataset['contentMetadata'] ?? '[]'),
+        contentFacts: JSON.parse(appEl.dataset['contentFacts'] ?? '{}'),
         axeJsUrl: appEl.dataset['axeJsUrl'] ?? '',
         htmlcsJsUrl: appEl.dataset['htmlcsJsUrl'] ?? '',
         classificationRules: typo3Settings?.settings?.a11yByDefault?.classificationRules ?? {},
@@ -265,8 +415,11 @@ async function runScan(settings, engine, resultsContainer) {
                 reject(new Error('Iframe failed to load'));
             }, { once: true });
         });
-        const classifier = new ViolationClassifier(settings.contentMetadata, settings.classificationRules);
-        const scanEngine = engine === 'axe' ? new AxeEngine(iframe, settings.axeJsUrl) : new HtmlCsEngine(iframe, settings.htmlcsJsUrl);
+        const contentFactsIndex = buildContentFactsIndex(settings.contentFacts);
+        const classifier = new ViolationClassifier(settings.classificationRules);
+        const scanEngine = engine === 'axe'
+            ? new AxeEngine(iframe, settings.axeJsUrl, contentFactsIndex)
+            : new HtmlCsEngine(iframe, settings.htmlcsJsUrl, contentFactsIndex);
         const result = await scanEngine.run();
         renderResults(resultsContainer, result, classifier);
     }

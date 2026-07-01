@@ -1,0 +1,25 @@
+"pages",,,,,,
+,"uid","pid","sorting","deleted","hidden","title"
+,1,0,256,0,0,"Home"
+"tt_content",,,,
+,"uid","pid","header","bodytext"
+,38,1,"",""
+"sys_file_storage",,,,,,,,,,
+,"uid","pid","name","driver","processingfolder","is_default","is_browsable","is_public","is_writable","is_online","configuration"
+,1,0,"fileadmin","Local","1:/_processed_/",1,1,1,1,1,"<?xml version=""1.0"" encoding=""utf-8"" standalone=""yes"" ?><T3FlexForms><data><sheet index=""sDEF""><language index=""lDEF""><field index=""basePath""><value index=""vDEF"">fileadmin/</value></field><field index=""pathType""><value index=""vDEF"">relative</value></field></language></sheet></data></T3FlexForms>"
+"sys_file",,,,,
+,"uid","storage","identifier","name","extension"
+,1,1,"/photo.webp","photo.webp","webp"
+,2,1,"/photo-with-alt.webp","photo-with-alt.webp","webp"
+"sys_file_metadata",,,,
+,"uid","file","alternative","description"
+,1,1,\NULL,"Photo by Max Kukurudziak on Unsplash"
+,2,2,"Existing alt text",\NULL
+"sys_file_reference",,,,,,
+,"uid","uid_local","uid_foreign","tablenames","fieldname","deleted"
+,10,1,38,"tt_content","image",0
+,11,2,38,"tt_content","image",0
+"sys_file_processedfile",,,,,,
+,"uid","storage","original","identifier","name","checksum","configuration"
+,20,1,1,"/_processed_/0/2/csm_photo_e169eb3b6d.webp","csm_photo_e169eb3b6d.webp","e169eb3b6d","a:0:{}"
+,21,1,2,"/_processed_/0/2/csm_photo-with-alt_a1b2c3d4e5.webp","csm_photo-with-alt_a1b2c3d4e5.webp","a1b2c3d4e5","a:0:{}"
