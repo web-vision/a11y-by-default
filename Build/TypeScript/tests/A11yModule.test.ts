@@ -420,6 +420,19 @@ describe('renderResults', () => {
     renderResults(container, EMPTY_RESULT, classifier);
     expect(container.querySelector('.callout-info')).not.toBeNull();
   });
+
+  it('renders the needs-review info callout under its section heading', () => {
+    const classifier = new ViolationClassifier({});
+    renderResults(container, EMPTY_RESULT, classifier);
+    const section = container.querySelector('section[aria-labelledby="a11y-incomplete-heading"]');
+    expect(section?.querySelector('.callout-info')).not.toBeNull();
+  });
+
+  it('renders a divider between the violations and needs-review sections', () => {
+    const classifier = new ViolationClassifier({});
+    renderResults(container, EMPTY_RESULT, classifier);
+    expect(container.querySelector('hr')).not.toBeNull();
+  });
 });
 
 // --- applyFilters ---

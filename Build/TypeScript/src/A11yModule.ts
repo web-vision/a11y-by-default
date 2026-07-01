@@ -190,6 +190,7 @@ export function renderIssueSection(
   badgeClass: string,
   badgeId: string,
   classifier: ViolationClassifier,
+  headingInfoHtml = '',
 ): string {
   const sectionId = headingId.replace(/-heading$/, '');
   const groups =
@@ -209,6 +210,7 @@ export function renderIssueSection(
             ${headingLabel}
             <span class="badge ${badgeClass} ms-1" id="${badgeId}">${issues.length}</span>
         </h2>
+        ${headingInfoHtml}
         ${groups}
     </section>`;
 }
@@ -224,8 +226,8 @@ export function renderResults(container: HTMLElement, result: ScanResult, classi
   container.innerHTML = `
         ${successCallout}
         ${renderIssueSection(result.violations, 'a11y-violations-heading', getLabel('module.results.violations'), 'text-bg-danger', 'a11y-violations-count', classifier)}
-        ${incompleteInfoCallout}
-        ${renderIssueSection(result.incomplete, 'a11y-incomplete-heading', getLabel('module.results.incomplete'), 'text-bg-warning', 'a11y-incomplete-count', classifier)}`;
+        <hr class="my-4">
+        ${renderIssueSection(result.incomplete, 'a11y-incomplete-heading', getLabel('module.results.incomplete'), 'text-bg-warning', 'a11y-incomplete-count', classifier, incompleteInfoCallout)}`;
 
   updateFilterCounts(container);
   applyFilters(container);
