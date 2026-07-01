@@ -14,10 +14,14 @@ AGENTS.md export-ignore
 .editorconfig export-ignore
 .gitattributes export-ignore
 .gitignore export-ignore
+.prettierrc.json export-ignore
+eslint.config.js export-ignore
+jest.config.cjs export-ignore
 package.json export-ignore
 package-lock.json export-ignore
 rollup.config.mjs export-ignore
 tsconfig.json export-ignore
+tsconfig.test.json export-ignore
 
 # Enforce checkout with linux lf consistent over all platforms
 *.csv text eol=lf
