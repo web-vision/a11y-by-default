@@ -76,16 +76,16 @@ function setupMainDom(overrides: Partial<Record<string, string>> = {}): void {
             </select>
             <button id="a11y-scan-button">Run Scan</button>
             <input class="btn-check a11y-filter-severity" type="checkbox" id="a11y-filter-severity-critical" value="critical" checked>
-            <label class="a11y-filter-toggle a11y-filter-toggle-critical" for="a11y-filter-severity-critical">
-                Critical<span class="a11y-filter-count" data-severity-count="critical">0</span>
+            <label class="btn btn-sm btn-danger" for="a11y-filter-severity-critical" data-btn-class="btn-danger">
+                Critical<span class="badge text-bg-light" data-severity-count="critical">0</span>
             </label>
-            <button type="button" class="a11y-view-tab active" id="a11y-view-tab-editor" role="tab"
+            <button type="button" class="nav-link active" id="a11y-view-tab-editor" role="tab"
                     aria-selected="true" tabindex="0" data-view="editor">
-                For editors<span class="a11y-filter-count" data-view-count="editor">0</span>
+                For editors<span class="badge text-bg-light" data-view-count="editor">0</span>
             </button>
-            <button type="button" class="a11y-view-tab" id="a11y-view-tab-developer" role="tab"
+            <button type="button" class="nav-link" id="a11y-view-tab-developer" role="tab"
                     aria-selected="false" tabindex="-1" data-view="developer">
-                For developers<span class="a11y-filter-count" data-view-count="developer">0</span>
+                For developers<span class="badge text-bg-light" data-view-count="developer">0</span>
             </button>
             <div id="a11y-results"></div>
         </div>`;
@@ -405,8 +405,8 @@ describe('applyFilters', () => {
       <input type="checkbox" class="a11y-filter-severity" value="serious" ${overrides['serious'] !== false ? 'checked' : ''}>
       <input type="checkbox" class="a11y-filter-severity" value="moderate" ${overrides['moderate'] !== false ? 'checked' : ''}>
       <input type="checkbox" class="a11y-filter-severity" value="minor" ${overrides['minor'] !== false ? 'checked' : ''}>
-      <button type="button" class="a11y-view-tab" data-view="editor" aria-selected="${String(activeView === 'editor')}"></button>
-      <button type="button" class="a11y-view-tab" data-view="developer" aria-selected="${String(activeView === 'developer')}"></button>`;
+      <button type="button" role="tab" data-view="editor" aria-selected="${String(activeView === 'editor')}"></button>
+      <button type="button" role="tab" data-view="developer" aria-selected="${String(activeView === 'developer')}"></button>`;
     document.body.appendChild(filters);
   }
 
@@ -668,14 +668,15 @@ describe('initialize', () => {
     expect(document.getElementById('a11y-results')?.querySelector('.card')).not.toBeNull();
   });
 
-  it('marks the severity toggle as active to match its initial checked state', () => {
+  it('gives the severity toggle its colored button class to match its initial checked state', () => {
     setupMainDom();
     initialize();
     const label = document.querySelector('label[for="a11y-filter-severity-critical"]');
-    expect(label?.classList.contains('active')).toBe(true);
+    expect(label?.classList.contains('btn-danger')).toBe(true);
+    expect(label?.classList.contains('btn-default')).toBe(false);
   });
 
-  it('toggles the toggle button active class when the filter checkbox changes', () => {
+  it('swaps the toggle button to the neutral btn-default class when the filter checkbox is unchecked', () => {
     setupMainDom();
     initialize();
     const checkbox = document.getElementById('a11y-filter-severity-critical') as HTMLInputElement;
@@ -684,7 +685,8 @@ describe('initialize', () => {
     checkbox.checked = false;
     checkbox.dispatchEvent(new Event('change'));
 
-    expect(label?.classList.contains('active')).toBe(false);
+    expect(label?.classList.contains('btn-danger')).toBe(false);
+    expect(label?.classList.contains('btn-default')).toBe(true);
   });
 
   it('switches the active view tab and re-filters results when the developer tab is clicked', async () => {

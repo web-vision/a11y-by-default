@@ -473,13 +473,21 @@ function getActiveSeverityFilters() {
         .map((checkbox) => checkbox.value));
 }
 function getActiveResponsibilityView() {
-    const activeTab = document.querySelector('.a11y-view-tab[aria-selected="true"]');
+    const activeTab = document.querySelector('[role="tab"][data-view][aria-selected="true"]');
     return activeTab?.dataset['view'] === 'developer' ? 'developer' : 'editor';
 }
-// TYPO3's bundled backend CSS does not style the Bootstrap `.btn-check:checked+.btn`
-// state, so the toggle's pressed/unpressed look is driven explicitly here instead.
+// The severity toggle is a `.btn-check` input with a `.btn` label, TYPO3's own
+// pattern for button-styled options (see core's clipboard/localization panels).
+// Its "on" look is the label's real severity color class; "off" falls back to
+// the neutral `btn-default` — both are TYPO3-themed, so no custom CSS is needed.
 function syncToggleActiveState(input) {
-    document.querySelector(`label[for="${input.id}"]`)?.classList.toggle('active', input.checked);
+    const label = document.querySelector(`label[for="${input.id}"]`);
+    const btnClass = label?.dataset['btnClass'];
+    if (label === null || label === undefined || btnClass === undefined) {
+        return;
+    }
+    label.classList.toggle(btnClass, input.checked);
+    label.classList.toggle('btn-default', !input.checked);
 }
 function updateResultCounts(container) {
     const countVisible = (headingId) => container.querySelectorAll(`[aria-labelledby="${headingId}"] [data-impact]:not(.d-none)`).length;
@@ -572,7 +580,7 @@ function initialize() {
             applyFilters(resultsContainer);
         });
     });
-    const viewTabs = Array.from(document.querySelectorAll('.a11y-view-tab'));
+    const viewTabs = Array.from(document.querySelectorAll('[role="tab"][data-view]'));
     const activateViewTab = (tab) => {
         viewTabs.forEach((otherTab) => {
             const isActive = otherTab === tab;
