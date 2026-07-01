@@ -42,6 +42,33 @@
                     </button>
                 </div>
 
+                <div class="a11y-tabs mb-3"
+                     role="tablist"
+                     aria-label="{f:translate(key: 'LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:module.filters.viewLabel')}">
+                    <button type="button"
+                            class="a11y-view-tab active"
+                            id="a11y-view-tab-editor"
+                            role="tab"
+                            aria-selected="true"
+                            aria-controls="a11y-results"
+                            tabindex="0"
+                            data-view="editor">
+                        <f:translate key="LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:module.filters.view.editor" />
+                        <span class="a11y-filter-count" data-view-count="editor">0</span>
+                    </button>
+                    <button type="button"
+                            class="a11y-view-tab"
+                            id="a11y-view-tab-developer"
+                            role="tab"
+                            aria-selected="false"
+                            aria-controls="a11y-results"
+                            tabindex="-1"
+                            data-view="developer">
+                        <f:translate key="LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:module.filters.view.developer" />
+                        <span class="a11y-filter-count" data-view-count="developer">0</span>
+                    </button>
+                </div>
+
                 <div class="d-flex align-items-center gap-2 mb-3 flex-wrap"
                      role="group"
                      aria-label="{f:translate(key: 'LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:module.filters.label')}">
@@ -76,18 +103,12 @@
                         <f:translate key="LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:module.filters.severity.minor" />
                         <span class="a11y-filter-count" data-severity-count="minor">0</span>
                     </label>
-
-                    <input class="btn-check" type="checkbox" autocomplete="off" id="a11y-filter-developer-tasks">
-                    <label class="a11y-filter-toggle a11y-filter-toggle-developer ms-2" for="a11y-filter-developer-tasks">
-                        <f:translate key="LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:module.filters.showDeveloperTasks" />
-                        <span class="a11y-filter-count" data-developer-count>0</span>
-                    </label>
                 </div>
 
                 <div id="a11y-results"
-                     role="region"
+                     role="tabpanel"
                      aria-live="polite"
-                     aria-label="{f:translate(key: 'LLL:EXT:a11y_by_default/Resources/Private/Language/locallang.xlf:module.results.violations')}">
+                     aria-labelledby="a11y-view-tab-editor">
                 </div>
             </div>
         </f:else>
