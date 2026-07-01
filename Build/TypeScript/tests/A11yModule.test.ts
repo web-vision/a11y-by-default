@@ -415,16 +415,9 @@ describe('renderResults', () => {
     expect(sections.length).toBe(2);
   });
 
-  it('omits the needs-review info callout when there are no incomplete issues', () => {
+  it('always renders the needs-review info callout, even without incomplete issues', () => {
     const classifier = new ViolationClassifier({});
     renderResults(container, EMPTY_RESULT, classifier);
-    expect(container.querySelector('.callout-info')).toBeNull();
-  });
-
-  it('renders a needs-review info callout when incomplete issues are present', () => {
-    const classifier = new ViolationClassifier({});
-    const result: ScanResult = { ...EMPTY_RESULT, incomplete: [makeIssue()] };
-    renderResults(container, result, classifier);
     expect(container.querySelector('.callout-info')).not.toBeNull();
   });
 });
