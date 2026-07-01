@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="ja" datatype="plaintext" original="messages" date="2026-07-01T11:52:00Z" product-name="a11y_by_default">
+        <body>
+            <trans-unit id="module.noPage">
+                <source>Please select a page from the page tree to run the accessibility check.</source>
+                <target>アクセシビリティチェックを実行するには、ページツリーからページを選択してください。</target>
+            </trans-unit>
+            <trans-unit id="module.scanButton">
+                <source>Run Accessibility Scan</source>
+                <target>アクセシビリティスキャンを実行</target>
+            </trans-unit>
+            <trans-unit id="module.engineLabel">
+                <source>Scanning engine:</source>
+                <target>スキャンエンジン:</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axe">
+                <source>axe-core (recommended)</source>
+                <target>axe-core（推奨）</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcs">
+                <source>HTML CodeSniffer</source>
+                <target>HTML CodeSniffer</target>
+            </trans-unit>
+            <trans-unit id="module.auditDisclaimer">
+                <source>This module provides automated assistance for accessibility checks. It does not replace a full audit by qualified accessibility auditors, which is required to have a page officially certified as accessible.</source>
+                <target>このモジュールはアクセシビリティチェックを自動的に支援するものです。ページを公式にアクセシブルと認定するために必要な、資格を持つアクセシビリティ監査員による本格的な監査に代わるものではありません。</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axeInfo">
+                <source>axe-core (recommended) checks the page against the WCAG accessibility guidelines — the standard that ensures people using screen readers, keyboard navigation, or other assistive technology can use your content. It is the actively maintained, industry-standard tool and produces very few incorrect warnings, so almost everything it reports is worth acting on.</source>
+                <target>axe-core（推奨）は、スクリーンリーダーやキーボード操作、その他の支援技術を利用する人々がコンテンツを利用できることを保証する標準規格であるWCAGアクセシビリティガイドラインに基づいてページをチェックします。これは現在も活発に開発が続けられている業界標準のツールであり、誤検知が非常に少ないため、報告される内容のほとんどは対応する価値があります。</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcsInfo">
+                <source>HTML CodeSniffer checks the page against similar accessibility guidelines, but with an older, less refined method. It can occasionally point out issues axe-core misses, but it also produces many more results that need a closer manual look before you can tell whether something is really a problem. Use it only for a second opinion, not as your main scan.</source>
+                <target>HTML CodeSnifferも同様のアクセシビリティガイドラインに基づいてページをチェックしますが、より古く、精度の低い手法を使用しています。axe-coreが見逃す問題を指摘することもありますが、実際に問題かどうかを判断するために詳細な手動確認が必要な結果も多く出力します。メインのスキャンとしてではなく、あくまで参考意見として利用してください。</target>
+            </trans-unit>
+            <trans-unit id="module.loading">
+                <source>Loading page and running scan…</source>
+                <target>ページを読み込み、スキャンを実行しています…</target>
+            </trans-unit>
+            <trans-unit id="module.results.violations">
+                <source>Violations</source>
+                <target>違反</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete">
+                <source>Needs review</source>
+                <target>確認が必要</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete.info">
+                <source>Automated scanning could not determine whether these items pass or fail. Each one needs to be checked manually.</source>
+                <target>自動スキャンでは、これらの項目が合格か不合格かを判定できませんでした。各項目を手動で確認する必要があります。</target>
+            </trans-unit>
+            <trans-unit id="module.results.passes">
+                <source>Passes</source>
+                <target>合格</target>
+            </trans-unit>
+            <trans-unit id="module.results.empty">
+                <source>No accessibility issues found.</source>
+                <target>アクセシビリティの問題は見つかりませんでした。</target>
+            </trans-unit>
+            <trans-unit id="module.filters.label">
+                <source>Filters</source>
+                <target>フィルター</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severityLabel">
+                <source>Severity:</source>
+                <target>深刻度:</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.critical">
+                <source>Critical</source>
+                <target>重大</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.serious">
+                <source>Serious</source>
+                <target>深刻</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.moderate">
+                <source>Moderate</source>
+                <target>中程度</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.minor">
+                <source>Minor</source>
+                <target>軽微</target>
+            </trans-unit>
+            <trans-unit id="module.filters.viewLabel">
+                <source>View</source>
+                <target>表示</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.editor">
+                <source>For editors</source>
+                <target>編集者向け</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.developer">
+                <source>For developers</source>
+                <target>開発者向け</target>
+            </trans-unit>
+            <trans-unit id="module.error.scanFailed">
+                <source>The accessibility scan could not be completed. Please try again.</source>
+                <target>アクセシビリティスキャンを完了できませんでした。もう一度お試しください。</target>
+            </trans-unit>
+            <trans-unit id="module.error.noPreview">
+                <source>No preview URL available for this page. Ensure the page has a valid site configuration.</source>
+                <target>このページのプレビューURLがありません。ページに有効なサイト設定があることを確認してください。</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt">
+                <source>Add an image description (alt text) in the content element editor.</source>
+                <target>コンテンツ要素エディタで画像の説明（alt テキスト）を追加してください。</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt.developer">
+                <source>This image is not linked to editable content, or its alt text is set but not rendered. Check the template's image rendering (developer task).</source>
+                <target>この画像は編集可能なコンテンツにリンクされていない、またはalt テキストが設定されているものの出力されていません。テンプレートの画像出力処理を確認してください（開発者タスク）。</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt">
+                <source>Add an alt text to the image input element in the content editor.</source>
+                <target>コンテンツエディタで画像入力要素にalt テキストを追加してください。</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt.developer">
+                <source>This image input is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>この画像入力要素は編集可能なコンテンツにリンクされていない、またはalt テキストが設定されているものの出力されていません。テンプレートの出力処理を確認してください（開発者タスク）。</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt">
+                <source>Add alt text to the image map area in the content editor.</source>
+                <target>コンテンツエディタでイメージマップ領域にalt テキストを追加してください。</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt.developer">
+                <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>このイメージマップ領域は編集可能なコンテンツにリンクされていない、またはalt テキストが設定されているものの出力されていません。テンプレートの出力処理を確認してください（開発者タスク）。</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order">
+                <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
+                <target>コンテンツ要素を編集し、見出しレベルが飛ばないように見出しレイアウトを変更してください。</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order.developer">
+                <source>This heading is rendered by the page template rather than a content element. Adjust the heading structure in the Fluid template (developer task).</source>
+                <target>この見出しはコンテンツ要素ではなくページテンプレートによって出力されています。Fluidテンプレート内の見出し構造を調整してください（開発者タスク）。</target>
+            </trans-unit>
+            <trans-unit id="hint.empty-heading">
+                <source>A heading element is rendered with no text. Check the template's heading rendering; it should not output a heading tag when the source text is empty (developer task).</source>
+                <target>見出し要素がテキストなしで出力されています。テンプレートの見出し出力処理を確認し、元のテキストが空の場合は見出しタグを出力しないようにしてください（開発者タスク）。</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name">
+                <source>Edit the link in the content editor and provide a descriptive link text.</source>
+                <target>コンテンツエディタでリンクを編集し、内容がわかるリンクテキストを設定してください。</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name.developer">
+                <source>This link is rendered by the page template without link text and isn't linked to editable content. Add visible text or an aria-label in the Fluid template (developer task).</source>
+                <target>このリンクはページテンプレートによってリンクテキストなしで出力されており、編集可能なコンテンツにもリンクされていません。Fluidテンプレートに表示テキストまたはaria-labelを追加してください（開発者タスク）。</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr">
+                <source>Update the table structure in the content editor to associate data cells with headers.</source>
+                <target>コンテンツエディタでテーブル構造を更新し、データセルとヘッダーを関連付けてください。</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so data cells reference their headers (developer task).</source>
+                <target>このテーブルは編集可能なコンテンツにリンクされていません。テンプレート内のテーブル構造を更新し、データセルがヘッダーを参照するようにしてください（開発者タスク）。</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells">
+                <source>Update the table in the content editor so header cells have associated data cells.</source>
+                <target>コンテンツエディタでテーブルを更新し、ヘッダーセルに関連するデータセルが存在するようにしてください。</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so header cells have associated data cells (developer task).</source>
+                <target>このテーブルは編集可能なコンテンツにリンクされていません。テンプレート内のテーブル構造を更新し、ヘッダーセルに関連するデータセルが存在するようにしてください（開発者タスク）。</target>
+            </trans-unit>
+            <trans-unit id="hint.landmark-one-main">
+                <source>Add a main landmark element to the page template (developer task).</source>
+                <target>ページテンプレートにmainランドマーク要素を追加してください（開発者タスク）。</target>
+            </trans-unit>
+            <trans-unit id="hint.region">
+                <source>Ensure all page content is contained within appropriate landmark regions in the template (developer task).</source>
+                <target>ページのすべてのコンテンツが、テンプレート内の適切なランドマーク領域に含まれるようにしてください（開発者タスク）。</target>
+            </trans-unit>
+            <trans-unit id="hint.bypass">
+                <source>Add a skip navigation link to the page template (developer task).</source>
+                <target>ページテンプレートにスキップナビゲーションリンクを追加してください（開発者タスク）。</target>
+            </trans-unit>
+            <trans-unit id="hint.html-has-lang">
+                <source>Set the lang attribute on the HTML element in the page template (developer task).</source>
+                <target>ページテンプレートのHTML要素にlang属性を設定してください（開発者タスク）。</target>
+            </trans-unit>
+            <trans-unit id="hint.html-lang-valid">
+                <source>Use a valid BCP 47 language tag on the HTML element (developer task).</source>
+                <target>HTML要素に有効なBCP 47言語タグを使用してください（開発者タスク）。</target>
+            </trans-unit>
+            <trans-unit id="hint.color-contrast">
+                <source>Adjust CSS color values to meet WCAG contrast requirements (developer task).</source>
+                <target>WCAGのコントラスト要件を満たすようにCSSの色の値を調整してください（開発者タスク）。</target>
+            </trans-unit>
+            <trans-unit id="hint.meta-viewport">
+                <source>Remove user-scalable=no from the viewport meta tag in the template (developer task).</source>
+                <target>テンプレートのビューポートメタタグからuser-scalable=noを削除してください（開発者タスク）。</target>
+            </trans-unit>
+            <trans-unit id="hint.frame-title">
+                <source>Add a title attribute to all iframe elements in the template (developer task).</source>
+                <target>テンプレート内のすべてのiframe要素にtitle属性を追加してください（開発者タスク）。</target>
+            </trans-unit>
+            <trans-unit id="hint.scrollable-region-focusable">
+                <source>Make scrollable regions keyboard-accessible in the template (developer task).</source>
+                <target>テンプレート内のスクロール可能な領域をキーボードで操作できるようにしてください（開発者タスク）。</target>
+            </trans-unit>
+            <trans-unit id="pageHint.label">
+                <source>Check Accessibility</source>
+                <target>アクセシビリティを確認</target>
+            </trans-unit>
+            <trans-unit id="pageHint.title">
+                <source>Check accessibility for this page</source>
+                <target>このページのアクセシビリティを確認する</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

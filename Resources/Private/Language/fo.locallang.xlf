@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="fo" datatype="plaintext" original="messages" date="2026-07-01T11:52:00Z" product-name="a11y_by_default">
+        <body>
+            <trans-unit id="module.noPage">
+                <source>Please select a page from the page tree to run the accessibility check.</source>
+                <target>Vinarliga vel eina síðu úr síðutrøinu fyri at koyra atkomuprógvina.</target>
+            </trans-unit>
+            <trans-unit id="module.scanButton">
+                <source>Run Accessibility Scan</source>
+                <target>Koyr atkomuprógving</target>
+            </trans-unit>
+            <trans-unit id="module.engineLabel">
+                <source>Scanning engine:</source>
+                <target>Prógvingarmotor:</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axe">
+                <source>axe-core (recommended)</source>
+                <target>axe-core (viðmælt)</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcs">
+                <source>HTML CodeSniffer</source>
+                <target>HTML CodeSniffer</target>
+            </trans-unit>
+            <trans-unit id="module.auditDisclaimer">
+                <source>This module provides automated assistance for accessibility checks. It does not replace a full audit by qualified accessibility auditors, which is required to have a page officially certified as accessible.</source>
+                <target>Henda modulurin veitir sjálvvirkandi hjálp til atkomuprógvingar. Hann kemur ikki í staðin fyri eina fulla endurskoðan av kvalifiseraðum atkomuendurskoðarum, sum er tørvur á fyri at fáa eina síðu formliga góðkenda sum atkomiliga.</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axeInfo">
+                <source>axe-core (recommended) checks the page against the WCAG accessibility guidelines — the standard that ensures people using screen readers, keyboard navigation, or other assistive technology can use your content. It is the actively maintained, industry-standard tool and produces very few incorrect warnings, so almost everything it reports is worth acting on.</source>
+                <target>axe-core (viðmælt) kannar síðuna móti WCAG-atkomuleiðreglunum — standardinum, sum tryggjar, at fólk, ið nýta skjámlesarar, knappaborðsnavigatión ella onnur hjálpandi tøkni, kunnu nýta tit innihaldið. Hetta er tólið, sum verður virkin hildið í gongd og er standardur í bransjanum, og gevur sera fá skeivar ávaringar, so tað mesta, sum tað boðar frá, eigur ein at broytt.</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcsInfo">
+                <source>HTML CodeSniffer checks the page against similar accessibility guidelines, but with an older, less refined method. It can occasionally point out issues axe-core misses, but it also produces many more results that need a closer manual look before you can tell whether something is really a problem. Use it only for a second opinion, not as your main scan.</source>
+                <target>HTML CodeSniffer kannar síðuna móti líknandi atkomuleiðreglum, men við eini eldri og minni fínstillaðari mannagongd. Tað kann av og á vísa á trupulleikar, sum axe-core ikki finnur, men tað gevur eisini nógv fleiri úrslit, sum krevja eina nærri manuella eftirkanning, áðrenn ein kann siga, um nakað veruliga er ein trupulleiki. Nýt tað bara sum eina aðra meting, ikki sum tína høvuðsprógving.</target>
+            </trans-unit>
+            <trans-unit id="module.loading">
+                <source>Loading page and running scan…</source>
+                <target>Innlesur síðu og koyrir prógving…</target>
+            </trans-unit>
+            <trans-unit id="module.results.violations">
+                <source>Violations</source>
+                <target>Brot</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete">
+                <source>Needs review</source>
+                <target>Krevur eftirkanning</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete.info">
+                <source>Automated scanning could not determine whether these items pass or fail. Each one needs to be checked manually.</source>
+                <target>Sjálvvirkandi prógving kundi ikki avgera, um hesir liðir stóðust ella ikki. Hvør ein av teimum skal kannast manuellt.</target>
+            </trans-unit>
+            <trans-unit id="module.results.passes">
+                <source>Passes</source>
+                <target>Góðkendir</target>
+            </trans-unit>
+            <trans-unit id="module.results.empty">
+                <source>No accessibility issues found.</source>
+                <target>Ongar atkomutrupulleikar funnir.</target>
+            </trans-unit>
+            <trans-unit id="module.filters.label">
+                <source>Filters</source>
+                <target>Filtur</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severityLabel">
+                <source>Severity:</source>
+                <target>Álvarsemi:</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.critical">
+                <source>Critical</source>
+                <target>Kritiskt</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.serious">
+                <source>Serious</source>
+                <target>Álvarsligt</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.moderate">
+                <source>Moderate</source>
+                <target>Meskiligt</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.minor">
+                <source>Minor</source>
+                <target>Smátt</target>
+            </trans-unit>
+            <trans-unit id="module.filters.viewLabel">
+                <source>View</source>
+                <target>Sýning</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.editor">
+                <source>For editors</source>
+                <target>Fyri ritstjórar</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.developer">
+                <source>For developers</source>
+                <target>Fyri menningarfólk</target>
+            </trans-unit>
+            <trans-unit id="module.error.scanFailed">
+                <source>The accessibility scan could not be completed. Please try again.</source>
+                <target>Atkomuprógvingin kundi ikki gjørdast liðug. Vinarliga royn aftur.</target>
+            </trans-unit>
+            <trans-unit id="module.error.noPreview">
+                <source>No preview URL available for this page. Ensure the page has a valid site configuration.</source>
+                <target>Onki forsýningarslóð er tøkt fyri hesa síðu. Trygga tær, at síðan hevur eina galdandi vefstaðaruppsetingu.</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt">
+                <source>Add an image description (alt text) in the content element editor.</source>
+                <target>Legg eina myndarlýsing (alt-tekst) afturat í innihaldselementritstjóranum.</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt.developer">
+                <source>This image is not linked to editable content, or its alt text is set but not rendered. Check the template's image rendering (developer task).</source>
+                <target>Henda myndin er ikki knýtt at rættandi innihaldi, ella alt-teksturin er settur men ikki sjónligur. Kanna, hvussu myndir vísast í sniðinum (uppgáva fyri menningarfólk).</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt">
+                <source>Add an alt text to the image input element in the content editor.</source>
+                <target>Legg alt-tekst afturat myndarinntøkuelementinum í innihaldsritstjóranum.</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt.developer">
+                <source>This image input is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>Henda myndarinntøka er ikki knýtt at rættandi innihaldi, ella alt-teksturin er settur men ikki sjónligur. Kanna vísingina í sniðinum (uppgáva fyri menningarfólk).</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt">
+                <source>Add alt text to the image map area in the content editor.</source>
+                <target>Legg alt-tekst afturat myndarkortsøkinum í innihaldsritstjóranum.</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt.developer">
+                <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>Hetta myndarkortsøkið er ikki knýtt at rættandi innihaldi, ella alt-teksturin er settur men ikki sjónligur. Kanna vísingina í sniðinum (uppgáva fyri menningarfólk).</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order">
+                <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
+                <target>Rætta innihaldselementið og broyt yvirskriftaruppsetingin, so yvirskriftarstøður ikki sleppa eitt stig.</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order.developer">
+                <source>This heading is rendered by the page template rather than a content element. Adjust the heading structure in the Fluid template (developer task).</source>
+                <target>Henda yvirskriftin verður vist av síðusniðinum og ikki av einum innihaldselementi. Rætta yvirskriftarbygnaðin í Fluid-sniðinum (uppgáva fyri menningarfólk).</target>
+            </trans-unit>
+            <trans-unit id="hint.empty-heading">
+                <source>A heading element is rendered with no text. Check the template's heading rendering; it should not output a heading tag when the source text is empty (developer task).</source>
+                <target>Eitt yvirskriftarelement verður vist uttan tekst. Kanna, hvussu yvirskriftir vísast í sniðinum; tað eigur ikki at framleiða eina yvirskriftarmerking, tá keldutekstur er tómur (uppgáva fyri menningarfólk).</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name">
+                <source>Edit the link in the content editor and provide a descriptive link text.</source>
+                <target>Rætta leinkjuna í innihaldsritstjóranum og gev henni ein lýsandi leinkjutekst.</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name.developer">
+                <source>This link is rendered by the page template without link text and isn't linked to editable content. Add visible text or an aria-label in the Fluid template (developer task).</source>
+                <target>Henda leinkjan verður vist av síðusniðinum uttan leinkjutekst og er ikki knýtt at rættandi innihaldi. Legg sjónligan tekst ella ein aria-label afturat í Fluid-sniðinum (uppgáva fyri menningarfólk).</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr">
+                <source>Update the table structure in the content editor to associate data cells with headers.</source>
+                <target>Dagfør talvubygnaðin í innihaldsritstjóranum, so dátubólkar verða knýttir at yvirskriftum.</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so data cells reference their headers (developer task).</source>
+                <target>Henda talvan er ikki knýtt at rættandi innihaldi. Dagfør talvubygnaðin í sniðinum, so dátubólkar vísa til síni yvirskriftir (uppgáva fyri menningarfólk).</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells">
+                <source>Update the table in the content editor so header cells have associated data cells.</source>
+                <target>Dagfør talvuna í innihaldsritstjóranum, so yvirskriftarbólkar hava knýttar dátubólkar.</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so header cells have associated data cells (developer task).</source>
+                <target>Henda talvan er ikki knýtt at rættandi innihaldi. Dagfør talvubygnaðin í sniðinum, so yvirskriftarbólkar hava knýttar dátubólkar (uppgáva fyri menningarfólk).</target>
+            </trans-unit>
+            <trans-unit id="hint.landmark-one-main">
+                <source>Add a main landmark element to the page template (developer task).</source>
+                <target>Legg eitt high main-landmark-element afturat í síðusniðinum (uppgáva fyri menningarfólk).</target>
+            </trans-unit>
+            <trans-unit id="hint.region">
+                <source>Ensure all page content is contained within appropriate landmark regions in the template (developer task).</source>
+                <target>Trygga, at alt síðuinnihald er innan hentar landmark-økir í sniðinum (uppgáva fyri menningarfólk).</target>
+            </trans-unit>
+            <trans-unit id="hint.bypass">
+                <source>Add a skip navigation link to the page template (developer task).</source>
+                <target>Legg eina leinkju afturat, ið loyvir at leypa yvir navigatiónina, í síðusniðinum (uppgáva fyri menningarfólk).</target>
+            </trans-unit>
+            <trans-unit id="hint.html-has-lang">
+                <source>Set the lang attribute on the HTML element in the page template (developer task).</source>
+                <target>Set lang-eginleikan á HTML-elementinum í síðusniðinum (uppgáva fyri menningarfólk).</target>
+            </trans-unit>
+            <trans-unit id="hint.html-lang-valid">
+                <source>Use a valid BCP 47 language tag on the HTML element (developer task).</source>
+                <target>Nýt ein galdandi BCP 47 málmerking á HTML-elementinum (uppgáva fyri menningarfólk).</target>
+            </trans-unit>
+            <trans-unit id="hint.color-contrast">
+                <source>Adjust CSS color values to meet WCAG contrast requirements (developer task).</source>
+                <target>Rætta CSS-litirvirði, so tey uppfylla WCAG-kontrastkröv (uppgáva fyri menningarfólk).</target>
+            </trans-unit>
+            <trans-unit id="hint.meta-viewport">
+                <source>Remove user-scalable=no from the viewport meta tag in the template (developer task).</source>
+                <target>Strika user-scalable=no úr viewport-metamerkingini í sniðinum (uppgáva fyri menningarfólk).</target>
+            </trans-unit>
+            <trans-unit id="hint.frame-title">
+                <source>Add a title attribute to all iframe elements in the template (developer task).</source>
+                <target>Legg ein title-eginleika afturat á øllum iframe-elementum í sniðinum (uppgáva fyri menningarfólk).</target>
+            </trans-unit>
+            <trans-unit id="hint.scrollable-region-focusable">
+                <source>Make scrollable regions keyboard-accessible in the template (developer task).</source>
+                <target>Ger rullanlig økir atkomilig við knappaborði í sniðinum (uppgáva fyri menningarfólk).</target>
+            </trans-unit>
+            <trans-unit id="pageHint.label">
+                <source>Check Accessibility</source>
+                <target>Kanna atkomu</target>
+            </trans-unit>
+            <trans-unit id="pageHint.title">
+                <source>Check accessibility for this page</source>
+                <target>Kanna atkomu fyri hesa síðu</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

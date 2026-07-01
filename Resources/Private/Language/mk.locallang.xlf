@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="mk" datatype="plaintext" original="messages" date="2026-07-01T11:52:00Z" product-name="a11y_by_default">
+        <body>
+            <trans-unit id="module.noPage">
+                <source>Please select a page from the page tree to run the accessibility check.</source>
+                <target>Изберете страница од дрвото на страници за да извршите проверка на пристапност.</target>
+            </trans-unit>
+            <trans-unit id="module.scanButton">
+                <source>Run Accessibility Scan</source>
+                <target>Изврши скенирање на пристапност</target>
+            </trans-unit>
+            <trans-unit id="module.engineLabel">
+                <source>Scanning engine:</source>
+                <target>Машина за скенирање:</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axe">
+                <source>axe-core (recommended)</source>
+                <target>axe-core (препорачано)</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcs">
+                <source>HTML CodeSniffer</source>
+                <target>HTML CodeSniffer</target>
+            </trans-unit>
+            <trans-unit id="module.auditDisclaimer">
+                <source>This module provides automated assistance for accessibility checks. It does not replace a full audit by qualified accessibility auditors, which is required to have a page officially certified as accessible.</source>
+                <target>Овој модул обезбедува автоматизирана помош за проверки на пристапност. Тој не ја замену­ва целосната ревизија од квалификувани ревизори за пристапност, која е потребна за страницата да биде официјално сертифицирана како пристапна.</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axeInfo">
+                <source>axe-core (recommended) checks the page against the WCAG accessibility guidelines — the standard that ensures people using screen readers, keyboard navigation, or other assistive technology can use your content. It is the actively maintained, industry-standard tool and produces very few incorrect warnings, so almost everything it reports is worth acting on.</source>
+                <target>axe-core (препорачано) ја проверува страницата според насоките за пристапност WCAG — стандардот кој обезбедува дека луѓето кои користат читачи на екран, навигација со тастатура или друга помошна технологија можат да го користат вашата содржина. Тоа е активно одржуван, индустриски стандарден алат кој произведува многу малку неточни предупредувања, така што речиси сè што пријавува вреди да се преземе.</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcsInfo">
+                <source>HTML CodeSniffer checks the page against similar accessibility guidelines, but with an older, less refined method. It can occasionally point out issues axe-core misses, but it also produces many more results that need a closer manual look before you can tell whether something is really a problem. Use it only for a second opinion, not as your main scan.</source>
+                <target>HTML CodeSniffer ја проверува страницата според слични насоки за пристапност, но со постар, помалку прецизен метод. Понекогаш може да укаже на проблеми кои axe-core ги пропушта, но исто така произведува многу повеќе резултати кои бараат подетален рачен преглед пред да се утврди дали навистина се работи за проблем. Користете го само за второ мислење, а не како ваше основно скенирање.</target>
+            </trans-unit>
+            <trans-unit id="module.loading">
+                <source>Loading page and running scan…</source>
+                <target>Се вчитува страницата и се извршува скенирање…</target>
+            </trans-unit>
+            <trans-unit id="module.results.violations">
+                <source>Violations</source>
+                <target>Прекршувања</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete">
+                <source>Needs review</source>
+                <target>Потребен е преглед</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete.info">
+                <source>Automated scanning could not determine whether these items pass or fail. Each one needs to be checked manually.</source>
+                <target>Автоматското скенирање не можеше да утврди дали овие ставки поминуваат или не поминуваат. Секоја од нив мора да се провери рачно.</target>
+            </trans-unit>
+            <trans-unit id="module.results.passes">
+                <source>Passes</source>
+                <target>Поминати</target>
+            </trans-unit>
+            <trans-unit id="module.results.empty">
+                <source>No accessibility issues found.</source>
+                <target>Не се пронајдени проблеми со пристапноста.</target>
+            </trans-unit>
+            <trans-unit id="module.filters.label">
+                <source>Filters</source>
+                <target>Филтри</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severityLabel">
+                <source>Severity:</source>
+                <target>Сериозност:</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.critical">
+                <source>Critical</source>
+                <target>Критично</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.serious">
+                <source>Serious</source>
+                <target>Сериозно</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.moderate">
+                <source>Moderate</source>
+                <target>Умерено</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.minor">
+                <source>Minor</source>
+                <target>Незначително</target>
+            </trans-unit>
+            <trans-unit id="module.filters.viewLabel">
+                <source>View</source>
+                <target>Приказ</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.editor">
+                <source>For editors</source>
+                <target>За уредници</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.developer">
+                <source>For developers</source>
+                <target>За развивачи</target>
+            </trans-unit>
+            <trans-unit id="module.error.scanFailed">
+                <source>The accessibility scan could not be completed. Please try again.</source>
+                <target>Скенирањето на пристапност не можеше да се заврши. Обидете се повторно.</target>
+            </trans-unit>
+            <trans-unit id="module.error.noPreview">
+                <source>No preview URL available for this page. Ensure the page has a valid site configuration.</source>
+                <target>Нема достапна URL адреса за преглед за оваа страница. Проверете дали страницата има валидна конфигурација на сајтот.</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt">
+                <source>Add an image description (alt text) in the content element editor.</source>
+                <target>Додајте описен текст на сликата (alt текст) во уредникот на содржинскиот елемент.</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt.developer">
+                <source>This image is not linked to editable content, or its alt text is set but not rendered. Check the template's image rendering (developer task).</source>
+                <target>Оваа слика не е поврзана со содржина која може да се уредува, или нејзиниот alt текст е поставен, но не се прикажува. Проверете го прикажувањето на сликата во шаблонот (задача за развивачи).</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt">
+                <source>Add an alt text to the image input element in the content editor.</source>
+                <target>Додајте alt текст на елементот за внес на слика во уредникот на содржината.</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt.developer">
+                <source>This image input is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>Овој внес на слика не е поврзан со содржина која може да се уредува, или неговиот alt текст е поставен, но не се прикажува. Проверете го прикажувањето во шаблонот (задача за развивачи).</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt">
+                <source>Add alt text to the image map area in the content editor.</source>
+                <target>Додајте alt текст на областа од сликовната мапа во уредникот на содржината.</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt.developer">
+                <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>Оваа област од сликовната мапа не е поврзана со содржина која може да се уредува, или нејзиниот alt текст е поставен, но не се прикажува. Проверете го прикажувањето во шаблонот (задача за развивачи).</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order">
+                <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
+                <target>Уредете го содржинскиот елемент и промените го распоредот на заглавието така што нивоата на наслови нема да прескокнуваат чекор.</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order.developer">
+                <source>This heading is rendered by the page template rather than a content element. Adjust the heading structure in the Fluid template (developer task).</source>
+                <target>Овој наслов се прикажува преку шаблонот на страницата, а не преку содржински елемент. Прилагодете ја структурата на насловите во Fluid шаблонот (задача за развивачи).</target>
+            </trans-unit>
+            <trans-unit id="hint.empty-heading">
+                <source>A heading element is rendered with no text. Check the template's heading rendering; it should not output a heading tag when the source text is empty (developer task).</source>
+                <target>Наслов елементот се прикажува без текст. Проверете го прикажувањето на насловите во шаблонот; тагот за наслов не треба да се прикажува кога изворниот текст е празен (задача за развивачи).</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name">
+                <source>Edit the link in the content editor and provide a descriptive link text.</source>
+                <target>Уредете ја врската во уредникот на содржината и внесете описен текст за врската.</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name.developer">
+                <source>This link is rendered by the page template without link text and isn't linked to editable content. Add visible text or an aria-label in the Fluid template (developer task).</source>
+                <target>Оваа врска се прикажува преку шаблонот на страницата без текст на врската и не е поврзана со содржина која може да се уредува. Додајте видлив текст или aria-label во Fluid шаблонот (задача за развивачи).</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr">
+                <source>Update the table structure in the content editor to associate data cells with headers.</source>
+                <target>Ажурирајте ја структурата на табелата во уредникот на содржината за да ги поврзете податочните ќелии со заглавијата.</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so data cells reference their headers (developer task).</source>
+                <target>Оваа табела не е поврзана со содржина која може да се уредува. Ажурирајте ја структурата на табелата во шаблонот така што податочните ќелии ќе се однесуваат на своите заглавија (задача за развивачи).</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells">
+                <source>Update the table in the content editor so header cells have associated data cells.</source>
+                <target>Ажурирајте ја табелата во уредникот на содржината така што ќелиите на заглавието ќе имаат придружни податочни ќелии.</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so header cells have associated data cells (developer task).</source>
+                <target>Оваа табела не е поврзана со содржина која може да се уредува. Ажурирајте ја структурата на табелата во шаблонот така што ќелиите на заглавието ќе имаат придружни податочни ќелии (задача за развивачи).</target>
+            </trans-unit>
+            <trans-unit id="hint.landmark-one-main">
+                <source>Add a main landmark element to the page template (developer task).</source>
+                <target>Додајте главен landmark елемент (main) во шаблонот на страницата (задача за развивачи).</target>
+            </trans-unit>
+            <trans-unit id="hint.region">
+                <source>Ensure all page content is contained within appropriate landmark regions in the template (developer task).</source>
+                <target>Осигурајте се дека сета содржина на страницата е опфатена во соодветни landmark региони во шаблонот (задача за развивачи).</target>
+            </trans-unit>
+            <trans-unit id="hint.bypass">
+                <source>Add a skip navigation link to the page template (developer task).</source>
+                <target>Додајте врска за прескокнување на навигацијата во шаблонот на страницата (задача за развивачи).</target>
+            </trans-unit>
+            <trans-unit id="hint.html-has-lang">
+                <source>Set the lang attribute on the HTML element in the page template (developer task).</source>
+                <target>Поставете го атрибутот lang на HTML елементот во шаблонот на страницата (задача за развивачи).</target>
+            </trans-unit>
+            <trans-unit id="hint.html-lang-valid">
+                <source>Use a valid BCP 47 language tag on the HTML element (developer task).</source>
+                <target>Употребете валидна BCP 47 јазична ознака на HTML елементот (задача за развивачи).</target>
+            </trans-unit>
+            <trans-unit id="hint.color-contrast">
+                <source>Adjust CSS color values to meet WCAG contrast requirements (developer task).</source>
+                <target>Прилагодете ги CSS вредностите за боја за да ги задоволите барањата за контраст според WCAG (задача за развивачи).</target>
+            </trans-unit>
+            <trans-unit id="hint.meta-viewport">
+                <source>Remove user-scalable=no from the viewport meta tag in the template (developer task).</source>
+                <target>Отстранете user-scalable=no од meta тагот за viewport во шаблонот (задача за развивачи).</target>
+            </trans-unit>
+            <trans-unit id="hint.frame-title">
+                <source>Add a title attribute to all iframe elements in the template (developer task).</source>
+                <target>Додајте атрибут title на сите iframe елементи во шаблонот (задача за развивачи).</target>
+            </trans-unit>
+            <trans-unit id="hint.scrollable-region-focusable">
+                <source>Make scrollable regions keyboard-accessible in the template (developer task).</source>
+                <target>Направете ги регионите со скролање пристапни преку тастатура во шаблонот (задача за развивачи).</target>
+            </trans-unit>
+            <trans-unit id="pageHint.label">
+                <source>Check Accessibility</source>
+                <target>Провери пристапност</target>
+            </trans-unit>
+            <trans-unit id="pageHint.title">
+                <source>Check accessibility for this page</source>
+                <target>Провери пристапност за оваа страница</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

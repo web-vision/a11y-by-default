@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="et" datatype="plaintext" original="messages" date="2026-07-01T11:52:00Z" product-name="a11y_by_default">
+        <body>
+            <trans-unit id="module.noPage">
+                <source>Please select a page from the page tree to run the accessibility check.</source>
+                <target>Ligipääsetavuse kontrolli käivitamiseks valige lehepuust leht.</target>
+            </trans-unit>
+            <trans-unit id="module.scanButton">
+                <source>Run Accessibility Scan</source>
+                <target>Käivita ligipääsetavuse kontroll</target>
+            </trans-unit>
+            <trans-unit id="module.engineLabel">
+                <source>Scanning engine:</source>
+                <target>Kontrollimootor:</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axe">
+                <source>axe-core (recommended)</source>
+                <target>axe-core (soovitatud)</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcs">
+                <source>HTML CodeSniffer</source>
+                <target>HTML CodeSniffer</target>
+            </trans-unit>
+            <trans-unit id="module.auditDisclaimer">
+                <source>This module provides automated assistance for accessibility checks. It does not replace a full audit by qualified accessibility auditors, which is required to have a page officially certified as accessible.</source>
+                <target>See moodul pakub automatiseeritud abi ligipääsetavuse kontrollimisel. See ei asenda kvalifitseeritud ligipääsetavuse audiitorite täielikku auditit, mis on vajalik lehe ametlikuks ligipääsetavaks tunnistamiseks.</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axeInfo">
+                <source>axe-core (recommended) checks the page against the WCAG accessibility guidelines — the standard that ensures people using screen readers, keyboard navigation, or other assistive technology can use your content. It is the actively maintained, industry-standard tool and produces very few incorrect warnings, so almost everything it reports is worth acting on.</source>
+                <target>axe-core (soovitatud) kontrollib lehte WCAG ligipääsetavuse juhiste alusel — standardi, mis tagab, et ekraanilugejaid, klaviatuurinavigatsiooni või muid abistavaid tehnoloogiaid kasutavad inimesed saavad teie sisu kasutada. See on aktiivselt hooldatav, valdkonna standardtööriist, mis annab väga vähe valesid hoiatusi, mistõttu peaaegu kõik selle leiud on väärt tegutsemist.</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcsInfo">
+                <source>HTML CodeSniffer checks the page against similar accessibility guidelines, but with an older, less refined method. It can occasionally point out issues axe-core misses, but it also produces many more results that need a closer manual look before you can tell whether something is really a problem. Use it only for a second opinion, not as your main scan.</source>
+                <target>HTML CodeSniffer kontrollib lehte sarnaste ligipääsetavuse juhiste alusel, kuid vanema ja vähem täpse meetodiga. Aeg-ajalt võib see tuvastada probleeme, mida axe-core ei märka, kuid annab ka palju rohkem tulemusi, mis vajavad enne tegeliku probleemi tuvastamist põhjalikumat käsitsi ülevaatust. Kasutage seda ainult teise arvamuse saamiseks, mitte peamise kontrollina.</target>
+            </trans-unit>
+            <trans-unit id="module.loading">
+                <source>Loading page and running scan…</source>
+                <target>Lehe laadimine ja kontrolli käivitamine…</target>
+            </trans-unit>
+            <trans-unit id="module.results.violations">
+                <source>Violations</source>
+                <target>Rikkumised</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete">
+                <source>Needs review</source>
+                <target>Vajab ülevaatust</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete.info">
+                <source>Automated scanning could not determine whether these items pass or fail. Each one needs to be checked manually.</source>
+                <target>Automaatne kontroll ei suutnud kindlaks teha, kas need üksused vastavad nõuetele või mitte. Igaüht neist tuleb kontrollida käsitsi.</target>
+            </trans-unit>
+            <trans-unit id="module.results.passes">
+                <source>Passes</source>
+                <target>Vastab nõuetele</target>
+            </trans-unit>
+            <trans-unit id="module.results.empty">
+                <source>No accessibility issues found.</source>
+                <target>Ligipääsetavuse probleeme ei leitud.</target>
+            </trans-unit>
+            <trans-unit id="module.filters.label">
+                <source>Filters</source>
+                <target>Filtrid</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severityLabel">
+                <source>Severity:</source>
+                <target>Tõsidus:</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.critical">
+                <source>Critical</source>
+                <target>Kriitiline</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.serious">
+                <source>Serious</source>
+                <target>Tõsine</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.moderate">
+                <source>Moderate</source>
+                <target>Keskmine</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.minor">
+                <source>Minor</source>
+                <target>Väike</target>
+            </trans-unit>
+            <trans-unit id="module.filters.viewLabel">
+                <source>View</source>
+                <target>Vaade</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.editor">
+                <source>For editors</source>
+                <target>Toimetajatele</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.developer">
+                <source>For developers</source>
+                <target>Arendajatele</target>
+            </trans-unit>
+            <trans-unit id="module.error.scanFailed">
+                <source>The accessibility scan could not be completed. Please try again.</source>
+                <target>Ligipääsetavuse kontrolli ei saanud lõpule viia. Palun proovige uuesti.</target>
+            </trans-unit>
+            <trans-unit id="module.error.noPreview">
+                <source>No preview URL available for this page. Ensure the page has a valid site configuration.</source>
+                <target>Sellel lehel puudub eelvaate URL. Veenduge, et lehel on kehtiv saidi konfiguratsioon.</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt">
+                <source>Add an image description (alt text) in the content element editor.</source>
+                <target>Lisage sisuelemendi redaktoris pildile kirjeldus (alt-tekst).</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt.developer">
+                <source>This image is not linked to editable content, or its alt text is set but not rendered. Check the template's image rendering (developer task).</source>
+                <target>See pilt ei ole seotud muudetava sisuga või selle alt-tekst on määratud, kuid ei kuvata. Kontrollige malli pildi kuvamist (arendaja ülesanne).</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt">
+                <source>Add an alt text to the image input element in the content editor.</source>
+                <target>Lisage sisuredaktoris pildi sisestuselemendile alt-tekst.</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt.developer">
+                <source>This image input is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>See pildi sisestuselement ei ole seotud muudetava sisuga või selle alt-tekst on määratud, kuid ei kuvata. Kontrollige malli kuvamist (arendaja ülesanne).</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt">
+                <source>Add alt text to the image map area in the content editor.</source>
+                <target>Lisage sisuredaktoris pildikaardi alale alt-tekst.</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt.developer">
+                <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>See pildikaardi ala ei ole seotud muudetava sisuga või selle alt-tekst on määratud, kuid ei kuvata. Kontrollige malli kuvamist (arendaja ülesanne).</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order">
+                <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
+                <target>Muutke sisuelementi ja selle päise paigutust nii, et pealkirjatasemed ei jätaks vahele ühtegi astet.</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order.developer">
+                <source>This heading is rendered by the page template rather than a content element. Adjust the heading structure in the Fluid template (developer task).</source>
+                <target>Selle pealkirja kuvab lehe mall, mitte sisuelement. Kohandage pealkirjade struktuuri Fluid-mallis (arendaja ülesanne).</target>
+            </trans-unit>
+            <trans-unit id="hint.empty-heading">
+                <source>A heading element is rendered with no text. Check the template's heading rendering; it should not output a heading tag when the source text is empty (developer task).</source>
+                <target>Pealkirjaelement kuvatakse tekstita. Kontrollige malli pealkirjade kuvamist; see ei peaks väljastama pealkirjasilti, kui lähteteksti pole (arendaja ülesanne).</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name">
+                <source>Edit the link in the content editor and provide a descriptive link text.</source>
+                <target>Muutke linki sisuredaktoris ja lisage kirjeldav lingi tekst.</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name.developer">
+                <source>This link is rendered by the page template without link text and isn't linked to editable content. Add visible text or an aria-label in the Fluid template (developer task).</source>
+                <target>Selle lingi kuvab lehe mall lingi tekstita ja see ei ole seotud muudetava sisuga. Lisage Fluid-mallis nähtav tekst või aria-label (arendaja ülesanne).</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr">
+                <source>Update the table structure in the content editor to associate data cells with headers.</source>
+                <target>Muutke tabeli struktuuri sisuredaktoris, et seostada andmelahtrid päistega.</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so data cells reference their headers (developer task).</source>
+                <target>See tabel ei ole seotud muudetava sisuga. Muutke malli tabeli struktuuri, et andmelahtrid viitaksid oma päistele (arendaja ülesanne).</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells">
+                <source>Update the table in the content editor so header cells have associated data cells.</source>
+                <target>Muutke tabelit sisuredaktoris, et päiselahtritel oleks seotud andmelahtreid.</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so header cells have associated data cells (developer task).</source>
+                <target>See tabel ei ole seotud muudetava sisuga. Muutke malli tabeli struktuuri, et päiselahtritel oleks seotud andmelahtreid (arendaja ülesanne).</target>
+            </trans-unit>
+            <trans-unit id="hint.landmark-one-main">
+                <source>Add a main landmark element to the page template (developer task).</source>
+                <target>Lisage lehe mallile peamine maamärgielement (main) (arendaja ülesanne).</target>
+            </trans-unit>
+            <trans-unit id="hint.region">
+                <source>Ensure all page content is contained within appropriate landmark regions in the template (developer task).</source>
+                <target>Veenduge, et kõik lehe sisu jääks mallis sobivate maamärgipiirkondade sisse (arendaja ülesanne).</target>
+            </trans-unit>
+            <trans-unit id="hint.bypass">
+                <source>Add a skip navigation link to the page template (developer task).</source>
+                <target>Lisage lehe mallile navigatsiooni vahelejätmise link (arendaja ülesanne).</target>
+            </trans-unit>
+            <trans-unit id="hint.html-has-lang">
+                <source>Set the lang attribute on the HTML element in the page template (developer task).</source>
+                <target>Määrake lehe mallis HTML-elemendile lang-atribuut (arendaja ülesanne).</target>
+            </trans-unit>
+            <trans-unit id="hint.html-lang-valid">
+                <source>Use a valid BCP 47 language tag on the HTML element (developer task).</source>
+                <target>Kasutage HTML-elemendil kehtivat BCP 47 keelesilti (arendaja ülesanne).</target>
+            </trans-unit>
+            <trans-unit id="hint.color-contrast">
+                <source>Adjust CSS color values to meet WCAG contrast requirements (developer task).</source>
+                <target>Kohandage CSS värviväärtusi, et need vastaksid WCAG kontrastinõuetele (arendaja ülesanne).</target>
+            </trans-unit>
+            <trans-unit id="hint.meta-viewport">
+                <source>Remove user-scalable=no from the viewport meta tag in the template (developer task).</source>
+                <target>Eemaldage mallis viewporti meta-sildilt user-scalable=no (arendaja ülesanne).</target>
+            </trans-unit>
+            <trans-unit id="hint.frame-title">
+                <source>Add a title attribute to all iframe elements in the template (developer task).</source>
+                <target>Lisage mallis kõigile iframe-elementidele title-atribuut (arendaja ülesanne).</target>
+            </trans-unit>
+            <trans-unit id="hint.scrollable-region-focusable">
+                <source>Make scrollable regions keyboard-accessible in the template (developer task).</source>
+                <target>Muutke mallis keritavad piirkonnad klaviatuuriga kasutatavaks (arendaja ülesanne).</target>
+            </trans-unit>
+            <trans-unit id="pageHint.label">
+                <source>Check Accessibility</source>
+                <target>Kontrolli ligipääsetavust</target>
+            </trans-unit>
+            <trans-unit id="pageHint.title">
+                <source>Check accessibility for this page</source>
+                <target>Kontrolli selle lehe ligipääsetavust</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

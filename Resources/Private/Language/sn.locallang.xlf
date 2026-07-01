@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="sn" datatype="plaintext" original="messages" date="2026-07-01T11:52:00Z" product-name="a11y_by_default">
+        <body>
+            <trans-unit id="module.noPage">
+                <source>Please select a page from the page tree to run the accessibility check.</source>
+                <target>Sarudza peji kubva mumuti wemapeji kuti uite ongororo yekuwanikwa.</target>
+            </trans-unit>
+            <trans-unit id="module.scanButton">
+                <source>Run Accessibility Scan</source>
+                <target>Tanga Ongororo yeKuwanikwa</target>
+            </trans-unit>
+            <trans-unit id="module.engineLabel">
+                <source>Scanning engine:</source>
+                <target>Muchina wekuongorora:</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axe">
+                <source>axe-core (recommended)</source>
+                <target>axe-core (inokurudzirwa)</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcs">
+                <source>HTML CodeSniffer</source>
+                <target>HTML CodeSniffer</target>
+            </trans-unit>
+            <trans-unit id="module.auditDisclaimer">
+                <source>This module provides automated assistance for accessibility checks. It does not replace a full audit by qualified accessibility auditors, which is required to have a page officially certified as accessible.</source>
+                <target>Iyi moduru inopa rubatsiro rwakaenzaniswa pamiongororo yekuwanikwa. Haitsivi ongororo yakazara inoitwa nevaongorori vane ruzivo rwakakodzera, iyo inodiwa kuti peji ribvumidzwe zvakavimbika sakuwanikwa.</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axeInfo">
+                <source>axe-core (recommended) checks the page against the WCAG accessibility guidelines — the standard that ensures people using screen readers, keyboard navigation, or other assistive technology can use your content. It is the actively maintained, industry-standard tool and produces very few incorrect warnings, so almost everything it reports is worth acting on.</source>
+                <target>axe-core (inokurudzirwa) inoongorora peji ichienderana nemitemo yekuwanikwa yeWCAG — chiyero chinovimbisa kuti vanhu vanoshandisa maverengero epasikirini, kufamba nekiyibhodhi, kana zvimwe zvinobatsira zvekutekinoroji vanogona kushandisa zvirimo. Ndicho chishandiso chinogara chichigadziriswa uye chiri chiyero chemhando yebhizinesi, uye chinobudisa yambiro shomanana dzisina kururama, saka zvose zvinenge zvinoshuma zvinofanira kuitwa nezvazvo.</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcsInfo">
+                <source>HTML CodeSniffer checks the page against similar accessibility guidelines, but with an older, less refined method. It can occasionally point out issues axe-core misses, but it also produces many more results that need a closer manual look before you can tell whether something is really a problem. Use it only for a second opinion, not as your main scan.</source>
+                <target>HTML CodeSniffer inoongorora peji ichienderana nemitemo yakafanana yekuwanikwa, asi neyeimwe nzira yekare, isina kunatsiridzwa zvakanyanya. Dzimwe nguva inogona kuratidza matambudziko anosiiwa naaxe-core, asi inobudisawo mhinduro dzakawanda dzinoda kutariswa zvakanyatsonaka nemunhu usati waziva kana chinhu chiri dambudziko chaizvo. Ishandise semaonero echipiri, kwete seongororo yako yekutanga.</target>
+            </trans-unit>
+            <trans-unit id="module.loading">
+                <source>Loading page and running scan…</source>
+                <target>Kurodha peji nekuita ongororo…</target>
+            </trans-unit>
+            <trans-unit id="module.results.violations">
+                <source>Violations</source>
+                <target>Kutyorwa kwemitemo</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete">
+                <source>Needs review</source>
+                <target>Zvinoda kuongororwa</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete.info">
+                <source>Automated scanning could not determine whether these items pass or fail. Each one needs to be checked manually.</source>
+                <target>Ongororo yakaenzaniswa haikwanisa kuziva kana zvinhu izvi zvapasa kana kukundikana. Chimwe nechimwe chinoda kutariswa nemunhu.</target>
+            </trans-unit>
+            <trans-unit id="module.results.passes">
+                <source>Passes</source>
+                <target>Zvapasa</target>
+            </trans-unit>
+            <trans-unit id="module.results.empty">
+                <source>No accessibility issues found.</source>
+                <target>Hapana matambudziko ekuwanikwa akawanikwa.</target>
+            </trans-unit>
+            <trans-unit id="module.filters.label">
+                <source>Filters</source>
+                <target>Zvisefo</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severityLabel">
+                <source>Severity:</source>
+                <target>Uukuru:</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.critical">
+                <source>Critical</source>
+                <target>Hunyanya</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.serious">
+                <source>Serious</source>
+                <target>Hukuru</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.moderate">
+                <source>Moderate</source>
+                <target>Hwepakati</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.minor">
+                <source>Minor</source>
+                <target>Hudiki</target>
+            </trans-unit>
+            <trans-unit id="module.filters.viewLabel">
+                <source>View</source>
+                <target>Maonero</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.editor">
+                <source>For editors</source>
+                <target>Kune vagadziri</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.developer">
+                <source>For developers</source>
+                <target>Kune vavaki</target>
+            </trans-unit>
+            <trans-unit id="module.error.scanFailed">
+                <source>The accessibility scan could not be completed. Please try again.</source>
+                <target>Ongororo yekuwanikwa haikwanisi kupedziswa. Edza zvakare.</target>
+            </trans-unit>
+            <trans-unit id="module.error.noPreview">
+                <source>No preview URL available for this page. Ensure the page has a valid site configuration.</source>
+                <target>Hapana URL yekuratidza iripo kune peji iri. Ita shuwa kuti peji rine gadziriro yenzvimbo yakakodzera.</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt">
+                <source>Add an image description (alt text) in the content element editor.</source>
+                <target>Wedzera tsanangudzo yemufananidzo (alt text) mugadziri wechinhu chezvirimo.</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt.developer">
+                <source>This image is not linked to editable content, or its alt text is set but not rendered. Check the template's image rendering (developer task).</source>
+                <target>Mufananidzo uyu hausungwe nezvirimo zvinogona kugadziridzwa, kana kuti alt text yawo yakaiswa asi haisi kuratidzwa. Tarisa maratidziro emifananidzo emuchimiro (basa revavaki).</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt">
+                <source>Add an alt text to the image input element in the content editor.</source>
+                <target>Wedzera alt text kuchinhu chekunyorera mufananidzo mugadziri wezvirimo.</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt.developer">
+                <source>This image input is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>Chinyorwa chemufananidzo ichi hachisungwe nezvirimo zvinogona kugadziridzwa, kana kuti alt text yacho yakaiswa asi haisi kuratidzwa. Tarisa maratidziro emuchimiro (basa revavaki).</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt">
+                <source>Add alt text to the image map area in the content editor.</source>
+                <target>Wedzera alt text kunzvimbo yemepu yemufananidzo mugadziri wezvirimo.</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt.developer">
+                <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>Nzvimbo yemepu yemufananidzo iyi haisungwe nezvirimo zvinogona kugadziridzwa, kana kuti alt text yayo yakaiswa asi haisi kuratidzwa. Tarisa maratidziro emuchimiro (basa revavaki).</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order">
+                <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
+                <target>Gadzirisa chinhu chezvirimo uye uchinje Chimiro cheMusoro kuti masitepu emisoro asadarikane.</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order.developer">
+                <source>This heading is rendered by the page template rather than a content element. Adjust the heading structure in the Fluid template (developer task).</source>
+                <target>Musoro uyu unoratidzwa nemuchimiro wepeji kwete nechinhu chezvirimo. Gadzirisa chimiro chemisoro mumuchimiro weFluid (basa revavaki).</target>
+            </trans-unit>
+            <trans-unit id="hint.empty-heading">
+                <source>A heading element is rendered with no text. Check the template's heading rendering; it should not output a heading tag when the source text is empty (developer task).</source>
+                <target>Chinhu chemusoro chinoratidzwa pasina mavara. Tarisa maratidziro emisoro emuchimiro; hazvifanirwe kubudisa tagi yemusoro kana mavara emutsvo asina chinhu (basa revavaki).</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name">
+                <source>Edit the link in the content editor and provide a descriptive link text.</source>
+                <target>Gadzirisa chisungo mugadziri wezvirimo uye upe mavara anotsanangura chisungo.</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name.developer">
+                <source>This link is rendered by the page template without link text and isn't linked to editable content. Add visible text or an aria-label in the Fluid template (developer task).</source>
+                <target>Chisungo ichi chinoratidzwa nemuchimiro wepeji pasina mavara echisungo uye hachisungwe nezvirimo zvinogona kugadziridzwa. Wedzera mavara anoonekwa kana aria-label mumuchimiro weFluid (basa revavaki).</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr">
+                <source>Update the table structure in the content editor to associate data cells with headers.</source>
+                <target>Vandudza chimiro chetafura mugadziri wezvirimo kuti masero eruzivo asungane nemisoro.</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so data cells reference their headers (developer task).</source>
+                <target>Tafura iyi haisungwe nezvirimo zvinogona kugadziridzwa. Vandudza chimiro chetafura mumuchimiro kuti masero eruzivo anongedzere kumisoro yawo (basa revavaki).</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells">
+                <source>Update the table in the content editor so header cells have associated data cells.</source>
+                <target>Vandudza tafura mugadziri wezvirimo kuti masero emisoro ave nemasero eruzivo akasunganwa.</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so header cells have associated data cells (developer task).</source>
+                <target>Tafura iyi haisungwe nezvirimo zvinogona kugadziridzwa. Vandudza chimiro chetafura mumuchimiro kuti masero emisoro ave nemasero eruzivo akasunganwa (basa revavaki).</target>
+            </trans-unit>
+            <trans-unit id="hint.landmark-one-main">
+                <source>Add a main landmark element to the page template (developer task).</source>
+                <target>Wedzera chinhu chikuru che landmark mumuchimiro wepeji (basa revavaki).</target>
+            </trans-unit>
+            <trans-unit id="hint.region">
+                <source>Ensure all page content is contained within appropriate landmark regions in the template (developer task).</source>
+                <target>Ita shuwa kuti zvirimo zvose zvepeji zviri mukati menzvimbo dzakakodzera dze landmark mumuchimiro (basa revavaki).</target>
+            </trans-unit>
+            <trans-unit id="hint.bypass">
+                <source>Add a skip navigation link to the page template (developer task).</source>
+                <target>Wedzera chisungo chekudarika kufamba mumuchimiro wepeji (basa revavaki).</target>
+            </trans-unit>
+            <trans-unit id="hint.html-has-lang">
+                <source>Set the lang attribute on the HTML element in the page template (developer task).</source>
+                <target>Isa mutsigo we lang pachinhu che HTML mumuchimiro wepeji (basa revavaki).</target>
+            </trans-unit>
+            <trans-unit id="hint.html-lang-valid">
+                <source>Use a valid BCP 47 language tag on the HTML element (developer task).</source>
+                <target>Shandisa tagi yemutauro yeBCP 47 yakakodzera pachinhu che HTML (basa revavaki).</target>
+            </trans-unit>
+            <trans-unit id="hint.color-contrast">
+                <source>Adjust CSS color values to meet WCAG contrast requirements (developer task).</source>
+                <target>Gadzirisa huwandu hwemavara eCSS kuti hwenderane nezvinodiwa nekusiyana kwemavara kweWCAG (basa revavaki).</target>
+            </trans-unit>
+            <trans-unit id="hint.meta-viewport">
+                <source>Remove user-scalable=no from the viewport meta tag in the template (developer task).</source>
+                <target>Bvisa user-scalable=no patagi ye meta ye viewport mumuchimiro (basa revavaki).</target>
+            </trans-unit>
+            <trans-unit id="hint.frame-title">
+                <source>Add a title attribute to all iframe elements in the template (developer task).</source>
+                <target>Wedzera mutsigo we title kuzvinhu zvose ze iframe mumuchimiro (basa revavaki).</target>
+            </trans-unit>
+            <trans-unit id="hint.scrollable-region-focusable">
+                <source>Make scrollable regions keyboard-accessible in the template (developer task).</source>
+                <target>Ita kuti nzvimbo dzinogona kutsvedzerwa dziwanikwe nekiyibhodhi mumuchimiro (basa revavaki).</target>
+            </trans-unit>
+            <trans-unit id="pageHint.label">
+                <source>Check Accessibility</source>
+                <target>Tarisa Kuwanikwa</target>
+            </trans-unit>
+            <trans-unit id="pageHint.title">
+                <source>Check accessibility for this page</source>
+                <target>Tarisa kuwanikwa kwepeji iri</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

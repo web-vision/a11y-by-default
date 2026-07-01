@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="kl" datatype="plaintext" original="messages" date="2026-07-01T11:52:00Z" product-name="a11y_by_default">
+        <body>
+            <trans-unit id="module.noPage">
+                <source>Please select a page from the page tree to run the accessibility check.</source>
+                <target>Atuisinnaassusermik nalilersuinissamut qupperluutit qeqertaanit qupperluut ilaa toqqarniarlugu.</target>
+            </trans-unit>
+            <trans-unit id="module.scanButton">
+                <source>Run Accessibility Scan</source>
+                <target>Atuisinnaassusermik misissuineq aallartipparaa</target>
+            </trans-unit>
+            <trans-unit id="module.engineLabel">
+                <source>Scanning engine:</source>
+                <target>Misissuinermut sulisitat:</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axe">
+                <source>axe-core (recommended)</source>
+                <target>axe-core (siunnersuutigineqartoq)</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcs">
+                <source>HTML CodeSniffer</source>
+                <target>HTML CodeSniffer</target>
+            </trans-unit>
+            <trans-unit id="module.auditDisclaimer">
+                <source>This module provides automated assistance for accessibility checks. It does not replace a full audit by qualified accessibility auditors, which is required to have a page officially certified as accessible.</source>
+                <target>Immikkoortumi manna atuisinnaassusermik nalilersuinermi ikiuutaasarpoq, allannguutinngitsumik. Qupperluut atuisinnaassutsimik pillugu pisortatigut akuersissutissaqarnissaanut, misissuinermik ilinniagaqarsimasunit tamakkiisumik nalilersuinerup taarserneqarsinnaanngilaa; taamaattoq piumasaqaataavoq.</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axeInfo">
+                <source>axe-core (recommended) checks the page against the WCAG accessibility guidelines — the standard that ensures people using screen readers, keyboard navigation, or other assistive technology can use your content. It is the actively maintained, industry-standard tool and produces very few incorrect warnings, so almost everything it reports is worth acting on.</source>
+                <target>axe-core (siunnersuutigineqartoq) qupperluut WCAG-imi atuisinnaassusermut najoqqutassiaqarfinnut naapertuuttuunersoq misissuipaa — taava normi, isumaqarfiusoq oqalunneq nammineq atortussamik atuartitsisartunik, naqinnermik aqqutigalugu ingerlaarnermik imaluunniit ikiortitassamik allamik atorlugu atuisartunik immikkoortumit atugassaannik atorsinnaanissaannik qulakkeerpoq. Suliffeqarfimmi normimut naleqquttuusoq aallartissimasup ingerlanneqartuararsuara, tammartitsinerit ilaannaannartuararsuit pinngortarpaat, taamaattumik nassuiaataasa amerlanerpaaviit sunnerneqartariaqarpaat.</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcsInfo">
+                <source>HTML CodeSniffer checks the page against similar accessibility guidelines, but with an older, less refined method. It can occasionally point out issues axe-core misses, but it also produces many more results that need a closer manual look before you can tell whether something is really a problem. Use it only for a second opinion, not as your main scan.</source>
+                <target>HTML CodeSniffer-ip qupperluut najoqqutassiat assigisaanik atorlugit misissuivaa, taamaattoq periaatsimik utoqqanerusumik, killeqarnerusumik. Ilaannikkut ajornartorsiutinik axe-core-ip qaangiutinneri takutinniarsinnaavai, taamaattorli inersuutinik amerlanerusunik pinngortitsisarpoq, taakku ajornartorsiuteqarnersut nalinginnaasumik nassuiaanissaannut isikkorluinnaq misissorneqartariaqartut. Taava taassumunnga aatsaat isumaqatiginninnermut allamut atorneqassaaq, misissuinerit pingaarnerinngortinneqassanngilluinnarlugit.</target>
+            </trans-unit>
+            <trans-unit id="module.loading">
+                <source>Loading page and running scan…</source>
+                <target>Qupperluut ikkussarluni misissuinerlu aallartinneqarpoq…</target>
+            </trans-unit>
+            <trans-unit id="module.results.violations">
+                <source>Violations</source>
+                <target>Unioqqutitsinerit</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete">
+                <source>Needs review</source>
+                <target>Nalilersorneqartariaqarpoq</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete.info">
+                <source>Automated scanning could not determine whether these items pass or fail. Each one needs to be checked manually.</source>
+                <target>Nammineq misissuinermi allattoq pisariaqarpat naammattoq imaluunniit naammannginnersoq nalunaarusiiaasinnaanngilaq. Immikkut ataatsimik ataatsimik isikkorluinnaq misissorneqartariaqarput.</target>
+            </trans-unit>
+            <trans-unit id="module.results.passes">
+                <source>Passes</source>
+                <target>Naammattut</target>
+            </trans-unit>
+            <trans-unit id="module.results.empty">
+                <source>No accessibility issues found.</source>
+                <target>Atuisinnaassusermut ajornartorsiuteqarnera nassaarineqarsimanngilaq.</target>
+            </trans-unit>
+            <trans-unit id="module.filters.label">
+                <source>Filters</source>
+                <target>Katersuinerit</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severityLabel">
+                <source>Severity:</source>
+                <target>Ajornartorsiuiassuseq:</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.critical">
+                <source>Critical</source>
+                <target>Annertuumik ajortoq</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.serious">
+                <source>Serious</source>
+                <target>Ajoqutaasoq</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.moderate">
+                <source>Moderate</source>
+                <target>Naligiinnerusoq</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.minor">
+                <source>Minor</source>
+                <target>Mikinnerusoq</target>
+            </trans-unit>
+            <trans-unit id="module.filters.viewLabel">
+                <source>View</source>
+                <target>Takusassiaq</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.editor">
+                <source>For editors</source>
+                <target>Aaqqissuisunut</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.developer">
+                <source>For developers</source>
+                <target>Ineriartortitsisunut</target>
+            </trans-unit>
+            <trans-unit id="module.error.scanFailed">
+                <source>The accessibility scan could not be completed. Please try again.</source>
+                <target>Atuisinnaassusermik misissuineq naammassisinnaanngilaq. Ilaa uterlugu misiliniarlugu.</target>
+            </trans-unit>
+            <trans-unit id="module.error.noPreview">
+                <source>No preview URL available for this page. Ensure the page has a valid site configuration.</source>
+                <target>Qupperluut manna sioqqullugu takussutissaanut URL-ip peqanngilaq. Qupperluut nittartakkamut aaqqissuussamik atuuttumik peqarnersoq qulakkeerniarlugu.</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt">
+                <source>Add an image description (alt text) in the content element editor.</source>
+                <target>Immikkoortumi assit aaqqissuiffiani assiliaq allaaserisamik (alt-allagaq) ilanngussa.</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt.developer">
+                <source>This image is not linked to editable content, or its alt text is set but not rendered. Check the template's image rendering (developer task).</source>
+                <target>Assiliaq una aaqqissorneqarsinnaasumut imaluunniit allattukkanut attavigineqanngilaq, imaluunniit alt-allagaa aalajangersimavoq takutinneqarani. Naqinnersiutip assiliamik takutinneri misissorniarlugu (ineriartortitsisumut suliassaq).</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt">
+                <source>Add an alt text to the image input element in the content editor.</source>
+                <target>Immikkoortumi aaqqissuiffiani assiliaq imaannik allasat-immikkoortoranut alt-allagaq ilanngussa.</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt.developer">
+                <source>This image input is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>Assiliamut imaannik allasat-immikkoortoq una aaqqissorneqarsinnaasumut imaluunniit allattukkanut attavigineqanngilaq, imaluunniit alt-allagaa aalajangersimavoq takutinneqarani. Naqinnersiutip takutinneri misissorniarlugu (ineriartortitsisumut suliassaq).</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt">
+                <source>Add alt text to the image map area in the content editor.</source>
+                <target>Immikkoortumi aaqqissuiffiani assiliamut nunap assinganut immikkoortumut alt-allagaq ilanngussa.</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt.developer">
+                <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>Assiliamut nunap assinganut immikkoortoq una aaqqissorneqarsinnaasumut imaluunniit allattukkanut attavigineqanngilaq, imaluunniit alt-allagaa aalajangersimavoq takutinneqarani. Naqinnersiutip takutinneri misissorniarlugu (ineriartortitsisumut suliassaq).</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order">
+                <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
+                <target>Immikkoortoq aaqqissuilugu qullersaap immikkoortiviinilu allanngortilluutit, taavalu qullersaasa qutsanngortinneri kingullimmut apeqqutaannginniassammat.</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order.developer">
+                <source>This heading is rendered by the page template rather than a content element. Adjust the heading structure in the Fluid template (developer task).</source>
+                <target>Qullersaaq una immikkoortumit takutinneqarani qupperluup naqinnersiutaanit takutinneqarpoq. Qullersaasa aqutsinerini Fluid-imi naqinnersiutimi allanngortilaarlugu (ineriartortitsisumut suliassaq).</target>
+            </trans-unit>
+            <trans-unit id="hint.empty-heading">
+                <source>A heading element is rendered with no text. Check the template's heading rendering; it should not output a heading tag when the source text is empty (developer task).</source>
+                <target>Qullersaap immikkoortoq allagaqanngitsumik takutinneqarpoq. Naqinnersiutip qullersaanik takutinneri misissuiniarlugu; allagaqanngippat qullersaap nalunaaquttaa saqqummiunneqassanngilaq (ineriartortitsisumut suliassaq).</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name">
+                <source>Edit the link in the content editor and provide a descriptive link text.</source>
+                <target>Immikkoortumi aaqqissuiffiani attavik aaqqissuilugu, allaaserisamik attavimmut allagamik pilersillugu.</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name.developer">
+                <source>This link is rendered by the page template without link text and isn't linked to editable content. Add visible text or an aria-label in the Fluid template (developer task).</source>
+                <target>Attavik una qupperluup naqinnersiutaanit attavimmut allagaqanderlugu takutinneqarpoq, aaqqissorneqarsinnaasumullu allattukkanut attavigineqanngilaq. Fluid-imi naqinnersiutimi takuneqarsinnaasumik allagamik imaluunniit aria-label-imik ilanngussa (ineriartortitsisumut suliassaq).</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr">
+                <source>Update the table structure in the content editor to associate data cells with headers.</source>
+                <target>Immikkoortumi aaqqissuiffiani tabelip aqutsineri nutaatigilugit, paasissutissanik immikkoortut qullersaanut attavigalugit.</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so data cells reference their headers (developer task).</source>
+                <target>Tabeli una aaqqissorneqarsinnaasumut allattukkanut attavigineqanngilaq. Naqinnersiutimi tabelip aqutsineri nutaatigilugit, paasissutissanik immikkoortut qullersaannut attaveqartinneqarnissaannut (ineriartortitsisumut suliassaq).</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells">
+                <source>Update the table in the content editor so header cells have associated data cells.</source>
+                <target>Immikkoortumi aaqqissuiffiani tabeli nutaatigilugu, qullersaanik immikkoortut paasissutissanik immikkoortunik attaveqartitaqarnissaannut.</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so header cells have associated data cells (developer task).</source>
+                <target>Tabeli una aaqqissorneqarsinnaasumut allattukkanut attavigineqanngilaq. Naqinnersiutimi tabelip aqutsineri nutaatigilugit, qullersaanik immikkoortut paasissutissanik immikkoortunik attaveqartitaqarnissaannut (ineriartortitsisumut suliassaq).</target>
+            </trans-unit>
+            <trans-unit id="hint.landmark-one-main">
+                <source>Add a main landmark element to the page template (developer task).</source>
+                <target>Qupperluup naqinnersiutaanut pingaarnertut nalunaaqutaasumik immikkoortumik ilanngussa (ineriartortitsisumut suliassaq).</target>
+            </trans-unit>
+            <trans-unit id="hint.region">
+                <source>Ensure all page content is contained within appropriate landmark regions in the template (developer task).</source>
+                <target>Naqinnersiutimi qupperluup imai tamarmik nalunaaqutaasumik immikkoortunut naleqquttunut ilaatinneqarsimanersut qulakkeerniarlugu (ineriartortitsisumut suliassaq).</target>
+            </trans-unit>
+            <trans-unit id="hint.bypass">
+                <source>Add a skip navigation link to the page template (developer task).</source>
+                <target>Qupperluup naqinnersiutaanut naqinnermik aqqutigalugu ingerlaarnermik unnia aallartitsissutissamik attavimmik ilanngussa (ineriartortitsisumut suliassaq).</target>
+            </trans-unit>
+            <trans-unit id="hint.html-has-lang">
+                <source>Set the lang attribute on the HTML element in the page template (developer task).</source>
+                <target>Qupperluup naqinnersiutaani HTML-immikkoortumi lang-attributip nalinga aalajangersaruk (ineriartortitsisumut suliassaq).</target>
+            </trans-unit>
+            <trans-unit id="hint.html-lang-valid">
+                <source>Use a valid BCP 47 language tag on the HTML element (developer task).</source>
+                <target>HTML-immikkoortumi BCP 47-imi atuuttumik oqaatsit nalunaaqutaannik atoruk (ineriartortitsisumut suliassaq).</target>
+            </trans-unit>
+            <trans-unit id="hint.color-contrast">
+                <source>Adjust CSS color values to meet WCAG contrast requirements (developer task).</source>
+                <target>CSS-imi angissuseq assigiinngitsuunerissaannut nalinga WCAG-ip piumasaqaataanut naapertuuttumik allanngortiguk (ineriartortitsisumut suliassaq).</target>
+            </trans-unit>
+            <trans-unit id="hint.meta-viewport">
+                <source>Remove user-scalable=no from the viewport meta tag in the template (developer task).</source>
+                <target>Naqinnersiutimi viewport-meta-nalunaaqutamit user-scalable=no peeruk (ineriartortitsisumut suliassaq).</target>
+            </trans-unit>
+            <trans-unit id="hint.frame-title">
+                <source>Add a title attribute to all iframe elements in the template (developer task).</source>
+                <target>Naqinnersiutimi iframe-immikkoortut tamaasa title-attributimik ilanngussa (ineriartortitsisumut suliassaq).</target>
+            </trans-unit>
+            <trans-unit id="hint.scrollable-region-focusable">
+                <source>Make scrollable regions keyboard-accessible in the template (developer task).</source>
+                <target>Naqinnersiutimi assartuutigineqarsinnaasut naqinnermik aqqutigalugu tunngavigineqarsinnaatilliguit (ineriartortitsisumut suliassaq).</target>
+            </trans-unit>
+            <trans-unit id="pageHint.label">
+                <source>Check Accessibility</source>
+                <target>Atuisinnaassuseq misissoruk</target>
+            </trans-unit>
+            <trans-unit id="pageHint.title">
+                <source>Check accessibility for this page</source>
+                <target>Qupperluut manna atuisinnaassusermik misissoruk</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

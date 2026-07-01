@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="zh-HK" datatype="plaintext" original="messages" date="2026-07-01T11:52:00Z" product-name="a11y_by_default">
+        <body>
+            <trans-unit id="module.noPage">
+                <source>Please select a page from the page tree to run the accessibility check.</source>
+                <target>請於頁面樹中選取一個頁面，以進行無障礙檢查。</target>
+            </trans-unit>
+            <trans-unit id="module.scanButton">
+                <source>Run Accessibility Scan</source>
+                <target>執行無障礙掃描</target>
+            </trans-unit>
+            <trans-unit id="module.engineLabel">
+                <source>Scanning engine:</source>
+                <target>掃描引擎：</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axe">
+                <source>axe-core (recommended)</source>
+                <target>axe-core（建議使用）</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcs">
+                <source>HTML CodeSniffer</source>
+                <target>HTML CodeSniffer</target>
+            </trans-unit>
+            <trans-unit id="module.auditDisclaimer">
+                <source>This module provides automated assistance for accessibility checks. It does not replace a full audit by qualified accessibility auditors, which is required to have a page officially certified as accessible.</source>
+                <target>呢個模組提供自動化工具，協助進行無障礙檢查，但唔可以取代由合資格無障礙審查員所進行嘅完整審查。如需為頁面申請正式無障礙認證，仍須由合資格審查員進行審查。</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axeInfo">
+                <source>axe-core (recommended) checks the page against the WCAG accessibility guidelines — the standard that ensures people using screen readers, keyboard navigation, or other assistive technology can use your content. It is the actively maintained, industry-standard tool and produces very few incorrect warnings, so almost everything it reports is worth acting on.</source>
+                <target>axe-core（建議使用）會根據 WCAG 無障礙指引檢查頁面——呢個標準可以確保使用螢幕閱讀器、鍵盤操作或其他輔助科技嘅人士都能夠使用你嘅內容。呢個工具持續有人維護，屬於業界標準，甚少出現錯誤警示，所以佢報告出嚟嘅問題，絕大部分都值得跟進處理。</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcsInfo">
+                <source>HTML CodeSniffer checks the page against similar accessibility guidelines, but with an older, less refined method. It can occasionally point out issues axe-core misses, but it also produces many more results that need a closer manual look before you can tell whether something is really a problem. Use it only for a second opinion, not as your main scan.</source>
+                <target>HTML CodeSniffer 亦會根據類似嘅無障礙指引檢查頁面，不過採用較舊、較粗略嘅方法。佢有時可以搵到 axe-core 漏檢嘅問題，但亦會產生好多結果，需要你人手再三核對先可以判斷係唔係真正嘅問題。建議只將佢作為第二意見參考，唔應該當作主要掃描工具。</target>
+            </trans-unit>
+            <trans-unit id="module.loading">
+                <source>Loading page and running scan…</source>
+                <target>正在載入頁面並執行掃描…</target>
+            </trans-unit>
+            <trans-unit id="module.results.violations">
+                <source>Violations</source>
+                <target>違規項目</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete">
+                <source>Needs review</source>
+                <target>需要人工覆核</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete.info">
+                <source>Automated scanning could not determine whether these items pass or fail. Each one needs to be checked manually.</source>
+                <target>自動掃描未能判斷呢啲項目係合格或者唔合格，每一項都需要人手再核實。</target>
+            </trans-unit>
+            <trans-unit id="module.results.passes">
+                <source>Passes</source>
+                <target>已通過項目</target>
+            </trans-unit>
+            <trans-unit id="module.results.empty">
+                <source>No accessibility issues found.</source>
+                <target>未有發現任何無障礙問題。</target>
+            </trans-unit>
+            <trans-unit id="module.filters.label">
+                <source>Filters</source>
+                <target>篩選條件</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severityLabel">
+                <source>Severity:</source>
+                <target>嚴重程度：</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.critical">
+                <source>Critical</source>
+                <target>極嚴重</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.serious">
+                <source>Serious</source>
+                <target>嚴重</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.moderate">
+                <source>Moderate</source>
+                <target>中等</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.minor">
+                <source>Minor</source>
+                <target>輕微</target>
+            </trans-unit>
+            <trans-unit id="module.filters.viewLabel">
+                <source>View</source>
+                <target>檢視模式</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.editor">
+                <source>For editors</source>
+                <target>編輯人員專用</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.developer">
+                <source>For developers</source>
+                <target>開發人員專用</target>
+            </trans-unit>
+            <trans-unit id="module.error.scanFailed">
+                <source>The accessibility scan could not be completed. Please try again.</source>
+                <target>無障礙掃描未能完成，請再試一次。</target>
+            </trans-unit>
+            <trans-unit id="module.error.noPreview">
+                <source>No preview URL available for this page. Ensure the page has a valid site configuration.</source>
+                <target>呢個頁面暫時未有可用嘅預覽網址，請確認該頁面已設定有效嘅網站配置。</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt">
+                <source>Add an image description (alt text) in the content element editor.</source>
+                <target>請於內容元素編輯器入面，為圖片加上圖片說明（alt 文字）。</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt.developer">
+                <source>This image is not linked to editable content, or its alt text is set but not rendered. Check the template's image rendering (developer task).</source>
+                <target>呢張圖片並無連結至可編輯內容，或者已設定 alt 文字但未有正確輸出。請檢查範本（template）嘅圖片輸出邏輯（開發人員任務）。</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt">
+                <source>Add an alt text to the image input element in the content editor.</source>
+                <target>請於內容編輯器入面，為圖片輸入元素加上 alt 文字。</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt.developer">
+                <source>This image input is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>呢個圖片輸入元素並無連結至可編輯內容，或者已設定 alt 文字但未有正確輸出。請檢查範本嘅輸出邏輯（開發人員任務）。</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt">
+                <source>Add alt text to the image map area in the content editor.</source>
+                <target>請於內容編輯器入面，為圖片地圖區域（image map area）加上 alt 文字。</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt.developer">
+                <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>呢個圖片地圖區域並無連結至可編輯內容，或者已設定 alt 文字但未有正確輸出。請檢查範本嘅輸出邏輯（開發人員任務）。</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order">
+                <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
+                <target>請編輯該內容元素，調整其標題版面（Header Layout），確保標題層級唔會跳級。</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order.developer">
+                <source>This heading is rendered by the page template rather than a content element. Adjust the heading structure in the Fluid template (developer task).</source>
+                <target>呢個標題係由頁面範本輸出，而唔係由內容元素輸出。請於 Fluid 範本入面調整標題結構（開發人員任務）。</target>
+            </trans-unit>
+            <trans-unit id="hint.empty-heading">
+                <source>A heading element is rendered with no text. Check the template's heading rendering; it should not output a heading tag when the source text is empty (developer task).</source>
+                <target>有一個標題元素被輸出時並無任何文字內容。請檢查範本嘅標題輸出邏輯；當來源文字為空白時，範本唔應該輸出標題標籤（開發人員任務）。</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name">
+                <source>Edit the link in the content editor and provide a descriptive link text.</source>
+                <target>請於內容編輯器入面編輯該連結，並提供具描述性嘅連結文字。</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name.developer">
+                <source>This link is rendered by the page template without link text and isn't linked to editable content. Add visible text or an aria-label in the Fluid template (developer task).</source>
+                <target>呢個連結係由頁面範本輸出，並無連結文字，亦無連結至可編輯內容。請於 Fluid 範本入面加上可見文字或 aria-label（開發人員任務）。</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr">
+                <source>Update the table structure in the content editor to associate data cells with headers.</source>
+                <target>請於內容編輯器入面調整表格結構，將資料格與相應嘅標題格建立關聯。</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so data cells reference their headers (developer task).</source>
+                <target>呢個表格並無連結至可編輯內容。請於範本入面調整表格結構，令資料格能夠參照相應嘅標題格（開發人員任務）。</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells">
+                <source>Update the table in the content editor so header cells have associated data cells.</source>
+                <target>請於內容編輯器入面調整表格，令標題格能夠對應相應嘅資料格。</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so header cells have associated data cells (developer task).</source>
+                <target>呢個表格並無連結至可編輯內容。請於範本入面調整表格結構，令標題格能夠對應相應嘅資料格（開發人員任務）。</target>
+            </trans-unit>
+            <trans-unit id="hint.landmark-one-main">
+                <source>Add a main landmark element to the page template (developer task).</source>
+                <target>請於頁面範本入面加上一個 main 主要地標元素（landmark element）（開發人員任務）。</target>
+            </trans-unit>
+            <trans-unit id="hint.region">
+                <source>Ensure all page content is contained within appropriate landmark regions in the template (developer task).</source>
+                <target>請確保範本入面所有頁面內容都包含於適當嘅地標區域（landmark region）之內（開發人員任務）。</target>
+            </trans-unit>
+            <trans-unit id="hint.bypass">
+                <source>Add a skip navigation link to the page template (developer task).</source>
+                <target>請於頁面範本入面加上一個跳過導覽連結（skip navigation link）（開發人員任務）。</target>
+            </trans-unit>
+            <trans-unit id="hint.html-has-lang">
+                <source>Set the lang attribute on the HTML element in the page template (developer task).</source>
+                <target>請於頁面範本入面，為 HTML 元素設定 lang 屬性（開發人員任務）。</target>
+            </trans-unit>
+            <trans-unit id="hint.html-lang-valid">
+                <source>Use a valid BCP 47 language tag on the HTML element (developer task).</source>
+                <target>請為 HTML 元素使用有效嘅 BCP 47 語言標籤（開發人員任務）。</target>
+            </trans-unit>
+            <trans-unit id="hint.color-contrast">
+                <source>Adjust CSS color values to meet WCAG contrast requirements (developer task).</source>
+                <target>請調整 CSS 色彩數值，以符合 WCAG 對比度要求（開發人員任務）。</target>
+            </trans-unit>
+            <trans-unit id="hint.meta-viewport">
+                <source>Remove user-scalable=no from the viewport meta tag in the template (developer task).</source>
+                <target>請於範本嘅 viewport meta 標籤入面移除 user-scalable=no（開發人員任務）。</target>
+            </trans-unit>
+            <trans-unit id="hint.frame-title">
+                <source>Add a title attribute to all iframe elements in the template (developer task).</source>
+                <target>請為範本入面所有 iframe 元素加上 title 屬性（開發人員任務）。</target>
+            </trans-unit>
+            <trans-unit id="hint.scrollable-region-focusable">
+                <source>Make scrollable regions keyboard-accessible in the template (developer task).</source>
+                <target>請確保範本入面可捲動嘅區域能夠以鍵盤操作（開發人員任務）。</target>
+            </trans-unit>
+            <trans-unit id="pageHint.label">
+                <source>Check Accessibility</source>
+                <target>檢查無障礙</target>
+            </trans-unit>
+            <trans-unit id="pageHint.title">
+                <source>Check accessibility for this page</source>
+                <target>檢查此頁面嘅無障礙情況</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

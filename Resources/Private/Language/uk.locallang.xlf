@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="uk" datatype="plaintext" original="messages" date="2026-07-01T11:52:00Z" product-name="a11y_by_default">
+        <body>
+            <trans-unit id="module.noPage">
+                <source>Please select a page from the page tree to run the accessibility check.</source>
+                <target>Виберіть сторінку з дерева сторінок, щоб запустити перевірку доступності.</target>
+            </trans-unit>
+            <trans-unit id="module.scanButton">
+                <source>Run Accessibility Scan</source>
+                <target>Запустити перевірку доступності</target>
+            </trans-unit>
+            <trans-unit id="module.engineLabel">
+                <source>Scanning engine:</source>
+                <target>Механізм сканування:</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axe">
+                <source>axe-core (recommended)</source>
+                <target>axe-core (рекомендовано)</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcs">
+                <source>HTML CodeSniffer</source>
+                <target>HTML CodeSniffer</target>
+            </trans-unit>
+            <trans-unit id="module.auditDisclaimer">
+                <source>This module provides automated assistance for accessibility checks. It does not replace a full audit by qualified accessibility auditors, which is required to have a page officially certified as accessible.</source>
+                <target>Цей модуль надає автоматизовану допомогу для перевірок доступності. Він не замінює повний аудит кваліфікованими аудиторами з питань доступності, який необхідний для офіційної сертифікації сторінки як доступної.</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axeInfo">
+                <source>axe-core (recommended) checks the page against the WCAG accessibility guidelines — the standard that ensures people using screen readers, keyboard navigation, or other assistive technology can use your content. It is the actively maintained, industry-standard tool and produces very few incorrect warnings, so almost everything it reports is worth acting on.</source>
+                <target>axe-core (рекомендовано) перевіряє сторінку відповідно до настанов доступності WCAG — стандарту, який гарантує, що люди, які використовують екранні читачі, навігацію за допомогою клавіатури або інші допоміжні технології, можуть користуватися вашим контентом. Це активно підтримуваний, галузевий стандартний інструмент, який видає дуже мало помилкових попереджень, тому майже все, про що він повідомляє, варте уваги.</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcsInfo">
+                <source>HTML CodeSniffer checks the page against similar accessibility guidelines, but with an older, less refined method. It can occasionally point out issues axe-core misses, but it also produces many more results that need a closer manual look before you can tell whether something is really a problem. Use it only for a second opinion, not as your main scan.</source>
+                <target>HTML CodeSniffer перевіряє сторінку за подібними настановами доступності, але за старішим, менш вдосконаленим методом. Він може іноді виявляти проблеми, які пропускає axe-core, але також видає набагато більше результатів, що потребують ретельнішого ручного розгляду, перш ніж можна визначити, чи це справді проблема. Використовуйте його лише як другу думку, а не як основне сканування.</target>
+            </trans-unit>
+            <trans-unit id="module.loading">
+                <source>Loading page and running scan…</source>
+                <target>Завантаження сторінки та виконання перевірки…</target>
+            </trans-unit>
+            <trans-unit id="module.results.violations">
+                <source>Violations</source>
+                <target>Порушення</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete">
+                <source>Needs review</source>
+                <target>Потребує перевірки</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete.info">
+                <source>Automated scanning could not determine whether these items pass or fail. Each one needs to be checked manually.</source>
+                <target>Автоматичне сканування не змогло визначити, чи відповідають ці пункти вимогам. Кожен з них потрібно перевірити вручну.</target>
+            </trans-unit>
+            <trans-unit id="module.results.passes">
+                <source>Passes</source>
+                <target>Відповідає вимогам</target>
+            </trans-unit>
+            <trans-unit id="module.results.empty">
+                <source>No accessibility issues found.</source>
+                <target>Проблем з доступністю не виявлено.</target>
+            </trans-unit>
+            <trans-unit id="module.filters.label">
+                <source>Filters</source>
+                <target>Фільтри</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severityLabel">
+                <source>Severity:</source>
+                <target>Рівень серйозності:</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.critical">
+                <source>Critical</source>
+                <target>Критичний</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.serious">
+                <source>Serious</source>
+                <target>Серйозний</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.moderate">
+                <source>Moderate</source>
+                <target>Помірний</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.minor">
+                <source>Minor</source>
+                <target>Незначний</target>
+            </trans-unit>
+            <trans-unit id="module.filters.viewLabel">
+                <source>View</source>
+                <target>Перегляд</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.editor">
+                <source>For editors</source>
+                <target>Для редакторів</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.developer">
+                <source>For developers</source>
+                <target>Для розробників</target>
+            </trans-unit>
+            <trans-unit id="module.error.scanFailed">
+                <source>The accessibility scan could not be completed. Please try again.</source>
+                <target>Перевірку доступності не вдалося завершити. Спробуйте ще раз.</target>
+            </trans-unit>
+            <trans-unit id="module.error.noPreview">
+                <source>No preview URL available for this page. Ensure the page has a valid site configuration.</source>
+                <target>Для цієї сторінки немає доступної URL-адреси попереднього перегляду. Переконайтеся, що сторінка має дійсну конфігурацію сайту.</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt">
+                <source>Add an image description (alt text) in the content element editor.</source>
+                <target>Додайте опис зображення (alt-текст) у редакторі елемента контенту.</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt.developer">
+                <source>This image is not linked to editable content, or its alt text is set but not rendered. Check the template's image rendering (developer task).</source>
+                <target>Це зображення не пов'язане з редагованим контентом, або його alt-текст встановлено, але не відображається. Перевірте відображення зображення у шаблоні (завдання для розробника).</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt">
+                <source>Add an alt text to the image input element in the content editor.</source>
+                <target>Додайте alt-текст до елемента введення зображення в редакторі контенту.</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt.developer">
+                <source>This image input is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>Цей елемент введення зображення не пов'язаний з редагованим контентом, або його alt-текст встановлено, але не відображається. Перевірте відображення у шаблоні (завдання для розробника).</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt">
+                <source>Add alt text to the image map area in the content editor.</source>
+                <target>Додайте alt-текст до області карти зображення в редакторі контенту.</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt.developer">
+                <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>Ця область карти зображення не пов'язана з редагованим контентом, або її alt-текст встановлено, але не відображається. Перевірте відображення у шаблоні (завдання для розробника).</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order">
+                <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
+                <target>Відредагуйте елемент контенту та змініть його макет заголовка, щоб рівні заголовків не пропускали крок.</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order.developer">
+                <source>This heading is rendered by the page template rather than a content element. Adjust the heading structure in the Fluid template (developer task).</source>
+                <target>Цей заголовок відображається шаблоном сторінки, а не елементом контенту. Налаштуйте структуру заголовків у шаблоні Fluid (завдання для розробника).</target>
+            </trans-unit>
+            <trans-unit id="hint.empty-heading">
+                <source>A heading element is rendered with no text. Check the template's heading rendering; it should not output a heading tag when the source text is empty (developer task).</source>
+                <target>Елемент заголовка відображається без тексту. Перевірте відображення заголовка в шаблоні; він не повинен виводити тег заголовка, якщо вихідний текст порожній (завдання для розробника).</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name">
+                <source>Edit the link in the content editor and provide a descriptive link text.</source>
+                <target>Відредагуйте посилання в редакторі контенту та надайте описовий текст посилання.</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name.developer">
+                <source>This link is rendered by the page template without link text and isn't linked to editable content. Add visible text or an aria-label in the Fluid template (developer task).</source>
+                <target>Це посилання відображається шаблоном сторінки без тексту посилання і не пов'язане з редагованим контентом. Додайте видимий текст або aria-label у шаблоні Fluid (завдання для розробника).</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr">
+                <source>Update the table structure in the content editor to associate data cells with headers.</source>
+                <target>Оновіть структуру таблиці в редакторі контенту, щоб пов'язати комірки даних із заголовками.</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so data cells reference their headers (developer task).</source>
+                <target>Ця таблиця не пов'язана з редагованим контентом. Оновіть структуру таблиці в шаблоні так, щоб комірки даних посилалися на свої заголовки (завдання для розробника).</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells">
+                <source>Update the table in the content editor so header cells have associated data cells.</source>
+                <target>Оновіть таблицю в редакторі контенту так, щоб комірки заголовків мали пов'язані комірки даних.</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so header cells have associated data cells (developer task).</source>
+                <target>Ця таблиця не пов'язана з редагованим контентом. Оновіть структуру таблиці в шаблоні так, щоб комірки заголовків мали пов'язані комірки даних (завдання для розробника).</target>
+            </trans-unit>
+            <trans-unit id="hint.landmark-one-main">
+                <source>Add a main landmark element to the page template (developer task).</source>
+                <target>Додайте головний елемент landmark (main) до шаблону сторінки (завдання для розробника).</target>
+            </trans-unit>
+            <trans-unit id="hint.region">
+                <source>Ensure all page content is contained within appropriate landmark regions in the template (developer task).</source>
+                <target>Переконайтеся, що весь контент сторінки міститься у відповідних областях landmark у шаблоні (завдання для розробника).</target>
+            </trans-unit>
+            <trans-unit id="hint.bypass">
+                <source>Add a skip navigation link to the page template (developer task).</source>
+                <target>Додайте посилання для пропуску навігації до шаблону сторінки (завдання для розробника).</target>
+            </trans-unit>
+            <trans-unit id="hint.html-has-lang">
+                <source>Set the lang attribute on the HTML element in the page template (developer task).</source>
+                <target>Встановіть атрибут lang для елемента HTML у шаблоні сторінки (завдання для розробника).</target>
+            </trans-unit>
+            <trans-unit id="hint.html-lang-valid">
+                <source>Use a valid BCP 47 language tag on the HTML element (developer task).</source>
+                <target>Використовуйте дійсний мовний тег BCP 47 для елемента HTML (завдання для розробника).</target>
+            </trans-unit>
+            <trans-unit id="hint.color-contrast">
+                <source>Adjust CSS color values to meet WCAG contrast requirements (developer task).</source>
+                <target>Відкоригуйте значення кольорів CSS відповідно до вимог контрастності WCAG (завдання для розробника).</target>
+            </trans-unit>
+            <trans-unit id="hint.meta-viewport">
+                <source>Remove user-scalable=no from the viewport meta tag in the template (developer task).</source>
+                <target>Видаліть user-scalable=no з метатега viewport у шаблоні (завдання для розробника).</target>
+            </trans-unit>
+            <trans-unit id="hint.frame-title">
+                <source>Add a title attribute to all iframe elements in the template (developer task).</source>
+                <target>Додайте атрибут title до всіх елементів iframe у шаблоні (завдання для розробника).</target>
+            </trans-unit>
+            <trans-unit id="hint.scrollable-region-focusable">
+                <source>Make scrollable regions keyboard-accessible in the template (developer task).</source>
+                <target>Зробіть області з прокручуванням доступними з клавіатури в шаблоні (завдання для розробника).</target>
+            </trans-unit>
+            <trans-unit id="pageHint.label">
+                <source>Check Accessibility</source>
+                <target>Перевірити доступність</target>
+            </trans-unit>
+            <trans-unit id="pageHint.title">
+                <source>Check accessibility for this page</source>
+                <target>Перевірити доступність цієї сторінки</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="vi" datatype="plaintext" original="messages" date="2026-07-01T11:52:00Z" product-name="a11y_by_default">
+        <body>
+            <trans-unit id="module.noPage">
+                <source>Please select a page from the page tree to run the accessibility check.</source>
+                <target>Vui lòng chọn một trang từ cây trang để chạy kiểm tra khả năng truy cập.</target>
+            </trans-unit>
+            <trans-unit id="module.scanButton">
+                <source>Run Accessibility Scan</source>
+                <target>Chạy quét khả năng truy cập</target>
+            </trans-unit>
+            <trans-unit id="module.engineLabel">
+                <source>Scanning engine:</source>
+                <target>Công cụ quét:</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axe">
+                <source>axe-core (recommended)</source>
+                <target>axe-core (khuyến nghị)</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcs">
+                <source>HTML CodeSniffer</source>
+                <target>HTML CodeSniffer</target>
+            </trans-unit>
+            <trans-unit id="module.auditDisclaimer">
+                <source>This module provides automated assistance for accessibility checks. It does not replace a full audit by qualified accessibility auditors, which is required to have a page officially certified as accessible.</source>
+                <target>Mô-đun này cung cấp hỗ trợ tự động cho việc kiểm tra khả năng truy cập. Nó không thay thế cho một cuộc kiểm định toàn diện do các chuyên gia kiểm định khả năng truy cập có chuyên môn thực hiện, điều này là bắt buộc để một trang được chứng nhận chính thức là có khả năng truy cập.</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axeInfo">
+                <source>axe-core (recommended) checks the page against the WCAG accessibility guidelines — the standard that ensures people using screen readers, keyboard navigation, or other assistive technology can use your content. It is the actively maintained, industry-standard tool and produces very few incorrect warnings, so almost everything it reports is worth acting on.</source>
+                <target>axe-core (khuyến nghị) kiểm tra trang theo các hướng dẫn về khả năng truy cập WCAG — tiêu chuẩn đảm bảo những người sử dụng trình đọc màn hình, điều hướng bằng bàn phím hoặc các công nghệ hỗ trợ khác có thể sử dụng nội dung của bạn. Đây là công cụ tiêu chuẩn của ngành, được duy trì tích cực và tạo ra rất ít cảnh báo sai, vì vậy hầu hết mọi thứ nó báo cáo đều đáng để xử lý.</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcsInfo">
+                <source>HTML CodeSniffer checks the page against similar accessibility guidelines, but with an older, less refined method. It can occasionally point out issues axe-core misses, but it also produces many more results that need a closer manual look before you can tell whether something is really a problem. Use it only for a second opinion, not as your main scan.</source>
+                <target>HTML CodeSniffer kiểm tra trang theo các hướng dẫn khả năng truy cập tương tự, nhưng bằng phương pháp cũ hơn và kém tinh vi hơn. Nó có thể đôi khi phát hiện ra các vấn đề mà axe-core bỏ lỡ, nhưng nó cũng tạo ra nhiều kết quả hơn cần được xem xét kỹ bằng tay trước khi bạn có thể xác định liệu đó có thực sự là vấn đề hay không. Chỉ nên dùng nó để có thêm một ý kiến tham khảo, không nên dùng làm công cụ quét chính.</target>
+            </trans-unit>
+            <trans-unit id="module.loading">
+                <source>Loading page and running scan…</source>
+                <target>Đang tải trang và chạy quét…</target>
+            </trans-unit>
+            <trans-unit id="module.results.violations">
+                <source>Violations</source>
+                <target>Vi phạm</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete">
+                <source>Needs review</source>
+                <target>Cần xem xét</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete.info">
+                <source>Automated scanning could not determine whether these items pass or fail. Each one needs to be checked manually.</source>
+                <target>Quét tự động không thể xác định liệu các mục này đạt hay không đạt. Mỗi mục cần được kiểm tra bằng tay.</target>
+            </trans-unit>
+            <trans-unit id="module.results.passes">
+                <source>Passes</source>
+                <target>Đạt</target>
+            </trans-unit>
+            <trans-unit id="module.results.empty">
+                <source>No accessibility issues found.</source>
+                <target>Không tìm thấy vấn đề nào về khả năng truy cập.</target>
+            </trans-unit>
+            <trans-unit id="module.filters.label">
+                <source>Filters</source>
+                <target>Bộ lọc</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severityLabel">
+                <source>Severity:</source>
+                <target>Mức độ nghiêm trọng:</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.critical">
+                <source>Critical</source>
+                <target>Nghiêm trọng</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.serious">
+                <source>Serious</source>
+                <target>Nặng</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.moderate">
+                <source>Moderate</source>
+                <target>Trung bình</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.minor">
+                <source>Minor</source>
+                <target>Nhẹ</target>
+            </trans-unit>
+            <trans-unit id="module.filters.viewLabel">
+                <source>View</source>
+                <target>Chế độ xem</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.editor">
+                <source>For editors</source>
+                <target>Dành cho biên tập viên</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.developer">
+                <source>For developers</source>
+                <target>Dành cho nhà phát triển</target>
+            </trans-unit>
+            <trans-unit id="module.error.scanFailed">
+                <source>The accessibility scan could not be completed. Please try again.</source>
+                <target>Không thể hoàn tất quét khả năng truy cập. Vui lòng thử lại.</target>
+            </trans-unit>
+            <trans-unit id="module.error.noPreview">
+                <source>No preview URL available for this page. Ensure the page has a valid site configuration.</source>
+                <target>Không có URL xem trước cho trang này. Hãy đảm bảo trang có cấu hình site hợp lệ.</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt">
+                <source>Add an image description (alt text) in the content element editor.</source>
+                <target>Thêm mô tả hình ảnh (văn bản thay thế alt) trong trình chỉnh sửa phần tử nội dung.</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt.developer">
+                <source>This image is not linked to editable content, or its alt text is set but not rendered. Check the template's image rendering (developer task).</source>
+                <target>Hình ảnh này không được liên kết với nội dung có thể chỉnh sửa, hoặc văn bản thay thế alt đã được đặt nhưng không được hiển thị. Kiểm tra cách hiển thị hình ảnh trong template (nhiệm vụ của nhà phát triển).</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt">
+                <source>Add an alt text to the image input element in the content editor.</source>
+                <target>Thêm văn bản thay thế alt cho phần tử input hình ảnh trong trình chỉnh sửa nội dung.</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt.developer">
+                <source>This image input is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>Phần tử input hình ảnh này không được liên kết với nội dung có thể chỉnh sửa, hoặc văn bản thay thế alt đã được đặt nhưng không được hiển thị. Kiểm tra cách hiển thị của template (nhiệm vụ của nhà phát triển).</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt">
+                <source>Add alt text to the image map area in the content editor.</source>
+                <target>Thêm văn bản thay thế alt cho vùng bản đồ hình ảnh (image map) trong trình chỉnh sửa nội dung.</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt.developer">
+                <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>Vùng bản đồ hình ảnh này không được liên kết với nội dung có thể chỉnh sửa, hoặc văn bản thay thế alt đã được đặt nhưng không được hiển thị. Kiểm tra cách hiển thị của template (nhiệm vụ của nhà phát triển).</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order">
+                <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
+                <target>Chỉnh sửa phần tử nội dung và thay đổi Kiểu tiêu đề (Header Layout) để các cấp độ tiêu đề không bị nhảy bậc.</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order.developer">
+                <source>This heading is rendered by the page template rather than a content element. Adjust the heading structure in the Fluid template (developer task).</source>
+                <target>Tiêu đề này được hiển thị bởi template trang chứ không phải bởi một phần tử nội dung. Điều chỉnh cấu trúc tiêu đề trong template Fluid (nhiệm vụ của nhà phát triển).</target>
+            </trans-unit>
+            <trans-unit id="hint.empty-heading">
+                <source>A heading element is rendered with no text. Check the template's heading rendering; it should not output a heading tag when the source text is empty (developer task).</source>
+                <target>Một phần tử tiêu đề được hiển thị mà không có văn bản. Kiểm tra cách template hiển thị tiêu đề; nó không nên xuất ra thẻ tiêu đề khi văn bản nguồn trống (nhiệm vụ của nhà phát triển).</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name">
+                <source>Edit the link in the content editor and provide a descriptive link text.</source>
+                <target>Chỉnh sửa liên kết trong trình chỉnh sửa nội dung và cung cấp văn bản liên kết có tính mô tả.</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name.developer">
+                <source>This link is rendered by the page template without link text and isn't linked to editable content. Add visible text or an aria-label in the Fluid template (developer task).</source>
+                <target>Liên kết này được hiển thị bởi template trang mà không có văn bản liên kết và không được liên kết với nội dung có thể chỉnh sửa. Thêm văn bản hiển thị hoặc thuộc tính aria-label trong template Fluid (nhiệm vụ của nhà phát triển).</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr">
+                <source>Update the table structure in the content editor to associate data cells with headers.</source>
+                <target>Cập nhật cấu trúc bảng trong trình chỉnh sửa nội dung để liên kết các ô dữ liệu với tiêu đề tương ứng.</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so data cells reference their headers (developer task).</source>
+                <target>Bảng này không được liên kết với nội dung có thể chỉnh sửa. Cập nhật cấu trúc bảng trong template để các ô dữ liệu tham chiếu đến tiêu đề của chúng (nhiệm vụ của nhà phát triển).</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells">
+                <source>Update the table in the content editor so header cells have associated data cells.</source>
+                <target>Cập nhật bảng trong trình chỉnh sửa nội dung để các ô tiêu đề có ô dữ liệu tương ứng.</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so header cells have associated data cells (developer task).</source>
+                <target>Bảng này không được liên kết với nội dung có thể chỉnh sửa. Cập nhật cấu trúc bảng trong template để các ô tiêu đề có ô dữ liệu tương ứng (nhiệm vụ của nhà phát triển).</target>
+            </trans-unit>
+            <trans-unit id="hint.landmark-one-main">
+                <source>Add a main landmark element to the page template (developer task).</source>
+                <target>Thêm một phần tử mốc chính (main landmark) vào template trang (nhiệm vụ của nhà phát triển).</target>
+            </trans-unit>
+            <trans-unit id="hint.region">
+                <source>Ensure all page content is contained within appropriate landmark regions in the template (developer task).</source>
+                <target>Đảm bảo toàn bộ nội dung trang được chứa trong các vùng mốc (landmark) phù hợp trong template (nhiệm vụ của nhà phát triển).</target>
+            </trans-unit>
+            <trans-unit id="hint.bypass">
+                <source>Add a skip navigation link to the page template (developer task).</source>
+                <target>Thêm liên kết bỏ qua điều hướng (skip navigation) vào template trang (nhiệm vụ của nhà phát triển).</target>
+            </trans-unit>
+            <trans-unit id="hint.html-has-lang">
+                <source>Set the lang attribute on the HTML element in the page template (developer task).</source>
+                <target>Đặt thuộc tính lang cho phần tử HTML trong template trang (nhiệm vụ của nhà phát triển).</target>
+            </trans-unit>
+            <trans-unit id="hint.html-lang-valid">
+                <source>Use a valid BCP 47 language tag on the HTML element (developer task).</source>
+                <target>Sử dụng thẻ ngôn ngữ BCP 47 hợp lệ cho phần tử HTML (nhiệm vụ của nhà phát triển).</target>
+            </trans-unit>
+            <trans-unit id="hint.color-contrast">
+                <source>Adjust CSS color values to meet WCAG contrast requirements (developer task).</source>
+                <target>Điều chỉnh giá trị màu CSS để đáp ứng yêu cầu về độ tương phản của WCAG (nhiệm vụ của nhà phát triển).</target>
+            </trans-unit>
+            <trans-unit id="hint.meta-viewport">
+                <source>Remove user-scalable=no from the viewport meta tag in the template (developer task).</source>
+                <target>Xóa user-scalable=no khỏi thẻ meta viewport trong template (nhiệm vụ của nhà phát triển).</target>
+            </trans-unit>
+            <trans-unit id="hint.frame-title">
+                <source>Add a title attribute to all iframe elements in the template (developer task).</source>
+                <target>Thêm thuộc tính title cho tất cả các phần tử iframe trong template (nhiệm vụ của nhà phát triển).</target>
+            </trans-unit>
+            <trans-unit id="hint.scrollable-region-focusable">
+                <source>Make scrollable regions keyboard-accessible in the template (developer task).</source>
+                <target>Làm cho các vùng có thể cuộn có thể truy cập bằng bàn phím trong template (nhiệm vụ của nhà phát triển).</target>
+            </trans-unit>
+            <trans-unit id="pageHint.label">
+                <source>Check Accessibility</source>
+                <target>Kiểm tra khả năng truy cập</target>
+            </trans-unit>
+            <trans-unit id="pageHint.title">
+                <source>Check accessibility for this page</source>
+                <target>Kiểm tra khả năng truy cập cho trang này</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="mt" datatype="plaintext" original="messages" date="2026-07-01T11:52:00Z" product-name="a11y_by_default">
+        <body>
+            <trans-unit id="module.noPage">
+                <source>Please select a page from the page tree to run the accessibility check.</source>
+                <target>Jekk jogħġbok agħżel paġna mis-siġra tal-paġni biex tibda l-verifika tal-aċċessibbiltà.</target>
+            </trans-unit>
+            <trans-unit id="module.scanButton">
+                <source>Run Accessibility Scan</source>
+                <target>Ibda l-Iskanjar tal-Aċċessibbiltà</target>
+            </trans-unit>
+            <trans-unit id="module.engineLabel">
+                <source>Scanning engine:</source>
+                <target>Magna tal-iskanjar:</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axe">
+                <source>axe-core (recommended)</source>
+                <target>axe-core (rakkomandat)</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcs">
+                <source>HTML CodeSniffer</source>
+                <target>HTML CodeSniffer</target>
+            </trans-unit>
+            <trans-unit id="module.auditDisclaimer">
+                <source>This module provides automated assistance for accessibility checks. It does not replace a full audit by qualified accessibility auditors, which is required to have a page officially certified as accessible.</source>
+                <target>Dan il-modulu jipprovdi assistenza awtomatizzata għall-verifiki tal-aċċessibbiltà. Ma jissostitwixxix awditu sħiħ minn awdituri tal-aċċessibbiltà kwalifikati, li huwa meħtieġ biex paġna tiġi ċertifikata uffiċjalment bħala aċċessibbli.</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axeInfo">
+                <source>axe-core (recommended) checks the page against the WCAG accessibility guidelines — the standard that ensures people using screen readers, keyboard navigation, or other assistive technology can use your content. It is the actively maintained, industry-standard tool and produces very few incorrect warnings, so almost everything it reports is worth acting on.</source>
+                <target>axe-core (rakkomandat) jivverifika l-paġna skont il-linji gwida tal-aċċessibbiltà WCAG — l-istandard li jiżgura li persuni li jużaw qarrejja tal-iskrin, navigazzjoni bit-tastiera, jew teknoloġija assistiva oħra jkunu jistgħu jużaw il-kontenut tiegħek. Huwa l-għodda standard fl-industrija li tinżamm attivament aġġornata u tipproduċi ftit ħafna twissijiet mhux korretti, għalhekk kważi kollox li tirrapporta jiswa li tindirizzah.</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcsInfo">
+                <source>HTML CodeSniffer checks the page against similar accessibility guidelines, but with an older, less refined method. It can occasionally point out issues axe-core misses, but it also produces many more results that need a closer manual look before you can tell whether something is really a problem. Use it only for a second opinion, not as your main scan.</source>
+                <target>HTML CodeSniffer jivverifika l-paġna skont linji gwida simili tal-aċċessibbiltà, iżda b'metodu iktar antik u anqas raffinat. Kultant jista' jsemmi problemi li axe-core ma jaqbadx, iżda jipproduċi ħafna iktar riżultati li jeħtieġu eżami manwali eqreb qabel ma tkun tista' tgħid jekk xi ħaġa hijiex verament problema. Uża dan biss bħala opinjoni sekondarja, mhux bħala l-iskanjar prinċipali tiegħek.</target>
+            </trans-unit>
+            <trans-unit id="module.loading">
+                <source>Loading page and running scan…</source>
+                <target>Qed tgħabba l-paġna u jitwettaq l-iskanjar…</target>
+            </trans-unit>
+            <trans-unit id="module.results.violations">
+                <source>Violations</source>
+                <target>Ksur</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete">
+                <source>Needs review</source>
+                <target>Jeħtieġ reviżjoni</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete.info">
+                <source>Automated scanning could not determine whether these items pass or fail. Each one needs to be checked manually.</source>
+                <target>L-iskanjar awtomatizzat ma setax jiddetermina jekk dawn l-elementi jgħaddux jew ifallux. Kull wieħed minnhom jeħtieġ jiġi vverifikat manwalment.</target>
+            </trans-unit>
+            <trans-unit id="module.results.passes">
+                <source>Passes</source>
+                <target>Jgħaddu</target>
+            </trans-unit>
+            <trans-unit id="module.results.empty">
+                <source>No accessibility issues found.</source>
+                <target>Ma nstabu l-ebda problemi ta' aċċessibbiltà.</target>
+            </trans-unit>
+            <trans-unit id="module.filters.label">
+                <source>Filters</source>
+                <target>Filtri</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severityLabel">
+                <source>Severity:</source>
+                <target>Severità:</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.critical">
+                <source>Critical</source>
+                <target>Kritika</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.serious">
+                <source>Serious</source>
+                <target>Serja</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.moderate">
+                <source>Moderate</source>
+                <target>Moderata</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.minor">
+                <source>Minor</source>
+                <target>Minuri</target>
+            </trans-unit>
+            <trans-unit id="module.filters.viewLabel">
+                <source>View</source>
+                <target>Veduta</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.editor">
+                <source>For editors</source>
+                <target>Għall-editors</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.developer">
+                <source>For developers</source>
+                <target>Għall-iżviluppaturi</target>
+            </trans-unit>
+            <trans-unit id="module.error.scanFailed">
+                <source>The accessibility scan could not be completed. Please try again.</source>
+                <target>L-iskanjar tal-aċċessibbiltà ma setax jitlesta. Jekk jogħġbok erġa' pprova.</target>
+            </trans-unit>
+            <trans-unit id="module.error.noPreview">
+                <source>No preview URL available for this page. Ensure the page has a valid site configuration.</source>
+                <target>Ma hemm ebda URL ta' previżjoni disponibbli għal din il-paġna. Iżgura li l-paġna għandha konfigurazzjoni tas-sit valida.</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt">
+                <source>Add an image description (alt text) in the content element editor.</source>
+                <target>Żid deskrizzjoni tal-immaġni (test alt) fl-editor tal-element tal-kontenut.</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt.developer">
+                <source>This image is not linked to editable content, or its alt text is set but not rendered. Check the template's image rendering (developer task).</source>
+                <target>Din l-immaġni mhix marbuta ma' kontenut editabbli, jew it-test alt tagħha huwa stabbilit iżda mhux rendrut. Iċċekkja r-rendering tal-immaġni fit-template (xogħol tal-iżviluppatur).</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt">
+                <source>Add an alt text to the image input element in the content editor.</source>
+                <target>Żid test alt mal-element ta' input tal-immaġni fl-editor tal-kontenut.</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt.developer">
+                <source>This image input is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>Dan l-input tal-immaġni mhux marbut ma' kontenut editabbli, jew it-test alt tiegħu huwa stabbilit iżda mhux rendrut. Iċċekkja r-rendering tat-template (xogħol tal-iżviluppatur).</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt">
+                <source>Add alt text to the image map area in the content editor.</source>
+                <target>Żid test alt maż-żona tal-mappa tal-immaġni fl-editor tal-kontenut.</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt.developer">
+                <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>Din iż-żona tal-mappa tal-immaġni mhix marbuta ma' kontenut editabbli, jew it-test alt tagħha huwa stabbilit iżda mhux rendrut. Iċċekkja r-rendering tat-template (xogħol tal-iżviluppatur).</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order">
+                <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
+                <target>Editja l-element tal-kontenut u biddel il-Layout tal-Intestatura tiegħu sabiex il-livelli tal-intestaturi ma jaqbżu ebda pass.</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order.developer">
+                <source>This heading is rendered by the page template rather than a content element. Adjust the heading structure in the Fluid template (developer task).</source>
+                <target>Din l-intestatura hija rrendruta mit-template tal-paġna minflok minn element tal-kontenut. Aġġusta l-istruttura tal-intestaturi fit-template Fluid (xogħol tal-iżviluppatur).</target>
+            </trans-unit>
+            <trans-unit id="hint.empty-heading">
+                <source>A heading element is rendered with no text. Check the template's heading rendering; it should not output a heading tag when the source text is empty (developer task).</source>
+                <target>Element ta' intestatura huwa rrendrut mingħajr test. Iċċekkja r-rendering tal-intestaturi fit-template; m'għandux joħroġ tag ta' intestatura meta t-test tas-sors ikun vojt (xogħol tal-iżviluppatur).</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name">
+                <source>Edit the link in the content editor and provide a descriptive link text.</source>
+                <target>Editja l-link fl-editor tal-kontenut u ipprovdi test tal-link deskrittiv.</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name.developer">
+                <source>This link is rendered by the page template without link text and isn't linked to editable content. Add visible text or an aria-label in the Fluid template (developer task).</source>
+                <target>Dan il-link huwa rrendrut mit-template tal-paġna mingħajr test tal-link u mhux marbut ma' kontenut editabbli. Żid test viżibbli jew aria-label fit-template Fluid (xogħol tal-iżviluppatur).</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr">
+                <source>Update the table structure in the content editor to associate data cells with headers.</source>
+                <target>Aġġorna l-istruttura tat-tabella fl-editor tal-kontenut biex tassoċja ċ-ċelloli tad-dejta mal-intestaturi.</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so data cells reference their headers (developer task).</source>
+                <target>Din it-tabella mhix marbuta ma' kontenut editabbli. Aġġorna l-istruttura tat-tabella fit-template sabiex iċ-ċelloli tad-dejta jirreferu għall-intestaturi tagħhom (xogħol tal-iżviluppatur).</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells">
+                <source>Update the table in the content editor so header cells have associated data cells.</source>
+                <target>Aġġorna t-tabella fl-editor tal-kontenut sabiex iċ-ċelloli tal-intestatura jkollhom ċelloli tad-dejta assoċjati.</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so header cells have associated data cells (developer task).</source>
+                <target>Din it-tabella mhix marbuta ma' kontenut editabbli. Aġġorna l-istruttura tat-tabella fit-template sabiex iċ-ċelloli tal-intestatura jkollhom ċelloli tad-dejta assoċjati (xogħol tal-iżviluppatur).</target>
+            </trans-unit>
+            <trans-unit id="hint.landmark-one-main">
+                <source>Add a main landmark element to the page template (developer task).</source>
+                <target>Żid element ewlieni ta' landmark mat-template tal-paġna (xogħol tal-iżviluppatur).</target>
+            </trans-unit>
+            <trans-unit id="hint.region">
+                <source>Ensure all page content is contained within appropriate landmark regions in the template (developer task).</source>
+                <target>Iżgura li l-kontenut kollu tal-paġna jkun konten f'reġjuni ta' landmark xierqa fit-template (xogħol tal-iżviluppatur).</target>
+            </trans-unit>
+            <trans-unit id="hint.bypass">
+                <source>Add a skip navigation link to the page template (developer task).</source>
+                <target>Żid link biex taqbeż in-navigazzjoni mat-template tal-paġna (xogħol tal-iżviluppatur).</target>
+            </trans-unit>
+            <trans-unit id="hint.html-has-lang">
+                <source>Set the lang attribute on the HTML element in the page template (developer task).</source>
+                <target>Issettja l-attribut lang fuq l-element HTML fit-template tal-paġna (xogħol tal-iżviluppatur).</target>
+            </trans-unit>
+            <trans-unit id="hint.html-lang-valid">
+                <source>Use a valid BCP 47 language tag on the HTML element (developer task).</source>
+                <target>Uża tag tal-lingwa BCP 47 validu fuq l-element HTML (xogħol tal-iżviluppatur).</target>
+            </trans-unit>
+            <trans-unit id="hint.color-contrast">
+                <source>Adjust CSS color values to meet WCAG contrast requirements (developer task).</source>
+                <target>Aġġusta l-valuri tal-kulur CSS biex jissodisfaw ir-rekwiżiti tal-kuntrast WCAG (xogħol tal-iżviluppatur).</target>
+            </trans-unit>
+            <trans-unit id="hint.meta-viewport">
+                <source>Remove user-scalable=no from the viewport meta tag in the template (developer task).</source>
+                <target>Neħħi user-scalable=no mit-tag meta tal-viewport fit-template (xogħol tal-iżviluppatur).</target>
+            </trans-unit>
+            <trans-unit id="hint.frame-title">
+                <source>Add a title attribute to all iframe elements in the template (developer task).</source>
+                <target>Żid attribut title mal-elementi kollha ta' iframe fit-template (xogħol tal-iżviluppatur).</target>
+            </trans-unit>
+            <trans-unit id="hint.scrollable-region-focusable">
+                <source>Make scrollable regions keyboard-accessible in the template (developer task).</source>
+                <target>Agħmel ir-reġjuni li jistgħu jiġu scrollati aċċessibbli bit-tastiera fit-template (xogħol tal-iżviluppatur).</target>
+            </trans-unit>
+            <trans-unit id="pageHint.label">
+                <source>Check Accessibility</source>
+                <target>Iċċekkja l-Aċċessibbiltà</target>
+            </trans-unit>
+            <trans-unit id="pageHint.title">
+                <source>Check accessibility for this page</source>
+                <target>Iċċekkja l-aċċessibbiltà għal din il-paġna</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

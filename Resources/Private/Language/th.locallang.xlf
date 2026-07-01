@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="th" datatype="plaintext" original="messages" date="2026-07-01T11:52:00Z" product-name="a11y_by_default">
+        <body>
+            <trans-unit id="module.noPage">
+                <source>Please select a page from the page tree to run the accessibility check.</source>
+                <target>กรุณาเลือกหน้าจากแผนผังหน้าเพื่อรันการตรวจสอบการช่วยเข้าถึง</target>
+            </trans-unit>
+            <trans-unit id="module.scanButton">
+                <source>Run Accessibility Scan</source>
+                <target>รันการสแกนการช่วยเข้าถึง</target>
+            </trans-unit>
+            <trans-unit id="module.engineLabel">
+                <source>Scanning engine:</source>
+                <target>เอนจินการสแกน:</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axe">
+                <source>axe-core (recommended)</source>
+                <target>axe-core (แนะนำ)</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcs">
+                <source>HTML CodeSniffer</source>
+                <target>HTML CodeSniffer</target>
+            </trans-unit>
+            <trans-unit id="module.auditDisclaimer">
+                <source>This module provides automated assistance for accessibility checks. It does not replace a full audit by qualified accessibility auditors, which is required to have a page officially certified as accessible.</source>
+                <target>โมดูลนี้ให้ความช่วยเหลือแบบอัตโนมัติสำหรับการตรวจสอบการช่วยเข้าถึง แต่ไม่สามารถใช้แทนการตรวจสอบอย่างเต็มรูปแบบโดยผู้ตรวจสอบการช่วยเข้าถึงที่มีคุณสมบัติเหมาะสม ซึ่งจำเป็นสำหรับการรับรองหน้าอย่างเป็นทางการว่าสามารถเข้าถึงได้</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axeInfo">
+                <source>axe-core (recommended) checks the page against the WCAG accessibility guidelines — the standard that ensures people using screen readers, keyboard navigation, or other assistive technology can use your content. It is the actively maintained, industry-standard tool and produces very few incorrect warnings, so almost everything it reports is worth acting on.</source>
+                <target>axe-core (แนะนำ) ตรวจสอบหน้าตามแนวทางการช่วยเข้าถึง WCAG — มาตรฐานที่ช่วยให้ผู้ที่ใช้โปรแกรมอ่านหน้าจอ การนำทางด้วยแป้นพิมพ์ หรือเทคโนโลยีสิ่งอำนวยความสะดวกอื่น ๆ สามารถใช้เนื้อหาของคุณได้ เป็นเครื่องมือมาตรฐานของอุตสาหกรรมที่ได้รับการดูแลอย่างต่อเนื่อง และให้คำเตือนที่ผิดพลาดน้อยมาก ดังนั้นสิ่งที่รายงานเกือบทั้งหมดจึงคุ้มค่าที่จะดำเนินการแก้ไข</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcsInfo">
+                <source>HTML CodeSniffer checks the page against similar accessibility guidelines, but with an older, less refined method. It can occasionally point out issues axe-core misses, but it also produces many more results that need a closer manual look before you can tell whether something is really a problem. Use it only for a second opinion, not as your main scan.</source>
+                <target>HTML CodeSniffer ตรวจสอบหน้าตามแนวทางการช่วยเข้าถึงที่คล้ายกัน แต่ใช้วิธีการที่เก่ากว่าและละเอียดน้อยกว่า บางครั้งอาจชี้ให้เห็นปัญหาที่ axe-core มองข้าม แต่ก็ให้ผลลัพธ์จำนวนมากขึ้นที่ต้องตรวจสอบด้วยตนเองอย่างละเอียดก่อนจะบอกได้ว่าเป็นปัญหาจริงหรือไม่ ใช้เครื่องมือนี้เพื่อเป็นความเห็นที่สองเท่านั้น ไม่ใช่การสแกนหลักของคุณ</target>
+            </trans-unit>
+            <trans-unit id="module.loading">
+                <source>Loading page and running scan…</source>
+                <target>กำลังโหลดหน้าและรันการสแกน…</target>
+            </trans-unit>
+            <trans-unit id="module.results.violations">
+                <source>Violations</source>
+                <target>ข้อผิดพลาด</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete">
+                <source>Needs review</source>
+                <target>ต้องตรวจสอบ</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete.info">
+                <source>Automated scanning could not determine whether these items pass or fail. Each one needs to be checked manually.</source>
+                <target>การสแกนอัตโนมัติไม่สามารถระบุได้ว่ารายการเหล่านี้ผ่านหรือไม่ผ่าน จำเป็นต้องตรวจสอบด้วยตนเองทีละรายการ</target>
+            </trans-unit>
+            <trans-unit id="module.results.passes">
+                <source>Passes</source>
+                <target>ผ่าน</target>
+            </trans-unit>
+            <trans-unit id="module.results.empty">
+                <source>No accessibility issues found.</source>
+                <target>ไม่พบปัญหาการช่วยเข้าถึง</target>
+            </trans-unit>
+            <trans-unit id="module.filters.label">
+                <source>Filters</source>
+                <target>ตัวกรอง</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severityLabel">
+                <source>Severity:</source>
+                <target>ระดับความรุนแรง:</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.critical">
+                <source>Critical</source>
+                <target>วิกฤต</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.serious">
+                <source>Serious</source>
+                <target>รุนแรง</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.moderate">
+                <source>Moderate</source>
+                <target>ปานกลาง</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.minor">
+                <source>Minor</source>
+                <target>เล็กน้อย</target>
+            </trans-unit>
+            <trans-unit id="module.filters.viewLabel">
+                <source>View</source>
+                <target>มุมมอง</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.editor">
+                <source>For editors</source>
+                <target>สำหรับผู้แก้ไขเนื้อหา</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.developer">
+                <source>For developers</source>
+                <target>สำหรับนักพัฒนา</target>
+            </trans-unit>
+            <trans-unit id="module.error.scanFailed">
+                <source>The accessibility scan could not be completed. Please try again.</source>
+                <target>ไม่สามารถทำการสแกนการช่วยเข้าถึงให้เสร็จสมบูรณ์ได้ กรุณาลองอีกครั้ง</target>
+            </trans-unit>
+            <trans-unit id="module.error.noPreview">
+                <source>No preview URL available for this page. Ensure the page has a valid site configuration.</source>
+                <target>ไม่มี URL ตัวอย่างสำหรับหน้านี้ กรุณาตรวจสอบว่าหน้านี้มีการกำหนดค่าไซต์ที่ถูกต้อง</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt">
+                <source>Add an image description (alt text) in the content element editor.</source>
+                <target>เพิ่มคำอธิบายภาพ (alt text) ในตัวแก้ไของค์ประกอบเนื้อหา</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt.developer">
+                <source>This image is not linked to editable content, or its alt text is set but not rendered. Check the template's image rendering (developer task).</source>
+                <target>ภาพนี้ไม่ได้เชื่อมโยงกับเนื้อหาที่แก้ไขได้ หรือมีการกำหนด alt text แล้วแต่ไม่ถูกแสดงผล กรุณาตรวจสอบการแสดงผลภาพในเทมเพลต (งานของนักพัฒนา)</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt">
+                <source>Add an alt text to the image input element in the content editor.</source>
+                <target>เพิ่ม alt text ให้กับองค์ประกอบอินพุตภาพในตัวแก้ไขเนื้อหา</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt.developer">
+                <source>This image input is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>อินพุตภาพนี้ไม่ได้เชื่อมโยงกับเนื้อหาที่แก้ไขได้ หรือมีการกำหนด alt text แล้วแต่ไม่ถูกแสดงผล กรุณาตรวจสอบการแสดงผลในเทมเพลต (งานของนักพัฒนา)</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt">
+                <source>Add alt text to the image map area in the content editor.</source>
+                <target>เพิ่ม alt text ให้กับพื้นที่แผนที่ภาพในตัวแก้ไขเนื้อหา</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt.developer">
+                <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>พื้นที่แผนที่ภาพนี้ไม่ได้เชื่อมโยงกับเนื้อหาที่แก้ไขได้ หรือมีการกำหนด alt text แล้วแต่ไม่ถูกแสดงผล กรุณาตรวจสอบการแสดงผลในเทมเพลต (งานของนักพัฒนา)</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order">
+                <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
+                <target>แก้ไของค์ประกอบเนื้อหาและเปลี่ยนรูปแบบหัวเรื่องเพื่อไม่ให้ระดับหัวเรื่องข้ามลำดับ</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order.developer">
+                <source>This heading is rendered by the page template rather than a content element. Adjust the heading structure in the Fluid template (developer task).</source>
+                <target>หัวเรื่องนี้ถูกแสดงผลโดยเทมเพลตของหน้า ไม่ใช่องค์ประกอบเนื้อหา กรุณาปรับโครงสร้างหัวเรื่องในเทมเพลต Fluid (งานของนักพัฒนา)</target>
+            </trans-unit>
+            <trans-unit id="hint.empty-heading">
+                <source>A heading element is rendered with no text. Check the template's heading rendering; it should not output a heading tag when the source text is empty (developer task).</source>
+                <target>องค์ประกอบหัวเรื่องถูกแสดงผลโดยไม่มีข้อความ กรุณาตรวจสอบการแสดงผลหัวเรื่องในเทมเพลต ควรไม่แสดงแท็กหัวเรื่องเมื่อข้อความต้นฉบับว่างเปล่า (งานของนักพัฒนา)</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name">
+                <source>Edit the link in the content editor and provide a descriptive link text.</source>
+                <target>แก้ไขลิงก์ในตัวแก้ไขเนื้อหาและระบุข้อความลิงก์ที่สื่อความหมาย</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name.developer">
+                <source>This link is rendered by the page template without link text and isn't linked to editable content. Add visible text or an aria-label in the Fluid template (developer task).</source>
+                <target>ลิงก์นี้ถูกแสดงผลโดยเทมเพลตของหน้าโดยไม่มีข้อความลิงก์ และไม่ได้เชื่อมโยงกับเนื้อหาที่แก้ไขได้ กรุณาเพิ่มข้อความที่มองเห็นได้หรือ aria-label ในเทมเพลต Fluid (งานของนักพัฒนา)</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr">
+                <source>Update the table structure in the content editor to associate data cells with headers.</source>
+                <target>อัปเดตโครงสร้างตารางในตัวแก้ไขเนื้อหาเพื่อเชื่อมโยงเซลล์ข้อมูลกับส่วนหัว</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so data cells reference their headers (developer task).</source>
+                <target>ตารางนี้ไม่ได้เชื่อมโยงกับเนื้อหาที่แก้ไขได้ กรุณาอัปเดตโครงสร้างตารางในเทมเพลตให้เซลล์ข้อมูลอ้างอิงไปยังส่วนหัวของตน (งานของนักพัฒนา)</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells">
+                <source>Update the table in the content editor so header cells have associated data cells.</source>
+                <target>อัปเดตตารางในตัวแก้ไขเนื้อหาให้เซลล์ส่วนหัวมีเซลล์ข้อมูลที่เชื่อมโยงอยู่</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so header cells have associated data cells (developer task).</source>
+                <target>ตารางนี้ไม่ได้เชื่อมโยงกับเนื้อหาที่แก้ไขได้ กรุณาอัปเดตโครงสร้างตารางในเทมเพลตให้เซลล์ส่วนหัวมีเซลล์ข้อมูลที่เชื่อมโยงอยู่ (งานของนักพัฒนา)</target>
+            </trans-unit>
+            <trans-unit id="hint.landmark-one-main">
+                <source>Add a main landmark element to the page template (developer task).</source>
+                <target>เพิ่มองค์ประกอบ landmark หลัก (main) ในเทมเพลตของหน้า (งานของนักพัฒนา)</target>
+            </trans-unit>
+            <trans-unit id="hint.region">
+                <source>Ensure all page content is contained within appropriate landmark regions in the template (developer task).</source>
+                <target>ตรวจสอบให้แน่ใจว่าเนื้อหาทั้งหมดของหน้าถูกบรรจุอยู่ในพื้นที่ landmark ที่เหมาะสมในเทมเพลต (งานของนักพัฒนา)</target>
+            </trans-unit>
+            <trans-unit id="hint.bypass">
+                <source>Add a skip navigation link to the page template (developer task).</source>
+                <target>เพิ่มลิงก์ข้ามการนำทางในเทมเพลตของหน้า (งานของนักพัฒนา)</target>
+            </trans-unit>
+            <trans-unit id="hint.html-has-lang">
+                <source>Set the lang attribute on the HTML element in the page template (developer task).</source>
+                <target>กำหนดแอตทริบิวต์ lang บนองค์ประกอบ HTML ในเทมเพลตของหน้า (งานของนักพัฒนา)</target>
+            </trans-unit>
+            <trans-unit id="hint.html-lang-valid">
+                <source>Use a valid BCP 47 language tag on the HTML element (developer task).</source>
+                <target>ใช้แท็กภาษา BCP 47 ที่ถูกต้องบนองค์ประกอบ HTML (งานของนักพัฒนา)</target>
+            </trans-unit>
+            <trans-unit id="hint.color-contrast">
+                <source>Adjust CSS color values to meet WCAG contrast requirements (developer task).</source>
+                <target>ปรับค่าสี CSS ให้ตรงตามข้อกำหนดความเปรียบต่างของ WCAG (งานของนักพัฒนา)</target>
+            </trans-unit>
+            <trans-unit id="hint.meta-viewport">
+                <source>Remove user-scalable=no from the viewport meta tag in the template (developer task).</source>
+                <target>ลบ user-scalable=no ออกจากแท็ก meta viewport ในเทมเพลต (งานของนักพัฒนา)</target>
+            </trans-unit>
+            <trans-unit id="hint.frame-title">
+                <source>Add a title attribute to all iframe elements in the template (developer task).</source>
+                <target>เพิ่มแอตทริบิวต์ title ให้กับองค์ประกอบ iframe ทั้งหมดในเทมเพลต (งานของนักพัฒนา)</target>
+            </trans-unit>
+            <trans-unit id="hint.scrollable-region-focusable">
+                <source>Make scrollable regions keyboard-accessible in the template (developer task).</source>
+                <target>ทำให้พื้นที่ที่เลื่อนได้สามารถเข้าถึงได้ด้วยแป้นพิมพ์ในเทมเพลต (งานของนักพัฒนา)</target>
+            </trans-unit>
+            <trans-unit id="pageHint.label">
+                <source>Check Accessibility</source>
+                <target>ตรวจสอบการช่วยเข้าถึง</target>
+            </trans-unit>
+            <trans-unit id="pageHint.title">
+                <source>Check accessibility for this page</source>
+                <target>ตรวจสอบการช่วยเข้าถึงสำหรับหน้านี้</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

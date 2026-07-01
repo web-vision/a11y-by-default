@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="mi" datatype="plaintext" original="messages" date="2026-07-01T11:52:00Z" product-name="a11y_by_default">
+        <body>
+            <trans-unit id="module.noPage">
+                <source>Please select a page from the page tree to run the accessibility check.</source>
+                <target>Tēnā kōwhiria he whārangi mai i te rākau whārangi kia oti ai te arotake ura urunga.</target>
+            </trans-unit>
+            <trans-unit id="module.scanButton">
+                <source>Run Accessibility Scan</source>
+                <target>Whakahaerehia te Mātai Urunga</target>
+            </trans-unit>
+            <trans-unit id="module.engineLabel">
+                <source>Scanning engine:</source>
+                <target>Pūkaha mātai:</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axe">
+                <source>axe-core (recommended)</source>
+                <target>axe-core (e tūtohutia)</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcs">
+                <source>HTML CodeSniffer</source>
+                <target>HTML CodeSniffer</target>
+            </trans-unit>
+            <trans-unit id="module.auditDisclaimer">
+                <source>This module provides automated assistance for accessibility checks. It does not replace a full audit by qualified accessibility auditors, which is required to have a page officially certified as accessible.</source>
+                <target>Ka whakarato tēnei kōwae i tētahi āwhina aunoa mō ngā arotake urunga. Ehara i te whakakapi mō tētahi arotake tino whānui e mahia ana e ngā kaiarotake urunga whai mana, arā te mea e hiahiatia ana kia tapaea he whārangi hei mea urunga i runga i te mana whaimana.</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axeInfo">
+                <source>axe-core (recommended) checks the page against the WCAG accessibility guidelines — the standard that ensures people using screen readers, keyboard navigation, or other assistive technology can use your content. It is the actively maintained, industry-standard tool and produces very few incorrect warnings, so almost everything it reports is worth acting on.</source>
+                <target>Ka arotakehia e axe-core (e tūtohutia) te whārangi kia rite ki ngā aratohu urunga WCAG — te paearu e whakaū ana ka taea e te tangata e whakamahi ana i te kaipānui mata, te whakatere paepātōtara, me ētahi atu hangarau āwhina te whakamahi i tō ihirangi. Ko ia te taputapu e tiakina ana i ngā wā katoa, he paerewa mō te umanga, ā, he iti noa ana whakatūpato hē, nā reira, tata ki te katoa o āna pūrongo he mea whaitake kia mahia he mahi.</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcsInfo">
+                <source>HTML CodeSniffer checks the page against similar accessibility guidelines, but with an older, less refined method. It can occasionally point out issues axe-core misses, but it also produces many more results that need a closer manual look before you can tell whether something is really a problem. Use it only for a second opinion, not as your main scan.</source>
+                <target>Ka arotakehia e HTML CodeSniffer te whārangi kia rite ki ētahi aratohu urunga ōrite, engari mā tētahi tikanga tawhito ake, kāore i te tino whakapaipai. I ētahi wā ka kitea e ia ngā take kāore i kitea e axe-core, engari he tini ake anō ōna hua e hiahiatia ana kia tirotirohia mārika e te tangata i mua i te mōhiotanga mēnā he raru pono tēnā mea. Whakamahia noa hei whakaaro tuarua, kaua hei mātai matua māu.</target>
+            </trans-unit>
+            <trans-unit id="module.loading">
+                <source>Loading page and running scan…</source>
+                <target>Kei te uta whārangi, kei te whakahaere mātai…</target>
+            </trans-unit>
+            <trans-unit id="module.results.violations">
+                <source>Violations</source>
+                <target>Ngā Takahi</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete">
+                <source>Needs review</source>
+                <target>E hiahia ana ki te arotakehia</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete.info">
+                <source>Automated scanning could not determine whether these items pass or fail. Each one needs to be checked manually.</source>
+                <target>Kāore i taea e te mātai aunoa te whakatau mēnā ka paremata, ka hē rānei, ēnei tūmomo. Me tirotirohia e te tangata takitahi ia mea.</target>
+            </trans-unit>
+            <trans-unit id="module.results.passes">
+                <source>Passes</source>
+                <target>Ngā Paremata</target>
+            </trans-unit>
+            <trans-unit id="module.results.empty">
+                <source>No accessibility issues found.</source>
+                <target>Kāore he take urunga i kitea.</target>
+            </trans-unit>
+            <trans-unit id="module.filters.label">
+                <source>Filters</source>
+                <target>Ngā Tātari</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severityLabel">
+                <source>Severity:</source>
+                <target>Te Kaha:</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.critical">
+                <source>Critical</source>
+                <target>Tino Nui</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.serious">
+                <source>Serious</source>
+                <target>Nui</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.moderate">
+                <source>Moderate</source>
+                <target>Waenga</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.minor">
+                <source>Minor</source>
+                <target>Iti</target>
+            </trans-unit>
+            <trans-unit id="module.filters.viewLabel">
+                <source>View</source>
+                <target>Tirohanga</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.editor">
+                <source>For editors</source>
+                <target>Mō ngā ētita</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.developer">
+                <source>For developers</source>
+                <target>Mō ngā kaiwhakawhanake</target>
+            </trans-unit>
+            <trans-unit id="module.error.scanFailed">
+                <source>The accessibility scan could not be completed. Please try again.</source>
+                <target>Kāore i taea te whakaoti i te mātai urunga. Tēnā whakamātauria anō.</target>
+            </trans-unit>
+            <trans-unit id="module.error.noPreview">
+                <source>No preview URL available for this page. Ensure the page has a valid site configuration.</source>
+                <target>Kāore he URL arokite e wātea ana mō tēnei whārangi. Whakaūhia kei te whai whakaritenga pae whaimana te whārangi.</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt">
+                <source>Add an image description (alt text) in the content element editor.</source>
+                <target>Tāpirihia he whakaahuatanga whakaahua (kuputuhi alt) i te ētita huānga ihirangi.</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt.developer">
+                <source>This image is not linked to editable content, or its alt text is set but not rendered. Check the template's image rendering (developer task).</source>
+                <target>Kāore tēnei whakaahua i hono ki te ihirangi taea te whakatika, kua tautuhia rānei tāna kuputuhi alt engari kāore i te whakaahuahia. Tirohia te whakaahuahanga whakaahua o te momo tīkanga (mahi mā te kaiwhakawhanake).</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt">
+                <source>Add an alt text to the image input element in the content editor.</source>
+                <target>Tāpirihia he kuputuhi alt ki te huānga whakauru whakaahua i te ētita ihirangi.</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt.developer">
+                <source>This image input is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>Kāore tēnei whakauru whakaahua i hono ki te ihirangi taea te whakatika, kua tautuhia rānei tāna kuputuhi alt engari kāore i te whakaahuahia. Tirohia te whakaahuahanga o te momo tīkanga (mahi mā te kaiwhakawhanake).</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt">
+                <source>Add alt text to the image map area in the content editor.</source>
+                <target>Tāpirihia he kuputuhi alt ki te wāhi mahere whakaahua i te ētita ihirangi.</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt.developer">
+                <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>Kāore tēnei wāhi mahere whakaahua i hono ki te ihirangi taea te whakatika, kua tautuhia rānei tāna kuputuhi alt engari kāore i te whakaahuahia. Tirohia te whakaahuahanga o te momo tīkanga (mahi mā te kaiwhakawhanake).</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order">
+                <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
+                <target>Whakatikahia te huānga ihirangi, whakarērekētia tāna Whakatakotoranga Pane kia kore ai ngā taumata pane e peke i tētahi taumata.</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order.developer">
+                <source>This heading is rendered by the page template rather than a content element. Adjust the heading structure in the Fluid template (developer task).</source>
+                <target>Ka whakaahuahia tēnei pane e te momo tīkanga whārangi, ehara i te huānga ihirangi. Whakatikahia te hanganga pane i te momo tīkanga Fluid (mahi mā te kaiwhakawhanake).</target>
+            </trans-unit>
+            <trans-unit id="hint.empty-heading">
+                <source>A heading element is rendered with no text. Check the template's heading rendering; it should not output a heading tag when the source text is empty (developer task).</source>
+                <target>Kua whakaahuahia tētahi huānga pane me te kore kuputuhi. Tirohia te whakaahuahanga pane o te momo tīkanga; kaua ia e tuku i tētahi tūtohu pane ina kore he kuputuhi mātāpuna (mahi mā te kaiwhakawhanake).</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name">
+                <source>Edit the link in the content editor and provide a descriptive link text.</source>
+                <target>Whakatikahia te hononga i te ētita ihirangi, whakaritea he kuputuhi hononga whakaahuatanga.</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name.developer">
+                <source>This link is rendered by the page template without link text and isn't linked to editable content. Add visible text or an aria-label in the Fluid template (developer task).</source>
+                <target>Ka whakaahuahia tēnei hononga e te momo tīkanga whārangi me te kore kuputuhi hononga, kāore anō hoki i hono ki te ihirangi taea te whakatika. Tāpirihia he kuputuhi kitea, he aria-label rānei ki te momo tīkanga Fluid (mahi mā te kaiwhakawhanake).</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr">
+                <source>Update the table structure in the content editor to associate data cells with headers.</source>
+                <target>Whakahoutia te hanganga ripanga i te ētita ihirangi kia hono ai ngā pūkoro raraunga ki ō rātou pane.</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so data cells reference their headers (developer task).</source>
+                <target>Kāore tēnei ripanga i hono ki te ihirangi taea te whakatika. Whakahoutia te hanganga ripanga i te momo tīkanga kia tohu ai ngā pūkoro raraunga ki ō rātou pane (mahi mā te kaiwhakawhanake).</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells">
+                <source>Update the table in the content editor so header cells have associated data cells.</source>
+                <target>Whakahoutia te ripanga i te ētita ihirangi kia whai pūkoro raraunga honoa ai ngā pūkoro pane.</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so header cells have associated data cells (developer task).</source>
+                <target>Kāore tēnei ripanga i hono ki te ihirangi taea te whakatika. Whakahoutia te hanganga ripanga i te momo tīkanga kia whai pūkoro raraunga honoa ai ngā pūkoro pane (mahi mā te kaiwhakawhanake).</target>
+            </trans-unit>
+            <trans-unit id="hint.landmark-one-main">
+                <source>Add a main landmark element to the page template (developer task).</source>
+                <target>Tāpirihia he huānga tohu matua ki te momo tīkanga whārangi (mahi mā te kaiwhakawhanake).</target>
+            </trans-unit>
+            <trans-unit id="hint.region">
+                <source>Ensure all page content is contained within appropriate landmark regions in the template (developer task).</source>
+                <target>Whakaūhia kei roto katoa te ihirangi whārangi i ngā rohe tohu tika i te momo tīkanga (mahi mā te kaiwhakawhanake).</target>
+            </trans-unit>
+            <trans-unit id="hint.bypass">
+                <source>Add a skip navigation link to the page template (developer task).</source>
+                <target>Tāpirihia he hononga peke whakatere ki te momo tīkanga whārangi (mahi mā te kaiwhakawhanake).</target>
+            </trans-unit>
+            <trans-unit id="hint.html-has-lang">
+                <source>Set the lang attribute on the HTML element in the page template (developer task).</source>
+                <target>Tautuhia te āhuatanga lang ki te huānga HTML i te momo tīkanga whārangi (mahi mā te kaiwhakawhanake).</target>
+            </trans-unit>
+            <trans-unit id="hint.html-lang-valid">
+                <source>Use a valid BCP 47 language tag on the HTML element (developer task).</source>
+                <target>Whakamahia he tūtohu reo BCP 47 whaimana ki te huānga HTML (mahi mā te kaiwhakawhanake).</target>
+            </trans-unit>
+            <trans-unit id="hint.color-contrast">
+                <source>Adjust CSS color values to meet WCAG contrast requirements (developer task).</source>
+                <target>Whakatikahia ngā uara tae CSS kia tutuki ai ngā herenga kētahitanga WCAG (mahi mā te kaiwhakawhanake).</target>
+            </trans-unit>
+            <trans-unit id="hint.meta-viewport">
+                <source>Remove user-scalable=no from the viewport meta tag in the template (developer task).</source>
+                <target>Tangohia te user-scalable=no mai i te tūtohu meta viewport i te momo tīkanga (mahi mā te kaiwhakawhanake).</target>
+            </trans-unit>
+            <trans-unit id="hint.frame-title">
+                <source>Add a title attribute to all iframe elements in the template (developer task).</source>
+                <target>Tāpirihia he āhuatanga taitara ki ngā huānga iframe katoa i te momo tīkanga (mahi mā te kaiwhakawhanake).</target>
+            </trans-unit>
+            <trans-unit id="hint.scrollable-region-focusable">
+                <source>Make scrollable regions keyboard-accessible in the template (developer task).</source>
+                <target>Kia taea ai e te papapātuhi te uru ki ngā rohe pānuku i te momo tīkanga (mahi mā te kaiwhakawhanake).</target>
+            </trans-unit>
+            <trans-unit id="pageHint.label">
+                <source>Check Accessibility</source>
+                <target>Arotakehia te Urunga</target>
+            </trans-unit>
+            <trans-unit id="pageHint.title">
+                <source>Check accessibility for this page</source>
+                <target>Arotakehia te urunga mō tēnei whārangi</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

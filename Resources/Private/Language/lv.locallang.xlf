@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="lv" datatype="plaintext" original="messages" date="2026-07-01T11:52:00Z" product-name="a11y_by_default">
+        <body>
+            <trans-unit id="module.noPage">
+                <source>Please select a page from the page tree to run the accessibility check.</source>
+                <target>Lūdzu, izvēlieties lapu no lapu koka, lai palaistu pieejamības pārbaudi.</target>
+            </trans-unit>
+            <trans-unit id="module.scanButton">
+                <source>Run Accessibility Scan</source>
+                <target>Palaist pieejamības skenēšanu</target>
+            </trans-unit>
+            <trans-unit id="module.engineLabel">
+                <source>Scanning engine:</source>
+                <target>Skenēšanas dzinis:</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axe">
+                <source>axe-core (recommended)</source>
+                <target>axe-core (ieteicams)</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcs">
+                <source>HTML CodeSniffer</source>
+                <target>HTML CodeSniffer</target>
+            </trans-unit>
+            <trans-unit id="module.auditDisclaimer">
+                <source>This module provides automated assistance for accessibility checks. It does not replace a full audit by qualified accessibility auditors, which is required to have a page officially certified as accessible.</source>
+                <target>Šis modulis nodrošina automatizētu atbalstu pieejamības pārbaudēm. Tas neaizstāj pilnu auditu, ko veic kvalificēti pieejamības auditori, kas nepieciešams, lai lapa tiktu oficiāli sertificēta kā pieejama.</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axeInfo">
+                <source>axe-core (recommended) checks the page against the WCAG accessibility guidelines — the standard that ensures people using screen readers, keyboard navigation, or other assistive technology can use your content. It is the actively maintained, industry-standard tool and produces very few incorrect warnings, so almost everything it reports is worth acting on.</source>
+                <target>axe-core (ieteicams) pārbauda lapu atbilstoši WCAG pieejamības vadlīnijām — standartam, kas nodrošina, ka cilvēki, kuri izmanto ekrāna lasītājus, tastatūras navigāciju vai citu palīgtehnoloģiju, var lietot jūsu saturu. Tas ir aktīvi uzturēts, nozares standarta rīks, kas rada ļoti maz kļūdainu brīdinājumu, tāpēc gandrīz par visu, ko tas paziņo, ir vērts rīkoties.</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcsInfo">
+                <source>HTML CodeSniffer checks the page against similar accessibility guidelines, but with an older, less refined method. It can occasionally point out issues axe-core misses, but it also produces many more results that need a closer manual look before you can tell whether something is really a problem. Use it only for a second opinion, not as your main scan.</source>
+                <target>HTML CodeSniffer pārbauda lapu atbilstoši līdzīgām pieejamības vadlīnijām, bet ar vecāku, mazāk pilnveidotu metodi. Tas dažkārt var norādīt uz problēmām, ko axe-core nepamana, bet tas arī rada daudz vairāk rezultātu, kuriem nepieciešams tuvāks manuāls apskats, pirms var noteikt, vai tā tiešām ir problēma. Izmantojiet to tikai kā otro atzinumu, nevis kā galveno skenēšanu.</target>
+            </trans-unit>
+            <trans-unit id="module.loading">
+                <source>Loading page and running scan…</source>
+                <target>Lapa tiek ielādēta, un skenēšana tiek veikta…</target>
+            </trans-unit>
+            <trans-unit id="module.results.violations">
+                <source>Violations</source>
+                <target>Pārkāpumi</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete">
+                <source>Needs review</source>
+                <target>Nepieciešama pārbaude</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete.info">
+                <source>Automated scanning could not determine whether these items pass or fail. Each one needs to be checked manually.</source>
+                <target>Automatizētā skenēšana nevarēja noteikt, vai šie vienumi atbilst prasībām vai ne. Katrs no tiem jāpārbauda manuāli.</target>
+            </trans-unit>
+            <trans-unit id="module.results.passes">
+                <source>Passes</source>
+                <target>Atbilstības</target>
+            </trans-unit>
+            <trans-unit id="module.results.empty">
+                <source>No accessibility issues found.</source>
+                <target>Pieejamības problēmas nav atrastas.</target>
+            </trans-unit>
+            <trans-unit id="module.filters.label">
+                <source>Filters</source>
+                <target>Filtri</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severityLabel">
+                <source>Severity:</source>
+                <target>Nozīmīgums:</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.critical">
+                <source>Critical</source>
+                <target>Kritisks</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.serious">
+                <source>Serious</source>
+                <target>Nozīmīgs</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.moderate">
+                <source>Moderate</source>
+                <target>Vidējs</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.minor">
+                <source>Minor</source>
+                <target>Neliels</target>
+            </trans-unit>
+            <trans-unit id="module.filters.viewLabel">
+                <source>View</source>
+                <target>Skats</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.editor">
+                <source>For editors</source>
+                <target>Redaktoriem</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.developer">
+                <source>For developers</source>
+                <target>Izstrādātājiem</target>
+            </trans-unit>
+            <trans-unit id="module.error.scanFailed">
+                <source>The accessibility scan could not be completed. Please try again.</source>
+                <target>Pieejamības skenēšanu nebija iespējams pabeigt. Lūdzu, mēģiniet vēlreiz.</target>
+            </trans-unit>
+            <trans-unit id="module.error.noPreview">
+                <source>No preview URL available for this page. Ensure the page has a valid site configuration.</source>
+                <target>Šai lapai nav pieejama priekšskatījuma URL adrese. Pārliecinieties, ka lapai ir derīga vietnes konfigurācija.</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt">
+                <source>Add an image description (alt text) in the content element editor.</source>
+                <target>Pievienojiet attēla aprakstu (alt tekstu) satura elementa redaktorā.</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt.developer">
+                <source>This image is not linked to editable content, or its alt text is set but not rendered. Check the template's image rendering (developer task).</source>
+                <target>Šis attēls nav saistīts ar redigējamu saturu, vai tā alt teksts ir iestatīts, bet netiek atveidots. Pārbaudiet veidnes attēlu atveidošanu (izstrādātāja uzdevums).</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt">
+                <source>Add an alt text to the image input element in the content editor.</source>
+                <target>Pievienojiet alt tekstu attēla ievades elementam satura redaktorā.</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt.developer">
+                <source>This image input is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>Šis attēla ievades elements nav saistīts ar redigējamu saturu, vai tā alt teksts ir iestatīts, bet netiek atveidots. Pārbaudiet veidnes atveidošanu (izstrādātāja uzdevums).</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt">
+                <source>Add alt text to the image map area in the content editor.</source>
+                <target>Pievienojiet alt tekstu attēla kartes apgabalam satura redaktorā.</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt.developer">
+                <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>Šis attēla kartes apgabals nav saistīts ar redigējamu saturu, vai tā alt teksts ir iestatīts, bet netiek atveidots. Pārbaudiet veidnes atveidošanu (izstrādātāja uzdevums).</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order">
+                <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
+                <target>Redigējiet satura elementu un mainiet tā virsraksta izkārtojumu, lai virsrakstu līmeņi nepārlaistu soli.</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order.developer">
+                <source>This heading is rendered by the page template rather than a content element. Adjust the heading structure in the Fluid template (developer task).</source>
+                <target>Šo virsrakstu atveido lapas veidne, nevis satura elements. Pielāgojiet virsrakstu struktūru Fluid veidnē (izstrādātāja uzdevums).</target>
+            </trans-unit>
+            <trans-unit id="hint.empty-heading">
+                <source>A heading element is rendered with no text. Check the template's heading rendering; it should not output a heading tag when the source text is empty (developer task).</source>
+                <target>Virsraksta elements ir atveidots bez teksta. Pārbaudiet veidnes virsraksta atveidošanu; tai nevajadzētu izvadīt virsraksta tagu, ja avota teksts ir tukšs (izstrādātāja uzdevums).</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name">
+                <source>Edit the link in the content editor and provide a descriptive link text.</source>
+                <target>Redigējiet saiti satura redaktorā un norādiet aprakstošu saites tekstu.</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name.developer">
+                <source>This link is rendered by the page template without link text and isn't linked to editable content. Add visible text or an aria-label in the Fluid template (developer task).</source>
+                <target>Šo saiti atveido lapas veidne bez saites teksta, un tā nav saistīta ar redigējamu saturu. Pievienojiet redzamu tekstu vai aria-label atribūtu Fluid veidnē (izstrādātāja uzdevums).</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr">
+                <source>Update the table structure in the content editor to associate data cells with headers.</source>
+                <target>Atjauniniet tabulas struktūru satura redaktorā, lai saistītu datu šūnas ar galvenēm.</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so data cells reference their headers (developer task).</source>
+                <target>Šī tabula nav saistīta ar redigējamu saturu. Atjauniniet tabulas struktūru veidnē, lai datu šūnas norādītu uz savām galvenēm (izstrādātāja uzdevums).</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells">
+                <source>Update the table in the content editor so header cells have associated data cells.</source>
+                <target>Atjauniniet tabulu satura redaktorā, lai galvenes šūnām būtu saistītas datu šūnas.</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so header cells have associated data cells (developer task).</source>
+                <target>Šī tabula nav saistīta ar redigējamu saturu. Atjauniniet tabulas struktūru veidnē, lai galvenes šūnām būtu saistītas datu šūnas (izstrādātāja uzdevums).</target>
+            </trans-unit>
+            <trans-unit id="hint.landmark-one-main">
+                <source>Add a main landmark element to the page template (developer task).</source>
+                <target>Pievienojiet galveno atskaites punkta (landmark) elementu lapas veidnei (izstrādātāja uzdevums).</target>
+            </trans-unit>
+            <trans-unit id="hint.region">
+                <source>Ensure all page content is contained within appropriate landmark regions in the template (developer task).</source>
+                <target>Pārliecinieties, ka viss lapas saturs veidnē ir ietverts atbilstošos atskaites punktu (landmark) reģionos (izstrādātāja uzdevums).</target>
+            </trans-unit>
+            <trans-unit id="hint.bypass">
+                <source>Add a skip navigation link to the page template (developer task).</source>
+                <target>Pievienojiet navigācijas apiešanas saiti lapas veidnei (izstrādātāja uzdevums).</target>
+            </trans-unit>
+            <trans-unit id="hint.html-has-lang">
+                <source>Set the lang attribute on the HTML element in the page template (developer task).</source>
+                <target>Iestatiet lang atribūtu HTML elementam lapas veidnē (izstrādātāja uzdevums).</target>
+            </trans-unit>
+            <trans-unit id="hint.html-lang-valid">
+                <source>Use a valid BCP 47 language tag on the HTML element (developer task).</source>
+                <target>Izmantojiet derīgu BCP 47 valodas apzīmējumu HTML elementam (izstrādātāja uzdevums).</target>
+            </trans-unit>
+            <trans-unit id="hint.color-contrast">
+                <source>Adjust CSS color values to meet WCAG contrast requirements (developer task).</source>
+                <target>Pielāgojiet CSS krāsu vērtības, lai izpildītu WCAG kontrasta prasības (izstrādātāja uzdevums).</target>
+            </trans-unit>
+            <trans-unit id="hint.meta-viewport">
+                <source>Remove user-scalable=no from the viewport meta tag in the template (developer task).</source>
+                <target>Noņemiet user-scalable=no no viewport meta taga veidnē (izstrādātāja uzdevums).</target>
+            </trans-unit>
+            <trans-unit id="hint.frame-title">
+                <source>Add a title attribute to all iframe elements in the template (developer task).</source>
+                <target>Pievienojiet title atribūtu visiem iframe elementiem veidnē (izstrādātāja uzdevums).</target>
+            </trans-unit>
+            <trans-unit id="hint.scrollable-region-focusable">
+                <source>Make scrollable regions keyboard-accessible in the template (developer task).</source>
+                <target>Padariet ritināmos apgabalus pieejamus ar tastatūru veidnē (izstrādātāja uzdevums).</target>
+            </trans-unit>
+            <trans-unit id="pageHint.label">
+                <source>Check Accessibility</source>
+                <target>Pārbaudīt pieejamību</target>
+            </trans-unit>
+            <trans-unit id="pageHint.title">
+                <source>Check accessibility for this page</source>
+                <target>Pārbaudīt šīs lapas pieejamību</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="pl" datatype="plaintext" original="messages" date="2026-07-01T11:52:00Z" product-name="a11y_by_default">
+        <body>
+            <trans-unit id="module.noPage">
+                <source>Please select a page from the page tree to run the accessibility check.</source>
+                <target>Wybierz stronę z drzewa stron, aby przeprowadzić kontrolę dostępności.</target>
+            </trans-unit>
+            <trans-unit id="module.scanButton">
+                <source>Run Accessibility Scan</source>
+                <target>Uruchom skanowanie dostępności</target>
+            </trans-unit>
+            <trans-unit id="module.engineLabel">
+                <source>Scanning engine:</source>
+                <target>Silnik skanowania:</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axe">
+                <source>axe-core (recommended)</source>
+                <target>axe-core (zalecany)</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcs">
+                <source>HTML CodeSniffer</source>
+                <target>HTML CodeSniffer</target>
+            </trans-unit>
+            <trans-unit id="module.auditDisclaimer">
+                <source>This module provides automated assistance for accessibility checks. It does not replace a full audit by qualified accessibility auditors, which is required to have a page officially certified as accessible.</source>
+                <target>Ten moduł zapewnia automatyczne wsparcie w zakresie kontroli dostępności. Nie zastępuje pełnego audytu przeprowadzonego przez wykwalifikowanych audytorów dostępności, który jest wymagany, aby strona mogła zostać oficjalnie certyfikowana jako dostępna.</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axeInfo">
+                <source>axe-core (recommended) checks the page against the WCAG accessibility guidelines — the standard that ensures people using screen readers, keyboard navigation, or other assistive technology can use your content. It is the actively maintained, industry-standard tool and produces very few incorrect warnings, so almost everything it reports is worth acting on.</source>
+                <target>axe-core (zalecany) sprawdza stronę pod kątem wytycznych dostępności WCAG — standardu zapewniającego, że osoby korzystające z czytników ekranu, nawigacji klawiaturowej lub innej technologii wspomagającej mogą korzystać z Twojej treści. Jest to aktywnie rozwijane narzędzie stanowiące standard branżowy i generuje bardzo mało błędnych ostrzeżeń, więc prawie każdy zgłoszony problem warto rozwiązać.</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcsInfo">
+                <source>HTML CodeSniffer checks the page against similar accessibility guidelines, but with an older, less refined method. It can occasionally point out issues axe-core misses, but it also produces many more results that need a closer manual look before you can tell whether something is really a problem. Use it only for a second opinion, not as your main scan.</source>
+                <target>HTML CodeSniffer sprawdza stronę pod kątem podobnych wytycznych dostępności, ale przy użyciu starszej, mniej dopracowanej metody. Może okazjonalnie wskazać problemy, które axe-core przeoczy, ale generuje też znacznie więcej wyników wymagających bliższej, ręcznej analizy, zanim będzie można stwierdzić, czy dany problem jest rzeczywisty. Używaj go jedynie jako dodatkowej opinii, a nie jako głównego skanu.</target>
+            </trans-unit>
+            <trans-unit id="module.loading">
+                <source>Loading page and running scan…</source>
+                <target>Wczytywanie strony i uruchamianie skanowania…</target>
+            </trans-unit>
+            <trans-unit id="module.results.violations">
+                <source>Violations</source>
+                <target>Naruszenia</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete">
+                <source>Needs review</source>
+                <target>Wymaga przeglądu</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete.info">
+                <source>Automated scanning could not determine whether these items pass or fail. Each one needs to be checked manually.</source>
+                <target>Automatyczne skanowanie nie mogło ustalić, czy te elementy spełniają wymagania. Każdy z nich musi zostać sprawdzony ręcznie.</target>
+            </trans-unit>
+            <trans-unit id="module.results.passes">
+                <source>Passes</source>
+                <target>Spełnione</target>
+            </trans-unit>
+            <trans-unit id="module.results.empty">
+                <source>No accessibility issues found.</source>
+                <target>Nie znaleziono problemów z dostępnością.</target>
+            </trans-unit>
+            <trans-unit id="module.filters.label">
+                <source>Filters</source>
+                <target>Filtry</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severityLabel">
+                <source>Severity:</source>
+                <target>Poziom istotności:</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.critical">
+                <source>Critical</source>
+                <target>Krytyczny</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.serious">
+                <source>Serious</source>
+                <target>Poważny</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.moderate">
+                <source>Moderate</source>
+                <target>Umiarkowany</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.minor">
+                <source>Minor</source>
+                <target>Niewielki</target>
+            </trans-unit>
+            <trans-unit id="module.filters.viewLabel">
+                <source>View</source>
+                <target>Widok</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.editor">
+                <source>For editors</source>
+                <target>Dla redaktorów</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.developer">
+                <source>For developers</source>
+                <target>Dla programistów</target>
+            </trans-unit>
+            <trans-unit id="module.error.scanFailed">
+                <source>The accessibility scan could not be completed. Please try again.</source>
+                <target>Nie udało się zakończyć skanowania dostępności. Spróbuj ponownie.</target>
+            </trans-unit>
+            <trans-unit id="module.error.noPreview">
+                <source>No preview URL available for this page. Ensure the page has a valid site configuration.</source>
+                <target>Brak dostępnego adresu URL podglądu dla tej strony. Upewnij się, że strona ma poprawną konfigurację witryny.</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt">
+                <source>Add an image description (alt text) in the content element editor.</source>
+                <target>Dodaj opis obrazu (tekst alternatywny) w edytorze elementu treści.</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt.developer">
+                <source>This image is not linked to editable content, or its alt text is set but not rendered. Check the template's image rendering (developer task).</source>
+                <target>Ten obraz nie jest powiązany z edytowalną treścią, lub jego tekst alternatywny jest ustawiony, ale nie jest renderowany. Sprawdź renderowanie obrazów w szablonie (zadanie dla programisty).</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt">
+                <source>Add an alt text to the image input element in the content editor.</source>
+                <target>Dodaj tekst alternatywny do elementu wejściowego obrazu w edytorze treści.</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt.developer">
+                <source>This image input is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>Ten element wejściowy obrazu nie jest powiązany z edytowalną treścią, lub jego tekst alternatywny jest ustawiony, ale nie jest renderowany. Sprawdź renderowanie w szablonie (zadanie dla programisty).</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt">
+                <source>Add alt text to the image map area in the content editor.</source>
+                <target>Dodaj tekst alternatywny do obszaru mapy obrazkowej w edytorze treści.</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt.developer">
+                <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>Ten obszar mapy obrazkowej nie jest powiązany z edytowalną treścią, lub jego tekst alternatywny jest ustawiony, ale nie jest renderowany. Sprawdź renderowanie w szablonie (zadanie dla programisty).</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order">
+                <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
+                <target>Edytuj element treści i zmień jego układ nagłówka, aby poziomy nagłówków nie pomijały żadnego stopnia.</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order.developer">
+                <source>This heading is rendered by the page template rather than a content element. Adjust the heading structure in the Fluid template (developer task).</source>
+                <target>Ten nagłówek jest renderowany przez szablon strony, a nie element treści. Dostosuj strukturę nagłówków w szablonie Fluid (zadanie dla programisty).</target>
+            </trans-unit>
+            <trans-unit id="hint.empty-heading">
+                <source>A heading element is rendered with no text. Check the template's heading rendering; it should not output a heading tag when the source text is empty (developer task).</source>
+                <target>Element nagłówka jest renderowany bez tekstu. Sprawdź renderowanie nagłówków w szablonie; nie powinien on generować tagu nagłówka, gdy tekst źródłowy jest pusty (zadanie dla programisty).</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name">
+                <source>Edit the link in the content editor and provide a descriptive link text.</source>
+                <target>Edytuj odnośnik w edytorze treści i podaj opisowy tekst odnośnika.</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name.developer">
+                <source>This link is rendered by the page template without link text and isn't linked to editable content. Add visible text or an aria-label in the Fluid template (developer task).</source>
+                <target>Ten odnośnik jest renderowany przez szablon strony bez tekstu odnośnika i nie jest powiązany z edytowalną treścią. Dodaj widoczny tekst lub atrybut aria-label w szablonie Fluid (zadanie dla programisty).</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr">
+                <source>Update the table structure in the content editor to associate data cells with headers.</source>
+                <target>Zaktualizuj strukturę tabeli w edytorze treści, aby powiązać komórki danych z nagłówkami.</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so data cells reference their headers (developer task).</source>
+                <target>Ta tabela nie jest powiązana z edytowalną treścią. Zaktualizuj strukturę tabeli w szablonie, aby komórki danych odwoływały się do swoich nagłówków (zadanie dla programisty).</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells">
+                <source>Update the table in the content editor so header cells have associated data cells.</source>
+                <target>Zaktualizuj tabelę w edytorze treści, aby komórki nagłówków miały powiązane komórki danych.</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so header cells have associated data cells (developer task).</source>
+                <target>Ta tabela nie jest powiązana z edytowalną treścią. Zaktualizuj strukturę tabeli w szablonie, aby komórki nagłówków miały powiązane komórki danych (zadanie dla programisty).</target>
+            </trans-unit>
+            <trans-unit id="hint.landmark-one-main">
+                <source>Add a main landmark element to the page template (developer task).</source>
+                <target>Dodaj główny element landmark do szablonu strony (zadanie dla programisty).</target>
+            </trans-unit>
+            <trans-unit id="hint.region">
+                <source>Ensure all page content is contained within appropriate landmark regions in the template (developer task).</source>
+                <target>Zapewnij, że cała treść strony znajduje się w odpowiednich regionach landmark w szablonie (zadanie dla programisty).</target>
+            </trans-unit>
+            <trans-unit id="hint.bypass">
+                <source>Add a skip navigation link to the page template (developer task).</source>
+                <target>Dodaj odnośnik pomijający nawigację do szablonu strony (zadanie dla programisty).</target>
+            </trans-unit>
+            <trans-unit id="hint.html-has-lang">
+                <source>Set the lang attribute on the HTML element in the page template (developer task).</source>
+                <target>Ustaw atrybut lang na elemencie HTML w szablonie strony (zadanie dla programisty).</target>
+            </trans-unit>
+            <trans-unit id="hint.html-lang-valid">
+                <source>Use a valid BCP 47 language tag on the HTML element (developer task).</source>
+                <target>Użyj poprawnego znacznika języka BCP 47 na elemencie HTML (zadanie dla programisty).</target>
+            </trans-unit>
+            <trans-unit id="hint.color-contrast">
+                <source>Adjust CSS color values to meet WCAG contrast requirements (developer task).</source>
+                <target>Dostosuj wartości kolorów CSS, aby spełnić wymagania kontrastu WCAG (zadanie dla programisty).</target>
+            </trans-unit>
+            <trans-unit id="hint.meta-viewport">
+                <source>Remove user-scalable=no from the viewport meta tag in the template (developer task).</source>
+                <target>Usuń user-scalable=no z metatagu viewport w szablonie (zadanie dla programisty).</target>
+            </trans-unit>
+            <trans-unit id="hint.frame-title">
+                <source>Add a title attribute to all iframe elements in the template (developer task).</source>
+                <target>Dodaj atrybut title do wszystkich elementów iframe w szablonie (zadanie dla programisty).</target>
+            </trans-unit>
+            <trans-unit id="hint.scrollable-region-focusable">
+                <source>Make scrollable regions keyboard-accessible in the template (developer task).</source>
+                <target>Uczyń przewijane regiony dostępnymi z klawiatury w szablonie (zadanie dla programisty).</target>
+            </trans-unit>
+            <trans-unit id="pageHint.label">
+                <source>Check Accessibility</source>
+                <target>Sprawdź dostępność</target>
+            </trans-unit>
+            <trans-unit id="pageHint.title">
+                <source>Check accessibility for this page</source>
+                <target>Sprawdź dostępność tej strony</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

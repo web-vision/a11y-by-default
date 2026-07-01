@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="ga" datatype="plaintext" original="messages" date="2026-07-01T11:52:00Z" product-name="a11y_by_default">
+        <body>
+            <trans-unit id="module.noPage">
+                <source>Please select a page from the page tree to run the accessibility check.</source>
+                <target>Roghnaigh leathanach ó chrann na leathanach le tástáil inrochtaineachta a rith.</target>
+            </trans-unit>
+            <trans-unit id="module.scanButton">
+                <source>Run Accessibility Scan</source>
+                <target>Rith Scan Inrochtaineachta</target>
+            </trans-unit>
+            <trans-unit id="module.engineLabel">
+                <source>Scanning engine:</source>
+                <target>Inneall scanadh:</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axe">
+                <source>axe-core (recommended)</source>
+                <target>axe-core (molta)</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcs">
+                <source>HTML CodeSniffer</source>
+                <target>HTML CodeSniffer</target>
+            </trans-unit>
+            <trans-unit id="module.auditDisclaimer">
+                <source>This module provides automated assistance for accessibility checks. It does not replace a full audit by qualified accessibility auditors, which is required to have a page officially certified as accessible.</source>
+                <target>Soláthraíonn an modúl seo cúnamh uathoibrithe le haghaidh seiceálacha inrochtaineachta. Ní ionann é agus iniúchadh iomlán ó iniúchóirí inrochtaineachta cáilithe, rud a theastaíonn chun leathanach a bheith deimhnithe go hoifigiúil mar leathanach inrochtana.</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axeInfo">
+                <source>axe-core (recommended) checks the page against the WCAG accessibility guidelines — the standard that ensures people using screen readers, keyboard navigation, or other assistive technology can use your content. It is the actively maintained, industry-standard tool and produces very few incorrect warnings, so almost everything it reports is worth acting on.</source>
+                <target>Seiceálann axe-core (molta) an leathanach de réir threoirlínte inrochtaineachta WCAG — an caighdeán a chinntíonn go bhféadfaidh daoine a bhaineann úsáid as léitheoirí scáileáin, nascleanúint mhéarchláir, nó teicneolaíocht chúnta eile do d'ábhar a úsáid. Is é an uirlis chaighdeánach tionscail atá á cothabháil go gníomhach í, agus ní tháirgeann sí ach fíorbheagán rabhaidh mhícheart, mar sin is fiú gníomhú ar bheagnach gach rud a thuairiscíonn sí.</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcsInfo">
+                <source>HTML CodeSniffer checks the page against similar accessibility guidelines, but with an older, less refined method. It can occasionally point out issues axe-core misses, but it also produces many more results that need a closer manual look before you can tell whether something is really a problem. Use it only for a second opinion, not as your main scan.</source>
+                <target>Seiceálann HTML CodeSniffer an leathanach de réir treoirlínte inrochtaineachta comhchosúla, ach le modh níos sine agus nach bhfuil chomh sofaisticiúil. Ó am go ham féadfaidh sé fadhbanna a aithint nach dtugann axe-core faoi deara, ach táirgeann sé go leor torthaí eile freisin a bhfuil gá le scrúdú láimhe níos dlúithe orthu sula bhféadfá a rá an bhfuil fadhb ann i ndáiríre. Bain úsáid as mar dara tuairim amháin, ní mar do phríomhscan.</target>
+            </trans-unit>
+            <trans-unit id="module.loading">
+                <source>Loading page and running scan…</source>
+                <target>Leathanach á lódú agus scan á rith…</target>
+            </trans-unit>
+            <trans-unit id="module.results.violations">
+                <source>Violations</source>
+                <target>Sáruithe</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete">
+                <source>Needs review</source>
+                <target>Athbhreithniú de dhíth</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete.info">
+                <source>Automated scanning could not determine whether these items pass or fail. Each one needs to be checked manually.</source>
+                <target>Níorbh fhéidir leis an scanadh uathoibrithe a chinneadh ar éirigh nó ar theip ar na míreanna seo. Ní gá gach ceann a sheiceáil de láimh.</target>
+            </trans-unit>
+            <trans-unit id="module.results.passes">
+                <source>Passes</source>
+                <target>Rudaí a d'éirigh leo</target>
+            </trans-unit>
+            <trans-unit id="module.results.empty">
+                <source>No accessibility issues found.</source>
+                <target>Níor aimsíodh aon fhadhbanna inrochtaineachta.</target>
+            </trans-unit>
+            <trans-unit id="module.filters.label">
+                <source>Filters</source>
+                <target>Scagairí</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severityLabel">
+                <source>Severity:</source>
+                <target>Déine:</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.critical">
+                <source>Critical</source>
+                <target>Criticiúil</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.serious">
+                <source>Serious</source>
+                <target>Tromchúiseach</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.moderate">
+                <source>Moderate</source>
+                <target>Measartha</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.minor">
+                <source>Minor</source>
+                <target>Mionfhadhb</target>
+            </trans-unit>
+            <trans-unit id="module.filters.viewLabel">
+                <source>View</source>
+                <target>Amharc</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.editor">
+                <source>For editors</source>
+                <target>Le haghaidh eagarthóirí</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.developer">
+                <source>For developers</source>
+                <target>Le haghaidh forbróirí</target>
+            </trans-unit>
+            <trans-unit id="module.error.scanFailed">
+                <source>The accessibility scan could not be completed. Please try again.</source>
+                <target>Níorbh fhéidir an scan inrochtaineachta a chomhlánú. Bain triail eile as.</target>
+            </trans-unit>
+            <trans-unit id="module.error.noPreview">
+                <source>No preview URL available for this page. Ensure the page has a valid site configuration.</source>
+                <target>Níl aon URL réamhamhairc ar fáil don leathanach seo. Cinntigh go bhfuil cumraíocht shuímh bhailí ag an leathanach.</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt">
+                <source>Add an image description (alt text) in the content element editor.</source>
+                <target>Cuir cur síos íomhá (alt text) leis in eagarthóir na míre ábhair.</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt.developer">
+                <source>This image is not linked to editable content, or its alt text is set but not rendered. Check the template's image rendering (developer task).</source>
+                <target>Níl an íomhá seo nasctha le ábhar ineagarthóireachta, nó tá a téacs alt socraithe ach níl sé á rindreáil. Seiceáil rindreáil íomhánna an teimpléid (tasc forbróra).</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt">
+                <source>Add an alt text to the image input element in the content editor.</source>
+                <target>Cuir téacs alt leis an eilimint ionchuir íomhá san eagarthóir ábhair.</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt.developer">
+                <source>This image input is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>Níl an ionchur íomhá seo nasctha le ábhar ineagarthóireachta, nó tá a téacs alt socraithe ach níl sé á rindreáil. Seiceáil rindreáil an teimpléid (tasc forbróra).</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt">
+                <source>Add alt text to the image map area in the content editor.</source>
+                <target>Cuir téacs alt leis an limistéar mapa íomhá san eagarthóir ábhair.</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt.developer">
+                <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>Níl an limistéar mapa íomhá seo nasctha le ábhar ineagarthóireachta, nó tá a téacs alt socraithe ach níl sé á rindreáil. Seiceáil rindreáil an teimpléid (tasc forbróra).</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order">
+                <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
+                <target>Cuir an mhír ábhair in eagar agus athraigh a Leagan Amach Ceanntáisc ionas nach léimeann na leibhéil ceanntásca thar chéim.</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order.developer">
+                <source>This heading is rendered by the page template rather than a content element. Adjust the heading structure in the Fluid template (developer task).</source>
+                <target>Rindreáiltear an ceanntásc seo ag teimpléad an leathanaigh seachas ag mír ábhair. Coigeartaigh struchtúr na gceanntásc sa teimpléad Fluid (tasc forbróra).</target>
+            </trans-unit>
+            <trans-unit id="hint.empty-heading">
+                <source>A heading element is rendered with no text. Check the template's heading rendering; it should not output a heading tag when the source text is empty (developer task).</source>
+                <target>Rindreáiltear eilimint ceanntásc gan téacs. Seiceáil rindreáil ceanntásc an teimpléid; níor cheart di clib ceanntásc a aschur nuair a bhíonn an téacs foinseach folamh (tasc forbróra).</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name">
+                <source>Edit the link in the content editor and provide a descriptive link text.</source>
+                <target>Cuir an nasc in eagar san eagarthóir ábhair agus soláthair téacs nasc tuairisciúil.</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name.developer">
+                <source>This link is rendered by the page template without link text and isn't linked to editable content. Add visible text or an aria-label in the Fluid template (developer task).</source>
+                <target>Rindreáiltear an nasc seo ag teimpléad an leathanaigh gan téacs nasc agus níl sé nasctha le ábhar ineagarthóireachta. Cuir téacs infheicthe nó aria-label leis sa teimpléad Fluid (tasc forbróra).</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr">
+                <source>Update the table structure in the content editor to associate data cells with headers.</source>
+                <target>Nuashonraigh struchtúr an tábla san eagarthóir ábhair chun cealla sonraí a nascadh le ceanntásca.</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so data cells reference their headers (developer task).</source>
+                <target>Níl an tábla seo nasctha le ábhar ineagarthóireachta. Nuashonraigh struchtúr an tábla sa teimpléad ionas go dtagraíonn cealla sonraí do na ceanntásca (tasc forbróra).</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells">
+                <source>Update the table in the content editor so header cells have associated data cells.</source>
+                <target>Nuashonraigh an tábla san eagarthóir ábhair ionas go mbíonn cealla sonraí nasctha ag cealla ceanntáisc.</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so header cells have associated data cells (developer task).</source>
+                <target>Níl an tábla seo nasctha le ábhar ineagarthóireachta. Nuashonraigh struchtúr an tábla sa teimpléad ionas go mbíonn cealla sonraí nasctha ag cealla ceanntáisc (tasc forbróra).</target>
+            </trans-unit>
+            <trans-unit id="hint.landmark-one-main">
+                <source>Add a main landmark element to the page template (developer task).</source>
+                <target>Cuir eilimint sainchomhartha main leis an teimpléad leathanaigh (tasc forbróra).</target>
+            </trans-unit>
+            <trans-unit id="hint.region">
+                <source>Ensure all page content is contained within appropriate landmark regions in the template (developer task).</source>
+                <target>Cinntigh go bhfuil gach ábhar leathanaigh laistigh de réigiúin sainchomhartha oiriúnacha sa teimpléad (tasc forbróra).</target>
+            </trans-unit>
+            <trans-unit id="hint.bypass">
+                <source>Add a skip navigation link to the page template (developer task).</source>
+                <target>Cuir nasc léim-nascleanúna leis an teimpléad leathanaigh (tasc forbróra).</target>
+            </trans-unit>
+            <trans-unit id="hint.html-has-lang">
+                <source>Set the lang attribute on the HTML element in the page template (developer task).</source>
+                <target>Socraigh an aitreabúid lang ar an eilimint HTML sa teimpléad leathanaigh (tasc forbróra).</target>
+            </trans-unit>
+            <trans-unit id="hint.html-lang-valid">
+                <source>Use a valid BCP 47 language tag on the HTML element (developer task).</source>
+                <target>Bain úsáid as clib teanga bhailí BCP 47 ar an eilimint HTML (tasc forbróra).</target>
+            </trans-unit>
+            <trans-unit id="hint.color-contrast">
+                <source>Adjust CSS color values to meet WCAG contrast requirements (developer task).</source>
+                <target>Coigeartaigh luachanna datha CSS chun freastal ar riachtanais chodarsnachta WCAG (tasc forbróra).</target>
+            </trans-unit>
+            <trans-unit id="hint.meta-viewport">
+                <source>Remove user-scalable=no from the viewport meta tag in the template (developer task).</source>
+                <target>Bain user-scalable=no ó chlib meta an viewport sa teimpléad (tasc forbróra).</target>
+            </trans-unit>
+            <trans-unit id="hint.frame-title">
+                <source>Add a title attribute to all iframe elements in the template (developer task).</source>
+                <target>Cuir aitreabúid title le gach eilimint iframe sa teimpléad (tasc forbróra).</target>
+            </trans-unit>
+            <trans-unit id="hint.scrollable-region-focusable">
+                <source>Make scrollable regions keyboard-accessible in the template (developer task).</source>
+                <target>Déan réigiúin scrollaithe inrochtana ón mhéarchlár sa teimpléad (tasc forbróra).</target>
+            </trans-unit>
+            <trans-unit id="pageHint.label">
+                <source>Check Accessibility</source>
+                <target>Seiceáil Inrochtaineacht</target>
+            </trans-unit>
+            <trans-unit id="pageHint.title">
+                <source>Check accessibility for this page</source>
+                <target>Seiceáil inrochtaineacht don leathanach seo</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
