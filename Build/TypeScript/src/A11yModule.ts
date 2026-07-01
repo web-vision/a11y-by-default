@@ -219,10 +219,7 @@ export function renderResults(container: HTMLElement, result: ScanResult, classi
       ? `<div class="callout callout-success mb-4"><div class="callout-body"><p>${getLabel('module.results.empty')}</p></div></div>`
       : '';
 
-  const incompleteInfoCallout =
-    result.incomplete.length === 0
-      ? ''
-      : `<div class="callout callout-info mb-3"><div class="callout-body"><p>${getLabel('module.results.incomplete.info')}</p></div></div>`;
+  const incompleteInfoCallout = `<div class="callout callout-info mb-3"><div class="callout-body"><p>${getLabel('module.results.incomplete.info')}</p></div></div>`;
 
   container.innerHTML = `
         ${successCallout}
