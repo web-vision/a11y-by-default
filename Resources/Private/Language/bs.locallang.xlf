@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="bs" datatype="plaintext" original="messages" date="2026-07-01T11:52:00Z" product-name="a11y_by_default">
+        <body>
+            <trans-unit id="module.noPage">
+                <source>Please select a page from the page tree to run the accessibility check.</source>
+                <target>Odaberite stranicu iz stabla stranica da biste pokrenuli provjeru pristupačnosti.</target>
+            </trans-unit>
+            <trans-unit id="module.scanButton">
+                <source>Run Accessibility Scan</source>
+                <target>Pokreni provjeru pristupačnosti</target>
+            </trans-unit>
+            <trans-unit id="module.engineLabel">
+                <source>Scanning engine:</source>
+                <target>Mehanizam skeniranja:</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axe">
+                <source>axe-core (recommended)</source>
+                <target>axe-core (preporučeno)</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcs">
+                <source>HTML CodeSniffer</source>
+                <target>HTML CodeSniffer</target>
+            </trans-unit>
+            <trans-unit id="module.auditDisclaimer">
+                <source>This module provides automated assistance for accessibility checks. It does not replace a full audit by qualified accessibility auditors, which is required to have a page officially certified as accessible.</source>
+                <target>Ovaj modul pruža automatiziranu pomoć za provjere pristupačnosti. On ne zamjenjuje potpunu reviziju od strane kvalifikovanih revizora pristupačnosti, koja je potrebna da bi se stranica zvanično certificirala kao pristupačna.</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axeInfo">
+                <source>axe-core (recommended) checks the page against the WCAG accessibility guidelines — the standard that ensures people using screen readers, keyboard navigation, or other assistive technology can use your content. It is the actively maintained, industry-standard tool and produces very few incorrect warnings, so almost everything it reports is worth acting on.</source>
+                <target>axe-core (preporučeno) provjerava stranicu prema WCAG smjernicama za pristupačnost — standardu koji osigurava da osobe koje koriste čitače ekrana, navigaciju tastaturom ili druge tehnologije za pomoć mogu koristiti vaš sadržaj. To je aktivno održavan alat koji predstavlja standard u industriji i proizvodi vrlo malo pogrešnih upozorenja, tako da je skoro sve što prijavi vrijedno pažnje.</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcsInfo">
+                <source>HTML CodeSniffer checks the page against similar accessibility guidelines, but with an older, less refined method. It can occasionally point out issues axe-core misses, but it also produces many more results that need a closer manual look before you can tell whether something is really a problem. Use it only for a second opinion, not as your main scan.</source>
+                <target>HTML CodeSniffer provjerava stranicu prema sličnim smjernicama za pristupačnost, ali starijom, manje preciznom metodom. Povremeno može otkriti probleme koje axe-core propusti, ali proizvodi i mnogo više rezultata koji zahtijevaju detaljniji ručni pregled prije nego što se utvrdi da li je nešto stvarno problem. Koristite ga samo za drugo mišljenje, a ne kao glavno skeniranje.</target>
+            </trans-unit>
+            <trans-unit id="module.loading">
+                <source>Loading page and running scan…</source>
+                <target>Učitavanje stranice i pokretanje skeniranja…</target>
+            </trans-unit>
+            <trans-unit id="module.results.violations">
+                <source>Violations</source>
+                <target>Kršenja</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete">
+                <source>Needs review</source>
+                <target>Potrebna provjera</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete.info">
+                <source>Automated scanning could not determine whether these items pass or fail. Each one needs to be checked manually.</source>
+                <target>Automatsko skeniranje nije moglo utvrditi da li ove stavke prolaze ili ne. Svaku od njih potrebno je ručno provjeriti.</target>
+            </trans-unit>
+            <trans-unit id="module.results.passes">
+                <source>Passes</source>
+                <target>Prolazi</target>
+            </trans-unit>
+            <trans-unit id="module.results.empty">
+                <source>No accessibility issues found.</source>
+                <target>Nisu pronađeni problemi s pristupačnošću.</target>
+            </trans-unit>
+            <trans-unit id="module.filters.label">
+                <source>Filters</source>
+                <target>Filteri</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severityLabel">
+                <source>Severity:</source>
+                <target>Ozbiljnost:</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.critical">
+                <source>Critical</source>
+                <target>Kritično</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.serious">
+                <source>Serious</source>
+                <target>Ozbiljno</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.moderate">
+                <source>Moderate</source>
+                <target>Umjereno</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.minor">
+                <source>Minor</source>
+                <target>Manje</target>
+            </trans-unit>
+            <trans-unit id="module.filters.viewLabel">
+                <source>View</source>
+                <target>Prikaz</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.editor">
+                <source>For editors</source>
+                <target>Za urednike</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.developer">
+                <source>For developers</source>
+                <target>Za programere</target>
+            </trans-unit>
+            <trans-unit id="module.error.scanFailed">
+                <source>The accessibility scan could not be completed. Please try again.</source>
+                <target>Provjera pristupačnosti nije mogla biti završena. Pokušajte ponovo.</target>
+            </trans-unit>
+            <trans-unit id="module.error.noPreview">
+                <source>No preview URL available for this page. Ensure the page has a valid site configuration.</source>
+                <target>Nije dostupan URL za pregled ove stranice. Provjerite da stranica ima važeću konfiguraciju sajta.</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt">
+                <source>Add an image description (alt text) in the content element editor.</source>
+                <target>Dodajte opis slike (alt tekst) u uređivaču elementa sadržaja.</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt.developer">
+                <source>This image is not linked to editable content, or its alt text is set but not rendered. Check the template's image rendering (developer task).</source>
+                <target>Ova slika nije povezana s uredivim sadržajem, ili je njen alt tekst postavljen ali se ne prikazuje. Provjerite prikaz slika u šablonu (zadatak za programere).</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt">
+                <source>Add an alt text to the image input element in the content editor.</source>
+                <target>Dodajte alt tekst ulaznom elementu slike u uređivaču sadržaja.</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt.developer">
+                <source>This image input is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>Ovaj ulazni element slike nije povezan s uredivim sadržajem, ili je njegov alt tekst postavljen ali se ne prikazuje. Provjerite prikaz u šablonu (zadatak za programere).</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt">
+                <source>Add alt text to the image map area in the content editor.</source>
+                <target>Dodajte alt tekst području mape slike u uređivaču sadržaja.</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt.developer">
+                <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>Ovo područje mape slike nije povezano s uredivim sadržajem, ili je njegov alt tekst postavljen ali se ne prikazuje. Provjerite prikaz u šablonu (zadatak za programere).</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order">
+                <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
+                <target>Uredite element sadržaja i promijenite raspored zaglavlja tako da nivoi naslova ne preskaču korak.</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order.developer">
+                <source>This heading is rendered by the page template rather than a content element. Adjust the heading structure in the Fluid template (developer task).</source>
+                <target>Ovaj naslov se prikazuje putem šablona stranice, a ne elementa sadržaja. Prilagodite strukturu naslova u Fluid šablonu (zadatak za programere).</target>
+            </trans-unit>
+            <trans-unit id="hint.empty-heading">
+                <source>A heading element is rendered with no text. Check the template's heading rendering; it should not output a heading tag when the source text is empty (developer task).</source>
+                <target>Element naslova se prikazuje bez teksta. Provjerite prikaz naslova u šablonu; ne bi trebao ispisivati oznaku naslova kada je izvorni tekst prazan (zadatak za programere).</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name">
+                <source>Edit the link in the content editor and provide a descriptive link text.</source>
+                <target>Uredite link u uređivaču sadržaja i unesite opisni tekst linka.</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name.developer">
+                <source>This link is rendered by the page template without link text and isn't linked to editable content. Add visible text or an aria-label in the Fluid template (developer task).</source>
+                <target>Ovaj link se prikazuje putem šablona stranice bez teksta linka i nije povezan s uredivim sadržajem. Dodajte vidljiv tekst ili aria-label u Fluid šablonu (zadatak za programere).</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr">
+                <source>Update the table structure in the content editor to associate data cells with headers.</source>
+                <target>Ažurirajte strukturu tabele u uređivaču sadržaja da biste povezali ćelije podataka sa zaglavljima.</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so data cells reference their headers (developer task).</source>
+                <target>Ova tabela nije povezana s uredivim sadržajem. Ažurirajte strukturu tabele u šablonu tako da ćelije podataka referenciraju svoja zaglavlja (zadatak za programere).</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells">
+                <source>Update the table in the content editor so header cells have associated data cells.</source>
+                <target>Ažurirajte tabelu u uređivaču sadržaja tako da ćelije zaglavlja imaju povezane ćelije podataka.</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so header cells have associated data cells (developer task).</source>
+                <target>Ova tabela nije povezana s uredivim sadržajem. Ažurirajte strukturu tabele u šablonu tako da ćelije zaglavlja imaju povezane ćelije podataka (zadatak za programere).</target>
+            </trans-unit>
+            <trans-unit id="hint.landmark-one-main">
+                <source>Add a main landmark element to the page template (developer task).</source>
+                <target>Dodajte glavni landmark element u šablon stranice (zadatak za programere).</target>
+            </trans-unit>
+            <trans-unit id="hint.region">
+                <source>Ensure all page content is contained within appropriate landmark regions in the template (developer task).</source>
+                <target>Osigurajte da je sav sadržaj stranice sadržan u odgovarajućim landmark regijama u šablonu (zadatak za programere).</target>
+            </trans-unit>
+            <trans-unit id="hint.bypass">
+                <source>Add a skip navigation link to the page template (developer task).</source>
+                <target>Dodajte link za preskakanje navigacije u šablon stranice (zadatak za programere).</target>
+            </trans-unit>
+            <trans-unit id="hint.html-has-lang">
+                <source>Set the lang attribute on the HTML element in the page template (developer task).</source>
+                <target>Postavite atribut lang na HTML elementu u šablonu stranice (zadatak za programere).</target>
+            </trans-unit>
+            <trans-unit id="hint.html-lang-valid">
+                <source>Use a valid BCP 47 language tag on the HTML element (developer task).</source>
+                <target>Koristite važeću BCP 47 oznaku jezika na HTML elementu (zadatak za programere).</target>
+            </trans-unit>
+            <trans-unit id="hint.color-contrast">
+                <source>Adjust CSS color values to meet WCAG contrast requirements (developer task).</source>
+                <target>Prilagodite vrijednosti boja u CSS-u da bi se zadovoljili WCAG zahtjevi za kontrast (zadatak za programere).</target>
+            </trans-unit>
+            <trans-unit id="hint.meta-viewport">
+                <source>Remove user-scalable=no from the viewport meta tag in the template (developer task).</source>
+                <target>Uklonite user-scalable=no iz viewport meta oznake u šablonu (zadatak za programere).</target>
+            </trans-unit>
+            <trans-unit id="hint.frame-title">
+                <source>Add a title attribute to all iframe elements in the template (developer task).</source>
+                <target>Dodajte atribut title svim iframe elementima u šablonu (zadatak za programere).</target>
+            </trans-unit>
+            <trans-unit id="hint.scrollable-region-focusable">
+                <source>Make scrollable regions keyboard-accessible in the template (developer task).</source>
+                <target>Učinite regije koje se mogu pomicati dostupnim putem tastature u šablonu (zadatak za programere).</target>
+            </trans-unit>
+            <trans-unit id="pageHint.label">
+                <source>Check Accessibility</source>
+                <target>Provjeri pristupačnost</target>
+            </trans-unit>
+            <trans-unit id="pageHint.title">
+                <source>Check accessibility for this page</source>
+                <target>Provjeri pristupačnost za ovu stranicu</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

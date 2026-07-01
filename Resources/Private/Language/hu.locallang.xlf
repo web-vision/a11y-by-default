@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="hu" datatype="plaintext" original="messages" date="2026-07-01T11:52:00Z" product-name="a11y_by_default">
+        <body>
+            <trans-unit id="module.noPage">
+                <source>Please select a page from the page tree to run the accessibility check.</source>
+                <target>Válasszon egy oldalt az oldalfából az akadálymentességi ellenőrzés futtatásához.</target>
+            </trans-unit>
+            <trans-unit id="module.scanButton">
+                <source>Run Accessibility Scan</source>
+                <target>Akadálymentességi vizsgálat futtatása</target>
+            </trans-unit>
+            <trans-unit id="module.engineLabel">
+                <source>Scanning engine:</source>
+                <target>Vizsgálati motor:</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axe">
+                <source>axe-core (recommended)</source>
+                <target>axe-core (ajánlott)</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcs">
+                <source>HTML CodeSniffer</source>
+                <target>HTML CodeSniffer</target>
+            </trans-unit>
+            <trans-unit id="module.auditDisclaimer">
+                <source>This module provides automated assistance for accessibility checks. It does not replace a full audit by qualified accessibility auditors, which is required to have a page officially certified as accessible.</source>
+                <target>Ez a modul automatizált segítséget nyújt az akadálymentességi ellenőrzésekhez. Nem helyettesíti a képzett akadálymentességi auditorok által végzett teljes körű auditot, amely szükséges ahhoz, hogy egy oldal hivatalosan akadálymentesként legyen tanúsítva.</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axeInfo">
+                <source>axe-core (recommended) checks the page against the WCAG accessibility guidelines — the standard that ensures people using screen readers, keyboard navigation, or other assistive technology can use your content. It is the actively maintained, industry-standard tool and produces very few incorrect warnings, so almost everything it reports is worth acting on.</source>
+                <target>Az axe-core (ajánlott) a WCAG akadálymentességi irányelvek alapján ellenőrzi az oldalt — ez a szabvány biztosítja, hogy a képernyőolvasót, billentyűzetes navigációt vagy más segítő technológiát használó emberek is tudják használni a tartalmat. Ez egy aktívan karbantartott, iparági szabványnak számító eszköz, amely nagyon kevés hibás figyelmeztetést ad, így majdnem minden, amit jelent, érdemes megoldani.</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcsInfo">
+                <source>HTML CodeSniffer checks the page against similar accessibility guidelines, but with an older, less refined method. It can occasionally point out issues axe-core misses, but it also produces many more results that need a closer manual look before you can tell whether something is really a problem. Use it only for a second opinion, not as your main scan.</source>
+                <target>A HTML CodeSniffer hasonló akadálymentességi irányelvek alapján ellenőrzi az oldalt, de egy régebbi, kevésbé kifinomult módszerrel. Időnként olyan problémákra is rámutathat, amelyeket az axe-core kihagy, de ennél sokkal több olyan eredményt is ad, amelyeket alaposabb manuális átnézéssel kell megvizsgálni ahhoz, hogy megállapítható legyen, valóban probléma-e. Csak második véleményként használja, ne a fő vizsgálatként.</target>
+            </trans-unit>
+            <trans-unit id="module.loading">
+                <source>Loading page and running scan…</source>
+                <target>Oldal betöltése és vizsgálat futtatása…</target>
+            </trans-unit>
+            <trans-unit id="module.results.violations">
+                <source>Violations</source>
+                <target>Hibák</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete">
+                <source>Needs review</source>
+                <target>Ellenőrzést igényel</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete.info">
+                <source>Automated scanning could not determine whether these items pass or fail. Each one needs to be checked manually.</source>
+                <target>Az automatikus vizsgálat nem tudta megállapítani, hogy ezek az elemek megfelelnek-e vagy nem. Mindegyiket manuálisan kell ellenőrizni.</target>
+            </trans-unit>
+            <trans-unit id="module.results.passes">
+                <source>Passes</source>
+                <target>Megfelelt</target>
+            </trans-unit>
+            <trans-unit id="module.results.empty">
+                <source>No accessibility issues found.</source>
+                <target>Nem található akadálymentességi probléma.</target>
+            </trans-unit>
+            <trans-unit id="module.filters.label">
+                <source>Filters</source>
+                <target>Szűrők</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severityLabel">
+                <source>Severity:</source>
+                <target>Súlyosság:</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.critical">
+                <source>Critical</source>
+                <target>Kritikus</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.serious">
+                <source>Serious</source>
+                <target>Súlyos</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.moderate">
+                <source>Moderate</source>
+                <target>Közepes</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.minor">
+                <source>Minor</source>
+                <target>Kisebb</target>
+            </trans-unit>
+            <trans-unit id="module.filters.viewLabel">
+                <source>View</source>
+                <target>Nézet</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.editor">
+                <source>For editors</source>
+                <target>Szerkesztőknek</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.developer">
+                <source>For developers</source>
+                <target>Fejlesztőknek</target>
+            </trans-unit>
+            <trans-unit id="module.error.scanFailed">
+                <source>The accessibility scan could not be completed. Please try again.</source>
+                <target>Az akadálymentességi vizsgálatot nem sikerült befejezni. Kérjük, próbálja újra.</target>
+            </trans-unit>
+            <trans-unit id="module.error.noPreview">
+                <source>No preview URL available for this page. Ensure the page has a valid site configuration.</source>
+                <target>Ehhez az oldalhoz nem áll rendelkezésre előnézeti URL. Ellenőrizze, hogy az oldalnak van-e érvényes webhelykonfigurációja.</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt">
+                <source>Add an image description (alt text) in the content element editor.</source>
+                <target>Adjon meg egy képleírást (alt szöveg) a tartalmi elem szerkesztőjében.</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt.developer">
+                <source>This image is not linked to editable content, or its alt text is set but not rendered. Check the template's image rendering (developer task).</source>
+                <target>Ez a kép nincs szerkeszthető tartalomhoz kötve, vagy az alt szövege beállított, de nem jelenik meg. Ellenőrizze a sablon képmegjelenítését (fejlesztői feladat).</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt">
+                <source>Add an alt text to the image input element in the content editor.</source>
+                <target>Adjon meg alt szöveget a kép beviteli elemhez a tartalomszerkesztőben.</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt.developer">
+                <source>This image input is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>Ez a kép beviteli elem nincs szerkeszthető tartalomhoz kötve, vagy az alt szövege beállított, de nem jelenik meg. Ellenőrizze a sablon megjelenítését (fejlesztői feladat).</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt">
+                <source>Add alt text to the image map area in the content editor.</source>
+                <target>Adjon meg alt szöveget a képtérkép területéhez a tartalomszerkesztőben.</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt.developer">
+                <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>Ez a képtérkép terület nincs szerkeszthető tartalomhoz kötve, vagy az alt szövege beállított, de nem jelenik meg. Ellenőrizze a sablon megjelenítését (fejlesztői feladat).</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order">
+                <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
+                <target>Szerkessze a tartalmi elemet, és módosítsa a fejléc elrendezését úgy, hogy a fejlécszintek ne hagyjanak ki lépést.</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order.developer">
+                <source>This heading is rendered by the page template rather than a content element. Adjust the heading structure in the Fluid template (developer task).</source>
+                <target>Ezt a fejlécet az oldalsablon jeleníti meg, nem egy tartalmi elem. Módosítsa a fejlécszerkezetet a Fluid sablonban (fejlesztői feladat).</target>
+            </trans-unit>
+            <trans-unit id="hint.empty-heading">
+                <source>A heading element is rendered with no text. Check the template's heading rendering; it should not output a heading tag when the source text is empty (developer task).</source>
+                <target>Egy fejléc elem szöveg nélkül jelenik meg. Ellenőrizze a sablon fejlécmegjelenítését; nem szabadna fejléc taget kiadnia, ha a forrásszöveg üres (fejlesztői feladat).</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name">
+                <source>Edit the link in the content editor and provide a descriptive link text.</source>
+                <target>Szerkessze a linket a tartalomszerkesztőben, és adjon meg egy leíró jellegű linkszöveget.</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name.developer">
+                <source>This link is rendered by the page template without link text and isn't linked to editable content. Add visible text or an aria-label in the Fluid template (developer task).</source>
+                <target>Ezt a linket az oldalsablon jeleníti meg linkszöveg nélkül, és nincs szerkeszthető tartalomhoz kötve. Adjon meg látható szöveget vagy aria-label attribútumot a Fluid sablonban (fejlesztői feladat).</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr">
+                <source>Update the table structure in the content editor to associate data cells with headers.</source>
+                <target>Frissítse a táblázat szerkezetét a tartalomszerkesztőben, hogy az adatcellák a fejlécekhez legyenek társítva.</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so data cells reference their headers (developer task).</source>
+                <target>Ez a táblázat nincs szerkeszthető tartalomhoz kötve. Frissítse a táblázat szerkezetét a sablonban úgy, hogy az adatcellák hivatkozzanak a fejléceikre (fejlesztői feladat).</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells">
+                <source>Update the table in the content editor so header cells have associated data cells.</source>
+                <target>Frissítse a táblázatot a tartalomszerkesztőben úgy, hogy a fejlécellákhoz társított adatcellák legyenek.</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so header cells have associated data cells (developer task).</source>
+                <target>Ez a táblázat nincs szerkeszthető tartalomhoz kötve. Frissítse a táblázat szerkezetét a sablonban úgy, hogy a fejlécellákhoz társított adatcellák legyenek (fejlesztői feladat).</target>
+            </trans-unit>
+            <trans-unit id="hint.landmark-one-main">
+                <source>Add a main landmark element to the page template (developer task).</source>
+                <target>Adjon hozzá egy fő (main) jelölő elemet az oldalsablonhoz (fejlesztői feladat).</target>
+            </trans-unit>
+            <trans-unit id="hint.region">
+                <source>Ensure all page content is contained within appropriate landmark regions in the template (developer task).</source>
+                <target>Gondoskodjon arról, hogy az oldal teljes tartalma megfelelő jelölő régiókon belül legyen a sablonban (fejlesztői feladat).</target>
+            </trans-unit>
+            <trans-unit id="hint.bypass">
+                <source>Add a skip navigation link to the page template (developer task).</source>
+                <target>Adjon hozzá egy navigáció-kihagyó linket az oldalsablonhoz (fejlesztői feladat).</target>
+            </trans-unit>
+            <trans-unit id="hint.html-has-lang">
+                <source>Set the lang attribute on the HTML element in the page template (developer task).</source>
+                <target>Állítsa be a lang attribútumot a HTML elemen az oldalsablonban (fejlesztői feladat).</target>
+            </trans-unit>
+            <trans-unit id="hint.html-lang-valid">
+                <source>Use a valid BCP 47 language tag on the HTML element (developer task).</source>
+                <target>Használjon érvényes BCP 47 nyelvi kódot a HTML elemen (fejlesztői feladat).</target>
+            </trans-unit>
+            <trans-unit id="hint.color-contrast">
+                <source>Adjust CSS color values to meet WCAG contrast requirements (developer task).</source>
+                <target>Módosítsa a CSS színértékeket, hogy megfeleljenek a WCAG kontrasztkövetelményeinek (fejlesztői feladat).</target>
+            </trans-unit>
+            <trans-unit id="hint.meta-viewport">
+                <source>Remove user-scalable=no from the viewport meta tag in the template (developer task).</source>
+                <target>Távolítsa el a user-scalable=no beállítást a viewport meta tagből a sablonban (fejlesztői feladat).</target>
+            </trans-unit>
+            <trans-unit id="hint.frame-title">
+                <source>Add a title attribute to all iframe elements in the template (developer task).</source>
+                <target>Adjon title attribútumot minden iframe elemhez a sablonban (fejlesztői feladat).</target>
+            </trans-unit>
+            <trans-unit id="hint.scrollable-region-focusable">
+                <source>Make scrollable regions keyboard-accessible in the template (developer task).</source>
+                <target>Tegye a görgethető területeket billentyűzettel elérhetővé a sablonban (fejlesztői feladat).</target>
+            </trans-unit>
+            <trans-unit id="pageHint.label">
+                <source>Check Accessibility</source>
+                <target>Akadálymentesség ellenőrzése</target>
+            </trans-unit>
+            <trans-unit id="pageHint.title">
+                <source>Check accessibility for this page</source>
+                <target>Ellenőrizze az oldal akadálymentességét</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

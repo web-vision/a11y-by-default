@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="no" datatype="plaintext" original="messages" date="2026-07-01T11:52:00Z" product-name="a11y_by_default">
+        <body>
+            <trans-unit id="module.noPage">
+                <source>Please select a page from the page tree to run the accessibility check.</source>
+                <target>Velg en side fra sidetreet for å kjøre tilgjengelighetskontrollen.</target>
+            </trans-unit>
+            <trans-unit id="module.scanButton">
+                <source>Run Accessibility Scan</source>
+                <target>Kjør tilgjengelighetsskann</target>
+            </trans-unit>
+            <trans-unit id="module.engineLabel">
+                <source>Scanning engine:</source>
+                <target>Skannemotor:</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axe">
+                <source>axe-core (recommended)</source>
+                <target>axe-core (anbefalt)</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcs">
+                <source>HTML CodeSniffer</source>
+                <target>HTML CodeSniffer</target>
+            </trans-unit>
+            <trans-unit id="module.auditDisclaimer">
+                <source>This module provides automated assistance for accessibility checks. It does not replace a full audit by qualified accessibility auditors, which is required to have a page officially certified as accessible.</source>
+                <target>Denne modulen gir automatisert støtte for tilgjengelighetskontroller. Den erstatter ikke en fullstendig revisjon utført av kvalifiserte tilgjengelighetsrevisorer, som er nødvendig for at en side skal bli offisielt sertifisert som tilgjengelig.</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axeInfo">
+                <source>axe-core (recommended) checks the page against the WCAG accessibility guidelines — the standard that ensures people using screen readers, keyboard navigation, or other assistive technology can use your content. It is the actively maintained, industry-standard tool and produces very few incorrect warnings, so almost everything it reports is worth acting on.</source>
+                <target>axe-core (anbefalt) kontrollerer siden mot WCAG-retningslinjene for tilgjengelighet — standarden som sikrer at personer som bruker skjermlesere, tastaturnavigasjon eller annen hjelpeteknologi kan bruke innholdet ditt. Det er det aktivt vedlikeholdte verktøyet som er bransjestandard, og det gir svært få feilaktige varsler, så nesten alt det rapporterer er verdt å følge opp.</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcsInfo">
+                <source>HTML CodeSniffer checks the page against similar accessibility guidelines, but with an older, less refined method. It can occasionally point out issues axe-core misses, but it also produces many more results that need a closer manual look before you can tell whether something is really a problem. Use it only for a second opinion, not as your main scan.</source>
+                <target>HTML CodeSniffer kontrollerer siden mot lignende retningslinjer for tilgjengelighet, men med en eldre, mindre raffinert metode. Den kan av og til peke på problemer som axe-core overser, men den gir også mange flere resultater som krever en nærmere manuell vurdering før du kan avgjøre om noe faktisk er et problem. Bruk den bare som en second opinion, ikke som din primære skanning.</target>
+            </trans-unit>
+            <trans-unit id="module.loading">
+                <source>Loading page and running scan…</source>
+                <target>Laster side og kjører skann…</target>
+            </trans-unit>
+            <trans-unit id="module.results.violations">
+                <source>Violations</source>
+                <target>Overtredelser</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete">
+                <source>Needs review</source>
+                <target>Krever vurdering</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete.info">
+                <source>Automated scanning could not determine whether these items pass or fail. Each one needs to be checked manually.</source>
+                <target>Den automatiske skanningen kunne ikke fastslå om disse elementene er godkjent eller ikke. Hvert element må kontrolleres manuelt.</target>
+            </trans-unit>
+            <trans-unit id="module.results.passes">
+                <source>Passes</source>
+                <target>Godkjent</target>
+            </trans-unit>
+            <trans-unit id="module.results.empty">
+                <source>No accessibility issues found.</source>
+                <target>Ingen tilgjengelighetsproblemer funnet.</target>
+            </trans-unit>
+            <trans-unit id="module.filters.label">
+                <source>Filters</source>
+                <target>Filtre</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severityLabel">
+                <source>Severity:</source>
+                <target>Alvorlighetsgrad:</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.critical">
+                <source>Critical</source>
+                <target>Kritisk</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.serious">
+                <source>Serious</source>
+                <target>Alvorlig</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.moderate">
+                <source>Moderate</source>
+                <target>Middels</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.minor">
+                <source>Minor</source>
+                <target>Mindre</target>
+            </trans-unit>
+            <trans-unit id="module.filters.viewLabel">
+                <source>View</source>
+                <target>Visning</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.editor">
+                <source>For editors</source>
+                <target>For redaktører</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.developer">
+                <source>For developers</source>
+                <target>For utviklere</target>
+            </trans-unit>
+            <trans-unit id="module.error.scanFailed">
+                <source>The accessibility scan could not be completed. Please try again.</source>
+                <target>Tilgjengelighetsskanningen kunne ikke fullføres. Vennligst prøv igjen.</target>
+            </trans-unit>
+            <trans-unit id="module.error.noPreview">
+                <source>No preview URL available for this page. Ensure the page has a valid site configuration.</source>
+                <target>Ingen forhåndsvisnings-URL tilgjengelig for denne siden. Sørg for at siden har en gyldig nettstedskonfigurasjon.</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt">
+                <source>Add an image description (alt text) in the content element editor.</source>
+                <target>Legg til en bildebeskrivelse (alt-tekst) i redigeringsverktøyet for innholdselementet.</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt.developer">
+                <source>This image is not linked to editable content, or its alt text is set but not rendered. Check the template's image rendering (developer task).</source>
+                <target>Dette bildet er ikke koblet til redigerbart innhold, eller alt-teksten er angitt men ikke rendret. Kontroller malens bilderendring (utvikleroppgave).</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt">
+                <source>Add an alt text to the image input element in the content editor.</source>
+                <target>Legg til en alt-tekst for bilde-inputelementet i innholdsredigeringen.</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt.developer">
+                <source>This image input is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>Dette bilde-inputelementet er ikke koblet til redigerbart innhold, eller alt-teksten er angitt men ikke rendret. Kontroller malens rendring (utvikleroppgave).</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt">
+                <source>Add alt text to the image map area in the content editor.</source>
+                <target>Legg til alt-tekst for bildekart-området i innholdsredigeringen.</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt.developer">
+                <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>Dette bildekart-området er ikke koblet til redigerbart innhold, eller alt-teksten er angitt men ikke rendret. Kontroller malens rendring (utvikleroppgave).</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order">
+                <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
+                <target>Rediger innholdselementet og endre overskriftslayouten slik at overskriftsnivåene ikke hopper over et trinn.</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order.developer">
+                <source>This heading is rendered by the page template rather than a content element. Adjust the heading structure in the Fluid template (developer task).</source>
+                <target>Denne overskriften rendres av sidemalen i stedet for et innholdselement. Juster overskriftsstrukturen i Fluid-malen (utvikleroppgave).</target>
+            </trans-unit>
+            <trans-unit id="hint.empty-heading">
+                <source>A heading element is rendered with no text. Check the template's heading rendering; it should not output a heading tag when the source text is empty (developer task).</source>
+                <target>Et overskriftselement rendres uten tekst. Kontroller malens rendring av overskrifter; den bør ikke skrive ut en overskrift-tag når kildeteksten er tom (utvikleroppgave).</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name">
+                <source>Edit the link in the content editor and provide a descriptive link text.</source>
+                <target>Rediger lenken i innholdsredigeringen og angi en beskrivende lenketekst.</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name.developer">
+                <source>This link is rendered by the page template without link text and isn't linked to editable content. Add visible text or an aria-label in the Fluid template (developer task).</source>
+                <target>Denne lenken rendres av sidemalen uten lenketekst og er ikke koblet til redigerbart innhold. Legg til synlig tekst eller en aria-label i Fluid-malen (utvikleroppgave).</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr">
+                <source>Update the table structure in the content editor to associate data cells with headers.</source>
+                <target>Oppdater tabellstrukturen i innholdsredigeringen slik at datacellene knyttes til overskrifter.</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so data cells reference their headers (developer task).</source>
+                <target>Denne tabellen er ikke koblet til redigerbart innhold. Oppdater tabellstrukturen i malen slik at datacellene refererer til sine overskrifter (utvikleroppgave).</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells">
+                <source>Update the table in the content editor so header cells have associated data cells.</source>
+                <target>Oppdater tabellen i innholdsredigeringen slik at overskriftscellene har tilknyttede dataceller.</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so header cells have associated data cells (developer task).</source>
+                <target>Denne tabellen er ikke koblet til redigerbart innhold. Oppdater tabellstrukturen i malen slik at overskriftscellene har tilknyttede dataceller (utvikleroppgave).</target>
+            </trans-unit>
+            <trans-unit id="hint.landmark-one-main">
+                <source>Add a main landmark element to the page template (developer task).</source>
+                <target>Legg til et hoved-landmark-element i sidemalen (utvikleroppgave).</target>
+            </trans-unit>
+            <trans-unit id="hint.region">
+                <source>Ensure all page content is contained within appropriate landmark regions in the template (developer task).</source>
+                <target>Sørg for at alt sideinnhold er plassert innenfor egnede landmark-regioner i malen (utvikleroppgave).</target>
+            </trans-unit>
+            <trans-unit id="hint.bypass">
+                <source>Add a skip navigation link to the page template (developer task).</source>
+                <target>Legg til en lenke for å hoppe over navigasjonen i sidemalen (utvikleroppgave).</target>
+            </trans-unit>
+            <trans-unit id="hint.html-has-lang">
+                <source>Set the lang attribute on the HTML element in the page template (developer task).</source>
+                <target>Angi lang-attributtet på HTML-elementet i sidemalen (utvikleroppgave).</target>
+            </trans-unit>
+            <trans-unit id="hint.html-lang-valid">
+                <source>Use a valid BCP 47 language tag on the HTML element (developer task).</source>
+                <target>Bruk en gyldig BCP 47-språkkode på HTML-elementet (utvikleroppgave).</target>
+            </trans-unit>
+            <trans-unit id="hint.color-contrast">
+                <source>Adjust CSS color values to meet WCAG contrast requirements (developer task).</source>
+                <target>Juster CSS-fargeverdier for å oppfylle WCAG-kontrastkravene (utvikleroppgave).</target>
+            </trans-unit>
+            <trans-unit id="hint.meta-viewport">
+                <source>Remove user-scalable=no from the viewport meta tag in the template (developer task).</source>
+                <target>Fjern user-scalable=no fra viewport-metataggen i malen (utvikleroppgave).</target>
+            </trans-unit>
+            <trans-unit id="hint.frame-title">
+                <source>Add a title attribute to all iframe elements in the template (developer task).</source>
+                <target>Legg til et title-attributt på alle iframe-elementer i malen (utvikleroppgave).</target>
+            </trans-unit>
+            <trans-unit id="hint.scrollable-region-focusable">
+                <source>Make scrollable regions keyboard-accessible in the template (developer task).</source>
+                <target>Gjør skrollbare områder tastaturtilgjengelige i malen (utvikleroppgave).</target>
+            </trans-unit>
+            <trans-unit id="pageHint.label">
+                <source>Check Accessibility</source>
+                <target>Kontroller tilgjengelighet</target>
+            </trans-unit>
+            <trans-unit id="pageHint.title">
+                <source>Check accessibility for this page</source>
+                <target>Kontroller tilgjengelighet for denne siden</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

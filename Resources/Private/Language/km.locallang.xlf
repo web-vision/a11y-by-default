@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="km" datatype="plaintext" original="messages" date="2026-07-01T11:52:00Z" product-name="a11y_by_default">
+        <body>
+            <trans-unit id="module.noPage">
+                <source>Please select a page from the page tree to run the accessibility check.</source>
+                <target>សូមជ្រើសរើសទំព័រមួយពីមែកធាងទំព័រ ដើម្បីដំណើរការការត្រួតពិនិត្យភាពងាយស្រួលប្រើប្រាស់។</target>
+            </trans-unit>
+            <trans-unit id="module.scanButton">
+                <source>Run Accessibility Scan</source>
+                <target>ដំណើរការស្កេនភាពងាយស្រួលប្រើប្រាស់</target>
+            </trans-unit>
+            <trans-unit id="module.engineLabel">
+                <source>Scanning engine:</source>
+                <target>ម៉ាស៊ីនស្កេន៖</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axe">
+                <source>axe-core (recommended)</source>
+                <target>axe-core (សូមណែនាំ)</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcs">
+                <source>HTML CodeSniffer</source>
+                <target>HTML CodeSniffer</target>
+            </trans-unit>
+            <trans-unit id="module.auditDisclaimer">
+                <source>This module provides automated assistance for accessibility checks. It does not replace a full audit by qualified accessibility auditors, which is required to have a page officially certified as accessible.</source>
+                <target>ម៉ូឌុលនេះផ្តល់ជំនួយស្វ័យប្រវត្តិសម្រាប់ការត្រួតពិនិត្យភាពងាយស្រួលប្រើប្រាស់។ វាមិនអាចជំនួសការត្រួតពិនិត្យពេញលេញដោយអ្នកត្រួតពិនិត្យភាពងាយស្រួលប្រើប្រាស់ដែលមានគុណវុឌ្ឌិបានទេ ដែលជាលក្ខខណ្ឌចាំបាច់សម្រាប់ការទទួលបានវិញ្ញាបនប័ត្របញ្ជាក់ជាផ្លូវការថាទំព័រមួយមានភាពងាយស្រួលប្រើប្រាស់។</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axeInfo">
+                <source>axe-core (recommended) checks the page against the WCAG accessibility guidelines — the standard that ensures people using screen readers, keyboard navigation, or other assistive technology can use your content. It is the actively maintained, industry-standard tool and produces very few incorrect warnings, so almost everything it reports is worth acting on.</source>
+                <target>axe-core (សូមណែនាំ) ត្រួតពិនិត្យទំព័រធៀបនឹងគោលការណ៍ណែនាំភាពងាយស្រួលប្រើប្រាស់ WCAG — ជាស្តង់ដារដែលធានាថាអ្នកប្រើប្រាស់កម្មវិធីអានអេក្រង់ ការរុករកតាមក្តារចុច ឬបច្ចេកវិទ្យាជំនួយផ្សេងទៀត អាចប្រើប្រាស់មាតិការបស់អ្នកបាន។ វាជាឧបករណ៍ស្តង់ដារឧស្សាហកម្មដែលមានការថែទាំយ៉ាងសកម្ម ហើយបង្កើតការព្រមានមិនត្រឹមត្រូវតិចតួចបំផុត ដូច្នេះស្ទើរតែគ្រប់ការរាយការណ៍របស់វាសមនឹងចង់ចាត់វិធានការតាម។</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcsInfo">
+                <source>HTML CodeSniffer checks the page against similar accessibility guidelines, but with an older, less refined method. It can occasionally point out issues axe-core misses, but it also produces many more results that need a closer manual look before you can tell whether something is really a problem. Use it only for a second opinion, not as your main scan.</source>
+                <target>HTML CodeSniffer ត្រួតពិនិត្យទំព័រធៀបនឹងគោលការណ៍ណែនាំភាពងាយស្រួលប្រើប្រាស់ស្រដៀងគ្នា ប៉ុន្តែប្រើវិធីសាស្ត្រចាស់ជាងនិងមិនទាន់ល្អឥតខ្ចោះ។ ជួនកាលវាអាចរកឃើញបញ្ហាដែល axe-core មិនរកឃើញ ប៉ុន្តែវាក៏បង្កើតលទ្ធផលច្រើនជាងច្រើនដែលត្រូវការការពិនិត្យដោយដៃដ៏ល្អិតល្អន់ មុននឹងអ្នកអាចដឹងថាតើវាជាបញ្ហាពិតប្រាកដឬអត់។ សូមប្រើវាសម្រាប់ជាមតិទីពីរប៉ុណ្ណោះ មិនមែនជាការស្កេនចម្បងរបស់អ្នកទេ។</target>
+            </trans-unit>
+            <trans-unit id="module.loading">
+                <source>Loading page and running scan…</source>
+                <target>កំពុងផ្ទុកទំព័រនិងដំណើរការស្កេន…</target>
+            </trans-unit>
+            <trans-unit id="module.results.violations">
+                <source>Violations</source>
+                <target>ការល្មើស</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete">
+                <source>Needs review</source>
+                <target>ត្រូវការការពិនិត្យឡើងវិញ</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete.info">
+                <source>Automated scanning could not determine whether these items pass or fail. Each one needs to be checked manually.</source>
+                <target>ការស្កេនស្វ័យប្រវត្តិមិនអាចកំណត់បានថាតើធាតុទាំងនេះជាប់ ឬបរាជ័យ។ ធាតុនីមួយៗត្រូវការការត្រួតពិនិត្យដោយដៃ។</target>
+            </trans-unit>
+            <trans-unit id="module.results.passes">
+                <source>Passes</source>
+                <target>ជាប់</target>
+            </trans-unit>
+            <trans-unit id="module.results.empty">
+                <source>No accessibility issues found.</source>
+                <target>រកមិនឃើញបញ្ហាភាពងាយស្រួលប្រើប្រាស់ទេ។</target>
+            </trans-unit>
+            <trans-unit id="module.filters.label">
+                <source>Filters</source>
+                <target>តម្រង</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severityLabel">
+                <source>Severity:</source>
+                <target>កម្រិតធ្ងន់ធ្ងរ៖</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.critical">
+                <source>Critical</source>
+                <target>គ្រោះថ្នាក់បំផុត</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.serious">
+                <source>Serious</source>
+                <target>ធ្ងន់ធ្ងរ</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.moderate">
+                <source>Moderate</source>
+                <target>មធ្យម</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.minor">
+                <source>Minor</source>
+                <target>តិចតួច</target>
+            </trans-unit>
+            <trans-unit id="module.filters.viewLabel">
+                <source>View</source>
+                <target>ទិដ្ឋភាព</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.editor">
+                <source>For editors</source>
+                <target>សម្រាប់អ្នកកែសម្រួល</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.developer">
+                <source>For developers</source>
+                <target>សម្រាប់អ្នកអភិវឌ្ឍន៍</target>
+            </trans-unit>
+            <trans-unit id="module.error.scanFailed">
+                <source>The accessibility scan could not be completed. Please try again.</source>
+                <target>ការស្កេនភាពងាយស្រួលប្រើប្រាស់មិនអាចបញ្ចប់បានទេ។ សូមព្យាយាមម្តងទៀត។</target>
+            </trans-unit>
+            <trans-unit id="module.error.noPreview">
+                <source>No preview URL available for this page. Ensure the page has a valid site configuration.</source>
+                <target>មិនមាន URL មើលជាមុនសម្រាប់ទំព័រនេះទេ។ សូមប្រាកដថាទំព័រនេះមានការកំណត់រចនាសម្ព័ន្ធតំបន់បណ្តាញត្រឹមត្រូវ។</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt">
+                <source>Add an image description (alt text) in the content element editor.</source>
+                <target>បញ្ចូលការពិពណ៌នារូបភាព (អត្ថបទ alt) នៅក្នុងកម្មវិធីកែសម្រួលធាតុមាតិកា។</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt.developer">
+                <source>This image is not linked to editable content, or its alt text is set but not rendered. Check the template's image rendering (developer task).</source>
+                <target>រូបភាពនេះមិនបានភ្ជាប់ជាមួយមាតិកាដែលអាចកែសម្រួលបានទេ ឬអត្ថបទ alt របស់វាត្រូវបានកំណត់ប៉ុន្តែមិនត្រូវបានបង្ហាញ។ សូមពិនិត្យការបង្ហាញរូបភាពរបស់ template (ភារកិច្ចអ្នកអភិវឌ្ឍន៍)។</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt">
+                <source>Add an alt text to the image input element in the content editor.</source>
+                <target>បញ្ចូលអត្ថបទ alt ទៅធាតុបញ្ចូលរូបភាពនៅក្នុងកម្មវិធីកែសម្រួលមាតិកា។</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt.developer">
+                <source>This image input is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>ធាតុបញ្ចូលរូបភាពនេះមិនបានភ្ជាប់ជាមួយមាតិកាដែលអាចកែសម្រួលបានទេ ឬអត្ថបទ alt របស់វាត្រូវបានកំណត់ប៉ុន្តែមិនត្រូវបានបង្ហាញ។ សូមពិនិត្យការបង្ហាញរបស់ template (ភារកិច្ចអ្នកអភិវឌ្ឍន៍)។</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt">
+                <source>Add alt text to the image map area in the content editor.</source>
+                <target>បញ្ចូលអត្ថបទ alt ទៅតំបន់ image map នៅក្នុងកម្មវិធីកែសម្រួលមាតិកា។</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt.developer">
+                <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>តំបន់ image map នេះមិនបានភ្ជាប់ជាមួយមាតិកាដែលអាចកែសម្រួលបានទេ ឬអត្ថបទ alt របស់វាត្រូវបានកំណត់ប៉ុន្តែមិនត្រូវបានបង្ហាញ។ សូមពិនិត្យការបង្ហាញរបស់ template (ភារកិច្ចអ្នកអភិវឌ្ឍន៍)។</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order">
+                <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
+                <target>កែសម្រួលធាតុមាតិកា និងផ្លាស់ប្តូររបស់ Header Layout របស់វា ដើម្បីកុំឲ្យកម្រិតក្បាលអត្ថបទលោតជំហាន។</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order.developer">
+                <source>This heading is rendered by the page template rather than a content element. Adjust the heading structure in the Fluid template (developer task).</source>
+                <target>ក្បាលអត្ថបទនេះត្រូវបានបង្ហាញដោយ template របស់ទំព័រ មិនមែនដោយធាតុមាតិកាទេ។ សូមកែសម្រួលរចនាសម្ព័ន្ធក្បាលអត្ថបទនៅក្នុង template Fluid (ភារកិច្ចអ្នកអភិវឌ្ឍន៍)។</target>
+            </trans-unit>
+            <trans-unit id="hint.empty-heading">
+                <source>A heading element is rendered with no text. Check the template's heading rendering; it should not output a heading tag when the source text is empty (developer task).</source>
+                <target>ធាតុក្បាលអត្ថបទមួយត្រូវបានបង្ហាញដោយគ្មានអត្ថបទ។ សូមពិនិត្យការបង្ហាញក្បាលអត្ថបទរបស់ template វាមិនគួរបញ្ចេញស្លាកក្បាលអត្ថបទនៅពេលអត្ថបទប្រភពនៅទទេ (ភារកិច្ចអ្នកអភិវឌ្ឍន៍)។</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name">
+                <source>Edit the link in the content editor and provide a descriptive link text.</source>
+                <target>កែសម្រួលតំណនៅក្នុងកម្មវិធីកែសម្រួលមាតិកា និងផ្តល់អត្ថបទតំណដែលពិពណ៌នាបានច្បាស់លាស់។</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name.developer">
+                <source>This link is rendered by the page template without link text and isn't linked to editable content. Add visible text or an aria-label in the Fluid template (developer task).</source>
+                <target>តំណនេះត្រូវបានបង្ហាញដោយ template របស់ទំព័រដោយគ្មានអត្ថបទតំណ ហើយមិនបានភ្ជាប់ជាមួយមាតិកាដែលអាចកែសម្រួលបានទេ។ សូមបញ្ចូលអត្ថបទដែលអាចមើលឃើញ ឬ aria-label នៅក្នុង template Fluid (ភារកិច្ចអ្នកអភិវឌ្ឍន៍)។</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr">
+                <source>Update the table structure in the content editor to associate data cells with headers.</source>
+                <target>ធ្វើបច្ចុប្បន្នភាពរចនាសម្ព័ន្ធតារាងនៅក្នុងកម្មវិធីកែសម្រួលមាតិកា ដើម្បីភ្ជាប់ក្រឡាទិន្នន័យជាមួយក្បាលតារាង។</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so data cells reference their headers (developer task).</source>
+                <target>តារាងនេះមិនបានភ្ជាប់ជាមួយមាតិកាដែលអាចកែសម្រួលបានទេ។ សូមធ្វើបច្ចុប្បន្នភាពរចនាសម្ព័ន្ធតារាងនៅក្នុង template ដើម្បីឲ្យក្រឡាទិន្នន័យយោងទៅក្បាលតារាងរបស់វា (ភារកិច្ចអ្នកអភិវឌ្ឍន៍)។</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells">
+                <source>Update the table in the content editor so header cells have associated data cells.</source>
+                <target>ធ្វើបច្ចុប្បន្នភាពតារាងនៅក្នុងកម្មវិធីកែសម្រួលមាតិកា ដើម្បីឲ្យក្រឡាក្បាលតារាងមានក្រឡាទិន្នន័យដែលភ្ជាប់ជាមួយ។</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so header cells have associated data cells (developer task).</source>
+                <target>តារាងនេះមិនបានភ្ជាប់ជាមួយមាតិកាដែលអាចកែសម្រួលបានទេ។ សូមធ្វើបច្ចុប្បន្នភាពរចនាសម្ព័ន្ធតារាងនៅក្នុង template ដើម្បីឲ្យក្រឡាក្បាលតារាងមានក្រឡាទិន្នន័យដែលភ្ជាប់ជាមួយ (ភារកិច្ចអ្នកអភិវឌ្ឍន៍)។</target>
+            </trans-unit>
+            <trans-unit id="hint.landmark-one-main">
+                <source>Add a main landmark element to the page template (developer task).</source>
+                <target>បញ្ចូលធាតុ landmark សំខាន់ (main) ទៅ template របស់ទំព័រ (ភារកិច្ចអ្នកអភិវឌ្ឍន៍)។</target>
+            </trans-unit>
+            <trans-unit id="hint.region">
+                <source>Ensure all page content is contained within appropriate landmark regions in the template (developer task).</source>
+                <target>សូមប្រាកដថាមាតិកាទំព័រទាំងអស់ស្ថិតនៅក្នុងតំបន់ landmark ដ៏សមរម្យនៅក្នុង template (ភារកិច្ចអ្នកអភិវឌ្ឍន៍)។</target>
+            </trans-unit>
+            <trans-unit id="hint.bypass">
+                <source>Add a skip navigation link to the page template (developer task).</source>
+                <target>បញ្ចូលតំណរំលងការរុករក (skip navigation) ទៅ template របស់ទំព័រ (ភារកិច្ចអ្នកអភិវឌ្ឍន៍)។</target>
+            </trans-unit>
+            <trans-unit id="hint.html-has-lang">
+                <source>Set the lang attribute on the HTML element in the page template (developer task).</source>
+                <target>កំណត់គុណលក្ខណៈ lang នៅលើធាតុ HTML ក្នុង template របស់ទំព័រ (ភារកិច្ចអ្នកអភិវឌ្ឍន៍)។</target>
+            </trans-unit>
+            <trans-unit id="hint.html-lang-valid">
+                <source>Use a valid BCP 47 language tag on the HTML element (developer task).</source>
+                <target>ប្រើស្លាកភាសា BCP 47 ដែលត្រឹមត្រូវនៅលើធាតុ HTML (ភារកិច្ចអ្នកអភិវឌ្ឍន៍)។</target>
+            </trans-unit>
+            <trans-unit id="hint.color-contrast">
+                <source>Adjust CSS color values to meet WCAG contrast requirements (developer task).</source>
+                <target>កែសម្រួលតម្លៃពណ៌ CSS ដើម្បីបំពេញតម្រូវការកម្រិតពណ៌ផ្ទុយគ្នា (contrast) របស់ WCAG (ភារកិច្ចអ្នកអភិវឌ្ឍន៍)។</target>
+            </trans-unit>
+            <trans-unit id="hint.meta-viewport">
+                <source>Remove user-scalable=no from the viewport meta tag in the template (developer task).</source>
+                <target>លុប user-scalable=no ចេញពីស្លាក meta viewport នៅក្នុង template (ភារកិច្ចអ្នកអភិវឌ្ឍន៍)។</target>
+            </trans-unit>
+            <trans-unit id="hint.frame-title">
+                <source>Add a title attribute to all iframe elements in the template (developer task).</source>
+                <target>បញ្ចូលគុណលក្ខណៈ title ទៅធាតុ iframe ទាំងអស់នៅក្នុង template (ភារកិច្ចអ្នកអភិវឌ្ឍន៍)។</target>
+            </trans-unit>
+            <trans-unit id="hint.scrollable-region-focusable">
+                <source>Make scrollable regions keyboard-accessible in the template (developer task).</source>
+                <target>ធ្វើឲ្យតំបន់ដែលអាចរំកិលបានអាចចូលប្រើតាមក្តារចុចនៅក្នុង template (ភារកិច្ចអ្នកអភិវឌ្ឍន៍)។</target>
+            </trans-unit>
+            <trans-unit id="pageHint.label">
+                <source>Check Accessibility</source>
+                <target>ត្រួតពិនិត្យភាពងាយស្រួលប្រើប្រាស់</target>
+            </trans-unit>
+            <trans-unit id="pageHint.title">
+                <source>Check accessibility for this page</source>
+                <target>ត្រួតពិនិត្យភាពងាយស្រួលប្រើប្រាស់សម្រាប់ទំព័រនេះ</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

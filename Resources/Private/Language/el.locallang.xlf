@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="el" datatype="plaintext" original="messages" date="2026-07-01T11:52:00Z" product-name="a11y_by_default">
+        <body>
+            <trans-unit id="module.noPage">
+                <source>Please select a page from the page tree to run the accessibility check.</source>
+                <target>Επιλέξτε μια σελίδα από το δέντρο σελίδων για να εκτελέσετε τον έλεγχο προσβασιμότητας.</target>
+            </trans-unit>
+            <trans-unit id="module.scanButton">
+                <source>Run Accessibility Scan</source>
+                <target>Εκτέλεση ελέγχου προσβασιμότητας</target>
+            </trans-unit>
+            <trans-unit id="module.engineLabel">
+                <source>Scanning engine:</source>
+                <target>Μηχανή ελέγχου:</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axe">
+                <source>axe-core (recommended)</source>
+                <target>axe-core (προτεινόμενο)</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcs">
+                <source>HTML CodeSniffer</source>
+                <target>HTML CodeSniffer</target>
+            </trans-unit>
+            <trans-unit id="module.auditDisclaimer">
+                <source>This module provides automated assistance for accessibility checks. It does not replace a full audit by qualified accessibility auditors, which is required to have a page officially certified as accessible.</source>
+                <target>Αυτή η ενότητα παρέχει αυτοματοποιημένη υποστήριξη για ελέγχους προσβασιμότητας. Δεν αντικαθιστά έναν πλήρη έλεγχο από εξειδικευμένους ελεγκτές προσβασιμότητας, ο οποίος απαιτείται για την επίσημη πιστοποίηση μιας σελίδας ως προσβάσιμης.</target>
+            </trans-unit>
+            <trans-unit id="module.engine.axeInfo">
+                <source>axe-core (recommended) checks the page against the WCAG accessibility guidelines — the standard that ensures people using screen readers, keyboard navigation, or other assistive technology can use your content. It is the actively maintained, industry-standard tool and produces very few incorrect warnings, so almost everything it reports is worth acting on.</source>
+                <target>Το axe-core (προτεινόμενο) ελέγχει τη σελίδα σύμφωνα με τις οδηγίες προσβασιμότητας WCAG — το πρότυπο που εξασφαλίζει ότι άτομα που χρησιμοποιούν αναγνώστες οθόνης, πλοήγηση με πληκτρολόγιο ή άλλη υποβοηθητική τεχνολογία μπορούν να χρησιμοποιήσουν το περιεχόμενό σας. Είναι το ενεργά συντηρούμενο εργαλείο που αποτελεί πρότυπο του κλάδου και παράγει πολύ λίγες εσφαλμένες προειδοποιήσεις, οπότε σχεδόν όλα όσα αναφέρει αξίζει να αντιμετωπιστούν.</target>
+            </trans-unit>
+            <trans-unit id="module.engine.htmlcsInfo">
+                <source>HTML CodeSniffer checks the page against similar accessibility guidelines, but with an older, less refined method. It can occasionally point out issues axe-core misses, but it also produces many more results that need a closer manual look before you can tell whether something is really a problem. Use it only for a second opinion, not as your main scan.</source>
+                <target>Το HTML CodeSniffer ελέγχει τη σελίδα σύμφωνα με παρόμοιες οδηγίες προσβασιμότητας, αλλά με μια παλαιότερη, λιγότερο εξεζητημένη μέθοδο. Μπορεί περιστασιακά να εντοπίσει προβλήματα που το axe-core παραλείπει, αλλά παράγει επίσης πολύ περισσότερα αποτελέσματα που χρειάζονται προσεκτικότερη χειροκίνητη εξέταση πριν διαπιστώσετε αν κάτι είναι όντως πρόβλημα. Χρησιμοποιήστε το μόνο για δεύτερη γνώμη, όχι ως τον κύριο έλεγχό σας.</target>
+            </trans-unit>
+            <trans-unit id="module.loading">
+                <source>Loading page and running scan…</source>
+                <target>Φόρτωση σελίδας και εκτέλεση ελέγχου…</target>
+            </trans-unit>
+            <trans-unit id="module.results.violations">
+                <source>Violations</source>
+                <target>Παραβάσεις</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete">
+                <source>Needs review</source>
+                <target>Χρειάζεται έλεγχο</target>
+            </trans-unit>
+            <trans-unit id="module.results.incomplete.info">
+                <source>Automated scanning could not determine whether these items pass or fail. Each one needs to be checked manually.</source>
+                <target>Ο αυτοματοποιημένος έλεγχος δεν μπόρεσε να προσδιορίσει αν αυτά τα στοιχεία επιτυγχάνουν ή αποτυγχάνουν. Κάθε ένα πρέπει να ελεγχθεί χειροκίνητα.</target>
+            </trans-unit>
+            <trans-unit id="module.results.passes">
+                <source>Passes</source>
+                <target>Επιτυχίες</target>
+            </trans-unit>
+            <trans-unit id="module.results.empty">
+                <source>No accessibility issues found.</source>
+                <target>Δεν βρέθηκαν προβλήματα προσβασιμότητας.</target>
+            </trans-unit>
+            <trans-unit id="module.filters.label">
+                <source>Filters</source>
+                <target>Φίλτρα</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severityLabel">
+                <source>Severity:</source>
+                <target>Σοβαρότητα:</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.critical">
+                <source>Critical</source>
+                <target>Κρίσιμη</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.serious">
+                <source>Serious</source>
+                <target>Σημαντική</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.moderate">
+                <source>Moderate</source>
+                <target>Μέτρια</target>
+            </trans-unit>
+            <trans-unit id="module.filters.severity.minor">
+                <source>Minor</source>
+                <target>Ελάσσονα</target>
+            </trans-unit>
+            <trans-unit id="module.filters.viewLabel">
+                <source>View</source>
+                <target>Προβολή</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.editor">
+                <source>For editors</source>
+                <target>Για συντάκτες</target>
+            </trans-unit>
+            <trans-unit id="module.filters.view.developer">
+                <source>For developers</source>
+                <target>Για προγραμματιστές</target>
+            </trans-unit>
+            <trans-unit id="module.error.scanFailed">
+                <source>The accessibility scan could not be completed. Please try again.</source>
+                <target>Ο έλεγχος προσβασιμότητας δεν ολοκληρώθηκε. Δοκιμάστε ξανά.</target>
+            </trans-unit>
+            <trans-unit id="module.error.noPreview">
+                <source>No preview URL available for this page. Ensure the page has a valid site configuration.</source>
+                <target>Δεν υπάρχει διαθέσιμη διεύθυνση προεπισκόπησης για αυτή τη σελίδα. Βεβαιωθείτε ότι η σελίδα έχει έγκυρη διαμόρφωση ιστότοπου.</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt">
+                <source>Add an image description (alt text) in the content element editor.</source>
+                <target>Προσθέστε περιγραφή εικόνας (alt text) στον επεξεργαστή του στοιχείου περιεχομένου.</target>
+            </trans-unit>
+            <trans-unit id="hint.image-alt.developer">
+                <source>This image is not linked to editable content, or its alt text is set but not rendered. Check the template's image rendering (developer task).</source>
+                <target>Αυτή η εικόνα δεν συνδέεται με επεξεργάσιμο περιεχόμενο, ή το alt text έχει ορισθεί αλλά δεν αποδίδεται. Ελέγξτε την απόδοση εικόνων στο πρότυπο (εργασία προγραμματιστή).</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt">
+                <source>Add an alt text to the image input element in the content editor.</source>
+                <target>Προσθέστε alt text στο στοιχείο εισόδου εικόνας μέσα στον επεξεργαστή περιεχομένου.</target>
+            </trans-unit>
+            <trans-unit id="hint.input-image-alt.developer">
+                <source>This image input is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>Αυτή η είσοδος εικόνας δεν συνδέεται με επεξεργάσιμο περιεχόμενο, ή το alt text έχει ορισθεί αλλά δεν αποδίδεται. Ελέγξτε την απόδοση στο πρότυπο (εργασία προγραμματιστή).</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt">
+                <source>Add alt text to the image map area in the content editor.</source>
+                <target>Προσθέστε alt text στην περιοχή χάρτη εικόνας μέσα στον επεξεργαστή περιεχομένου.</target>
+            </trans-unit>
+            <trans-unit id="hint.area-alt.developer">
+                <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
+                <target>Αυτή η περιοχή χάρτη εικόνας δεν συνδέεται με επεξεργάσιμο περιεχόμενο, ή το alt text έχει ορισθεί αλλά δεν αποδίδεται. Ελέγξτε την απόδοση στο πρότυπο (εργασία προγραμματιστή).</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order">
+                <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
+                <target>Επεξεργαστείτε το στοιχείο περιεχομένου και αλλάξτε τη διάταξη επικεφαλίδας ώστε τα επίπεδα επικεφαλίδων να μην παραλείπουν βήμα.</target>
+            </trans-unit>
+            <trans-unit id="hint.heading-order.developer">
+                <source>This heading is rendered by the page template rather than a content element. Adjust the heading structure in the Fluid template (developer task).</source>
+                <target>Αυτή η επικεφαλίδα αποδίδεται από το πρότυπο σελίδας και όχι από στοιχείο περιεχομένου. Προσαρμόστε τη δομή επικεφαλίδων στο πρότυπο Fluid (εργασία προγραμματιστή).</target>
+            </trans-unit>
+            <trans-unit id="hint.empty-heading">
+                <source>A heading element is rendered with no text. Check the template's heading rendering; it should not output a heading tag when the source text is empty (developer task).</source>
+                <target>Ένα στοιχείο επικεφαλίδας αποδίδεται χωρίς κείμενο. Ελέγξτε την απόδοση επικεφαλίδων στο πρότυπο· δεν θα πρέπει να παράγει ετικέτα επικεφαλίδας όταν το πηγαίο κείμενο είναι κενό (εργασία προγραμματιστή).</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name">
+                <source>Edit the link in the content editor and provide a descriptive link text.</source>
+                <target>Επεξεργαστείτε τον σύνδεσμο στον επεξεργαστή περιεχομένου και δώστε περιγραφικό κείμενο συνδέσμου.</target>
+            </trans-unit>
+            <trans-unit id="hint.link-name.developer">
+                <source>This link is rendered by the page template without link text and isn't linked to editable content. Add visible text or an aria-label in the Fluid template (developer task).</source>
+                <target>Αυτός ο σύνδεσμος αποδίδεται από το πρότυπο σελίδας χωρίς κείμενο συνδέσμου και δεν συνδέεται με επεξεργάσιμο περιεχόμενο. Προσθέστε ορατό κείμενο ή aria-label στο πρότυπο Fluid (εργασία προγραμματιστή).</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr">
+                <source>Update the table structure in the content editor to associate data cells with headers.</source>
+                <target>Ενημερώστε τη δομή του πίνακα στον επεξεργαστή περιεχομένου ώστε τα κελιά δεδομένων να συνδέονται με τις κεφαλίδες.</target>
+            </trans-unit>
+            <trans-unit id="hint.td-headers-attr.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so data cells reference their headers (developer task).</source>
+                <target>Αυτός ο πίνακας δεν συνδέεται με επεξεργάσιμο περιεχόμενο. Ενημερώστε τη δομή του πίνακα στο πρότυπο ώστε τα κελιά δεδομένων να αναφέρονται στις κεφαλίδες τους (εργασία προγραμματιστή).</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells">
+                <source>Update the table in the content editor so header cells have associated data cells.</source>
+                <target>Ενημερώστε τον πίνακα στον επεξεργαστή περιεχομένου ώστε τα κελιά κεφαλίδας να έχουν συνδεδεμένα κελιά δεδομένων.</target>
+            </trans-unit>
+            <trans-unit id="hint.th-has-data-cells.developer">
+                <source>This table is not linked to editable content. Update the table structure in the template so header cells have associated data cells (developer task).</source>
+                <target>Αυτός ο πίνακας δεν συνδέεται με επεξεργάσιμο περιεχόμενο. Ενημερώστε τη δομή του πίνακα στο πρότυπο ώστε τα κελιά κεφαλίδας να έχουν συνδεδεμένα κελιά δεδομένων (εργασία προγραμματιστή).</target>
+            </trans-unit>
+            <trans-unit id="hint.landmark-one-main">
+                <source>Add a main landmark element to the page template (developer task).</source>
+                <target>Προσθέστε ένα κύριο στοιχείο landmark στο πρότυπο σελίδας (εργασία προγραμματιστή).</target>
+            </trans-unit>
+            <trans-unit id="hint.region">
+                <source>Ensure all page content is contained within appropriate landmark regions in the template (developer task).</source>
+                <target>Βεβαιωθείτε ότι όλο το περιεχόμενο της σελίδας περιέχεται σε κατάλληλες περιοχές landmark στο πρότυπο (εργασία προγραμματιστή).</target>
+            </trans-unit>
+            <trans-unit id="hint.bypass">
+                <source>Add a skip navigation link to the page template (developer task).</source>
+                <target>Προσθέστε σύνδεσμο παράλειψης πλοήγησης στο πρότυπο σελίδας (εργασία προγραμματιστή).</target>
+            </trans-unit>
+            <trans-unit id="hint.html-has-lang">
+                <source>Set the lang attribute on the HTML element in the page template (developer task).</source>
+                <target>Ορίστε το χαρακτηριστικό lang στο στοιχείο HTML του προτύπου σελίδας (εργασία προγραμματιστή).</target>
+            </trans-unit>
+            <trans-unit id="hint.html-lang-valid">
+                <source>Use a valid BCP 47 language tag on the HTML element (developer task).</source>
+                <target>Χρησιμοποιήστε έγκυρη ετικέτα γλώσσας BCP 47 στο στοιχείο HTML (εργασία προγραμματιστή).</target>
+            </trans-unit>
+            <trans-unit id="hint.color-contrast">
+                <source>Adjust CSS color values to meet WCAG contrast requirements (developer task).</source>
+                <target>Προσαρμόστε τις τιμές χρώματος CSS ώστε να πληρούν τις απαιτήσεις αντίθεσης WCAG (εργασία προγραμματιστή).</target>
+            </trans-unit>
+            <trans-unit id="hint.meta-viewport">
+                <source>Remove user-scalable=no from the viewport meta tag in the template (developer task).</source>
+                <target>Αφαιρέστε το user-scalable=no από την ετικέτα meta viewport στο πρότυπο (εργασία προγραμματιστή).</target>
+            </trans-unit>
+            <trans-unit id="hint.frame-title">
+                <source>Add a title attribute to all iframe elements in the template (developer task).</source>
+                <target>Προσθέστε χαρακτηριστικό title σε όλα τα στοιχεία iframe του προτύπου (εργασία προγραμματιστή).</target>
+            </trans-unit>
+            <trans-unit id="hint.scrollable-region-focusable">
+                <source>Make scrollable regions keyboard-accessible in the template (developer task).</source>
+                <target>Κάντε τις περιοχές με κύλιση προσβάσιμες μέσω πληκτρολογίου στο πρότυπο (εργασία προγραμματιστή).</target>
+            </trans-unit>
+            <trans-unit id="pageHint.label">
+                <source>Check Accessibility</source>
+                <target>Έλεγχος προσβασιμότητας</target>
+            </trans-unit>
+            <trans-unit id="pageHint.title">
+                <source>Check accessibility for this page</source>
+                <target>Έλεγχος προσβασιμότητας για αυτή τη σελίδα</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
