@@ -67,6 +67,17 @@ function responsibilityBadgeClass(responsibility: string): string {
   return responsibility === 'editor' ? 'badge text-bg-primary' : 'badge text-bg-secondary';
 }
 
+const SEVERITY_ORDER: Record<string, number> = {
+  critical: 3,
+  serious: 2,
+  moderate: 1,
+  minor: 0,
+};
+
+function sortBySeverityDescending(issues: AccessibilityIssue[]): AccessibilityIssue[] {
+  return [...issues].sort((a, b) => (SEVERITY_ORDER[b.impact] ?? -1) - (SEVERITY_ORDER[a.impact] ?? -1));
+}
+
 // The module runs inside the backend's content iframe. Only the outer/top backend
 // document carries a valid, signed route token for record/edit (set by TYPO3's
 // BackendController as TYPO3.settings.FormEngine.moduleUrl) — the same base URL
@@ -117,7 +128,7 @@ export function renderIssueCard(issue: AccessibilityIssue, classifier: Violation
 
   const nodes = issue.nodes.map((node) => `<pre class="mb-1"><code>${escapeHtml(node.html)}</code></pre>`).join('');
 
-  return `<div class="card mb-2">
+  return `<div class="card mb-2" data-impact="${escapeHtml(issue.impact)}" data-responsibility="${escapeHtml(classification.responsibility)}">
         <div class="card-header d-flex align-items-center gap-2 flex-wrap">
             <span class="${impactBadgeClass(issue.impact)}">${escapeHtml(issue.impact)}</span>
             <span class="${responsibilityBadgeClass(classification.responsibility)}">${escapeHtml(responsibilityLabel)}</span>
@@ -147,7 +158,9 @@ export function renderIssueSection(
   const cards =
     issues.length === 0
       ? `<p class="text-body-secondary">${getLabel('module.results.empty')}</p>`
-      : issues.map((issue) => renderIssueCard(issue, classifier)).join('');
+      : sortBySeverityDescending(issues)
+          .map((issue) => renderIssueCard(issue, classifier))
+          .join('');
 
   return `<section class="mb-4" aria-labelledby="${headingId}">
         <h2 id="${headingId}" class="h4 mb-3">
@@ -168,6 +181,32 @@ export function renderResults(container: HTMLElement, result: ScanResult, classi
         ${successCallout}
         ${renderIssueSection(result.violations, 'a11y-violations-heading', getLabel('module.results.violations'), 'text-bg-danger', classifier)}
         ${renderIssueSection(result.incomplete, 'a11y-incomplete-heading', getLabel('module.results.incomplete'), 'text-bg-warning', classifier)}`;
+
+  applyFilters(container);
+}
+
+function getActiveSeverityFilters(): Set<string> {
+  const checkboxes = document.querySelectorAll<HTMLInputElement>('.a11y-filter-severity');
+  return new Set(
+    Array.from(checkboxes)
+      .filter((checkbox) => checkbox.checked)
+      .map((checkbox) => checkbox.value),
+  );
+}
+
+function isDeveloperTasksFilterEnabled(): boolean {
+  return (document.getElementById('a11y-filter-developer-tasks') as HTMLInputElement | null)?.checked ?? false;
+}
+
+export function applyFilters(container: HTMLElement): void {
+  const activeSeverities = getActiveSeverityFilters();
+  const showDeveloperTasks = isDeveloperTasksFilterEnabled();
+
+  container.querySelectorAll<HTMLElement>('[data-impact]').forEach((card) => {
+    const matchesSeverity = activeSeverities.has(card.dataset['impact'] ?? '');
+    const matchesResponsibility = showDeveloperTasks || card.dataset['responsibility'] === 'editor';
+    card.classList.toggle('d-none', !(matchesSeverity && matchesResponsibility));
+  });
 }
 
 async function runScan(settings: ModuleSettings, engine: ScanEngine, resultsContainer: HTMLElement): Promise<void> {
@@ -247,6 +286,10 @@ export function initialize(): void {
       scanButton.removeAttribute('disabled');
     }
   };
+
+  document
+    .querySelectorAll<HTMLInputElement>('.a11y-filter-severity, #a11y-filter-developer-tasks')
+    .forEach((filterInput) => filterInput.addEventListener('change', () => applyFilters(resultsContainer)));
 
   scanButton.addEventListener('click', executeScan);
   executeScan();

@@ -2,7 +2,7 @@ jest.mock('../src/engines/AxeEngine');
 jest.mock('../src/engines/HtmlCsEngine');
 
 import { AxeEngine } from '../src/engines/AxeEngine';
-import { initialize, renderIssueCard, renderIssueSection, renderResults } from '../src/A11yModule';
+import { applyFilters, initialize, renderIssueCard, renderIssueSection, renderResults } from '../src/A11yModule';
 import { ViolationClassifier } from '../src/ViolationClassifier';
 import type { AccessibilityIssue, ScanResult } from '../src/types';
 
@@ -226,6 +226,19 @@ describe('renderIssueCard', () => {
     const html = renderIssueCard(makeIssue(), classifier);
     expect(html).not.toContain('edit[tt_content]');
   });
+
+  it('includes data attributes for impact and responsibility to support filtering', () => {
+    const classifier = new ViolationClassifier({
+      'image-alt': { responsibility: 'editor', hint: 'Add alt text.' },
+    });
+    const issue = makeIssue({
+      impact: 'critical',
+      nodes: [{ html: '<img src="photo.jpg">', target: ['#main img'], contentElementUid: 5 }],
+    });
+    const html = renderIssueCard(issue, classifier);
+    expect(html).toContain('data-impact="critical"');
+    expect(html).toContain('data-responsibility="editor"');
+  });
 });
 
 // --- renderIssueSection ---
@@ -262,6 +275,21 @@ describe('renderIssueSection', () => {
     const cardCount = (html.match(/class="card /g) ?? []).length;
     expect(cardCount).toBe(2);
   });
+
+  it('sorts issues by severity, highest impact first', () => {
+    const classifier = new ViolationClassifier({});
+    const issues = [
+      makeIssue({ id: 'minor-rule', impact: 'minor' }),
+      makeIssue({ id: 'critical-rule', impact: 'critical' }),
+      makeIssue({ id: 'moderate-rule', impact: 'moderate' }),
+    ];
+    const html = renderIssueSection(issues, 'violations-heading', 'Violations', 'text-bg-danger', classifier);
+    const criticalIndex = html.indexOf('data-impact="critical"');
+    const moderateIndex = html.indexOf('data-impact="moderate"');
+    const minorIndex = html.indexOf('data-impact="minor"');
+    expect(criticalIndex).toBeLessThan(moderateIndex);
+    expect(moderateIndex).toBeLessThan(minorIndex);
+  });
 });
 
 // --- renderResults ---
@@ -297,6 +325,68 @@ describe('renderResults', () => {
     renderResults(container, EMPTY_RESULT, classifier);
     const sections = container.querySelectorAll('section');
     expect(sections.length).toBe(2);
+  });
+});
+
+// --- applyFilters ---
+
+describe('applyFilters', () => {
+  let container: HTMLElement;
+
+  beforeEach(() => {
+    mockTYPO3Lang();
+    container = document.createElement('div');
+    document.body.appendChild(container);
+  });
+
+  afterEach(() => {
+    document.body.innerHTML = '';
+  });
+
+  function appendFilterCheckboxes(overrides: Partial<Record<string, boolean>> = {}): void {
+    const filters = document.createElement('div');
+    filters.innerHTML = `
+      <input type="checkbox" class="a11y-filter-severity" value="critical" ${overrides['critical'] !== false ? 'checked' : ''}>
+      <input type="checkbox" class="a11y-filter-severity" value="serious" ${overrides['serious'] !== false ? 'checked' : ''}>
+      <input type="checkbox" class="a11y-filter-severity" value="moderate" ${overrides['moderate'] !== false ? 'checked' : ''}>
+      <input type="checkbox" class="a11y-filter-severity" value="minor" ${overrides['minor'] !== false ? 'checked' : ''}>
+      <input type="checkbox" id="a11y-filter-developer-tasks" ${overrides['developer'] === true ? 'checked' : ''}>`;
+    document.body.appendChild(filters);
+  }
+
+  it('hides cards whose severity checkbox is unchecked', () => {
+    appendFilterCheckboxes({ minor: false });
+    container.innerHTML = `
+      <div class="card" data-impact="critical" data-responsibility="editor"></div>
+      <div class="card" data-impact="minor" data-responsibility="editor"></div>`;
+
+    applyFilters(container);
+
+    const cards = container.querySelectorAll('.card');
+    expect(cards[0]?.classList.contains('d-none')).toBe(false);
+    expect(cards[1]?.classList.contains('d-none')).toBe(true);
+  });
+
+  it('hides developer-responsibility cards by default so editors only see editor tasks', () => {
+    appendFilterCheckboxes();
+    container.innerHTML = `
+      <div class="card" data-impact="critical" data-responsibility="editor"></div>
+      <div class="card" data-impact="critical" data-responsibility="developer"></div>`;
+
+    applyFilters(container);
+
+    const cards = container.querySelectorAll('.card');
+    expect(cards[0]?.classList.contains('d-none')).toBe(false);
+    expect(cards[1]?.classList.contains('d-none')).toBe(true);
+  });
+
+  it('shows developer-responsibility cards once the developer-tasks filter is enabled', () => {
+    appendFilterCheckboxes({ developer: true });
+    container.innerHTML = '<div class="card" data-impact="critical" data-responsibility="developer"></div>';
+
+    applyFilters(container);
+
+    expect(container.querySelector('.card')?.classList.contains('d-none')).toBe(false);
   });
 });
 
