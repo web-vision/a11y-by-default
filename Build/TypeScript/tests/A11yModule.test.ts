@@ -356,6 +356,28 @@ describe('renderIssueSection', () => {
     );
     expect(html).not.toContain('data-severity-group="minor"');
   });
+
+  it("colors each severity group's header to match its filter button color", () => {
+    const classifier = new ViolationClassifier({});
+    const issues = [
+      makeIssue({ id: 'critical-rule', impact: 'critical' }),
+      makeIssue({ id: 'serious-rule', impact: 'serious' }),
+      makeIssue({ id: 'moderate-rule', impact: 'moderate' }),
+      makeIssue({ id: 'minor-rule', impact: 'minor' }),
+    ];
+    const html = renderIssueSection(
+      issues,
+      'violations-heading',
+      'Violations',
+      'text-bg-danger',
+      'violations-count',
+      classifier,
+    );
+    expect(html).toContain('panel panel-danger mb-2" data-severity-group="critical"');
+    expect(html).toContain('panel panel-warning mb-2" data-severity-group="serious"');
+    expect(html).toContain('panel panel-info mb-2" data-severity-group="moderate"');
+    expect(html).toContain('panel panel-secondary mb-2" data-severity-group="minor"');
+  });
 });
 
 // --- renderResults ---
