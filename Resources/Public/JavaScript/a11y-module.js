@@ -347,13 +347,30 @@ function impactBadgeClass(impact) {
 function responsibilityBadgeClass(responsibility) {
     return responsibility === 'editor' ? 'badge text-bg-primary' : 'badge text-bg-secondary';
 }
+// The module runs inside the backend's content iframe. Only the outer/top backend
+// document carries a valid, signed route token for record/edit (set by TYPO3's
+// BackendController as TYPO3.settings.FormEngine.moduleUrl) — the same base URL
+// TYPO3 core itself reuses in multi-record-selection-edit-action.js. Minting a
+// token client-side is not possible, so this pre-tokenized URL must be extended.
+function getRecordEditModuleUrl() {
+    const topWindow = (window.top ?? window);
+    const typo3 = topWindow['TYPO3'];
+    return typo3?.settings?.FormEngine?.moduleUrl;
+}
+function buildContentElementEditLink(contentElementUid) {
+    const moduleUrl = getRecordEditModuleUrl();
+    if (moduleUrl === undefined || moduleUrl === '') {
+        return '';
+    }
+    const returnUrl = encodeURIComponent(window.location.href);
+    const href = `${moduleUrl}&edit[tt_content][${contentElementUid}]=edit&module=web_a11y_by_default&returnUrl=${returnUrl}`;
+    return `<a href="${escapeHtml(href)}"
+               class="btn btn-sm btn-default mb-2 d-inline-block">Edit content element #${contentElementUid}</a>`;
+}
 function renderIssueCard(issue, classifier) {
     const classification = classifier.classify(issue);
     const responsibilityLabel = getLabel(`module.responsibility.${classification.responsibility}`);
-    const contentElementLink = classification.contentElementUid !== undefined
-        ? `<a href="/typo3/record/edit?edit[tt_content][${classification.contentElementUid}]=edit&returnUrl=."
-                   class="btn btn-sm btn-default mb-2 d-inline-block">Edit content element #${classification.contentElementUid}</a>`
-        : '';
+    const contentElementLink = classification.contentElementUid !== undefined ? buildContentElementEditLink(classification.contentElementUid) : '';
     const nodes = issue.nodes.map((node) => `<pre class="mb-1"><code>${escapeHtml(node.html)}</code></pre>`).join('');
     return `<div class="card mb-2">
         <div class="card-header d-flex align-items-center gap-2 flex-wrap">
