@@ -1,11 +1,16 @@
+import { buildContentFactsIndex } from './ContentFacts';
 import { AxeEngine } from './engines/AxeEngine';
-import type { ScanResult } from './types';
+import { ViolationClassifier } from './ViolationClassifier';
+import type { AccessibilityIssue, ClassificationRule, ContentFacts, ScanResult } from './types';
 
 interface SummarySettings {
   pageUid: number;
   previewUri: string;
   axeJsUrl: string;
   moduleUrl: string;
+  contentFacts: ContentFacts;
+  classificationRules: Record<string, ClassificationRule>;
+  hasDeveloperCornerAccess: boolean;
 }
 
 export function readSettings(): SummarySettings | null {
@@ -19,7 +24,25 @@ export function readSettings(): SummarySettings | null {
     previewUri: appEl.dataset['previewUri'] ?? '',
     axeJsUrl: appEl.dataset['axeJsUrl'] ?? '',
     moduleUrl: appEl.dataset['moduleUrl'] ?? '',
+    contentFacts: JSON.parse(appEl.dataset['contentFacts'] ?? '{}') as ContentFacts,
+    classificationRules: JSON.parse(appEl.dataset['classificationRules'] ?? '{}') as Record<string, ClassificationRule>,
+    hasDeveloperCornerAccess: appEl.dataset['hasDeveloperCornerAccess'] === '1',
   };
+}
+
+// Editors without developer corner access must only see issues they can actually
+// act on in this summary — developer-only (and unclassified) findings are hidden,
+// mirroring the view-tab filtering in the full module (see FilterController).
+export function filterForAccess(
+  issues: AccessibilityIssue[],
+  classifier: ViolationClassifier,
+  hasDeveloperCornerAccess: boolean,
+): AccessibilityIssue[] {
+  if (hasDeveloperCornerAccess) {
+    return issues;
+  }
+
+  return issues.filter((issue) => classifier.classify(issue).responsibility === 'editor');
 }
 
 function lll(key: string): string {
@@ -135,9 +158,16 @@ export async function runAutoScan(): Promise<void> {
       );
     });
 
-    const engine = new AxeEngine(iframe, settings.axeJsUrl);
+    const contentFactsIndex = buildContentFactsIndex(settings.contentFacts);
+    const engine = new AxeEngine(iframe, settings.axeJsUrl, contentFactsIndex);
     const result = await engine.run();
-    renderSummary(container, result, settings.moduleUrl);
+    const classifier = new ViolationClassifier(settings.classificationRules);
+    const visibleResult: ScanResult = {
+      ...result,
+      violations: filterForAccess(result.violations, classifier, settings.hasDeveloperCornerAccess),
+      incomplete: filterForAccess(result.incomplete, classifier, settings.hasDeveloperCornerAccess),
+    };
+    renderSummary(container, visibleResult, settings.moduleUrl);
   } catch (error) {
     showError(container, error instanceof Error ? error.message : lll('module.error.scanFailed'));
   } finally {

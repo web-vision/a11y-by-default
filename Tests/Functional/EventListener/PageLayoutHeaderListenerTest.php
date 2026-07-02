@@ -23,6 +23,8 @@ final class PageLayoutHeaderListenerTest extends FunctionalTestCase
     protected function setUp(): void
     {
         parent::setUp();
+        $this->importCSVDataSet(__DIR__ . '/../Fixtures/developer_corner_be_users.csv');
+        $this->setUpBackendUser(1);
         $GLOBALS['LANG'] = $this->get(LanguageServiceFactory::class)->create('default');
         $this->get(Router::class)->addRoute(
             'web_a11y_by_default',
@@ -94,5 +96,43 @@ final class PageLayoutHeaderListenerTest extends FunctionalTestCase
         $event = $this->createEvent(['id' => 42]);
         $listener($event);
         $this->assertStringContainsString('id=42', $event->getHeaderContent());
+    }
+
+    #[Test]
+    public function headerContainsDeveloperCornerAccessFlagForAdmin(): void
+    {
+        $listener = $this->get(PageLayoutHeaderListener::class);
+        $event = $this->createEvent(['id' => 1]);
+        $listener($event);
+        $this->assertStringContainsString('data-has-developer-corner-access="1"', $event->getHeaderContent());
+    }
+
+    #[Test]
+    public function headerContainsDeveloperCornerAccessFlagForEditorWithoutAccess(): void
+    {
+        $this->setUpBackendUser(4);
+        $listener = $this->get(PageLayoutHeaderListener::class);
+        $event = $this->createEvent(['id' => 1]);
+        $listener($event);
+        $this->assertStringContainsString('data-has-developer-corner-access="0"', $event->getHeaderContent());
+    }
+
+    #[Test]
+    public function headerContainsClassificationRules(): void
+    {
+        $listener = $this->get(PageLayoutHeaderListener::class);
+        $event = $this->createEvent(['id' => 1]);
+        $listener($event);
+        $this->assertStringContainsString('data-classification-rules=', $event->getHeaderContent());
+        $this->assertStringContainsString('image-alt', $event->getHeaderContent());
+    }
+
+    #[Test]
+    public function headerContainsContentFacts(): void
+    {
+        $listener = $this->get(PageLayoutHeaderListener::class);
+        $event = $this->createEvent(['id' => 1]);
+        $listener($event);
+        $this->assertStringContainsString('data-content-facts=', $event->getHeaderContent());
     }
 }
