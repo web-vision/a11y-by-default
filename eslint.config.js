@@ -40,6 +40,8 @@ export default tseslint.config(
       '**/Resources/Public/JavaScript/*.js',
       '**/Resources/Public/JavaScript/Vendor/**',
       '**/dist/**',
+      '**/var/**',
+      '**/Documentation-GENERATED-temp/**',
     ],
   },
 );
