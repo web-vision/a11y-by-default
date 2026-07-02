@@ -32,11 +32,12 @@ if (PHP_SAPI !== 'cli') {
 
 final readonly class CheckIntegrityXliff
 {
-    private const expectedXliffDeprecations = [
-        'mlang_labels_tablabel',
-        'mlang_labels_tabdescr',
-        'mlang_tabs_tab',
-    ];
+    // mlang_labels_tablabel/mlang_labels_tabdescr/mlang_tabs_tab are not listed
+    // here: TYPO3\CMS\Backend\Module\BaseModule still reads them from the
+    // classic "LLL:EXT:...xlf" module label format, which is the only format
+    // TYPO3 v13 supports, so this extension must keep them non-deprecated
+    // as long as v13 is supported.
+    private const expectedXliffDeprecations = [];
     private const xliffModuleRegularExpression = '@Language/(module\.xlf|Modules/.+\.xlf)$@i';
     private const xliffModuleRequiredKeys = [
         'title',
