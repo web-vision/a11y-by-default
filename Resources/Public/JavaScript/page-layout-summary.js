@@ -1,4 +1,15 @@
 const EMPTY_CONTENT_FACTS_INDEX = { headings: [], links: [], images: [], tables: [] };
+function buildContentFactsIndex(facts) {
+    const index = { headings: [], links: [], images: [], tables: [] };
+    for (const [uidKey, elementFacts] of Object.entries(facts)) {
+        const contentElementUid = Number(uidKey);
+        elementFacts.headings.forEach((heading) => index.headings.push({ text: heading.text, contentElementUid }));
+        elementFacts.links.forEach((link) => index.links.push({ text: link.text, href: link.href, contentElementUid }));
+        elementFacts.images.forEach((image) => index.images.push({ ...image, contentElementUid }));
+        elementFacts.tables.forEach((table) => index.tables.push({ ...table, contentElementUid }));
+    }
+    return index;
+}
 function normalizeText(text) {
     return text.trim().replace(/\s+/g, ' ').toLowerCase();
 }
@@ -219,6 +230,26 @@ class AxeEngine {
     }
 }
 
+class ViolationClassifier {
+    constructor(rules) {
+        this.rules = rules;
+    }
+    classify(violation) {
+        const rule = this.rules[violation.id];
+        if (rule === undefined) {
+            return { responsibility: 'unknown', hint: 'This issue requires investigation by a developer.' };
+        }
+        if (rule.responsibility !== 'editor') {
+            return { responsibility: 'developer', hint: rule.hint };
+        }
+        const match = violation.nodes.find((node) => node.contentElementUid !== undefined);
+        if (match?.contentElementUid === undefined || match.dataAvailable === true) {
+            return { responsibility: 'developer', hint: rule.developerHint ?? rule.hint };
+        }
+        return { responsibility: 'editor', hint: rule.hint, contentElementUid: match.contentElementUid };
+    }
+}
+
 function readSettings() {
     const appEl = document.getElementById('a11y-page-summary-app');
     if (appEl === null) {
@@ -229,7 +260,19 @@ function readSettings() {
         previewUri: appEl.dataset['previewUri'] ?? '',
         axeJsUrl: appEl.dataset['axeJsUrl'] ?? '',
         moduleUrl: appEl.dataset['moduleUrl'] ?? '',
+        contentFacts: JSON.parse(appEl.dataset['contentFacts'] ?? '{}'),
+        classificationRules: JSON.parse(appEl.dataset['classificationRules'] ?? '{}'),
+        hasDeveloperCornerAccess: appEl.dataset['hasDeveloperCornerAccess'] === '1',
     };
+}
+// Editors without developer corner access must only see issues they can actually
+// act on in this summary — developer-only (and unclassified) findings are hidden,
+// mirroring the view-tab filtering in the full module (see FilterController).
+function filterForAccess(issues, classifier, hasDeveloperCornerAccess) {
+    if (hasDeveloperCornerAccess) {
+        return issues;
+    }
+    return issues.filter((issue) => classifier.classify(issue).responsibility === 'editor');
 }
 function lll(key) {
     const typo3 = window.TYPO3;
@@ -319,9 +362,16 @@ async function runAutoScan() {
                 reject(new Error('Iframe failed to load'));
             }, { once: true });
         });
-        const engine = new AxeEngine(iframe, settings.axeJsUrl);
+        const contentFactsIndex = buildContentFactsIndex(settings.contentFacts);
+        const engine = new AxeEngine(iframe, settings.axeJsUrl, contentFactsIndex);
         const result = await engine.run();
-        renderSummary(container, result, settings.moduleUrl);
+        const classifier = new ViolationClassifier(settings.classificationRules);
+        const visibleResult = {
+            ...result,
+            violations: filterForAccess(result.violations, classifier, settings.hasDeveloperCornerAccess),
+            incomplete: filterForAccess(result.incomplete, classifier, settings.hasDeveloperCornerAccess),
+        };
+        renderSummary(container, visibleResult, settings.moduleUrl);
     }
     catch (error) {
         showError(container, error instanceof Error ? error.message : lll('module.error.scanFailed'));
@@ -337,5 +387,5 @@ else {
     runAutoScan();
 }
 
-export { countByImpact, readSettings, renderSummary, runAutoScan };
+export { countByImpact, filterForAccess, readSettings, renderSummary, runAutoScan };
 //# sourceMappingURL=page-layout-summary.js.map

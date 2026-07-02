@@ -1,22 +1,29 @@
 jest.mock('../src/engines/AxeEngine');
 
 import { AxeEngine } from '../src/engines/AxeEngine';
-import { countByImpact, readSettings, renderSummary, runAutoScan } from '../src/PageLayoutSummary';
-import type { AccessibilityIssue, ScanResult } from '../src/types';
+import { countByImpact, filterForAccess, readSettings, renderSummary, runAutoScan } from '../src/PageLayoutSummary';
+import { ViolationClassifier } from '../src/ViolationClassifier';
+import type { AccessibilityIssue, ClassificationRule, ScanResult } from '../src/types';
 
 const MockAxeEngine = jest.mocked(AxeEngine);
 
 const EMPTY_RESULT: ScanResult = { violations: [], incomplete: [], passes: [], url: '' };
 
-function makeIssue(impact: string): AccessibilityIssue {
+const TEST_CLASSIFICATION_RULES: Record<string, ClassificationRule> = {
+  'test-rule': { responsibility: 'editor', hint: 'Editor hint' },
+};
+
+function makeIssue(impact: string, id = 'test-rule'): AccessibilityIssue {
   return {
-    id: 'test-rule',
+    id,
     impact,
     help: 'Fix this issue',
     helpUrl: 'https://example.com/rule',
     description: 'This is a test violation',
     tags: [],
-    nodes: [{ html: '<img src="test.jpg">', target: ['img'] }],
+    // contentElementUid + dataAvailable: false simulate an axe finding correlated to a
+    // content element with missing DB data — the case ViolationClassifier treats as editor-fixable.
+    nodes: [{ html: '<img src="test.jpg">', target: ['img'], contentElementUid: 1, dataAvailable: false }],
   };
 }
 
@@ -50,6 +57,9 @@ function setupAppElement(overrides: Partial<Record<string, string>> = {}): HTMLE
   el.dataset['previewUri'] = overrides['previewUri'] ?? '/preview/42';
   el.dataset['axeJsUrl'] = overrides['axeJsUrl'] ?? '/axe.min.js';
   el.dataset['moduleUrl'] = overrides['moduleUrl'] ?? '/typo3/module?id=42';
+  el.dataset['contentFacts'] = overrides['contentFacts'] ?? '{}';
+  el.dataset['classificationRules'] = overrides['classificationRules'] ?? JSON.stringify(TEST_CLASSIFICATION_RULES);
+  el.dataset['hasDeveloperCornerAccess'] = overrides['hasDeveloperCornerAccess'] ?? '0';
   document.body.appendChild(el);
   return el;
 }
@@ -76,7 +86,7 @@ describe('countByImpact', () => {
   });
 
   it('counts all four impact levels independently', () => {
-    const issues = ['critical', 'serious', 'moderate', 'minor'].map(makeIssue);
+    const issues = ['critical', 'serious', 'moderate', 'minor'].map((impact) => makeIssue(impact));
     expect(countByImpact(issues)).toEqual({ critical: 1, serious: 1, moderate: 1, minor: 1 });
   });
 });
@@ -99,12 +109,46 @@ describe('readSettings', () => {
       previewUri: '/preview/42',
       axeJsUrl: '/axe.min.js',
       moduleUrl: '/typo3/module?id=42',
+      contentFacts: {},
+      classificationRules: TEST_CLASSIFICATION_RULES,
+      hasDeveloperCornerAccess: false,
     });
+  });
+
+  it('parses hasDeveloperCornerAccess as a boolean', () => {
+    setupAppElement({ hasDeveloperCornerAccess: '1' });
+    expect(readSettings()?.hasDeveloperCornerAccess).toBe(true);
   });
 
   it('parses pageUid as an integer', () => {
     setupAppElement({ pageUid: '7' });
     expect(readSettings()?.pageUid).toBe(7);
+  });
+});
+
+// --- filterForAccess ---
+
+describe('filterForAccess', () => {
+  const rules: Record<string, ClassificationRule> = {
+    'editor-rule': { responsibility: 'editor', hint: 'Editor hint' },
+    'developer-rule': { responsibility: 'developer', hint: 'Developer hint' },
+  };
+  const classifier = new ViolationClassifier(rules);
+
+  it('returns only editor-responsibility issues without developer corner access', () => {
+    const issues = [makeIssue('critical', 'editor-rule'), makeIssue('serious', 'developer-rule')];
+    const filtered = filterForAccess(issues, classifier, false);
+    expect(filtered).toEqual([issues[0]]);
+  });
+
+  it('hides issues with no matching classification rule without developer corner access', () => {
+    const issues = [makeIssue('critical', 'unclassified-rule')];
+    expect(filterForAccess(issues, classifier, false)).toEqual([]);
+  });
+
+  it('returns all issues with developer corner access', () => {
+    const issues = [makeIssue('critical', 'editor-rule'), makeIssue('serious', 'developer-rule')];
+    expect(filterForAccess(issues, classifier, true)).toEqual(issues);
   });
 });
 
@@ -291,5 +335,51 @@ describe('runAutoScan', () => {
     );
     await runAutoScan();
     expect(document.querySelectorAll('iframe').length).toBe(0);
+  });
+
+  it('hides developer-only issues from the summary without developer corner access', async () => {
+    setupAppElement({
+      classificationRules: JSON.stringify({
+        'editor-rule': { responsibility: 'editor', hint: 'Editor hint' },
+        'developer-rule': { responsibility: 'developer', hint: 'Developer hint' },
+      }),
+      hasDeveloperCornerAccess: '0',
+    });
+    MockAxeEngine.mockImplementation(
+      () =>
+        ({
+          run: jest.fn().mockResolvedValue({
+            ...EMPTY_RESULT,
+            violations: [makeIssue('critical', 'editor-rule'), makeIssue('serious', 'developer-rule')],
+          }),
+        }) as unknown as AxeEngine,
+    );
+    await runAutoScan();
+    const el = document.getElementById('a11y-page-summary-app');
+    expect(el?.querySelector('.text-bg-danger')).not.toBeNull();
+    expect(el?.querySelector('.text-bg-warning')).toBeNull();
+  });
+
+  it('shows developer issues in the summary with developer corner access', async () => {
+    setupAppElement({
+      classificationRules: JSON.stringify({
+        'editor-rule': { responsibility: 'editor', hint: 'Editor hint' },
+        'developer-rule': { responsibility: 'developer', hint: 'Developer hint' },
+      }),
+      hasDeveloperCornerAccess: '1',
+    });
+    MockAxeEngine.mockImplementation(
+      () =>
+        ({
+          run: jest.fn().mockResolvedValue({
+            ...EMPTY_RESULT,
+            violations: [makeIssue('critical', 'editor-rule'), makeIssue('serious', 'developer-rule')],
+          }),
+        }) as unknown as AxeEngine,
+    );
+    await runAutoScan();
+    const el = document.getElementById('a11y-page-summary-app');
+    expect(el?.querySelector('.text-bg-danger')).not.toBeNull();
+    expect(el?.querySelector('.text-bg-warning')).not.toBeNull();
   });
 });
