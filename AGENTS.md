@@ -101,10 +101,3 @@ command 2
 * Run `./Build/Scripts/runTests.sh -s npmInstall` once to install JS dependencies
 * Run `./Build/Scripts/runTests.sh -s lintJs` for JavaScript linting
 * Run `./Build/Scripts/runTests.sh -s buildJs` for JavaScript building
-
-## Local TYPO3 setup
-
-* User: `***REMOVED***`
-* Password: `***REMOVED***`
-* Domain: ***REMOVED***
-* Usable browser binary: `/usr/bin/brave-browser`
