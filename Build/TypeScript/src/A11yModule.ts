@@ -83,9 +83,9 @@ function getRecordEditModuleUrl(): string | undefined {
 
 // The contextual (side-panel) edit route is only available from TYPO3 v14 onward.
 // A11yController only emits this setting when the route exists on the running core.
-function getContextualEditModuleUrl(): string | undefined {
+function getContextualEditModuleUrl(): string | null | undefined {
   const typo3 = (window as unknown as Record<string, unknown>).TYPO3 as
-    { settings?: { a11yByDefault?: { contextualEditModuleUrl?: string } } } | undefined;
+    { settings?: { a11yByDefault?: { contextualEditModuleUrl?: string | null } } } | undefined;
   return typo3?.settings?.a11yByDefault?.contextualEditModuleUrl;
 }
 
@@ -101,7 +101,7 @@ function buildContentElementEditLink(contentElementUid: number): string {
   const editHref = `${moduleUrl}&edit[tt_content][${contentElementUid}]=edit&module=web_a11y_by_default&returnUrl=${returnUrl}`;
 
   const contextualModuleUrl = getContextualEditModuleUrl();
-  if (contextualModuleUrl !== undefined && contextualModuleUrl !== '') {
+  if (contextualModuleUrl !== undefined && contextualModuleUrl !== null && contextualModuleUrl !== '') {
     const contextualHref = `${contextualModuleUrl}&edit[tt_content][${contentElementUid}]=edit&module=web_a11y_by_default&returnUrl=${returnUrl}`;
 
     return `<typo3-backend-contextual-record-edit-trigger url="${escapeHtml(contextualHref)}" edit-url="${escapeHtml(editHref)}"
