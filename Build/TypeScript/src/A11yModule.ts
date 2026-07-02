@@ -220,7 +220,7 @@ export function renderIssueSection(
 
 export function renderResults(container: HTMLElement, result: ScanResult, classifier: ViolationClassifier): void {
   const successCallout =
-    result.violations.length === 0
+    result.violations.length === 0 && result.incomplete.length === 0
       ? `<div class="callout callout-success mb-4"><div class="callout-body"><p>${getLabel('module.results.empty')}</p></div></div>`
       : '';
 

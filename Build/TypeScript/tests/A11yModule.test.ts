@@ -408,6 +408,13 @@ describe('renderResults', () => {
     expect(container.querySelector('.callout-success')).toBeNull();
   });
 
+  it('omits the success callout when there are no violations but items need review', () => {
+    const classifier = new ViolationClassifier({});
+    const result: ScanResult = { ...EMPTY_RESULT, incomplete: [makeIssue()] };
+    renderResults(container, result, classifier);
+    expect(container.querySelector('.callout-success')).toBeNull();
+  });
+
   it('always renders both violation and incomplete sections', () => {
     const classifier = new ViolationClassifier({});
     renderResults(container, EMPTY_RESULT, classifier);
