@@ -229,6 +229,8 @@ Options:
             - cleanCache: clean up cache related files
             - cleanTests: clean up testing related files
             - composerInstall: "composer install", use after initial clone
+            - composerUpdate: temporarily require typo3/minimal:^<t> to pin
+              the resolved TYPO3 core version, then restore composer.json
             - functional: functional tests
             - lintJs: javascript/typescript linting
             - lintPhp: PHP linting
@@ -306,6 +308,9 @@ Examples:
 
     # Run composer install
     ./Build/Scripts/runTests.sh -s composerInstall
+
+    # Pin dependencies to TYPO3 v13 before running tests against it
+    ./Build/Scripts/runTests.sh -t 13 -s composerUpdate
 
     # Run npm ci
     ./Build/Scripts/runTests.sh -s npmInstall
@@ -544,6 +549,30 @@ case ${TEST_SUITE} in
         COMMAND=(composer install --no-progress --no-interaction "$@")
         ${CONTAINER_BIN} run ${CONTAINER_COMMON_PARAMS} --name composer-install-${SUFFIX} -e COMPOSER_CACHE_DIR=.Build/.cache/composer -e COMPOSER_ROOT_VERSION=${COMPOSER_ROOT_VERSION} ${IMAGE_PHP} "${COMMAND[@]}"
         SUITE_EXIT_CODE=$?
+        ;;
+    composerUpdate)
+        # composer.json declares "^13.4 || ^14.3" for typo3/cms-core, so a plain
+        # "composer install/update" always resolves the newest matching major
+        # regardless of -t. Temporarily requiring typo3/minimal:^<CORE_VERSION>
+        # forces the solver to pin that major; composer.json is restored
+        # afterwards so the temporary requirement is never committed, while
+        # the resulting composer.lock/vendor stay resolved to that version.
+        # An existing lock file constrains "require" to a partial update, which
+        # can't flip other dual-major dev deps (e.g. saschaegerer/phpstan-typo3)
+        # across the same major boundary, so the lock is dropped first to force
+        # a full, fresh resolve every time, regardless of the previous -t run.
+        # The vendor dir is dropped too: transitioning typo3/class-alias-loader
+        # in place (rather than a clean install) leaves its own autoloader in
+        # an inconsistent state mid-dump ("Class ...IncludeFile\...Token not
+        # found"), since the plugin needs its own classes loaded to generate
+        # the very alias map it's part of.
+        rm -f composer.lock
+        rm -rf .Build/vendor
+        cp composer.json composer.json.orig
+        COMMAND=(composer require --dev "typo3/minimal:^${CORE_VERSION}" --with-all-dependencies --no-blocking --no-progress --no-interaction)
+        ${CONTAINER_BIN} run ${CONTAINER_COMMON_PARAMS} --name composer-update-${SUFFIX} -e COMPOSER_CACHE_DIR=.Build/.cache/composer -e COMPOSER_ROOT_VERSION=${COMPOSER_ROOT_VERSION} ${IMAGE_PHP} "${COMMAND[@]}"
+        SUITE_EXIT_CODE=$?
+        mv composer.json.orig composer.json
         ;;
     checkBom)
         ${CONTAINER_BIN} run ${CONTAINER_COMMON_PARAMS} --name check-utf8bom-${SUFFIX} ${IMAGE_PHP} Build/Scripts/checkUtf8Bom.sh
