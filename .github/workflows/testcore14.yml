@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: "Prepare dependencies for TYPO3 v14"
-        run: "Build/Scripts/runTests.sh -b podman -t 14 -p ${{ matrix.php-version }} -s composerInstall"
+        run: "Build/Scripts/runTests.sh -b podman -t 14 -p ${{ matrix.php-version }} -s composerUpdate"
 
       - name: "Validate composer.json"
         run: "Build/Scripts/runTests.sh -b podman -t 14 -p ${{ matrix.php-version }} -s composer -- validate --strict --no-check-lock"
@@ -62,7 +62,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: "Prepare dependencies for TYPO3 v14"
-        run: "Build/Scripts/runTests.sh -b podman -t 14 -p ${{ matrix.php-version }} -s composerInstall"
+        run: "Build/Scripts/runTests.sh -b podman -t 14 -p ${{ matrix.php-version }} -s composerUpdate"
 
       - name: "Unit"
         run: "Build/Scripts/runTests.sh -b podman -t 14 -p ${{ matrix.php-version }} -s unit"
