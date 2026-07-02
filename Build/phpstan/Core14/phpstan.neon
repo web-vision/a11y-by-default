@@ -8,6 +8,7 @@ parameters:
 
     paths:
         - ../../../Classes
+        - ../../../Core14
         - ../../../Tests
 
     excludePaths:

@@ -30,7 +30,9 @@
     },
     "autoload": {
         "psr-4": {
-            "WebVision\\A11yByDefault\\": "Classes/"
+            "WebVision\\A11yByDefault\\": "Classes/",
+            "WebVision\\A11yByDefault\\Core13\\": "Core13/",
+            "WebVision\\A11yByDefault\\Core14\\": "Core14/"
         }
     },
     "autoload-dev": {

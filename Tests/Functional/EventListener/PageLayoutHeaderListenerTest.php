@@ -9,6 +9,8 @@ use TYPO3\CMS\Backend\Controller\Event\ModifyPageLayoutContentEvent;
 use TYPO3\CMS\Backend\Routing\Route;
 use TYPO3\CMS\Backend\Routing\Router;
 use TYPO3\CMS\Backend\Template\ModuleTemplateFactory;
+use TYPO3\CMS\Core\Core\SystemEnvironmentBuilder;
+use TYPO3\CMS\Core\Http\NormalizedParams;
 use TYPO3\CMS\Core\Http\ServerRequest;
 use TYPO3\CMS\Core\Localization\LanguageServiceFactory;
 use TYPO3\TestingFramework\Core\Functional\FunctionalTestCase;
@@ -42,7 +44,9 @@ final class PageLayoutHeaderListenerTest extends FunctionalTestCase
         ]);
         $request = (new ServerRequest('https://example.com/'))
             ->withQueryParams($queryParams)
-            ->withAttribute('route', $route);
+            ->withAttribute('route', $route)
+            ->withAttribute('applicationType', SystemEnvironmentBuilder::REQUESTTYPE_BE);
+        $request = $request->withAttribute('normalizedParams', NormalizedParams::createFromRequest($request));
         $moduleTemplate = $this->get(ModuleTemplateFactory::class)->create($request);
         return new ModifyPageLayoutContentEvent($request, $moduleTemplate);
     }

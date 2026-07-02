@@ -9,7 +9,7 @@ use TYPO3\CMS\Backend\Routing\PreviewUriBuilder;
 use TYPO3\CMS\Backend\Routing\UriBuilder;
 use TYPO3\CMS\Core\Attribute\AsEventListener;
 use TYPO3\CMS\Core\Page\PageRenderer;
-use TYPO3\CMS\Core\Utility\PathUtility;
+use WebVision\A11yByDefault\Service\PublicResourceUrlServiceInterface;
 
 #[AsEventListener(identifier: 'a11y-by-default/page-layout-header')]
 final class PageLayoutHeaderListener
@@ -17,11 +17,13 @@ final class PageLayoutHeaderListener
     public function __construct(
         private readonly UriBuilder $uriBuilder,
         private readonly PageRenderer $pageRenderer,
+        private readonly PublicResourceUrlServiceInterface $publicResourceUrlService,
     ) {}
 
     public function __invoke(ModifyPageLayoutContentEvent $event): void
     {
-        $pageId = (int)($event->getRequest()->getQueryParams()['id'] ?? 0);
+        $request = $event->getRequest();
+        $pageId = (int)($request->getQueryParams()['id'] ?? 0);
 
         if ($pageId <= 0) {
             return;
@@ -29,8 +31,9 @@ final class PageLayoutHeaderListener
 
         $moduleUrl = (string)$this->uriBuilder->buildUriFromRoute('web_a11y_by_default', ['id' => $pageId]);
         $previewUri = (string)(PreviewUriBuilder::create($pageId)->buildUri() ?? '');
-        $axeJsUrl = PathUtility::getPublicResourceWebPath(
+        $axeJsUrl = $this->publicResourceUrlService->getWebPath(
             'EXT:a11y_by_default/Resources/Public/JavaScript/Vendor/axe.min.js',
+            $request,
         );
 
         $this->pageRenderer->loadJavaScriptModule('@web-vision/a11y-by-default/page-layout-summary.js');

@@ -4,10 +4,12 @@ declare(strict_types=1);
 
 namespace WebVision\A11yByDefault\Tests\Functional\Controller;
 
+use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\Attributes\Test;
 use TYPO3\CMS\Backend\Routing\Route;
 use TYPO3\CMS\Backend\Routing\Router;
 use TYPO3\CMS\Core\Core\SystemEnvironmentBuilder;
+use TYPO3\CMS\Core\Http\NormalizedParams;
 use TYPO3\CMS\Core\Http\ServerRequest;
 use TYPO3\CMS\Core\Localization\LanguageServiceFactory;
 use TYPO3\TestingFramework\Core\Functional\FunctionalTestCase;
@@ -39,13 +41,16 @@ final class A11yControllerTest extends FunctionalTestCase
             'packageName' => 'web-vision/a11y-by-default',
         ]);
 
-        return (new ServerRequest('https://example.com/'))
+        $request = (new ServerRequest('https://example.com/'))
             ->withQueryParams(['id' => $pageUid])
             ->withAttribute('route', $route)
             ->withAttribute('applicationType', SystemEnvironmentBuilder::REQUESTTYPE_BE);
+
+        return $request->withAttribute('normalizedParams', NormalizedParams::createFromRequest($request));
     }
 
     #[Test]
+    #[Group('not-core-14')]
     public function contextualEditModuleUrlIsNullWhenTheRunningCoreHasNoSidePanelEditRoute(): void
     {
         $controller = $this->get(A11yController::class);

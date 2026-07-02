@@ -20,6 +20,7 @@ use TYPO3\CMS\Core\Type\Bitmask\Permission;
 use WebVision\A11yByDefault\Service\ContentFactsService;
 use WebVision\A11yByDefault\Service\DeveloperCornerAccessService;
 use WebVision\A11yByDefault\Service\IssueClassificationService;
+use WebVision\A11yByDefault\Service\ModuleBreadcrumbServiceInterface;
 
 #[AsController]
 final class A11yController
@@ -32,6 +33,7 @@ final class A11yController
         private readonly LanguageServiceFactory $languageServiceFactory,
         private readonly UriBuilder $uriBuilder,
         private readonly DeveloperCornerAccessService $developerCornerAccessService,
+        private readonly ModuleBreadcrumbServiceInterface $moduleBreadcrumbService,
     ) {}
 
     public function index(ServerRequestInterface $request): ResponseInterface
@@ -96,7 +98,7 @@ final class A11yController
         }
 
         $moduleTemplate->setTitle($moduleTitle, $pageRecord['title']);
-        $moduleTemplate->getDocHeaderComponent()->setMetaInformation($pageRecord);
+        $this->moduleBreadcrumbService->setPageBreadcrumb($moduleTemplate, $pageRecord);
     }
 
     /**
