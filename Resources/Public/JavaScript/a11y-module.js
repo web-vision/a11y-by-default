@@ -485,7 +485,7 @@ function buildContentElementEditLink(contentElementUid) {
     const returnUrl = encodeURIComponent(window.location.href);
     const editHref = `${moduleUrl}&edit[tt_content][${contentElementUid}]=edit&module=web_a11y_by_default&returnUrl=${returnUrl}`;
     const contextualModuleUrl = getContextualEditModuleUrl();
-    if (contextualModuleUrl !== undefined && contextualModuleUrl !== '') {
+    if (contextualModuleUrl !== undefined && contextualModuleUrl !== null && contextualModuleUrl !== '') {
         const contextualHref = `${contextualModuleUrl}&edit[tt_content][${contentElementUid}]=edit&module=web_a11y_by_default&returnUrl=${returnUrl}`;
         return `<typo3-backend-contextual-record-edit-trigger url="${escapeHtml(contextualHref)}" edit-url="${escapeHtml(editHref)}"
                class="${linkClasses}">${label}</typo3-backend-contextual-record-edit-trigger>`;

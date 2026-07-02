@@ -218,6 +218,31 @@ describe('renderIssueCard', () => {
     expect(html).toContain('<a href="/typo3/record/edit?token=abc123token&amp;edit[tt_content][5]=edit');
   });
 
+  it('falls back to the classic anchor when the contextual edit module URL is explicitly null (TYPO3 v13)', () => {
+    // A11yController emits `contextualEditModuleUrl: null` via json_encode on TYPO3 v13,
+    // which reaches the browser as JS `null`, not `undefined` — must be treated the same.
+    const typo3 = (window as unknown as Record<string, unknown>)['TYPO3'] as {
+      lang: Record<string, string>;
+      settings: { FormEngine: { moduleUrl: string } };
+    };
+    (window as unknown as Record<string, unknown>).TYPO3 = {
+      lang: typo3.lang,
+      settings: {
+        ...typo3.settings,
+        a11yByDefault: { contextualEditModuleUrl: null },
+      },
+    };
+    const classifier = new ViolationClassifier({
+      'image-alt': { responsibility: 'editor', hint: 'Add alt text.' },
+    });
+    const issueWithCe = makeIssue({
+      nodes: [{ html: '<img>', target: ['#c5 img'], contentElementUid: 5 }],
+    });
+    const html = renderIssueCard(issueWithCe, classifier, 'panel-1');
+    expect(html).not.toContain('<typo3-backend-contextual-record-edit-trigger');
+    expect(html).toContain('<a href="/typo3/record/edit?token=abc123token&amp;edit[tt_content][5]=edit');
+  });
+
   it('omits the content element link for developer responsibility', () => {
     const classifier = new ViolationClassifier({
       'image-alt': { responsibility: 'developer', hint: 'Fix in template.' },
