@@ -1,39 +1,65 @@
-.. include:: /Includes.rst.txt
+..  _installation:
 
-.. _installation:
-
-============
 Installation
 ============
 
-The extension can be installed using Composer or manually via the Extension Manager.
+The extension has to be installed like any other TYPO3 CMS extension.
+You can download the extension using one of the following methods:
 
-Requirements
-============
+..  tabs::
 
-*   TYPO3 13.4 or 14.0
-*   PHP 8.2 or higher
+    ..  group-tab:: composer
 
-.. _installation-composer:
+        ..  code-block:: bash
+            :caption: only the extension itself
 
-Installation via Composer
-=========================
+            composer require -W \
+               'web-vision/a11y-by-default':'~1.0.0@dev'
 
-The recommended way to install the extension is via Composer:
+        ..  note::
 
-.. code-block:: bash
+            **Be aware** that aforementioned version constraints may be outdated, look up
+            actual version by checking the `packagist.org <https://packagist.org/>`_
+            meta-data repository.
 
-   composer require web-vision/a11y-by-default
+            * `packagist.org - web-vision/a11y-by-default<https://packagist.org/packages/web-vision/a11y-by-default>`_
 
-.. _installation-manual:
+    ..  group-tab:: Extension Manager
 
-Manual Installation
-===================
+        #.  Switch to the module :guilabel:`System > Extensions`.
+        #.  Switch to :guilabel:`Get Extensions`
+        #.  Search for the extension key :guilabel:`a11y_by_default`
+        #.  Import the extension from the repository.
 
-1.  Download the extension as a ZIP file.
-2.  Extract the contents into the ``typo3conf/ext/a11y_by_default`` directory of your TYPO3 installation.
-3.  Log in to the TYPO3 backend and go to **Admin Tools > Extensions**.
-4.  Find the extension and click the **Activate** icon.
+        ..  note::
+
+            For TYPO3 v13 navigate :guilabel:`AdminTools > Extensions` to
+            find the **Extension Manager**.
+
+    ..  group-tab:: Upload ZIP (TER)
+
+        #.  Get current version from `TER`_ by downloading the zip version.
+            Alternatively, get the zip from the `Github Releases`_ page.
+        #.  Switch to the module :guilabel:`System > Extensions`.
+        #.  Enable upload :guilabel:`Upload Extension`
+        #.  Select or drag extension ZIP archive and upload the file
+
+..  attention::
+
+    The extension then needs to be :ref:`configured <configuration>`
+    in order to display translation buttons in the desired languages.
+
+..  _TER: https://extensions.typo3.org/extension/a11y_by_default
+..  _Github Releases: https://github.com/web-vision/a11y-by-default/releases
+
+Compatibility
+-------------
+
+DeepL Translate (CORE) supports:
+
+..  csv-table:: Changes
+    :header: "DeepL Translate version","TYPO3 Version","PHP version","Supported","Composer","TER"
+    :file: Files/versionSupport.csv
 
 .. _installation-next-steps:
 
