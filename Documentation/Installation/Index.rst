@@ -55,10 +55,10 @@ You can download the extension using one of the following methods:
 Compatibility
 -------------
 
-DeepL Translate (CORE) supports:
+This extension supports:
 
 ..  csv-table:: Changes
-    :header: "DeepL Translate version","TYPO3 Version","PHP version","Supported","Composer","TER"
+    :header: "Extension version","TYPO3 Version","PHP version","Supported","Composer","TER"
     :file: Files/versionSupport.csv
 
 .. _installation-next-steps:
