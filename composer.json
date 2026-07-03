@@ -58,7 +58,7 @@
         "typo3/cms": {
             "extension-key": "a11y_by_default",
             "web-dir": ".Build/Web",
-            "version": "1.0.1-dev",
+            "version": "1.0.1",
             "Package": {
                 "providesPackages": []
             }
