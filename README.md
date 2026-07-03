@@ -2,6 +2,19 @@
 
 Accessibility checker backend module for TYPO3 using axe-core and HTML CodeSniffer.
 
+
+|                  | URL                                                             |
+|------------------|-----------------------------------------------------------------|
+| **Repository:**  | https://github.com/web-vision/a11y-by-default                   |
+| **Read online:** | https://docs.typo3.org/p/web-vision/a11y-by-default/main/en-us/ |
+| **TER:**         | https://extensions.typo3.org/extension/a11y_by_default/         |
+
+## Compatibility
+
+| Branch | Version | TYPO3     | PHP                                          |
+|--------|---------|-----------|----------------------------------------------|
+| main   | 1.x-dev | v13 + v14 | 8.2, 8.3, 8.4, 8.5                           |
+
 ## What it does
 
 The goal of this extension is to provide a backend module that shows current accessibility problems of the page selected in the page tree. It helps editors and developers identify and fix accessibility issues directly within the TYPO3 backend.

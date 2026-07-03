@@ -654,7 +654,7 @@ case ${TEST_SUITE} in
         SUITE_EXIT_CODE=$?
         ;;
     renderDocs)
-        COMMAND=(--config=Documentation --output=var/documentation --no-progress)
+        COMMAND=(--config=Documentation --no-progress)
         ${CONTAINER_BIN} run ${CONTAINER_COMMON_PARAMS} --name renderDocs-${SUFFIX} ${IMAGE_RSTRENDERING} "${COMMAND[@]}"
         SUITE_EXIT_CODE=$?
         ;;

@@ -1,5 +1,3 @@
-.. include:: /Includes.rst.txt
-
 .. _start:
 
 =======================
@@ -8,6 +6,7 @@ A11y by default
 
 ..  image:: https://img.shields.io/badge/TYPO3-13-orange.svg
     :target: https://get.typo3.org/version/13
+
 ..  image:: https://img.shields.io/badge/TYPO3-14-orange.svg
     :target: https://get.typo3.org/version/14
 

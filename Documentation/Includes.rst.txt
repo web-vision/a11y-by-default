@@ -1,5 +1,0 @@
-..  This file is used to include common definitions and settings across all documentation files.
-..  It can contain substitutions, aliases, and other reStructuredText directives.
-
-..  |release| replace:: 0.1.0
-..  |today| date::
