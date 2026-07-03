@@ -1,0 +1,72 @@
+- generic [ref=f1e2]:
+  - generic [ref=f1e5]:
+    - button "Expand sidebar" [ref=f1e6] [cursor=pointer]:
+      - img [ref=f1e10]
+    - link "A11y By Default 14.3.4" [ref=f1e13] [cursor=pointer]:
+      - /url: ./
+      - img [ref=f1e15]
+      - generic [ref=f1e16]:
+        - generic [ref=f1e17]: A11y By Default
+        - generic [ref=f1e18]: 14.3.4
+    - button "Open/Close toolbar" [ref=f1e19] [cursor=pointer]:
+      - img [ref=f1e22]
+    - button "Open/Close searchbar" [ref=f1e24] [cursor=pointer]:
+      - img [ref=f1e27]
+  - iframe [ref=f1e35]:
+    - generic [ref=f2e5]:
+      - generic [ref=f2e6]:
+        - heading "My dashboard" [level=1] [ref=f2e7]
+        - generic [ref=f2e8]:
+          - generic [ref=f2e9]:
+            - button "My dashboard" [ref=f2e10] [cursor=pointer]
+            - button "Add dashboard" [ref=f2e11] [cursor=pointer]:
+              - img [ref=f2e15]
+              - generic [ref=f2e17]: Add dashboard
+          - toolbar [ref=f2e18]:
+            - button "Configure dashboard" [ref=f2e19] [cursor=pointer]:
+              - img [ref=f2e23]
+              - generic [ref=f2e25]: Configure dashboard
+            - button "Delete dashboard" [ref=f2e26] [cursor=pointer]:
+              - img [ref=f2e30]
+              - generic [ref=f2e32]: Delete dashboard
+      - generic [ref=f2e34]:
+        - generic [ref=f2e37]:
+          - generic [ref=f2e38]:
+            - generic [ref=f2e39]: About TYPO3
+            - generic [ref=f2e40]:
+              - button "Move Widget" [ref=f2e41] [cursor=pointer]:
+                - img [ref=f2e45]
+                - generic [ref=f2e47]: Move Widget
+              - button "Remove Widget" [ref=f2e48] [cursor=pointer]:
+                - img [ref=f2e52]
+                - generic [ref=f2e54]: Remove Widget
+          - generic [ref=f2e57]:
+            - paragraph [ref=f2e59]:
+              - text: TYPO3 CMS is an enterprise-class, Open Source Content Management System, used internationally to build and manage websites of all types, from small sites for non-profits to multilingual enterprise solutions for large corporations.
+              - text: For further information visit
+              - link "typo3.org" [ref=f2e60] [cursor=pointer]:
+                - /url: https://typo3.org/typo3-cms/
+              - text: .
+              - text: TYPO3 CMS is freely available under the
+              - link "TYPO3-license (GNU/GPL)" [ref=f2e61] [cursor=pointer]:
+                - /url: https://typo3.org/project/licenses/
+              - text: .
+              - text: You are using version 14.3.4 - Copyright © 1998-2026 Kasper Skårhøj
+            - img "TYPO3 CMS logo" [ref=f2e63]
+        - generic [ref=f2e66]:
+          - generic [ref=f2e67]:
+            - generic [ref=f2e68]: Getting Started with TYPO3
+            - generic [ref=f2e69]:
+              - button "Move Widget" [ref=f2e70] [cursor=pointer]:
+                - img [ref=f2e74]
+                - generic [ref=f2e76]: Move Widget
+              - button "Remove Widget" [ref=f2e77] [cursor=pointer]:
+                - img [ref=f2e81]
+                - generic [ref=f2e83]: Remove Widget
+          - generic [ref=f2e84]:
+            - generic [ref=f2e85]: New to TYPO3? In our Getting Started Tutorial you will learn the basics how to use TYPO3.
+            - link "Getting Started Tutorial" [ref=f2e87] [cursor=pointer]:
+              - /url: https://docs.typo3.org/m/typo3/tutorial-getting-started/main/en-us/Index.html
+      - button "Add widget to \"My dashboard\"" [ref=f2e88] [cursor=pointer]:
+        - img [ref=f2e92]
+        - generic [ref=f2e94]: Add widget to "My dashboard"

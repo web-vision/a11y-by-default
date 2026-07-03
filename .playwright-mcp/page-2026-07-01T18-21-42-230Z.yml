@@ -1,0 +1,261 @@
+- generic [ref=f8e2]:
+  - generic [ref=f8e5]:
+    - button "Expand sidebar" [ref=f8e6] [cursor=pointer]:
+      - img [ref=f8e10]
+    - link "A11y By Default 14.3.4" [ref=f8e13] [cursor=pointer]:
+      - /url: ./
+      - img [ref=f8e15]
+      - generic [ref=f8e16]:
+        - generic [ref=f8e17]: A11y By Default
+        - generic [ref=f8e18]: 14.3.4
+    - button "Open/Close toolbar" [ref=f8e19] [cursor=pointer]:
+      - img [ref=f8e22]
+    - button "Open/Close searchbar" [ref=f8e24] [cursor=pointer]:
+      - img [ref=f8e27]
+  - generic [ref=f8e30]:
+    - generic [ref=f8e33]:
+      - generic [ref=f8e42]:
+        - generic [ref=f8e43]:
+          - generic [ref=f8e44]:
+            - generic [ref=f8e45]: Search term
+            - searchbox "Search term" [ref=f8e46]
+          - button "Open page tree options menu" [ref=f8e48] [cursor=pointer]:
+            - img [ref=f8e52]
+          - button "Hide navigation" [ref=f8e54] [cursor=pointer]:
+            - img [ref=f8e58]
+        - generic [ref=f8e61]:
+          - button "Page" [ref=f8e62] [cursor=pointer]:
+            - img [ref=f8e66]
+            - text: Page
+          - img [ref=f8e72]
+          - img [ref=f8e78]
+          - img [ref=f8e84]
+          - img [ref=f8e90]
+          - img [ref=f8e96]
+          - img [ref=f8e102]
+          - img [ref=f8e108]
+      - tree [ref=f8e113]:
+        - treeitem "A11y By Default" [expanded] [level=1] [ref=f8e114] [cursor=pointer]:
+          - img [ref=f8e121]
+          - generic [ref=f8e123]:
+            - img [ref=f8e128]
+            - generic [ref=f8e130]:
+              - generic: A11y By Default
+        - treeitem "Camino" [level=2] [ref=f8e131] [cursor=pointer]:
+          - img [ref=f8e139]
+          - generic [ref=f8e141]:
+            - img [ref=f8e146]
+            - generic [ref=f8e148]:
+              - generic: Camino
+    - iframe [active] [ref=f8e40]:
+      - generic [active] [ref=f9e1]:
+        - generic [ref=f9e2]:
+          - navigation "Breadcrumb" [ref=f9e7]:
+            - button "Accessibility" [ref=f9e8] [cursor=pointer]:
+              - img [ref=f9e12]
+              - generic [ref=f9e17]: Accessibility
+            - button "Camino" [ref=f9e18] [cursor=pointer]:
+              - img [ref=f9e22]
+              - generic [ref=f9e24]: Camino
+          - toolbar [ref=f9e27]:
+            - button "Reload" [ref=f9e28] [cursor=pointer]:
+              - img [ref=f9e31]
+          - generic [ref=f9e34]:
+            - heading "Accessibility Checker" [level=1] [ref=f9e35]
+            - generic [ref=f9e36]:
+              - group "Scanning engine:" [ref=f9e37]:
+                - generic [ref=f9e38]: "Scanning engine:"
+                - combobox "Scanning engine:" [ref=f9e39]:
+                  - option "axe-core (recommended)"
+                  - option "HTML CodeSniffer" [selected]
+                - button "Run Accessibility Scan" [disabled]
+              - tablist "View" [ref=f9e42]:
+                - tab "For editors 1" [selected] [ref=f9e43] [cursor=pointer]:
+                  - text: For editors
+                  - generic [ref=f9e44]: "1"
+                - tab "For developers 3" [ref=f9e45] [cursor=pointer]:
+                  - text: For developers
+                  - generic [ref=f9e46]: "3"
+              - group "Filters" [ref=f9e47]:
+                - generic [ref=f9e48]: "Severity:"
+                - checkbox "Critical 0" [checked] [disabled]
+                - generic:
+                  - text: Critical
+                  - generic: "0"
+                - checkbox "Serious 2" [checked]
+                - generic [ref=f9e49] [cursor=pointer]:
+                  - text: Serious
+                  - generic [ref=f9e50]: "2"
+                - checkbox "Moderate 2" [checked]
+                - generic [ref=f9e51] [cursor=pointer]:
+                  - text: Moderate
+                  - generic [ref=f9e52]: "2"
+                - checkbox "Minor 0" [checked] [disabled]
+                - generic:
+                  - text: Minor
+                  - generic: "0"
+              - tabpanel "For editors 1" [ref=f9e53]:
+                - generic [ref=f9e81]:
+                  - progressbar [ref=f9e82]
+                  - generic [ref=f9e85]: Loading page and running scan…
+        - iframe [ref=f9e86]:
+          - generic [active]:
+            - banner:
+              - generic [ref=f11e1]:
+                - link:
+                  - /url: /
+                  - img
+                - generic [ref=f11e12] [cursor=pointer]:
+                  - text: Menu
+                  - img [ref=f11e13]
+            - generic [ref=f11e16]:
+              - heading "Walk the Camino de Compostela" [level=2] [ref=f11e17]
+              - paragraph [ref=f11e18]: A journey of discovery, history, and transformation
+              - paragraph [ref=f11e19]
+            - main:
+              - generic [ref=f11e23]:
+                - heading "Tset" [level=1] [ref=f11e24]
+                - paragraph [ref=f11e25]
+              - generic [ref=f11e27]:
+                - heading "Heeeheeeeeheee" [level=3] [ref=f11e28]
+                - paragraph [ref=f11e29]
+              - generic [ref=f11e31]:
+                - paragraph [ref=f11e32]: What Is the Camino de Compostela?
+                - generic [ref=f11e33]:
+                  - paragraph [ref=f11e34]:
+                    - text: The
+                    - strong [ref=f11e35]: Camino de Compostela
+                    - text: ", also known as the"
+                    - strong [ref=f11e36]: Way of St. James
+                    - text: ", is one of the world's most famous pilgrimage routes. It leads to the Cathedral of Santiago de Compostela in northwestern Spain, where the remains of Saint James the Apostle are said to rest."
+                  - paragraph [ref=f11e37]: "People from all walks of life travel the Camino:"
+                  - list [ref=f11e38]:
+                    - listitem [ref=f11e39]: Pilgrims and spiritual seekers
+                    - listitem [ref=f11e40]: Hikers and outdoor enthusiasts
+                    - listitem [ref=f11e41]: Cultural travelers and history lovers
+                  - paragraph [ref=f11e42]: For many, it is more than just a journey — it is an experience that stays with them long after they return home.
+                - paragraph [ref=f11e43]
+              - generic [ref=f11e44]:
+                - generic:
+                  - generic:
+                    - generic [ref=f11e45]:
+                      - paragraph [ref=f11e46]: The Main Camino Routes
+                      - paragraph [ref=f11e48]: The Camino de Compostela is a network of ancient pilgrimage routes, each leading to the Cathedral of Santiago de Compostela. Whether crossing mountain passes, following coastal paths, or winding through rolling countryside, every route has its own character and charm — yet all share the same spirit of community, discovery, and adventure.
+                      - paragraph [ref=f11e49]:
+                        - generic [ref=f11e52]: Compare all routes
+                    - generic [ref=f11e55]:
+                      - generic [ref=f11e57]:
+                        - generic [ref=f11e58]: Camino Francés
+                        - paragraph [ref=f11e59]: The Camino Francés is the most popular route, beginning in Saint-Jean-Pied-de-Port in southern France before crossing the Pyrenees and winding through northern Spain. It passes through historic towns and vibrant villages, with well-established pilgrim services and a lively trail community all the way to Santiago.
+                      - generic [ref=f11e61]:
+                        - generic [ref=f11e62]: Camino Portugués
+                        - paragraph [ref=f11e63]: The Camino Português begins in either Lisbon or Porto and makes its way north through Portugal into Galicia. It is known for its coastal scenery, charming towns, and the warm hospitality of its people. With a gentler walking profile, it is a popular choice for those looking for a less demanding but equally rewarding journey.
+                      - generic [ref=f11e65]:
+                        - generic [ref=f11e66]: Camino del Norte
+                        - paragraph [ref=f11e67]: The Camino del Norte traces the northern coast of Spain, offering dramatic ocean views and rugged, unspoiled landscapes. It is a more demanding route than some of the other Caminos, but rewards those who walk it with stunning scenery and a quieter, more solitary experience away from the larger crowds.
+                      - generic [ref=f11e69]:
+                        - generic [ref=f11e70]: Camino Primitivo
+                        - paragraph [ref=f11e71]: The Camino Primitivo is the oldest of all the Camino routes, tracing the original path walked by pilgrims centuries ago. Shorter than the Camino Francés but more physically demanding, it winds through the mountains and forests of Asturias and Galicia. It is a rewarding choice for experienced walkers who prefer solitude and a deeper sense of history along the way.
+                      - generic [ref=f11e73]:
+                        - generic [ref=f11e74]: Camino Inglés & Other Routes
+                        - paragraph [ref=f11e75]: The Camino Inglés and several other lesser-known routes offer a wonderful alternative for those with limited time. Each has its own distinct character, landscapes, and history, making them a rewarding choice even for a shorter pilgrimage. No matter which route you choose, the spirit of the Camino remains the same.
+              - generic [ref=f11e77]:
+                - paragraph [ref=f11e78]: Why Walk the Camino?
+                - generic [ref=f11e79]:
+                  - paragraph [ref=f11e80]:
+                    - strong [ref=f11e81]: A Personal Journey
+                    - text: Many pilgrims describe the Camino as a life-changing experience. Walking day after day creates space for reflection, clarity, and personal growth — a rare opportunity to step away from the noise of everyday life.
+                  - paragraph [ref=f11e82]:
+                    - strong [ref=f11e83]: History and Culture
+                    - text: The routes are lined with Roman roads, medieval bridges, ancient churches, and UNESCO World Heritage sites, offering a rich journey through centuries of European history and tradition.
+                  - paragraph [ref=f11e84]:
+                    - strong [ref=f11e85]: Community and Connection
+                    - text: On the Camino, you are never truly alone. Friendships form naturally, languages mix freely, and shared meals around a table become memories that last long after the journey ends.
+                  - paragraph [ref=f11e86]:
+                    - strong [ref=f11e87]: Nature and Simplicity
+                    - text: From vineyards and forests to mountain passes and rugged coastlines, the Camino offers a chance to reconnect with the natural world — and with yourself.
+                - paragraph [ref=f11e88]
+              - generic [ref=f11e90]:
+                - paragraph [ref=f11e91]: What to Expect on the Camino
+                - generic [ref=f11e92]:
+                  - paragraph [ref=f11e93]: Daily walks typically range from 15 to 30 km, with well-waymarked paths guided by yellow arrows and scallop shells. Accommodation options are plentiful, from affordable albergues to guesthouses and hotels, and the food along the way is simple, hearty, and full of regional character. More than anything, the Camino invites you into a slower, more mindful pace of life.
+                  - paragraph [ref=f11e94]: No special training is required — just preparation, curiosity, and an open heart.
+                - paragraph [ref=f11e95]
+              - generic [ref=f11e97]:
+                - paragraph [ref=f11e98]: Preparing for the Camino
+                - generic [ref=f11e99]:
+                  - paragraph [ref=f11e100]:
+                    - strong [ref=f11e101]: When to Go
+                  - paragraph [ref=f11e102]: Spring (April to June) is a favourite time to walk, with mild weather and blooming landscapes along the way. Autumn (September to October) offers cooler temperatures and fewer crowds, making it another excellent choice. Summer is popular but can be hot and busy, while winter is quiet and reflective — rewarding for those prepared for more challenging conditions.
+                  - paragraph [ref=f11e103]:
+                    - strong [ref=f11e104]: What to Pack
+                  - paragraph [ref=f11e105]: Good preparation starts with comfortable walking shoes and a lightweight backpack. Bring weather-appropriate clothing and don't forget your Pilgrim Credential, used to collect stamps along the way and access pilgrim accommodation.
+                  - paragraph [ref=f11e106]: Less is more on the Camino.
+                - paragraph [ref=f11e107]
+              - generic [ref=f11e109]:
+                - paragraph [ref=f11e110]: Santiago de Compostela
+                - generic [ref=f11e111]:
+                  - paragraph [ref=f11e112]:
+                    - text: Arriving in
+                    - strong [ref=f11e113]: Santiago de Compostela
+                    - text: is a moment many pilgrims never forget. The main square fills with walkers from all over the world, coming together to celebrate, reflect, and attend the Pilgrim's Mass at the magnificent cathedral.
+                  - paragraph [ref=f11e114]:
+                    - text: Here you receive your
+                    - strong [ref=f11e115]: Compostela Certificate
+                    - text: ", the official recognition of your journey. But for many, reaching Santiago is not an ending — it is the beginning of something that continues long after the walk is over."
+                - paragraph [ref=f11e116]
+              - generic [ref=f11e118]:
+                - paragraph [ref=f11e119]: Start Your Camino
+                - generic [ref=f11e120]:
+                  - paragraph [ref=f11e121]: Whether you walk for a week or a month, alone or with friends, the Camino meets you exactly where you are. There is no right or wrong way to walk it — only your way.
+                  - paragraph [ref=f11e122]:
+                    - text: Buen Camino.
+                    - text: Your journey begins with a single step.
+                - paragraph [ref=f11e123]
+            - contentinfo [ref=f11e124]:
+              - generic:
+                - generic:
+                  - generic [ref=f11e125]:
+                    - link [ref=f11e126] [cursor=pointer]:
+                      - /url: /
+                      - img [ref=f11e127]
+                    - list [ref=f11e135]:
+                      - listitem [ref=f11e136]:
+                        - link "Instagram" [ref=f11e137] [cursor=pointer]:
+                          - /url: https://www.instagram.com/typo3_official/
+                          - img [ref=f11e138]
+                      - listitem [ref=f11e140]:
+                        - link "Facebook" [ref=f11e141] [cursor=pointer]:
+                          - /url: https://www.facebook.com/typo3
+                          - img [ref=f11e142]
+                      - listitem [ref=f11e144]:
+                        - link "YouTube" [ref=f11e145] [cursor=pointer]:
+                          - /url: https://www.youtube.com/@typo3
+                          - img [ref=f11e146]
+                  - generic:
+                    - list
+                  - generic:
+                    - list
+                  - list [ref=f11e149]:
+                    - listitem [ref=f11e150]:
+                      - link "Packing List" [ref=f11e151] [cursor=pointer]:
+                        - /url: /packing-list
+                        - generic [ref=f11e152]:
+                          - generic [ref=f11e153]: Packing List
+                          - img [ref=f11e154]
+                    - listitem [ref=f11e156]:
+                      - link "FAQs" [ref=f11e157] [cursor=pointer]:
+                        - /url: /faqs
+                        - generic [ref=f11e158]:
+                          - generic [ref=f11e159]: FAQs
+                          - img [ref=f11e160]
+                - generic:
+                  - list:
+                    - listitem [ref=f11e162]:
+                      - link "Imprint" [ref=f11e163] [cursor=pointer]:
+                        - /url: /imprint
+                        - generic [ref=f11e165]: Imprint
+                    - listitem [ref=f11e166]:
+                      - link "Privacy" [ref=f11e167] [cursor=pointer]:
+                        - /url: /privacy
+                        - generic [ref=f11e169]: Privacy

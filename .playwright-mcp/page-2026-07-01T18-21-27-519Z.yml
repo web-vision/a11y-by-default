@@ -1,0 +1,637 @@
+- generic [ref=f4e2]:
+  - generic [ref=f4e5]:
+    - button "Expand sidebar" [ref=f4e6] [cursor=pointer]:
+      - img [ref=f4e10]
+    - link "A11y By Default 14.3.4" [ref=f4e13] [cursor=pointer]:
+      - /url: ./
+      - img [ref=f4e15]
+      - generic [ref=f4e16]:
+        - generic [ref=f4e17]: A11y By Default
+        - generic [ref=f4e18]: 14.3.4
+    - button "Open/Close toolbar" [ref=f4e19] [cursor=pointer]:
+      - img [ref=f4e22]
+    - button "Open/Close searchbar" [ref=f4e24] [cursor=pointer]:
+      - img [ref=f4e27]
+  - generic [ref=f4e30]:
+    - generic [ref=f4e40]:
+      - generic [ref=f4e42]:
+        - generic [ref=f4e43]:
+          - generic [ref=f4e44]:
+            - generic [ref=f4e45]: Search term
+            - searchbox "Search term" [ref=f4e46]
+          - button "Open page tree options menu" [ref=f4e48] [cursor=pointer]:
+            - img [ref=f4e52]
+          - button "Hide navigation" [ref=f4e54] [cursor=pointer]:
+            - img [ref=f4e58]
+        - generic [ref=f4e61]:
+          - button "Page" [ref=f4e62] [cursor=pointer]:
+            - img [ref=f4e66]
+            - text: Page
+          - img [ref=f4e72]
+          - img [ref=f4e78]
+          - img [ref=f4e84]
+          - img [ref=f4e90]
+          - img [ref=f4e96]
+          - img [ref=f4e102]
+          - img [ref=f4e108]
+      - tree [ref=f4e113]:
+        - treeitem "A11y By Default" [expanded] [level=1] [ref=f4e114] [cursor=pointer]:
+          - img [ref=f4e121]
+          - generic [ref=f4e123]:
+            - img [ref=f4e128]
+            - generic [ref=f4e130]:
+              - generic: A11y By Default
+        - treeitem "Camino" [active] [level=2] [ref=f4e131] [cursor=pointer]:
+          - img [ref=f4e139]
+          - generic [ref=f4e141]:
+            - img [ref=f4e146]
+            - generic [ref=f4e148]:
+              - generic: Camino
+    - generic [ref=f4e36]:
+      - iframe [ref=f4e39]:
+        - generic [ref=f5e2]:
+          - navigation "Breadcrumb" [ref=f5e7]:
+            - button "Layout" [ref=f5e8] [cursor=pointer]:
+              - img [ref=f5e12]
+              - generic [ref=f5e14]: Layout
+            - button "Camino" [ref=f5e15] [cursor=pointer]:
+              - img [ref=f5e19]
+              - generic [ref=f5e21]: Camino
+          - generic [ref=f5e22]:
+            - toolbar [ref=f5e24]:
+              - button "View webpage" [ref=f5e25] [cursor=pointer]:
+                - img [ref=f5e28]
+                - text: View webpage
+              - button "Edit page properties" [ref=f5e30] [cursor=pointer]:
+                - generic:
+                  - img [ref=f5e33]
+                  - text: Edit page properties
+            - toolbar [ref=f5e36]:
+              - button "View" [ref=f5e38] [cursor=pointer]:
+                - img [ref=f5e41]
+                - text: View
+              - button "Clear cache for this page" [ref=f5e43] [cursor=pointer]:
+                - img [ref=f5e46]
+              - button "Create internal note for this page" [ref=f5e48] [cursor=pointer]:
+                - img [ref=f5e51]
+              - button "Reload" [ref=f5e53] [cursor=pointer]:
+                - img [ref=f5e56]
+              - button "Share" [ref=f5e59] [cursor=pointer]:
+                - img [ref=f5e62]
+          - generic [ref=f5e65]:
+            - generic [ref=f5e66]:
+              - text: Camino
+              - generic [ref=f5e68]:
+                - heading "Camino" [level=1] [ref=f5e69]
+                - button "Edit the page title" [ref=f5e70] [cursor=pointer]:
+                  - img [ref=f5e74]
+                  - generic [ref=f5e76]: Edit the page title
+            - generic [ref=f5e79]:
+              - generic [ref=f5e80]:
+                - generic [ref=f5e81]: 2× serious
+                - generic [ref=f5e82]: 2× moderate
+              - link "Check Accessibility" [ref=f5e83] [cursor=pointer]:
+                - /url: /typo3/module/web/a11y-by-default?token=fe2514589127257c1e34cabbf714877e8fcd396085ee96e4913ff07b777ea909&id=1
+                - img [ref=f5e87]
+                - text: Check Accessibility
+            - table [ref=f5e98]:
+              - rowgroup [ref=f5e104]:
+                - row "Hero area" [ref=f5e105]:
+                  - group "Hero area" [ref=f5e106]:
+                    - generic [ref=f5e107]:
+                      - link "Edit this column" [ref=f5e109] [cursor=pointer]:
+                        - /url: /typo3/record/edit?token=0befe21c8f1fef88eb78ab250329adf246f54261e6285a7a37891c720bbeeccf&edit%5Btt_content%5D%5B38%5D=edit&module=web_layout&returnUrl=/typo3/module/web/layout?token%3Dc15add78fc182bff5fb263d3f20945c46c5017323b77fc03209a9bf50f293ef7%26id%3D1
+                        - img [ref=f5e112]
+                        - generic [ref=f5e114]: Edit this column
+                      - heading "Hero area" [level=2] [ref=f5e115]
+                    - button "Create new content" [ref=f5e118] [cursor=pointer]:
+                      - generic:
+                        - img [ref=f5e121]
+                        - text: Create new content
+                    - group "id=38 - Walk the Camino de Compostela - Hero / Page header" [ref=f5e124]:
+                      - generic [ref=f5e125]: id=38 - Walk the Camino de Compostela - Hero / Page header
+                      - generic [ref=f5e126]:
+                        - generic [ref=f5e127]:
+                          - generic [ref=f5e128]:
+                            - button "Open context menu" [ref=f5e129] [cursor=pointer]:
+                              - img [ref=f5e132]
+                            - generic "English" [ref=f5e134]
+                          - generic [ref=f5e137]: Hero / Page header
+                          - generic [ref=f5e140]:
+                            - button "Edit" [ref=f5e141] [cursor=pointer]:
+                              - img [ref=f5e144]
+                            - button "Hide" [ref=f5e146] [cursor=pointer]:
+                              - img [ref=f5e150]
+                            - link "Delete" [ref=f5e152] [cursor=pointer]:
+                              - /url: /typo3/record/commit?token=a3690127bb8b8ed419ea6fc7133526c9d28a20bfe0d44a5efb9f30be3e2694d4&cmd%5Btt_content%5D%5B38%5D%5Bdelete%5D=1&redirect=/typo3/module/web/layout?token%3Dc15add78fc182bff5fb263d3f20945c46c5017323b77fc03209a9bf50f293ef7%26id%3D1
+                              - img [ref=f5e155]
+                            - button "Open context menu" [ref=f5e157] [cursor=pointer]:
+                              - img [ref=f5e160]
+                        - generic [ref=f5e163]:
+                          - generic [ref=f5e164]:
+                            - button "Walk the Camino de Compostela" [ref=f5e166] [cursor=pointer]:
+                              - generic: Walk the Camino de Compostela
+                            - button "A journey of discovery, history, and transformation" [ref=f5e168] [cursor=pointer]:
+                              - generic: A journey of discovery, history, and transformation
+                          - generic [ref=f5e172]: "Link: (/camino-route-comparison) [Icon: ]"
+                      - button "Create new content" [ref=f5e174] [cursor=pointer]:
+                        - generic:
+                          - img [ref=f5e177]
+                          - text: Create new content
+                - row "Content area" [ref=f5e179]:
+                  - group "Content area" [ref=f5e180]:
+                    - generic [ref=f5e181]:
+                      - link "Edit this column" [ref=f5e183] [cursor=pointer]:
+                        - /url: /typo3/record/edit?token=0befe21c8f1fef88eb78ab250329adf246f54261e6285a7a37891c720bbeeccf&edit%5Btt_content%5D%5B51,52,46,45,44,43,42,41,40%5D=edit&module=web_layout&returnUrl=/typo3/module/web/layout?token%3Dc15add78fc182bff5fb263d3f20945c46c5017323b77fc03209a9bf50f293ef7%26id%3D1
+                        - img [ref=f5e186]
+                        - generic [ref=f5e188]: Edit this column
+                      - heading "Content area" [level=2] [ref=f5e189]
+                    - button "Create new content" [ref=f5e192] [cursor=pointer]:
+                      - generic:
+                        - img [ref=f5e195]
+                        - text: Create new content
+                    - generic [ref=f5e197]:
+                      - group "id=51 - Tset - Regular Text Element" [ref=f5e198]:
+                        - generic [ref=f5e199]: id=51 - Tset - Regular Text Element
+                        - generic [ref=f5e200]:
+                          - generic [ref=f5e201]:
+                            - generic [ref=f5e202]:
+                              - button "Open context menu" [ref=f5e203] [cursor=pointer]:
+                                - img [ref=f5e206]
+                              - generic "English" [ref=f5e208]
+                            - generic [ref=f5e211]: Regular Text Element
+                            - generic [ref=f5e214]:
+                              - button "Edit" [ref=f5e215] [cursor=pointer]:
+                                - img [ref=f5e218]
+                              - button "Hide" [ref=f5e220] [cursor=pointer]:
+                                - img [ref=f5e224]
+                              - link "Delete" [ref=f5e226] [cursor=pointer]:
+                                - /url: /typo3/record/commit?token=a3690127bb8b8ed419ea6fc7133526c9d28a20bfe0d44a5efb9f30be3e2694d4&cmd%5Btt_content%5D%5B51%5D%5Bdelete%5D=1&redirect=/typo3/module/web/layout?token%3Dc15add78fc182bff5fb263d3f20945c46c5017323b77fc03209a9bf50f293ef7%26id%3D1
+                                - img [ref=f5e229]
+                              - button "Open context menu" [ref=f5e231] [cursor=pointer]:
+                                - img [ref=f5e234]
+                          - button "Tset" [ref=f5e240] [cursor=pointer]:
+                            - generic: Tset
+                        - button "Create new content" [ref=f5e242] [cursor=pointer]:
+                          - generic:
+                            - img [ref=f5e245]
+                            - text: Create new content
+                      - group "id=52 - Heeeheeeeeheee - Regular Text Element" [ref=f5e247]:
+                        - generic [ref=f5e248]: id=52 - Heeeheeeeeheee - Regular Text Element
+                        - generic [ref=f5e249]:
+                          - generic [ref=f5e250]:
+                            - generic [ref=f5e251]:
+                              - button "Open context menu" [ref=f5e252] [cursor=pointer]:
+                                - img [ref=f5e255]
+                              - link "The BE-User 'mhofmann' began to edit this record 14 min ago." [ref=f5e257] [cursor=pointer]:
+                                - /url: "#"
+                                - generic [ref=f5e258]:
+                                  - img [ref=f5e260]
+                                  - img [ref=f5e263]
+                              - generic "English" [ref=f5e265]
+                            - generic [ref=f5e268]: Regular Text Element
+                            - generic [ref=f5e271]:
+                              - button "Edit" [ref=f5e272] [cursor=pointer]:
+                                - img [ref=f5e275]
+                              - button "Hide" [ref=f5e277] [cursor=pointer]:
+                                - img [ref=f5e281]
+                              - link "Delete" [ref=f5e283] [cursor=pointer]:
+                                - /url: /typo3/record/commit?token=a3690127bb8b8ed419ea6fc7133526c9d28a20bfe0d44a5efb9f30be3e2694d4&cmd%5Btt_content%5D%5B52%5D%5Bdelete%5D=1&redirect=/typo3/module/web/layout?token%3Dc15add78fc182bff5fb263d3f20945c46c5017323b77fc03209a9bf50f293ef7%26id%3D1
+                                - img [ref=f5e286]
+                              - button "Open context menu" [ref=f5e288] [cursor=pointer]:
+                                - img [ref=f5e291]
+                          - button "Heeeheeeeeheee" [ref=f5e297] [cursor=pointer]:
+                            - generic: Heeeheeeeeheee
+                        - button "Create new content" [ref=f5e299] [cursor=pointer]:
+                          - generic:
+                            - img [ref=f5e302]
+                            - text: Create new content
+                      - group "id=46 - What Is the Camino de Compostela? - Regular Text Element" [ref=f5e304]:
+                        - generic [ref=f5e305]: id=46 - What Is the Camino de Compostela? - Regular Text Element
+                        - generic [ref=f5e306]:
+                          - generic [ref=f5e307]:
+                            - generic [ref=f5e308]:
+                              - button "Open context menu" [ref=f5e309] [cursor=pointer]:
+                                - img [ref=f5e312]
+                              - generic "English" [ref=f5e314]
+                            - generic [ref=f5e317]: Regular Text Element
+                            - generic [ref=f5e320]:
+                              - button "Edit" [ref=f5e321] [cursor=pointer]:
+                                - img [ref=f5e324]
+                              - button "Hide" [ref=f5e326] [cursor=pointer]:
+                                - img [ref=f5e330]
+                              - link "Delete" [ref=f5e332] [cursor=pointer]:
+                                - /url: /typo3/record/commit?token=a3690127bb8b8ed419ea6fc7133526c9d28a20bfe0d44a5efb9f30be3e2694d4&cmd%5Btt_content%5D%5B46%5D%5Bdelete%5D=1&redirect=/typo3/module/web/layout?token%3Dc15add78fc182bff5fb263d3f20945c46c5017323b77fc03209a9bf50f293ef7%26id%3D1
+                                - img [ref=f5e335]
+                              - button "Open context menu" [ref=f5e337] [cursor=pointer]:
+                                - img [ref=f5e340]
+                          - generic [ref=f5e343]:
+                            - button "What Is the Camino de Compostela?" [ref=f5e346] [cursor=pointer]:
+                              - generic: What Is the Camino de Compostela?
+                            - generic [ref=f5e348]: "The Camino de Compostela, also known as the Way of St. James, is one of the world's most famous pilgrimage routes. It leads to the Cathedral of Santiago de Compostela in northwestern Spain, where the remains of Saint James the Apostle are said to rest. People from all walks of life travel the Camino: Pilgrims and spiritual seekersHikers and outdoor enthusiastsCultural travelers and history lovers For many, it is more than just a journey — it is an experience that stays with them long after they return home."
+                        - button "Create new content" [ref=f5e350] [cursor=pointer]:
+                          - generic:
+                            - img [ref=f5e353]
+                            - text: Create new content
+                      - group "id=45 - The Main Camino Routes - Text-Media Teaser Grid" [ref=f5e355]:
+                        - generic [ref=f5e356]: id=45 - The Main Camino Routes - Text-Media Teaser Grid
+                        - generic [ref=f5e357]:
+                          - generic [ref=f5e358]:
+                            - generic [ref=f5e359]:
+                              - button "Open context menu" [ref=f5e360] [cursor=pointer]:
+                                - img [ref=f5e363]
+                              - generic "English" [ref=f5e365]
+                            - generic [ref=f5e368]: Text-Media Teaser Grid
+                            - generic [ref=f5e371]:
+                              - button "Edit" [ref=f5e372] [cursor=pointer]:
+                                - img [ref=f5e375]
+                              - button "Hide" [ref=f5e377] [cursor=pointer]:
+                                - img [ref=f5e381]
+                              - link "Delete" [ref=f5e383] [cursor=pointer]:
+                                - /url: /typo3/record/commit?token=a3690127bb8b8ed419ea6fc7133526c9d28a20bfe0d44a5efb9f30be3e2694d4&cmd%5Btt_content%5D%5B45%5D%5Bdelete%5D=1&redirect=/typo3/module/web/layout?token%3Dc15add78fc182bff5fb263d3f20945c46c5017323b77fc03209a9bf50f293ef7%26id%3D1
+                                - img [ref=f5e386]
+                              - button "Open context menu" [ref=f5e388] [cursor=pointer]:
+                                - img [ref=f5e391]
+                          - generic [ref=f5e394]:
+                            - button "The Main Camino Routes" [ref=f5e397] [cursor=pointer]:
+                              - generic: The Main Camino Routes
+                            - generic [ref=f5e398]:
+                              - generic [ref=f5e399]: The Camino de Compostela is a network of ancient pilgrimage routes, each leading to the Cathedral of Santiago de Compostela. Whether crossing mountain passes, following coastal paths, or winding through rolling countryside, every route has its own character and charm — yet all share the same spirit of community, discovery, and adventure.
+                              - generic [ref=f5e400]: "Link: Compare all routes (/camino-route-comparison)"
+                              - generic [ref=f5e401]:
+                                - generic [ref=f5e402]:
+                                  - text: Camino Francés
+                                  - generic [ref=f5e403]: The Camino Francés is the most popular route, beginning in Saint-Jean-Pied-de-Port in southern France before crossing the Pyrenees and winding through…
+                                  - generic [ref=f5e404]: "Link: More (/camino-route-comparison#c7)"
+                                - generic [ref=f5e405]:
+                                  - text: Camino Portugués
+                                  - generic [ref=f5e406]: The Camino Português begins in either Lisbon or Porto and makes its way north through Portugal into Galicia. It is known for its coastal scenery,…
+                                  - generic [ref=f5e407]: "Link: More (/camino-route-comparison#c6)"
+                                - generic [ref=f5e408]:
+                                  - text: Camino del Norte
+                                  - generic [ref=f5e409]: The Camino del Norte traces the northern coast of Spain, offering dramatic ocean views and rugged, unspoiled landscapes. It is a more demanding route…
+                                  - generic [ref=f5e410]: "Link: More (/camino-route-comparison#c5)"
+                                - generic [ref=f5e411]:
+                                  - text: Camino Primitivo
+                                  - generic [ref=f5e412]: The Camino Primitivo is the oldest of all the Camino routes, tracing the original path walked by pilgrims centuries ago. Shorter than the Camino…
+                                  - generic [ref=f5e413]: "Link: More (/camino-route-comparison#c4)"
+                                - generic [ref=f5e414]:
+                                  - text: Camino Inglés & Other Routes
+                                  - generic [ref=f5e415]: The Camino Inglés and several other lesser-known routes offer a wonderful alternative for those with limited time. Each has its own distinct…
+                                  - generic [ref=f5e416]: "Link: More (/camino-route-comparison#c3)"
+                        - button "Create new content" [ref=f5e418] [cursor=pointer]:
+                          - generic:
+                            - img [ref=f5e421]
+                            - text: Create new content
+                      - group "id=44 - Why Walk the Camino? - Regular Text Element" [ref=f5e423]:
+                        - generic [ref=f5e424]: id=44 - Why Walk the Camino? - Regular Text Element
+                        - generic [ref=f5e425]:
+                          - generic [ref=f5e426]:
+                            - generic [ref=f5e427]:
+                              - button "Open context menu" [ref=f5e428] [cursor=pointer]:
+                                - img [ref=f5e431]
+                              - generic "English" [ref=f5e433]
+                            - generic [ref=f5e436]: Regular Text Element
+                            - generic [ref=f5e439]:
+                              - button "Edit" [ref=f5e440] [cursor=pointer]:
+                                - img [ref=f5e443]
+                              - button "Hide" [ref=f5e445] [cursor=pointer]:
+                                - img [ref=f5e449]
+                              - link "Delete" [ref=f5e451] [cursor=pointer]:
+                                - /url: /typo3/record/commit?token=a3690127bb8b8ed419ea6fc7133526c9d28a20bfe0d44a5efb9f30be3e2694d4&cmd%5Btt_content%5D%5B44%5D%5Bdelete%5D=1&redirect=/typo3/module/web/layout?token%3Dc15add78fc182bff5fb263d3f20945c46c5017323b77fc03209a9bf50f293ef7%26id%3D1
+                                - img [ref=f5e454]
+                              - button "Open context menu" [ref=f5e456] [cursor=pointer]:
+                                - img [ref=f5e459]
+                          - generic [ref=f5e462]:
+                            - button "Why Walk the Camino?" [ref=f5e465] [cursor=pointer]:
+                              - generic: Why Walk the Camino?
+                            - generic [ref=f5e467]:
+                              - text: A Personal Journey
+                              - text: Many pilgrims describe the Camino as a life-changing experience. Walking day after day creates space for reflection, clarity, and personal growth — a rare opportunity to step away from the noise of everyday life. History and Culture
+                              - text: The routes are lined with Roman roads, medieval bridges, ancient churches, and UNESCO World Heritage sites, offering a rich journey through centuries of European history and tradition. Community and Connection
+                              - text: On the Camino, you are never truly alone. Friendships form naturally, languages mix freely, and shared meals around a table become memories that last long after the journey ends. Nature and Simplicity
+                              - text: From vineyards and forests to mountain passes and rugged coastlines, the Camino offers a chance to reconnect with the natural world — and with yourself.
+                        - button "Create new content" [ref=f5e469] [cursor=pointer]:
+                          - generic:
+                            - img [ref=f5e472]
+                            - text: Create new content
+                      - group "id=43 - What to Expect on the Camino - Regular Text Element" [ref=f5e474]:
+                        - generic [ref=f5e475]: id=43 - What to Expect on the Camino - Regular Text Element
+                        - generic [ref=f5e476]:
+                          - generic [ref=f5e477]:
+                            - generic [ref=f5e478]:
+                              - button "Open context menu" [ref=f5e479] [cursor=pointer]:
+                                - img [ref=f5e482]
+                              - generic "English" [ref=f5e484]
+                            - generic [ref=f5e487]: Regular Text Element
+                            - generic [ref=f5e490]:
+                              - button "Edit" [ref=f5e491] [cursor=pointer]:
+                                - img [ref=f5e494]
+                              - button "Hide" [ref=f5e496] [cursor=pointer]:
+                                - img [ref=f5e500]
+                              - link "Delete" [ref=f5e502] [cursor=pointer]:
+                                - /url: /typo3/record/commit?token=a3690127bb8b8ed419ea6fc7133526c9d28a20bfe0d44a5efb9f30be3e2694d4&cmd%5Btt_content%5D%5B43%5D%5Bdelete%5D=1&redirect=/typo3/module/web/layout?token%3Dc15add78fc182bff5fb263d3f20945c46c5017323b77fc03209a9bf50f293ef7%26id%3D1
+                                - img [ref=f5e505]
+                              - button "Open context menu" [ref=f5e507] [cursor=pointer]:
+                                - img [ref=f5e510]
+                          - generic [ref=f5e513]:
+                            - button "What to Expect on the Camino" [ref=f5e516] [cursor=pointer]:
+                              - generic: What to Expect on the Camino
+                            - generic [ref=f5e518]: Daily walks typically range from 15 to 30 km, with well-waymarked paths guided by yellow arrows and scallop shells. Accommodation options are plentiful, from affordable albergues to guesthouses and hotels, and the food along the way is simple, hearty, and full of regional character. More than anything, the Camino invites you into a slower, more mindful pace of life. No special training is required — just preparation, curiosity, and an open heart.
+                        - button "Create new content" [ref=f5e520] [cursor=pointer]:
+                          - generic:
+                            - img [ref=f5e523]
+                            - text: Create new content
+                      - group "id=42 - Preparing for the Camino - Regular Text Element" [ref=f5e525]:
+                        - generic [ref=f5e526]: id=42 - Preparing for the Camino - Regular Text Element
+                        - generic [ref=f5e527]:
+                          - generic [ref=f5e528]:
+                            - generic [ref=f5e529]:
+                              - button "Open context menu" [ref=f5e530] [cursor=pointer]:
+                                - img [ref=f5e533]
+                              - generic "English" [ref=f5e535]
+                            - generic [ref=f5e538]: Regular Text Element
+                            - generic [ref=f5e541]:
+                              - button "Edit" [ref=f5e542] [cursor=pointer]:
+                                - img [ref=f5e545]
+                              - button "Hide" [ref=f5e547] [cursor=pointer]:
+                                - img [ref=f5e551]
+                              - link "Delete" [ref=f5e553] [cursor=pointer]:
+                                - /url: /typo3/record/commit?token=a3690127bb8b8ed419ea6fc7133526c9d28a20bfe0d44a5efb9f30be3e2694d4&cmd%5Btt_content%5D%5B42%5D%5Bdelete%5D=1&redirect=/typo3/module/web/layout?token%3Dc15add78fc182bff5fb263d3f20945c46c5017323b77fc03209a9bf50f293ef7%26id%3D1
+                                - img [ref=f5e556]
+                              - button "Open context menu" [ref=f5e558] [cursor=pointer]:
+                                - img [ref=f5e561]
+                          - generic [ref=f5e564]:
+                            - button "Preparing for the Camino" [ref=f5e567] [cursor=pointer]:
+                              - generic: Preparing for the Camino
+                            - generic [ref=f5e569]: When to Go Spring (April to June) is a favourite time to walk, with mild weather and blooming landscapes along the way. Autumn (September to October) offers cooler temperatures and fewer crowds, making it another excellent choice. Summer is popular but can be hot and busy, while winter is quiet and reflective — rewarding for those prepared for more challenging conditions. What to Pack Good preparation starts with comfortable walking shoes and a lightweight backpack. Bring weather-appropriate clothing and don't forget your Pilgrim Credential, used to collect stamps along the way and access pilgrim accommodation. Less is more on the Camino.
+                        - button "Create new content" [ref=f5e571] [cursor=pointer]:
+                          - generic:
+                            - img [ref=f5e574]
+                            - text: Create new content
+                      - group "id=41 - Santiago de Compostela - Regular Text Element" [ref=f5e576]:
+                        - generic [ref=f5e577]: id=41 - Santiago de Compostela - Regular Text Element
+                        - generic [ref=f5e578]:
+                          - generic [ref=f5e579]:
+                            - generic [ref=f5e580]:
+                              - button "Open context menu" [ref=f5e581] [cursor=pointer]:
+                                - img [ref=f5e584]
+                              - generic "English" [ref=f5e586]
+                            - generic [ref=f5e589]: Regular Text Element
+                            - generic [ref=f5e592]:
+                              - button "Edit" [ref=f5e593] [cursor=pointer]:
+                                - img [ref=f5e596]
+                              - button "Hide" [ref=f5e598] [cursor=pointer]:
+                                - img [ref=f5e602]
+                              - link "Delete" [ref=f5e604] [cursor=pointer]:
+                                - /url: /typo3/record/commit?token=a3690127bb8b8ed419ea6fc7133526c9d28a20bfe0d44a5efb9f30be3e2694d4&cmd%5Btt_content%5D%5B41%5D%5Bdelete%5D=1&redirect=/typo3/module/web/layout?token%3Dc15add78fc182bff5fb263d3f20945c46c5017323b77fc03209a9bf50f293ef7%26id%3D1
+                                - img [ref=f5e607]
+                              - button "Open context menu" [ref=f5e609] [cursor=pointer]:
+                                - img [ref=f5e612]
+                          - generic [ref=f5e615]:
+                            - button "Santiago de Compostela" [ref=f5e618] [cursor=pointer]:
+                              - generic: Santiago de Compostela
+                            - generic [ref=f5e620]: Arriving in Santiago de Compostela is a moment many pilgrims never forget. The main square fills with walkers from all over the world, coming together to celebrate, reflect, and attend the Pilgrim's Mass at the magnificent cathedral. Here you receive your Compostela Certificate, the official recognition of your journey. But for many, reaching Santiago is not an ending — it is the beginning of something that continues long after the walk is over.
+                        - button "Create new content" [ref=f5e622] [cursor=pointer]:
+                          - generic:
+                            - img [ref=f5e625]
+                            - text: Create new content
+                      - group "id=40 - Start Your Camino - Regular Text Element" [ref=f5e627]:
+                        - generic [ref=f5e628]: id=40 - Start Your Camino - Regular Text Element
+                        - generic [ref=f5e629]:
+                          - generic [ref=f5e630]:
+                            - generic [ref=f5e631]:
+                              - button "Open context menu" [ref=f5e632] [cursor=pointer]:
+                                - img [ref=f5e635]
+                              - generic "English" [ref=f5e637]
+                            - generic [ref=f5e640]: Regular Text Element
+                            - generic [ref=f5e643]:
+                              - button "Edit" [ref=f5e644] [cursor=pointer]:
+                                - img [ref=f5e647]
+                              - button "Hide" [ref=f5e649] [cursor=pointer]:
+                                - img [ref=f5e653]
+                              - link "Delete" [ref=f5e655] [cursor=pointer]:
+                                - /url: /typo3/record/commit?token=a3690127bb8b8ed419ea6fc7133526c9d28a20bfe0d44a5efb9f30be3e2694d4&cmd%5Btt_content%5D%5B40%5D%5Bdelete%5D=1&redirect=/typo3/module/web/layout?token%3Dc15add78fc182bff5fb263d3f20945c46c5017323b77fc03209a9bf50f293ef7%26id%3D1
+                                - img [ref=f5e658]
+                              - button "Open context menu" [ref=f5e660] [cursor=pointer]:
+                                - img [ref=f5e663]
+                          - generic [ref=f5e666]:
+                            - button "Start Your Camino" [ref=f5e669] [cursor=pointer]:
+                              - generic: Start Your Camino
+                            - generic [ref=f5e671]:
+                              - text: Whether you walk for a week or a month, alone or with friends, the Camino meets you exactly where you are. There is no right or wrong way to walk it — only your way. Buen Camino.
+                              - text: Your journey begins with a single step.
+                        - button "Create new content" [ref=f5e673] [cursor=pointer]:
+                          - generic:
+                            - img [ref=f5e676]
+                            - text: Create new content
+                - 'row "Footer: Column 1 (Logo) Footer: Column 2 (Menu) Footer: Column 3 (Menu) Footer: Column 4 (Menu)" [ref=f5e678]':
+                  - 'group "Footer: Column 1 (Logo)" [ref=f5e679]':
+                    - generic [ref=f5e680]:
+                      - link "Edit this column" [ref=f5e682] [cursor=pointer]:
+                        - /url: /typo3/record/edit?token=0befe21c8f1fef88eb78ab250329adf246f54261e6285a7a37891c720bbeeccf&edit%5Btt_content%5D%5B39%5D=edit&module=web_layout&returnUrl=/typo3/module/web/layout?token%3Dc15add78fc182bff5fb263d3f20945c46c5017323b77fc03209a9bf50f293ef7%26id%3D1
+                        - img [ref=f5e685]
+                        - generic [ref=f5e687]: Edit this column
+                      - 'heading "Footer: Column 1 (Logo)" [level=2] [ref=f5e688]'
+                    - button "Create new content" [ref=f5e691] [cursor=pointer]:
+                      - generic:
+                        - img [ref=f5e694]
+                        - text: Create new content
+                    - group "id=39 - Social Media Icons - Social media icons" [ref=f5e697]:
+                      - generic [ref=f5e698]: id=39 - Social Media Icons - Social media icons
+                      - generic [ref=f5e699]:
+                        - generic [ref=f5e700]:
+                          - generic [ref=f5e701]:
+                            - button "Open context menu" [ref=f5e702] [cursor=pointer]
+                            - generic "English" [ref=f5e705]
+                          - generic [ref=f5e708]: Social media icons
+                          - generic [ref=f5e711]:
+                            - button "Edit" [ref=f5e712] [cursor=pointer]:
+                              - img [ref=f5e715]
+                            - button "Hide" [ref=f5e717] [cursor=pointer]:
+                              - img [ref=f5e721]
+                            - link "Delete" [ref=f5e723] [cursor=pointer]:
+                              - /url: /typo3/record/commit?token=a3690127bb8b8ed419ea6fc7133526c9d28a20bfe0d44a5efb9f30be3e2694d4&cmd%5Btt_content%5D%5B39%5D%5Bdelete%5D=1&redirect=/typo3/module/web/layout?token%3Dc15add78fc182bff5fb263d3f20945c46c5017323b77fc03209a9bf50f293ef7%26id%3D1
+                              - img [ref=f5e726]
+                            - button "Open context menu" [ref=f5e728] [cursor=pointer]:
+                              - img [ref=f5e731]
+                        - generic [ref=f5e734]:
+                          - button "Social Media Icons" [ref=f5e737] [cursor=pointer]:
+                            - generic: Social Media Icons
+                          - list [ref=f5e739]:
+                            - listitem [ref=f5e740]:
+                              - generic [ref=f5e741]: "Link: Instagram (https://www.instagram.com/typo3_official/)"
+                            - listitem [ref=f5e742]:
+                              - generic [ref=f5e743]: "Link: Facebook (https://www.facebook.com/typo3)"
+                            - listitem [ref=f5e744]:
+                              - generic [ref=f5e745]: "Link: YouTube (https://www.youtube.com/@typo3)"
+                      - button "Create new content" [ref=f5e747] [cursor=pointer]:
+                        - generic:
+                          - img [ref=f5e750]
+                          - text: Create new content
+                  - 'group "Footer: Column 2 (Menu)" [ref=f5e752]':
+                    - generic [ref=f5e753]:
+                      - link "Edit this column" [ref=f5e755] [cursor=pointer]:
+                        - /url: /typo3/record/edit?token=0befe21c8f1fef88eb78ab250329adf246f54261e6285a7a37891c720bbeeccf&edit%5Btt_content%5D%5B48%5D=edit&module=web_layout&returnUrl=/typo3/module/web/layout?token%3Dc15add78fc182bff5fb263d3f20945c46c5017323b77fc03209a9bf50f293ef7%26id%3D1
+                        - img [ref=f5e758]
+                        - generic [ref=f5e760]: Edit this column
+                      - 'heading "Footer: Column 2 (Menu)" [level=2] [ref=f5e761]'
+                    - button "Create new content" [ref=f5e764] [cursor=pointer]:
+                      - generic:
+                        - img [ref=f5e767]
+                        - text: Create new content
+                    - group "id=48 - Camino Routes - Link list" [ref=f5e770]:
+                      - generic [ref=f5e771]: id=48 - Camino Routes - Link list
+                      - generic [ref=f5e772]:
+                        - generic [ref=f5e773]:
+                          - generic [ref=f5e774]:
+                            - button "Open context menu" [ref=f5e775] [cursor=pointer]:
+                              - img [ref=f5e778]
+                            - generic "English" [ref=f5e780]
+                          - generic [ref=f5e783]: Link list
+                          - generic [ref=f5e786]:
+                            - button "Edit" [ref=f5e787] [cursor=pointer]:
+                              - img [ref=f5e790]
+                            - button "Hide" [ref=f5e792] [cursor=pointer]:
+                              - img [ref=f5e796]
+                            - link "Delete" [ref=f5e798] [cursor=pointer]:
+                              - /url: /typo3/record/commit?token=a3690127bb8b8ed419ea6fc7133526c9d28a20bfe0d44a5efb9f30be3e2694d4&cmd%5Btt_content%5D%5B48%5D%5Bdelete%5D=1&redirect=/typo3/module/web/layout?token%3Dc15add78fc182bff5fb263d3f20945c46c5017323b77fc03209a9bf50f293ef7%26id%3D1
+                              - img [ref=f5e801]
+                            - button "Open context menu" [ref=f5e803] [cursor=pointer]:
+                              - img [ref=f5e806]
+                        - generic [ref=f5e809]:
+                          - button "Camino Routes" [ref=f5e812] [cursor=pointer]:
+                            - generic: Camino Routes
+                          - list [ref=f5e814]:
+                            - listitem [ref=f5e815]:
+                              - generic [ref=f5e816]: "Link: Camino Francés (/camino-route-comparison#c7)"
+                            - listitem [ref=f5e817]:
+                              - generic [ref=f5e818]: "Link: Camino Portugués (/camino-route-comparison#c6)"
+                            - listitem [ref=f5e819]:
+                              - generic [ref=f5e820]: "Link: Camino del Norte (/camino-route-comparison#c5)"
+                      - button "Create new content" [ref=f5e822] [cursor=pointer]:
+                        - generic:
+                          - img [ref=f5e825]
+                          - text: Create new content
+                  - 'group "Footer: Column 3 (Menu)" [ref=f5e827]':
+                    - generic [ref=f5e828]:
+                      - link "Edit this column" [ref=f5e830] [cursor=pointer]:
+                        - /url: /typo3/record/edit?token=0befe21c8f1fef88eb78ab250329adf246f54261e6285a7a37891c720bbeeccf&edit%5Btt_content%5D%5B49%5D=edit&module=web_layout&returnUrl=/typo3/module/web/layout?token%3Dc15add78fc182bff5fb263d3f20945c46c5017323b77fc03209a9bf50f293ef7%26id%3D1
+                        - img [ref=f5e833]
+                        - generic [ref=f5e835]: Edit this column
+                      - 'heading "Footer: Column 3 (Menu)" [level=2] [ref=f5e836]'
+                    - button "Create new content" [ref=f5e839] [cursor=pointer]:
+                      - generic:
+                        - img [ref=f5e842]
+                        - text: Create new content
+                    - group "id=49 - Link list" [ref=f5e845]:
+                      - generic [ref=f5e846]: id=49 - Link list
+                      - generic [ref=f5e847]:
+                        - generic [ref=f5e848]:
+                          - generic [ref=f5e849]:
+                            - button "Open context menu" [ref=f5e850] [cursor=pointer]:
+                              - img [ref=f5e853]
+                            - generic "English" [ref=f5e855]
+                          - generic [ref=f5e858]: Link list
+                          - generic [ref=f5e861]:
+                            - button "Edit" [ref=f5e862] [cursor=pointer]:
+                              - img [ref=f5e865]
+                            - button "Hide" [ref=f5e867] [cursor=pointer]:
+                              - img [ref=f5e871]
+                            - link "Delete" [ref=f5e873] [cursor=pointer]:
+                              - /url: /typo3/record/commit?token=a3690127bb8b8ed419ea6fc7133526c9d28a20bfe0d44a5efb9f30be3e2694d4&cmd%5Btt_content%5D%5B49%5D%5Bdelete%5D=1&redirect=/typo3/module/web/layout?token%3Dc15add78fc182bff5fb263d3f20945c46c5017323b77fc03209a9bf50f293ef7%26id%3D1
+                              - img [ref=f5e876]
+                            - button "Open context menu" [ref=f5e878] [cursor=pointer]:
+                              - img [ref=f5e881]
+                        - list [ref=f5e886]:
+                          - listitem [ref=f5e887]:
+                            - generic [ref=f5e888]: "Link: Camino Primitivo (/camino-route-comparison#c4)"
+                          - listitem [ref=f5e889]:
+                            - generic [ref=f5e890]: "Link: Camino Inglés (/camino-route-comparison#c3)"
+                          - listitem [ref=f5e891]:
+                            - generic [ref=f5e892]: "Link: Camino de Finisterre (/camino-route-comparison#c2)"
+                      - button "Create new content" [ref=f5e894] [cursor=pointer]:
+                        - generic:
+                          - img [ref=f5e897]
+                          - text: Create new content
+                  - 'group "Footer: Column 4 (Menu)" [ref=f5e899]':
+                    - generic [ref=f5e900]:
+                      - link "Edit this column" [ref=f5e902] [cursor=pointer]:
+                        - /url: /typo3/record/edit?token=0befe21c8f1fef88eb78ab250329adf246f54261e6285a7a37891c720bbeeccf&edit%5Btt_content%5D%5B50%5D=edit&module=web_layout&returnUrl=/typo3/module/web/layout?token%3Dc15add78fc182bff5fb263d3f20945c46c5017323b77fc03209a9bf50f293ef7%26id%3D1
+                        - img [ref=f5e905]
+                        - generic [ref=f5e907]: Edit this column
+                      - 'heading "Footer: Column 4 (Menu)" [level=2] [ref=f5e908]'
+                    - button "Create new content" [ref=f5e911] [cursor=pointer]:
+                      - generic:
+                        - img [ref=f5e914]
+                        - text: Create new content
+                    - group "id=50 - Link list" [ref=f5e917]:
+                      - generic [ref=f5e918]: id=50 - Link list
+                      - generic [ref=f5e919]:
+                        - generic [ref=f5e920]:
+                          - generic [ref=f5e921]:
+                            - button "Open context menu" [ref=f5e922] [cursor=pointer]:
+                              - img [ref=f5e925]
+                            - generic "English" [ref=f5e927]
+                          - generic [ref=f5e930]: Link list
+                          - generic [ref=f5e933]:
+                            - button "Edit" [ref=f5e934] [cursor=pointer]:
+                              - img [ref=f5e937]
+                            - button "Hide" [ref=f5e939] [cursor=pointer]:
+                              - img [ref=f5e943]
+                            - link "Delete" [ref=f5e945] [cursor=pointer]:
+                              - /url: /typo3/record/commit?token=a3690127bb8b8ed419ea6fc7133526c9d28a20bfe0d44a5efb9f30be3e2694d4&cmd%5Btt_content%5D%5B50%5D%5Bdelete%5D=1&redirect=/typo3/module/web/layout?token%3Dc15add78fc182bff5fb263d3f20945c46c5017323b77fc03209a9bf50f293ef7%26id%3D1
+                              - img [ref=f5e948]
+                            - button "Open context menu" [ref=f5e950] [cursor=pointer]:
+                              - img [ref=f5e953]
+                        - list [ref=f5e958]:
+                          - listitem [ref=f5e959]:
+                            - generic [ref=f5e960]: "Link: Packing List (/packing-list)"
+                          - listitem [ref=f5e961]:
+                            - generic [ref=f5e962]: "Link: FAQs (/faqs)"
+                      - button "Create new content" [ref=f5e964] [cursor=pointer]:
+                        - generic:
+                          - img [ref=f5e967]
+                          - text: Create new content
+                - 'row "Footer: Meta navigation" [ref=f5e969]':
+                  - 'group "Footer: Meta navigation" [ref=f5e970]':
+                    - generic [ref=f5e971]:
+                      - link "Edit this column" [ref=f5e973] [cursor=pointer]:
+                        - /url: /typo3/record/edit?token=0befe21c8f1fef88eb78ab250329adf246f54261e6285a7a37891c720bbeeccf&edit%5Btt_content%5D%5B47%5D=edit&module=web_layout&returnUrl=/typo3/module/web/layout?token%3Dc15add78fc182bff5fb263d3f20945c46c5017323b77fc03209a9bf50f293ef7%26id%3D1
+                        - img [ref=f5e976]
+                        - generic [ref=f5e978]: Edit this column
+                      - 'heading "Footer: Meta navigation" [level=2] [ref=f5e979]'
+                    - button "Create new content" [ref=f5e982] [cursor=pointer]:
+                      - generic:
+                        - img [ref=f5e985]
+                        - text: Create new content
+                    - group "id=47 - Link list" [ref=f5e988]:
+                      - generic [ref=f5e989]: id=47 - Link list
+                      - generic [ref=f5e990]:
+                        - generic [ref=f5e991]:
+                          - generic [ref=f5e992]:
+                            - button "Open context menu" [ref=f5e993] [cursor=pointer]:
+                              - img [ref=f5e996]
+                            - generic "English" [ref=f5e998]
+                          - generic [ref=f5e1001]: Link list
+                          - generic [ref=f5e1004]:
+                            - button "Edit" [ref=f5e1005] [cursor=pointer]:
+                              - img [ref=f5e1008]
+                            - button "Hide" [ref=f5e1010] [cursor=pointer]:
+                              - img [ref=f5e1014]
+                            - link "Delete" [ref=f5e1016] [cursor=pointer]:
+                              - /url: /typo3/record/commit?token=a3690127bb8b8ed419ea6fc7133526c9d28a20bfe0d44a5efb9f30be3e2694d4&cmd%5Btt_content%5D%5B47%5D%5Bdelete%5D=1&redirect=/typo3/module/web/layout?token%3Dc15add78fc182bff5fb263d3f20945c46c5017323b77fc03209a9bf50f293ef7%26id%3D1
+                              - img [ref=f5e1019]
+                            - button "Open context menu" [ref=f5e1021] [cursor=pointer]:
+                              - img [ref=f5e1024]
+                        - list [ref=f5e1029]:
+                          - listitem [ref=f5e1030]:
+                            - generic [ref=f5e1031]: "Link: (/imprint)"
+                          - listitem [ref=f5e1032]:
+                            - generic [ref=f5e1033]: "Link: (/privacy)"
+                      - button "Create new content" [ref=f5e1035] [cursor=pointer]:
+                        - generic:
+                          - img [ref=f5e1038]
+                          - text: Create new content
+      - progressbar [ref=f4e151]:
+        - generic [ref=f4e154]: 100%
