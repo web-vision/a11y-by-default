@@ -356,7 +356,7 @@ COMPOSER_ROOT_VERSION="1.0.2-dev"
 PHPSTAN_CONFIG_FILE="phpstan.neon"
 CONTAINER_INTERACTIVE="-it --init"
 HOST_UID=$(id -u)
-HOST_PID=$(id -g)
+HOST_GID=$(id -g)
 USERSET=""
 CI_PARAMS="${CI_PARAMS:-}"
 CI_JOB_ID=${CI_JOB_ID:-}
@@ -494,11 +494,25 @@ ${CONTAINER_BIN} network create ${NETWORK} >/dev/null
 if [ ${CONTAINER_BIN} = "docker" ]; then
     # docker needs the add-host for xdebug remote debugging. podman has host.container.internal built in
     CONTAINER_COMMON_PARAMS="${CONTAINER_INTERACTIVE} --rm --network ${NETWORK} --add-host "${CONTAINER_HOST}:host-gateway" ${USERSET} -v ${CORE_ROOT}:${CORE_ROOT} -w ${CORE_ROOT}"
-    TMPFS_MOUNT_OPTIONS="rw,noexec,nosuid,uid=${HOST_UID},gid=${HOST_PID}"
+    # docker creates a tmpfs owned by "root:root" that inherits the mode of its host
+    # mountpoint, while "${USERSET}" above passes a uid but no group and therefore runs
+    # the container as "uid=${HOST_UID} gid=0". At a CI umask of 0022 the mountpoint is
+    # 0755, so group 0 would get "r-x" and no test database could be created - every
+    # functional sqlite test then fails with "unable to open database file".
+    #
+    # "uid"/"gid" address that at the source: the mount is owned by the user the
+    # container runs as, whatever the umask of the host mountpoint. That makes the
+    # suite umask-independent without a permissive mode on the mount, so none is set.
+    #
+    # None of this reproduces at the 0002 umask of a typical workstation, where the
+    # mountpoint comes up 0775 and the group bit already grants access. Use "umask 0022".
+    TMPFS_MOUNT_OPTIONS="rw,noexec,nosuid,uid=${HOST_UID},gid=${HOST_GID}"
 else
     # podman
     CONTAINER_HOST="host.containers.internal"
     CONTAINER_COMMON_PARAMS="${CONTAINER_INTERACTIVE} ${CI_PARAMS} --rm --network ${NETWORK} -v ${CORE_ROOT}:${CORE_ROOT} -w ${CORE_ROOT}"
+    # Rootless podman is root inside its user namespace and is passed no "--user", so
+    # the tmpfs is writable without naming an owner.
     TMPFS_MOUNT_OPTIONS="rw,noexec,nosuid"
 fi
 
@@ -624,6 +638,10 @@ case ${TEST_SUITE} in
                 ;;
             sqlite)
                 mkdir -p "${CORE_ROOT}/.Build/Web/typo3temp/var/tests/functional-sqlite-dbs/"
+                # "${TMPFS_MOUNT_OPTIONS}" carries the owner this mount needs, which
+                # differs per container binary - see where it is assigned. Without it the
+                # test databases cannot be created and every test fails with "unable to
+                # open database file".
                 CONTAINERPARAMS="-e typo3DatabaseDriver=pdo_sqlite --tmpfs ${CORE_ROOT}/.Build/Web/typo3temp/var/tests/functional-sqlite-dbs/:${TMPFS_MOUNT_OPTIONS}"
                 ${CONTAINER_BIN} run ${CONTAINER_COMMON_PARAMS} --name functional-${SUFFIX} ${XDEBUG_MODE} -e XDEBUG_CONFIG="${XDEBUG_CONFIG}" -e COMPOSER_ROOT_VERSION=${COMPOSER_ROOT_VERSION} ${CONTAINERPARAMS} ${IMAGE_PHP} "${COMMAND[@]}"
                 SUITE_EXIT_CODE=$?
