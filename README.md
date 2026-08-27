@@ -139,3 +139,33 @@ echo '>> Create release based on configuration' ; \
 
 Inspired by the pa11y dashboard layout.
 Developed by Markus Hofmann (web-vision GmbH).
+
+## Supported Versions
+
+| Version | Supported          | End of Support |
+|---------|--------------------|----------------|
+| 1.x     | :white_check_mark: | 2029-06-30     |
+
+## Security
+
+Found a vulnerability? Please report it privately via our
+[security report form](https://security.web-vision.de) — **do not** open a public issue.
+See [SECURITY.md](SECURITY.md) for the full vulnerability disclosure policy,
+including what to expect and our safe harbor statement.
+
+## Simplified EU Declaration of Conformity (Annex VI)
+
+> Hereby, web-vision GmbH declares that the product with digital elements
+> type A11y by default - Accessibility Checker is in compliance with Regulation (EU) 2024/2847.
+>
+> The full text of the EU declaration of conformity is available at the
+> following internet address:
+> https://security.web-vision.de/conformity/web-vision/a11y-by-default/1.1.0/en/
+
+The full declarations are also included in this repository:
+[English](EU-Declaration-of-Conformity.md) ·
+[Deutsch](EU-Konformitaetserklaerung.md).
+
+## License
+
+This extension is released under the [GPL-2.0-or-later](LICENSE) license.
