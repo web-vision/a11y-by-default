@@ -32,6 +32,7 @@ interface AxeRunOptions {
 
 interface AxeWindow extends Window {
   axe?: {
+    configure(spec: { locale: unknown }): void;
     run(context: Document, options?: AxeRunOptions): Promise<AxeResults>;
   };
 }
@@ -53,10 +54,12 @@ export class AxeEngine {
     private readonly iframe: HTMLIFrameElement,
     private readonly axeJsUrl: string,
     private readonly contentFactsIndex: ContentFactsIndex = EMPTY_CONTENT_FACTS_INDEX,
+    private readonly localeUrl = '',
   ) {}
 
   async run(): Promise<ScanResult> {
     await this.injectScript(this.axeJsUrl);
+    await this.applyLocale();
     const results = await this.executeAxe();
 
     return {
@@ -81,6 +84,25 @@ export class AxeEngine {
       script.onerror = () => reject(new Error(`Failed to load script: ${src}`));
       iframeDocument.head.appendChild(script);
     });
+  }
+
+  // axe-core reports in English unless a locale is configured before the run.
+  // A missing or mismatching locale file must not break the scan, so any
+  // failure here keeps the built-in English messages.
+  private async applyLocale(): Promise<void> {
+    const axe = (this.iframe.contentWindow as AxeWindow | null)?.axe;
+    if (this.localeUrl === '' || axe === undefined) {
+      return;
+    }
+
+    try {
+      const response = await fetch(this.localeUrl);
+      if (response.ok) {
+        axe.configure({ locale: await response.json() });
+      }
+    } catch {
+      // Keep the English messages.
+    }
   }
 
   private async executeAxe(): Promise<AxeResults> {

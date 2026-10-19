@@ -11,7 +11,13 @@ interface HtmlCsMessage {
 
 interface HtmlCsWindow extends Window {
   HTMLCS?: {
-    process(standard: string, document: Document, callback: () => void): void;
+    process(
+      standard: string,
+      document: Document,
+      callback: () => void,
+      failCallback?: () => void,
+      language?: string,
+    ): void;
     getMessages(): HtmlCsMessage[];
     ERROR: number;
     WARNING: number;
@@ -26,6 +32,7 @@ export class HtmlCsEngine {
     private readonly iframe: HTMLIFrameElement,
     private readonly htmlcsJsUrl: string,
     private readonly contentFactsIndex: ContentFactsIndex = EMPTY_CONTENT_FACTS_INDEX,
+    private readonly language = 'en',
   ) {}
 
   async run(): Promise<ScanResult> {
@@ -77,7 +84,8 @@ export class HtmlCsEngine {
         'return function () { cb(); };',
       )(onDone) as () => void;
 
-      iframeWindow.HTMLCS.process(HtmlCsEngine.STANDARD, iframeWindow.document, callback);
+      // HTMLCS ignores a language it ships no translation for and stays English.
+      iframeWindow.HTMLCS.process(HtmlCsEngine.STANDARD, iframeWindow.document, callback, undefined, this.language);
     });
   }
 

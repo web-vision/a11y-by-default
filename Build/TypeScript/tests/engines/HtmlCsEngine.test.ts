@@ -70,6 +70,24 @@ describe('HtmlCsEngine', () => {
     expect(result.violations[0]?.nodes[0]?.contentElementUid).toBeUndefined();
   });
 
+  it('asks HTML CodeSniffer for the configured language', async () => {
+    const iframe = setupIframeWithHtmlCs('<div></div>', jest.fn().mockReturnValue([]));
+    const process = (iframe.contentWindow as HtmlCsWindow).HTMLCS!.process;
+
+    await new HtmlCsEngine(iframe, '/HTMLCS.min.js', makeIndex(), 'fr').run();
+
+    expect(process).toHaveBeenCalledWith('WCAG2AA', iframe.contentDocument, expect.any(Function), undefined, 'fr');
+  });
+
+  it('asks HTML CodeSniffer for English when no language is configured', async () => {
+    const iframe = setupIframeWithHtmlCs('<div></div>', jest.fn().mockReturnValue([]));
+    const process = (iframe.contentWindow as HtmlCsWindow).HTMLCS!.process;
+
+    await new HtmlCsEngine(iframe, '/HTMLCS.min.js', makeIndex()).run();
+
+    expect(process).toHaveBeenCalledWith('WCAG2AA', iframe.contentDocument, expect.any(Function), undefined, 'en');
+  });
+
   it('splits messages into violations and incomplete by type', async () => {
     const iframe = setupIframeWithHtmlCs('<div></div>', jest.fn());
     const element = iframe.contentDocument!.querySelector('div')!;

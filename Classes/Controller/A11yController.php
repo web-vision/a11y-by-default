@@ -21,6 +21,7 @@ use WebVision\A11yByDefault\Service\ContentFactsService;
 use WebVision\A11yByDefault\Service\DeveloperCornerAccessService;
 use WebVision\A11yByDefault\Service\IssueClassificationService;
 use WebVision\A11yByDefault\Service\ModuleBreadcrumbServiceInterface;
+use WebVision\A11yByDefault\Service\ScanEngineLocaleService;
 
 #[AsController]
 final class A11yController
@@ -34,6 +35,7 @@ final class A11yController
         private readonly UriBuilder $uriBuilder,
         private readonly DeveloperCornerAccessService $developerCornerAccessService,
         private readonly ModuleBreadcrumbServiceInterface $moduleBreadcrumbService,
+        private readonly ScanEngineLocaleService $scanEngineLocaleService,
     ) {}
 
     public function index(ServerRequestInterface $request): ResponseInterface
@@ -78,6 +80,8 @@ final class A11yController
             'contentMetadataJson' => json_encode($contentMetadata, JSON_THROW_ON_ERROR),
             'contentFactsJson' => json_encode($contentFacts, JSON_THROW_ON_ERROR),
             'hasDeveloperCornerAccess' => $hasDeveloperCornerAccess,
+            'axeLocaleUrl' => $this->scanEngineLocaleService->getAxeLocaleUrl($languageService, $request),
+            'htmlCsLanguage' => $this->scanEngineLocaleService->getHtmlCsLanguage($languageService),
         ]);
 
         return $moduleTemplate->renderResponse('A11y/Index');

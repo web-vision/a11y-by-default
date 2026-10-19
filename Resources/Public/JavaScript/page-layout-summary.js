@@ -159,13 +159,15 @@ const AXE_RUN_OPTIONS = {
     rules: { 'css-orientation-lock': { enabled: false } },
 };
 class AxeEngine {
-    constructor(iframe, axeJsUrl, contentFactsIndex = EMPTY_CONTENT_FACTS_INDEX) {
+    constructor(iframe, axeJsUrl, contentFactsIndex = EMPTY_CONTENT_FACTS_INDEX, localeUrl = '') {
         this.iframe = iframe;
         this.axeJsUrl = axeJsUrl;
         this.contentFactsIndex = contentFactsIndex;
+        this.localeUrl = localeUrl;
     }
     async run() {
         await this.injectScript(this.axeJsUrl);
+        await this.applyLocale();
         const results = await this.executeAxe();
         return {
             violations: this.normalizeResults(results.violations),
@@ -187,6 +189,24 @@ class AxeEngine {
             script.onerror = () => reject(new Error(`Failed to load script: ${src}`));
             iframeDocument.head.appendChild(script);
         });
+    }
+    // axe-core reports in English unless a locale is configured before the run.
+    // A missing or mismatching locale file must not break the scan, so any
+    // failure here keeps the built-in English messages.
+    async applyLocale() {
+        const axe = this.iframe.contentWindow?.axe;
+        if (this.localeUrl === '' || axe === undefined) {
+            return;
+        }
+        try {
+            const response = await fetch(this.localeUrl);
+            if (response.ok) {
+                axe.configure({ locale: await response.json() });
+            }
+        }
+        catch {
+            // Keep the English messages.
+        }
     }
     async executeAxe() {
         const iframeWindow = this.iframe.contentWindow;

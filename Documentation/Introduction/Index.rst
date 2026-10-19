@@ -40,8 +40,10 @@ Key features
     (:ref:`users-manual-page-layout-hint`).
 *   **No data persistence:** nothing the module finds is stored; every scan is
     generated on demand and discarded once you navigate away.
-*   **Multilingual backend:** the module and its findings are translated into
-    every language officially supported by the TYPO3 core.
+*   **Multilingual backend:** the module is translated into every language
+    officially supported by the TYPO3 core. The findings are shown in the
+    backend user's language wherever the scanning engine ships a translation
+    for it, and in English otherwise (:ref:`developer-corner-translations`).
 
 .. _introduction-disclaimer:
 

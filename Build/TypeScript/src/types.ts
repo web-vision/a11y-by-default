@@ -80,6 +80,8 @@ export interface ModuleSettings {
   contentMetadata: ContentMetadataItem[];
   contentFacts: ContentFacts;
   axeJsUrl: string;
+  axeLocaleUrl: string;
   htmlcsJsUrl: string;
+  htmlcsLanguage: string;
   classificationRules: Record<string, ClassificationRule>;
 }
