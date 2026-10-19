@@ -12,7 +12,7 @@
             </trans-unit>
             <trans-unit id="module.engineLabel">
                 <source>Scanning engine:</source>
-                <target>Prüf-Engine:</target>
+                <target>Prüfwerkzeug:</target>
             </trans-unit>
             <trans-unit id="module.engine.axe">
                 <source>axe-core (recommended)</source>
@@ -24,19 +24,19 @@
             </trans-unit>
             <trans-unit id="module.auditDisclaimer">
                 <source>This module provides automated assistance for accessibility checks. It does not replace a full audit by qualified accessibility auditors, which is required to have a page officially certified as accessible.</source>
-                <target>Dieses Modul bietet automatisierte Unterstützung bei der Barrierefreiheitsprüfung. Es ersetzt keine vollständige Prüfung durch qualifizierte Auditor:innen für Barrierefreiheit, die erforderlich ist, um eine Seite offiziell als barrierefrei zertifizieren zu lassen.</target>
+                <target>Dieses Modul unterstützt Sie mit automatisierten Prüfungen der Barrierefreiheit. Es ersetzt keine vollständige Prüfung durch qualifizierte Fachleute für Barrierefreiheit, wie sie nötig ist, um eine Seite offiziell als barrierefrei zertifizieren zu lassen.</target>
             </trans-unit>
             <trans-unit id="module.engine.axeInfo">
                 <source>axe-core (recommended) checks the page against the WCAG accessibility guidelines — the standard that ensures people using screen readers, keyboard navigation, or other assistive technology can use your content. It is the actively maintained, industry-standard tool and produces very few incorrect warnings, so almost everything it reports is worth acting on.</source>
-                <target>axe-core (empfohlen) prüft die Seite anhand der WCAG-Richtlinien für Barrierefreiheit — dem Standard, der sicherstellt, dass Menschen mit Screenreadern, Tastaturnavigation oder anderer assistiver Technologie Ihre Inhalte nutzen können. Es ist das aktiv gepflegte Standardwerkzeug der Branche und erzeugt nur sehr wenige fehlerhafte Warnungen, sodass sich fast jeder gemeldete Punkt lohnt zu bearbeiten.</target>
+                <target>axe-core (empfohlen) prüft die Seite anhand der WCAG, der Richtlinien für barrierefreie Webinhalte. Dieser Standard stellt sicher, dass Menschen, die Screenreader, Tastaturnavigation oder andere assistive Technologien verwenden, Ihre Inhalte nutzen können. axe-core ist das aktiv gepflegte Standardwerkzeug der Branche und meldet nur sehr selten Fehlalarme. Es lohnt sich daher, fast jede Meldung zu bearbeiten.</target>
             </trans-unit>
             <trans-unit id="module.engine.htmlcsInfo">
                 <source>HTML CodeSniffer checks the page against similar accessibility guidelines, but with an older, less refined method. It can occasionally point out issues axe-core misses, but it also produces many more results that need a closer manual look before you can tell whether something is really a problem. Use it only for a second opinion, not as your main scan.</source>
-                <target>HTML CodeSniffer prüft die Seite anhand ähnlicher Richtlinien für Barrierefreiheit, jedoch mit einer älteren, weniger ausgereiften Methode. Es kann gelegentlich Probleme aufzeigen, die axe-core übersieht, erzeugt aber auch viel mehr Ergebnisse, die eine genauere manuelle Prüfung erfordern, bevor sich sagen lässt, ob wirklich ein Problem vorliegt. Nutzen Sie es nur als Zweitmeinung, nicht als Hauptprüfung.</target>
+                <target>HTML CodeSniffer prüft die Seite anhand ähnlicher Richtlinien, aber mit einer älteren, weniger ausgereiften Methode. Das Werkzeug findet gelegentlich Probleme, die axe-core übersieht, liefert aber auch deutlich mehr Ergebnisse, die Sie von Hand prüfen müssen, bevor feststeht, ob wirklich ein Problem vorliegt. Nutzen Sie es nur für eine zweite Meinung, nicht als Hauptprüfung.</target>
             </trans-unit>
             <trans-unit id="module.loading">
                 <source>Loading page and running scan…</source>
-                <target>Seite wird geladen und Prüfung wird ausgeführt …</target>
+                <target>Seite wird geladen und geprüft …</target>
             </trans-unit>
             <trans-unit id="module.results.violations">
                 <source>Violations</source>
@@ -48,7 +48,7 @@
             </trans-unit>
             <trans-unit id="module.results.incomplete.info">
                 <source>Automated scanning could not determine whether these items pass or fail. Each one needs to be checked manually.</source>
-                <target>Die automatisierte Prüfung konnte nicht feststellen, ob diese Punkte bestehen oder nicht. Jeder Punkt muss manuell überprüft werden.</target>
+                <target>Die automatische Prüfung konnte bei diesen Punkten nicht entscheiden, ob sie erfüllt sind. Prüfen Sie jeden Punkt von Hand.</target>
             </trans-unit>
             <trans-unit id="module.results.passes">
                 <source>Passes</source>
@@ -100,99 +100,99 @@
             </trans-unit>
             <trans-unit id="module.error.noPreview">
                 <source>No preview URL available for this page. Ensure the page has a valid site configuration.</source>
-                <target>Für diese Seite ist keine Vorschau-URL verfügbar. Stellen Sie sicher, dass die Seite eine gültige Seitenkonfiguration besitzt.</target>
+                <target>Für diese Seite ist keine Vorschau-URL verfügbar. Stellen Sie sicher, dass die Seite zu einer gültigen Site-Konfiguration gehört.</target>
             </trans-unit>
             <trans-unit id="hint.image-alt">
                 <source>Add an image description (alt text) in the content element editor.</source>
-                <target>Fügen Sie im Inhaltselement-Editor eine Bildbeschreibung (Alt-Text) hinzu.</target>
+                <target>Bearbeiten Sie das Inhaltselement und tragen Sie beim Bild im Feld „Alternativer Text“ eine Bildbeschreibung ein.</target>
             </trans-unit>
             <trans-unit id="hint.image-alt.developer">
                 <source>This image is not linked to editable content, or its alt text is set but not rendered. Check the template's image rendering (developer task).</source>
-                <target>Dieses Bild ist nicht mit bearbeitbarem Inhalt verknüpft, oder der Alt-Text ist gesetzt, wird aber nicht ausgegeben. Prüfen Sie die Bildausgabe im Template (Entwickleraufgabe).</target>
+                <target>Dieses Bild gehört zu keinem bearbeitbaren Inhalt, oder sein alternativer Text ist gepflegt, wird aber nicht ausgegeben. Prüfen Sie die Bildausgabe im Template (Entwickleraufgabe).</target>
             </trans-unit>
             <trans-unit id="hint.input-image-alt">
                 <source>Add an alt text to the image input element in the content editor.</source>
-                <target>Fügen Sie im Inhalts-Editor einen Alt-Text zum Bild-Eingabeelement hinzu.</target>
+                <target>Bearbeiten Sie das Inhaltselement und tragen Sie für die Bildschaltfläche einen alternativen Text ein.</target>
             </trans-unit>
             <trans-unit id="hint.input-image-alt.developer">
                 <source>This image input is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
-                <target>Dieses Bild-Eingabeelement ist nicht mit bearbeitbarem Inhalt verknüpft, oder der Alt-Text ist gesetzt, wird aber nicht ausgegeben. Prüfen Sie die Ausgabe im Template (Entwickleraufgabe).</target>
+                <target>Diese Bildschaltfläche gehört zu keinem bearbeitbaren Inhalt, oder ihr alternativer Text ist gepflegt, wird aber nicht ausgegeben. Prüfen Sie die Ausgabe im Template (Entwickleraufgabe).</target>
             </trans-unit>
             <trans-unit id="hint.area-alt">
                 <source>Add alt text to the image map area in the content editor.</source>
-                <target>Fügen Sie im Inhalts-Editor einen Alt-Text zum Bereich der Image-Map hinzu.</target>
+                <target>Bearbeiten Sie das Inhaltselement und tragen Sie für den Bereich der Image-Map einen alternativen Text ein.</target>
             </trans-unit>
             <trans-unit id="hint.area-alt.developer">
                 <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
-                <target>Dieser Bereich der Image-Map ist nicht mit bearbeitbarem Inhalt verknüpft, oder der Alt-Text ist gesetzt, wird aber nicht ausgegeben. Prüfen Sie die Ausgabe im Template (Entwickleraufgabe).</target>
+                <target>Dieser Bereich der Image-Map gehört zu keinem bearbeitbaren Inhalt, oder sein alternativer Text ist gepflegt, wird aber nicht ausgegeben. Prüfen Sie die Ausgabe im Template (Entwickleraufgabe).</target>
             </trans-unit>
             <trans-unit id="rule.a11y-redundant-img-title.help">
                 <source>Image title must not repeat the alternative text</source>
-                <target>Bildtitel darf den Alternativtext nicht wiederholen</target>
+                <target>Bildtitel darf den alternativen Text nicht wiederholen</target>
             </trans-unit>
             <trans-unit id="rule.a11y-redundant-img-title.description">
                 <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
-                <target>Stellt sicher, dass das title-Attribut eines Bildes zusätzliche Information liefert, statt den Alternativtext zu wiederholen, den Screenreader sonst doppelt vorlesen können.</target>
+                <target>Stellt sicher, dass das title-Attribut eines Bildes zusätzliche Information liefert, statt den alternativen Text zu wiederholen, den Screenreader sonst doppelt vorlesen können.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-redundant-img-title">
                 <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
-                <target>Der Bildtitel wiederholt den Alternativtext. Entfernen Sie in den Bildeinstellungen des Inhaltselements den Titel oder ändern Sie ihn so, dass er zusätzliche Information liefert.</target>
+                <target>Der Bildtitel wiederholt den alternativen Text. Entfernen Sie in den Bildeinstellungen des Inhaltselements den Titel oder ändern Sie ihn so, dass er zusätzliche Information liefert.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-redundant-img-title.developer">
                 <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
-                <target>Der ausgegebene Titel wiederholt den Alt-Text, obwohl die gespeicherten Werte sich unterscheiden oder das Bild keinem bearbeitbaren Inhalt zugeordnet ist. Prüfen Sie, ob das Template den Alt-Text in das title-Attribut kopiert (Aufgabe für die Entwicklung).</target>
+                <target>Der ausgegebene Titel wiederholt den alternativen Text, obwohl die gespeicherten Werte sich unterscheiden oder das Bild keinem bearbeitbaren Inhalt zugeordnet ist. Prüfen Sie, ob das Template den alternativen Text in das title-Attribut kopiert (Entwickleraufgabe).</target>
             </trans-unit>
             <trans-unit id="rule.a11y-img-alt-too-short.help">
                 <source>Image alternative text must be long enough to describe the image</source>
-                <target>Alternativtext eines Bildes muss lang genug sein, um es zu beschreiben</target>
+                <target>Der alternative Text eines Bildes muss lang genug sein, um es zu beschreiben</target>
             </trans-unit>
             <trans-unit id="rule.a11y-img-alt-too-short.description">
                 <source>Ensures an image's alternative text has at least five characters, as shorter texts rarely describe the image's content or function.</source>
-                <target>Stellt sicher, dass der Alternativtext eines Bildes mindestens fünf Zeichen hat, da kürzere Texte Inhalt oder Funktion des Bildes selten beschreiben.</target>
+                <target>Stellt sicher, dass der alternative Text eines Bildes mindestens fünf Zeichen hat, da kürzere Texte Inhalt oder Funktion des Bildes selten beschreiben.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-img-alt-too-short">
                 <source>The alternative text of this image is too short to describe it. In the image settings of the content element, describe what the image shows or what it does.</source>
-                <target>Der Alternativtext dieses Bildes ist zu kurz, um es zu beschreiben. Beschreiben Sie in den Bildeinstellungen des Inhaltselements, was das Bild zeigt oder welche Funktion es hat.</target>
+                <target>Der alternative Text dieses Bildes ist zu kurz, um es zu beschreiben. Beschreiben Sie in den Bildeinstellungen des Inhaltselements, was das Bild zeigt oder welche Funktion es hat.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-img-alt-too-short.developer">
                 <source>The rendered alternative text is too short, although the stored text is longer or the image is not linked to editable content. Check how the template builds the alt attribute (developer task).</source>
-                <target>Der ausgegebene Alternativtext ist zu kurz, obwohl der gespeicherte Text länger ist oder das Bild keinem bearbeitbaren Inhalt zugeordnet ist. Prüfen Sie, wie das Template das alt-Attribut erzeugt (Aufgabe für die Entwicklung).</target>
+                <target>Der ausgegebene alternative Text ist zu kurz, obwohl der gespeicherte Text länger ist oder das Bild keinem bearbeitbaren Inhalt zugeordnet ist. Prüfen Sie, wie das Template das alt-Attribut erzeugt (Entwickleraufgabe).</target>
             </trans-unit>
             <trans-unit id="rule.a11y-img-alt-redundant-prefix.help">
                 <source>Image alternative text should not start with "image of" or "photo of"</source>
-                <target>Alternativtext eines Bildes sollte nicht mit „Bild von“ oder „Foto von“ beginnen</target>
+                <target>Der alternative Text eines Bildes sollte nicht mit „Bild von“ oder „Foto von“ beginnen</target>
             </trans-unit>
             <trans-unit id="rule.a11y-img-alt-redundant-prefix.description">
                 <source>Ensures an image's alternative text describes the content without announcing that it is an image, which screen readers already do.</source>
-                <target>Stellt sicher, dass der Alternativtext eines Bildes den Inhalt beschreibt, ohne anzukündigen, dass es sich um ein Bild handelt; das sagen Screenreader bereits.</target>
+                <target>Stellt sicher, dass der alternative Text eines Bildes den Inhalt beschreibt, ohne anzukündigen, dass es sich um ein Bild handelt; das sagen Screenreader bereits.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-img-alt-redundant-prefix">
                 <source>In the image settings of the content element, remove words like "Photo of" or "Image of" from the start of the alternative text and describe the content directly.</source>
-                <target>Entfernen Sie in den Bildeinstellungen des Inhaltselements Wörter wie „Foto von“ oder „Bild von“ am Anfang des Alternativtexts und beschreiben Sie den Inhalt direkt.</target>
+                <target>Entfernen Sie in den Bildeinstellungen des Inhaltselements Wörter wie „Foto von“ oder „Bild von“ am Anfang des alternativen Texts und beschreiben Sie den Inhalt direkt.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-img-alt-redundant-prefix.developer">
                 <source>The rendered alternative text starts with words like "Photo of", although the stored text does not or the image is not linked to editable content. Check whether the template adds such a prefix (developer task).</source>
-                <target>Der ausgegebene Alternativtext beginnt mit Wörtern wie „Foto von“, obwohl der gespeicherte Text das nicht tut oder das Bild keinem bearbeitbaren Inhalt zugeordnet ist. Prüfen Sie, ob das Template einen solchen Zusatz einfügt (Aufgabe für die Entwicklung).</target>
+                <target>Der ausgegebene alternative Text beginnt mit Wörtern wie „Foto von“, obwohl der gespeicherte Text das nicht tut oder das Bild keinem bearbeitbaren Inhalt zugeordnet ist. Prüfen Sie, ob das Template einen solchen Zusatz einfügt (Entwickleraufgabe).</target>
             </trans-unit>
             <trans-unit id="rule.a11y-img-alt-filename.help">
                 <source>Image alternative text must not be a file name</source>
-                <target>Alternativtext eines Bildes darf kein Dateiname sein</target>
+                <target>Der alternative Text eines Bildes darf kein Dateiname sein</target>
             </trans-unit>
             <trans-unit id="rule.a11y-img-alt-filename.description">
                 <source>Ensures an image's alternative text is not its file name or a camera-generated name such as IMG_1234, which tells users nothing about the image.</source>
-                <target>Stellt sicher, dass der Alternativtext eines Bildes nicht der Dateiname oder ein von der Kamera vergebener Name wie IMG_1234 ist, der nichts über das Bild aussagt.</target>
+                <target>Stellt sicher, dass der alternative Text eines Bildes nicht der Dateiname oder ein von der Kamera vergebener Name wie IMG_1234 ist, der nichts über das Bild aussagt.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-img-alt-filename">
                 <source>The alternative text of this image is a file name. In the image settings of the content element, replace it with a description of what the image shows.</source>
-                <target>Der Alternativtext dieses Bildes ist ein Dateiname. Ersetzen Sie ihn in den Bildeinstellungen des Inhaltselements durch eine Beschreibung dessen, was das Bild zeigt.</target>
+                <target>Der alternative Text dieses Bildes ist ein Dateiname. Ersetzen Sie ihn in den Bildeinstellungen des Inhaltselements durch eine Beschreibung dessen, was das Bild zeigt.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-img-alt-filename.developer">
                 <source>The rendered alternative text is a file name, although the stored text is not or the image is not linked to editable content. Check whether the template falls back to the file name for the alt attribute (developer task).</source>
-                <target>Der ausgegebene Alternativtext ist ein Dateiname, obwohl der gespeicherte Text keiner ist oder das Bild keinem bearbeitbaren Inhalt zugeordnet ist. Prüfen Sie, ob das Template für das alt-Attribut auf den Dateinamen zurückgreift (Aufgabe für die Entwicklung).</target>
+                <target>Der ausgegebene alternative Text ist ein Dateiname, obwohl der gespeicherte Text keiner ist oder das Bild keinem bearbeitbaren Inhalt zugeordnet ist. Prüfen Sie, ob das Template für das alt-Attribut auf den Dateinamen zurückgreift (Entwickleraufgabe).</target>
             </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
-                <target>Bearbeiten Sie das Inhaltselement und ändern Sie das Überschriften-Layout so, dass die Überschriftenebenen keine Stufe überspringen.</target>
+                <target>Bearbeiten Sie das Inhaltselement und ändern Sie den Typ der Überschrift so, dass keine Überschriftenebene übersprungen wird.</target>
             </trans-unit>
             <trans-unit id="hint.heading-order.developer">
                 <source>This heading is rendered by the page template rather than a content element. Adjust the heading structure in the Fluid template (developer task).</source>
@@ -200,35 +200,35 @@
             </trans-unit>
             <trans-unit id="hint.empty-heading">
                 <source>A heading element is rendered with no text. Check the template's heading rendering; it should not output a heading tag when the source text is empty (developer task).</source>
-                <target>Ein Überschriftenelement wird ohne Text ausgegeben. Prüfen Sie die Überschriftenausgabe im Template; sie sollte kein Überschriften-Tag ausgeben, wenn der Quelltext leer ist (Entwickleraufgabe).</target>
+                <target>Eine Überschrift wird ohne Text ausgegeben. Prüfen Sie die Ausgabe der Überschrift im Template: Ist der Text leer, sollte kein Überschriften-Tag ausgegeben werden (Entwickleraufgabe).</target>
             </trans-unit>
             <trans-unit id="hint.link-name">
                 <source>Edit the link in the content editor and provide a descriptive link text.</source>
-                <target>Bearbeiten Sie den Link im Inhalts-Editor und vergeben Sie einen aussagekräftigen Linktext.</target>
+                <target>Bearbeiten Sie den Link im Inhaltselement und vergeben Sie einen aussagekräftigen Linktext.</target>
             </trans-unit>
             <trans-unit id="hint.link-name.developer">
                 <source>This link is rendered by the page template without link text and isn't linked to editable content. Add visible text or an aria-label in the Fluid template (developer task).</source>
-                <target>Dieser Link wird vom Seitentemplate ohne Linktext ausgegeben und ist nicht mit bearbeitbarem Inhalt verknüpft. Fügen Sie im Fluid-Template sichtbaren Text oder ein aria-label hinzu (Entwickleraufgabe).</target>
+                <target>Dieser Link wird vom Seitentemplate ohne Linktext ausgegeben und gehört zu keinem bearbeitbaren Inhalt. Ergänzen Sie im Fluid-Template einen sichtbaren Text oder ein aria-label (Entwickleraufgabe).</target>
             </trans-unit>
             <trans-unit id="hint.td-headers-attr">
                 <source>Update the table structure in the content editor to associate data cells with headers.</source>
-                <target>Aktualisieren Sie die Tabellenstruktur im Inhalts-Editor, damit Datenzellen den Kopfzellen zugeordnet sind.</target>
+                <target>Bearbeiten Sie die Tabelle im Inhaltselement so, dass die Datenzellen ihren Kopfzellen zugeordnet sind.</target>
             </trans-unit>
             <trans-unit id="hint.td-headers-attr.developer">
                 <source>This table is not linked to editable content. Update the table structure in the template so data cells reference their headers (developer task).</source>
-                <target>Diese Tabelle ist nicht mit bearbeitbarem Inhalt verknüpft. Aktualisieren Sie die Tabellenstruktur im Template so, dass Datenzellen auf ihre Kopfzellen verweisen (Entwickleraufgabe).</target>
+                <target>Diese Tabelle gehört zu keinem bearbeitbaren Inhalt. Passen Sie die Tabellenstruktur im Template so an, dass Datenzellen auf ihre Kopfzellen verweisen (Entwickleraufgabe).</target>
             </trans-unit>
             <trans-unit id="hint.th-has-data-cells">
                 <source>Update the table in the content editor so header cells have associated data cells.</source>
-                <target>Aktualisieren Sie die Tabelle im Inhalts-Editor so, dass Kopfzellen zugeordnete Datenzellen besitzen.</target>
+                <target>Bearbeiten Sie die Tabelle im Inhaltselement so, dass zu jeder Kopfzelle Datenzellen gehören.</target>
             </trans-unit>
             <trans-unit id="hint.th-has-data-cells.developer">
                 <source>This table is not linked to editable content. Update the table structure in the template so header cells have associated data cells (developer task).</source>
-                <target>Diese Tabelle ist nicht mit bearbeitbarem Inhalt verknüpft. Aktualisieren Sie die Tabellenstruktur im Template so, dass Kopfzellen zugeordnete Datenzellen besitzen (Entwickleraufgabe).</target>
+                <target>Diese Tabelle gehört zu keinem bearbeitbaren Inhalt. Passen Sie die Tabellenstruktur im Template so an, dass zu jeder Kopfzelle Datenzellen gehören (Entwickleraufgabe).</target>
             </trans-unit>
             <trans-unit id="hint.landmark-one-main">
                 <source>Add a main landmark element to the page template (developer task).</source>
-                <target>Fügen Sie dem Seitentemplate ein Main-Landmark-Element hinzu (Entwickleraufgabe).</target>
+                <target>Ergänzen Sie im Seitentemplate ein main-Element (Landmark „main“) als Hauptbereich der Seite (Entwickleraufgabe).</target>
             </trans-unit>
             <trans-unit id="hint.region">
                 <source>Ensure all page content is contained within appropriate landmark regions in the template (developer task).</source>
@@ -236,7 +236,7 @@
             </trans-unit>
             <trans-unit id="hint.bypass">
                 <source>Add a skip navigation link to the page template (developer task).</source>
-                <target>Fügen Sie dem Seitentemplate einen Sprunglink zur Navigation hinzu (Entwickleraufgabe).</target>
+                <target>Ergänzen Sie im Seitentemplate einen Sprunglink, mit dem sich die Navigation überspringen lässt (Entwickleraufgabe).</target>
             </trans-unit>
             <trans-unit id="hint.html-has-lang">
                 <source>Set the lang attribute on the HTML element in the page template (developer task).</source>
