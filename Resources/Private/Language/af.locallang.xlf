@@ -10,6 +10,10 @@
                 <source>Run Accessibility Scan</source>
                 <target>Voer toeganklikheidskandering uit</target>
             </trans-unit>
+            <trans-unit id="module.scanPreviewTitle">
+                <source>Accessibility scan preview</source>
+                <target>Voorskou van toeganklikheidskandering</target>
+            </trans-unit>
             <trans-unit id="module.engineLabel">
                 <source>Scanning engine:</source>
                 <target>Skanderingsenjin:</target>
@@ -57,6 +61,14 @@
             <trans-unit id="module.results.empty">
                 <source>No accessibility issues found.</source>
                 <target>Geen toeganklikheidsprobleme gevind nie.</target>
+            </trans-unit>
+            <trans-unit id="module.results.editContentElement">
+                <source>Edit content element #%s</source>
+                <target>Wysig inhoudselement #%s</target>
+            </trans-unit>
+            <trans-unit id="module.results.helpLink">
+                <source>How to fix this issue</source>
+                <target>So los u hierdie probleem op</target>
             </trans-unit>
             <trans-unit id="module.filters.label">
                 <source>Filters</source>
@@ -261,6 +273,10 @@
             <trans-unit id="hint.scrollable-region-focusable">
                 <source>Make scrollable regions keyboard-accessible in the template (developer task).</source>
                 <target>Maak rolbare streke sleutelbord-toeganklik in die sjabloon ('n ontwikkelaartaak).</target>
+            </trans-unit>
+            <trans-unit id="hint.unclassified">
+                <source>This issue requires investigation by a developer.</source>
+                <target>Hierdie probleem moet deur 'n ontwikkelaar ondersoek word.</target>
             </trans-unit>
             <trans-unit id="pageHint.label">
                 <source>Check Accessibility</source>

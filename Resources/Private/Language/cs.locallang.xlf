@@ -10,6 +10,10 @@
                 <source>Run Accessibility Scan</source>
                 <target>Spustit kontrolu přístupnosti</target>
             </trans-unit>
+            <trans-unit id="module.scanPreviewTitle">
+                <source>Accessibility scan preview</source>
+                <target>Náhled kontroly přístupnosti</target>
+            </trans-unit>
             <trans-unit id="module.engineLabel">
                 <source>Scanning engine:</source>
                 <target>Skenovací nástroj:</target>
@@ -57,6 +61,14 @@
             <trans-unit id="module.results.empty">
                 <source>No accessibility issues found.</source>
                 <target>Nebyly zjištěny žádné problémy s přístupností.</target>
+            </trans-unit>
+            <trans-unit id="module.results.editContentElement">
+                <source>Edit content element #%s</source>
+                <target>Upravit obsahový element #%s</target>
+            </trans-unit>
+            <trans-unit id="module.results.helpLink">
+                <source>How to fix this issue</source>
+                <target>Jak tento problém opravit</target>
             </trans-unit>
             <trans-unit id="module.filters.label">
                 <source>Filters</source>
@@ -261,6 +273,10 @@
             <trans-unit id="hint.scrollable-region-focusable">
                 <source>Make scrollable regions keyboard-accessible in the template (developer task).</source>
                 <target>Zajistěte, aby posouvatelné oblasti byly v šabloně dostupné z klávesnice (úkol pro vývojáře).</target>
+            </trans-unit>
+            <trans-unit id="hint.unclassified">
+                <source>This issue requires investigation by a developer.</source>
+                <target>Tento problém vyžaduje prověření vývojářem.</target>
             </trans-unit>
             <trans-unit id="pageHint.label">
                 <source>Check Accessibility</source>

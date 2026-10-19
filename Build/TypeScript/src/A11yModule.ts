@@ -46,7 +46,8 @@ export class A11yModule {
       } catch (error) {
         StatusView.showError(
           resultsContainer,
-          error instanceof Error ? error.message : Typo3Backend.getLabel('module.error.scanFailed'),
+          Typo3Backend.getLabel('module.error.scanFailed'),
+          error instanceof Error ? error.message : '',
         );
       } finally {
         scanButton.removeAttribute('disabled');

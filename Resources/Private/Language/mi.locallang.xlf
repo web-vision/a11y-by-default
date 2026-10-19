@@ -10,6 +10,10 @@
                 <source>Run Accessibility Scan</source>
                 <target>Whakahaerehia te Mātai Urunga</target>
             </trans-unit>
+            <trans-unit id="module.scanPreviewTitle">
+                <source>Accessibility scan preview</source>
+                <target>Tirohanga tuatahi o te Mātai Urunga</target>
+            </trans-unit>
             <trans-unit id="module.engineLabel">
                 <source>Scanning engine:</source>
                 <target>Pūkaha mātai:</target>
@@ -57,6 +61,14 @@
             <trans-unit id="module.results.empty">
                 <source>No accessibility issues found.</source>
                 <target>Kāore he take urunga i kitea.</target>
+            </trans-unit>
+            <trans-unit id="module.results.editContentElement">
+                <source>Edit content element #%s</source>
+                <target>Whakatika te huānga ihirangi #%s</target>
+            </trans-unit>
+            <trans-unit id="module.results.helpLink">
+                <source>How to fix this issue</source>
+                <target>Me pehea te whakatika i tēnei raru</target>
             </trans-unit>
             <trans-unit id="module.filters.label">
                 <source>Filters</source>
@@ -261,6 +273,10 @@
             <trans-unit id="hint.scrollable-region-focusable">
                 <source>Make scrollable regions keyboard-accessible in the template (developer task).</source>
                 <target>Kia taea ai e te papapātuhi te uru ki ngā rohe pānuku i te momo tīkanga (mahi mā te kaiwhakawhanake).</target>
+            </trans-unit>
+            <trans-unit id="hint.unclassified">
+                <source>This issue requires investigation by a developer.</source>
+                <target>Me tirotiro e tētahi kaiwhakawhanake tēnei raru.</target>
             </trans-unit>
             <trans-unit id="pageHint.label">
                 <source>Check Accessibility</source>

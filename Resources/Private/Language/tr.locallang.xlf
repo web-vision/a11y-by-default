@@ -10,6 +10,10 @@
                 <source>Run Accessibility Scan</source>
                 <target>Erişilebilirlik Taramasını Çalıştır</target>
             </trans-unit>
+            <trans-unit id="module.scanPreviewTitle">
+                <source>Accessibility scan preview</source>
+                <target>Erişilebilirlik taraması önizlemesi</target>
+            </trans-unit>
             <trans-unit id="module.engineLabel">
                 <source>Scanning engine:</source>
                 <target>Tarama motoru:</target>
@@ -57,6 +61,14 @@
             <trans-unit id="module.results.empty">
                 <source>No accessibility issues found.</source>
                 <target>Erişilebilirlik sorunu bulunamadı.</target>
+            </trans-unit>
+            <trans-unit id="module.results.editContentElement">
+                <source>Edit content element #%s</source>
+                <target>İçerik öğesini düzenle #%s</target>
+            </trans-unit>
+            <trans-unit id="module.results.helpLink">
+                <source>How to fix this issue</source>
+                <target>Bu sorun nasıl giderilir</target>
             </trans-unit>
             <trans-unit id="module.filters.label">
                 <source>Filters</source>
@@ -261,6 +273,10 @@
             <trans-unit id="hint.scrollable-region-focusable">
                 <source>Make scrollable regions keyboard-accessible in the template (developer task).</source>
                 <target>Şablonda kaydırılabilir bölgeleri klavye ile erişilebilir hale getirin (geliştirici görevi).</target>
+            </trans-unit>
+            <trans-unit id="hint.unclassified">
+                <source>This issue requires investigation by a developer.</source>
+                <target>Bu sorunun bir geliştirici tarafından incelenmesi gerekiyor.</target>
             </trans-unit>
             <trans-unit id="pageHint.label">
                 <source>Check Accessibility</source>

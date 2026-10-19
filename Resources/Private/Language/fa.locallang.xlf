@@ -10,6 +10,10 @@
                 <source>Run Accessibility Scan</source>
                 <target>اجرای بررسی دسترس‌پذیری</target>
             </trans-unit>
+            <trans-unit id="module.scanPreviewTitle">
+                <source>Accessibility scan preview</source>
+                <target>پیش‌نمایش بررسی دسترس‌پذیری</target>
+            </trans-unit>
             <trans-unit id="module.engineLabel">
                 <source>Scanning engine:</source>
                 <target>موتور بررسی:</target>
@@ -57,6 +61,14 @@
             <trans-unit id="module.results.empty">
                 <source>No accessibility issues found.</source>
                 <target>هیچ مشکل دسترس‌پذیری یافت نشد.</target>
+            </trans-unit>
+            <trans-unit id="module.results.editContentElement">
+                <source>Edit content element #%s</source>
+                <target>ویرایش عنصر محتوا #%s</target>
+            </trans-unit>
+            <trans-unit id="module.results.helpLink">
+                <source>How to fix this issue</source>
+                <target>نحوه رفع این مشکل</target>
             </trans-unit>
             <trans-unit id="module.filters.label">
                 <source>Filters</source>
@@ -261,6 +273,10 @@
             <trans-unit id="hint.scrollable-region-focusable">
                 <source>Make scrollable regions keyboard-accessible in the template (developer task).</source>
                 <target>نواحی قابل پیمایش (scroll) را در قالب با صفحه‌کلید قابل دسترس کنید (وظیفه توسعه‌دهنده).</target>
+            </trans-unit>
+            <trans-unit id="hint.unclassified">
+                <source>This issue requires investigation by a developer.</source>
+                <target>این مشکل نیازمند بررسی توسط یک توسعه‌دهنده است.</target>
             </trans-unit>
             <trans-unit id="pageHint.label">
                 <source>Check Accessibility</source>

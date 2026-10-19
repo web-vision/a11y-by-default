@@ -10,6 +10,10 @@
                 <source>Run Accessibility Scan</source>
                 <target>ដំណើរការស្កេនភាពងាយស្រួលប្រើប្រាស់</target>
             </trans-unit>
+            <trans-unit id="module.scanPreviewTitle">
+                <source>Accessibility scan preview</source>
+                <target>ការមើលជាមុននៃការស្កេនភាពងាយស្រួលប្រើប្រាស់</target>
+            </trans-unit>
             <trans-unit id="module.engineLabel">
                 <source>Scanning engine:</source>
                 <target>ម៉ាស៊ីនស្កេន៖</target>
@@ -57,6 +61,14 @@
             <trans-unit id="module.results.empty">
                 <source>No accessibility issues found.</source>
                 <target>រកមិនឃើញបញ្ហាភាពងាយស្រួលប្រើប្រាស់ទេ។</target>
+            </trans-unit>
+            <trans-unit id="module.results.editContentElement">
+                <source>Edit content element #%s</source>
+                <target>កែសម្រួលធាតុមាតិកា #%s</target>
+            </trans-unit>
+            <trans-unit id="module.results.helpLink">
+                <source>How to fix this issue</source>
+                <target>របៀបដោះស្រាយបញ្ហានេះ</target>
             </trans-unit>
             <trans-unit id="module.filters.label">
                 <source>Filters</source>
@@ -261,6 +273,10 @@
             <trans-unit id="hint.scrollable-region-focusable">
                 <source>Make scrollable regions keyboard-accessible in the template (developer task).</source>
                 <target>ធ្វើឲ្យតំបន់ដែលអាចរំកិលបានអាចចូលប្រើតាមក្តារចុចនៅក្នុង template (ភារកិច្ចអ្នកអភិវឌ្ឍន៍)។</target>
+            </trans-unit>
+            <trans-unit id="hint.unclassified">
+                <source>This issue requires investigation by a developer.</source>
+                <target>បញ្ហានេះត្រូវការការស៊ើបអង្កេតដោយអ្នកអភិវឌ្ឍន៍។</target>
             </trans-unit>
             <trans-unit id="pageHint.label">
                 <source>Check Accessibility</source>
