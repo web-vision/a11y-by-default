@@ -8,9 +8,12 @@ export class StatusView {
       </typo3-backend-progress-bar>`;
   }
 
-  static showError(container: HTMLElement, message: string): void {
+  // The detail carries the technical cause (an English error message) below
+  // the translated message, so a failed scan still reads in the user's language.
+  static showError(container: HTMLElement, message: string, detail = ''): void {
+    const detailHtml = detail !== '' ? `<p class="small mb-0">${Html.escape(detail)}</p>` : '';
     container.innerHTML = `<div class="callout callout-danger a11y-error" role="alert">
-          <div class="callout-body"><p>${Html.escape(message)}</p></div>
+          <div class="callout-body"><p>${Html.escape(message)}</p>${detailHtml}</div>
       </div>`;
   }
 }

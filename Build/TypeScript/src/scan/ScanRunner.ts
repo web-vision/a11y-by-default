@@ -1,3 +1,4 @@
+import { Typo3Backend } from '../backend/Typo3Backend';
 import { buildContentFactsIndex } from '../ContentFacts';
 import { AxeEngine } from '../engines/AxeEngine';
 import { HtmlCsEngine } from '../engines/HtmlCsEngine';
@@ -10,7 +11,7 @@ export class ScanRunner {
     iframe.style.cssText = 'position:absolute;width:1px;height:1px;left:-9999px;top:-9999px;';
     iframe.setAttribute('aria-hidden', 'true');
     iframe.setAttribute('tabindex', '-1');
-    iframe.title = 'Accessibility scan preview';
+    iframe.title = Typo3Backend.getLabel('module.scanPreviewTitle');
 
     document.body.appendChild(iframe);
 

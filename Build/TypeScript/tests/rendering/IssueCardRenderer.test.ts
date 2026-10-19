@@ -19,6 +19,8 @@ function mockTYPO3Lang(): void {
   (window as unknown as Record<string, unknown>).TYPO3 = {
     lang: {
       'module.results.violations': 'Violations',
+      'module.results.editContentElement': 'Edit content element #%s',
+      'module.results.helpLink': 'How to fix this issue',
     },
     settings: {
       FormEngine: {
@@ -98,6 +100,32 @@ describe('IssueCardRenderer', () => {
     expect(html).toContain('/typo3/record/edit?token=abc123token&amp;edit[tt_content][5]=edit');
     expect(html).toContain('module=web_a11y_by_default');
     expect(html).toContain('returnUrl=');
+  });
+
+  it('labels the content element edit link with the translated label', () => {
+    const typo3 = (window as unknown as Record<string, unknown>)['TYPO3'] as {
+      lang: Record<string, string>;
+      settings: { FormEngine: { moduleUrl: string } };
+    };
+    (window as unknown as Record<string, unknown>).TYPO3 = {
+      ...typo3,
+      lang: { ...typo3.lang, 'module.results.editContentElement': 'Inhaltselement #%s bearbeiten' },
+    };
+    const renderer = new IssueCardRenderer(
+      new ViolationClassifier({ 'image-alt': { responsibility: 'editor', hint: 'Add alt text.' } }),
+    );
+    const issueWithCe = makeIssue({
+      nodes: [{ html: '<img>', target: ['#c5 img'], contentElementUid: 5 }],
+    });
+    const html = renderer.render(issueWithCe, 'panel-1');
+    expect(html).toContain('>Inhaltselement #5 bearbeiten</a>');
+  });
+
+  it('gives the help link a title describing where it leads', () => {
+    const renderer = new IssueCardRenderer(new ViolationClassifier({}));
+    const html = renderer.render(makeIssue(), 'panel-1');
+    expect(html).toContain('title="How to fix this issue"');
+    expect(html).not.toContain('title="Violations"');
   });
 
   it('omits the content element link when no valid FormEngine module URL is available', () => {

@@ -60,9 +60,10 @@ function showLoading(container: HTMLElement): void {
     </typo3-backend-progress-bar>`;
 }
 
-function showError(container: HTMLElement, message: string): void {
+function showError(container: HTMLElement, message: string, detail = ''): void {
+  const detailHtml = detail !== '' ? `<p class="small mb-0">${escapeHtml(detail)}</p>` : '';
   container.innerHTML = `<div class="callout callout-danger">
-        <div class="callout-body"><p>${escapeHtml(message)}</p></div>
+        <div class="callout-body"><p>${escapeHtml(message)}</p>${detailHtml}</div>
     </div>`;
 }
 
@@ -100,7 +101,10 @@ export function renderSummary(container: HTMLElement, result: ScanResult, module
 
   const violationBadges = Object.entries(counts)
     .filter(([, count]) => count > 0)
-    .map(([impact, count]) => `<span class="badge ${badgeMap[impact]}">${count}&times; ${escapeHtml(impact)}</span>`)
+    .map(
+      ([impact, count]) =>
+        `<span class="badge ${badgeMap[impact]}">${count}&times; ${escapeHtml(lll(`module.filters.severity.${impact}`))}</span>`,
+    )
     .join(' ');
 
   const incompleteBadge =
@@ -134,7 +138,7 @@ export async function runAutoScan(): Promise<void> {
   iframe.style.cssText = 'position:absolute;width:1px;height:1px;left:-9999px;top:-9999px;';
   iframe.setAttribute('aria-hidden', 'true');
   iframe.setAttribute('tabindex', '-1');
-  iframe.title = 'Accessibility scan preview';
+  iframe.title = lll('module.scanPreviewTitle');
   document.body.appendChild(iframe);
 
   try {
@@ -169,7 +173,7 @@ export async function runAutoScan(): Promise<void> {
     };
     renderSummary(container, visibleResult, settings.moduleUrl);
   } catch (error) {
-    showError(container, error instanceof Error ? error.message : lll('module.error.scanFailed'));
+    showError(container, lll('module.error.scanFailed'), error instanceof Error ? error.message : '');
   } finally {
     iframe.remove();
   }

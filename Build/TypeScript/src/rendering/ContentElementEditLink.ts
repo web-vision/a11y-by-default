@@ -8,7 +8,9 @@ export class ContentElementEditLink {
       return '';
     }
 
-    const label = `Edit content element #${contentElementUid}`;
+    const label = Html.escape(
+      Typo3Backend.getLabel('module.results.editContentElement').replace('%s', String(contentElementUid)),
+    );
     const linkClasses = 'btn btn-sm btn-default mb-2 d-inline-block';
     const returnUrl = encodeURIComponent(window.location.href);
     const editHref = `${moduleUrl}&edit[tt_content][${contentElementUid}]=edit&module=web_a11y_by_default&returnUrl=${returnUrl}`;

@@ -37,7 +37,7 @@ export class IssueCardRenderer {
                 <p class="card-text">${Html.escape(issue.description)}</p>
                 <p class="card-text text-body-secondary small">${Html.escape(classification.hint)}</p>
                 <a href="${Html.escape(issue.helpUrl)}" target="_blank" rel="noopener noreferrer"
-                   class="btn btn-sm btn-default mb-2 d-inline-block" title="${Html.escape(Typo3Backend.getLabel('module.results.violations'))}">
+                   class="btn btn-sm btn-default mb-2 d-inline-block" title="${Html.escape(Typo3Backend.getLabel('module.results.helpLink'))}">
                     <span aria-hidden="true">?</span>
                     <span class="visually-hidden">${Html.escape(issue.help)}</span>
                 </a>

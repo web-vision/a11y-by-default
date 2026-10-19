@@ -285,7 +285,7 @@ class ContentElementEditLink {
         if (moduleUrl === undefined || moduleUrl === '') {
             return '';
         }
-        const label = `Edit content element #${contentElementUid}`;
+        const label = Html.escape(Typo3Backend.getLabel('module.results.editContentElement').replace('%s', String(contentElementUid)));
         const linkClasses = 'btn btn-sm btn-default mb-2 d-inline-block';
         const returnUrl = encodeURIComponent(window.location.href);
         const editHref = `${moduleUrl}&edit[tt_content][${contentElementUid}]=edit&module=web_a11y_by_default&returnUrl=${returnUrl}`;
@@ -331,7 +331,7 @@ class IssueCardRenderer {
                 <p class="card-text">${Html.escape(issue.description)}</p>
                 <p class="card-text text-body-secondary small">${Html.escape(classification.hint)}</p>
                 <a href="${Html.escape(issue.helpUrl)}" target="_blank" rel="noopener noreferrer"
-                   class="btn btn-sm btn-default mb-2 d-inline-block" title="${Html.escape(Typo3Backend.getLabel('module.results.violations'))}">
+                   class="btn btn-sm btn-default mb-2 d-inline-block" title="${Html.escape(Typo3Backend.getLabel('module.results.helpLink'))}">
                     <span aria-hidden="true">?</span>
                     <span class="visually-hidden">${Html.escape(issue.help)}</span>
                 </a>
@@ -429,9 +429,12 @@ class StatusView {
           label="${Html.escape(Typo3Backend.getLabel('module.loading'))}">
       </typo3-backend-progress-bar>`;
     }
-    static showError(container, message) {
+    // The detail carries the technical cause (an English error message) below
+    // the translated message, so a failed scan still reads in the user's language.
+    static showError(container, message, detail = '') {
+        const detailHtml = detail !== '' ? `<p class="small mb-0">${Html.escape(detail)}</p>` : '';
         container.innerHTML = `<div class="callout callout-danger a11y-error" role="alert">
-          <div class="callout-body"><p>${Html.escape(message)}</p></div>
+          <div class="callout-body"><p>${Html.escape(message)}</p>${detailHtml}</div>
       </div>`;
     }
 }
@@ -745,7 +748,7 @@ class ScanRunner {
         iframe.style.cssText = 'position:absolute;width:1px;height:1px;left:-9999px;top:-9999px;';
         iframe.setAttribute('aria-hidden', 'true');
         iframe.setAttribute('tabindex', '-1');
-        iframe.title = 'Accessibility scan preview';
+        iframe.title = Typo3Backend.getLabel('module.scanPreviewTitle');
         document.body.appendChild(iframe);
         try {
             await this.waitForLoad(iframe);
@@ -799,7 +802,7 @@ class ViolationClassifier {
     classify(violation) {
         const rule = this.rules[violation.id];
         if (rule === undefined) {
-            return { responsibility: 'unknown', hint: 'This issue requires investigation by a developer.' };
+            return { responsibility: 'unknown', hint: Typo3Backend.getLabel('hint.unclassified') };
         }
         if (rule.responsibility !== 'editor') {
             return { responsibility: 'developer', hint: rule.hint };
@@ -844,7 +847,7 @@ class A11yModule {
                 new ResultsRenderer(classifier, this.filterController).render(resultsContainer, result);
             }
             catch (error) {
-                StatusView.showError(resultsContainer, error instanceof Error ? error.message : Typo3Backend.getLabel('module.error.scanFailed'));
+                StatusView.showError(resultsContainer, Typo3Backend.getLabel('module.error.scanFailed'), error instanceof Error ? error.message : '');
             }
             finally {
                 scanButton.removeAttribute('disabled');

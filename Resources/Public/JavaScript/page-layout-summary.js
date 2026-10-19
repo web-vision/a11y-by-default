@@ -230,6 +230,35 @@ class AxeEngine {
     }
 }
 
+// Static accessors for the backend's global TYPO3 object — the module runs
+// inside the backend's content iframe and reads labels/settings TYPO3 core
+// (or A11yController) already put on `window.TYPO3`.
+class Typo3Backend {
+    static getLabel(key) {
+        const typo3 = window.TYPO3;
+        return typo3?.lang?.[key] ?? key;
+    }
+    static getClassificationRules() {
+        const typo3Settings = window.TYPO3;
+        return typo3Settings?.settings?.a11yByDefault?.classificationRules ?? {};
+    }
+    // Only the outer/top backend document carries a valid, signed route token for
+    // record/edit (set by TYPO3's BackendController as TYPO3.settings.FormEngine.moduleUrl)
+    // — the same base URL TYPO3 core itself reuses in multi-record-selection-edit-action.js.
+    // Minting a token client-side is not possible, so this pre-tokenized URL must be extended.
+    static getRecordEditModuleUrl() {
+        const topWindow = (window.top ?? window);
+        const typo3 = topWindow['TYPO3'];
+        return typo3?.settings?.FormEngine?.moduleUrl;
+    }
+    // The contextual (side-panel) edit route is only available from TYPO3 v14 onward.
+    // A11yController only emits this setting when the route exists on the running core.
+    static getContextualEditModuleUrl() {
+        const typo3 = window.TYPO3;
+        return typo3?.settings?.a11yByDefault?.contextualEditModuleUrl;
+    }
+}
+
 class ViolationClassifier {
     constructor(rules) {
         this.rules = rules;
@@ -237,7 +266,7 @@ class ViolationClassifier {
     classify(violation) {
         const rule = this.rules[violation.id];
         if (rule === undefined) {
-            return { responsibility: 'unknown', hint: 'This issue requires investigation by a developer.' };
+            return { responsibility: 'unknown', hint: Typo3Backend.getLabel('hint.unclassified') };
         }
         if (rule.responsibility !== 'editor') {
             return { responsibility: 'developer', hint: rule.hint };
@@ -286,9 +315,10 @@ function showLoading(container) {
         label="${escapeHtml(lll('module.loading'))}">
     </typo3-backend-progress-bar>`;
 }
-function showError(container, message) {
+function showError(container, message, detail = '') {
+    const detailHtml = detail !== '' ? `<p class="small mb-0">${escapeHtml(detail)}</p>` : '';
     container.innerHTML = `<div class="callout callout-danger">
-        <div class="callout-body"><p>${escapeHtml(message)}</p></div>
+        <div class="callout-body"><p>${escapeHtml(message)}</p>${detailHtml}</div>
     </div>`;
 }
 function countByImpact(issues) {
@@ -321,7 +351,7 @@ function renderSummary(container, result, moduleUrl) {
     const counts = countByImpact(result.violations);
     const violationBadges = Object.entries(counts)
         .filter(([, count]) => count > 0)
-        .map(([impact, count]) => `<span class="badge ${badgeMap[impact]}">${count}&times; ${escapeHtml(impact)}</span>`)
+        .map(([impact, count]) => `<span class="badge ${badgeMap[impact]}">${count}&times; ${escapeHtml(lll(`module.filters.severity.${impact}`))}</span>`)
         .join(' ');
     const incompleteBadge = totalIncomplete > 0
         ? ` <span class="badge text-bg-secondary">${totalIncomplete}&times; ${escapeHtml(lll('module.results.incomplete'))}</span>`
@@ -348,7 +378,7 @@ async function runAutoScan() {
     iframe.style.cssText = 'position:absolute;width:1px;height:1px;left:-9999px;top:-9999px;';
     iframe.setAttribute('aria-hidden', 'true');
     iframe.setAttribute('tabindex', '-1');
-    iframe.title = 'Accessibility scan preview';
+    iframe.title = lll('module.scanPreviewTitle');
     document.body.appendChild(iframe);
     try {
         await new Promise((resolve, reject) => {
@@ -374,7 +404,7 @@ async function runAutoScan() {
         renderSummary(container, visibleResult, settings.moduleUrl);
     }
     catch (error) {
-        showError(container, error instanceof Error ? error.message : lll('module.error.scanFailed'));
+        showError(container, lll('module.error.scanFailed'), error instanceof Error ? error.message : '');
     }
     finally {
         iframe.remove();

@@ -15,10 +15,22 @@ function makeIssue(overrides: Partial<AccessibilityIssue> = {}): AccessibilityIs
 }
 
 describe('ViolationClassifier', () => {
+  afterEach(() => {
+    delete (window as unknown as Record<string, unknown>).TYPO3;
+  });
+
   it('classifies an unknown rule as unknown', () => {
     const classifier = new ViolationClassifier({});
     const classification = classifier.classify(makeIssue({ id: 'unlisted-rule' }));
     expect(classification.responsibility).toBe('unknown');
+  });
+
+  it('uses the translated fallback hint for an unknown rule', () => {
+    (window as unknown as Record<string, unknown>).TYPO3 = {
+      lang: { 'hint.unclassified': 'Translated fallback hint' },
+    };
+    const classifier = new ViolationClassifier({});
+    expect(classifier.classify(makeIssue({ id: 'unlisted-rule' })).hint).toBe('Translated fallback hint');
   });
 
   it('keeps a static developer rule as developer regardless of node resolution', () => {

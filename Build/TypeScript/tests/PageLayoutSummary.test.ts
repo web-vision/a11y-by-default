@@ -31,9 +31,14 @@ function mockTYPO3Lang(): void {
   (window as unknown as Record<string, unknown>).TYPO3 = {
     lang: {
       'module.loading': 'Loading…',
+      'module.scanPreviewTitle': 'Accessibility scan preview',
       'module.results.empty': 'No accessibility issues found.',
       'module.results.incomplete': 'Needs review',
       'module.error.scanFailed': 'The scan could not be completed.',
+      'module.filters.severity.critical': 'Critical',
+      'module.filters.severity.serious': 'Serious',
+      'module.filters.severity.moderate': 'Moderate',
+      'module.filters.severity.minor': 'Minor',
       'pageHint.label': 'Check Accessibility',
     },
   };
@@ -219,9 +224,16 @@ describe('renderSummary', () => {
     const result: ScanResult = { ...EMPTY_RESULT, violations: [makeIssue('critical')] };
     renderSummary(container, result, '/module');
     const badgeTexts = Array.from(container.querySelectorAll('.badge')).map((b) => b.textContent ?? '');
-    expect(badgeTexts.some((t) => t.includes('serious'))).toBe(false);
-    expect(badgeTexts.some((t) => t.includes('moderate'))).toBe(false);
-    expect(badgeTexts.some((t) => t.includes('minor'))).toBe(false);
+    expect(badgeTexts.some((t) => t.includes('Serious'))).toBe(false);
+    expect(badgeTexts.some((t) => t.includes('Moderate'))).toBe(false);
+    expect(badgeTexts.some((t) => t.includes('Minor'))).toBe(false);
+  });
+
+  it('labels the badges with the translated severity instead of the raw impact value', () => {
+    const result: ScanResult = { ...EMPTY_RESULT, violations: [makeIssue('critical'), makeIssue('minor')] };
+    renderSummary(container, result, '/module');
+    expect(container.querySelector('.text-bg-danger')?.textContent).toBe('1× Critical');
+    expect(container.querySelector('.text-bg-secondary')?.textContent).toBe('1× Minor');
   });
 
   it('shows a badge for incomplete issues even without violations', () => {
@@ -317,6 +329,29 @@ describe('runAutoScan', () => {
     await runAutoScan();
     const el = document.getElementById('a11y-page-summary-app');
     expect(el?.querySelector('.callout-danger')).not.toBeNull();
+  });
+
+  it('shows the translated error message with the technical cause when the scan fails', async () => {
+    setupAppElement();
+    MockAxeEngine.mockImplementation(
+      () =>
+        ({
+          run: jest.fn().mockRejectedValue(new Error('axe-core crashed')),
+        }) as unknown as AxeEngine,
+    );
+    await runAutoScan();
+    const callout = document.getElementById('a11y-page-summary-app')?.querySelector('.callout-danger');
+    expect(callout?.textContent).toContain('The scan could not be completed.');
+    expect(callout?.textContent).toContain('axe-core crashed');
+  });
+
+  it('gives the hidden preview iframe a translated title', () => {
+    setupAppElement();
+    MockAxeEngine.mockImplementation(
+      () => ({ run: jest.fn().mockReturnValue(new Promise(() => {})) }) as unknown as AxeEngine,
+    );
+    runAutoScan();
+    expect(document.querySelector('iframe')?.title).toBe('Accessibility scan preview');
   });
 
   it('removes the iframe from the DOM after the scan completes', async () => {

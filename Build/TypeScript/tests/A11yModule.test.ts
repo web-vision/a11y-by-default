@@ -26,6 +26,7 @@ function mockTYPO3Lang(): void {
   (window as unknown as Record<string, unknown>).TYPO3 = {
     lang: {
       'module.loading': 'Loading page and running scan…',
+      'module.scanPreviewTitle': 'Accessibility scan preview',
       'module.results.violations': 'Violations',
       'module.results.incomplete': 'Needs review',
       'module.results.empty': 'No accessibility issues found.',
@@ -170,6 +171,31 @@ describe('initialize', () => {
     initialize();
     await flushPromises();
     expect(document.getElementById('a11y-scan-button')?.hasAttribute('disabled')).toBe(false);
+  });
+
+  it('shows the translated error message with the technical cause when the scan fails', async () => {
+    setupMainDom();
+    mockIframeLoad();
+    MockAxeEngine.mockImplementation(
+      () =>
+        ({
+          run: jest.fn().mockRejectedValue(new Error('Scan error')),
+        }) as unknown as AxeEngine,
+    );
+    initialize();
+    await flushPromises();
+    const callout = document.getElementById('a11y-results')?.querySelector('.callout-danger');
+    expect(callout?.textContent).toContain('The scan could not be completed.');
+    expect(callout?.textContent).toContain('Scan error');
+  });
+
+  it('gives the hidden preview iframe a translated title', () => {
+    setupMainDom();
+    MockAxeEngine.mockImplementation(
+      () => ({ run: jest.fn().mockReturnValue(new Promise(() => {})) }) as unknown as AxeEngine,
+    );
+    initialize();
+    expect(document.querySelector('iframe')?.title).toBe('Accessibility scan preview');
   });
 
   it('re-triggers the scan when the button is clicked after auto-scan', async () => {

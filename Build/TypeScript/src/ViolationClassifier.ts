@@ -1,3 +1,4 @@
+import { Typo3Backend } from './backend/Typo3Backend';
 import type { AccessibilityIssue, Classification, ClassificationRule } from './types';
 
 export class ViolationClassifier {
@@ -6,7 +7,7 @@ export class ViolationClassifier {
   classify(violation: AccessibilityIssue): Classification {
     const rule = this.rules[violation.id];
     if (rule === undefined) {
-      return { responsibility: 'unknown', hint: 'This issue requires investigation by a developer.' };
+      return { responsibility: 'unknown', hint: Typo3Backend.getLabel('hint.unclassified') };
     }
 
     if (rule.responsibility !== 'editor') {

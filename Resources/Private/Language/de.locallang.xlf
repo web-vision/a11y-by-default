@@ -10,6 +10,10 @@
                 <source>Run Accessibility Scan</source>
                 <target>Barrierefreiheitsprüfung ausführen</target>
             </trans-unit>
+            <trans-unit id="module.scanPreviewTitle">
+                <source>Accessibility scan preview</source>
+                <target>Vorschau für die Barrierefreiheitsprüfung</target>
+            </trans-unit>
             <trans-unit id="module.engineLabel">
                 <source>Scanning engine:</source>
                 <target>Prüf-Engine:</target>
@@ -57,6 +61,14 @@
             <trans-unit id="module.results.empty">
                 <source>No accessibility issues found.</source>
                 <target>Keine Barrierefreiheitsprobleme gefunden.</target>
+            </trans-unit>
+            <trans-unit id="module.results.editContentElement">
+                <source>Edit content element #%s</source>
+                <target>Inhaltselement #%s bearbeiten</target>
+            </trans-unit>
+            <trans-unit id="module.results.helpLink">
+                <source>How to fix this issue</source>
+                <target>So beheben Sie das Problem</target>
             </trans-unit>
             <trans-unit id="module.filters.label">
                 <source>Filters</source>
@@ -197,6 +209,10 @@
             <trans-unit id="hint.scrollable-region-focusable">
                 <source>Make scrollable regions keyboard-accessible in the template (developer task).</source>
                 <target>Machen Sie scrollbare Bereiche im Template per Tastatur bedienbar (Entwickleraufgabe).</target>
+            </trans-unit>
+            <trans-unit id="hint.unclassified">
+                <source>This issue requires investigation by a developer.</source>
+                <target>Dieses Problem müssen Entwickler:innen genauer untersuchen.</target>
             </trans-unit>
             <trans-unit id="pageHint.label">
                 <source>Check Accessibility</source>
