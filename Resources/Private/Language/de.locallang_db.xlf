@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2026-07-01T00:00:00Z" product-name="a11y_by_default">
+        <body>
+            <trans-unit id="be_users.tab">
+                <source>Accessibility Checker</source>
+                <target>Barrierefreiheitsprüfung</target>
+            </trans-unit>
+            <trans-unit id="be_users.tx_a11ybydefault_developer_corner">
+                <source>Grant access to developer corner</source>
+                <target>Zugriff auf den Entwicklerbereich gewähren</target>
+            </trans-unit>
+            <trans-unit id="be_users.tx_a11ybydefault_developer_corner.description">
+                <source>Allows this user to see the developer-facing accessibility findings in the Accessibility Checker module, in addition to the editor-facing ones. Administrators and system maintainers always have this access.</source>
+                <target>Erlaubt diesem Benutzerkonto, im Modul „Barrierefreiheit“ zusätzlich zu den Befunden für Redakteur:innen auch die Befunde für Entwickler:innen zu sehen. Konten mit Administrator- oder System-Maintainer-Rechten haben diesen Zugriff immer.</target>
+            </trans-unit>
+            <trans-unit id="be_groups.tab">
+                <source>Accessibility Checker</source>
+                <target>Barrierefreiheitsprüfung</target>
+            </trans-unit>
+            <trans-unit id="be_groups.tx_a11ybydefault_developer_corner">
+                <source>Grant access to developer corner</source>
+                <target>Zugriff auf den Entwicklerbereich gewähren</target>
+            </trans-unit>
+            <trans-unit id="be_groups.tx_a11ybydefault_developer_corner.description">
+                <source>Allows members of this group to see the developer-facing accessibility findings in the Accessibility Checker module, in addition to the editor-facing ones. Administrators and system maintainers always have this access.</source>
+                <target>Erlaubt den Mitgliedern dieser Gruppe, im Modul „Barrierefreiheit“ zusätzlich zu den Befunden für Redakteur:innen auch die Befunde für Entwickler:innen zu sehen. Konten mit Administrator- oder System-Maintainer-Rechten haben diesen Zugriff immer.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
