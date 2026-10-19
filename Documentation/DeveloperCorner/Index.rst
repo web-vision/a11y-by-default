@@ -116,6 +116,19 @@ supported by the TYPO3 core, using standard XLIFF files under
 updating manually; translations are expected to be contributed or maintained
 through the usual TYPO3 localization tooling.
 
+The findings themselves (their title and description) come from the scanning
+engine rather than from these files. The module asks the engine for the
+backend user's language:
+
+*   axe-core loads the matching locale from
+    ``Resources/Public/JavaScript/Vendor/axe-locales/``, which
+    ``npm run build:vendor`` copies from the ``axe-core`` package.
+*   HTML CodeSniffer uses its own translations for French, Italian,
+    Japanese, Dutch and Polish. They are incomplete; messages they lack are
+    shown in English.
+
+For any other language, the engine reports in English.
+
 .. _build-process:
 
 Build process

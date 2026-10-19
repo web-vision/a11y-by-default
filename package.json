@@ -7,7 +7,7 @@
     "scripts": {
         "build": "npm run build:vendor && rollup -c rollup.config.mjs",
         "build:watch": "rollup -c rollup.config.mjs --watch",
-        "build:vendor": "cp node_modules/axe-core/axe.min.js Resources/Public/JavaScript/Vendor/axe.min.js && cp node_modules/html_codesniffer/build/HTMLCS.js Resources/Public/JavaScript/Vendor/HTMLCS.min.js",
+        "build:vendor": "cp node_modules/axe-core/axe.min.js Resources/Public/JavaScript/Vendor/axe.min.js && cp node_modules/html_codesniffer/build/HTMLCS.js Resources/Public/JavaScript/Vendor/HTMLCS.min.js && rm -rf Resources/Public/JavaScript/Vendor/axe-locales && mkdir -p Resources/Public/JavaScript/Vendor/axe-locales && cp node_modules/axe-core/locales/[a-z]*.json Resources/Public/JavaScript/Vendor/axe-locales/",
         "test": "jest --config jest.config.cjs --passWithNoTests",
         "lint:js": "eslint .",
         "lint:js:fix": "eslint . --fix"

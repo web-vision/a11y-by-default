@@ -73,6 +73,31 @@ final class A11yControllerTest extends FunctionalTestCase
     }
 
     #[Test]
+    public function scanEnginesUseTheLanguageOfTheBackendUser(): void
+    {
+        $GLOBALS['BE_USER']->user['lang'] = 'de';
+
+        $controller = $this->get(A11yController::class);
+        $response = $controller->index($this->createRequest(1));
+        $body = (string)$response->getBody();
+
+        $this->assertMatchesRegularExpression('#data-axe-locale-url="[^"]+/axe-locales/de\.json"#', $body);
+        // HTML CodeSniffer ships no German translation.
+        $this->assertStringContainsString('data-htmlcs-language="en"', $body);
+    }
+
+    #[Test]
+    public function scanEnginesKeepTheirEnglishMessagesForEnglishBackendUsers(): void
+    {
+        $controller = $this->get(A11yController::class);
+        $response = $controller->index($this->createRequest(1));
+        $body = (string)$response->getBody();
+
+        $this->assertStringContainsString('data-axe-locale-url=""', $body);
+        $this->assertStringContainsString('data-htmlcs-language="en"', $body);
+    }
+
+    #[Test]
     public function developerViewTabIsRenderedForAdmins(): void
     {
         $controller = $this->get(A11yController::class);

@@ -11,12 +11,19 @@ interface HtmlCsMessage {
 
 interface HtmlCsWindow extends Window {
   HTMLCS?: {
-    process(standard: string, document: Document, callback: () => void): void;
+    process(
+      standard: string,
+      document: Document,
+      callback: () => void,
+      failCallback?: () => void,
+      language?: string,
+    ): void;
     getMessages(): HtmlCsMessage[];
     ERROR: number;
     WARNING: number;
     NOTICE: number;
   };
+  translation?: Record<string, Record<string, string>>;
 }
 
 export class HtmlCsEngine {
@@ -26,6 +33,7 @@ export class HtmlCsEngine {
     private readonly iframe: HTMLIFrameElement,
     private readonly htmlcsJsUrl: string,
     private readonly contentFactsIndex: ContentFactsIndex = EMPTY_CONTENT_FACTS_INDEX,
+    private readonly language = 'en',
   ) {}
 
   async run(): Promise<ScanResult> {
@@ -77,8 +85,24 @@ export class HtmlCsEngine {
         'return function () { cb(); };',
       )(onDone) as () => void;
 
-      iframeWindow.HTMLCS.process(HtmlCsEngine.STANDARD, iframeWindow.document, callback);
+      HtmlCsEngine.completeTranslation(iframeWindow, this.language);
+      // HTMLCS ignores a language it ships no translation for and stays English.
+      iframeWindow.HTMLCS.process(HtmlCsEngine.STANDARD, iframeWindow.document, callback, undefined, this.language);
     });
+  }
+
+  // The bundled translations are partial: a missing key makes HTMLCS return undefined as message text, which
+  // breaks rendering and, for some sniffs, HTMLCS itself. Missing keys fall back to the English text.
+  private static completeTranslation(iframeWindow: HtmlCsWindow, language: string): void {
+    const english = iframeWindow.translation?.['en'];
+    const target = iframeWindow.translation?.[language];
+    if (english === undefined || target === undefined || target === english) {
+      return;
+    }
+
+    for (const [key, text] of Object.entries(english)) {
+      target[key] ??= text;
+    }
   }
 
   private normalizeMessages(messages: HtmlCsMessage[], type: number): AccessibilityIssue[] {

@@ -719,13 +719,15 @@ const AXE_RUN_OPTIONS = {
     rules: { 'css-orientation-lock': { enabled: false } },
 };
 class AxeEngine {
-    constructor(iframe, axeJsUrl, contentFactsIndex = EMPTY_CONTENT_FACTS_INDEX) {
+    constructor(iframe, axeJsUrl, contentFactsIndex = EMPTY_CONTENT_FACTS_INDEX, localeUrl = '') {
         this.iframe = iframe;
         this.axeJsUrl = axeJsUrl;
         this.contentFactsIndex = contentFactsIndex;
+        this.localeUrl = localeUrl;
     }
     async run() {
         await this.injectScript(this.axeJsUrl);
+        await this.applyLocale();
         const results = await this.executeAxe();
         return {
             violations: this.normalizeResults(results.violations),
@@ -747,6 +749,24 @@ class AxeEngine {
             script.onerror = () => reject(new Error(`Failed to load script: ${src}`));
             iframeDocument.head.appendChild(script);
         });
+    }
+    // axe-core reports in English unless a locale is configured before the run.
+    // A missing or mismatching locale file must not break the scan, so any
+    // failure here keeps the built-in English messages.
+    async applyLocale() {
+        const axe = this.iframe.contentWindow?.axe;
+        if (this.localeUrl === '' || axe === undefined) {
+            return;
+        }
+        try {
+            const response = await fetch(this.localeUrl);
+            if (response.ok) {
+                axe.configure({ locale: await response.json() });
+            }
+        }
+        catch {
+            // Keep the English messages.
+        }
     }
     async executeAxe() {
         const iframeWindow = this.iframe.contentWindow;
@@ -791,10 +811,11 @@ class AxeEngine {
 }
 
 class HtmlCsEngine {
-    constructor(iframe, htmlcsJsUrl, contentFactsIndex = EMPTY_CONTENT_FACTS_INDEX) {
+    constructor(iframe, htmlcsJsUrl, contentFactsIndex = EMPTY_CONTENT_FACTS_INDEX, language = 'en') {
         this.iframe = iframe;
         this.htmlcsJsUrl = htmlcsJsUrl;
         this.contentFactsIndex = contentFactsIndex;
+        this.language = language;
     }
     async run() {
         await this.injectScript(this.htmlcsJsUrl);
@@ -835,8 +856,22 @@ class HtmlCsEngine {
             // console output), so the scan hangs forever. Building the callback with the
             // iframe's own Function constructor makes it pass that check.
             const callback = iframeWindow.Function('cb', 'return function () { cb(); };')(onDone);
-            iframeWindow.HTMLCS.process(HtmlCsEngine.STANDARD, iframeWindow.document, callback);
+            HtmlCsEngine.completeTranslation(iframeWindow, this.language);
+            // HTMLCS ignores a language it ships no translation for and stays English.
+            iframeWindow.HTMLCS.process(HtmlCsEngine.STANDARD, iframeWindow.document, callback, undefined, this.language);
         });
+    }
+    // The bundled translations are partial: a missing key makes HTMLCS return undefined as message text, which
+    // breaks rendering and, for some sniffs, HTMLCS itself. Missing keys fall back to the English text.
+    static completeTranslation(iframeWindow, language) {
+        const english = iframeWindow.translation?.['en'];
+        const target = iframeWindow.translation?.[language];
+        if (english === undefined || target === undefined || target === english) {
+            return;
+        }
+        for (const [key, text] of Object.entries(english)) {
+            target[key] ?? (target[key] = text);
+        }
     }
     normalizeMessages(messages, type) {
         return messages
@@ -873,8 +908,8 @@ class ScanRunner {
             await this.waitForLoad(iframe);
             const contentFactsIndex = buildContentFactsIndex(settings.contentFacts);
             const scanEngine = engine === 'axe'
-                ? new AxeEngine(iframe, settings.axeJsUrl, contentFactsIndex)
-                : new HtmlCsEngine(iframe, settings.htmlcsJsUrl, contentFactsIndex);
+                ? new AxeEngine(iframe, settings.axeJsUrl, contentFactsIndex, settings.axeLocaleUrl)
+                : new HtmlCsEngine(iframe, settings.htmlcsJsUrl, contentFactsIndex, settings.htmlcsLanguage);
             const result = await scanEngine.run();
             const iframeDocument = iframe.contentDocument;
             if (iframeDocument !== null) {
@@ -914,7 +949,9 @@ class ModuleSettingsReader {
             contentMetadata: JSON.parse(appEl.dataset['contentMetadata'] ?? '[]'),
             contentFacts: JSON.parse(appEl.dataset['contentFacts'] ?? '{}'),
             axeJsUrl: appEl.dataset['axeJsUrl'] ?? '',
+            axeLocaleUrl: appEl.dataset['axeLocaleUrl'] ?? '',
             htmlcsJsUrl: appEl.dataset['htmlcsJsUrl'] ?? '',
+            htmlcsLanguage: appEl.dataset['htmlcsLanguage'] || 'en',
             classificationRules: Typo3Backend.getClassificationRules(),
         };
     }

@@ -2,10 +2,12 @@ jest.mock('../src/engines/AxeEngine');
 jest.mock('../src/engines/HtmlCsEngine');
 
 import { AxeEngine } from '../src/engines/AxeEngine';
+import { HtmlCsEngine } from '../src/engines/HtmlCsEngine';
 import { initialize } from '../src/A11yModule';
 import type { AccessibilityIssue, ScanResult } from '../src/types';
 
 const MockAxeEngine = jest.mocked(AxeEngine);
+const MockHtmlCsEngine = jest.mocked(HtmlCsEngine);
 
 const EMPTY_RESULT: ScanResult = { violations: [], incomplete: [], passes: [], url: '' };
 
@@ -61,7 +63,9 @@ function setupMainDom(overrides: Partial<Record<string, string>> = {}): void {
              data-page-uid="${overrides['pageUid'] ?? '42'}"
              data-preview-uri="${overrides['previewUri'] ?? '/preview/42'}"
              data-axe-js-url="/axe.min.js"
+             data-axe-locale-url="${overrides['axeLocaleUrl'] ?? ''}"
              data-htmlcs-js-url="/HTMLCS.min.js"
+             data-htmlcs-language="${overrides['htmlcsLanguage'] ?? 'en'}"
              data-content-metadata="[]">
             <select id="a11y-engine-select">
                 <option value="axe" selected>axe-core</option>
@@ -126,6 +130,36 @@ describe('initialize', () => {
     const results = document.getElementById('a11y-results');
     expect(results?.innerHTML).not.toBe('');
     expect(MockAxeEngine).toHaveBeenCalledTimes(1);
+  });
+
+  it('hands the axe-core locale of the backend user to the engine', async () => {
+    setupMainDom({ axeLocaleUrl: '/axe-locales/de.json' });
+    mockIframeLoad();
+    initialize();
+    await flushPromises();
+    expect(MockAxeEngine).toHaveBeenCalledWith(
+      expect.any(HTMLIFrameElement),
+      '/axe.min.js',
+      expect.anything(),
+      '/axe-locales/de.json',
+    );
+  });
+
+  it('hands the HTML CodeSniffer language of the backend user to the engine', async () => {
+    setupMainDom({ htmlcsLanguage: 'fr' });
+    (document.getElementById('a11y-engine-select') as HTMLSelectElement).value = 'htmlcs';
+    MockHtmlCsEngine.mockImplementation(
+      () => ({ run: jest.fn().mockResolvedValue(EMPTY_RESULT) }) as unknown as HtmlCsEngine,
+    );
+    mockIframeLoad();
+    initialize();
+    await flushPromises();
+    expect(MockHtmlCsEngine).toHaveBeenCalledWith(
+      expect.any(HTMLIFrameElement),
+      '/HTMLCS.min.js',
+      expect.anything(),
+      'fr',
+    );
   });
 
   it('shows loading indicator immediately (before iframe loads)', () => {

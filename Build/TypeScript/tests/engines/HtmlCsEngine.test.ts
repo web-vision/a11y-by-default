@@ -70,6 +70,40 @@ describe('HtmlCsEngine', () => {
     expect(result.violations[0]?.nodes[0]?.contentElementUid).toBeUndefined();
   });
 
+  it('asks HTML CodeSniffer for the configured language', async () => {
+    const iframe = setupIframeWithHtmlCs('<div></div>', jest.fn().mockReturnValue([]));
+    const process = (iframe.contentWindow as HtmlCsWindow).HTMLCS!.process;
+
+    await new HtmlCsEngine(iframe, '/HTMLCS.min.js', makeIndex(), 'fr').run();
+
+    expect(process).toHaveBeenCalledWith('WCAG2AA', iframe.contentDocument, expect.any(Function), undefined, 'fr');
+  });
+
+  it('fills keys missing from a partial translation with the English text before scanning', async () => {
+    const iframe = setupIframeWithHtmlCs('<div></div>', jest.fn().mockReturnValue([]));
+    const translation = {
+      en: { '1_4_10_C32,C31,C33,C38,SCR34,G206.Fixed': 'Fixed position', '1_3_5_H98.FaultyValue': 'Faulty value' },
+      fr: { '1_4_10_C32,C31,C33,C38,SCR34,G206.Fixed': 'Position fixe' },
+    };
+    (iframe.contentWindow as unknown as { translation: typeof translation }).translation = translation;
+
+    await new HtmlCsEngine(iframe, '/HTMLCS.min.js', makeIndex(), 'fr').run();
+
+    expect(translation.fr).toEqual({
+      '1_4_10_C32,C31,C33,C38,SCR34,G206.Fixed': 'Position fixe',
+      '1_3_5_H98.FaultyValue': 'Faulty value',
+    });
+  });
+
+  it('asks HTML CodeSniffer for English when no language is configured', async () => {
+    const iframe = setupIframeWithHtmlCs('<div></div>', jest.fn().mockReturnValue([]));
+    const process = (iframe.contentWindow as HtmlCsWindow).HTMLCS!.process;
+
+    await new HtmlCsEngine(iframe, '/HTMLCS.min.js', makeIndex()).run();
+
+    expect(process).toHaveBeenCalledWith('WCAG2AA', iframe.contentDocument, expect.any(Function), undefined, 'en');
+  });
+
   it('splits messages into violations and incomplete by type', async () => {
     const iframe = setupIframeWithHtmlCs('<div></div>', jest.fn());
     const element = iframe.contentDocument!.querySelector('div')!;

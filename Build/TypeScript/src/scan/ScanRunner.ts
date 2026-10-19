@@ -22,8 +22,8 @@ export class ScanRunner {
       const contentFactsIndex = buildContentFactsIndex(settings.contentFacts);
       const scanEngine =
         engine === 'axe'
-          ? new AxeEngine(iframe, settings.axeJsUrl, contentFactsIndex)
-          : new HtmlCsEngine(iframe, settings.htmlcsJsUrl, contentFactsIndex);
+          ? new AxeEngine(iframe, settings.axeJsUrl, contentFactsIndex, settings.axeLocaleUrl)
+          : new HtmlCsEngine(iframe, settings.htmlcsJsUrl, contentFactsIndex, settings.htmlcsLanguage);
 
       const result = await scanEngine.run();
       const iframeDocument = iframe.contentDocument;

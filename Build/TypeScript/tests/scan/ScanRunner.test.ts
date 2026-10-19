@@ -12,7 +12,9 @@ const settings: ModuleSettings = {
   contentMetadata: [],
   contentFacts: {},
   axeJsUrl: '/axe.js',
+  axeLocaleUrl: '',
   htmlcsJsUrl: '/htmlcs.js',
+  htmlcsLanguage: 'en',
   classificationRules: {},
 };
 

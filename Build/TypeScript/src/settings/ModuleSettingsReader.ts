@@ -14,7 +14,9 @@ export class ModuleSettingsReader {
       contentMetadata: JSON.parse(appEl.dataset['contentMetadata'] ?? '[]') as ContentMetadataItem[],
       contentFacts: JSON.parse(appEl.dataset['contentFacts'] ?? '{}') as ContentFacts,
       axeJsUrl: appEl.dataset['axeJsUrl'] ?? '',
+      axeLocaleUrl: appEl.dataset['axeLocaleUrl'] ?? '',
       htmlcsJsUrl: appEl.dataset['htmlcsJsUrl'] ?? '',
+      htmlcsLanguage: appEl.dataset['htmlcsLanguage'] || 'en',
       classificationRules: Typo3Backend.getClassificationRules(),
     };
   }
