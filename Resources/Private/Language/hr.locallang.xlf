@@ -140,67 +140,67 @@
             </trans-unit>
             <trans-unit id="rule.a11y-redundant-img-title.help">
                 <source>Image title must not repeat the alternative text</source>
-                <target>Naslov slike ne smije ponavljati alternativni tekst</target>
+                <target>Naslov slike ne smije ponavljati alt tekst</target>
             </trans-unit>
             <trans-unit id="rule.a11y-redundant-img-title.description">
                 <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
-                <target>Osigurava da atribut title slike dodaje informaciju umjesto ponavljanja alternativnog teksta, koji čitači zaslona inače mogu izgovoriti dvaput.</target>
+                <target>Osigurava da atribut title slike dodaje informaciju umjesto ponavljanja alt teksta, koji čitači zaslona inače mogu izgovoriti dvaput.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-redundant-img-title">
                 <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
-                <target>Naslov slike ponavlja alternativni tekst. U postavkama slike sadržajnog elementa uklonite naslov ili ga promijenite tako da dodaje informaciju.</target>
+                <target>Naslov slike ponavlja alt tekst. U postavkama slike elementa sadržaja uklonite naslov ili ga promijenite tako da dodaje informaciju.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-redundant-img-title.developer">
                 <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
-                <target>Prikazani naslov ponavlja alt tekst, iako se pohranjene vrijednosti razlikuju ili slika nije povezana s uređivim sadržajem. Provjerite kopira li predložak alt tekst u atribut title (zadatak za razvojnog programera).</target>
+                <target>Prikazani naslov ponavlja alt tekst, iako se pohranjene vrijednosti razlikuju ili slika nije povezana s uređivim sadržajem. Provjerite kopira li predložak alt tekst u atribut title (zadatak za razvojne programere).</target>
             </trans-unit>
             <trans-unit id="rule.a11y-img-alt-too-short.help">
                 <source>Image alternative text must be long enough to describe the image</source>
-                <target>Alternativni tekst slike mora biti dovoljno dug da je opiše</target>
+                <target>Alt tekst slike mora biti dovoljno dug da je opiše</target>
             </trans-unit>
             <trans-unit id="rule.a11y-img-alt-too-short.description">
                 <source>Ensures an image's alternative text has at least five characters, as shorter texts rarely describe the image's content or function.</source>
-                <target>Osigurava da alternativni tekst slike ima najmanje pet znakova, jer kraći tekstovi rijetko opisuju sadržaj ili funkciju slike.</target>
+                <target>Osigurava da alt tekst slike ima najmanje pet znakova, jer kraći tekstovi rijetko opisuju sadržaj ili funkciju slike.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-img-alt-too-short">
                 <source>The alternative text of this image is too short to describe it. In the image settings of the content element, describe what the image shows or what it does.</source>
-                <target>Alternativni tekst ove slike prekratak je da bi je opisao. U postavkama slike sadržajnog elementa opišite što slika prikazuje ili koju funkciju ima.</target>
+                <target>Alt tekst ove slike prekratak je da bi je opisao. U postavkama slike elementa sadržaja opišite što slika prikazuje ili koju funkciju ima.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-img-alt-too-short.developer">
                 <source>The rendered alternative text is too short, although the stored text is longer or the image is not linked to editable content. Check how the template builds the alt attribute (developer task).</source>
-                <target>Prikazani alternativni tekst prekratak je, iako je spremljeni tekst duži ili slika nije povezana s uređivim sadržajem. Provjerite kako predložak stvara atribut alt (zadatak za razvojnog programera).</target>
+                <target>Prikazani alt tekst prekratak je, iako je spremljeni tekst duži ili slika nije povezana s uređivim sadržajem. Provjerite kako predložak generira atribut alt (zadatak za razvojne programere).</target>
             </trans-unit>
             <trans-unit id="rule.a11y-img-alt-redundant-prefix.help">
                 <source>Image alternative text should not start with "image of" or "photo of"</source>
-                <target>Alternativni tekst slike ne bi trebao početi s „Slika od“ ili „Fotografija od“</target>
+                <target>Alt tekst slike ne bi trebao početi s „Slika koja prikazuje“ ili „Fotografija koja prikazuje“</target>
             </trans-unit>
             <trans-unit id="rule.a11y-img-alt-redundant-prefix.description">
                 <source>Ensures an image's alternative text describes the content without announcing that it is an image, which screen readers already do.</source>
-                <target>Osigurava da alternativni tekst slike opisuje sadržaj bez najave da je riječ o slici, što čitači zaslona već rade.</target>
+                <target>Osigurava da alt tekst slike opisuje sadržaj bez najavljivanja da je riječ o slici, što čitači zaslona već rade.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-img-alt-redundant-prefix">
                 <source>In the image settings of the content element, remove words like "Photo of" or "Image of" from the start of the alternative text and describe the content directly.</source>
-                <target>U postavkama slike sadržajnog elementa uklonite s početka alternativnog teksta riječi poput „Fotografija od“ ili „Slika od“ i izravno opišite sadržaj.</target>
+                <target>U postavkama slike elementa sadržaja uklonite s početka alt teksta riječi poput „Fotografija koja prikazuje“ ili „Slika koja prikazuje“ i izravno opišite sadržaj.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-img-alt-redundant-prefix.developer">
                 <source>The rendered alternative text starts with words like "Photo of", although the stored text does not or the image is not linked to editable content. Check whether the template adds such a prefix (developer task).</source>
-                <target>Prikazani alternativni tekst počinje riječima poput „Fotografija od“, iako spremljeni tekst tako ne počinje ili slika nije povezana s uređivim sadržajem. Provjerite dodaje li predložak takav prefiks (zadatak za razvojnog programera).</target>
+                <target>Prikazani alt tekst počinje riječima poput „Fotografija koja prikazuje“, iako spremljeni tekst tako ne počinje ili slika nije povezana s uređivim sadržajem. Provjerite dodaje li predložak takav prefiks (zadatak za razvojne programere).</target>
             </trans-unit>
             <trans-unit id="rule.a11y-img-alt-filename.help">
                 <source>Image alternative text must not be a file name</source>
-                <target>Alternativni tekst slike ne smije biti naziv datoteke</target>
+                <target>Alt tekst slike ne smije biti naziv datoteke</target>
             </trans-unit>
             <trans-unit id="rule.a11y-img-alt-filename.description">
                 <source>Ensures an image's alternative text is not its file name or a camera-generated name such as IMG_1234, which tells users nothing about the image.</source>
-                <target>Osigurava da alternativni tekst slike nije naziv njezine datoteke ni naziv koji je generirala kamera, poput IMG_1234, jer korisnicima to ne govori ništa o slici.</target>
+                <target>Osigurava da alt tekst slike nije naziv njezine datoteke ni naziv koji je generirala kamera, poput IMG_1234, jer korisnicima to ne govori ništa o slici.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-img-alt-filename">
                 <source>The alternative text of this image is a file name. In the image settings of the content element, replace it with a description of what the image shows.</source>
-                <target>Alternativni tekst ove slike naziv je datoteke. U postavkama slike sadržajnog elementa zamijenite ga opisom onoga što slika prikazuje.</target>
+                <target>Alt tekst ove slike naziv je datoteke. U postavkama slike elementa sadržaja zamijenite ga opisom onoga što slika prikazuje.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-img-alt-filename.developer">
                 <source>The rendered alternative text is a file name, although the stored text is not or the image is not linked to editable content. Check whether the template falls back to the file name for the alt attribute (developer task).</source>
-                <target>Prikazani alternativni tekst naziv je datoteke, iako spremljeni tekst to nije ili slika nije povezana s uređivim sadržajem. Provjerite vraća li se predložak na naziv datoteke za atribut alt (zadatak za razvojnog programera).</target>
+                <target>Prikazani alt tekst naziv je datoteke, iako spremljeni tekst to nije ili slika nije povezana s uređivim sadržajem. Provjerite koristi li predložak naziv datoteke kao zamjensku vrijednost za atribut alt (zadatak za razvojne programere).</target>
             </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>

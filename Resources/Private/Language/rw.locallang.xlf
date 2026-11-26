@@ -140,67 +140,67 @@
             </trans-unit>
             <trans-unit id="rule.a11y-redundant-img-title.help">
                 <source>Image title must not repeat the alternative text</source>
-                <target>Umutwe w'ishusho ntugomba gusubiramo inyandiko isimbura</target>
+                <target>Umutwe w'ifoto ntugomba gusubiramo alt text</target>
             </trans-unit>
             <trans-unit id="rule.a11y-redundant-img-title.description">
                 <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
-                <target>Yemeza ko attribute ya title y'ishusho yongeramo amakuru aho gusubiramo inyandiko isimbura, abasoma ecran bashobora kuyisoma kabiri.</target>
+                <target>Yemeza ko attribute ya title y'ifoto yongeramo amakuru aho gusubiramo alt text yayo, bishobora gutuma abasoma ecran bayivuga kabiri.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-redundant-img-title">
                 <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
-                <target>Umutwe w'ishusho usubiramo inyandiko isimbura. Mu igenamiterere ry'ishusho ry'ikintu cy'ibirimo, kuraho umutwe cyangwa uwuhindure ku buryo wongeramo amakuru.</target>
+                <target>Umutwe w'ifoto usubiramo alt text. Mu igenamiterere ry'ifoto ry'igice cy'ibikubiye, kuraho umutwe cyangwa uwuhindure ku buryo wongeramo amakuru.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-redundant-img-title.developer">
                 <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
-                <target>Umutwe werekanywe usubiramo inyandiko ya alt, nubwo agaciro kabitswe gatandukanye cyangwa ishusho itahujwe n'ibirimo bishobora guhindurwa. Reba niba template yandukura inyandiko ya alt mu attribute ya title (umurimo w'umuteza imbere).</target>
+                <target>Umutwe wagaragajwe usubiramo alt text, nubwo indangagaciro zabitswe zitandukanye cyangwa ifoto itahujwe n'ibikubiye bishobora guhindurwa. Reba niba icyitegererezo cyandukura alt text mu attribute ya title (umurimo w'umukora porogaramu).</target>
             </trans-unit>
             <trans-unit id="rule.a11y-img-alt-too-short.help">
                 <source>Image alternative text must be long enough to describe the image</source>
-                <target>Inyandiko isobanura ifoto igomba kuba ndende bihagije kugira ngo isobanure iyo foto</target>
+                <target>Alt text y'ifoto igomba kuba ndende bihagije kugira ngo isobanure ifoto</target>
             </trans-unit>
             <trans-unit id="rule.a11y-img-alt-too-short.description">
                 <source>Ensures an image's alternative text has at least five characters, as shorter texts rarely describe the image's content or function.</source>
-                <target>Yemeza ko inyandiko isobanura ifoto igizwe nibura n'inyuguti eshanu, kuko inyandiko ngufi zidasobanura kenshi ibiri ku ifoto cyangwa icyo ikora.</target>
+                <target>Yemeza ko alt text y'ifoto igizwe nibura n'inyuguti eshanu, kuko alt text ngufi zidakunze gusobanura ibiri ku ifoto cyangwa icyo ikora.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-img-alt-too-short">
                 <source>The alternative text of this image is too short to describe it. In the image settings of the content element, describe what the image shows or what it does.</source>
-                <target>Iyi nyandiko isobanura iyi foto ngufi cyane ku buryo isobanura iyo foto. Mu igenamiterere ry'ifoto y'ikintu cy'ibirimo, sobanura icyo ifoto yerekana cyangwa imikorere yayo.</target>
+                <target>Alt text y'iyi foto ni ngufi cyane ku buryo itasobanura ifoto. Mu igenamiterere ry'ifoto ry'igice cy'ibikubiye, sobanura icyo ifoto yerekana cyangwa icyo ikora.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-img-alt-too-short.developer">
                 <source>The rendered alternative text is too short, although the stored text is longer or the image is not linked to editable content. Check how the template builds the alt attribute (developer task).</source>
-                <target>Inyandiko isobanura yerekanwa ngufi cyane, nubwo inyandiko yabitswe ari ndende cyangwa ifoto ntihujwe n'ibirimo bihindurwa. Reba uko template ibyaza umusaruro attribute ya alt (umurimo w'umushinga).</target>
+                <target>Alt text yagaragajwe ni ngufi cyane, nubwo alt text yabitswe ari ndende cyangwa ifoto itahujwe n'ibikubiye bishobora guhindurwa. Reba uko icyitegererezo kiremamo attribute ya alt (umurimo w'umukora porogaramu).</target>
             </trans-unit>
             <trans-unit id="rule.a11y-img-alt-redundant-prefix.help">
                 <source>Image alternative text should not start with "image of" or "photo of"</source>
-                <target>Inyandiko isobanura ifoto ntigomba gutangira na “Ifoto ya” cyangwa “Ifoto y'”</target>
+                <target>Alt text y'ifoto ntigomba gutangira na “Ifoto ya” cyangwa “Ifoto y'”</target>
             </trans-unit>
             <trans-unit id="rule.a11y-img-alt-redundant-prefix.description">
                 <source>Ensures an image's alternative text describes the content without announcing that it is an image, which screen readers already do.</source>
-                <target>Yemeza ko inyandiko isobanura ifoto isobanura ibiri mu ifoto idatangaza ko ari ifoto, kuko abasoma ecran babikora ubwabo.</target>
+                <target>Yemeza ko alt text y'ifoto isobanura ibiri mu ifoto itavuze ko ari ifoto, kuko abasoma ecran basanzwe babikora.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-img-alt-redundant-prefix">
                 <source>In the image settings of the content element, remove words like "Photo of" or "Image of" from the start of the alternative text and describe the content directly.</source>
-                <target>Mu igenamiterere ry'ifoto y'ikintu cy'ibirimo, kura amagambo nka “Ifoto ya” cyangwa “Ifoto y'” ku ntangiriro y'inyandiko isobanura, maze usobanure ibirimo ako kanya.</target>
+                <target>Mu igenamiterere ry'ifoto ry'igice cy'ibikubiye, kura amagambo nka “Ifoto ya” cyangwa “Ifoto y'” ku ntangiriro ya alt text, maze usobanure ibikubiye mu buryo butaziguye.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-img-alt-redundant-prefix.developer">
                 <source>The rendered alternative text starts with words like "Photo of", although the stored text does not or the image is not linked to editable content. Check whether the template adds such a prefix (developer task).</source>
-                <target>Inyandiko isobanura yerekanwa itangira n'amagambo nka “Ifoto ya”, nubwo inyandiko yabitswe itabitangira gutyo cyangwa ifoto ntihujwe n'ibirimo bihindurwa. Reba niba template yongeraho iryo jambo imbere (umurimo w'umushinga).</target>
+                <target>Alt text yagaragajwe itangira n'amagambo nka “Ifoto ya”, nubwo alt text yabitswe itabitangira gutyo cyangwa ifoto itahujwe n'ibikubiye bishobora guhindurwa. Reba niba icyitegererezo cyongeraho amagambo nk'ayo ku ntangiriro (umurimo w'umukora porogaramu).</target>
             </trans-unit>
             <trans-unit id="rule.a11y-img-alt-filename.help">
                 <source>Image alternative text must not be a file name</source>
-                <target>Inyandiko isobanura ifoto ntishobora kuba izina ry'idosiye</target>
+                <target>Alt text y'ifoto ntigomba kuba izina ry'idosiye</target>
             </trans-unit>
             <trans-unit id="rule.a11y-img-alt-filename.description">
                 <source>Ensures an image's alternative text is not its file name or a camera-generated name such as IMG_1234, which tells users nothing about the image.</source>
-                <target>Yemeza ko inyandiko isobanura ifoto atari izina ry'idosiye yayo cyangwa izina ryatanzwe na kamera, nka IMG_1234, kuko iryo zina ntacyo ribwira abakoresha ku ifoto.</target>
+                <target>Yemeza ko alt text y'ifoto atari izina ry'idosiye yayo cyangwa izina ryatanzwe na kamera, nka IMG_1234, kuko iryo zina nta cyo ribwira abakoresha ku ifoto.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-img-alt-filename">
                 <source>The alternative text of this image is a file name. In the image settings of the content element, replace it with a description of what the image shows.</source>
-                <target>Inyandiko isobanura iyi foto ni izina ry'idosiye. Mu igenamiterere ry'ifoto y'ikintu cy'ibirimo, usimbuze iyo nyandiko isobanura ibiri ku ifoto.</target>
+                <target>Alt text y'iyi foto ni izina ry'idosiye. Mu igenamiterere ry'ifoto ry'igice cy'ibikubiye, isimbuze ibisobanuro by'ibyo ifoto yerekana.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-img-alt-filename.developer">
                 <source>The rendered alternative text is a file name, although the stored text is not or the image is not linked to editable content. Check whether the template falls back to the file name for the alt attribute (developer task).</source>
-                <target>Inyandiko isobanura yerekanwa ni izina ry'idosiye, nubwo inyandiko yabitswe atari yo, cyangwa ifoto ntihujwe n'ibirimo bihindurwa. Reba niba template ikoresha izina ry'idosiye nk'ubundi buryo bwa attribute ya alt (umurimo w'umushinga).</target>
+                <target>Alt text yagaragajwe ni izina ry'idosiye, nubwo alt text yabitswe atari ryo cyangwa ifoto itahujwe n'ibikubiye bishobora guhindurwa. Reba niba icyitegererezo gikoresha izina ry'idosiye nk'ubundi buryo kuri attribute ya alt (umurimo w'umukora porogaramu).</target>
             </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>

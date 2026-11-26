@@ -152,7 +152,7 @@
             </trans-unit>
             <trans-unit id="hint.a11y-redundant-img-title.developer">
                 <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
-                <target>El título mostrado repite el texto alternativo (alt), aunque los valores almacenados sean distintos o la imagen no esté vinculada a contenido editable. Compruebe si la plantilla copia el texto alternativo en el atributo title (tarea para desarrolladores).</target>
+                <target>El título representado repite el texto alternativo (alt), aunque los valores almacenados sean distintos o la imagen no esté vinculada a contenido editable. Compruebe si la plantilla copia el texto alternativo en el atributo title (tarea de desarrollador).</target>
             </trans-unit>
             <trans-unit id="rule.a11y-img-alt-too-short.help">
                 <source>Image alternative text must be long enough to describe the image</source>
@@ -168,7 +168,7 @@
             </trans-unit>
             <trans-unit id="hint.a11y-img-alt-too-short.developer">
                 <source>The rendered alternative text is too short, although the stored text is longer or the image is not linked to editable content. Check how the template builds the alt attribute (developer task).</source>
-                <target>El texto alternativo mostrado es demasiado corto, aunque el texto guardado sea más largo o la imagen no esté vinculada a contenido editable. Compruebe cómo la plantilla genera el atributo alt (tarea para desarrollo).</target>
+                <target>El texto alternativo representado es demasiado corto, aunque el texto guardado sea más largo o la imagen no esté vinculada a contenido editable. Compruebe cómo la plantilla genera el atributo alt (tarea de desarrollador).</target>
             </trans-unit>
             <trans-unit id="rule.a11y-img-alt-redundant-prefix.help">
                 <source>Image alternative text should not start with "image of" or "photo of"</source>
@@ -184,7 +184,7 @@
             </trans-unit>
             <trans-unit id="hint.a11y-img-alt-redundant-prefix.developer">
                 <source>The rendered alternative text starts with words like "Photo of", although the stored text does not or the image is not linked to editable content. Check whether the template adds such a prefix (developer task).</source>
-                <target>El texto alternativo mostrado empieza por palabras como «Foto de», aunque el texto guardado no empiece así o la imagen no esté vinculada a contenido editable. Compruebe si la plantilla añade ese prefijo (tarea para desarrollo).</target>
+                <target>El texto alternativo representado empieza por palabras como «Foto de», aunque el texto guardado no empiece así o la imagen no esté vinculada a contenido editable. Compruebe si la plantilla añade ese prefijo (tarea de desarrollador).</target>
             </trans-unit>
             <trans-unit id="rule.a11y-img-alt-filename.help">
                 <source>Image alternative text must not be a file name</source>
@@ -200,7 +200,7 @@
             </trans-unit>
             <trans-unit id="hint.a11y-img-alt-filename.developer">
                 <source>The rendered alternative text is a file name, although the stored text is not or the image is not linked to editable content. Check whether the template falls back to the file name for the alt attribute (developer task).</source>
-                <target>El texto alternativo mostrado es un nombre de archivo, aunque el texto guardado no lo sea o la imagen no esté vinculada a contenido editable. Compruebe si la plantilla usa el nombre de archivo como alternativa para el atributo alt (tarea para desarrollo).</target>
+                <target>El texto alternativo representado es un nombre de archivo, aunque el texto guardado no lo sea o la imagen no esté vinculada a contenido editable. Compruebe si la plantilla usa el nombre de archivo como alternativa para el atributo alt (tarea de desarrollador).</target>
             </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>

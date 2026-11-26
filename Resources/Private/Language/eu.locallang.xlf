@@ -140,67 +140,67 @@
             </trans-unit>
             <trans-unit id="rule.a11y-redundant-img-title.help">
                 <source>Image title must not repeat the alternative text</source>
-                <target>Irudiaren izenburuak ez du testu alternatiboa errepikatu behar</target>
+                <target>Irudiaren izenburuak ez du alt testua errepikatu behar</target>
             </trans-unit>
             <trans-unit id="rule.a11y-redundant-img-title.description">
                 <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
-                <target>Irudiaren title atributuak informazioa gehitzen duela ziurtatzen du, testu alternatiboa errepikatu beharrean; pantaila-irakurgailuek bi aldiz irakur dezakete bestela.</target>
+                <target>Irudiaren title atributuak informazioa gehitzen duela ziurtatzen du, alt testua errepikatu beharrean; pantaila-irakurgailuek bi aldiz irakur dezakete bestela.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-redundant-img-title">
                 <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
-                <target>Irudiaren izenburuak testu alternatiboa errepikatzen du. Eduki-elementuaren irudi-ezarpenetan, kendu izenburua edo aldatu informazioa gehitzeko moduan.</target>
+                <target>Irudiaren izenburuak alt testua errepikatzen du. Eduki-elementuaren irudi-ezarpenetan, kendu izenburua edo aldatu informazioa gehitzeko moduan.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-redundant-img-title.developer">
                 <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
-                <target>Errendatutako izenburuak alt testua errepikatzen du, nahiz eta gordetako balioak desberdinak izan edo irudia ez egon editagarria den edukiari lotuta. Egiaztatu ea txantiloiak alt testua title atributuan kopiatzen duen (garatzailearen lana).</target>
+                <target>Errendatutako izenburuak alt testua errepikatzen du, nahiz eta gordetako balioak desberdinak izan edo irudia editatu daitekeen edukira estekatuta ez egon. Egiaztatu ea txantiloiak alt testua title atributuan kopiatzen duen (garatzaile-eginkizuna).</target>
             </trans-unit>
             <trans-unit id="rule.a11y-img-alt-too-short.help">
                 <source>Image alternative text must be long enough to describe the image</source>
-                <target>Irudiaren ordezko testua nahikoa luzea izan behar da irudia deskribatzeko</target>
+                <target>Irudiaren alt testua nahikoa luzea izan behar da irudia deskribatzeko</target>
             </trans-unit>
             <trans-unit id="rule.a11y-img-alt-too-short.description">
                 <source>Ensures an image's alternative text has at least five characters, as shorter texts rarely describe the image's content or function.</source>
-                <target>Irudi baten ordezko testuak gutxienez bost karaktere izatea ziurtatzen du, testu laburragoek gutxitan deskribatzen baitute irudiaren edukia edo funtzioa.</target>
+                <target>Irudi baten alt testuak gutxienez bost karaktere izatea ziurtatzen du, testu laburragoek gutxitan deskribatzen baitute irudiaren edukia edo funtzioa.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-img-alt-too-short">
                 <source>The alternative text of this image is too short to describe it. In the image settings of the content element, describe what the image shows or what it does.</source>
-                <target>Irudi honen ordezko testua laburregia da deskribatzeko. Edukia-elementuaren irudi-ezarpenetan, deskribatu irudiak zer erakusten duen edo zer funtzio duen.</target>
+                <target>Irudi honen alt testua laburregia da deskribatzeko. Eduki-elementuaren irudi-ezarpenetan, deskribatu irudiak zer erakusten duen edo zer funtzio duen.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-img-alt-too-short.developer">
                 <source>The rendered alternative text is too short, although the stored text is longer or the image is not linked to editable content. Check how the template builds the alt attribute (developer task).</source>
-                <target>Bistaratutako ordezko testua laburregia da, nahiz eta gordetako testua luzeagoa izan edo irudia edita daitekeen edukiari lotuta ez egon. Egiaztatu txantiloiak nola sortzen duen alt atributua (garatzailearen zeregina).</target>
+                <target>Bistaratutako alt testua laburregia da, nahiz eta gordetako testua luzeagoa izan edo irudia editatu daitekeen edukira estekatuta ez egon. Egiaztatu txantiloiak nola sortzen duen alt atributua (garatzaile-eginkizuna).</target>
             </trans-unit>
             <trans-unit id="rule.a11y-img-alt-redundant-prefix.help">
                 <source>Image alternative text should not start with "image of" or "photo of"</source>
-                <target>Irudi baten ordezko testua ez litzateke hasi behar “Irudia”, “Argazkia” bezalako hitzekin</target>
+                <target>Irudi baten alt testua ez luke “Irudia” edo “Argazkia” bezalako hitzekin hasi behar</target>
             </trans-unit>
             <trans-unit id="rule.a11y-img-alt-redundant-prefix.description">
                 <source>Ensures an image's alternative text describes the content without announcing that it is an image, which screen readers already do.</source>
-                <target>Irudi baten ordezko testuak edukia deskribatu behar du, irudia dela iragarri gabe, pantaila-irakurleek hori dagoeneko egiten baitute.</target>
+                <target>Irudi baten alt testuak edukia deskribatu behar du, irudia dela iragarri gabe, pantaila-irakurgailuek hori dagoeneko egiten baitute.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-img-alt-redundant-prefix">
                 <source>In the image settings of the content element, remove words like "Photo of" or "Image of" from the start of the alternative text and describe the content directly.</source>
-                <target>Edukia-elementuaren irudi-ezarpenetan, kendu ordezko testuaren hasieratik “Argazkia” edo “Irudia” bezalako hitzak, eta deskribatu edukia zuzenean.</target>
+                <target>Eduki-elementuaren irudi-ezarpenetan, kendu alt testuaren hasieratik “Argazkia” edo “Irudia” bezalako hitzak, eta deskribatu edukia zuzenean.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-img-alt-redundant-prefix.developer">
                 <source>The rendered alternative text starts with words like "Photo of", although the stored text does not or the image is not linked to editable content. Check whether the template adds such a prefix (developer task).</source>
-                <target>Bistaratutako ordezko testua “Argazkia” bezalako hitzekin hasten da, nahiz eta gordetako testua horrela ez hasi edo irudia edita daitekeen edukiari lotuta ez egon. Egiaztatu ea txantiloiak aurrizki hori gehitzen duen (garatzailearen zeregina).</target>
+                <target>Bistaratutako alt testua “Argazkia” bezalako hitzekin hasten da, nahiz eta gordetako testua horrela ez hasi edo irudia editatu daitekeen edukira estekatuta ez egon. Egiaztatu ea txantiloiak aurrizki hori gehitzen duen (garatzaile-eginkizuna).</target>
             </trans-unit>
             <trans-unit id="rule.a11y-img-alt-filename.help">
                 <source>Image alternative text must not be a file name</source>
-                <target>Irudi baten ordezko testua ez da fitxategi-izena izan behar</target>
+                <target>Irudi baten alt testua ez da fitxategi-izena izan behar</target>
             </trans-unit>
             <trans-unit id="rule.a11y-img-alt-filename.description">
                 <source>Ensures an image's alternative text is not its file name or a camera-generated name such as IMG_1234, which tells users nothing about the image.</source>
-                <target>Irudi baten ordezko testuak ez duela fitxategi-izena edo kameraren sortutako izena izatea ziurtatzen du, adibidez IMG_1234, horrek ez baitio ezer esaten erabiltzaileei irudiaz.</target>
+                <target>Irudi baten alt testuak ez duela fitxategi-izena edo kamerak sortutako izena izatea ziurtatzen du, adibidez IMG_1234, horrek ez baitio ezer esaten erabiltzaileei irudiari buruz.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-img-alt-filename">
                 <source>The alternative text of this image is a file name. In the image settings of the content element, replace it with a description of what the image shows.</source>
-                <target>Irudi honen ordezko testua fitxategi-izena da. Edukia-elementuaren irudi-ezarpenetan, ordezkatu irudiak zer erakusten duen deskribatzen duen testuarekin.</target>
+                <target>Irudi honen alt testua fitxategi-izena da. Eduki-elementuaren irudi-ezarpenetan, ordezkatu irudiak zer erakusten duen deskribatzen duen testuarekin.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-img-alt-filename.developer">
                 <source>The rendered alternative text is a file name, although the stored text is not or the image is not linked to editable content. Check whether the template falls back to the file name for the alt attribute (developer task).</source>
-                <target>Bistaratutako ordezko testua fitxategi-izena da, nahiz eta gordetakoa ez izan, edo irudia edita daitekeen edukiari lotuta ez egon. Egiaztatu ea txantiloiak fitxategi-izena alt atributuaren ordezko gisa erabiltzen duen (garatzailearen zeregina).</target>
+                <target>Bistaratutako alt testua fitxategi-izena da, nahiz eta gordetakoa ez izan, edo irudia editatu daitekeen edukira estekatuta ez egon. Egiaztatu ea txantiloiak fitxategi-izena alt atributuaren ordezko gisa erabiltzen duen (garatzaile-eginkizuna).</target>
             </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
