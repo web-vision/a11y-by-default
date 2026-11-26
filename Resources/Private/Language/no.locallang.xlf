@@ -126,6 +126,22 @@
                 <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
                 <target>Dette bildekart-området er ikke koblet til redigerbart innhold, eller alt-teksten er angitt men ikke rendret. Kontroller malens rendring (utvikleroppgave).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.help">
+                <source>Image title must not repeat the alternative text</source>
+                <target>Bildetittelen må ikke gjenta alternativteksten</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.description">
+                <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
+                <target>Sikrer at title-attributtet til et bilde gir tilleggsinformasjon i stedet for å gjenta alternativteksten, som skjermlesere ellers kan lese opp to ganger.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title">
+                <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
+                <target>Bildetittelen gjentar alternativteksten. Fjern tittelen i bildeinnstillingene for innholdselementet, eller endre den slik at den gir tilleggsinformasjon.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title.developer">
+                <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
+                <target>Den gjengitte tittelen gjentar alt-teksten, selv om de lagrede verdiene er forskjellige, eller bildet ikke er koblet til redigerbart innhold. Sjekk om malen kopierer alt-teksten til title-attributtet (utvikleroppgave).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Rediger innholdselementet og endre overskriftslayouten slik at overskriftsnivåene ikke hopper over et trinn.</target>

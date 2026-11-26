@@ -149,6 +149,18 @@
             <trans-unit id="hint.scrollable-region-focusable">
                 <source>Make scrollable regions keyboard-accessible in the template (developer task).</source>
             </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.help">
+                <source>Image title must not repeat the alternative text</source>
+            </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.description">
+                <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title">
+                <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title.developer">
+                <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
+            </trans-unit>
             <trans-unit id="pageHint.label">
                 <source>Check Accessibility</source>
             </trans-unit>

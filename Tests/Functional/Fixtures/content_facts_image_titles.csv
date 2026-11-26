@@ -1,0 +1,38 @@
+"pages",,,,,,
+,"uid","pid","sorting","deleted","hidden","title"
+,1,0,256,0,0,"Home"
+"tt_content",,,,
+,"uid","pid","header","bodytext"
+,71,1,"",""
+,72,1,"",""
+,73,1,"",""
+,74,1,"",""
+,75,1,"",""
+,76,1,"",""
+"sys_file_storage",,,,,,,,,,
+,"uid","pid","name","driver","processingfolder","is_default","is_browsable","is_public","is_writable","is_online","configuration"
+,1,0,"fileadmin","Local","1:/_processed_/",1,1,1,1,1,"<?xml version=""1.0"" encoding=""utf-8"" standalone=""yes"" ?><T3FlexForms><data><sheet index=""sDEF""><language index=""lDEF""><field index=""basePath""><value index=""vDEF"">fileadmin/</value></field><field index=""pathType""><value index=""vDEF"">relative</value></field></language></sheet></data></T3FlexForms>"
+"sys_file",,,,,
+,"uid","storage","identifier","name","extension"
+,1,1,"/title-metadata-identical.webp","title-metadata-identical.webp","webp"
+,2,1,"/title-reference-override.webp","title-reference-override.webp","webp"
+,3,1,"/title-differing.webp","title-differing.webp","webp"
+,4,1,"/title-case-whitespace.webp","title-case-whitespace.webp","webp"
+,5,1,"/title-empty.webp","title-empty.webp","webp"
+,6,1,"/alt-empty.webp","alt-empty.webp","webp"
+"sys_file_metadata",,,,,
+,"uid","file","alternative","title"
+,1,1,"Sunset over the bay","Sunset over the bay"
+,2,2,"Metadata alt","Metadata title"
+,3,3,"Sunset over the bay","A photo by Max"
+,4,4,"  Sunset   over the BAY ","sunset over the bay"
+,5,5,"Sunset over the bay",\NULL
+,6,6,\NULL,"Sunset over the bay"
+"sys_file_reference",,,,,,,,
+,"uid","uid_local","uid_foreign","tablenames","fieldname","deleted","alternative","title"
+,10,1,71,"tt_content","image",0,\NULL,\NULL
+,11,2,72,"tt_content","image",0,"Override text","Override text"
+,12,3,73,"tt_content","image",0,\NULL,\NULL
+,13,4,74,"tt_content","image",0,\NULL,\NULL
+,14,5,75,"tt_content","image",0,\NULL,\NULL
+,15,6,76,"tt_content","image",0,\NULL,\NULL

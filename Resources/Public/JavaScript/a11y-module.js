@@ -452,15 +452,6 @@ function normalizeText(text) {
     return text.trim().replace(/\s+/g, ' ').toLowerCase();
 }
 
-function matchHeadingText(text, index) {
-    const normalized = normalizeText(text);
-    if (normalized === '') {
-        return undefined;
-    }
-    const match = index.headings.find((heading) => normalizeText(heading.text) === normalized);
-    return match?.contentElementUid;
-}
-
 function matchImageSource(srcOrHref, index) {
     const value = srcOrHref.trim();
     if (value === '') {
@@ -470,7 +461,73 @@ function matchImageSource(srcOrHref, index) {
     if (match === undefined) {
         return undefined;
     }
-    return { contentElementUid: match.contentElementUid, hasAltData: match.hasAltData };
+    return {
+        contentElementUid: match.contentElementUid,
+        hasAltData: match.hasAltData,
+        altEqualsTitle: match.altEqualsTitle,
+    };
+}
+
+const REDUNDANT_IMG_TITLE_RULE_ID = 'a11y-redundant-img-title';
+/**
+ * Own check (neither axe-core nor HTML CodeSniffer ships such a rule): an image whose title attribute merely
+ * repeats the alt text makes screen readers announce the same text twice.
+ *
+ * One issue is emitted per offending image so each gets its own classification and edit link.
+ * ViolationClassifier sends a matched node with dataAvailable !== true to the editor, hence:
+ * database values identical (altEqualsTitle) -> dataAvailable false -> editor;
+ * database values fine but output redundant (template copies alt to title) -> dataAvailable true -> developer;
+ * unmatched image -> no content element -> developer.
+ */
+class RedundantImageTitleCheck {
+    constructor(resolveLabel) {
+        this.resolveLabel = resolveLabel;
+    }
+    run(document, index) {
+        const issues = [];
+        document.querySelectorAll('img[alt][title]').forEach((img) => {
+            const alt = normalizeText(img.getAttribute('alt') ?? '');
+            if (alt === '' || alt !== normalizeText(img.getAttribute('title') ?? '')) {
+                return;
+            }
+            const node = { html: img.outerHTML, target: [this.buildSelector(img)] };
+            const match = matchImageSource(img.getAttribute('src') ?? '', index);
+            if (match !== undefined) {
+                node.contentElementUid = match.contentElementUid;
+                node.dataAvailable = !match.altEqualsTitle;
+            }
+            issues.push({
+                id: REDUNDANT_IMG_TITLE_RULE_ID,
+                impact: 'minor',
+                description: this.resolveLabel(`rule.${REDUNDANT_IMG_TITLE_RULE_ID}.description`),
+                help: this.resolveLabel(`rule.${REDUNDANT_IMG_TITLE_RULE_ID}.help`),
+                helpUrl: 'https://www.w3.org/WAI/tutorials/images/',
+                tags: ['best-practice'],
+                nodes: [node],
+            });
+        });
+        return issues;
+    }
+    buildSelector(element) {
+        const parts = [];
+        let current = element;
+        while (current !== null && current.parentElement !== null) {
+            const tag = current.tagName.toLowerCase();
+            const siblings = Array.from(current.parentElement.children);
+            parts.unshift(`${tag}:nth-child(${siblings.indexOf(current) + 1})`);
+            current = current.parentElement;
+        }
+        return ['html', ...parts].join(' > ');
+    }
+}
+
+function matchHeadingText(text, index) {
+    const normalized = normalizeText(text);
+    if (normalized === '') {
+        return undefined;
+    }
+    const match = index.headings.find((heading) => normalizeText(heading.text) === normalized);
+    return match?.contentElementUid;
 }
 
 function matchTextAgainstKnownContent(text, index) {
@@ -498,11 +555,11 @@ function matchLink(anchor, index) {
     const ariaLabel = anchor.getAttribute('aria-label') ?? '';
     const textMatch = matchTextAgainstKnownContent(text, index) ?? matchTextAgainstKnownContent(ariaLabel, index);
     if (textMatch !== undefined) {
-        return { contentElementUid: textMatch, hasAltData: false };
+        return { contentElementUid: textMatch, hasAltData: false, altEqualsTitle: false };
     }
     const hrefMatch = matchHrefAgainstKnownLinks(anchor.getAttribute('href') ?? '', index);
     if (hrefMatch !== undefined) {
-        return { contentElementUid: hrefMatch, hasAltData: false };
+        return { contentElementUid: hrefMatch, hasAltData: false, altEqualsTitle: false };
     }
     const image = anchor.querySelector('img');
     return image !== null ? matchImageSource(image.getAttribute('src') ?? '', index) : undefined;
@@ -753,7 +810,13 @@ class ScanRunner {
             const scanEngine = engine === 'axe'
                 ? new AxeEngine(iframe, settings.axeJsUrl, contentFactsIndex)
                 : new HtmlCsEngine(iframe, settings.htmlcsJsUrl, contentFactsIndex);
-            return await scanEngine.run();
+            const result = await scanEngine.run();
+            const iframeDocument = iframe.contentDocument;
+            if (iframeDocument !== null) {
+                const ownIssues = new RedundantImageTitleCheck((key) => Typo3Backend.getLabel(key)).run(iframeDocument, contentFactsIndex);
+                result.violations = [...result.violations, ...ownIssues];
+            }
+            return result;
         }
         finally {
             iframe.remove();

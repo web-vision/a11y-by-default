@@ -27,7 +27,7 @@ final class ContentFactsService
     ) {}
 
     /**
-     * @return array<int, array{headings: list<array{text: string, level: int|null}>, links: list<array{text: string, href: string}>, images: list<array{hasAltData: bool, matchers: list<string>}>, tables: list<array{cellTexts: list<string>}>}>
+     * @return array<int, array{headings: list<array{text: string, level: int|null}>, links: list<array{text: string, href: string}>, images: list<array{hasAltData: bool, altEqualsTitle: bool, matchers: list<string>}>, tables: list<array{cellTexts: list<string>}>}>
      */
     public function getContentFacts(int $pageUid): array
     {
@@ -181,7 +181,7 @@ final class ContentFactsService
 
     /**
      * @param list<int> $contentUids
-     * @return array<int, list<array{hasAltData: bool, matchers: list<string>}>>
+     * @return array<int, list<array{hasAltData: bool, altEqualsTitle: bool, matchers: list<string>}>>
      */
     private function getImageFactsGroupedByContentElement(array $contentUids): array
     {
@@ -221,7 +221,7 @@ final class ContentFactsService
     }
 
     /**
-     * @return array{hasAltData: bool, matchers: list<string>}|null
+     * @return array{hasAltData: bool, altEqualsTitle: bool, matchers: list<string>}|null
      */
     private function buildImageFact(int $referenceUid): ?array
     {
@@ -233,8 +233,22 @@ final class ContentFactsService
 
         return [
             'hasAltData' => trim($fileReference->getAlternative()) !== '',
+            'altEqualsTitle' => $this->altEqualsTitle($fileReference->getAlternative(), $fileReference->getTitle()),
             'matchers' => $this->getFileMatchers($fileReference->getOriginalFile()),
         ];
+    }
+
+    private function altEqualsTitle(string $alternative, string $title): bool
+    {
+        $normalizedAlternative = $this->normalizeText($alternative);
+        $normalizedTitle = $this->normalizeText($title);
+
+        return $normalizedAlternative !== '' && $normalizedAlternative === $normalizedTitle;
+    }
+
+    private function normalizeText(string $text): string
+    {
+        return mb_strtolower(trim((string)preg_replace('/\s+/u', ' ', $text)));
     }
 
     /**

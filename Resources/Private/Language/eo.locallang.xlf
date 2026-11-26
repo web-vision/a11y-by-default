@@ -126,6 +126,22 @@
                 <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
                 <target>Ĉi tiu bildmapa areo ne estas ligita al redaktebla enhavo, aŭ ĝia alt-teksto estas agordita sed ne bildigita. Kontrolu la bildigon de la ŝablono (programista tasko).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.help">
+                <source>Image title must not repeat the alternative text</source>
+                <target>La bildotitolo ne rajtas ripeti la alternativan tekston</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.description">
+                <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
+                <target>Certigas, ke la atributo title de bildo aldonas informon anstataŭ ripeti ĝian alternativan tekston, kiun ekranlegiloj alie eble legus dufoje.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title">
+                <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
+                <target>La bildotitolo ripetas la alternativan tekston. En la bildaj agordoj de la enhavelemento, forigu la titolon aŭ ŝanĝu ĝin tiel, ke ĝi aldonu informon.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title.developer">
+                <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
+                <target>La montrata titolo ripetas la alt-tekston, kvankam la konservitaj valoroj diferencas aŭ la bildo ne estas ligita al redaktebla enhavo. Kontrolu, ĉu la ŝablono kopias la alt-tekston en la atributon title (tasko por programisto).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Redaktu la enhavelementon kaj ŝanĝu ĝian titolaranĝon, por ke titolniveloj ne transsaltu paŝon.</target>

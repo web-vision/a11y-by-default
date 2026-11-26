@@ -126,6 +126,22 @@
                 <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
                 <target>Dieser Bereich der Image-Map ist nicht mit bearbeitbarem Inhalt verknüpft, oder der Alt-Text ist gesetzt, wird aber nicht ausgegeben. Prüfen Sie die Ausgabe im Template (Entwickleraufgabe).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.help">
+                <source>Image title must not repeat the alternative text</source>
+                <target>Bildtitel darf den Alternativtext nicht wiederholen</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.description">
+                <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
+                <target>Stellt sicher, dass das title-Attribut eines Bildes zusätzliche Information liefert, statt den Alternativtext zu wiederholen, den Screenreader sonst doppelt vorlesen können.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title">
+                <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
+                <target>Der Bildtitel wiederholt den Alternativtext. Entfernen Sie in den Bildeinstellungen des Inhaltselements den Titel oder ändern Sie ihn so, dass er zusätzliche Information liefert.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title.developer">
+                <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
+                <target>Der ausgegebene Titel wiederholt den Alt-Text, obwohl die gespeicherten Werte sich unterscheiden oder das Bild keinem bearbeitbaren Inhalt zugeordnet ist. Prüfen Sie, ob das Template den Alt-Text in das title-Attribut kopiert (Aufgabe für die Entwicklung).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Bearbeiten Sie das Inhaltselement und ändern Sie das Überschriften-Layout so, dass die Überschriftenebenen keine Stufe überspringen.</target>

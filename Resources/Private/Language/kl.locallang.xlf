@@ -126,6 +126,22 @@
                 <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
                 <target>Assiliamut nunap assinganut immikkoortoq una aaqqissorneqarsinnaasumut imaluunniit allattukkanut attavigineqanngilaq, imaluunniit alt-allagaa aalajangersimavoq takutinneqarani. Naqinnersiutip takutinneri misissorniarlugu (ineriartortitsisumut suliassaq).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.help">
+                <source>Image title must not repeat the alternative text</source>
+                <target>Assersuutip titeqarnera alternativimik ataqatigiissinnaanngilaq</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.description">
+                <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
+                <target>Assersuutip title-attribuutiata alternativimik allaaseriffiannginnissaa ilisimatitsissuteqarluni ilanngussaqarnissaa qulakkeerpoq, screen reader-it ilisimatitsissutit tamaasa marluk takussaaqqissinnaallutik.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title">
+                <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
+                <target>Assersuutip titeqarnera alternativimik ataqatigiissitsivoq. Ilisimatitsissutip element-ia assersuutaanni titeqarnera aporfiginiarlugu imaluunniit ilisimatitsissuteqarluni ilanngussaqarluni allanngortitsiuk.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title.developer">
+                <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
+                <target>Titeq takuneqarsimasoq alt-tekstimik ataqatigiissitsivoq, kisiannili atorneqartut allanngorsimapput imaluunniit assersuutip ilisimatitsissutit allanngortinneqarsinnaasut ilaasinnaanngillat. Modelip alt-tekstimik title-attribuutimut kopiaasarnersoq misissuiuk (ilinniartitsisup suliaa).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Immikkoortoq aaqqissuilugu qullersaap immikkoortiviinilu allanngortilluutit, taavalu qullersaasa qutsanngortinneri kingullimmut apeqqutaannginniassammat.</target>

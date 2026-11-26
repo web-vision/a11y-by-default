@@ -126,6 +126,22 @@
                 <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
                 <target>Αυτή η περιοχή χάρτη εικόνας δεν συνδέεται με επεξεργάσιμο περιεχόμενο, ή το alt text έχει ορισθεί αλλά δεν αποδίδεται. Ελέγξτε την απόδοση στο πρότυπο (εργασία προγραμματιστή).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.help">
+                <source>Image title must not repeat the alternative text</source>
+                <target>Ο τίτλος της εικόνας δεν πρέπει να επαναλαμβάνει το εναλλακτικό κείμενο</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.description">
+                <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
+                <target>Διασφαλίζει ότι το χαρακτηριστικό title μιας εικόνας προσθέτει πληροφορία αντί να επαναλαμβάνει το εναλλακτικό κείμενό της, το οποίο τα προγράμματα ανάγνωσης οθόνης ενδέχεται να ανακοινώνουν δύο φορές.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title">
+                <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
+                <target>Ο τίτλος της εικόνας επαναλαμβάνει το εναλλακτικό κείμενο. Στις ρυθμίσεις της εικόνας του στοιχείου περιεχομένου, αφαιρέστε τον τίτλο ή αλλάξτε τον ώστε να προσθέτει πληροφορία.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title.developer">
+                <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
+                <target>Ο εμφανιζόμενος τίτλος επαναλαμβάνει το κείμενο alt, παρότι οι αποθηκευμένες τιμές διαφέρουν ή η εικόνα δεν είναι συνδεδεμένη με επεξεργάσιμο περιεχόμενο. Ελέγξτε αν το πρότυπο αντιγράφει το κείμενο alt στο χαρακτηριστικό title (εργασία για τον προγραμματιστή).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Επεξεργαστείτε το στοιχείο περιεχομένου και αλλάξτε τη διάταξη επικεφαλίδας ώστε τα επίπεδα επικεφαλίδων να μην παραλείπουν βήμα.</target>

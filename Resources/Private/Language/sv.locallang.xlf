@@ -126,6 +126,22 @@
                 <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
                 <target>Detta bildkarteområde är inte kopplat till redigerbart innehåll, eller dess alt-text är angiven men renderas inte. Kontrollera mallens rendering (utvecklaruppgift).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.help">
+                <source>Image title must not repeat the alternative text</source>
+                <target>Bildtiteln får inte upprepa alternativtexten</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.description">
+                <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
+                <target>Säkerställer att bildens title-attribut tillför information i stället för att upprepa alternativtexten, som skärmläsare annars kan läsa upp två gånger.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title">
+                <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
+                <target>Bildtiteln upprepar alternativtexten. Ta bort titeln i bildinställningarna för innehållselementet, eller ändra den så att den tillför information.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title.developer">
+                <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
+                <target>Den renderade titeln upprepar alt-texten, även om de lagrade värdena skiljer sig åt eller bilden inte är kopplad till redigerbart innehåll. Kontrollera om mallen kopierar alt-texten till title-attributet (utvecklaruppgift).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Redigera innehållselementet och ändra dess rubriklayout så att rubriknivåerna inte hoppar över ett steg.</target>

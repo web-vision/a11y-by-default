@@ -15,27 +15,29 @@ describe('matchLink', () => {
   it('matches by the anchor own visible text against known heading text', () => {
     const el = anchor('Tset');
     const index = makeIndex({ headings: [{ text: 'Tset', contentElementUid: 51 }] });
-    expect(matchLink(el, index)).toEqual({ contentElementUid: 51, hasAltData: false });
+    expect(matchLink(el, index)).toEqual({ contentElementUid: 51, hasAltData: false, altEqualsTitle: false });
   });
 
   it('matches by aria-label against known link text', () => {
     const el = anchor('');
     el.setAttribute('aria-label', 'Read more');
     const index = makeIndex({ links: [{ text: 'Read more', href: '/camino', contentElementUid: 52 }] });
-    expect(matchLink(el, index)).toEqual({ contentElementUid: 52, hasAltData: false });
+    expect(matchLink(el, index)).toEqual({ contentElementUid: 52, hasAltData: false, altEqualsTitle: false });
   });
 
   it('matches by href against a known link', () => {
     const el = anchor('');
     el.setAttribute('href', '/camino');
     const index = makeIndex({ links: [{ text: 'Read more', href: '/camino', contentElementUid: 52 }] });
-    expect(matchLink(el, index)).toEqual({ contentElementUid: 52, hasAltData: false });
+    expect(matchLink(el, index)).toEqual({ contentElementUid: 52, hasAltData: false, altEqualsTitle: false });
   });
 
   it('delegates to image matching when the anchor wraps an img', () => {
     const el = anchor('<img src="/fileadmin/photo.webp">');
-    const index = makeIndex({ images: [{ hasAltData: true, matchers: ['photo.webp'], contentElementUid: 38 }] });
-    expect(matchLink(el, index)).toEqual({ contentElementUid: 38, hasAltData: true });
+    const index = makeIndex({
+      images: [{ hasAltData: true, altEqualsTitle: false, matchers: ['photo.webp'], contentElementUid: 38 }],
+    });
+    expect(matchLink(el, index)).toEqual({ contentElementUid: 38, hasAltData: true, altEqualsTitle: false });
   });
 
   it('returns undefined when nothing correlates (e.g. a template-rendered logo link)', () => {

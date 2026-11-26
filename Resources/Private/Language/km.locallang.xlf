@@ -126,6 +126,22 @@
                 <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
                 <target>តំបន់ image map នេះមិនបានភ្ជាប់ជាមួយមាតិកាដែលអាចកែសម្រួលបានទេ ឬអត្ថបទ alt របស់វាត្រូវបានកំណត់ប៉ុន្តែមិនត្រូវបានបង្ហាញ។ សូមពិនិត្យការបង្ហាញរបស់ template (ភារកិច្ចអ្នកអភិវឌ្ឍន៍)។</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.help">
+                <source>Image title must not repeat the alternative text</source>
+                <target>ចំណងជើងរូបភាពមិនគួរធ្វើម្តងទៀតនូវអត្ថបទជំនួសទេ</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.description">
+                <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
+                <target>ធានាថាគុណលក្ខណៈ title នៃរូបភាពបន្ថែមព័ត៌មាន ជំនួសឱ្យការធ្វើម្តងទៀតនូវអត្ថបទជំនួសរបស់វា ដែលកម្មវិធីអានអេក្រង់អាចអានពីរដង។</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title">
+                <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
+                <target>ចំណងជើងរូបភាពធ្វើម្តងទៀតនូវអត្ថបទជំនួស។ នៅក្នុងការកំណត់រូបភាពនៃធាតុមាតិកា សូមលុបចំណងជើង ឬផ្លាស់ប្តូរវាឱ្យបន្ថែមព័ត៌មាន។</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title.developer">
+                <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
+                <target>ចំណងជើងដែលបង្ហាញធ្វើម្តងទៀតនូវអត្ថបទ alt ទោះបីតម្លៃដែលរក្សាទុកខុសគ្នា ឬរូបភាពមិនភ្ជាប់ជាមួយមាតិកាដែលកែសម្រួលបាន។ ពិនិត្យថាតើគំរូចម្លងអត្ថបទ alt ទៅគុណលក្ខណៈ title ឬអត់ (កិច្ចការអ្នកអភិវឌ្ឍ)។</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>កែសម្រួលធាតុមាតិកា និងផ្លាស់ប្តូររបស់ Header Layout របស់វា ដើម្បីកុំឲ្យកម្រិតក្បាលអត្ថបទលោតជំហាន។</target>

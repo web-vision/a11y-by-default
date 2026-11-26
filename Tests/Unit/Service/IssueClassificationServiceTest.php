@@ -95,11 +95,11 @@ final class IssueClassificationServiceTest extends UnitTestCase
     }
 
     #[Test]
-    public function getClassificationRulesReturnsExactlySeventeenRules(): void
+    public function getClassificationRulesReturnsExactlyEighteenRules(): void
     {
         $rules = $this->subject->getClassificationRules();
 
-        $this->assertCount(17, $rules);
+        $this->assertCount(18, $rules);
     }
 
     #[Test]

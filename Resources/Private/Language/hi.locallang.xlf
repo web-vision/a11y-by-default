@@ -126,6 +126,22 @@
                 <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
                 <target>यह इमेज मैप क्षेत्र संपादन योग्य सामग्री से जुड़ा नहीं है, या इसका alt टेक्स्ट सेट है लेकिन प्रदर्शित नहीं हो रहा। टेम्पलेट की रेंडरिंग की जाँच करें (डेवलपर कार्य)।</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.help">
+                <source>Image title must not repeat the alternative text</source>
+                <target>छवि का शीर्षक वैकल्पिक पाठ को दोहराना नहीं चाहिए</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.description">
+                <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
+                <target>सुनिश्चित करता है कि छवि की title विशेषता वैकल्पिक पाठ को दोहराने के बजाय जानकारी जोड़ती है, जिसे स्क्रीन रीडर अन्यथा दो बार पढ़ सकते हैं।</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title">
+                <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
+                <target>छवि का शीर्षक वैकल्पिक पाठ को दोहराता है। सामग्री तत्व की छवि सेटिंग्स में शीर्षक हटाएँ या उसे इस तरह बदलें कि वह जानकारी जोड़े।</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title.developer">
+                <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
+                <target>प्रदर्शित शीर्षक alt पाठ को दोहराता है, भले ही संग्रहीत मान अलग हों या छवि किसी संपादन योग्य सामग्री से जुड़ी न हो। जाँचें कि क्या टेम्पलेट alt पाठ को title विशेषता में कॉपी करता है (डेवलपर कार्य)।</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>कंटेंट एलिमेंट को संपादित करें और उसका हेडर लेआउट बदलें ताकि हेडिंग स्तर कोई चरण न छोड़ें।</target>

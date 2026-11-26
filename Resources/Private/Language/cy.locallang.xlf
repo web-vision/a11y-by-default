@@ -126,6 +126,22 @@
                 <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
                 <target>Nid yw ardal map y ddelwedd hon yn gysylltiedig â chynnwys golygadwy, neu mae ei thestun alt wedi'i osod ond heb ei rendro. Gwiriwch rendro'r templed (tasg ddatblygwr).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.help">
+                <source>Image title must not repeat the alternative text</source>
+                <target>Ni chaiff teitl y ddelwedd ailadrodd y testun amgen</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.description">
+                <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
+                <target>Yn sicrhau bod priodoledd title delwedd yn ychwanegu gwybodaeth yn hytrach nag ailadrodd ei thestun amgen, a allai gael ei ddarllen ddwywaith gan ddarllenwyr sgrin.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title">
+                <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
+                <target>Mae teitl y ddelwedd yn ailadrodd y testun amgen. Yng ngosodiadau'r ddelwedd yn yr elfen gynnwys, dilewch y teitl neu newidiwch ef fel ei fod yn ychwanegu gwybodaeth.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title.developer">
+                <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
+                <target>Mae'r teitl a ddangosir yn ailadrodd y testun amgen (alt), er bod y gwerthoedd a gadwyd yn wahanol neu nad yw'r ddelwedd wedi'i chysylltu â chynnwys y gellir ei olygu. Gwiriwch a yw'r templed yn copïo'r testun amgen i'r priodoledd title (tasg datblygwr).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Golygwch yr elfen gynnwys a newidiwch ei Chynllun Pennawd fel nad yw lefelau'r penawdau yn sgipio cam.</target>

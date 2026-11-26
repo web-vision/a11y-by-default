@@ -126,6 +126,22 @@
                 <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
                 <target>Esta área do mapa de imaxe non está ligada a contido editable, ou o seu texto alternativo está definido pero non se renderiza. Comprobe a renderización do modelo (tarefa de desenvolvemento).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.help">
+                <source>Image title must not repeat the alternative text</source>
+                <target>O título da imaxe non debe repetir o texto alternativo</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.description">
+                <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
+                <target>Garante que o atributo title dunha imaxe engada información en lugar de repetir o seu texto alternativo, que os lectores de pantalla poderían ler dúas veces.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title">
+                <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
+                <target>O título da imaxe repite o texto alternativo. Na configuración da imaxe do elemento de contido, elimine o título ou cámbiao para que engada información.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title.developer">
+                <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
+                <target>O título renderizado repite o texto alternativo (alt), aínda que os valores almacenados difiren ou a imaxe non está ligada a contido editable. Comprobe se a modelo copia o texto alternativo no atributo title (tarefa de desenvolvemento).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Edite o elemento de contido e cambie o seu deseño de cabeceira para que os niveis de título non salten un paso.</target>

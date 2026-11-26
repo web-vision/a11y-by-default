@@ -126,6 +126,22 @@
                 <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
                 <target>Šis attēla kartes apgabals nav saistīts ar redigējamu saturu, vai tā alt teksts ir iestatīts, bet netiek atveidots. Pārbaudiet veidnes atveidošanu (izstrādātāja uzdevums).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.help">
+                <source>Image title must not repeat the alternative text</source>
+                <target>Attēla nosaukums nedrīkst atkārtot alternatīvo tekstu</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.description">
+                <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
+                <target>Nodrošina, ka attēla title atribūts pievieno informāciju, nevis atkārto tā alternatīvo tekstu, ko ekrāna lasītāji var nolasīt divreiz.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title">
+                <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
+                <target>Attēla nosaukums atkārto alternatīvo tekstu. Satura elementa attēla iestatījumos noņemiet nosaukumu vai mainiet to tā, lai tas pievienotu informāciju.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title.developer">
+                <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
+                <target>Attēlotais nosaukums atkārto alt tekstu, lai gan saglabātās vērtības atšķiras vai attēls nav saistīts ar rediģējamu saturu. Pārbaudiet, vai veidne kopē alt tekstu title atribūtā (izstrādātāja uzdevums).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Redigējiet satura elementu un mainiet tā virsraksta izkārtojumu, lai virsrakstu līmeņi nepārlaistu soli.</target>

@@ -1,3 +1,5 @@
+import { Typo3Backend } from '../backend/Typo3Backend';
+import { RedundantImageTitleCheck } from '../checks/RedundantImageTitleCheck';
 import { buildContentFactsIndex } from '../ContentFacts';
 import { AxeEngine } from '../engines/AxeEngine';
 import { HtmlCsEngine } from '../engines/HtmlCsEngine';
@@ -23,7 +25,17 @@ export class ScanRunner {
           ? new AxeEngine(iframe, settings.axeJsUrl, contentFactsIndex)
           : new HtmlCsEngine(iframe, settings.htmlcsJsUrl, contentFactsIndex);
 
-      return await scanEngine.run();
+      const result = await scanEngine.run();
+      const iframeDocument = iframe.contentDocument;
+      if (iframeDocument !== null) {
+        const ownIssues = new RedundantImageTitleCheck((key) => Typo3Backend.getLabel(key)).run(
+          iframeDocument,
+          contentFactsIndex,
+        );
+        result.violations = [...result.violations, ...ownIssues];
+      }
+
+      return result;
     } finally {
       iframe.remove();
     }

@@ -126,6 +126,22 @@
                 <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
                 <target>Šis paveikslėlio žemėlapio srities elementas nesusietas su redaguojamu turiniu, arba jo alt tekstas nustatytas, bet nerodomas. Patikrinkite šablono atvaizdavimą (kūrėjo užduotis).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.help">
+                <source>Image title must not repeat the alternative text</source>
+                <target>Paveikslėlio pavadinimas negali kartoti alternatyvaus teksto</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.description">
+                <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
+                <target>Užtikrina, kad paveikslėlio title atributas pateiktų papildomos informacijos, o ne kartotų alternatyvų tekstą, kurį ekrano skaitytuvai gali perskaityti du kartus.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title">
+                <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
+                <target>Paveikslėlio pavadinimas kartoja alternatyvų tekstą. Turinio elemento paveikslėlio nustatymuose pašalinkite pavadinimą arba pakeiskite jį taip, kad jis pateiktų informacijos.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title.developer">
+                <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
+                <target>Rodomas pavadinimas kartoja alt tekstą, nors saugomos reikšmės skiriasi arba paveikslėlis nesusietas su redaguojamu turiniu. Patikrinkite, ar šablonas kopijuoja alt tekstą į title atributą (kūrėjo užduotis).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Redaguokite turinio elementą ir pakeiskite jo antraštės išdėstymą, kad antraščių lygiai nepraleistų žingsnio.</target>

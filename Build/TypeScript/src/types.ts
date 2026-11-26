@@ -35,6 +35,7 @@ export interface LinkFact {
 
 export interface ImageFact {
   hasAltData: boolean;
+  altEqualsTitle: boolean;
   matchers: string[];
 }
 

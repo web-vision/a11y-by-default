@@ -126,6 +126,22 @@
                 <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
                 <target>Această zonă a hărții imagine nu este legată de conținut editabil, sau textul alternativ este setat dar nu este afișat. Verificați modul de afișare din șablon (sarcină pentru dezvoltatori).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.help">
+                <source>Image title must not repeat the alternative text</source>
+                <target>Titlul imaginii nu trebuie să repete textul alternativ</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.description">
+                <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
+                <target>Asigură că atributul title al unei imagini adaugă informații în loc să repete textul alternativ, pe care cititoarele de ecran l-ar putea anunța de două ori.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title">
+                <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
+                <target>Titlul imaginii repetă textul alternativ. În setările imaginii din elementul de conținut, eliminați titlul sau modificați-l astfel încât să adauge informații.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title.developer">
+                <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
+                <target>Titlul afișat repetă textul alt, deși valorile stocate diferă sau imaginea nu este legată de conținut editabil. Verificați dacă șablonul copiază textul alt în atributul title (sarcină pentru dezvoltator).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Editați elementul de conținut și modificați aranjamentul antetului astfel încât nivelurile de titlu să nu sară o etapă.</target>

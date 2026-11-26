@@ -126,6 +126,22 @@
                 <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
                 <target>Эта область карты изображения не связана с редактируемым контентом, либо её альтернативный текст задан, но не отображается. Проверьте отображение в шаблоне (задача для разработчика).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.help">
+                <source>Image title must not repeat the alternative text</source>
+                <target>Заголовок изображения не должен повторять альтернативный текст</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.description">
+                <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
+                <target>Гарантирует, что атрибут title изображения добавляет информацию, а не повторяет альтернативный текст, который программы чтения с экрана могут озвучить дважды.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title">
+                <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
+                <target>Заголовок изображения повторяет альтернативный текст. В настройках изображения в элементе контента удалите заголовок или измените его так, чтобы он добавлял информацию.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title.developer">
+                <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
+                <target>Выводимый заголовок повторяет alt-текст, хотя сохранённые значения различаются или изображение не связано с редактируемым контентом. Проверьте, не копирует ли шаблон alt-текст в атрибут title (задача для разработчика).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Отредактируйте контент-элемент и измените его макет заголовка, чтобы уровни заголовков не пропускали шаг.</target>

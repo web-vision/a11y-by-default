@@ -126,6 +126,22 @@
                 <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
                 <target>Оваа област од сликовната мапа не е поврзана со содржина која може да се уредува, или нејзиниот alt текст е поставен, но не се прикажува. Проверете го прикажувањето во шаблонот (задача за развивачи).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.help">
+                <source>Image title must not repeat the alternative text</source>
+                <target>Насловот на сликата не смее да го повторува алтернативниот текст</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.description">
+                <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
+                <target>Осигурува дека атрибутот title на сликата додава информација наместо да го повторува нејзиниот алтернативен текст, кој читачите на екран би можеле да го прочитаат двапати.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title">
+                <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
+                <target>Насловот на сликата го повторува алтернативниот текст. Во поставките на сликата на содржинскиот елемент, отстранете го насловот или променете го така што ќе додава информација.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title.developer">
+                <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
+                <target>Прикажаниот наслов го повторува alt текстот, иако зачуваните вредности се разликуваат или сликата не е поврзана со содржина што може да се уредува. Проверете дали шаблонот го копира alt текстот во атрибутот title (задача за развивачот).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Уредете го содржинскиот елемент и промените го распоредот на заглавието така што нивоата на наслови нема да прескокнуваат чекор.</target>

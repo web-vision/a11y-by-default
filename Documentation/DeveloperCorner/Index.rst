@@ -36,6 +36,15 @@ added by ``fluid_styled_content``. It is derived from the actual database
 content, so classification keeps working with custom or third-party content
 rendering.
 
+The repeated image title check (``a11y-redundant-img-title``) is part of the
+extension itself rather than of a scanning engine. It runs on the rendered
+preview after the selected engine has finished and compares ``alt`` and
+``title`` of every ``img`` element. The rendered image is matched to its
+content element through the file name, and ``ContentFactsService`` reports
+whether the stored alternative text and title of that file reference are
+identical. See :ref:`users-manual-redundant-image-title` for what this means
+for the classification and for the limitations.
+
 .. _developer-corner-access:
 
 Developer Corner access gate

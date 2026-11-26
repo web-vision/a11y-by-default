@@ -126,6 +126,22 @@
                 <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
                 <target>Vùng bản đồ hình ảnh này không được liên kết với nội dung có thể chỉnh sửa, hoặc văn bản thay thế alt đã được đặt nhưng không được hiển thị. Kiểm tra cách hiển thị của template (nhiệm vụ của nhà phát triển).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.help">
+                <source>Image title must not repeat the alternative text</source>
+                <target>Tiêu đề hình ảnh không được lặp lại văn bản thay thế</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.description">
+                <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
+                <target>Đảm bảo thuộc tính title của hình ảnh bổ sung thông tin thay vì lặp lại văn bản thay thế, vốn có thể bị trình đọc màn hình đọc hai lần.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title">
+                <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
+                <target>Tiêu đề hình ảnh lặp lại văn bản thay thế. Trong cài đặt hình ảnh của phần tử nội dung, hãy xóa tiêu đề hoặc thay đổi để tiêu đề bổ sung thông tin.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title.developer">
+                <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
+                <target>Tiêu đề hiển thị lặp lại văn bản alt, mặc dù các giá trị đã lưu khác nhau hoặc hình ảnh không liên kết với nội dung có thể chỉnh sửa. Kiểm tra xem mẫu có sao chép văn bản alt vào thuộc tính title hay không (công việc của nhà phát triển).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Chỉnh sửa phần tử nội dung và thay đổi Kiểu tiêu đề (Header Layout) để các cấp độ tiêu đề không bị nhảy bậc.</target>

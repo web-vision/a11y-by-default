@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace WebVision\A11yByDefault\Tests\Functional\Service;
 
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
 use TYPO3\CMS\Core\Core\Environment;
 use TYPO3\TestingFramework\Core\Functional\FunctionalTestCase;
@@ -20,6 +21,18 @@ final class ContentFactsServiceTest extends FunctionalTestCase
         // file's content, so the referenced files must physically exist in the test instance's fileadmin/.
         file_put_contents(Environment::getPublicPath() . '/fileadmin/photo.webp', 'stub-image-content');
         file_put_contents(Environment::getPublicPath() . '/fileadmin/photo-with-alt.webp', 'stub-image-content');
+        foreach (
+            [
+                'title-metadata-identical',
+                'title-reference-override',
+                'title-differing',
+                'title-case-whitespace',
+                'title-empty',
+                'alt-empty',
+            ] as $name
+        ) {
+            file_put_contents(Environment::getPublicPath() . '/fileadmin/' . $name . '.webp', 'stub-image-content');
+        }
     }
 
     #[Test]
@@ -118,9 +131,58 @@ final class ContentFactsServiceTest extends FunctionalTestCase
         $this->assertContains('csm_photo_e169eb3b6d.webp', $image['matchers']);
     }
 
+    #[Test]
+    #[DataProvider('altEqualsTitleDataProvider')]
+    public function getContentFactsReportsWhetherAltAndTitleAreEqual(
+        int $contentUid,
+        string $fileName,
+        bool $expected
+    ): void {
+        $this->importCSVDataSet(__DIR__ . '/../Fixtures/content_facts_image_titles.csv');
+
+        $facts = $this->get(ContentFactsService::class)->getContentFacts(1);
+        $image = $this->findImageByMatcher($facts[$contentUid]['images'], $fileName);
+
+        $this->assertSame($expected, $image['altEqualsTitle']);
+    }
+
+    public static function altEqualsTitleDataProvider(): \Generator
+    {
+        yield 'identical alt and title from metadata' => [
+            'contentUid' => 71,
+            'fileName' => 'title-metadata-identical.webp',
+            'expected' => true,
+        ];
+        yield 'identical alt and title via reference override' => [
+            'contentUid' => 72,
+            'fileName' => 'title-reference-override.webp',
+            'expected' => true,
+        ];
+        yield 'differing alt and title' => [
+            'contentUid' => 73,
+            'fileName' => 'title-differing.webp',
+            'expected' => false,
+        ];
+        yield 'case and whitespace only difference' => [
+            'contentUid' => 74,
+            'fileName' => 'title-case-whitespace.webp',
+            'expected' => true,
+        ];
+        yield 'empty title' => [
+            'contentUid' => 75,
+            'fileName' => 'title-empty.webp',
+            'expected' => false,
+        ];
+        yield 'empty alt' => [
+            'contentUid' => 76,
+            'fileName' => 'alt-empty.webp',
+            'expected' => false,
+        ];
+    }
+
     /**
-     * @param list<array{hasAltData: bool, matchers: list<string>}> $images
-     * @return array{hasAltData: bool, matchers: list<string>}
+     * @param list<array{hasAltData: bool, altEqualsTitle: bool, matchers: list<string>}> $images
+     * @return array{hasAltData: bool, altEqualsTitle: bool, matchers: list<string>}
      */
     private function findImageByMatcher(array $images, string $matcher): array
     {

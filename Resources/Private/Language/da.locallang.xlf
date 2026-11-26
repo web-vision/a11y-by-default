@@ -126,6 +126,22 @@
                 <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
                 <target>Dette billedkortområde er ikke knyttet til redigerbart indhold, eller dets alt-tekst er angivet, men bliver ikke vist. Tjek skabelonens visning (udvikleropgave).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.help">
+                <source>Image title must not repeat the alternative text</source>
+                <target>Billedtitlen må ikke gentage alternativteksten</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.description">
+                <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
+                <target>Sikrer, at billedets title-attribut tilføjer information i stedet for at gentage dets alternativtekst, som skærmlæsere ellers kan læse op to gange.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title">
+                <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
+                <target>Billedtitlen gentager alternativteksten. Fjern titlen i billedindstillingerne for indholdselementet, eller ændr den, så den tilføjer information.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title.developer">
+                <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
+                <target>Den viste titel gentager alt-teksten, selvom de gemte værdier er forskellige, eller billedet ikke er knyttet til redigerbart indhold. Kontrollér, om skabelonen kopierer alt-teksten til title-attributten (udvikleropgave).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Rediger indholdselementet, og ændr dets overskriftslayout, så overskriftsniveauerne ikke springer et niveau over.</target>

@@ -126,6 +126,22 @@
                 <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
                 <target>ეს სურათის რუკის არეალი არ არის დაკავშირებული რედაქტირებად კონტენტთან, ან მისი alt ტექსტი დაყენებულია, მაგრამ არ ჩნდება. შეამოწმეთ შაბლონის რენდერირება (დეველოპერული ამოცანა).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.help">
+                <source>Image title must not repeat the alternative text</source>
+                <target>სურათის სათაური არ უნდა იმეორებდეს ალტერნატიულ ტექსტს</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.description">
+                <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
+                <target>უზრუნველყოფს, რომ სურათის title ატრიბუტი ინფორმაციას ამატებს და არ იმეორებს ალტერნატიულ ტექსტს, რომელსაც ეკრანის მკითხველები შეიძლება ორჯერ წაიკითხონ.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title">
+                <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
+                <target>სურათის სათაური იმეორებს ალტერნატიულ ტექსტს. კონტენტის ელემენტის სურათის პარამეტრებში წაშალეთ სათაური ან შეცვალეთ ისე, რომ ინფორმაცია დაამატოს.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title.developer">
+                <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
+                <target>ნაჩვენები სათაური იმეორებს alt ტექსტს, მიუხედავად იმისა, რომ შენახული მნიშვნელობები განსხვავდება ან სურათი არ არის დაკავშირებული რედაქტირებად კონტენტთან. შეამოწმეთ, აკოპირებს თუ არა შაბლონი alt ტექსტს title ატრიბუტში (დეველოპერის ამოცანა).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>დაარედაქტირეთ კონტენტ-ელემენტი და შეცვალეთ მისი სათაურის განლაგება ისე, რომ სათაურების დონეები ნაბიჯს არ გამოტოვონ.</target>

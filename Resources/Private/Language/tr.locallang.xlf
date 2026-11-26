@@ -126,6 +126,22 @@
                 <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
                 <target>Bu görsel harita alanı düzenlenebilir içeriğe bağlı değil veya alt metni ayarlanmış ancak görüntülenmiyor. Şablonun oluşturma işlemini kontrol edin (geliştirici görevi).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.help">
+                <source>Image title must not repeat the alternative text</source>
+                <target>Görsel başlığı alternatif metni tekrarlamamalıdır</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.description">
+                <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
+                <target>Bir görselin title özniteliğinin, ekran okuyucuların iki kez okuyabileceği alternatif metni tekrarlamak yerine bilgi eklemesini sağlar.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title">
+                <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
+                <target>Görsel başlığı alternatif metni tekrarlıyor. İçerik öğesinin görsel ayarlarında başlığı kaldırın veya bilgi ekleyecek şekilde değiştirin.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title.developer">
+                <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
+                <target>Gösterilen başlık, kayıtlı değerler farklı olsa veya görsel düzenlenebilir içeriğe bağlı olmasa da alt metni tekrarlıyor. Şablonun alt metni title özniteliğine kopyalayıp kopyalamadığını kontrol edin (geliştirici görevi).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>İçerik öğesini düzenleyin ve başlık düzeylerinin bir adım atlamaması için Başlık Düzenini değiştirin.</target>

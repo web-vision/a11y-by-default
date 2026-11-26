@@ -126,6 +126,22 @@
                 <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
                 <target>Chan eil raon mapa ìomhaigh seo ceangailte ri susbaint a ghabhas deasachadh, no tha an teacsa alt aige air a shuidheachadh ach chan eil e air a thoirt gu buil. Sgrùd toirt gu buil an teamplaid (obair luchd-leasachaidh).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.help">
+                <source>Image title must not repeat the alternative text</source>
+                <target>Chan fhaod tiotal an dealbh an teacsa malairteach ath-aithris</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.description">
+                <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
+                <target>A' dèanamh cinnteach gu bheil an togalach title dhan dealbh a' cur fiosrachaidh ris an àite a bhith ag ath-aithris a theacsa malairteach, a dh'fhaodadh luchd-leughaidh sgrìn a leughadh dà thuras.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title">
+                <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
+                <target>Tha tiotal an dealbh ag ath-aithris an teacsa malairteach. Ann an roghainnean an dealbh san eileamaid susbaint, thoir air falbh an tiotal no atharraich e gus am bi fiosrachadh a' cur ris.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title.developer">
+                <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
+                <target>Tha an tiotal a thèid a shealltainn ag ath-aithris an teacsa alt, ged a tha na luachan a chaidh a stòradh eadar-dhealaichte no nach eil an dealbh ceangailte ri susbaint ath-dheasachail. Thoir sùil an dèan an teamplaid lethbhreac dhen teacsa alt dhan togalach title (obair luchd-leasachaidh).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Deasaich eileamaid na susbaint agus atharraich a Cho-dhealbhachd Bann-cinn ionns nach gearr ìrean nam bann-cinn ceum sam bith às.</target>

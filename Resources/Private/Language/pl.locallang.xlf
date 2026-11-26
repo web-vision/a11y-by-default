@@ -126,6 +126,22 @@
                 <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
                 <target>Ten obszar mapy obrazkowej nie jest powiązany z edytowalną treścią, lub jego tekst alternatywny jest ustawiony, ale nie jest renderowany. Sprawdź renderowanie w szablonie (zadanie dla programisty).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.help">
+                <source>Image title must not repeat the alternative text</source>
+                <target>Tytuł obrazu nie może powtarzać tekstu alternatywnego</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.description">
+                <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
+                <target>Zapewnia, że atrybut title obrazu dodaje informacje zamiast powtarzać jego tekst alternatywny, który czytniki ekranu mogą odczytać dwukrotnie.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title">
+                <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
+                <target>Tytuł obrazu powtarza tekst alternatywny. W ustawieniach obrazu elementu treści usuń tytuł lub zmień go tak, aby dodawał informacje.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title.developer">
+                <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
+                <target>Wyświetlany tytuł powtarza tekst alt, mimo że zapisane wartości się różnią lub obraz nie jest powiązany z edytowalną treścią. Sprawdź, czy szablon kopiuje tekst alt do atrybutu title (zadanie dla programisty).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Edytuj element treści i zmień jego układ nagłówka, aby poziomy nagłówków nie pomijały żadnego stopnia.</target>

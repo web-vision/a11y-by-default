@@ -126,6 +126,22 @@
                 <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
                 <target>Тази област от картата на изображението не е свързана с редактируемо съдържание или alt текстът й е зададен, но не се показва. Проверете визуализацията на шаблона (задача за разработчик).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.help">
+                <source>Image title must not repeat the alternative text</source>
+                <target>Заглавието на изображението не трябва да повтаря алтернативния текст</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.description">
+                <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
+                <target>Гарантира, че атрибутът title на изображението добавя информация, вместо да повтаря алтернативния му текст, който екранните четци може иначе да прочетат два пъти.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title">
+                <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
+                <target>Заглавието на изображението повтаря алтернативния текст. В настройките на изображението за съдържателния елемент премахнете заглавието или го променете така, че да добавя информация.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title.developer">
+                <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
+                <target>Показаното заглавие повтаря алтернативния текст (alt), въпреки че съхранените стойности се различават или изображението не е свързано с редактируемо съдържание. Проверете дали шаблонът копира алтернативния текст в атрибута title (задача за разработчика).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Редактирайте съдържателния елемент и променете оформлението на заглавието, така че нивата на заглавията да не пропускат стъпка.</target>

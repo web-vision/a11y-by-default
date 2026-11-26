@@ -126,6 +126,22 @@
                 <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
                 <target>Táto oblasť mapy obrázka nie je spojená s upraviteľným obsahom, alebo je jej alt text nastavený, ale nevykresľuje sa. Skontrolujte vykresľovanie v šablóne (úloha pre vývojára).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.help">
+                <source>Image title must not repeat the alternative text</source>
+                <target>Názov obrázka nesmie opakovať alternatívny text</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.description">
+                <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
+                <target>Zabezpečuje, aby atribút title obrázka pridával informáciu namiesto opakovania jeho alternatívneho textu, ktorý by ho čítačky obrazovky mohli prečítať dvakrát.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title">
+                <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
+                <target>Názov obrázka opakuje alternatívny text. V nastaveniach obrázka obsahového prvku názov odstráňte alebo ho upravte tak, aby pridával informáciu.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title.developer">
+                <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
+                <target>Zobrazený názov opakuje alt text, hoci uložené hodnoty sa líšia alebo obrázok nie je prepojený s upraviteľným obsahom. Skontrolujte, či šablóna kopíruje alt text do atribútu title (úloha pre vývojára).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Upravte obsahový element a zmeňte jeho rozloženie nadpisu tak, aby úrovne nadpisov nepreskakovali krok.</target>

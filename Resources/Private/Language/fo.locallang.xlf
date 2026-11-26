@@ -126,6 +126,22 @@
                 <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
                 <target>Hetta myndarkortsøkið er ikki knýtt at rættandi innihaldi, ella alt-teksturin er settur men ikki sjónligur. Kanna vísingina í sniðinum (uppgáva fyri menningarfólk).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.help">
+                <source>Image title must not repeat the alternative text</source>
+                <target>Myndartitilin má ikki endurtaka alternativa tekstin</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.description">
+                <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
+                <target>Tryggjar, at title-eigindin á myndini leggur upp dupultliga informatión í staðin fyri at endurtaka alternativa tekstin, sum skermlesarar annars kunnu lesa upp tvær ferðir.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title">
+                <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
+                <target>Myndartitilin endurtekur alternativa tekstin. Í myndastillingunum fyri innihaldsevnið skal tú fjarlaða titilin ella broyta hann, so hann leggur upp informatión.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title.developer">
+                <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
+                <target>Titilin, sum verður víst, endurtekur alt-tekstin, hóast goymdu virðirnir eru ymiskir ella myndin ikki er knýtt at rættbundnum innihaldi. Kanna, um mynstrið kopierar alt-tekstin í title-eigindina (ætlan til menningarfólk).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Rætta innihaldselementið og broyt yvirskriftaruppsetingin, so yvirskriftarstøður ikki sleppa eitt stig.</target>

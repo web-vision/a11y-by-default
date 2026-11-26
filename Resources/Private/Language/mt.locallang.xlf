@@ -126,6 +126,22 @@
                 <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
                 <target>Din iż-żona tal-mappa tal-immaġni mhix marbuta ma' kontenut editabbli, jew it-test alt tagħha huwa stabbilit iżda mhux rendrut. Iċċekkja r-rendering tat-template (xogħol tal-iżviluppatur).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.help">
+                <source>Image title must not repeat the alternative text</source>
+                <target>It-titolu tal-immaġini m'għandux jirrepeti t-test alternattiv</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.description">
+                <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
+                <target>Jiżgura li l-attribut title tal-immaġini jżid informazzjoni minflok jirrepeti t-test alternattiv tagħha, li qarrejja tal-iskrin jistgħu jaqraw darbtejn.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title">
+                <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
+                <target>It-titolu tal-immaġini jirrepeti t-test alternattiv. Fl-impostazzjonijiet tal-immaġini tal-element tal-kontenut, neħħi t-titolu jew ibdlu biex iżid informazzjoni.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title.developer">
+                <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
+                <target>It-titolu kif jidher jirrepeti t-test alt, għalkemm il-valuri maħżuna jvarjaw jew l-immaġini mhijiex marbuta ma' kontenut editabbli. Iċċekkja jekk it-template jikkopjax it-test alt fl-attribut title (kompitu għall-iżviluppatur).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Editja l-element tal-kontenut u biddel il-Layout tal-Intestatura tiegħu sabiex il-livelli tal-intestaturi ma jaqbżu ebda pass.</target>

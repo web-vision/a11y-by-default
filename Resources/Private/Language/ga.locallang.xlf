@@ -126,6 +126,22 @@
                 <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
                 <target>Níl an limistéar mapa íomhá seo nasctha le ábhar ineagarthóireachta, nó tá a téacs alt socraithe ach níl sé á rindreáil. Seiceáil rindreáil an teimpléid (tasc forbróra).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.help">
+                <source>Image title must not repeat the alternative text</source>
+                <target>Ní mór do theideal na híomhá an téacs malartach a sheachaint</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.description">
+                <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
+                <target>Cinntíonn sé go gcuireann an sainairí title na híomhá eolas leis in ionad a théacs malartach a athdhéanamh, rud a d'fhéadfadh léitheoirí scáileáin a léamh faoi dhó.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title">
+                <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
+                <target>Déanann teideal na híomhá an téacs malartach a athdhéanamh. I socruithe na híomhá den ábhar-eilimint, bain an teideal nó athraigh é ionas go gcuireann sé eolas leis.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title.developer">
+                <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
+                <target>Athdhéanann an teideal taispeánta an téacs alt, cé go bhfuil na luachanna stóráilte difriúil nó nach bhfuil an íomhá nasctha le hábhar in-athraithe. Seiceáil an ndéanann an teimpléad an téacs alt a chóipeáil isteach sa sainairí title (tasc forbróra).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Cuir an mhír ábhair in eagar agus athraigh a Leagan Amach Ceanntáisc ionas nach léimeann na leibhéil ceanntásca thar chéim.</target>

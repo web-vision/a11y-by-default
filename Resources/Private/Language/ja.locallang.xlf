@@ -126,6 +126,22 @@
                 <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
                 <target>このイメージマップ領域は編集可能なコンテンツにリンクされていない、またはalt テキストが設定されているものの出力されていません。テンプレートの出力処理を確認してください（開発者タスク）。</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.help">
+                <source>Image title must not repeat the alternative text</source>
+                <target>画像のタイトルは代替テキストを繰り返してはいけません</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.description">
+                <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
+                <target>画像の title 属性が、代替テキストを繰り返すのではなく情報を追加するようにします。繰り返しがあると、スクリーンリーダーが二度読み上げる可能性があります。</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title">
+                <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
+                <target>画像のタイトルが代替テキストを繰り返しています。コンテンツ要素の画像設定でタイトルを削除するか、情報が追加されるように変更してください。</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title.developer">
+                <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
+                <target>表示されたタイトルが alt テキストを繰り返していますが、保存された値が異なるか、画像が編集可能なコンテンツに紐付いていません。テンプレートが alt テキストを title 属性にコピーしていないか確認してください（開発タスク）。</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>コンテンツ要素を編集し、見出しレベルが飛ばないように見出しレイアウトを変更してください。</target>

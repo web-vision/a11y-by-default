@@ -126,6 +126,22 @@
                 <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
                 <target>Questa area della mappa immagine non è collegata a un contenuto modificabile, oppure il suo testo alternativo è impostato ma non viene visualizzato. Controlla il rendering del template (attività per sviluppatori).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.help">
+                <source>Image title must not repeat the alternative text</source>
+                <target>Il titolo dell'immagine non deve ripetere il testo alternativo</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.description">
+                <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
+                <target>Garantisce che l'attributo title di un'immagine aggiunga informazioni invece di ripetere il testo alternativo, che gli screen reader potrebbero leggere due volte.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title">
+                <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
+                <target>Il titolo dell'immagine ripete il testo alternativo. Nelle impostazioni dell'immagine dell'elemento di contenuto, rimuovete il titolo o modificatelo in modo che aggiunga informazioni.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title.developer">
+                <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
+                <target>Il titolo visualizzato ripete il testo alternativo (alt), anche se i valori memorizzati sono diversi o l'immagine non è collegata a contenuti modificabili. Verificate se il template copia il testo alternativo nell'attributo title (attività per lo sviluppatore).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Modifica l'elemento di contenuto e cambia il suo layout di intestazione affinché i livelli di intestazione non saltino un passaggio.</target>

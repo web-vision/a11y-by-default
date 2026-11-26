@@ -126,6 +126,22 @@
                 <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
                 <target>Aka gace k'ikarita y'ifoto ntikahuye n'ibikubiye bishobora guhindurwa, cyangwa alt text yako yashyizweho ariko ntigaragazwa. Suzuma uburyo icyitegererezo kigaragaza (umurimo w'umukora porogaramu).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.help">
+                <source>Image title must not repeat the alternative text</source>
+                <target>Umutwe w'ishusho ntugomba gusubiramo inyandiko isimbura</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.description">
+                <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
+                <target>Yemeza ko attribute ya title y'ishusho yongeramo amakuru aho gusubiramo inyandiko isimbura, abasoma ecran bashobora kuyisoma kabiri.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title">
+                <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
+                <target>Umutwe w'ishusho usubiramo inyandiko isimbura. Mu igenamiterere ry'ishusho ry'ikintu cy'ibirimo, kuraho umutwe cyangwa uwuhindure ku buryo wongeramo amakuru.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title.developer">
+                <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
+                <target>Umutwe werekanywe usubiramo inyandiko ya alt, nubwo agaciro kabitswe gatandukanye cyangwa ishusho itahujwe n'ibirimo bishobora guhindurwa. Reba niba template yandukura inyandiko ya alt mu attribute ya title (umurimo w'umuteza imbere).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Hindura igice cy'ibikubiye kandi uhindure Imiterere y'Umutwe kugira ngo urwego rw'imitwe rutasimbuka intambwe.</target>

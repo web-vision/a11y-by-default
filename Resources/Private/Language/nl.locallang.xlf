@@ -126,6 +126,22 @@
                 <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
                 <target>Dit image-map-gebied is niet gekoppeld aan bewerkbare content, of de alt-tekst is wel ingesteld maar wordt niet weergegeven. Controleer de weergave in het template (ontwikkelaarstaak).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.help">
+                <source>Image title must not repeat the alternative text</source>
+                <target>De afbeeldingstitel mag de alternatieve tekst niet herhalen</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.description">
+                <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
+                <target>Zorgt ervoor dat het title-attribuut van een afbeelding informatie toevoegt in plaats van de alternatieve tekst te herhalen, die schermlezers anders twee keer kunnen voorlezen.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title">
+                <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
+                <target>De afbeeldingstitel herhaalt de alternatieve tekst. Verwijder in de afbeeldingsinstellingen van het contentelement de titel of wijzig deze zodat er informatie aan wordt toegevoegd.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title.developer">
+                <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
+                <target>De weergegeven titel herhaalt de alt-tekst, hoewel de opgeslagen waarden verschillen of de afbeelding niet is gekoppeld aan bewerkbare inhoud. Controleer of de template de alt-tekst kopieert naar het title-attribuut (ontwikkeltaak).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Bewerk het content-element en wijzig de kopindeling zodat kopniveaus geen stap overslaan.</target>

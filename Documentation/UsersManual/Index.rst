@@ -110,7 +110,10 @@ technical details.
     (``image-alt``, ``input-image-alt``, ``area-alt``), non-descriptive link
     text (``link-name``), or a heading level that skips a step
     (``heading-order``), as long as the heading or link comes from a content
-    element rather than the page template.
+    element rather than the page template. An image title that repeats the
+    alternative text (``a11y-redundant-img-title``, see
+    :ref:`users-manual-redundant-image-title`) belongs here too when the
+    stored title and alternative text are identical.
 *   **Always developer-fixable:** missing page landmarks
     (``landmark-one-main``, ``region``), a missing skip-navigation link
     (``bypass``), missing or invalid ``lang`` attributes (``html-has-lang``,
@@ -120,6 +123,48 @@ technical details.
 This classification is shown for every finding regardless of your
 permissions; the optional Developer Corner, described next, only changes how
 many of the developer-fixable findings you get to see.
+
+.. _users-manual-redundant-image-title:
+
+Image title repeats the alternative text
+========================================
+
+Screen readers may read both the alternative text and the title of an image.
+When both say the same, the description is announced twice. The extension
+therefore reports every image whose title is identical to its alternative
+text as a **Minor** finding (``a11y-redundant-img-title``). Neither axe-core
+nor HTML CodeSniffer has such a rule, so this check runs with both engines,
+in the module and in the page module hint.
+
+To fix it, open the content element, go to the image settings and either
+remove the title or change it so it adds information that the alternative
+text does not contain.
+
+Good to know:
+
+*   Differences in upper and lower case and in spacing are ignored:
+    "Red bicycle" and " red  bicycle" count as identical.
+*   Only identical texts are reported. A title that contains the alternative
+    text plus more words is accepted.
+*   Images without alternative text are not reported here. They already
+    appear as a missing alternative text (``image-alt``).
+*   Each affected image is listed as a finding of its own, so every image
+    gets its own edit button.
+*   The finding goes to the editor when the title and alternative text stored
+    for the image in the content element (or, if empty there, in the file's
+    metadata) are identical. When the stored values differ but the page still
+    shows the same text twice, the template copies the alternative text into
+    the title, and the finding goes to the developer.
+*   Only images of content elements (``tt_content``) can be checked against
+    the stored values. Images from page properties, news records or other
+    records are always reported as a developer finding, as with missing
+    alternative text.
+*   Only the ``title`` attribute of the image itself is checked. A ``title``
+    on a link that surrounds the image is not compared.
+*   On translated pages, the stored values are read from all content
+    elements of the page regardless of their language. If the same image is
+    used with different texts in several languages, the attribution to
+    editor or developer can be wrong.
 
 .. _users-manual-developer-corner:
 

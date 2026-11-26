@@ -126,6 +126,22 @@
                 <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
                 <target>Þetta myndkortssvæði er ekki tengt breytanlegu efni, eða alt-texti þess er skilgreindur en ekki birtur. Athugaðu birtingu sniðmátsins (verkefni fyrir forritara).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.help">
+                <source>Image title must not repeat the alternative text</source>
+                <target>Titill myndar má ekki endurtaka textann til vara</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.description">
+                <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
+                <target>Tryggir að title-eigindi myndar bæti við upplýsingum í stað þess að endurtaka textann til vara, sem skjálesarar gætu annars lesið upp tvisvar.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title">
+                <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
+                <target>Titill myndarinnar endurtekur textann til vara. Í myndastillingum efniseiningarinnar skal fjarlægja titilinn eða breyta honum þannig að hann bæti við upplýsingum.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title.developer">
+                <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
+                <target>Birti titillinn endurtekur alt-textann, þótt geymdu gildin séu ólík eða myndin sé ekki tengd breytanlegu efni. Athugaðu hvort sniðmátið afritar alt-textann í title-eigindina (verkefni fyrir forritara).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Breyttu efnisstakinu og fyrirsagnaútliti þess svo fyrirsagnastig sleppi ekki þrepi.</target>

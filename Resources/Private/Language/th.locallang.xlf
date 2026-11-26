@@ -126,6 +126,22 @@
                 <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
                 <target>พื้นที่แผนที่ภาพนี้ไม่ได้เชื่อมโยงกับเนื้อหาที่แก้ไขได้ หรือมีการกำหนด alt text แล้วแต่ไม่ถูกแสดงผล กรุณาตรวจสอบการแสดงผลในเทมเพลต (งานของนักพัฒนา)</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.help">
+                <source>Image title must not repeat the alternative text</source>
+                <target>ชื่อรูปภาพต้องไม่ซ้ำกับข้อความทางเลือก</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.description">
+                <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
+                <target>ตรวจสอบให้แน่ใจว่าแอตทริบิวต์ title ของรูปภาพเพิ่มข้อมูล แทนที่จะซ้ำกับข้อความทางเลือก ซึ่งโปรแกรมอ่านหน้าจออาจอ่านออกเสียงสองครั้ง</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title">
+                <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
+                <target>ชื่อรูปภาพซ้ำกับข้อความทางเลือก ในการตั้งค่ารูปภาพของส่วนประกอบเนื้อหา ให้ลบชื่อออกหรือเปลี่ยนเพื่อให้เพิ่มข้อมูล</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title.developer">
+                <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
+                <target>ชื่อที่แสดงซ้ำกับข้อความ alt แม้ว่าค่าที่บันทึกไว้จะต่างกัน หรือรูปภาพไม่ได้เชื่อมโยงกับเนื้อหาที่แก้ไขได้ ตรวจสอบว่าเทมเพลตคัดลอกข้อความ alt ไปยังแอตทริบิวต์ title หรือไม่ (งานของนักพัฒนา)</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>แก้ไของค์ประกอบเนื้อหาและเปลี่ยนรูปแบบหัวเรื่องเพื่อไม่ให้ระดับหัวเรื่องข้ามลำดับ</target>

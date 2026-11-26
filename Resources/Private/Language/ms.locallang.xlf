@@ -126,6 +126,22 @@
                 <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
                 <target>Kawasan peta imej ini tidak dipautkan kepada kandungan yang boleh disunting, atau teks alt-nya ditetapkan tetapi tidak dipaparkan. Semak pemaparan dalam templat (tugasan pembangun).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.help">
+                <source>Image title must not repeat the alternative text</source>
+                <target>Tajuk imej tidak boleh mengulang teks alternatif</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.description">
+                <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
+                <target>Memastikan atribut title imej menambah maklumat dan bukannya mengulang teks alternatifnya, yang mungkin dibacakan dua kali oleh pembaca skrin.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title">
+                <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
+                <target>Tajuk imej mengulang teks alternatif. Dalam tetapan imej elemen kandungan, alih keluar tajuk atau ubah suainya supaya ia menambah maklumat.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title.developer">
+                <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
+                <target>Tajuk yang dipaparkan mengulang teks alt, walaupun nilai yang disimpan berbeza atau imej tidak dipautkan kepada kandungan yang boleh disunting. Semak sama ada templat menyalin teks alt ke atribut title (tugasan pembangun).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Sunting elemen kandungan dan ubah Susun Atur Pengepalanya supaya tahap tajuk tidak melangkau satu peringkat.</target>

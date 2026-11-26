@@ -126,6 +126,22 @@
                 <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
                 <target>Ova oblast mape slike nije povezana sa sadržajem koji se može uređivati, ili je alt tekst postavljen ali se ne prikazuje. Proverite prikaz u šablonu (zadatak za programera).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.help">
+                <source>Image title must not repeat the alternative text</source>
+                <target>Naslov slike ne sme da ponavlja alternativni tekst</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.description">
+                <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
+                <target>Obezbeđuje da atribut title slike dodaje informaciju umesto ponavljanja njenog alternativnog teksta, koji čitači ekrana inače mogu pročitati dvaput.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title">
+                <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
+                <target>Naslov slike ponavlja alternativni tekst. U podešavanjima slike sadržajnog elementa uklonite naslov ili ga izmenite tako da dodaje informaciju.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title.developer">
+                <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
+                <target>Prikazani naslov ponavlja alt tekst, iako se sačuvane vrednosti razlikuju ili slika nije povezana sa sadržajem koji se može uređivati. Proverite da li šablon kopira alt tekst u atribut title (zadatak za programera).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Izmenite element sadržaja i promenite raspored zaglavlja tako da nivoi naslova ne preskaču korak.</target>

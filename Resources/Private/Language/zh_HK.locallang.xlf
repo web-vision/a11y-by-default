@@ -126,6 +126,22 @@
                 <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
                 <target>呢個圖片地圖區域並無連結至可編輯內容，或者已設定 alt 文字但未有正確輸出。請檢查範本嘅輸出邏輯（開發人員任務）。</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.help">
+                <source>Image title must not repeat the alternative text</source>
+                <target>圖片標題不得重複替代文字</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.description">
+                <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
+                <target>確保圖片的 title 屬性提供額外資訊，而非重複其替代文字，否則螢幕閱讀器可能會朗讀兩次。</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title">
+                <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
+                <target>圖片標題重複了替代文字。請在內容元素的圖片設定中刪除標題，或將其修改為提供額外資訊。</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title.developer">
+                <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
+                <target>輸出的標題重複了 alt 文字，但儲存的值不同，或圖片未關聯至可編輯的內容。請檢查範本是否將 alt 文字複製到 title 屬性中（開發任務）。</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>請編輯該內容元素，調整其標題版面（Header Layout），確保標題層級唔會跳級。</target>

@@ -126,6 +126,22 @@
                 <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
                 <target>Cette zone d'image cliquable n'est pas liée à un contenu modifiable, ou son texte alternatif est défini mais non affiché. Vérifiez le rendu dans le template (tâche de développeur).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.help">
+                <source>Image title must not repeat the alternative text</source>
+                <target>Le titre de l'image ne doit pas répéter le texte alternatif</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.description">
+                <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
+                <target>Garantit que l'attribut title d'une image ajoute de l'information au lieu de répéter son texte alternatif, que les lecteurs d'écran pourraient annoncer deux fois.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title">
+                <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
+                <target>Le titre de l'image répète le texte alternatif. Dans les réglages de l'image de l'élément de contenu, supprimez le titre ou modifiez-le pour qu'il apporte de l'information.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title.developer">
+                <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
+                <target>Le titre affiché répète le texte alternatif (alt), bien que les valeurs enregistrées diffèrent ou que l'image ne soit pas liée à un contenu modifiable. Vérifiez si le modèle copie le texte alternatif dans l'attribut title (tâche de développement).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Modifiez l'élément de contenu et changez la mise en page du titre pour que les niveaux de titre ne sautent pas d'étape.</target>

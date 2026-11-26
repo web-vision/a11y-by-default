@@ -306,6 +306,28 @@ describe('runAutoScan', () => {
     expect(el?.querySelector('.text-bg-warning')).not.toBeNull();
   });
 
+  it('includes the redundant image title issue found in the preview document', async () => {
+    setupAppElement({ hasDeveloperCornerAccess: '1' });
+    const origAppend = Node.prototype.appendChild;
+    jest.spyOn(document.body, 'appendChild').mockImplementation(function (this: Node, node: Node): Node {
+      const result = origAppend.call(this, node);
+      if (node instanceof HTMLIFrameElement) {
+        Object.defineProperty(node, 'contentDocument', {
+          value: new DOMParser().parseFromString(
+            '<html><body><img src="a.jpg" alt="Cat" title="Cat"></body></html>',
+            'text/html',
+          ),
+        });
+        queueMicrotask(() => node.dispatchEvent(new Event('load')));
+      }
+      return result;
+    });
+    await runAutoScan();
+    const el = document.getElementById('a11y-page-summary-app');
+    expect(el?.querySelector('.callout-warning')).not.toBeNull();
+    expect(el?.textContent).toContain('1× minor');
+  });
+
   it('renders an error callout when the scan engine throws', async () => {
     setupAppElement();
     MockAxeEngine.mockImplementation(

@@ -126,6 +126,22 @@
                 <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
                 <target>Kjo zonë e mapës së imazhit nuk është e lidhur me përmbajtje të redaktueshme, ose teksti i saj alt është vendosur por nuk shfaqet. Kontrolloni shfaqjen e shabllonit (detyrë për zhvilluesin).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.help">
+                <source>Image title must not repeat the alternative text</source>
+                <target>Titulli i imazhit nuk duhet të përsërisë tekstin alternativ</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.description">
+                <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
+                <target>Siguron që atributi title i imazhit të shtojë informacion në vend që të përsërisë tekstin e tij alternativ, të cilin lexuesit e ekranit mund ta lexojnë dy herë.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title">
+                <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
+                <target>Titulli i imazhit përsërit tekstin alternativ. Te cilësimet e imazhit të elementit të përmbajtjes, hiqni titullin ose ndryshojeni që të shtojë informacion.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title.developer">
+                <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
+                <target>Titulli i shfaqur përsërit tekstin alt, edhe pse vlerat e ruajtura ndryshojnë ose imazhi nuk është i lidhur me përmbajtje të redaktueshme. Kontrolloni nëse shablloni kopjon tekstin alt te atributi title (detyrë për zhvilluesin).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Redaktoni elementin e përmbajtjes dhe ndryshoni Strukturën e Titullit të tij që nivelet e titujve të mos kërcejnë një hap.</target>

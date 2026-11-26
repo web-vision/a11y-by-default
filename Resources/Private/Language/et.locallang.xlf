@@ -126,6 +126,22 @@
                 <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
                 <target>See pildikaardi ala ei ole seotud muudetava sisuga või selle alt-tekst on määratud, kuid ei kuvata. Kontrollige malli kuvamist (arendaja ülesanne).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.help">
+                <source>Image title must not repeat the alternative text</source>
+                <target>Pildi pealkiri ei tohi korrata alternatiivteksti</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.description">
+                <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
+                <target>Tagab, et pildi atribuut title lisab teavet, selle asemel et korrata alternatiivteksti, mida ekraanilugejad võivad muidu kaks korda ette lugeda.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title">
+                <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
+                <target>Pildi pealkiri kordab alternatiivteksti. Sisuelemendi pildiseadetes eemaldage pealkiri või muutke seda nii, et see lisaks teavet.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title.developer">
+                <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
+                <target>Kuvatav pealkiri kordab alt-teksti, kuigi salvestatud väärtused erinevad või pilt ei ole seotud redigeeritava sisuga. Kontrollige, kas mall kopeerib alt-teksti atribuuti title (arendaja ülesanne).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Muutke sisuelementi ja selle päise paigutust nii, et pealkirjatasemed ei jätaks vahele ühtegi astet.</target>

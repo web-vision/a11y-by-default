@@ -1,3 +1,4 @@
+import { RedundantImageTitleCheck } from './checks/RedundantImageTitleCheck';
 import { buildContentFactsIndex } from './ContentFacts';
 import { AxeEngine } from './engines/AxeEngine';
 import { ViolationClassifier } from './ViolationClassifier';
@@ -160,7 +161,12 @@ export async function runAutoScan(): Promise<void> {
 
     const contentFactsIndex = buildContentFactsIndex(settings.contentFacts);
     const engine = new AxeEngine(iframe, settings.axeJsUrl, contentFactsIndex);
-    const result = await engine.run();
+    const engineResult = await engine.run();
+    const ownIssues =
+      iframe.contentDocument !== null
+        ? new RedundantImageTitleCheck(lll).run(iframe.contentDocument, contentFactsIndex)
+        : [];
+    const result: ScanResult = { ...engineResult, violations: [...engineResult.violations, ...ownIssues] };
     const classifier = new ViolationClassifier(settings.classificationRules);
     const visibleResult: ScanResult = {
       ...result,

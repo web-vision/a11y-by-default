@@ -126,6 +126,22 @@
                 <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
                 <target>Ez a képtérkép terület nincs szerkeszthető tartalomhoz kötve, vagy az alt szövege beállított, de nem jelenik meg. Ellenőrizze a sablon megjelenítését (fejlesztői feladat).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.help">
+                <source>Image title must not repeat the alternative text</source>
+                <target>A kép címe nem ismételheti meg az alternatív szöveget</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.description">
+                <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
+                <target>Biztosítja, hogy a kép title attribútuma információt adjon ahelyett, hogy megismételné az alternatív szövegét, amelyet a képernyőolvasók egyébként kétszer is bemondhatnak.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title">
+                <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
+                <target>A kép címe megismétli az alternatív szöveget. A tartalmi elem képbeállításaiban távolítsa el a címet, vagy módosítsa úgy, hogy információt adjon.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title.developer">
+                <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
+                <target>A megjelenített cím megismétli az alt szöveget, pedig a tárolt értékek eltérnek, vagy a kép nincs szerkeszthető tartalomhoz kapcsolva. Ellenőrizze, hogy a sablon az alt szöveget a title attribútumba másolja-e (fejlesztői feladat).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Szerkessze a tartalmi elemet, és módosítsa a fejléc elrendezését úgy, hogy a fejlécszintek ne hagyjanak ki lépést.</target>

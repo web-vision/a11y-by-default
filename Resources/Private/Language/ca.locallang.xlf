@@ -126,6 +126,22 @@
                 <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
                 <target>Aquesta àrea del mapa d'imatge no està vinculada a contingut editable, o el seu text alternatiu està definit però no es representa. Comproveu la representació a la plantilla (tasca de desenvolupador).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.help">
+                <source>Image title must not repeat the alternative text</source>
+                <target>El títol de la imatge no ha de repetir el text alternatiu</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.description">
+                <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
+                <target>Garanteix que l'atribut title d'una imatge aporti informació en lloc de repetir el seu text alternatiu, que els lectors de pantalla podrien anunciar dues vegades.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title">
+                <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
+                <target>El títol de la imatge repeteix el text alternatiu. A la configuració de la imatge de l'element de contingut, elimineu el títol o canvieu-lo perquè aporti informació.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title.developer">
+                <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
+                <target>El títol mostrat repeteix el text alternatiu (alt), tot i que els valors emmagatzemats són diferents o la imatge no està vinculada a contingut editable. Comproveu si la plantilla copia el text alternatiu a l'atribut title (tasca de desenvolupament).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Editeu l'element de contingut i canvieu el seu format de capçalera perquè els nivells de capçalera no ometin cap pas.</target>

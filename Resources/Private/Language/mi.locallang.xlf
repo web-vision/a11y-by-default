@@ -126,6 +126,22 @@
                 <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
                 <target>Kāore tēnei wāhi mahere whakaahua i hono ki te ihirangi taea te whakatika, kua tautuhia rānei tāna kuputuhi alt engari kāore i te whakaahuahia. Tirohia te whakaahuahanga o te momo tīkanga (mahi mā te kaiwhakawhanake).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.help">
+                <source>Image title must not repeat the alternative text</source>
+                <target>Kaua e whakahoki anō te taitara o te whakaahua i te kupu whakakapi</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.description">
+                <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
+                <target>Ka whakarite kia whakaatu te title o te whakaahua i ētahi kōrero hou, kaua ki te whakahoki anō i tana kupu whakakapi, ka pānuitia pea e ngā kaipānui mata rua ngā wā.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title">
+                <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
+                <target>Ka whakahoki anō te taitara o te whakaahua i te kupu whakakapi. I ngā tautuhinga whakaahua o te wāhanga ihirangi, tangohia te taitara, whakarerekētia rānei kia whakaatu kōrero.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title.developer">
+                <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
+                <target>Ka whakahoki anō te taitara kua whakaatuhia i te kupu alt, ahakoa he rerekē ngā uara kua penapenahia, kāore rānei te whakaahua i hono ki ngā ihirangi ka taea te whakatika. Tirohia mēnā ka tārua e te tauira te kupu alt ki te title (mahi a te kaiwhakawhanake).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Whakatikahia te huānga ihirangi, whakarērekētia tāna Whakatakotoranga Pane kia kore ai ngā taumata pane e peke i tētahi taumata.</target>

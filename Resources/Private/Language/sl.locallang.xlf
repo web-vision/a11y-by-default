@@ -126,6 +126,22 @@
                 <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
                 <target>To področje slikovnega zemljevida ni povezano z urejljivo vsebino ali je njeno alt besedilo nastavljeno, vendar se ne izrisuje. Preverite izris v predlogi (naloga za razvijalca).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.help">
+                <source>Image title must not repeat the alternative text</source>
+                <target>Naslov slike ne sme ponavljati nadomestnega besedila</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.description">
+                <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
+                <target>Zagotavlja, da atribut title slike dodaja informacije namesto ponavljanja nadomestnega besedila, ki ga bralniki zaslona lahko preberejo dvakrat.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title">
+                <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
+                <target>Naslov slike ponavlja nadomestno besedilo. V nastavitvah slike vsebinskega elementa odstranite naslov ali ga spremenite tako, da doda informacijo.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title.developer">
+                <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
+                <target>Prikazani naslov ponavlja besedilo alt, čeprav se shranjene vrednosti razlikujejo ali slika ni povezana z urejljivo vsebino. Preverite, ali predloga kopira besedilo alt v atribut title (naloga za razvijalca).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Uredite vsebinski element in spremenite postavitev naslova, tako da ravni naslovov ne izpustijo koraka.</target>

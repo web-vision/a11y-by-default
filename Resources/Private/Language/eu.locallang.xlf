@@ -126,6 +126,22 @@
                 <source>This image map area is not linked to editable content, or its alt text is set but not rendered. Check the template's rendering (developer task).</source>
                 <target>Irudi-mapako area hau ez dago editatu daitekeen edukira estekatuta, edo alt testua ezarrita du baina ez da errendatzen. Egiaztatu txantiloiaren errendatzea (garatzaile-eginkizuna).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.help">
+                <source>Image title must not repeat the alternative text</source>
+                <target>Irudiaren izenburuak ez du testu alternatiboa errepikatu behar</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-redundant-img-title.description">
+                <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
+                <target>Irudiaren title atributuak informazioa gehitzen duela ziurtatzen du, testu alternatiboa errepikatu beharrean; pantaila-irakurgailuek bi aldiz irakur dezakete bestela.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title">
+                <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
+                <target>Irudiaren izenburuak testu alternatiboa errepikatzen du. Eduki-elementuaren irudi-ezarpenetan, kendu izenburua edo aldatu informazioa gehitzeko moduan.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-redundant-img-title.developer">
+                <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
+                <target>Errendatutako izenburuak alt testua errepikatzen du, nahiz eta gordetako balioak desberdinak izan edo irudia ez egon editagarria den edukiari lotuta. Egiaztatu ea txantiloiak alt testua title atributuan kopiatzen duen (garatzailearen lana).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Editatu eduki-elementua eta aldatu bere goiburu-diseinua, izenburu-mailek urrats bat ere ez salta dezaten.</target>

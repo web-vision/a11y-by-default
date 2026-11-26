@@ -34,12 +34,12 @@ export function matchLink(anchor: Element, index: ContentFactsIndex): ImageMatch
 
   const textMatch = matchTextAgainstKnownContent(text, index) ?? matchTextAgainstKnownContent(ariaLabel, index);
   if (textMatch !== undefined) {
-    return { contentElementUid: textMatch, hasAltData: false };
+    return { contentElementUid: textMatch, hasAltData: false, altEqualsTitle: false };
   }
 
   const hrefMatch = matchHrefAgainstKnownLinks(anchor.getAttribute('href') ?? '', index);
   if (hrefMatch !== undefined) {
-    return { contentElementUid: hrefMatch, hasAltData: false };
+    return { contentElementUid: hrefMatch, hasAltData: false, altEqualsTitle: false };
   }
 
   const image = anchor.querySelector('img');
