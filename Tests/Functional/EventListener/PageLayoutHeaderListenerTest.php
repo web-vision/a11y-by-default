@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace WebVision\A11yByDefault\Tests\Functional\EventListener;
 
 use PHPUnit\Framework\Attributes\Test;
+use TYPO3\CMS\Backend\Context\PageContextFactory;
 use TYPO3\CMS\Backend\Controller\Event\ModifyPageLayoutContentEvent;
 use TYPO3\CMS\Backend\Routing\Route;
 use TYPO3\CMS\Backend\Routing\Router;
@@ -13,6 +14,7 @@ use TYPO3\CMS\Core\Core\SystemEnvironmentBuilder;
 use TYPO3\CMS\Core\Http\NormalizedParams;
 use TYPO3\CMS\Core\Http\ServerRequest;
 use TYPO3\CMS\Core\Localization\LanguageServiceFactory;
+use TYPO3\CMS\Core\Site\Entity\Site;
 use TYPO3\TestingFramework\Core\Functional\FunctionalTestCase;
 use WebVision\A11yByDefault\EventListener\PageLayoutHeaderListener;
 
@@ -49,8 +51,22 @@ final class PageLayoutHeaderListenerTest extends FunctionalTestCase
             ->withAttribute('route', $route)
             ->withAttribute('applicationType', SystemEnvironmentBuilder::REQUESTTYPE_BE);
         $request = $request->withAttribute('normalizedParams', NormalizedParams::createFromRequest($request));
+        $request = $request->withAttribute('site', new Site('test', 1, ['base' => 'https://example.com/']));
         $moduleTemplate = $this->get(ModuleTemplateFactory::class)->create($request);
-        return new ModifyPageLayoutContentEvent($request, $moduleTemplate);
+
+        // TYPO3 14.3 requires a PageContext as third constructor argument, 13.4 accepts two arguments only.
+        // Reflection keeps a single test helper that static analysis accepts on both cores.
+        $eventReflection = new \ReflectionClass(ModifyPageLayoutContentEvent::class);
+        $arguments = [$request, $moduleTemplate];
+        if ($eventReflection->getConstructor()?->getNumberOfParameters() === 3 && class_exists(PageContextFactory::class)) {
+            $arguments[] = $this->get(PageContextFactory::class)->createFromRequest(
+                $request,
+                (int)($queryParams['id'] ?? 0),
+                $GLOBALS['BE_USER'],
+            );
+        }
+
+        return $eventReflection->newInstanceArgs($arguments);
     }
 
     #[Test]
