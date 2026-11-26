@@ -140,67 +140,67 @@
             </trans-unit>
             <trans-unit id="rule.a11y-redundant-img-title.help">
                 <source>Image title must not repeat the alternative text</source>
-                <target>Mutsara wemufananidzo haufanire kudzokorora zvinyorwa zvekutsiva</target>
+                <target>Musoro wemufananidzo haufanire kudzokorora alt text</target>
             </trans-unit>
             <trans-unit id="rule.a11y-redundant-img-title.description">
                 <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
-                <target>Inovimbisa kuti attribute ye title yemufananidzo inowedzera ruzivo panzvimbo yekudzokorora zvinyorwa zvayo zvekutsiva, izvo vaverengi vescreen vanogona kuverenga kaviri.</target>
+                <target>Inovimbisa kuti attribute ye title yemufananidzo inowedzera ruzivo panzvimbo yekudzokorora alt text yawo, izvo vaverengi vescreen vanogona kuverenga kaviri.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-redundant-img-title">
                 <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
-                <target>Mutsara wemufananidzo unodzokorora zvinyorwa zvekutsiva. Mumasetingi emufananidzo wechinhu chezviri mukati, bvisa mutsara kana uushandure kuti uwedzere ruzivo.</target>
+                <target>Musoro wemufananidzo unodzokorora alt text. Mumasetingi emufananidzo wechinhu chezvirimo, bvisa musoro kana kuti uushandure kuti uwedzere ruzivo.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-redundant-img-title.developer">
                 <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
-                <target>Mutsara unoonekwa unodzokorora zvinyorwa zvealt, kunyangwe zvakachengetwa zvakasiyana kana mufananidzo usina kubatanidzwa nezvirimo zvinogona kugadziridzwa. Tarisa kana template ichikopa zvinyorwa zvealt mu attribute ye title (basa remugadziri).</target>
+                <target>Musoro unoratidzwa unodzokorora alt text, kunyangwe zvakachengetwa zvakasiyana kana mufananidzo usina kubatanidzwa nezvirimo zvinogona kugadziridzwa. Tarisa kana chimiro chichikopa alt text mu attribute ye title (basa revavaki).</target>
             </trans-unit>
             <trans-unit id="rule.a11y-img-alt-too-short.help">
                 <source>Image alternative text must be long enough to describe the image</source>
-                <target>Mashoko ekupfuurira efoto anofanira kuva marefu zvakakwana kuti atsanangure foto</target>
+                <target>Alt text yemufananidzo inofanira kuva refu zvakakwana kuti itsanangure mufananidzo</target>
             </trans-unit>
             <trans-unit id="rule.a11y-img-alt-too-short.description">
                 <source>Ensures an image's alternative text has at least five characters, as shorter texts rarely describe the image's content or function.</source>
-                <target>Inoita kuti mashoko ekupfuurira efoto akwane mashoko mashanu, nekuti mashoko mapfupi kazhinji haatsanangure zviri mufoto kana basa rayo.</target>
+                <target>Inovimbisa kuti alt text yemufananidzo ive nemavara mashanu kana kupfuura, nokuti alt text pfupi kazhinji haitsanangure zviri mumufananidzo kana basa rawo.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-img-alt-too-short">
                 <source>The alternative text of this image is too short to describe it. In the image settings of the content element, describe what the image shows or what it does.</source>
-                <target>Mashoko ekupfuurira eiyi foto akapfupika zvikuru kuti aitsanangure. Mune zvirongwa zvefoto yechinhu chezviri mukati, tsanangura zviri kuratidzwa nefoto kana basa rayo.</target>
+                <target>Alt text yemufananidzo uyu yakapfupika zvikuru kuti itsanangure mufananidzo. Mumasetingi emufananidzo wechinhu chezvirimo, tsanangura zviri kuratidzwa nemufananidzo kana basa rawo.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-img-alt-too-short.developer">
                 <source>The rendered alternative text is too short, although the stored text is longer or the image is not linked to editable content. Check how the template builds the alt attribute (developer task).</source>
-                <target>Mashoko ekupfuurira akaratidzwa akapfupika zvikuru, kunyange zvazvo mashoko akachengetwa marefu kana foto isina kubatanidzwa nezviri mukati zvinogona kugadziriswa. Tarisa kuti template inogadzira sei alt attribute (basa remugadziri).</target>
+                <target>Alt text inoratidzwa yakapfupika zvikuru, kunyangwe alt text yakachengetwa iri refu kana mufananidzo usina kubatanidzwa nezvirimo zvinogona kugadziridzwa. Tarisa kuti chimiro chinogadzira sei attribute ye alt (basa revavaki).</target>
             </trans-unit>
             <trans-unit id="rule.a11y-img-alt-redundant-prefix.help">
                 <source>Image alternative text should not start with "image of" or "photo of"</source>
-                <target>Mashoko ekupfuurira efoto haafanire kutanga ne“Foto ye” kana “Mufananidzo we”</target>
+                <target>Alt text yemufananidzo haifanire kutanga ne“Mufananidzo we” kana “Foto ye”</target>
             </trans-unit>
             <trans-unit id="rule.a11y-img-alt-redundant-prefix.description">
                 <source>Ensures an image's alternative text describes the content without announcing that it is an image, which screen readers already do.</source>
-                <target>Inoita kuti mashoko ekupfuurira efoto atsanangure zviri mukati pasina kuzivisa kuti ndefoto, nekuti vaverengi vescreen vanoita izvozvo kare.</target>
+                <target>Inovimbisa kuti alt text yemufananidzo itsanangure zvirimo pasina kuzivisa kuti mufananidzo, nokuti vaverengi vescreen vanoita izvozvo kare.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-img-alt-redundant-prefix">
                 <source>In the image settings of the content element, remove words like "Photo of" or "Image of" from the start of the alternative text and describe the content directly.</source>
-                <target>Mune zvirongwa zvefoto yechinhu chezviri mukati, bvisa mashoko akadai se“Foto ye” kana “Mufananidzo we” pakutanga kwemashoko ekupfuurira uye tsanangura zviri mukati zvakananga.</target>
+                <target>Mumasetingi emufananidzo wechinhu chezvirimo, bvisa mashoko akadai se“Foto ye” kana “Mufananidzo we” pakutanga kwealt text uye tsanangura zvirimo zvakananga.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-img-alt-redundant-prefix.developer">
                 <source>The rendered alternative text starts with words like "Photo of", although the stored text does not or the image is not linked to editable content. Check whether the template adds such a prefix (developer task).</source>
-                <target>Mashoko ekupfuurira akaratidzwa anotanga nemashoko akadai se“Foto ye”, kunyange zvazvo mashoko akachengetwa asingatangi zvakadaro kana foto isina kubatanidzwa nezviri mukati zvinogona kugadziriswa. Tarisa kana template ichiwedzera prefix yakadaro (basa remugadziri).</target>
+                <target>Alt text inoratidzwa inotanga nemashoko akadai se“Foto ye”, kunyangwe alt text yakachengetwa isingatangi zvakadaro kana mufananidzo usina kubatanidzwa nezvirimo zvinogona kugadziridzwa. Tarisa kana chimiro chichiwedzera prefix yakadaro (basa revavaki).</target>
             </trans-unit>
             <trans-unit id="rule.a11y-img-alt-filename.help">
                 <source>Image alternative text must not be a file name</source>
-                <target>Mashoko ekupfuurira efoto haagoni kuva zita refaira</target>
+                <target>Alt text yemufananidzo haigoni kuva zita refaira</target>
             </trans-unit>
             <trans-unit id="rule.a11y-img-alt-filename.description">
                 <source>Ensures an image's alternative text is not its file name or a camera-generated name such as IMG_1234, which tells users nothing about the image.</source>
-                <target>Inoita kuti mashoko ekupfuurira efoto asava zita refaira rayo kana zita rakagadzirwa nekamera, akadai seIMG_1234, nekuti zita rakadai harireve chinhu kuvashandisi nezvefoto.</target>
+                <target>Inovimbisa kuti alt text yemufananidzo isava zita refaira rawo kana zita rakagadzirwa nekamera, senge IMG_1234, nokuti zita rakadaro harireve chinhu kuvashandisi nezvemufananidzo.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-img-alt-filename">
                 <source>The alternative text of this image is a file name. In the image settings of the content element, replace it with a description of what the image shows.</source>
-                <target>Mashoko ekupfuurira eiyi foto izita refaira. Mune zvirongwa zvefoto yechinhu chezviri mukati, ashandura nekutsanangura zviri kuratidzwa nefoto.</target>
+                <target>Alt text yemufananidzo uyu ndizita refaira. Mumasetingi emufananidzo wechinhu chezvirimo, ishandure nechitsanangudzo chezviri kuratidzwa nemufananidzo.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-img-alt-filename.developer">
                 <source>The rendered alternative text is a file name, although the stored text is not or the image is not linked to editable content. Check whether the template falls back to the file name for the alt attribute (developer task).</source>
-                <target>Mashoko ekupfuurira akaratidzwa izita refaira, kunyange zvazvo mashoko akachengetwa asiri izita refaira, kana foto isina kubatanidzwa nezviri mukati zvinogona kugadziriswa. Tarisa kana template ichishandisa zita refaira seroro re alt attribute (basa remugadziri).</target>
+                <target>Alt text inoratidzwa ndizita refaira, kunyangwe alt text yakachengetwa isiri zita refaira kana mufananidzo usina kubatanidzwa nezvirimo zvinogona kugadziridzwa. Tarisa kana chimiro chichishandisa zita refaira sechinotsiva cheattribute ye alt (basa revavaki).</target>
             </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>

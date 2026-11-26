@@ -140,67 +140,67 @@
             </trans-unit>
             <trans-unit id="rule.a11y-redundant-img-title.help">
                 <source>Image title must not repeat the alternative text</source>
-                <target>لا يجوز أن يكرر عنوان الصورة النص البديل</target>
+                <target>لا يجوز أن يكرر عنوان الصورة نص alt</target>
             </trans-unit>
             <trans-unit id="rule.a11y-redundant-img-title.description">
                 <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
-                <target>يضمن أن سمة العنوان (title) للصورة تضيف معلومات بدلاً من تكرار نصها البديل، الذي قد يقرؤه قارئ الشاشة مرتين.</target>
+                <target>يضمن أن سمة العنوان (title) للصورة تضيف معلومات بدلاً من تكرار نص alt الخاص بها، الذي قد يقرؤه قارئ الشاشة مرتين.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-redundant-img-title">
                 <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
-                <target>يكرر عنوان الصورة النص البديل. في إعدادات الصورة لعنصر المحتوى، احذف العنوان أو غيّره ليضيف معلومات.</target>
+                <target>يكرر عنوان الصورة نص alt. في إعدادات الصورة لعنصر المحتوى، احذف العنوان أو غيّره ليضيف معلومات.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-redundant-img-title.developer">
                 <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
-                <target>يكرر العنوان المعروض النص البديل (alt)، رغم أن القيم المخزنة تختلف أو أن الصورة غير مرتبطة بمحتوى قابل للتحرير. تحقق مما إذا كان القالب ينسخ النص البديل إلى سمة العنوان (مهمة للمطور).</target>
+                <target>يكرر العنوان المعروض نص alt، رغم أن القيم المخزنة تختلف أو أن الصورة غير مرتبطة بمحتوى قابل للتحرير. تحقق مما إذا كان القالب ينسخ نص alt إلى سمة العنوان (مهمة للمطورين).</target>
             </trans-unit>
             <trans-unit id="rule.a11y-img-alt-too-short.help">
                 <source>Image alternative text must be long enough to describe the image</source>
-                <target>يجب أن يكون النص البديل للصورة طويلاً بما يكفي لوصفها</target>
+                <target>يجب أن يكون نص alt للصورة طويلاً بما يكفي لوصفها</target>
             </trans-unit>
             <trans-unit id="rule.a11y-img-alt-too-short.description">
                 <source>Ensures an image's alternative text has at least five characters, as shorter texts rarely describe the image's content or function.</source>
-                <target>يضمن أن يتكون النص البديل للصورة من خمسة أحرف على الأقل، لأن النصوص الأقصر نادراً ما تصف محتوى الصورة أو وظيفتها.</target>
+                <target>يضمن أن يتكون نص alt للصورة من خمسة أحرف على الأقل، لأن النصوص الأقصر نادراً ما تصف محتوى الصورة أو وظيفتها.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-img-alt-too-short">
                 <source>The alternative text of this image is too short to describe it. In the image settings of the content element, describe what the image shows or what it does.</source>
-                <target>النص البديل لهذه الصورة قصير جداً لوصفها. في إعدادات الصورة لعنصر المحتوى، صِف ما تعرضه الصورة أو ما تقوم به.</target>
+                <target>نص alt لهذه الصورة قصير جداً لوصفها. في إعدادات الصورة لعنصر المحتوى، صِف ما تعرضه الصورة أو ما تقوم به.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-img-alt-too-short.developer">
                 <source>The rendered alternative text is too short, although the stored text is longer or the image is not linked to editable content. Check how the template builds the alt attribute (developer task).</source>
-                <target>النص البديل المعروض قصير جداً، رغم أن النص المحفوظ أطول أو أن الصورة غير مرتبطة بمحتوى قابل للتحرير. تحقق من طريقة إنشاء القالب لسمة alt (مهمة للمطور).</target>
+                <target>نص alt المعروض قصير جداً، رغم أن النص المحفوظ أطول أو أن الصورة غير مرتبطة بمحتوى قابل للتحرير. تحقق من طريقة إنشاء القالب لسمة alt (مهمة للمطورين).</target>
             </trans-unit>
             <trans-unit id="rule.a11y-img-alt-redundant-prefix.help">
                 <source>Image alternative text should not start with "image of" or "photo of"</source>
-                <target>يجب ألا يبدأ النص البديل للصورة بعبارة «صورة لـ» أو «صورة فوتوغرافية لـ»</target>
+                <target>يجب ألا يبدأ نص alt للصورة بعبارة «صورة لـ» أو «صورة فوتوغرافية لـ»</target>
             </trans-unit>
             <trans-unit id="rule.a11y-img-alt-redundant-prefix.description">
                 <source>Ensures an image's alternative text describes the content without announcing that it is an image, which screen readers already do.</source>
-                <target>يضمن أن يصف النص البديل للصورة المحتوى دون الإعلان عن أنه صورة، وهو ما تفعله برامج قراءة الشاشة بالفعل.</target>
+                <target>يضمن أن يصف نص alt للصورة المحتوى دون الإعلان عن أنه صورة، وهو ما تفعله برامج قراءة الشاشة بالفعل.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-img-alt-redundant-prefix">
                 <source>In the image settings of the content element, remove words like "Photo of" or "Image of" from the start of the alternative text and describe the content directly.</source>
-                <target>في إعدادات الصورة لعنصر المحتوى، احذف من بداية النص البديل كلمات مثل «صورة لـ» أو «فوتوغرافيا لـ» وصف المحتوى مباشرةً.</target>
+                <target>في إعدادات الصورة لعنصر المحتوى، احذف من بداية نص alt كلمات مثل «صورة لـ» أو «صورة فوتوغرافية لـ»، وصِف المحتوى مباشرةً.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-img-alt-redundant-prefix.developer">
                 <source>The rendered alternative text starts with words like "Photo of", although the stored text does not or the image is not linked to editable content. Check whether the template adds such a prefix (developer task).</source>
-                <target>النص البديل المعروض يبدأ بكلمات مثل «صورة لـ»، رغم أن النص المحفوظ لا يبدأ بها أو أن الصورة غير مرتبطة بمحتوى قابل للتحرير. تحقق مما إذا كان القالب يضيف مثل هذه البادئة (مهمة للمطور).</target>
+                <target>نص alt المعروض يبدأ بكلمات مثل «صورة لـ»، رغم أن النص المحفوظ لا يبدأ بها أو أن الصورة غير مرتبطة بمحتوى قابل للتحرير. تحقق مما إذا كان القالب يضيف مثل هذه البادئة (مهمة للمطورين).</target>
             </trans-unit>
             <trans-unit id="rule.a11y-img-alt-filename.help">
                 <source>Image alternative text must not be a file name</source>
-                <target>يجب ألا يكون النص البديل للصورة اسم ملف</target>
+                <target>يجب ألا يكون نص alt للصورة اسم ملف</target>
             </trans-unit>
             <trans-unit id="rule.a11y-img-alt-filename.description">
                 <source>Ensures an image's alternative text is not its file name or a camera-generated name such as IMG_1234, which tells users nothing about the image.</source>
-                <target>يضمن أن النص البديل للصورة ليس اسم ملفها أو اسماً تولّده الكاميرا مثل IMG_1234، لأن ذلك لا يخبر المستخدمين بشيء عن الصورة.</target>
+                <target>يضمن أن نص alt للصورة ليس اسم ملفها أو اسماً تولّده الكاميرا مثل IMG_1234، لأن ذلك لا يخبر المستخدمين بشيء عن الصورة.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-img-alt-filename">
                 <source>The alternative text of this image is a file name. In the image settings of the content element, replace it with a description of what the image shows.</source>
-                <target>النص البديل لهذه الصورة هو اسم ملف. استبدله في إعدادات الصورة لعنصر المحتوى بوصف لما تعرضه الصورة.</target>
+                <target>نص alt لهذه الصورة هو اسم ملف. استبدله في إعدادات الصورة لعنصر المحتوى بوصف لما تعرضه الصورة.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-img-alt-filename.developer">
                 <source>The rendered alternative text is a file name, although the stored text is not or the image is not linked to editable content. Check whether the template falls back to the file name for the alt attribute (developer task).</source>
-                <target>النص البديل المعروض هو اسم ملف، رغم أن النص المحفوظ ليس كذلك أو أن الصورة غير مرتبطة بمحتوى قابل للتحرير. تحقق مما إذا كان القالب يستخدم اسم الملف احتياطياً لسمة alt (مهمة للمطور).</target>
+                <target>نص alt المعروض هو اسم ملف، رغم أن النص المحفوظ ليس كذلك أو أن الصورة غير مرتبطة بمحتوى قابل للتحرير. تحقق مما إذا كان القالب يستخدم اسم الملف احتياطياً لسمة alt (مهمة للمطورين).</target>
             </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>

@@ -140,67 +140,67 @@
             </trans-unit>
             <trans-unit id="rule.a11y-redundant-img-title.help">
                 <source>Image title must not repeat the alternative text</source>
-                <target>Myndartitilin má ikki endurtaka alternativa tekstin</target>
+                <target>Myndartitilin má ikki endurtaka alt-tekstin</target>
             </trans-unit>
             <trans-unit id="rule.a11y-redundant-img-title.description">
                 <source>Ensures an image's title attribute adds information instead of repeating its alternative text, which screen readers may otherwise announce twice.</source>
-                <target>Tryggjar, at title-eigindin á myndini leggur upp dupultliga informatión í staðin fyri at endurtaka alternativa tekstin, sum skermlesarar annars kunnu lesa upp tvær ferðir.</target>
+                <target>Tryggjar, at title-eigindin hjá myndini leggur informatión afturat í staðin fyri at endurtaka alt-tekstin, sum skermlesarar annars kunnu lesa upp tvær ferðir.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-redundant-img-title">
                 <source>The image title repeats the alternative text. In the image settings of the content element, remove the title or change it so it adds information.</source>
-                <target>Myndartitilin endurtekur alternativa tekstin. Í myndastillingunum fyri innihaldsevnið skal tú fjarlaða titilin ella broyta hann, so hann leggur upp informatión.</target>
+                <target>Myndartitilin endurtekur alt-tekstin. Í myndastillingunum hjá innihaldselementinum skal tú strika titilin ella broyta hann, so hann leggur informatión afturat.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-redundant-img-title.developer">
                 <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
-                <target>Titilin, sum verður víst, endurtekur alt-tekstin, hóast goymdu virðirnir eru ymiskir ella myndin ikki er knýtt at rættbundnum innihaldi. Kanna, um mynstrið kopierar alt-tekstin í title-eigindina (ætlan til menningarfólk).</target>
+                <target>Titilin, sum verður víst, endurtekur alt-tekstin, hóast goymdu virðirnir eru ymiskir ella myndin ikki er knýtt at rættandi innihaldi. Kanna, um sniðið avritar alt-tekstin í title-eigindina (uppgáva fyri menningarfólk).</target>
             </trans-unit>
             <trans-unit id="rule.a11y-img-alt-too-short.help">
                 <source>Image alternative text must be long enough to describe the image</source>
-                <target>Alternativi tekstur hjá einari mynd skal vera nógv langur til at lýsa myndina</target>
+                <target>Alt-teksturin hjá einari mynd skal vera nóg langur til at lýsa myndina</target>
             </trans-unit>
             <trans-unit id="rule.a11y-img-alt-too-short.description">
                 <source>Ensures an image's alternative text has at least five characters, as shorter texts rarely describe the image's content or function.</source>
-                <target>Tryggjar, at alternativi tekstur hjá einari mynd hevur í minsta lagi fimm tekn, tí styttri tekstar lýsa sjáldan innihaldið ella virkni myndarinnar.</target>
+                <target>Tryggjar, at alt-teksturin hjá einari mynd hevur í minsta lagi fimm tekn, tí styttri tekstar lýsa sjáldan innihaldið ella virkni myndarinnar.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-img-alt-too-short">
                 <source>The alternative text of this image is too short to describe it. In the image settings of the content element, describe what the image shows or what it does.</source>
-                <target>Alternativi tekstur hjá hesi mynd er ov stuttur til at lýsa hana. Lýs í myndastillingunum hjá innihaldselementinum, hvat myndin vísir ella hvørja virkni hon hevur.</target>
+                <target>Alt-teksturin hjá hesi mynd er ov stuttur til at lýsa hana. Lýs í myndastillingunum hjá innihaldselementinum, hvat myndin vísir ella hvørja virkni hon hevur.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-img-alt-too-short.developer">
                 <source>The rendered alternative text is too short, although the stored text is longer or the image is not linked to editable content. Check how the template builds the alt attribute (developer task).</source>
-                <target>Vísti alternativi tekstur er ov stuttur, hóast goymdi tekstur er longri ella myndin ikki er knýtt at rættbarum innihaldi. Kanna, hvussu skapalónin ger alt-eginleikan (uppgáva hjá menningarfólki).</target>
+                <target>Vísti alt-teksturin er ov stuttur, hóast goymdi teksturin er longri ella myndin ikki er knýtt at rættandi innihaldi. Kanna, hvussu sniðið ger alt-eigindina (uppgáva fyri menningarfólk).</target>
             </trans-unit>
             <trans-unit id="rule.a11y-img-alt-redundant-prefix.help">
                 <source>Image alternative text should not start with "image of" or "photo of"</source>
-                <target>Alternativur tekstur hjá einari mynd ætti ikki at byrja við „Mynd av“ ella „Ljósmynd av“</target>
+                <target>Alt-teksturin hjá einari mynd ætti ikki at byrja við „Mynd av“ ella „Ljósmynd av“</target>
             </trans-unit>
             <trans-unit id="rule.a11y-img-alt-redundant-prefix.description">
                 <source>Ensures an image's alternative text describes the content without announcing that it is an image, which screen readers already do.</source>
-                <target>Tryggjar, at alternativi tekstur hjá einari mynd lýsir innihaldið uttan at kunngera, at tað er ein mynd, tí skermajlesarar gera tað longu.</target>
+                <target>Tryggjar, at alt-teksturin hjá einari mynd lýsir innihaldið uttan at kunngera, at tað er ein mynd, tí skermlesarar gera tað longu.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-img-alt-redundant-prefix">
                 <source>In the image settings of the content element, remove words like "Photo of" or "Image of" from the start of the alternative text and describe the content directly.</source>
-                <target>Í myndastillingunum hjá innihaldselementinum skal tú strika orð sum „Ljósmynd av“ ella „Mynd av“ frá byrjanini av alternativa tekstinum og lýsa innihaldið beinleiðis.</target>
+                <target>Í myndastillingunum hjá innihaldselementinum skal tú strika orð sum „Ljósmynd av“ ella „Mynd av“ frá byrjanini av alt-tekstinum og lýsa innihaldið beinleiðis.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-img-alt-redundant-prefix.developer">
                 <source>The rendered alternative text starts with words like "Photo of", although the stored text does not or the image is not linked to editable content. Check whether the template adds such a prefix (developer task).</source>
-                <target>Vísti alternativi tekstur byrjar við orðum sum „Ljósmynd av“, hóast goymdi tekstur ikki gerð tað ella myndin ikki er knýtt at rættbarum innihaldi. Kanna, um skapalónin leggur slíkt forskeyti afturat (uppgáva hjá menningarfólki).</target>
+                <target>Vísti alt-teksturin byrjar við orðum sum „Ljósmynd av“, hóast goymdi teksturin ikki gerir tað ella myndin ikki er knýtt at rættandi innihaldi. Kanna, um sniðið leggur slíkt forskeyti afturat (uppgáva fyri menningarfólk).</target>
             </trans-unit>
             <trans-unit id="rule.a11y-img-alt-filename.help">
                 <source>Image alternative text must not be a file name</source>
-                <target>Alternativur tekstur hjá einari mynd kann ikki vera eitt fílunavn</target>
+                <target>Alt-teksturin hjá einari mynd kann ikki vera eitt fílunavn</target>
             </trans-unit>
             <trans-unit id="rule.a11y-img-alt-filename.description">
                 <source>Ensures an image's alternative text is not its file name or a camera-generated name such as IMG_1234, which tells users nothing about the image.</source>
-                <target>Tryggjar, at alternativi tekstur hjá einari mynd ikki er fílunavnið ella eitt kameragenerað navn sum IMG_1234, tí tað sigur brúkarum ikki nakað um myndina.</target>
+                <target>Tryggjar, at alt-teksturin hjá einari mynd ikki er fílunavnið ella eitt navn gjørt av myndavélini, sum IMG_1234, tí tað sigur brúkarum ikki nakað um myndina.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-img-alt-filename">
                 <source>The alternative text of this image is a file name. In the image settings of the content element, replace it with a description of what the image shows.</source>
-                <target>Alternativi tekstur hjá hesi mynd er eitt fílunavn. Byt hann í myndastillingunum hjá innihaldselementinum við eina lýsing av tí, myndin vísir.</target>
+                <target>Alt-teksturin hjá hesi mynd er eitt fílunavn. Byt hann í myndastillingunum hjá innihaldselementinum við eina lýsing av tí, sum myndin vísir.</target>
             </trans-unit>
             <trans-unit id="hint.a11y-img-alt-filename.developer">
                 <source>The rendered alternative text is a file name, although the stored text is not or the image is not linked to editable content. Check whether the template falls back to the file name for the alt attribute (developer task).</source>
-                <target>Vísti alternativi tekstur er eitt fílunavn, hóast goymdi tekstur ikki er tað, ella myndin ikki er knýtt at rættbarum innihaldi. Kanna, um skapalónin nýtir fílunavnið sum reserv fyri alt-eginleikan (uppgáva hjá menningarfólki).</target>
+                <target>Vísti alt-teksturin er eitt fílunavn, hóast goymdi teksturin ikki er tað, ella myndin ikki er knýtt at rættandi innihaldi. Kanna, um sniðið nýtir fílunavnið sum reserv fyri alt-eigindina (uppgáva fyri menningarfólk).</target>
             </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>

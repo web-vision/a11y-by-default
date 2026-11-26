@@ -152,7 +152,7 @@
             </trans-unit>
             <trans-unit id="hint.a11y-redundant-img-title.developer">
                 <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
-                <target>Wyświetlany tytuł powtarza tekst alt, mimo że zapisane wartości się różnią lub obraz nie jest powiązany z edytowalną treścią. Sprawdź, czy szablon kopiuje tekst alt do atrybutu title (zadanie dla programisty).</target>
+                <target>Wyświetlany tytuł powtarza tekst alternatywny, mimo że zapisane wartości się różnią lub obraz nie jest powiązany z edytowalną treścią. Sprawdź, czy szablon kopiuje tekst alternatywny do atrybutu title (zadanie dla programisty).</target>
             </trans-unit>
             <trans-unit id="rule.a11y-img-alt-too-short.help">
                 <source>Image alternative text must be long enough to describe the image</source>
