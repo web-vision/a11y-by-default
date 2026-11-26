@@ -142,6 +142,54 @@
                 <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
                 <target>Näytetty otsikko toistaa alt-tekstin, vaikka tallennetut arvot eroavat toisistaan tai kuva ei ole yhdistetty muokattavaan sisältöön. Tarkista, kopioiko malli alt-tekstin title-attribuuttiin (kehittäjän tehtävä).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.help">
+                <source>Image alternative text must be long enough to describe the image</source>
+                <target>Kuvan vaihtoehtoisen tekstin on oltava riittävän pitkä kuvaamaan kuvaa</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.description">
+                <source>Ensures an image's alternative text has at least five characters, as shorter texts rarely describe the image's content or function.</source>
+                <target>Varmistaa, että kuvan vaihtoehtoisessa tekstissä on vähintään viisi merkkiä, sillä lyhyet tekstit kuvaavat harvoin kuvan sisältöä tai tehtävää.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short">
+                <source>The alternative text of this image is too short to describe it. In the image settings of the content element, describe what the image shows or what it does.</source>
+                <target>Tämän kuvan vaihtoehtoinen teksti on liian lyhyt kuvaamaan kuvaa. Kuvaile sisältöelementin kuva-asetuksissa, mitä kuva näyttää tai mitä tehtävää sillä on.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short.developer">
+                <source>The rendered alternative text is too short, although the stored text is longer or the image is not linked to editable content. Check how the template builds the alt attribute (developer task).</source>
+                <target>Näytetty vaihtoehtoinen teksti on liian lyhyt, vaikka tallennettu teksti on pidempi tai kuva ei ole yhteydessä muokattavaan sisältöön. Tarkista, miten mallipohja muodostaa alt-attribuutin (kehittäjän tehtävä).</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.help">
+                <source>Image alternative text should not start with "image of" or "photo of"</source>
+                <target>Kuvan vaihtoehtoinen teksti ei saa alkaa ilmauksilla ”kuva” tai ”valokuva”</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.description">
+                <source>Ensures an image's alternative text describes the content without announcing that it is an image, which screen readers already do.</source>
+                <target>Varmistaa, että kuvan vaihtoehtoinen teksti kuvaa sisällön ilmoittamatta, että kyseessä on kuva, sillä ruudunlukijat tekevät sen jo.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix">
+                <source>In the image settings of the content element, remove words like "Photo of" or "Image of" from the start of the alternative text and describe the content directly.</source>
+                <target>Poista sisältöelementin kuva-asetuksissa vaihtoehtoisen tekstin alusta sanat, kuten ”valokuva” tai ”kuva”, ja kuvaa sisältö suoraan.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix.developer">
+                <source>The rendered alternative text starts with words like "Photo of", although the stored text does not or the image is not linked to editable content. Check whether the template adds such a prefix (developer task).</source>
+                <target>Näytetty vaihtoehtoinen teksti alkaa sanoilla, kuten ”valokuva”, vaikka tallennettu teksti ei ala näin tai kuva ei ole yhteydessä muokattavaan sisältöön. Tarkista, lisääkö mallipohja tällaisen etuliitteen (kehittäjän tehtävä).</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.help">
+                <source>Image alternative text must not be a file name</source>
+                <target>Kuvan vaihtoehtoinen teksti ei saa olla tiedostonimi</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.description">
+                <source>Ensures an image's alternative text is not its file name or a camera-generated name such as IMG_1234, which tells users nothing about the image.</source>
+                <target>Varmistaa, ettei kuvan vaihtoehtoinen teksti ole sen tiedostonimi tai kameran luoma nimi, kuten IMG_1234, sillä se ei kerro käyttäjille kuvasta mitään.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename">
+                <source>The alternative text of this image is a file name. In the image settings of the content element, replace it with a description of what the image shows.</source>
+                <target>Tämän kuvan vaihtoehtoinen teksti on tiedostonimi. Korvaa se sisältöelementin kuva-asetuksissa kuvausteksillä siitä, mitä kuva näyttää.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename.developer">
+                <source>The rendered alternative text is a file name, although the stored text is not or the image is not linked to editable content. Check whether the template falls back to the file name for the alt attribute (developer task).</source>
+                <target>Näytetty vaihtoehtoinen teksti on tiedostonimi, vaikka tallennettu teksti ei ole, tai kuva ei ole yhteydessä muokattavaan sisältöön. Tarkista, käyttääkö mallipohja tiedostonimeä alt-attribuutin varana (kehittäjän tehtävä).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Muokkaa sisältöelementtiä ja muuta sen otsikkoasettelua niin, ettei otsikkotasoissa ole hyppyjä.</target>

@@ -161,6 +161,42 @@
             <trans-unit id="hint.a11y-redundant-img-title.developer">
                 <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
             </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.help">
+                <source>Image alternative text must be long enough to describe the image</source>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.description">
+                <source>Ensures an image's alternative text has at least five characters, as shorter texts rarely describe the image's content or function.</source>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short">
+                <source>The alternative text of this image is too short to describe it. In the image settings of the content element, describe what the image shows or what it does.</source>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short.developer">
+                <source>The rendered alternative text is too short, although the stored text is longer or the image is not linked to editable content. Check how the template builds the alt attribute (developer task).</source>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.help">
+                <source>Image alternative text should not start with "image of" or "photo of"</source>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.description">
+                <source>Ensures an image's alternative text describes the content without announcing that it is an image, which screen readers already do.</source>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix">
+                <source>In the image settings of the content element, remove words like "Photo of" or "Image of" from the start of the alternative text and describe the content directly.</source>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix.developer">
+                <source>The rendered alternative text starts with words like "Photo of", although the stored text does not or the image is not linked to editable content. Check whether the template adds such a prefix (developer task).</source>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.help">
+                <source>Image alternative text must not be a file name</source>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.description">
+                <source>Ensures an image's alternative text is not its file name or a camera-generated name such as IMG_1234, which tells users nothing about the image.</source>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename">
+                <source>The alternative text of this image is a file name. In the image settings of the content element, replace it with a description of what the image shows.</source>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename.developer">
+                <source>The rendered alternative text is a file name, although the stored text is not or the image is not linked to editable content. Check whether the template falls back to the file name for the alt attribute (developer task).</source>
+            </trans-unit>
             <trans-unit id="pageHint.label">
                 <source>Check Accessibility</source>
             </trans-unit>

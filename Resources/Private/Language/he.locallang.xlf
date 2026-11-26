@@ -142,6 +142,54 @@
                 <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
                 <target>הכותרת המוצגת חוזרת על טקסט ה-alt, למרות שהערכים השמורים שונים או שהתמונה אינה מקושרת לתוכן הניתן לעריכה. בדקו אם התבנית מעתיקה את טקסט ה-alt לתכונת ה-title (משימה למפתח).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.help">
+                <source>Image alternative text must be long enough to describe the image</source>
+                <target>הטקסט החלופי של התמונה חייב להיות ארוך מספיק כדי לתאר אותה</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.description">
+                <source>Ensures an image's alternative text has at least five characters, as shorter texts rarely describe the image's content or function.</source>
+                <target>מבטיח שלטקסט החלופי של תמונה יהיו לפחות חמישה תווים, שכן טקסטים קצרים יותר נדירים מתארים את תוכן התמונה או את תפקידה.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short">
+                <source>The alternative text of this image is too short to describe it. In the image settings of the content element, describe what the image shows or what it does.</source>
+                <target>הטקסט החלופי של תמונה זו קצר מדי כדי לתארה. בהגדרות התמונה של רכיב התוכן, תארו מה התמונה מציגה או מה היא עושה.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short.developer">
+                <source>The rendered alternative text is too short, although the stored text is longer or the image is not linked to editable content. Check how the template builds the alt attribute (developer task).</source>
+                <target>הטקסט החלופי המוצג קצר מדי, אף שהטקסט השמור ארוך יותר או שהתמונה אינה מקושרת לתוכן הניתן לעריכה. בדקו כיצד התבנית יוצרת את תכונת alt (משימה למפתח).</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.help">
+                <source>Image alternative text should not start with "image of" or "photo of"</source>
+                <target>טקסט חלופי של תמונה לא צריך להתחיל ב“תמונה של” או ב“צילום של”</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.description">
+                <source>Ensures an image's alternative text describes the content without announcing that it is an image, which screen readers already do.</source>
+                <target>מבטיח שהטקסט החלופי של תמונה מתאר את התוכן מבלי להכריז שמדובר בתמונה, כפי שקוראי מסך כבר עושים.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix">
+                <source>In the image settings of the content element, remove words like "Photo of" or "Image of" from the start of the alternative text and describe the content directly.</source>
+                <target>בהגדרות התמונה של רכיב התוכן, הסירו מתחילת הטקסט החלופי מילים כמו “צילום של” או “תמונה של”, ותארו ישירות את התוכן.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix.developer">
+                <source>The rendered alternative text starts with words like "Photo of", although the stored text does not or the image is not linked to editable content. Check whether the template adds such a prefix (developer task).</source>
+                <target>הטקסט החלופי המוצג מתחיל במילים כמו “צילום של”, אף שהטקסט השמור אינו מתחיל כך או שהתמונה אינה מקושרת לתוכן הניתן לעריכה. בדקו אם התבנית מוסיפה קידומת כזו (משימה למפתח).</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.help">
+                <source>Image alternative text must not be a file name</source>
+                <target>טקסט חלופי של תמונה לא יכול להיות שם קובץ</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.description">
+                <source>Ensures an image's alternative text is not its file name or a camera-generated name such as IMG_1234, which tells users nothing about the image.</source>
+                <target>מבטיח שהטקסט החלופי של תמונה אינו שם הקובץ שלה או שם שנוצר על ידי מצלמה, כמו IMG_1234, שכן שם כזה אינו אומר למשתמשים דבר על התמונה.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename">
+                <source>The alternative text of this image is a file name. In the image settings of the content element, replace it with a description of what the image shows.</source>
+                <target>הטקסט החלופי של תמונה זו הוא שם קובץ. בהגדרות התמונה של רכיב התוכן, החליפו אותו בתיאור של מה שהתמונה מציגה.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename.developer">
+                <source>The rendered alternative text is a file name, although the stored text is not or the image is not linked to editable content. Check whether the template falls back to the file name for the alt attribute (developer task).</source>
+                <target>הטקסט החלופי המוצג הוא שם קובץ, אף שהטקסט השמור אינו כזה, או שהתמונה אינה מקושרת לתוכן הניתן לעריכה. בדקו אם התבנית משתמשת בשם הקובץ כגיבוי לתכונת alt (משימה למפתח).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>ערוך את אלמנט התוכן ושנה את פריסת הכותרת שלו כך שרמות הכותרות לא ידלגו על שלב.</target>

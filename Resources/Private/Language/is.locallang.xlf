@@ -142,6 +142,54 @@
                 <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
                 <target>Birti titillinn endurtekur alt-textann, þótt geymdu gildin séu ólík eða myndin sé ekki tengd breytanlegu efni. Athugaðu hvort sniðmátið afritar alt-textann í title-eigindina (verkefni fyrir forritara).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.help">
+                <source>Image alternative text must be long enough to describe the image</source>
+                <target>Varaltexti myndar verður að vera nógu langur til að lýsa henni</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.description">
+                <source>Ensures an image's alternative text has at least five characters, as shorter texts rarely describe the image's content or function.</source>
+                <target>Tryggir að varaltexti myndar sé að minnsta kosti fimm stafir, því styttri textar lýsa sjaldan efni eða hlutverki myndarinnar.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short">
+                <source>The alternative text of this image is too short to describe it. In the image settings of the content element, describe what the image shows or what it does.</source>
+                <target>Varaltexti þessarar myndar er of stuttur til að lýsa henni. Í myndastillingum efniseiningarinnar skal lýsa því sem myndin sýnir eða hlutverki hennar.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short.developer">
+                <source>The rendered alternative text is too short, although the stored text is longer or the image is not linked to editable content. Check how the template builds the alt attribute (developer task).</source>
+                <target>Birti varaltextinn er of stuttur, þótt vistaði textinn sé lengri eða myndin sé ekki tengd breytanlegu efni. Athugaðu hvernig sniðmátið býr til alt-eigindina (verkefni fyrir forritara).</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.help">
+                <source>Image alternative text should not start with "image of" or "photo of"</source>
+                <target>Varaltexti myndar ætti ekki að byrja á „Mynd af“ eða „Ljósmynd af“</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.description">
+                <source>Ensures an image's alternative text describes the content without announcing that it is an image, which screen readers already do.</source>
+                <target>Tryggir að varaltexti myndar lýsi efninu án þess að tilkynna að um mynd sé að ræða, enda gera skjálesarar það nú þegar.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix">
+                <source>In the image settings of the content element, remove words like "Photo of" or "Image of" from the start of the alternative text and describe the content directly.</source>
+                <target>Fjarlægðu í myndastillingum efniseiningarinnar orð eins og „Ljósmynd af“ eða „Mynd af“ úr upphafi varaltextans og lýstu efninu beint.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix.developer">
+                <source>The rendered alternative text starts with words like "Photo of", although the stored text does not or the image is not linked to editable content. Check whether the template adds such a prefix (developer task).</source>
+                <target>Birti varaltextinn byrjar á orðum eins og „Ljósmynd af“, þótt vistaði textinn geri það ekki eða myndin sé ekki tengd breytanlegu efni. Athugaðu hvort sniðmátið bætir við slíku forskeyti (verkefni fyrir forritara).</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.help">
+                <source>Image alternative text must not be a file name</source>
+                <target>Varaltexti myndar má ekki vera skráarheiti</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.description">
+                <source>Ensures an image's alternative text is not its file name or a camera-generated name such as IMG_1234, which tells users nothing about the image.</source>
+                <target>Tryggir að varaltexti myndar sé ekki skráarheiti hennar eða nafn sem myndavélin gefur, eins og IMG_1234, því það segir notendum ekkert um myndina.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename">
+                <source>The alternative text of this image is a file name. In the image settings of the content element, replace it with a description of what the image shows.</source>
+                <target>Varaltexti þessarar myndar er skráarheiti. Í myndastillingum efniseiningarinnar skal skipta honum út fyrir lýsingu á því sem myndin sýnir.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename.developer">
+                <source>The rendered alternative text is a file name, although the stored text is not or the image is not linked to editable content. Check whether the template falls back to the file name for the alt attribute (developer task).</source>
+                <target>Birti varaltextinn er skráarheiti, þótt vistaði textinn sé það ekki, eða myndin sé ekki tengd breytanlegu efni. Athugaðu hvort sniðmátið noti skráarheitið sem varaval fyrir alt-eigindina (verkefni fyrir forritara).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Breyttu efnisstakinu og fyrirsagnaútliti þess svo fyrirsagnastig sleppi ekki þrepi.</target>

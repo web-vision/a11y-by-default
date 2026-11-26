@@ -142,6 +142,54 @@
                 <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
                 <target>Den viste titel gentager alt-teksten, selvom de gemte værdier er forskellige, eller billedet ikke er knyttet til redigerbart indhold. Kontrollér, om skabelonen kopierer alt-teksten til title-attributten (udvikleropgave).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.help">
+                <source>Image alternative text must be long enough to describe the image</source>
+                <target>Billedets alternative tekst skal være lang nok til at beskrive billedet</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.description">
+                <source>Ensures an image's alternative text has at least five characters, as shorter texts rarely describe the image's content or function.</source>
+                <target>Sikrer, at et billedes alternative tekst har mindst fem tegn, da kortere tekster sjældent beskriver billedets indhold eller funktion.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short">
+                <source>The alternative text of this image is too short to describe it. In the image settings of the content element, describe what the image shows or what it does.</source>
+                <target>Den alternative tekst til dette billede er for kort til at beskrive det. Beskriv i billedindstillingerne for indholdselementet, hvad billedet viser, eller hvad det gør.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short.developer">
+                <source>The rendered alternative text is too short, although the stored text is longer or the image is not linked to editable content. Check how the template builds the alt attribute (developer task).</source>
+                <target>Den viste alternative tekst er for kort, selvom den gemte tekst er længere, eller billedet ikke er knyttet til redigerbart indhold. Kontroller, hvordan skabelonen opbygger alt-attributten (udvikleropgave).</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.help">
+                <source>Image alternative text should not start with "image of" or "photo of"</source>
+                <target>Et billedes alternative tekst bør ikke begynde med „Billede af“ eller „Foto af“</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.description">
+                <source>Ensures an image's alternative text describes the content without announcing that it is an image, which screen readers already do.</source>
+                <target>Sikrer, at et billedes alternative tekst beskriver indholdet uden at annoncere, at det er et billede, da skærmlæsere allerede gør det.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix">
+                <source>In the image settings of the content element, remove words like "Photo of" or "Image of" from the start of the alternative text and describe the content directly.</source>
+                <target>Fjern i billedindstillingerne for indholdselementet ord som „Foto af“ eller „Billede af“ fra begyndelsen af den alternative tekst, og beskriv indholdet direkte.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix.developer">
+                <source>The rendered alternative text starts with words like "Photo of", although the stored text does not or the image is not linked to editable content. Check whether the template adds such a prefix (developer task).</source>
+                <target>Den viste alternative tekst begynder med ord som „Foto af“, selvom den gemte tekst ikke gør det, eller billedet ikke er knyttet til redigerbart indhold. Kontroller, om skabelonen tilføjer et sådant præfiks (udvikleropgave).</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.help">
+                <source>Image alternative text must not be a file name</source>
+                <target>Et billedes alternative tekst må ikke være et filnavn</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.description">
+                <source>Ensures an image's alternative text is not its file name or a camera-generated name such as IMG_1234, which tells users nothing about the image.</source>
+                <target>Sikrer, at et billedes alternative tekst ikke er dets filnavn eller et kameragenereret navn såsom IMG_1234, da det ikke fortæller brugerne noget om billedet.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename">
+                <source>The alternative text of this image is a file name. In the image settings of the content element, replace it with a description of what the image shows.</source>
+                <target>Den alternative tekst til dette billede er et filnavn. Erstat den i billedindstillingerne for indholdselementet med en beskrivelse af, hvad billedet viser.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename.developer">
+                <source>The rendered alternative text is a file name, although the stored text is not or the image is not linked to editable content. Check whether the template falls back to the file name for the alt attribute (developer task).</source>
+                <target>Den viste alternative tekst er et filnavn, selvom den gemte tekst ikke er det, eller billedet ikke er knyttet til redigerbart indhold. Kontroller, om skabelonen bruger filnavnet som reserve for alt-attributten (udvikleropgave).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Rediger indholdselementet, og ændr dets overskriftslayout, så overskriftsniveauerne ikke springer et niveau over.</target>

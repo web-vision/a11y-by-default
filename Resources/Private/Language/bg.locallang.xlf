@@ -142,6 +142,54 @@
                 <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
                 <target>Показаното заглавие повтаря алтернативния текст (alt), въпреки че съхранените стойности се различават или изображението не е свързано с редактируемо съдържание. Проверете дали шаблонът копира алтернативния текст в атрибута title (задача за разработчика).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.help">
+                <source>Image alternative text must be long enough to describe the image</source>
+                <target>Алтернативният текст на изображението трябва да е достатъчно дълъг, за да го опише</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.description">
+                <source>Ensures an image's alternative text has at least five characters, as shorter texts rarely describe the image's content or function.</source>
+                <target>Гарантира, че алтернативният текст на изображението е поне пет знака, тъй като по-кратките текстове рядко описват съдържанието или функцията на изображението.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short">
+                <source>The alternative text of this image is too short to describe it. In the image settings of the content element, describe what the image shows or what it does.</source>
+                <target>Алтернативният текст на това изображение е твърде кратък, за да го опише. В настройките на изображението на съдържателния елемент опишете какво показва изображението или какво прави.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short.developer">
+                <source>The rendered alternative text is too short, although the stored text is longer or the image is not linked to editable content. Check how the template builds the alt attribute (developer task).</source>
+                <target>Изведеният алтернативен текст е твърде кратък, въпреки че записаният текст е по-дълъг или изображението не е свързано с редактируемо съдържание. Проверете как шаблонът формира атрибута alt (задача за разработчика).</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.help">
+                <source>Image alternative text should not start with "image of" or "photo of"</source>
+                <target>Алтернативният текст на изображение не трябва да започва с „Изображение на“ или „Снимка на“</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.description">
+                <source>Ensures an image's alternative text describes the content without announcing that it is an image, which screen readers already do.</source>
+                <target>Гарантира, че алтернативният текст на изображението описва съдържанието, без да обявява, че е изображение, което екранните четци и без това правят.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix">
+                <source>In the image settings of the content element, remove words like "Photo of" or "Image of" from the start of the alternative text and describe the content directly.</source>
+                <target>В настройките на изображението на съдържателния елемент премахнете от началото на алтернативния текст думи като „Снимка на“ или „Изображение на“ и опишете съдържанието директно.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix.developer">
+                <source>The rendered alternative text starts with words like "Photo of", although the stored text does not or the image is not linked to editable content. Check whether the template adds such a prefix (developer task).</source>
+                <target>Изведеният алтернативен текст започва с думи като „Снимка на“, въпреки че записаният текст не започва така или изображението не е свързано с редактируемо съдържание. Проверете дали шаблонът добавя такава приставка (задача за разработчика).</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.help">
+                <source>Image alternative text must not be a file name</source>
+                <target>Алтернативният текст на изображение не трябва да е име на файл</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.description">
+                <source>Ensures an image's alternative text is not its file name or a camera-generated name such as IMG_1234, which tells users nothing about the image.</source>
+                <target>Гарантира, че алтернативният текст на изображението не е името на файла или име, зададено от фотоапарата, като IMG_1234, тъй като такова име не казва нищо на потребителите за изображението.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename">
+                <source>The alternative text of this image is a file name. In the image settings of the content element, replace it with a description of what the image shows.</source>
+                <target>Алтернативният текст на това изображение е име на файл. В настройките на изображението на съдържателния елемент го заменете с описание на това, което показва изображението.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename.developer">
+                <source>The rendered alternative text is a file name, although the stored text is not or the image is not linked to editable content. Check whether the template falls back to the file name for the alt attribute (developer task).</source>
+                <target>Изведеният алтернативен текст е име на файл, въпреки че записаният текст не е такъв или изображението не е свързано с редактируемо съдържание. Проверете дали шаблонът използва името на файла като резервен вариант за атрибута alt (задача за разработчика).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Редактирайте съдържателния елемент и променете оформлението на заглавието, така че нивата на заглавията да не пропускат стъпка.</target>

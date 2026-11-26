@@ -142,6 +142,54 @@
                 <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
                 <target>Rodomas pavadinimas kartoja alt tekstą, nors saugomos reikšmės skiriasi arba paveikslėlis nesusietas su redaguojamu turiniu. Patikrinkite, ar šablonas kopijuoja alt tekstą į title atributą (kūrėjo užduotis).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.help">
+                <source>Image alternative text must be long enough to describe the image</source>
+                <target>Paveikslėlio alternatyvusis tekstas turi būti pakankamai ilgas, kad jį apibūdintų</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.description">
+                <source>Ensures an image's alternative text has at least five characters, as shorter texts rarely describe the image's content or function.</source>
+                <target>Užtikrina, kad paveikslėlio alternatyvusis tekstas turėtų bent penkis simbolius, nes trumpesni tekstai retai apibūdina paveikslėlio turinį ar paskirtį.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short">
+                <source>The alternative text of this image is too short to describe it. In the image settings of the content element, describe what the image shows or what it does.</source>
+                <target>Šio paveikslėlio alternatyvusis tekstas per trumpas, kad jį apibūdintų. Turinio elemento paveikslėlio nustatymuose aprašykite, ką rodo paveikslėlis arba kokią funkciją jis atlieka.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short.developer">
+                <source>The rendered alternative text is too short, although the stored text is longer or the image is not linked to editable content. Check how the template builds the alt attribute (developer task).</source>
+                <target>Rodomas alternatyvusis tekstas per trumpas, nors išsaugotas tekstas ilgesnis arba paveikslėlis nesusietas su redaguojamu turiniu. Patikrinkite, kaip šablonas sukuria alt atributą (kūrėjo užduotis).</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.help">
+                <source>Image alternative text should not start with "image of" or "photo of"</source>
+                <target>Paveikslėlio alternatyvusis tekstas neturėtų prasidėti žodžiais „Paveikslėlis“ ar „Nuotrauka“</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.description">
+                <source>Ensures an image's alternative text describes the content without announcing that it is an image, which screen readers already do.</source>
+                <target>Užtikrina, kad paveikslėlio alternatyvusis tekstas apibūdintų turinį, nepaskelbdamas, kad tai paveikslėlis, nes ekrano skaitytuvai tai jau daro.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix">
+                <source>In the image settings of the content element, remove words like "Photo of" or "Image of" from the start of the alternative text and describe the content directly.</source>
+                <target>Turinio elemento paveikslėlio nustatymuose iš alternatyviojo teksto pradžios pašalinkite žodžius, pavyzdžiui, „Nuotrauka“ ar „Paveikslėlis“, ir tiesiogiai aprašykite turinį.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix.developer">
+                <source>The rendered alternative text starts with words like "Photo of", although the stored text does not or the image is not linked to editable content. Check whether the template adds such a prefix (developer task).</source>
+                <target>Rodomas alternatyvusis tekstas prasideda žodžiais, pavyzdžiui, „Nuotrauka“, nors išsaugotas tekstas taip nepradedamas arba paveikslėlis nesusietas su redaguojamu turiniu. Patikrinkite, ar šablonas prideda tokį priešdėlį (kūrėjo užduotis).</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.help">
+                <source>Image alternative text must not be a file name</source>
+                <target>Paveikslėlio alternatyvusis tekstas negali būti failo pavadinimas</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.description">
+                <source>Ensures an image's alternative text is not its file name or a camera-generated name such as IMG_1234, which tells users nothing about the image.</source>
+                <target>Užtikrina, kad paveikslėlio alternatyvusis tekstas nebūtų jo failo pavadinimas ar fotoaparato suteiktas pavadinimas, pavyzdžiui, IMG_1234, nes toks pavadinimas vartotojams nieko nesako apie paveikslėlį.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename">
+                <source>The alternative text of this image is a file name. In the image settings of the content element, replace it with a description of what the image shows.</source>
+                <target>Šio paveikslėlio alternatyvusis tekstas yra failo pavadinimas. Turinio elemento paveikslėlio nustatymuose pakeiskite jį paveikslėlyje rodomo turinio aprašymu.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename.developer">
+                <source>The rendered alternative text is a file name, although the stored text is not or the image is not linked to editable content. Check whether the template falls back to the file name for the alt attribute (developer task).</source>
+                <target>Rodomas alternatyvusis tekstas yra failo pavadinimas, nors išsaugotas tekstas nėra, arba paveikslėlis nesusietas su redaguojamu turiniu. Patikrinkite, ar šablonas alt atributui naudoja failo pavadinimą kaip atsarginę reikšmę (kūrėjo užduotis).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Redaguokite turinio elementą ir pakeiskite jo antraštės išdėstymą, kad antraščių lygiai nepraleistų žingsnio.</target>

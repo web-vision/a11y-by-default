@@ -142,6 +142,54 @@
                 <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
                 <target>Ka whakahoki anō te taitara kua whakaatuhia i te kupu alt, ahakoa he rerekē ngā uara kua penapenahia, kāore rānei te whakaahua i hono ki ngā ihirangi ka taea te whakatika. Tirohia mēnā ka tārua e te tauira te kupu alt ki te title (mahi a te kaiwhakawhanake).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.help">
+                <source>Image alternative text must be long enough to describe the image</source>
+                <target>Me whai roa te kupu whakakapi o te whakaahua kia taea ai te whakaahua</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.description">
+                <source>Ensures an image's alternative text has at least five characters, as shorter texts rarely describe the image's content or function.</source>
+                <target>Ka whakarite kia rima ngā tohu o te kupu whakakapi o tētahi whakaahua, nā te mea he iti ake ngā kupu e kore e whakaahua i ngā ihirangi, i te mahi rānei o te whakaahua.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short">
+                <source>The alternative text of this image is too short to describe it. In the image settings of the content element, describe what the image shows or what it does.</source>
+                <target>He poto rawa te kupu whakakapi o tēnei whakaahua hei whakaahua i a ia. I ngā tautuhinga whakaahua o te huanga ihirangi, whakaahuatia te mea e whakaatu ana te whakaahua, te mahi rānei o tana.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short.developer">
+                <source>The rendered alternative text is too short, although the stored text is longer or the image is not linked to editable content. Check how the template builds the alt attribute (developer task).</source>
+                <target>He poto rawa te kupu whakakapi e whakaatuhia ana, ahakoa he roa ake te kupu kua penapenatia, kāore rānei te whakaahua e hono ana ki ngā ihirangi ka taea te whakatika. Tirohia me pēhea te hanga a te tauira i te āhuatanga alt (mahi a te kaiwhakawhanake).</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.help">
+                <source>Image alternative text should not start with "image of" or "photo of"</source>
+                <target>Kaua e tīmata te kupu whakakapi o tētahi whakaahua ki “Whakaahua o” me “Pikitia o”</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.description">
+                <source>Ensures an image's alternative text describes the content without announcing that it is an image, which screen readers already do.</source>
+                <target>Ka whakarite kia whakaahuatia e te kupu whakakapi o tētahi whakaahua ngā ihirangi, me te kore e kī he whakaahua, nā te mea kei te mahi kē ngā pānui mata.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix">
+                <source>In the image settings of the content element, remove words like "Photo of" or "Image of" from the start of the alternative text and describe the content directly.</source>
+                <target>I ngā tautuhinga whakaahua o te huanga ihirangi, tangohia ngā kupu pēnei i “Pikitia o” me “Whakaahua o” i te tīmatanga o te kupu whakakapi, ka whakaahua tika i ngā ihirangi.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix.developer">
+                <source>The rendered alternative text starts with words like "Photo of", although the stored text does not or the image is not linked to editable content. Check whether the template adds such a prefix (developer task).</source>
+                <target>Ka tīmata te kupu whakakapi e whakaatuhia ana ki ngā kupu pēnei i “Pikitia o”, ahakoa kāore te kupu kua penapenatia e tīmata pērā, kāore rānei te whakaahua e hono ana ki ngā ihirangi ka taea te whakatika. Tirohia mēnā ka tāpiri te tauira i tērā upoko kupu (mahi a te kaiwhakawhanake).</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.help">
+                <source>Image alternative text must not be a file name</source>
+                <target>Kaua e noho ko te ingoa kōnae te kupu whakakapi o tētahi whakaahua</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.description">
+                <source>Ensures an image's alternative text is not its file name or a camera-generated name such as IMG_1234, which tells users nothing about the image.</source>
+                <target>Ka whakarite kia kore te kupu whakakapi o tētahi whakaahua e noho ko tōna ingoa kōnae, ko tētahi ingoa rānei i hangaia e te kāmera, pēnei i IMG_1234, nā te mea e kore ai e kī atu ki ngā kaiwhakamahi he aha mō te whakaahua.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename">
+                <source>The alternative text of this image is a file name. In the image settings of the content element, replace it with a description of what the image shows.</source>
+                <target>Ko te ingoa kōnae te kupu whakakapi o tēnei whakaahua. I ngā tautuhinga whakaahua o te huanga ihirangi, whakakapia ki tētahi whakaahuatanga o te mea e whakaatu ana te whakaahua.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename.developer">
+                <source>The rendered alternative text is a file name, although the stored text is not or the image is not linked to editable content. Check whether the template falls back to the file name for the alt attribute (developer task).</source>
+                <target>Ko te ingoa kōnae te kupu whakakapi e whakaatuhia ana, ahakoa kāore te kupu kua penapenatia i te ingoa kōnae, kāore rānei te whakaahua e hono ana ki ngā ihirangi ka taea te whakatika. Tirohia mēnā ka hoki te tauira ki te ingoa kōnae mō te āhuatanga alt (mahi a te kaiwhakawhanake).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Whakatikahia te huānga ihirangi, whakarērekētia tāna Whakatakotoranga Pane kia kore ai ngā taumata pane e peke i tētahi taumata.</target>

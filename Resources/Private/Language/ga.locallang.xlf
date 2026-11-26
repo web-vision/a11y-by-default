@@ -142,6 +142,54 @@
                 <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
                 <target>Athdhéanann an teideal taispeánta an téacs alt, cé go bhfuil na luachanna stóráilte difriúil nó nach bhfuil an íomhá nasctha le hábhar in-athraithe. Seiceáil an ndéanann an teimpléad an téacs alt a chóipeáil isteach sa sainairí title (tasc forbróra).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.help">
+                <source>Image alternative text must be long enough to describe the image</source>
+                <target>Ní mór go mbeadh téacs malartach íomhá sách fada chun í a chur síos</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.description">
+                <source>Ensures an image's alternative text has at least five characters, as shorter texts rarely describe the image's content or function.</source>
+                <target>Cinntíonn sé go bhfuil cúig charachtar ar a laghad i dtéacs malartach íomhá, mar is annamh a chuireann téacsanna níos giorra síos ar ábhar nó feidhm na híomhá.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short">
+                <source>The alternative text of this image is too short to describe it. In the image settings of the content element, describe what the image shows or what it does.</source>
+                <target>Tá téacs malartach na híomhá seo ró-ghearr chun í a chur síos. I socruithe na híomhá den eilimint ábhair, déan cur síos ar an rud a thaispeánann an íomhá nó an fheidhm atá aici.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short.developer">
+                <source>The rendered alternative text is too short, although the stored text is longer or the image is not linked to editable content. Check how the template builds the alt attribute (developer task).</source>
+                <target>Tá an téacs malartach atá taispeánta ró-ghearr, cé go bhfuil an téacs stóráilte níos faide nó nach bhfuil an íomhá nasctha le hábhar in-athraithe. Seiceáil conas a thógann an teimpléad an tréith alt (tasc forbróra).</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.help">
+                <source>Image alternative text should not start with "image of" or "photo of"</source>
+                <target>Níor cheart do théacs malartach íomhá tosú le “Íomhá de” nó “Grianghraf de”</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.description">
+                <source>Ensures an image's alternative text describes the content without announcing that it is an image, which screen readers already do.</source>
+                <target>Cinntíonn sé go ndéanann téacs malartach íomhá cur síos ar an ábhar gan a fhógairt gur íomhá atá ann, rud a dhéanann léitheoirí scáileáin cheana féin.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix">
+                <source>In the image settings of the content element, remove words like "Photo of" or "Image of" from the start of the alternative text and describe the content directly.</source>
+                <target>I socruithe na híomhá den eilimint ábhair, bain focail mar “Grianghraf de” nó “Íomhá de” ó thús an téacs malartaigh agus déan cur síos díreach ar an ábhar.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix.developer">
+                <source>The rendered alternative text starts with words like "Photo of", although the stored text does not or the image is not linked to editable content. Check whether the template adds such a prefix (developer task).</source>
+                <target>Tosaíonn an téacs malartach taispeánta le focail mar “Grianghraf de”, cé nach dtosaíonn an téacs stóráilte mar sin nó nach bhfuil an íomhá nasctha le hábhar in-athraithe. Seiceáil an gcuireann an teimpléad réimír den sórt sin leis (tasc forbróra).</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.help">
+                <source>Image alternative text must not be a file name</source>
+                <target>Ní fhéadfaidh téacs malartach íomhá a bheith ina ainm comhaid</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.description">
+                <source>Ensures an image's alternative text is not its file name or a camera-generated name such as IMG_1234, which tells users nothing about the image.</source>
+                <target>Cinntíonn sé nach ainm comhaid na híomhá nó ainm a ghin an ceamara, mar IMG_1234, é téacs malartach íomhá, mar nach insíonn a leithéid aon rud do úsáideoirí faoin íomhá.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename">
+                <source>The alternative text of this image is a file name. In the image settings of the content element, replace it with a description of what the image shows.</source>
+                <target>Is ainm comhaid é téacs malartach na híomhá seo. I socruithe na híomhá den eilimint ábhair, cuir cur síos ar an rud a thaispeánann an íomhá ina áit.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename.developer">
+                <source>The rendered alternative text is a file name, although the stored text is not or the image is not linked to editable content. Check whether the template falls back to the file name for the alt attribute (developer task).</source>
+                <target>Is ainm comhaid é an téacs malartach atá taispeánta, cé nach ainm comhaid é an téacs stóráilte nó nach bhfuil an íomhá nasctha le hábhar in-athraithe. Seiceáil an gcasann an teimpléad ar an ainm comhaid don tréith alt (tasc forbróra).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Cuir an mhír ábhair in eagar agus athraigh a Leagan Amach Ceanntáisc ionas nach léimeann na leibhéil ceanntásca thar chéim.</target>

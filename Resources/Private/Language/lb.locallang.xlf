@@ -142,6 +142,54 @@
                 <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
                 <target>Den ausgegebene Titel widderhëlt den Alt-Text, obwuel d'gespäichert Wäerter sech ënnerscheeden oder d'Bild net mat bearbeitbarem Inhalt verbonne ass. Iwwerpréift, ob d'Template den Alt-Text an de title-Attribut kopéiert (Entwécklungsaufgab).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.help">
+                <source>Image alternative text must be long enough to describe the image</source>
+                <target>Den alternativen Text vun engem Bild muss laang genuch sinn, fir et ze beschreiwen</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.description">
+                <source>Ensures an image's alternative text has at least five characters, as shorter texts rarely describe the image's content or function.</source>
+                <target>Stellt sécher, datt den alternativen Text vun engem Bild mindestens fënnef Zeechen huet, well méi kuerz Texter selten den Inhalt oder d'Funktioun vum Bild beschreiwen.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short">
+                <source>The alternative text of this image is too short to describe it. In the image settings of the content element, describe what the image shows or what it does.</source>
+                <target>Den alternativen Text vun dësem Bild ass ze kuerz fir et ze beschreiwen. Beschreiwt an den Bildastellungen vum Inhaltselement, wat d'Bild weist oder wat et fir eng Funktioun huet.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short.developer">
+                <source>The rendered alternative text is too short, although the stored text is longer or the image is not linked to editable content. Check how the template builds the alt attribute (developer task).</source>
+                <target>Den ausgegebenen alternativen Text ass ze kuerz, obwuel den gespäicherte Text méi laang ass oder d'Bild net mat engem änneschbare Inhalt verbonnen ass. Kontrolléiert, wéi d'Schabloun d'alt-Attribut generéiert (Entwécklungsaufgab).</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.help">
+                <source>Image alternative text should not start with "image of" or "photo of"</source>
+                <target>Den alternativen Text vun engem Bild sollt net mat „Bild vun“ oder „Foto vun“ ufänken</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.description">
+                <source>Ensures an image's alternative text describes the content without announcing that it is an image, which screen readers already do.</source>
+                <target>Stellt sécher, datt den alternativen Text vun engem Bild den Inhalt beschreift, ouni unzekënnegen, datt et e Bild ass, well Screenreader dat ohnehin maachen.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix">
+                <source>In the image settings of the content element, remove words like "Photo of" or "Image of" from the start of the alternative text and describe the content directly.</source>
+                <target>Entfernt an den Bildastellungen vum Inhaltselement Wierder wéi „Foto vun“ oder „Bild vun“ um Ufank vum alternativen Text a beschreift den Inhalt direkt.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix.developer">
+                <source>The rendered alternative text starts with words like "Photo of", although the stored text does not or the image is not linked to editable content. Check whether the template adds such a prefix (developer task).</source>
+                <target>Den ausgegebenen alternativen Text fänkt mat Wierder wéi „Foto vun“ un, obwuel den gespäicherte Text dat net mécht oder d'Bild net mat engem änneschbare Inhalt verbonnen ass. Kontrolléiert, ob d'Schabloun esou e Präfix dobäi setzt (Entwécklungsaufgab).</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.help">
+                <source>Image alternative text must not be a file name</source>
+                <target>Den alternativen Text vun engem Bild derf kee Dateinumm sinn</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.description">
+                <source>Ensures an image's alternative text is not its file name or a camera-generated name such as IMG_1234, which tells users nothing about the image.</source>
+                <target>Stellt sécher, datt den alternativen Text vun engem Bild net sengem Dateinumm oder engem vun der Kamera generéierte Numm wéi IMG_1234 entsprécht, well dat de Benotzer näischt iwwer d'Bild seet.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename">
+                <source>The alternative text of this image is a file name. In the image settings of the content element, replace it with a description of what the image shows.</source>
+                <target>Den alternativen Text vun dësem Bild ass en Dateinumm. Ersetzt him an den Bildastellungen vum Inhaltselement duerch eng Beschreiwung vun deem, wat d'Bild weist.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename.developer">
+                <source>The rendered alternative text is a file name, although the stored text is not or the image is not linked to editable content. Check whether the template falls back to the file name for the alt attribute (developer task).</source>
+                <target>Den ausgegebenen alternativen Text ass en Dateinumm, obwuel den gespäicherte Text dat net ass oder d'Bild net mat engem änneschbare Inhalt verbonnen ass. Kontrolléiert, ob d'Schabloun fir d'alt-Attribut op den Dateinumm zréckgräift (Entwécklungsaufgab).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Editéiert d'Inhaltselement an ännert säin Iwwerschrëft-Layout, sou datt d'Iwwerschriften-Niveauen keng Etapp iwwersprangen.</target>

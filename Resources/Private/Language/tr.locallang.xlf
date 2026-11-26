@@ -142,6 +142,54 @@
                 <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
                 <target>Gösterilen başlık, kayıtlı değerler farklı olsa veya görsel düzenlenebilir içeriğe bağlı olmasa da alt metni tekrarlıyor. Şablonun alt metni title özniteliğine kopyalayıp kopyalamadığını kontrol edin (geliştirici görevi).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.help">
+                <source>Image alternative text must be long enough to describe the image</source>
+                <target>Görselin alternatif metni, görseli açıklayacak kadar uzun olmalıdır</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.description">
+                <source>Ensures an image's alternative text has at least five characters, as shorter texts rarely describe the image's content or function.</source>
+                <target>Bir görselin alternatif metninin en az beş karakter olmasını sağlar, çünkü daha kısa metinler görselin içeriğini ya da işlevini nadiren açıklar.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short">
+                <source>The alternative text of this image is too short to describe it. In the image settings of the content element, describe what the image shows or what it does.</source>
+                <target>Bu görselin alternatif metni, görseli açıklamak için çok kısa. İçerik öğesinin görsel ayarlarında görselin neyi gösterdiğini ya da hangi işleve sahip olduğunu açıklayın.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short.developer">
+                <source>The rendered alternative text is too short, although the stored text is longer or the image is not linked to editable content. Check how the template builds the alt attribute (developer task).</source>
+                <target>Görüntülenen alternatif metin çok kısa; oysa kayıtlı metin daha uzun olabilir ya da görsel düzenlenebilir içeriğe bağlı değildir. Şablonun alt özniteliğini nasıl oluşturduğunu kontrol edin (geliştirici görevi).</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.help">
+                <source>Image alternative text should not start with "image of" or "photo of"</source>
+                <target>Bir görselin alternatif metni “Görsel:” veya “Fotoğraf:” ile başlamamalıdır</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.description">
+                <source>Ensures an image's alternative text describes the content without announcing that it is an image, which screen readers already do.</source>
+                <target>Bir görselin alternatif metninin, ekran okuyucuların zaten bildirdiği için görsel olduğunu duyurmadan içeriği açıklamasını sağlar.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix">
+                <source>In the image settings of the content element, remove words like "Photo of" or "Image of" from the start of the alternative text and describe the content directly.</source>
+                <target>İçerik öğesinin görsel ayarlarında, alternatif metnin başındaki “Fotoğraf:” veya “Görsel:” gibi sözcükleri kaldırın ve içeriği doğrudan açıklayın.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix.developer">
+                <source>The rendered alternative text starts with words like "Photo of", although the stored text does not or the image is not linked to editable content. Check whether the template adds such a prefix (developer task).</source>
+                <target>Görüntülenen alternatif metin “Fotoğraf:” gibi sözcüklerle başlıyor; oysa kayıtlı metin böyle başlamıyor ya da görsel düzenlenebilir içeriğe bağlı değil. Şablonun böyle bir önek ekleyip eklemediğini kontrol edin (geliştirici görevi).</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.help">
+                <source>Image alternative text must not be a file name</source>
+                <target>Bir görselin alternatif metni dosya adı olamaz</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.description">
+                <source>Ensures an image's alternative text is not its file name or a camera-generated name such as IMG_1234, which tells users nothing about the image.</source>
+                <target>Bir görselin alternatif metninin dosya adı ya da IMG_1234 gibi kameranın oluşturduğu bir ad olmamasını sağlar, çünkü bu tür adlar kullanıcılara görsel hakkında hiçbir bilgi vermez.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename">
+                <source>The alternative text of this image is a file name. In the image settings of the content element, replace it with a description of what the image shows.</source>
+                <target>Bu görselin alternatif metni bir dosya adı. İçerik öğesinin görsel ayarlarında bunu, görselin gösterdiğini açıklayan bir metinle değiştirin.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename.developer">
+                <source>The rendered alternative text is a file name, although the stored text is not or the image is not linked to editable content. Check whether the template falls back to the file name for the alt attribute (developer task).</source>
+                <target>Görüntülenen alternatif metin bir dosya adı; oysa kayıtlı metin dosya adı değil ya da görsel düzenlenebilir içeriğe bağlı değil. Şablonun alt özniteliği için dosya adını yedek olarak kullanıp kullanmadığını kontrol edin (geliştirici görevi).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>İçerik öğesini düzenleyin ve başlık düzeylerinin bir adım atlamaması için Başlık Düzenini değiştirin.</target>

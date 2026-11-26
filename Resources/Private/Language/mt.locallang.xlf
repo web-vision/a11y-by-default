@@ -142,6 +142,54 @@
                 <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
                 <target>It-titolu kif jidher jirrepeti t-test alt, għalkemm il-valuri maħżuna jvarjaw jew l-immaġini mhijiex marbuta ma' kontenut editabbli. Iċċekkja jekk it-template jikkopjax it-test alt fl-attribut title (kompitu għall-iżviluppatur).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.help">
+                <source>Image alternative text must be long enough to describe the image</source>
+                <target>It-test alternattiv tal-immaġni għandu jkun biżżejjed twil biex jiddeskrivih</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.description">
+                <source>Ensures an image's alternative text has at least five characters, as shorter texts rarely describe the image's content or function.</source>
+                <target>Jiżgura li t-test alternattiv ta' immaġni jkollu mill-inqas ħames karattri, għax testi iqsar rarament jiddeskrivu l-kontenut jew il-funzjoni tal-immaġni.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short">
+                <source>The alternative text of this image is too short to describe it. In the image settings of the content element, describe what the image shows or what it does.</source>
+                <target>It-test alternattiv ta' din l-immaġni huwa qasir wisq biex jiddeskrivih. Fl-issettjar tal-immaġni tal-element tal-kontenut, iddeskrivi x'turi l-immaġni jew x'funzjoni għandha.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short.developer">
+                <source>The rendered alternative text is too short, although the stored text is longer or the image is not linked to editable content. Check how the template builds the alt attribute (developer task).</source>
+                <target>It-test alternattiv muri huwa qasir wisq, għalkemm it-test maħżun huwa itwal jew l-immaġni mhijiex marbuta ma' kontenut editabbli. Iċċekkja kif it-template jibni l-attribut alt (kompitu għall-iżviluppatur).</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.help">
+                <source>Image alternative text should not start with "image of" or "photo of"</source>
+                <target>It-test alternattiv ta' immaġni m'għandux jibda b'“Immaġni ta'” jew b'“Ritratt ta'”</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.description">
+                <source>Ensures an image's alternative text describes the content without announcing that it is an image, which screen readers already do.</source>
+                <target>Jiżgura li t-test alternattiv ta' immaġni jiddeskrivi l-kontenut mingħajr ma jannunzja li hija immaġni, għax il-qarrejja tal-iskrin diġà jagħmlu dan.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix">
+                <source>In the image settings of the content element, remove words like "Photo of" or "Image of" from the start of the alternative text and describe the content directly.</source>
+                <target>Fl-issettjar tal-immaġni tal-element tal-kontenut, neħħi mill-bidu tat-test alternattiv kliem bħal “Ritratt ta'” jew “Immaġni ta'” u iddeskrivi l-kontenut direttament.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix.developer">
+                <source>The rendered alternative text starts with words like "Photo of", although the stored text does not or the image is not linked to editable content. Check whether the template adds such a prefix (developer task).</source>
+                <target>It-test alternattiv muri jibda b'kliem bħal “Ritratt ta'”, għalkemm it-test maħżun ma jibdiex hekk jew l-immaġni mhijiex marbuta ma' kontenut editabbli. Iċċekkja jekk it-template iżidx prefiss bħal dan (kompitu għall-iżviluppatur).</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.help">
+                <source>Image alternative text must not be a file name</source>
+                <target>It-test alternattiv ta' immaġni ma jistax ikun isem tal-fajl</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.description">
+                <source>Ensures an image's alternative text is not its file name or a camera-generated name such as IMG_1234, which tells users nothing about the image.</source>
+                <target>Jiżgura li t-test alternattiv ta' immaġni ma jkunx l-isem tal-fajl tagħha jew isem iġġenerat mill-kamera, bħal IMG_1234, għax dak l-isem ma jgħid lill-utenti xejn dwar l-immaġni.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename">
+                <source>The alternative text of this image is a file name. In the image settings of the content element, replace it with a description of what the image shows.</source>
+                <target>It-test alternattiv ta' din l-immaġni huwa isem tal-fajl. Fl-issettjar tal-immaġni tal-element tal-kontenut, ibdlu b'deskrizzjoni ta' dak li turi l-immaġni.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename.developer">
+                <source>The rendered alternative text is a file name, although the stored text is not or the image is not linked to editable content. Check whether the template falls back to the file name for the alt attribute (developer task).</source>
+                <target>It-test alternattiv muri huwa isem tal-fajl, għalkemm it-test maħżun mhuwiex, jew l-immaġni mhijiex marbuta ma' kontenut editabbli. Iċċekkja jekk it-template jużax l-isem tal-fajl bħala alternattiva għall-attribut alt (kompitu għall-iżviluppatur).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Editja l-element tal-kontenut u biddel il-Layout tal-Intestatura tiegħu sabiex il-livelli tal-intestaturi ma jaqbżu ebda pass.</target>

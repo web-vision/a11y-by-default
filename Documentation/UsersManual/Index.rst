@@ -110,10 +110,10 @@ technical details.
     (``image-alt``, ``input-image-alt``, ``area-alt``), non-descriptive link
     text (``link-name``), or a heading level that skips a step
     (``heading-order``), as long as the heading or link comes from a content
-    element rather than the page template. An image title that repeats the
-    alternative text (``a11y-redundant-img-title``, see
-    :ref:`users-manual-redundant-image-title`) belongs here too when the
-    stored title and alternative text are identical.
+    element rather than the page template. Images whose alternative text
+    is too short, starts with "Photo of", is a file name or is repeated in
+    the title (see :ref:`users-manual-image-checks`) belong here too when
+    the stored texts show the problem.
 *   **Always developer-fixable:** missing page landmarks
     (``landmark-one-main``, ``region``), a missing skip-navigation link
     (``bypass``), missing or invalid ``lang`` attributes (``html-has-lang``,
@@ -124,47 +124,77 @@ This classification is shown for every finding regardless of your
 permissions; the optional Developer Corner, described next, only changes how
 many of the developer-fixable findings you get to see.
 
-.. _users-manual-redundant-image-title:
+.. _users-manual-image-checks:
 
-Image title repeats the alternative text
-========================================
+Checks for image texts
+======================
 
-Screen readers may read both the alternative text and the title of an image.
-When both say the same, the description is announced twice. The extension
-therefore reports every image whose title is identical to its alternative
-text as a **Minor** finding (``a11y-redundant-img-title``). Neither axe-core
-nor HTML CodeSniffer has such a rule, so this check runs with both engines,
-in the module and in the page module hint.
+Besides the scanning engine's own rules, the extension checks the
+alternative text and the title of every image on the page. Neither axe-core
+nor HTML CodeSniffer has these rules, so they run with both engines, in the
+module and in the page module hint.
 
-To fix it, open the content element, go to the image settings and either
-remove the title or change it so it adds information that the alternative
-text does not contain.
+.. list-table::
+   :header-rows: 1
+   :widths: 30 15 55
+
+   *   - Rule
+       - Severity
+       - Reported when
+   *   - ``a11y-img-alt-filename``
+       - Serious
+       - The alternative text is the file name, with or without extension,
+         ends with an image file extension such as ``.jpg``, or is a camera
+         name such as ``IMG_1234`` or ``DSC01234``.
+   *   - ``a11y-img-alt-too-short``
+       - Minor
+       - The alternative text has fewer than five characters.
+   *   - ``a11y-img-alt-redundant-prefix``
+       - Minor
+       - The alternative text starts with words such as "Photo of", "Image
+         of", "Foto von" or "Bild:", or consists of such a word only. Screen
+         readers already announce that it is an image.
+   *   - ``a11y-redundant-img-title``
+       - Minor
+       - The title is identical to the alternative text, so screen readers
+         may read the same text twice.
+
+To fix a finding, open the content element, go to the image settings and
+describe what the image shows or what it does. Remove a title that only
+repeats the alternative text, or change it so it adds information.
 
 Good to know:
 
 *   Differences in upper and lower case and in spacing are ignored:
     "Red bicycle" and " red  bicycle" count as identical.
-*   Only identical texts are reported. A title that contains the alternative
-    text plus more words is accepted.
-*   Images without alternative text are not reported here. They already
-    appear as a missing alternative text (``image-alt``).
+*   A title that contains the alternative text plus more words is accepted.
+*   Images without alternative text, or with an empty one for decorative
+    images, are not checked here. A missing alternative text is reported by
+    the engine (``image-alt``).
+*   The words for the "Photo of" check are English and German. Alternative
+    texts in other languages are only checked for length, file names and
+    repeated titles.
+*   The minimum length counts characters. In languages such as Chinese or
+    Japanese a meaningful text can be shorter than five characters and still
+    be reported.
 *   Each affected image is listed as a finding of its own, so every image
-    gets its own edit button.
-*   The finding goes to the editor when the title and alternative text stored
-    for the image in the content element (or, if empty there, in the file's
-    metadata) are identical. When the stored values differ but the page still
-    shows the same text twice, the template copies the alternative text into
-    the title, and the finding goes to the developer.
+    gets its own edit button. One image can show up under several rules.
+*   A finding goes to the editor when the texts stored for the image in the
+    content element (or, if empty there, in the file's metadata) show the
+    same problem. When the stored texts are fine but the page still shows the
+    problem, the template changes the texts, for example by using the file
+    name as alternative text or copying it into the title, and the finding
+    goes to the developer.
 *   Only images of content elements (``tt_content``) can be checked against
-    the stored values. Images from page properties, news records or other
+    the stored texts. Images from page properties, news records or other
     records are always reported as a developer finding, as with missing
     alternative text.
 *   Only the ``title`` attribute of the image itself is checked. A ``title``
     on a link that surrounds the image is not compared.
-*   On translated pages, the stored values are read from all content
-    elements of the page regardless of their language. If the same image is
-    used with different texts in several languages, the attribution to
-    editor or developer can be wrong.
+*   On translated pages, the stored texts are read from all content elements
+    of the page regardless of their language. If the same image is used with
+    different texts in several languages, the attribution to editor or
+    developer can be wrong.
 
 .. _users-manual-developer-corner:
 

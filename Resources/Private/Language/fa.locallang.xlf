@@ -142,6 +142,54 @@
                 <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
                 <target>عنوان نمایش‌داده‌شده متن alt را تکرار می‌کند، با وجود اینکه مقادیر ذخیره‌شده متفاوت‌اند یا تصویر به محتوای قابل ویرایش متصل نیست. بررسی کنید که آیا قالب متن alt را در ویژگی title کپی می‌کند (وظیفه توسعه‌دهنده).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.help">
+                <source>Image alternative text must be long enough to describe the image</source>
+                <target>متن جایگزین تصویر باید به اندازه کافی طولانی باشد تا تصویر را توصیف کند</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.description">
+                <source>Ensures an image's alternative text has at least five characters, as shorter texts rarely describe the image's content or function.</source>
+                <target>اطمینان می‌دهد که متن جایگزین تصویر حداقل پنج نویسه داشته باشد، زیرا متن‌های کوتاه‌تر به‌ندرت محتوا یا کارکرد تصویر را توصیف می‌کنند.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short">
+                <source>The alternative text of this image is too short to describe it. In the image settings of the content element, describe what the image shows or what it does.</source>
+                <target>متن جایگزین این تصویر برای توصیف آن بیش از حد کوتاه است. در تنظیمات تصویر عنصر محتوا، توضیح دهید که تصویر چه چیزی را نشان می‌دهد یا چه کاربردی دارد.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short.developer">
+                <source>The rendered alternative text is too short, although the stored text is longer or the image is not linked to editable content. Check how the template builds the alt attribute (developer task).</source>
+                <target>متن جایگزین نمایش‌داده‌شده بیش از حد کوتاه است، اگرچه متن ذخیره‌شده طولانی‌تر است یا تصویر به محتوای قابل ویرایش متصل نیست. بررسی کنید که الگو چگونه صفت alt را می‌سازد (وظیفه توسعه‌دهنده).</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.help">
+                <source>Image alternative text should not start with "image of" or "photo of"</source>
+                <target>متن جایگزین تصویر نباید با «تصویری از» یا «عکسی از» شروع شود</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.description">
+                <source>Ensures an image's alternative text describes the content without announcing that it is an image, which screen readers already do.</source>
+                <target>اطمینان می‌دهد که متن جایگزین تصویر محتوا را توصیف می‌کند بدون آنکه اعلام کند تصویر است، زیرا صفحه‌خوان‌ها این کار را از پیش انجام می‌دهند.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix">
+                <source>In the image settings of the content element, remove words like "Photo of" or "Image of" from the start of the alternative text and describe the content directly.</source>
+                <target>در تنظیمات تصویر عنصر محتوا، کلماتی مانند «عکسی از» یا «تصویری از» را از ابتدای متن جایگزین حذف کنید و محتوا را مستقیماً توصیف کنید.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix.developer">
+                <source>The rendered alternative text starts with words like "Photo of", although the stored text does not or the image is not linked to editable content. Check whether the template adds such a prefix (developer task).</source>
+                <target>متن جایگزین نمایش‌داده‌شده با کلماتی مانند «عکسی از» شروع می‌شود، اگرچه متن ذخیره‌شده چنین نیست یا تصویر به محتوای قابل ویرایش متصل نیست. بررسی کنید که آیا الگو چنین پیشوندی اضافه می‌کند (وظیفه توسعه‌دهنده).</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.help">
+                <source>Image alternative text must not be a file name</source>
+                <target>متن جایگزین تصویر نباید نام فایل باشد</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.description">
+                <source>Ensures an image's alternative text is not its file name or a camera-generated name such as IMG_1234, which tells users nothing about the image.</source>
+                <target>اطمینان می‌دهد که متن جایگزین تصویر نام فایل آن یا نامی که دوربین تولید کرده است، مانند IMG_1234، نباشد، زیرا چیزی درباره تصویر به کاربران نمی‌گوید.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename">
+                <source>The alternative text of this image is a file name. In the image settings of the content element, replace it with a description of what the image shows.</source>
+                <target>متن جایگزین این تصویر یک نام فایل است. در تنظیمات تصویر عنصر محتوا، آن را با توصیفی از آنچه تصویر نشان می‌دهد جایگزین کنید.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename.developer">
+                <source>The rendered alternative text is a file name, although the stored text is not or the image is not linked to editable content. Check whether the template falls back to the file name for the alt attribute (developer task).</source>
+                <target>متن جایگزین نمایش‌داده‌شده نام فایل است، اگرچه متن ذخیره‌شده چنین نیست یا تصویر به محتوای قابل ویرایش متصل نیست. بررسی کنید که آیا الگو برای صفت alt به نام فایل بازمی‌گردد (وظیفه توسعه‌دهنده).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>عنصر محتوا را ویرایش کنید و چیدمان تیتر آن را تغییر دهید تا سطوح تیتر بدون پرش پیوسته باشند.</target>

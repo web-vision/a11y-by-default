@@ -142,6 +142,54 @@
                 <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
                 <target>Attēlotais nosaukums atkārto alt tekstu, lai gan saglabātās vērtības atšķiras vai attēls nav saistīts ar rediģējamu saturu. Pārbaudiet, vai veidne kopē alt tekstu title atribūtā (izstrādātāja uzdevums).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.help">
+                <source>Image alternative text must be long enough to describe the image</source>
+                <target>Attēla alternatīvajam tekstam jābūt pietiekami garam, lai to aprakstītu</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.description">
+                <source>Ensures an image's alternative text has at least five characters, as shorter texts rarely describe the image's content or function.</source>
+                <target>Nodrošina, ka attēla alternatīvajam tekstam ir vismaz pieci rakstzīmes, jo īsāki teksti reti apraksta attēla saturu vai funkciju.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short">
+                <source>The alternative text of this image is too short to describe it. In the image settings of the content element, describe what the image shows or what it does.</source>
+                <target>Šī attēla alternatīvais teksts ir par īsu, lai to aprakstītu. Satura elementa attēla iestatījumos aprakstiet, ko attēls rāda vai kādu funkciju tas pilda.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short.developer">
+                <source>The rendered alternative text is too short, although the stored text is longer or the image is not linked to editable content. Check how the template builds the alt attribute (developer task).</source>
+                <target>Attēlotais alternatīvais teksts ir par īsu, lai gan saglabātais teksts ir garāks vai attēls nav saistīts ar rediģējamu saturu. Pārbaudiet, kā sagatave veido alt atribūtu (izstrādātāja uzdevums).</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.help">
+                <source>Image alternative text should not start with "image of" or "photo of"</source>
+                <target>Attēla alternatīvais teksts nedrīkst sākties ar „Attēls ar” vai „Foto ar”</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.description">
+                <source>Ensures an image's alternative text describes the content without announcing that it is an image, which screen readers already do.</source>
+                <target>Nodrošina, ka attēla alternatīvais teksts apraksta saturu, neparādot, ka tas ir attēls, jo ekrāna lasītāji to jau dara.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix">
+                <source>In the image settings of the content element, remove words like "Photo of" or "Image of" from the start of the alternative text and describe the content directly.</source>
+                <target>Satura elementa attēla iestatījumos noņemiet no alternatīvā teksta sākuma tādus vārdus kā „Foto ar” vai „Attēls ar” un tieši aprakstiet saturu.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix.developer">
+                <source>The rendered alternative text starts with words like "Photo of", although the stored text does not or the image is not linked to editable content. Check whether the template adds such a prefix (developer task).</source>
+                <target>Attēlotais alternatīvais teksts sākas ar tādiem vārdiem kā „Foto ar”, lai gan saglabātais teksts tā nesākas vai attēls nav saistīts ar rediģējamu saturu. Pārbaudiet, vai sagatave pievieno šādu priedēkli (izstrādātāja uzdevums).</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.help">
+                <source>Image alternative text must not be a file name</source>
+                <target>Attēla alternatīvais teksts nedrīkst būt faila nosaukums</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.description">
+                <source>Ensures an image's alternative text is not its file name or a camera-generated name such as IMG_1234, which tells users nothing about the image.</source>
+                <target>Nodrošina, ka attēla alternatīvais teksts nav tā faila nosaukums vai kameras ģenerēts nosaukums, piemēram, IMG_1234, jo tas lietotājiem neko nestāsta par attēlu.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename">
+                <source>The alternative text of this image is a file name. In the image settings of the content element, replace it with a description of what the image shows.</source>
+                <target>Šī attēla alternatīvais teksts ir faila nosaukums. Satura elementa attēla iestatījumos aizstājiet to ar attēlā redzamā apraksts.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename.developer">
+                <source>The rendered alternative text is a file name, although the stored text is not or the image is not linked to editable content. Check whether the template falls back to the file name for the alt attribute (developer task).</source>
+                <target>Attēlotais alternatīvais teksts ir faila nosaukums, lai gan saglabātais teksts tāds nav, vai attēls nav saistīts ar rediģējamu saturu. Pārbaudiet, vai sagatave alt atribūtam kā rezerves vērtību izmanto faila nosaukumu (izstrādātāja uzdevums).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Redigējiet satura elementu un mainiet tā virsraksta izkārtojumu, lai virsrakstu līmeņi nepārlaistu soli.</target>

@@ -142,6 +142,54 @@
                 <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
                 <target>Titlul afișat repetă textul alt, deși valorile stocate diferă sau imaginea nu este legată de conținut editabil. Verificați dacă șablonul copiază textul alt în atributul title (sarcină pentru dezvoltator).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.help">
+                <source>Image alternative text must be long enough to describe the image</source>
+                <target>Textul alternativ al imaginii trebuie să fie suficient de lung pentru a o descrie</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.description">
+                <source>Ensures an image's alternative text has at least five characters, as shorter texts rarely describe the image's content or function.</source>
+                <target>Asigură că textul alternativ al unei imagini are cel puțin cinci caractere, deoarece textele mai scurte descriu rareori conținutul sau funcția imaginii.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short">
+                <source>The alternative text of this image is too short to describe it. In the image settings of the content element, describe what the image shows or what it does.</source>
+                <target>Textul alternativ al acestei imagini este prea scurt pentru a o descrie. În setările imaginii din elementul de conținut, descrieți ce arată imaginea sau ce funcție are.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short.developer">
+                <source>The rendered alternative text is too short, although the stored text is longer or the image is not linked to editable content. Check how the template builds the alt attribute (developer task).</source>
+                <target>Textul alternativ afișat este prea scurt, deși textul stocat este mai lung sau imaginea nu este legată de conținut editabil. Verificați modul în care șablonul generează atributul alt (sarcină pentru dezvoltator).</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.help">
+                <source>Image alternative text should not start with "image of" or "photo of"</source>
+                <target>Textul alternativ al unei imagini nu ar trebui să înceapă cu „Imagine a” sau „Fotografie a”</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.description">
+                <source>Ensures an image's alternative text describes the content without announcing that it is an image, which screen readers already do.</source>
+                <target>Asigură că textul alternativ al unei imagini descrie conținutul fără a anunța că este o imagine, lucru pe care cititoarele de ecran îl fac deja.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix">
+                <source>In the image settings of the content element, remove words like "Photo of" or "Image of" from the start of the alternative text and describe the content directly.</source>
+                <target>În setările imaginii din elementul de conținut, eliminați de la începutul textului alternativ cuvinte precum „Fotografie a” sau „Imagine a” și descrieți direct conținutul.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix.developer">
+                <source>The rendered alternative text starts with words like "Photo of", although the stored text does not or the image is not linked to editable content. Check whether the template adds such a prefix (developer task).</source>
+                <target>Textul alternativ afișat începe cu cuvinte precum „Fotografie a”, deși textul stocat nu începe așa sau imaginea nu este legată de conținut editabil. Verificați dacă șablonul adaugă un astfel de prefix (sarcină pentru dezvoltator).</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.help">
+                <source>Image alternative text must not be a file name</source>
+                <target>Textul alternativ al unei imagini nu poate fi un nume de fișier</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.description">
+                <source>Ensures an image's alternative text is not its file name or a camera-generated name such as IMG_1234, which tells users nothing about the image.</source>
+                <target>Asigură că textul alternativ al unei imagini nu este numele fișierului sau un nume generat de cameră, precum IMG_1234, deoarece un astfel de nume nu spune utilizatorilor nimic despre imagine.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename">
+                <source>The alternative text of this image is a file name. In the image settings of the content element, replace it with a description of what the image shows.</source>
+                <target>Textul alternativ al acestei imagini este un nume de fișier. În setările imaginii din elementul de conținut, înlocuiți-l cu o descriere a ceea ce arată imaginea.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename.developer">
+                <source>The rendered alternative text is a file name, although the stored text is not or the image is not linked to editable content. Check whether the template falls back to the file name for the alt attribute (developer task).</source>
+                <target>Textul alternativ afișat este un nume de fișier, deși textul stocat nu este, sau imaginea nu este legată de conținut editabil. Verificați dacă șablonul folosește numele fișierului drept rezervă pentru atributul alt (sarcină pentru dezvoltator).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Editați elementul de conținut și modificați aranjamentul antetului astfel încât nivelurile de titlu să nu sară o etapă.</target>

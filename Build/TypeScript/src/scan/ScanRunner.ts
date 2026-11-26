@@ -1,5 +1,5 @@
 import { Typo3Backend } from '../backend/Typo3Backend';
-import { RedundantImageTitleCheck } from '../checks/RedundantImageTitleCheck';
+import { ImageRulesCheck } from '../checks/ImageRulesCheck';
 import { buildContentFactsIndex } from '../ContentFacts';
 import { AxeEngine } from '../engines/AxeEngine';
 import { HtmlCsEngine } from '../engines/HtmlCsEngine';
@@ -28,7 +28,7 @@ export class ScanRunner {
       const result = await scanEngine.run();
       const iframeDocument = iframe.contentDocument;
       if (iframeDocument !== null) {
-        const ownIssues = new RedundantImageTitleCheck((key) => Typo3Backend.getLabel(key)).run(
+        const ownIssues = new ImageRulesCheck((key: string) => Typo3Backend.getLabel(key)).run(
           iframeDocument,
           contentFactsIndex,
         );

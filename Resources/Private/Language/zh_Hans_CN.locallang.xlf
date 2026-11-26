@@ -142,6 +142,54 @@
                 <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
                 <target>输出的标题重复了 alt 文本，但存储的值不同，或图片未关联到可编辑内容。请检查模板是否将 alt 文本复制到了 title 属性中（开发任务）。</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.help">
+                <source>Image alternative text must be long enough to describe the image</source>
+                <target>图片的替代文本必须足够长，才能描述该图片</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.description">
+                <source>Ensures an image's alternative text has at least five characters, as shorter texts rarely describe the image's content or function.</source>
+                <target>确保图片的替代文本至少包含五个字符，因为较短的文本很少能描述图片的内容或功能。</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short">
+                <source>The alternative text of this image is too short to describe it. In the image settings of the content element, describe what the image shows or what it does.</source>
+                <target>此图片的替代文本过短，无法描述图片。请在内容元素的图片设置中，说明图片展示的内容或其功能。</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short.developer">
+                <source>The rendered alternative text is too short, although the stored text is longer or the image is not linked to editable content. Check how the template builds the alt attribute (developer task).</source>
+                <target>显示的替代文本过短，尽管已保存的文本更长，或者该图片未关联可编辑的内容。请检查模板如何生成 alt 属性（开发任务）。</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.help">
+                <source>Image alternative text should not start with "image of" or "photo of"</source>
+                <target>图片的替代文本不应以“图片的”或“照片的”开头</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.description">
+                <source>Ensures an image's alternative text describes the content without announcing that it is an image, which screen readers already do.</source>
+                <target>确保图片的替代文本描述内容，而不声明这是图片，因为屏幕阅读器本身已经会这样做。</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix">
+                <source>In the image settings of the content element, remove words like "Photo of" or "Image of" from the start of the alternative text and describe the content directly.</source>
+                <target>请在内容元素的图片设置中，删除替代文本开头的“照片的”或“图片的”等词语，直接描述内容。</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix.developer">
+                <source>The rendered alternative text starts with words like "Photo of", although the stored text does not or the image is not linked to editable content. Check whether the template adds such a prefix (developer task).</source>
+                <target>显示的替代文本以“照片的”等词语开头，尽管已保存的文本并非如此，或者该图片未关联可编辑的内容。请检查模板是否添加了此类前缀（开发任务）。</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.help">
+                <source>Image alternative text must not be a file name</source>
+                <target>图片的替代文本不能是文件名</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.description">
+                <source>Ensures an image's alternative text is not its file name or a camera-generated name such as IMG_1234, which tells users nothing about the image.</source>
+                <target>确保图片的替代文本不是其文件名，也不是相机生成的名称（例如 IMG_1234），因为这类名称无法向用户提供有关图片的任何信息。</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename">
+                <source>The alternative text of this image is a file name. In the image settings of the content element, replace it with a description of what the image shows.</source>
+                <target>此图片的替代文本是文件名。请在内容元素的图片设置中，将其替换为对图片所示内容的描述。</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename.developer">
+                <source>The rendered alternative text is a file name, although the stored text is not or the image is not linked to editable content. Check whether the template falls back to the file name for the alt attribute (developer task).</source>
+                <target>显示的替代文本是文件名，尽管已保存的文本并非文件名，或者该图片未关联可编辑的内容。请检查模板是否在 alt 属性中回退使用文件名（开发任务）。</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>请编辑该内容元素并调整其标题布局，使标题级别不出现跳级。</target>

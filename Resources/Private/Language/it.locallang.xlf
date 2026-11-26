@@ -142,6 +142,54 @@
                 <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
                 <target>Il titolo visualizzato ripete il testo alternativo (alt), anche se i valori memorizzati sono diversi o l'immagine non è collegata a contenuti modificabili. Verificate se il template copia il testo alternativo nell'attributo title (attività per lo sviluppatore).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.help">
+                <source>Image alternative text must be long enough to describe the image</source>
+                <target>Il testo alternativo dell'immagine deve essere sufficientemente lungo da descriverla</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.description">
+                <source>Ensures an image's alternative text has at least five characters, as shorter texts rarely describe the image's content or function.</source>
+                <target>Garantisce che il testo alternativo di un'immagine contenga almeno cinque caratteri, poiché testi più brevi raramente descrivono il contenuto o la funzione dell'immagine.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short">
+                <source>The alternative text of this image is too short to describe it. In the image settings of the content element, describe what the image shows or what it does.</source>
+                <target>Il testo alternativo di questa immagine è troppo breve per descriverla. Nelle impostazioni dell'immagine dell'elemento di contenuto, descrivi cosa mostra l'immagine o quale funzione svolge.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short.developer">
+                <source>The rendered alternative text is too short, although the stored text is longer or the image is not linked to editable content. Check how the template builds the alt attribute (developer task).</source>
+                <target>Il testo alternativo visualizzato è troppo breve, anche se il testo memorizzato è più lungo o l'immagine non è collegata a contenuto modificabile. Verifica come il template genera l'attributo alt (attività per lo sviluppatore).</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.help">
+                <source>Image alternative text should not start with "image of" or "photo of"</source>
+                <target>Il testo alternativo di un'immagine non dovrebbe iniziare con “Immagine di” o “Foto di”</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.description">
+                <source>Ensures an image's alternative text describes the content without announcing that it is an image, which screen readers already do.</source>
+                <target>Garantisce che il testo alternativo di un'immagine descriva il contenuto senza annunciare che si tratta di un'immagine, cosa che gli screen reader fanno già.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix">
+                <source>In the image settings of the content element, remove words like "Photo of" or "Image of" from the start of the alternative text and describe the content directly.</source>
+                <target>Nelle impostazioni dell'immagine dell'elemento di contenuto, rimuovi dall'inizio del testo alternativo parole come “Foto di” o “Immagine di” e descrivi direttamente il contenuto.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix.developer">
+                <source>The rendered alternative text starts with words like "Photo of", although the stored text does not or the image is not linked to editable content. Check whether the template adds such a prefix (developer task).</source>
+                <target>Il testo alternativo visualizzato inizia con parole come “Foto di”, anche se il testo memorizzato non inizia così o l'immagine non è collegata a contenuto modificabile. Verifica se il template aggiunge un prefisso del genere (attività per lo sviluppatore).</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.help">
+                <source>Image alternative text must not be a file name</source>
+                <target>Il testo alternativo di un'immagine non può essere un nome di file</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.description">
+                <source>Ensures an image's alternative text is not its file name or a camera-generated name such as IMG_1234, which tells users nothing about the image.</source>
+                <target>Garantisce che il testo alternativo di un'immagine non sia il suo nome di file o un nome generato dalla fotocamera, come IMG_1234, che non dice nulla agli utenti sull'immagine.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename">
+                <source>The alternative text of this image is a file name. In the image settings of the content element, replace it with a description of what the image shows.</source>
+                <target>Il testo alternativo di questa immagine è un nome di file. Nelle impostazioni dell'immagine dell'elemento di contenuto, sostituiscilo con una descrizione di ciò che mostra l'immagine.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename.developer">
+                <source>The rendered alternative text is a file name, although the stored text is not or the image is not linked to editable content. Check whether the template falls back to the file name for the alt attribute (developer task).</source>
+                <target>Il testo alternativo visualizzato è un nome di file, anche se il testo memorizzato non lo è, o l'immagine non è collegata a contenuto modificabile. Verifica se il template usa il nome di file come ripiego per l'attributo alt (attività per lo sviluppatore).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Modifica l'elemento di contenuto e cambia il suo layout di intestazione affinché i livelli di intestazione non saltino un passaggio.</target>

@@ -33,7 +33,7 @@ function mockIframeLoad(): void {
     if (node instanceof HTMLIFrameElement) {
       Object.defineProperty(node, 'contentDocument', {
         value: new DOMParser().parseFromString(
-          '<html><body><img src="a.jpg" alt="Cat" title="cat"></body></html>',
+          '<html><body><img src="a.jpg" alt="Cat" title="cat"><img src="b.jpg" alt="IMG_1234"></body></html>',
           'text/html',
         ),
       });
@@ -46,7 +46,10 @@ function mockIframeLoad(): void {
 describe('ScanRunner', () => {
   beforeEach(() => {
     (window as unknown as Record<string, unknown>).TYPO3 = {
-      lang: { 'rule.a11y-redundant-img-title.help': 'Redundant title' },
+      lang: {
+        'rule.a11y-redundant-img-title.help': 'Redundant title',
+        'rule.a11y-img-alt-too-short.help': 'Too short',
+      },
     };
     mockIframeLoad();
     const result = { violations: [engineViolation], incomplete: [], passes: [], url: '' };
@@ -63,14 +66,17 @@ describe('ScanRunner', () => {
     document.querySelectorAll('iframe').forEach((f) => f.remove());
   });
 
-  it.each<ScanEngine>(['axe', 'htmlcs'])(
-    'appends the redundant image title issue for the %s engine',
-    async (engine) => {
-      const result = await new ScanRunner().run(settings, engine);
+  it.each<ScanEngine>(['axe', 'htmlcs'])('appends the own image rule issues for the %s engine', async (engine) => {
+    const result = await new ScanRunner().run(settings, engine);
 
-      expect(result.violations.map((v) => v.id)).toEqual(['image-alt', 'a11y-redundant-img-title']);
-      expect(result.violations[1]?.help).toBe('Redundant title');
-      expect(document.querySelector('iframe')).toBeNull();
-    },
-  );
+    expect(result.violations.map((v) => v.id)).toEqual([
+      'image-alt',
+      'a11y-redundant-img-title',
+      'a11y-img-alt-too-short',
+      'a11y-img-alt-filename',
+    ]);
+    expect(result.violations[1]?.help).toBe('Redundant title');
+    expect(result.violations[2]?.help).toBe('Too short');
+    expect(document.querySelector('iframe')).toBeNull();
+  });
 });

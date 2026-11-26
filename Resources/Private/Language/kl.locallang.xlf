@@ -142,6 +142,54 @@
                 <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
                 <target>Titeq takuneqarsimasoq alt-tekstimik ataqatigiissitsivoq, kisiannili atorneqartut allanngorsimapput imaluunniit assersuutip ilisimatitsissutit allanngortinneqarsinnaasut ilaasinnaanngillat. Modelip alt-tekstimik title-attribuutimut kopiaasarnersoq misissuiuk (ilinniartitsisup suliaa).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.help">
+                <source>Image alternative text must be long enough to describe the image</source>
+                <target>Assersuutip alternativa oqaasertaa assersuut nassuiarnissaanut sivisuumik ataatsimoortussaavoq.</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.description">
+                <source>Ensures an image's alternative text has at least five characters, as shorter texts rarely describe the image's content or function.</source>
+                <target>Assersuutip alternativa oqaasertaa tallimanik signinik sivisussuseqassasoq isumaqatigiivoq, tamatuma kingunerisaanik oqaasit mikisut assersuutip imaanik imaluunniit sulinerannik nassuiaatitsisinnaanngitsut.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short">
+                <source>The alternative text of this image is too short to describe it. In the image settings of the content element, describe what the image shows or what it does.</source>
+                <target>Assersuut manna alternativa oqaasertaa nassuiarnissaanut mikisoq. Ilusilersuutip ilaani assersuutip takutitsisup imaluunniit sulinera nassuiaatinneqassaaq.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short.developer">
+                <source>The rendered alternative text is too short, although the stored text is longer or the image is not linked to editable content. Check how the template builds the alt attribute (developer task).</source>
+                <target>Takutinneqartoq alternativa oqaasertaa mikisoq, kisianni allaffigineqartoq sivisuunerusoq imaluunniit assersuut allatigut nassuiarnikkut sanilliullugu ilisimatitsissutit allanngortinneqarsinnaasut. Iliuuseqarnermi alt-attribut qanoq pilersinneqarnersoq misissuiffigisassaavoq (ilisimatusartup suliaa).</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.help">
+                <source>Image alternative text should not start with "image of" or "photo of"</source>
+                <target>Assersuutip alternativa oqaasertaa „Assersuut“ imaluunniit „Foto“ oqaasertaatigut ingerlanneqassanngilaq</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.description">
+                <source>Ensures an image's alternative text describes the content without announcing that it is an image, which screen readers already do.</source>
+                <target>Assersuutip alternativa oqaasertaa assersuutip ilisimatinnera nassuiaatitsissaaq, assersuut ajornartorsiutigineqarnginnerulluni, ilisimatitsineq ilaatinneqarsinnaasariaqarpoq, taamaattumik ekraanilerinerit tamanna sukkasuumik pilersitsiput.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix">
+                <source>In the image settings of the content element, remove words like "Photo of" or "Image of" from the start of the alternative text and describe the content directly.</source>
+                <target>Ilusilersuutip ilaani assersuutip alternativa oqaasertaanit „Foto“ imaluunniit „Assersuut“ oqaasiniit peqqutigalugit atuinerit aalajangiffigisinnaavat, assersuut sukkasuumik nassuiarneqassaaq.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix.developer">
+                <source>The rendered alternative text starts with words like "Photo of", although the stored text does not or the image is not linked to editable content. Check whether the template adds such a prefix (developer task).</source>
+                <target>Takutinneqartoq alternativa oqaasertaa „Foto“ oqaasiniit ingerlanneqarpoq, kisianni allaffigineqartoq taamaattoq ingerlanngitsoq imaluunniit assersuut allanngortinneqarsinnaasumik ilisimatitsissutit ilaatinneqarsimanngitsoq. Iliuuseqarneq sukkanerpaaq tassa ilaatinneqarsinnaanersoq misissuiffigisassaavoq (ilisimatusartup suliaa).</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.help">
+                <source>Image alternative text must not be a file name</source>
+                <target>Assersuutip alternativa oqaasertaa fiilinimi ilaanngitsoq</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.description">
+                <source>Ensures an image's alternative text is not its file name or a camera-generated name such as IMG_1234, which tells users nothing about the image.</source>
+                <target>Assersuutip alternativa oqaasertaa fiilinimi imaluunniit kameraamit pilersitsinneqartoq, IMG_1234 ilanngullugu, ilaanngitsoq isumaqatigiissutigineqarpoq, tamatuma kingunerisaanik taakku atuartunut assersuut pillugu ima pitsaanerpaaq nassuiaatinngitsut.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename">
+                <source>The alternative text of this image is a file name. In the image settings of the content element, replace it with a description of what the image shows.</source>
+                <target>Assersuut manna alternativa oqaasertaa fiilinimi. Ilusilersuutip ilaani assersuutip takutitsisup nassuiaatigineqassaaq.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename.developer">
+                <source>The rendered alternative text is a file name, although the stored text is not or the image is not linked to editable content. Check whether the template falls back to the file name for the alt attribute (developer task).</source>
+                <target>Takutinneqartoq alternativa oqaasertaa fiilinimi, kisianni allaffigineqartoq taamaattoq ilanngunngilaq imaluunniit assersuut allanngortinneqarsinnaasumik ilisimatitsissutit ilaatinneqarsimanngitsoq. Iliuuseqarneq fiilinimi alt-attributip ersersinneqarnermut atorneqartoq misissuiffigisassaavoq (ilisimatusartup suliaa).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Immikkoortoq aaqqissuilugu qullersaap immikkoortiviinilu allanngortilluutit, taavalu qullersaasa qutsanngortinneri kingullimmut apeqqutaannginniassammat.</target>

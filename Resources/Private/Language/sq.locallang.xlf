@@ -142,6 +142,54 @@
                 <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
                 <target>Titulli i shfaqur përsërit tekstin alt, edhe pse vlerat e ruajtura ndryshojnë ose imazhi nuk është i lidhur me përmbajtje të redaktueshme. Kontrolloni nëse shablloni kopjon tekstin alt te atributi title (detyrë për zhvilluesin).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.help">
+                <source>Image alternative text must be long enough to describe the image</source>
+                <target>Teksti alternativ i imazhit duhet të jetë mjaft i gjatë për ta përshkruar</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.description">
+                <source>Ensures an image's alternative text has at least five characters, as shorter texts rarely describe the image's content or function.</source>
+                <target>Siguron që teksti alternativ i një imazhi të ketë të paktën pesë karaktere, sepse tekstet më të shkurtra rrallë përshkruajnë përmbajtjen ose funksionin e imazhit.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short">
+                <source>The alternative text of this image is too short to describe it. In the image settings of the content element, describe what the image shows or what it does.</source>
+                <target>Teksti alternativ i këtij imazhi është shumë i shkurtër për ta përshkruar. Te cilësimet e imazhit të elementit të përmbajtjes, përshkruani çfarë shfaq imazhi ose çfarë funksioni ka.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short.developer">
+                <source>The rendered alternative text is too short, although the stored text is longer or the image is not linked to editable content. Check how the template builds the alt attribute (developer task).</source>
+                <target>Teksti alternativ i shfaqur është shumë i shkurtër, megjithëse teksti i ruajtur është më i gjatë ose imazhi nuk është i lidhur me përmbajtje të redaktueshme. Kontrolloni si e krijon shablloni atributin alt (detyrë për zhvilluesin).</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.help">
+                <source>Image alternative text should not start with "image of" or "photo of"</source>
+                <target>Teksti alternativ i një imazhi nuk duhet të fillojë me „Imazh i“ ose „Foto e“</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.description">
+                <source>Ensures an image's alternative text describes the content without announcing that it is an image, which screen readers already do.</source>
+                <target>Siguron që teksti alternativ i një imazhi të përshkruajë përmbajtjen pa njoftuar se është imazh, gjë që lexuesit e ekranit e bëjnë tashmë.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix">
+                <source>In the image settings of the content element, remove words like "Photo of" or "Image of" from the start of the alternative text and describe the content directly.</source>
+                <target>Te cilësimet e imazhit të elementit të përmbajtjes, hiqni nga fillimi i tekstit alternativ fjalë si „Foto e“ ose „Imazh i“ dhe përshkruani drejtpërdrejt përmbajtjen.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix.developer">
+                <source>The rendered alternative text starts with words like "Photo of", although the stored text does not or the image is not linked to editable content. Check whether the template adds such a prefix (developer task).</source>
+                <target>Teksti alternativ i shfaqur fillon me fjalë si „Foto e“, megjithëse teksti i ruajtur nuk fillon kështu ose imazhi nuk është i lidhur me përmbajtje të redaktueshme. Kontrolloni nëse shablloni shton një prefiks të tillë (detyrë për zhvilluesin).</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.help">
+                <source>Image alternative text must not be a file name</source>
+                <target>Teksti alternativ i një imazhi nuk mund të jetë emër skedari</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.description">
+                <source>Ensures an image's alternative text is not its file name or a camera-generated name such as IMG_1234, which tells users nothing about the image.</source>
+                <target>Siguron që teksti alternativ i një imazhi të mos jetë emri i skedarit ose një emër i gjeneruar nga kamera, si IMG_1234, sepse një emër i tillë nuk u thotë asgjë përdoruesve për imazhin.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename">
+                <source>The alternative text of this image is a file name. In the image settings of the content element, replace it with a description of what the image shows.</source>
+                <target>Teksti alternativ i këtij imazhi është emër skedari. Te cilësimet e imazhit të elementit të përmbajtjes, zëvendësojeni me një përshkrim të asaj që shfaq imazhi.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename.developer">
+                <source>The rendered alternative text is a file name, although the stored text is not or the image is not linked to editable content. Check whether the template falls back to the file name for the alt attribute (developer task).</source>
+                <target>Teksti alternativ i shfaqur është emër skedari, megjithëse teksti i ruajtur nuk është, ose imazhi nuk është i lidhur me përmbajtje të redaktueshme. Kontrolloni nëse shablloni e përdor emrin e skedarit si rezervë për atributin alt (detyrë për zhvilluesin).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Redaktoni elementin e përmbajtjes dhe ndryshoni Strukturën e Titullit të tij që nivelet e titujve të mos kërcejnë një hap.</target>

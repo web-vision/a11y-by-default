@@ -142,6 +142,54 @@
                 <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
                 <target>ชื่อที่แสดงซ้ำกับข้อความ alt แม้ว่าค่าที่บันทึกไว้จะต่างกัน หรือรูปภาพไม่ได้เชื่อมโยงกับเนื้อหาที่แก้ไขได้ ตรวจสอบว่าเทมเพลตคัดลอกข้อความ alt ไปยังแอตทริบิวต์ title หรือไม่ (งานของนักพัฒนา)</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.help">
+                <source>Image alternative text must be long enough to describe the image</source>
+                <target>ข้อความแสดงแทนของรูปภาพต้องยาวพอที่จะอธิบายรูปภาพนั้นได้</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.description">
+                <source>Ensures an image's alternative text has at least five characters, as shorter texts rarely describe the image's content or function.</source>
+                <target>ตรวจสอบให้แน่ใจว่าข้อความแสดงแทนของรูปภาพมีอย่างน้อยห้าอักขระ เพราะข้อความที่สั้นกว่ามักไม่สามารถอธิบายเนื้อหาหรือหน้าที่ของรูปภาพได้</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short">
+                <source>The alternative text of this image is too short to describe it. In the image settings of the content element, describe what the image shows or what it does.</source>
+                <target>ข้อความแสดงแทนของรูปภาพนี้สั้นเกินไปที่จะอธิบายได้ ในการตั้งค่ารูปภาพของส่วนเนื้อหา ให้อธิบายว่ารูปภาพแสดงอะไรหรือมีหน้าที่อะไร</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short.developer">
+                <source>The rendered alternative text is too short, although the stored text is longer or the image is not linked to editable content. Check how the template builds the alt attribute (developer task).</source>
+                <target>ข้อความแสดงแทนที่แสดงผลสั้นเกินไป แม้ว่าข้อความที่บันทึกไว้จะยาวกว่า หรือรูปภาพไม่ได้เชื่อมโยงกับเนื้อหาที่แก้ไขได้ ตรวจสอบว่าเทมเพลตสร้างแอตทริบิวต์ alt อย่างไร (งานสำหรับนักพัฒนา)</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.help">
+                <source>Image alternative text should not start with "image of" or "photo of"</source>
+                <target>ข้อความแสดงแทนของรูปภาพไม่ควรขึ้นต้นด้วย “รูปภาพของ” หรือ “ภาพถ่ายของ”</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.description">
+                <source>Ensures an image's alternative text describes the content without announcing that it is an image, which screen readers already do.</source>
+                <target>ตรวจสอบให้แน่ใจว่าข้อความแสดงแทนของรูปภาพอธิบายเนื้อหาโดยไม่ประกาศว่าเป็นรูปภาพ เพราะโปรแกรมอ่านหน้าจอทำเช่นนั้นอยู่แล้ว</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix">
+                <source>In the image settings of the content element, remove words like "Photo of" or "Image of" from the start of the alternative text and describe the content directly.</source>
+                <target>ในการตั้งค่ารูปภาพของส่วนเนื้อหา ให้ลบคำอย่าง “ภาพถ่ายของ” หรือ “รูปภาพของ” ออกจากต้นข้อความแสดงแทน แล้วอธิบายเนื้อหาโดยตรง</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix.developer">
+                <source>The rendered alternative text starts with words like "Photo of", although the stored text does not or the image is not linked to editable content. Check whether the template adds such a prefix (developer task).</source>
+                <target>ข้อความแสดงแทนที่แสดงผลขึ้นต้นด้วยคำอย่าง “ภาพถ่ายของ” แม้ว่าข้อความที่บันทึกไว้จะไม่ขึ้นต้นเช่นนั้น หรือรูปภาพไม่ได้เชื่อมโยงกับเนื้อหาที่แก้ไขได้ ตรวจสอบว่าเทมเพลตเพิ่มคำนำหน้าดังกล่าวหรือไม่ (งานสำหรับนักพัฒนา)</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.help">
+                <source>Image alternative text must not be a file name</source>
+                <target>ข้อความแสดงแทนของรูปภาพต้องไม่เป็นชื่อไฟล์</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.description">
+                <source>Ensures an image's alternative text is not its file name or a camera-generated name such as IMG_1234, which tells users nothing about the image.</source>
+                <target>ตรวจสอบให้แน่ใจว่าข้อความแสดงแทนของรูปภาพไม่ใช่ชื่อไฟล์ของรูปภาพหรือชื่อที่กล้องสร้างขึ้น เช่น IMG_1234 เพราะชื่อเช่นนั้นไม่บอกอะไรผู้ใช้เกี่ยวกับรูปภาพ</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename">
+                <source>The alternative text of this image is a file name. In the image settings of the content element, replace it with a description of what the image shows.</source>
+                <target>ข้อความแสดงแทนของรูปภาพนี้เป็นชื่อไฟล์ ในการตั้งค่ารูปภาพของส่วนเนื้อหา ให้แทนที่ด้วยคำอธิบายของสิ่งที่รูปภาพแสดง</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename.developer">
+                <source>The rendered alternative text is a file name, although the stored text is not or the image is not linked to editable content. Check whether the template falls back to the file name for the alt attribute (developer task).</source>
+                <target>ข้อความแสดงแทนที่แสดงผลเป็นชื่อไฟล์ แม้ว่าข้อความที่บันทึกไว้จะไม่ใช่ชื่อไฟล์ หรือรูปภาพไม่ได้เชื่อมโยงกับเนื้อหาที่แก้ไขได้ ตรวจสอบว่าเทมเพลตใช้ชื่อไฟล์เป็นค่าสำรองสำหรับแอตทริบิวต์ alt หรือไม่ (งานสำหรับนักพัฒนา)</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>แก้ไของค์ประกอบเนื้อหาและเปลี่ยนรูปแบบหัวเรื่องเพื่อไม่ให้ระดับหัวเรื่องข้ามลำดับ</target>

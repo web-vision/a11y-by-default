@@ -142,6 +142,54 @@
                 <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
                 <target>ნაჩვენები სათაური იმეორებს alt ტექსტს, მიუხედავად იმისა, რომ შენახული მნიშვნელობები განსხვავდება ან სურათი არ არის დაკავშირებული რედაქტირებად კონტენტთან. შეამოწმეთ, აკოპირებს თუ არა შაბლონი alt ტექსტს title ატრიბუტში (დეველოპერის ამოცანა).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.help">
+                <source>Image alternative text must be long enough to describe the image</source>
+                <target>სურათის ალტერნატიული ტექსტი საკმარისად გრძელი უნდა იყოს იმისთვის, რომ აღწეროს იგი</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.description">
+                <source>Ensures an image's alternative text has at least five characters, as shorter texts rarely describe the image's content or function.</source>
+                <target>უზრუნველყოფს, რომ სურათის ალტერნატიული ტექსტი შეიცავდეს მინიმუმ ხუთ სიმბოლოს, რადგან უფრო მოკლე ტექსტები იშვიათად აღწერს სურათის შინაარსს ან ფუნქციას.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short">
+                <source>The alternative text of this image is too short to describe it. In the image settings of the content element, describe what the image shows or what it does.</source>
+                <target>ამ სურათის ალტერნატიული ტექსტი ძალიან მოკლეა მის აღსაწერად. კონტენტის ელემენტის სურათის პარამეტრებში აღწერეთ, რას აჩვენებს სურათი ან რა ფუნქცია აქვს მას.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short.developer">
+                <source>The rendered alternative text is too short, although the stored text is longer or the image is not linked to editable content. Check how the template builds the alt attribute (developer task).</source>
+                <target>ნაჩვენები ალტერნატიული ტექსტი ძალიან მოკლეა, მიუხედავად იმისა, რომ შენახული ტექსტი უფრო გრძელია ან სურათი არ არის დაკავშირებული რედაქტირებად კონტენტთან. შეამოწმეთ, როგორ ქმნის შაბლონი alt ატრიბუტს (დეველოპერის დავალება).</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.help">
+                <source>Image alternative text should not start with "image of" or "photo of"</source>
+                <target>სურათის ალტერნატიული ტექსტი არ უნდა იწყებოდეს „სურათის“ ან „ფოტოს“ სიტყვებით</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.description">
+                <source>Ensures an image's alternative text describes the content without announcing that it is an image, which screen readers already do.</source>
+                <target>უზრუნველყოფს, რომ სურათის ალტერნატიული ტექსტი აღწერდეს შინაარსს იმის გარეშე, რომ გამოაცხადოს, რომ ეს სურათია, რასაც ეკრანის მკითხველები უკვე აკეთებენ.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix">
+                <source>In the image settings of the content element, remove words like "Photo of" or "Image of" from the start of the alternative text and describe the content directly.</source>
+                <target>კონტენტის ელემენტის სურათის პარამეტრებში ალტერნატიული ტექსტის დასაწყისიდან ამოიღეთ ისეთი სიტყვები, როგორიცაა „ფოტოს“ ან „სურათის“, და შინაარსი პირდაპირ აღწერეთ.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix.developer">
+                <source>The rendered alternative text starts with words like "Photo of", although the stored text does not or the image is not linked to editable content. Check whether the template adds such a prefix (developer task).</source>
+                <target>ნაჩვენები ალტერნატიული ტექსტი იწყება ისეთი სიტყვებით, როგორიცაა „ფოტოს“, მიუხედავად იმისა, რომ შენახული ტექსტი ასე არ იწყება ან სურათი არ არის დაკავშირებული რედაქტირებად კონტენტთან. შეამოწმეთ, ამატებს თუ არა შაბლონი ასეთ პრეფიქსს (დეველოპერის დავალება).</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.help">
+                <source>Image alternative text must not be a file name</source>
+                <target>სურათის ალტერნატიული ტექსტი არ შეიძლება იყოს ფაილის სახელი</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.description">
+                <source>Ensures an image's alternative text is not its file name or a camera-generated name such as IMG_1234, which tells users nothing about the image.</source>
+                <target>უზრუნველყოფს, რომ სურათის ალტერნატიული ტექსტი არ იყოს მისი ფაილის სახელი ან კამერის მიერ გენერირებული სახელი, მაგალითად IMG_1234, რადგან ასეთი სახელი მომხმარებლებს სურათის შესახებ არაფერს ეუბნება.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename">
+                <source>The alternative text of this image is a file name. In the image settings of the content element, replace it with a description of what the image shows.</source>
+                <target>ამ სურათის ალტერნატიული ტექსტი ფაილის სახელია. კონტენტის ელემენტის სურათის პარამეტრებში შეცვალეთ იგი იმის აღწერით, რასაც სურათი აჩვენებს.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename.developer">
+                <source>The rendered alternative text is a file name, although the stored text is not or the image is not linked to editable content. Check whether the template falls back to the file name for the alt attribute (developer task).</source>
+                <target>ნაჩვენები ალტერნატიული ტექსტი ფაილის სახელია, მიუხედავად იმისა, რომ შენახული ტექსტი ასე არ არის, ან სურათი არ არის დაკავშირებული რედაქტირებად კონტენტთან. შეამოწმეთ, იყენებს თუ არა შაბლონი ფაილის სახელს alt ატრიბუტის სარეზერვო მნიშვნელობად (დეველოპერის დავალება).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>დაარედაქტირეთ კონტენტ-ელემენტი და შეცვალეთ მისი სათაურის განლაგება ისე, რომ სათაურების დონეები ნაბიჯს არ გამოტოვონ.</target>

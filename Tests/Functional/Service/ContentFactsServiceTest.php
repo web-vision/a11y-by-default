@@ -132,57 +132,67 @@ final class ContentFactsServiceTest extends FunctionalTestCase
     }
 
     #[Test]
-    #[DataProvider('altEqualsTitleDataProvider')]
-    public function getContentFactsReportsWhetherAltAndTitleAreEqual(
+    #[DataProvider('rawImageValuesDataProvider')]
+    public function getContentFactsReturnsRawAlternativeTitleAndFileName(
         int $contentUid,
         string $fileName,
-        bool $expected
+        string $expectedAlternative,
+        string $expectedTitle
     ): void {
         $this->importCSVDataSet(__DIR__ . '/../Fixtures/content_facts_image_titles.csv');
 
         $facts = $this->get(ContentFactsService::class)->getContentFacts(1);
         $image = $this->findImageByMatcher($facts[$contentUid]['images'], $fileName);
 
-        $this->assertSame($expected, $image['altEqualsTitle']);
+        $this->assertSame($expectedAlternative, $image['alternative']);
+        $this->assertSame($expectedTitle, $image['title']);
+        $this->assertSame($fileName, $image['fileName']);
+        $this->assertArrayNotHasKey('altEqualsTitle', $image);
     }
 
-    public static function altEqualsTitleDataProvider(): \Generator
+    public static function rawImageValuesDataProvider(): \Generator
     {
         yield 'identical alt and title from metadata' => [
             'contentUid' => 71,
             'fileName' => 'title-metadata-identical.webp',
-            'expected' => true,
+            'expectedAlternative' => 'Sunset over the bay',
+            'expectedTitle' => 'Sunset over the bay',
         ];
-        yield 'identical alt and title via reference override' => [
+        yield 'reference override wins over metadata' => [
             'contentUid' => 72,
             'fileName' => 'title-reference-override.webp',
-            'expected' => true,
+            'expectedAlternative' => 'Override text',
+            'expectedTitle' => 'Override text',
         ];
         yield 'differing alt and title' => [
             'contentUid' => 73,
             'fileName' => 'title-differing.webp',
-            'expected' => false,
+            'expectedAlternative' => 'Sunset over the bay',
+            'expectedTitle' => 'A photo by Max',
         ];
-        yield 'case and whitespace only difference' => [
+        yield 'stored values are not normalised' => [
             'contentUid' => 74,
             'fileName' => 'title-case-whitespace.webp',
-            'expected' => true,
+            'expectedAlternative' => '  Sunset   over the BAY ',
+            'expectedTitle' => 'sunset over the bay',
         ];
-        yield 'empty title' => [
+        yield 'null title becomes empty string' => [
             'contentUid' => 75,
             'fileName' => 'title-empty.webp',
-            'expected' => false,
+            'expectedAlternative' => 'Sunset over the bay',
+            'expectedTitle' => '',
         ];
-        yield 'empty alt' => [
+        yield 'null alt becomes empty string' => [
             'contentUid' => 76,
             'fileName' => 'alt-empty.webp',
-            'expected' => false,
+            'expectedAlternative' => '',
+            'expectedTitle' => 'Sunset over the bay',
         ];
     }
 
     /**
-     * @param list<array{hasAltData: bool, altEqualsTitle: bool, matchers: list<string>}> $images
-     * @return array{hasAltData: bool, altEqualsTitle: bool, matchers: list<string>}
+     * @param list<array{hasAltData: bool, alternative: string, title: string, fileName: string, matchers: list<string>}> $images
+     * @return array{hasAltData: bool, alternative: string, title: string, fileName: string, matchers: list<string>}
      */
     private function findImageByMatcher(array $images, string $matcher): array
     {

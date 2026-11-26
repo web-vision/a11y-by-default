@@ -142,6 +142,54 @@
                 <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
                 <target>Tiêu đề hiển thị lặp lại văn bản alt, mặc dù các giá trị đã lưu khác nhau hoặc hình ảnh không liên kết với nội dung có thể chỉnh sửa. Kiểm tra xem mẫu có sao chép văn bản alt vào thuộc tính title hay không (công việc của nhà phát triển).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.help">
+                <source>Image alternative text must be long enough to describe the image</source>
+                <target>Văn bản thay thế của hình ảnh phải đủ dài để mô tả hình ảnh</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.description">
+                <source>Ensures an image's alternative text has at least five characters, as shorter texts rarely describe the image's content or function.</source>
+                <target>Đảm bảo văn bản thay thế của hình ảnh có ít nhất năm ký tự, vì văn bản ngắn hơn hiếm khi mô tả nội dung hoặc chức năng của hình ảnh.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short">
+                <source>The alternative text of this image is too short to describe it. In the image settings of the content element, describe what the image shows or what it does.</source>
+                <target>Văn bản thay thế của hình ảnh này quá ngắn để mô tả. Trong cài đặt hình ảnh của phần tử nội dung, hãy mô tả hình ảnh thể hiện điều gì hoặc có chức năng gì.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short.developer">
+                <source>The rendered alternative text is too short, although the stored text is longer or the image is not linked to editable content. Check how the template builds the alt attribute (developer task).</source>
+                <target>Văn bản thay thế được hiển thị quá ngắn, mặc dù văn bản đã lưu dài hơn hoặc hình ảnh không được liên kết với nội dung có thể chỉnh sửa. Hãy kiểm tra cách mẫu tạo thuộc tính alt (công việc của nhà phát triển).</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.help">
+                <source>Image alternative text should not start with "image of" or "photo of"</source>
+                <target>Văn bản thay thế của hình ảnh không nên bắt đầu bằng “Hình ảnh của” hoặc “Ảnh của”</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.description">
+                <source>Ensures an image's alternative text describes the content without announcing that it is an image, which screen readers already do.</source>
+                <target>Đảm bảo văn bản thay thế của hình ảnh mô tả nội dung mà không thông báo rằng đó là hình ảnh, vì trình đọc màn hình vốn đã làm việc đó.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix">
+                <source>In the image settings of the content element, remove words like "Photo of" or "Image of" from the start of the alternative text and describe the content directly.</source>
+                <target>Trong cài đặt hình ảnh của phần tử nội dung, hãy xóa khỏi đầu văn bản thay thế các từ như “Ảnh của” hoặc “Hình ảnh của” và mô tả trực tiếp nội dung.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix.developer">
+                <source>The rendered alternative text starts with words like "Photo of", although the stored text does not or the image is not linked to editable content. Check whether the template adds such a prefix (developer task).</source>
+                <target>Văn bản thay thế được hiển thị bắt đầu bằng các từ như “Ảnh của”, mặc dù văn bản đã lưu không bắt đầu như vậy hoặc hình ảnh không được liên kết với nội dung có thể chỉnh sửa. Hãy kiểm tra xem mẫu có thêm tiền tố như vậy không (công việc của nhà phát triển).</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.help">
+                <source>Image alternative text must not be a file name</source>
+                <target>Văn bản thay thế của hình ảnh không được là tên tệp</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.description">
+                <source>Ensures an image's alternative text is not its file name or a camera-generated name such as IMG_1234, which tells users nothing about the image.</source>
+                <target>Đảm bảo văn bản thay thế của hình ảnh không phải là tên tệp hoặc tên do máy ảnh tạo ra, chẳng hạn IMG_1234, vì tên như vậy không cho người dùng biết gì về hình ảnh.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename">
+                <source>The alternative text of this image is a file name. In the image settings of the content element, replace it with a description of what the image shows.</source>
+                <target>Văn bản thay thế của hình ảnh này là tên tệp. Trong cài đặt hình ảnh của phần tử nội dung, hãy thay thế bằng mô tả về những gì hình ảnh thể hiện.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename.developer">
+                <source>The rendered alternative text is a file name, although the stored text is not or the image is not linked to editable content. Check whether the template falls back to the file name for the alt attribute (developer task).</source>
+                <target>Văn bản thay thế được hiển thị là tên tệp, mặc dù văn bản đã lưu không phải vậy, hoặc hình ảnh không được liên kết với nội dung có thể chỉnh sửa. Hãy kiểm tra xem mẫu có dùng tên tệp làm phương án dự phòng cho thuộc tính alt không (công việc của nhà phát triển).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Chỉnh sửa phần tử nội dung và thay đổi Kiểu tiêu đề (Header Layout) để các cấp độ tiêu đề không bị nhảy bậc.</target>

@@ -142,6 +142,54 @@
                 <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
                 <target>Zobrazený názov opakuje alt text, hoci uložené hodnoty sa líšia alebo obrázok nie je prepojený s upraviteľným obsahom. Skontrolujte, či šablóna kopíruje alt text do atribútu title (úloha pre vývojára).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.help">
+                <source>Image alternative text must be long enough to describe the image</source>
+                <target>Alternatívny text obrázka musí byť dostatočne dlhý, aby ho opísal</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.description">
+                <source>Ensures an image's alternative text has at least five characters, as shorter texts rarely describe the image's content or function.</source>
+                <target>Zabezpečuje, aby alternatívny text obrázka mal aspoň päť znakov, pretože kratšie texty len zriedka opisujú obsah alebo funkciu obrázka.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short">
+                <source>The alternative text of this image is too short to describe it. In the image settings of the content element, describe what the image shows or what it does.</source>
+                <target>Alternatívny text tohto obrázka je príliš krátky na jeho opis. V nastaveniach obrázka obsahového prvku opíšte, čo obrázok zobrazuje, alebo akú má funkciu.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short.developer">
+                <source>The rendered alternative text is too short, although the stored text is longer or the image is not linked to editable content. Check how the template builds the alt attribute (developer task).</source>
+                <target>Zobrazený alternatívny text je príliš krátky, hoci uložený text je dlhší alebo obrázok nie je prepojený s upraviteľným obsahom. Skontrolujte, ako šablóna vytvára atribút alt (úloha pre vývojára).</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.help">
+                <source>Image alternative text should not start with "image of" or "photo of"</source>
+                <target>Alternatívny text obrázka by nemal začínať výrazmi „Obrázok z“ ani „Fotografia z“</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.description">
+                <source>Ensures an image's alternative text describes the content without announcing that it is an image, which screen readers already do.</source>
+                <target>Zabezpečuje, aby alternatívny text obrázka opisoval obsah bez oznamovania, že ide o obrázok, čo čítačky obrazovky už robia samy.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix">
+                <source>In the image settings of the content element, remove words like "Photo of" or "Image of" from the start of the alternative text and describe the content directly.</source>
+                <target>V nastaveniach obrázka obsahového prvku odstráňte zo začiatku alternatívneho textu výrazy ako „Fotografia z“ alebo „Obrázok z“ a obsah opíšte priamo.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix.developer">
+                <source>The rendered alternative text starts with words like "Photo of", although the stored text does not or the image is not linked to editable content. Check whether the template adds such a prefix (developer task).</source>
+                <target>Zobrazený alternatívny text začína výrazmi ako „Fotografia z“, hoci uložený text takto nezačína alebo obrázok nie je prepojený s upraviteľným obsahom. Skontrolujte, či šablóna takúto predponu nepridáva (úloha pre vývojára).</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.help">
+                <source>Image alternative text must not be a file name</source>
+                <target>Alternatívny text obrázka nesmie byť názov súboru</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.description">
+                <source>Ensures an image's alternative text is not its file name or a camera-generated name such as IMG_1234, which tells users nothing about the image.</source>
+                <target>Zabezpečuje, aby alternatívny text obrázka nebol názvom jeho súboru ani názvom, ktorý pridelila kamera, napríklad IMG_1234, pretože takýto názov používateľom o obrázku nič nehovorí.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename">
+                <source>The alternative text of this image is a file name. In the image settings of the content element, replace it with a description of what the image shows.</source>
+                <target>Alternatívny text tohto obrázka je názov súboru. V nastaveniach obrázka obsahového prvku ho nahraďte opisom toho, čo obrázok zobrazuje.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename.developer">
+                <source>The rendered alternative text is a file name, although the stored text is not or the image is not linked to editable content. Check whether the template falls back to the file name for the alt attribute (developer task).</source>
+                <target>Zobrazený alternatívny text je názov súboru, hoci uložený text nie je, alebo obrázok nie je prepojený s upraviteľným obsahom. Skontrolujte, či šablóna používa názov súboru ako náhradu pre atribút alt (úloha pre vývojára).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Upravte obsahový element a zmeňte jeho rozloženie nadpisu tak, aby úrovne nadpisov nepreskakovali krok.</target>

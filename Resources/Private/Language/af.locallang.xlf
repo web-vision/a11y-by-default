@@ -142,6 +142,54 @@
                 <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
                 <target>Die gerenderde titel herhaal die alt-teks, hoewel die gestoorde waardes verskil of die beeld nie aan redigeerbare inhoud gekoppel is nie. Kontroleer of die sjabloon die alt-teks in die title-attribuut kopieer (ontwikkelaartaak).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.help">
+                <source>Image alternative text must be long enough to describe the image</source>
+                <target>Alternatiewe teks van 'n beeld moet lank genoeg wees om dit te beskryf</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.description">
+                <source>Ensures an image's alternative text has at least five characters, as shorter texts rarely describe the image's content or function.</source>
+                <target>Verseker dat die alternatiewe teks van 'n beeld minstens vyf karakters het, aangesien korter tekste selde die inhoud of funksie van die beeld beskryf.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short">
+                <source>The alternative text of this image is too short to describe it. In the image settings of the content element, describe what the image shows or what it does.</source>
+                <target>Die alternatiewe teks van hierdie beeld is te kort om dit te beskryf. Beskryf in die beeldinstellings van die inhoudselement wat die beeld wys of wat dit doen.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short.developer">
+                <source>The rendered alternative text is too short, although the stored text is longer or the image is not linked to editable content. Check how the template builds the alt attribute (developer task).</source>
+                <target>Die weergegewe alternatiewe teks is te kort, hoewel die gestoorde teks langer is of die beeld nie aan redigeerbare inhoud gekoppel is nie. Kontroleer hoe die sjabloon die alt-attribuut bou (ontwikkelaarstaak).</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.help">
+                <source>Image alternative text should not start with "image of" or "photo of"</source>
+                <target>Alternatiewe teks van 'n beeld moet nie met „Beeld van“ of „Foto van“ begin nie</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.description">
+                <source>Ensures an image's alternative text describes the content without announcing that it is an image, which screen readers already do.</source>
+                <target>Verseker dat die alternatiewe teks van 'n beeld die inhoud beskryf sonder om aan te kondig dat dit 'n beeld is, want skermlesers doen dit reeds.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix">
+                <source>In the image settings of the content element, remove words like "Photo of" or "Image of" from the start of the alternative text and describe the content directly.</source>
+                <target>Verwyder in die beeldinstellings van die inhoudselement woorde soos „Foto van“ of „Beeld van“ aan die begin van die alternatiewe teks en beskryf die inhoud direk.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix.developer">
+                <source>The rendered alternative text starts with words like "Photo of", although the stored text does not or the image is not linked to editable content. Check whether the template adds such a prefix (developer task).</source>
+                <target>Die weergegewe alternatiewe teks begin met woorde soos „Foto van“, hoewel die gestoorde teks dit nie doen nie of die beeld nie aan redigeerbare inhoud gekoppel is nie. Kontroleer of die sjabloon so 'n voorvoegsel byvoeg (ontwikkelaarstaak).</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.help">
+                <source>Image alternative text must not be a file name</source>
+                <target>Alternatiewe teks van 'n beeld mag nie 'n lêernaam wees nie</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.description">
+                <source>Ensures an image's alternative text is not its file name or a camera-generated name such as IMG_1234, which tells users nothing about the image.</source>
+                <target>Verseker dat die alternatiewe teks van 'n beeld nie die lêernaam of 'n kameragegenereerde naam soos IMG_1234 is nie, want dit vertel gebruikers niks oor die beeld nie.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename">
+                <source>The alternative text of this image is a file name. In the image settings of the content element, replace it with a description of what the image shows.</source>
+                <target>Die alternatiewe teks van hierdie beeld is 'n lêernaam. Vervang dit in die beeldinstellings van die inhoudselement met 'n beskrywing van wat die beeld wys.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename.developer">
+                <source>The rendered alternative text is a file name, although the stored text is not or the image is not linked to editable content. Check whether the template falls back to the file name for the alt attribute (developer task).</source>
+                <target>Die weergegewe alternatiewe teks is 'n lêernaam, hoewel die gestoorde teks nie een is nie of die beeld nie aan redigeerbare inhoud gekoppel is nie. Kontroleer of die sjabloon vir die alt-attribuut op die lêernaam terugval (ontwikkelaarstaak).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Redigeer die inhoudselement en verander die opskrif-uitleg sodat opskrifvlakke nie 'n stap oorslaan nie.</target>

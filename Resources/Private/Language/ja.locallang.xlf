@@ -142,6 +142,54 @@
                 <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
                 <target>表示されたタイトルが alt テキストを繰り返していますが、保存された値が異なるか、画像が編集可能なコンテンツに紐付いていません。テンプレートが alt テキストを title 属性にコピーしていないか確認してください（開発タスク）。</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.help">
+                <source>Image alternative text must be long enough to describe the image</source>
+                <target>画像の代替テキストは、画像を説明するのに十分な長さが必要です</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.description">
+                <source>Ensures an image's alternative text has at least five characters, as shorter texts rarely describe the image's content or function.</source>
+                <target>画像の代替テキストが5文字以上であることを確認します。短いテキストでは画像の内容や機能をほとんど説明できないためです。</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short">
+                <source>The alternative text of this image is too short to describe it. In the image settings of the content element, describe what the image shows or what it does.</source>
+                <target>この画像の代替テキストは短すぎて画像を説明できていません。コンテンツ要素の画像設定で、画像が示す内容または画像の機能を説明してください。</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short.developer">
+                <source>The rendered alternative text is too short, although the stored text is longer or the image is not linked to editable content. Check how the template builds the alt attribute (developer task).</source>
+                <target>表示されている代替テキストが短すぎます。保存されたテキストは十分な長さであるか、画像が編集可能なコンテンツに関連付けられていません。テンプレートがalt属性をどのように生成しているか確認してください（開発者の作業）。</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.help">
+                <source>Image alternative text should not start with "image of" or "photo of"</source>
+                <target>画像の代替テキストは「〜の画像」や「〜の写真」で始めるべきではありません</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.description">
+                <source>Ensures an image's alternative text describes the content without announcing that it is an image, which screen readers already do.</source>
+                <target>画像の代替テキストが、画像であることを告知せずに内容を説明していることを確認します。スクリーンリーダーは既にそのことを読み上げるためです。</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix">
+                <source>In the image settings of the content element, remove words like "Photo of" or "Image of" from the start of the alternative text and describe the content directly.</source>
+                <target>コンテンツ要素の画像設定で、代替テキストの先頭にある「写真」「画像」などの語を削除し、内容を直接説明してください。</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix.developer">
+                <source>The rendered alternative text starts with words like "Photo of", although the stored text does not or the image is not linked to editable content. Check whether the template adds such a prefix (developer task).</source>
+                <target>表示されている代替テキストが「写真の」などの語で始まっています。保存されたテキストはそうなっていないか、画像が編集可能なコンテンツに関連付けられていません。テンプレートがそのような接頭辞を追加していないか確認してください（開発者の作業）。</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.help">
+                <source>Image alternative text must not be a file name</source>
+                <target>画像の代替テキストにファイル名を使用することはできません</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.description">
+                <source>Ensures an image's alternative text is not its file name or a camera-generated name such as IMG_1234, which tells users nothing about the image.</source>
+                <target>画像の代替テキストが、そのファイル名やIMG_1234のようなカメラが生成した名前になっていないことを確認します。そのような名前では画像について利用者に何も伝わらないためです。</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename">
+                <source>The alternative text of this image is a file name. In the image settings of the content element, replace it with a description of what the image shows.</source>
+                <target>この画像の代替テキストはファイル名です。コンテンツ要素の画像設定で、画像が示す内容の説明に置き換えてください。</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename.developer">
+                <source>The rendered alternative text is a file name, although the stored text is not or the image is not linked to editable content. Check whether the template falls back to the file name for the alt attribute (developer task).</source>
+                <target>表示されている代替テキストはファイル名です。保存されたテキストはファイル名ではないか、画像が編集可能なコンテンツに関連付けられていません。テンプレートがalt属性の代わりにファイル名を使っていないか確認してください（開発者の作業）。</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>コンテンツ要素を編集し、見出しレベルが飛ばないように見出しレイアウトを変更してください。</target>

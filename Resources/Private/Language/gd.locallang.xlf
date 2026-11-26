@@ -142,6 +142,54 @@
                 <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
                 <target>Tha an tiotal a thèid a shealltainn ag ath-aithris an teacsa alt, ged a tha na luachan a chaidh a stòradh eadar-dhealaichte no nach eil an dealbh ceangailte ri susbaint ath-dheasachail. Thoir sùil an dèan an teamplaid lethbhreac dhen teacsa alt dhan togalach title (obair luchd-leasachaidh).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.help">
+                <source>Image alternative text must be long enough to describe the image</source>
+                <target>Feumaidh an teacsa malairteach dhan dealbh a bhith gu leòr fada gus a thoirt cunntas air</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.description">
+                <source>Ensures an image's alternative text has at least five characters, as shorter texts rarely describe the image's content or function.</source>
+                <target>A’ dèanamh cinnteach gu bheil co-dhiù còig caractaran aig teacsa malairteach dealbh, oir is ann ainneamh a bhios teacsaichean nas giorra a’ toirt cunntas air susbaint no gnìomh an dealbh.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short">
+                <source>The alternative text of this image is too short to describe it. In the image settings of the content element, describe what the image shows or what it does.</source>
+                <target>Tha teacsa malairteach an dealbh seo ro ghoirid gus a thoirt cunntas air. Ann an roghainnean an dealbh san eileamaid susbainte, mìnich dè tha an dealbh a’ sealltainn no dè an gnìomh a th’ aige.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short.developer">
+                <source>The rendered alternative text is too short, although the stored text is longer or the image is not linked to editable content. Check how the template builds the alt attribute (developer task).</source>
+                <target>Tha an teacsa malairteach a chithear ro ghoirid, ged a tha an teacsa a chaidh a shàbhaladh nas fhaide no nach eil an dealbh ceangailte ri susbaint ris an gabh deasachadh. Thoir sùil air mar a tha an teamplaid a’ cruthachadh an fheart alt (obair leasaiche).</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.help">
+                <source>Image alternative text should not start with "image of" or "photo of"</source>
+                <target>Cha bu chòir teacsa malairteach dealbh tòiseachadh le ‘Dealbh de’ no ‘Dealbh-ghrianghraif de’</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.description">
+                <source>Ensures an image's alternative text describes the content without announcing that it is an image, which screen readers already do.</source>
+                <target>A’ dèanamh cinnteach gu bheil teacsa malairteach dealbh a’ toirt cunntas air an t-susbaint gun a bhith ag innse gur e dealbh a th’ ann, rud a nì leughadairean sgrìn mar-thà.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix">
+                <source>In the image settings of the content element, remove words like "Photo of" or "Image of" from the start of the alternative text and describe the content directly.</source>
+                <target>Ann an roghainnean an dealbh san eileamaid susbainte, thoir air falbh faclan mar ‘Dealbh-ghrianghraif de’ no ‘Dealbh de’ on toiseach air an teacsa malairteach agus mìnich an t-susbaint gu dìreach.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix.developer">
+                <source>The rendered alternative text starts with words like "Photo of", although the stored text does not or the image is not linked to editable content. Check whether the template adds such a prefix (developer task).</source>
+                <target>Tha an teacsa malairteach a chithear a’ tòiseachadh le faclan mar ‘Dealbh-ghrianghraif de’, ged nach eil an teacsa a chaidh a shàbhaladh a’ tòiseachadh mar sin no nach eil an dealbh ceangailte ri susbaint ris an gabh deasachadh. Thoir sùil an cuir an teamplaid ro-leasachan mar sin ris (obair leasaiche).</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.help">
+                <source>Image alternative text must not be a file name</source>
+                <target>Chan fhaod teacsa malairteach dealbh a bhith na ainm faidhle</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.description">
+                <source>Ensures an image's alternative text is not its file name or a camera-generated name such as IMG_1234, which tells users nothing about the image.</source>
+                <target>A’ dèanamh cinnteach nach e ainm faidhle an dealbh no ainm a chruthaich camara, mar IMG_1234, a th’ anns an teacsa malairteach dealbh, oir chan eil sin ag innse dad don chleachdaiche mun dealbh.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename">
+                <source>The alternative text of this image is a file name. In the image settings of the content element, replace it with a description of what the image shows.</source>
+                <target>’S e ainm faidhle a th’ ann an teacsa malairteach an dealbh seo. Ann an roghainnean an dealbh san eileamaid susbainte, cuir cunntas air na tha an dealbh a’ sealltainn na àite.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename.developer">
+                <source>The rendered alternative text is a file name, although the stored text is not or the image is not linked to editable content. Check whether the template falls back to the file name for the alt attribute (developer task).</source>
+                <target>’S e ainm faidhle a th’ anns an teacsa malairteach a chithear, ged nach e ainm faidhle a th’ anns an teacsa a chaidh a shàbhaladh no nach eil an dealbh ceangailte ri susbaint ris an gabh deasachadh. Thoir sùil an tuig an teamplaid air ais gu ainm an fhaidhle airson an fheart alt (obair leasaiche).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Deasaich eileamaid na susbaint agus atharraich a Cho-dhealbhachd Bann-cinn ionns nach gearr ìrean nam bann-cinn ceum sam bith às.</target>

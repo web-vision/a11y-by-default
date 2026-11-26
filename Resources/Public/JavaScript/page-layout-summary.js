@@ -26,49 +26,114 @@ function matchImageSource(srcOrHref, index) {
     return {
         contentElementUid: match.contentElementUid,
         hasAltData: match.hasAltData,
-        altEqualsTitle: match.altEqualsTitle,
+        alternative: match.alternative,
+        title: match.title,
+        fileName: match.fileName,
     };
 }
 
 const REDUNDANT_IMG_TITLE_RULE_ID = 'a11y-redundant-img-title';
+const MIN_ALT_LENGTH = 5;
+const REDUNDANT_PREFIX = /^(?:(?:ein|eine|das|a|an|the) )?(?:foto|bild|grafik|abbildung|image|picture|photo|graphic|screenshot)(?: (?:von|vom|zeigt|of|shows|showing)\b|:|$)/u;
+const IMAGE_EXTENSION = /\.(?:jpe?g|png|gif|webp|svg|avif|tiff?|bmp|heic)$/;
+const GENERATED_NAME = /^(?:img|dsc|dscn|dscf|pxl|mvimg|screenshot|bildschirmfoto)[-_ ]?\d{3,}/;
+function stripExtension(name) {
+    return name.replace(/\.[^./]+$/, '');
+}
+const IMAGE_RULES$1 = [
+    {
+        id: REDUNDANT_IMG_TITLE_RULE_ID,
+        impact: 'minor',
+        isViolated: (alt, title) => {
+            const normalizedAlt = normalizeText(alt);
+            return normalizedAlt !== '' && normalizedAlt === normalizeText(title);
+        },
+    },
+    {
+        id: 'a11y-img-alt-too-short',
+        impact: 'minor',
+        isViolated: (alt) => {
+            // An empty alt text is the decorative case, not a short one.
+            const length = [...normalizeText(alt)].length;
+            return length > 0 && length < MIN_ALT_LENGTH;
+        },
+    },
+    {
+        id: 'a11y-img-alt-redundant-prefix',
+        impact: 'minor',
+        isViolated: (alt) => REDUNDANT_PREFIX.test(normalizeText(alt)),
+    },
+    {
+        id: 'a11y-img-alt-filename',
+        impact: 'serious',
+        isViolated: (alt, _title, fileName) => {
+            const normalizedAlt = normalizeText(alt);
+            const normalizedName = normalizeText(fileName);
+            return ((normalizedName !== '' &&
+                (normalizedAlt === normalizedName || normalizedAlt === stripExtension(normalizedName))) ||
+                IMAGE_EXTENSION.test(normalizedAlt) ||
+                GENERATED_NAME.test(normalizedAlt));
+        },
+    },
+];
 /**
- * Own check (neither axe-core nor HTML CodeSniffer ships such a rule): an image whose title attribute merely
- * repeats the alt text makes screen readers announce the same text twice.
+ * Own checks (neither axe-core nor HTML CodeSniffer ships them) for the alt and title text of images.
  *
- * One issue is emitted per offending image so each gets its own classification and edit link.
+ * One issue is emitted per image and violated rule so each gets its own classification and edit link.
+ * Images without alt text are skipped: a missing or empty alt is image-alt's concern or the editor's
+ * decorative choice.
  * ViolationClassifier sends a matched node with dataAvailable !== true to the editor, hence:
- * database values identical (altEqualsTitle) -> dataAvailable false -> editor;
- * database values fine but output redundant (template copies alt to title) -> dataAvailable true -> developer;
+ * stored values violate the rule -> dataAvailable false -> editor;
+ * stored values fine but output violates (template changes the text) -> dataAvailable true -> developer;
  * unmatched image -> no content element -> developer.
  */
-class RedundantImageTitleCheck {
+class ImageRulesCheck {
     constructor(resolveLabel) {
         this.resolveLabel = resolveLabel;
     }
     run(document, index) {
         const issues = [];
-        document.querySelectorAll('img[alt][title]').forEach((img) => {
-            const alt = normalizeText(img.getAttribute('alt') ?? '');
-            if (alt === '' || alt !== normalizeText(img.getAttribute('title') ?? '')) {
+        document.querySelectorAll('img[alt]').forEach((img) => {
+            const alt = img.getAttribute('alt') ?? '';
+            if (normalizeText(alt) === '') {
                 return;
             }
-            const node = { html: img.outerHTML, target: [this.buildSelector(img)] };
-            const match = matchImageSource(img.getAttribute('src') ?? '', index);
-            if (match !== undefined) {
-                node.contentElementUid = match.contentElementUid;
-                node.dataAvailable = !match.altEqualsTitle;
+            const title = img.getAttribute('title') ?? '';
+            const src = img.getAttribute('src') ?? '';
+            const match = matchImageSource(src, index);
+            const renderedFileName = this.fileNameFromSrc(src);
+            for (const rule of IMAGE_RULES$1) {
+                const violatedOutput = rule.isViolated(alt, title, renderedFileName) ||
+                    (match !== undefined && match.fileName !== '' && rule.isViolated(alt, title, match.fileName));
+                if (!violatedOutput) {
+                    continue;
+                }
+                const node = { html: img.outerHTML, target: [this.buildSelector(img)] };
+                if (match !== undefined) {
+                    node.contentElementUid = match.contentElementUid;
+                    node.dataAvailable = !rule.isViolated(match.alternative, match.title, match.fileName);
+                }
+                issues.push({
+                    id: rule.id,
+                    impact: rule.impact,
+                    description: this.resolveLabel(`rule.${rule.id}.description`),
+                    help: this.resolveLabel(`rule.${rule.id}.help`),
+                    helpUrl: 'https://www.w3.org/WAI/tutorials/images/',
+                    tags: ['best-practice'],
+                    nodes: [node],
+                });
             }
-            issues.push({
-                id: REDUNDANT_IMG_TITLE_RULE_ID,
-                impact: 'minor',
-                description: this.resolveLabel(`rule.${REDUNDANT_IMG_TITLE_RULE_ID}.description`),
-                help: this.resolveLabel(`rule.${REDUNDANT_IMG_TITLE_RULE_ID}.help`),
-                helpUrl: 'https://www.w3.org/WAI/tutorials/images/',
-                tags: ['best-practice'],
-                nodes: [node],
-            });
         });
         return issues;
+    }
+    fileNameFromSrc(src) {
+        const lastSegment = src.split(/[?#]/)[0].split('/').pop() ?? '';
+        try {
+            return decodeURIComponent(lastSegment);
+        }
+        catch {
+            return lastSegment;
+        }
     }
     buildSelector(element) {
         const parts = [];
@@ -117,11 +182,11 @@ function matchLink(anchor, index) {
     const ariaLabel = anchor.getAttribute('aria-label') ?? '';
     const textMatch = matchTextAgainstKnownContent(text, index) ?? matchTextAgainstKnownContent(ariaLabel, index);
     if (textMatch !== undefined) {
-        return { contentElementUid: textMatch, hasAltData: false, altEqualsTitle: false };
+        return { contentElementUid: textMatch, hasAltData: false, alternative: '', title: '', fileName: '' };
     }
     const hrefMatch = matchHrefAgainstKnownLinks(anchor.getAttribute('href') ?? '', index);
     if (hrefMatch !== undefined) {
-        return { contentElementUid: hrefMatch, hasAltData: false, altEqualsTitle: false };
+        return { contentElementUid: hrefMatch, hasAltData: false, alternative: '', title: '', fileName: '' };
     }
     const image = anchor.querySelector('img');
     return image !== null ? matchImageSource(image.getAttribute('src') ?? '', index) : undefined;
@@ -422,9 +487,7 @@ async function runAutoScan() {
         const contentFactsIndex = buildContentFactsIndex(settings.contentFacts);
         const engine = new AxeEngine(iframe, settings.axeJsUrl, contentFactsIndex);
         const engineResult = await engine.run();
-        const ownIssues = iframe.contentDocument !== null
-            ? new RedundantImageTitleCheck(lll).run(iframe.contentDocument, contentFactsIndex)
-            : [];
+        const ownIssues = iframe.contentDocument !== null ? new ImageRulesCheck(lll).run(iframe.contentDocument, contentFactsIndex) : [];
         const result = { ...engineResult, violations: [...engineResult.violations, ...ownIssues] };
         const classifier = new ViolationClassifier(settings.classificationRules);
         const visibleResult = {

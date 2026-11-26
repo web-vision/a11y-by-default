@@ -306,7 +306,7 @@ describe('runAutoScan', () => {
     expect(el?.querySelector('.text-bg-warning')).not.toBeNull();
   });
 
-  it('includes the redundant image title issue found in the preview document', async () => {
+  it('includes the own image rule issues found in the preview document', async () => {
     setupAppElement({ hasDeveloperCornerAccess: '1' });
     const origAppend = Node.prototype.appendChild;
     jest.spyOn(document.body, 'appendChild').mockImplementation(function (this: Node, node: Node): Node {
@@ -314,7 +314,7 @@ describe('runAutoScan', () => {
       if (node instanceof HTMLIFrameElement) {
         Object.defineProperty(node, 'contentDocument', {
           value: new DOMParser().parseFromString(
-            '<html><body><img src="a.jpg" alt="Cat" title="Cat"></body></html>',
+            '<html><body><img src="a.jpg" alt="Cat" title="Cat"><img src="b.jpg" alt="IMG_1234"></body></html>',
             'text/html',
           ),
         });
@@ -325,7 +325,8 @@ describe('runAutoScan', () => {
     await runAutoScan();
     const el = document.getElementById('a11y-page-summary-app');
     expect(el?.querySelector('.callout-warning')).not.toBeNull();
-    expect(el?.textContent).toContain('1× minor');
+    expect(el?.textContent).toContain('2× minor');
+    expect(el?.textContent).toContain('1× serious');
   });
 
   it('renders an error callout when the scan engine throws', async () => {

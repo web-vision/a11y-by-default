@@ -14,7 +14,7 @@ describe('buildContentFactsIndex', () => {
     52: {
       headings: [{ text: 'Heeeheeeeeheee', level: 3 }],
       links: [{ text: 'Read more', href: '/camino' }],
-      images: [{ hasAltData: false, altEqualsTitle: false, matchers: ['photo.webp'] }],
+      images: [{ hasAltData: false, alternative: '', title: '', fileName: '', matchers: ['photo.webp'] }],
       tables: [{ cellTexts: ['Name', 'Age'] }],
     },
   };
@@ -31,7 +31,7 @@ describe('buildContentFactsIndex', () => {
     const index = buildContentFactsIndex(facts);
     expect(index.links).toEqual([{ text: 'Read more', href: '/camino', contentElementUid: 52 }]);
     expect(index.images).toEqual([
-      { hasAltData: false, altEqualsTitle: false, matchers: ['photo.webp'], contentElementUid: 52 },
+      { hasAltData: false, alternative: '', title: '', fileName: '', matchers: ['photo.webp'], contentElementUid: 52 },
     ]);
     expect(index.tables).toEqual([{ cellTexts: ['Name', 'Age'], contentElementUid: 52 }]);
   });

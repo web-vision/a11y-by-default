@@ -142,6 +142,54 @@
                 <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
                 <target>Le titre affiché répète le texte alternatif (alt), bien que les valeurs enregistrées diffèrent ou que l'image ne soit pas liée à un contenu modifiable. Vérifiez si le modèle copie le texte alternatif dans l'attribut title (tâche de développement).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.help">
+                <source>Image alternative text must be long enough to describe the image</source>
+                <target>Le texte alternatif de l'image doit être suffisamment long pour la décrire</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.description">
+                <source>Ensures an image's alternative text has at least five characters, as shorter texts rarely describe the image's content or function.</source>
+                <target>Garantit que le texte alternatif d'une image comporte au moins cinq caractères, car des textes plus courts décrivent rarement le contenu ou la fonction de l'image.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short">
+                <source>The alternative text of this image is too short to describe it. In the image settings of the content element, describe what the image shows or what it does.</source>
+                <target>Le texte alternatif de cette image est trop court pour la décrire. Dans les paramètres de l'image de l'élément de contenu, décrivez ce que montre l'image ou ce qu'elle fait.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short.developer">
+                <source>The rendered alternative text is too short, although the stored text is longer or the image is not linked to editable content. Check how the template builds the alt attribute (developer task).</source>
+                <target>Le texte alternatif affiché est trop court, alors que le texte enregistré est plus long ou que l'image n'est pas liée à un contenu modifiable. Vérifiez comment le modèle construit l'attribut alt (tâche de développement).</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.help">
+                <source>Image alternative text should not start with "image of" or "photo of"</source>
+                <target>Le texte alternatif d'une image ne doit pas commencer par « Image de » ou « Photo de »</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.description">
+                <source>Ensures an image's alternative text describes the content without announcing that it is an image, which screen readers already do.</source>
+                <target>Garantit que le texte alternatif d'une image décrit le contenu sans annoncer qu'il s'agit d'une image, ce que les lecteurs d'écran font déjà.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix">
+                <source>In the image settings of the content element, remove words like "Photo of" or "Image of" from the start of the alternative text and describe the content directly.</source>
+                <target>Dans les paramètres de l'image de l'élément de contenu, supprimez en début de texte alternatif des mots comme « Photo de » ou « Image de » et décrivez directement le contenu.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix.developer">
+                <source>The rendered alternative text starts with words like "Photo of", although the stored text does not or the image is not linked to editable content. Check whether the template adds such a prefix (developer task).</source>
+                <target>Le texte alternatif affiché commence par des mots comme « Photo de », alors que le texte enregistré ne commence pas ainsi ou que l'image n'est pas liée à un contenu modifiable. Vérifiez si le modèle ajoute un tel préfixe (tâche de développement).</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.help">
+                <source>Image alternative text must not be a file name</source>
+                <target>Le texte alternatif d'une image ne doit pas être un nom de fichier</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.description">
+                <source>Ensures an image's alternative text is not its file name or a camera-generated name such as IMG_1234, which tells users nothing about the image.</source>
+                <target>Garantit que le texte alternatif d'une image n'est pas son nom de fichier ni un nom attribué par l'appareil photo, comme IMG_1234, qui n'apporte rien aux utilisateurs.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename">
+                <source>The alternative text of this image is a file name. In the image settings of the content element, replace it with a description of what the image shows.</source>
+                <target>Le texte alternatif de cette image est un nom de fichier. Dans les paramètres de l'image de l'élément de contenu, remplacez-le par une description de ce que montre l'image.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename.developer">
+                <source>The rendered alternative text is a file name, although the stored text is not or the image is not linked to editable content. Check whether the template falls back to the file name for the alt attribute (developer task).</source>
+                <target>Le texte alternatif affiché est un nom de fichier, alors que le texte enregistré n'en est pas un ou que l'image n'est pas liée à un contenu modifiable. Vérifiez si le modèle utilise le nom de fichier comme solution de repli pour l'attribut alt (tâche de développement).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Modifiez l'élément de contenu et changez la mise en page du titre pour que les niveaux de titre ne sautent pas d'étape.</target>

@@ -142,6 +142,54 @@
                 <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
                 <target>Den renderade titeln upprepar alt-texten, även om de lagrade värdena skiljer sig åt eller bilden inte är kopplad till redigerbart innehåll. Kontrollera om mallen kopierar alt-texten till title-attributet (utvecklaruppgift).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.help">
+                <source>Image alternative text must be long enough to describe the image</source>
+                <target>En bilds alternativtext måste vara tillräckligt lång för att beskriva bilden</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.description">
+                <source>Ensures an image's alternative text has at least five characters, as shorter texts rarely describe the image's content or function.</source>
+                <target>Säkerställer att en bilds alternativtext har minst fem tecken, eftersom kortare texter sällan beskriver bildens innehåll eller funktion.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short">
+                <source>The alternative text of this image is too short to describe it. In the image settings of the content element, describe what the image shows or what it does.</source>
+                <target>Alternativtexten för den här bilden är för kort för att beskriva den. Beskriv i bildinställningarna för innehållselementet vad bilden visar eller vilken funktion den har.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short.developer">
+                <source>The rendered alternative text is too short, although the stored text is longer or the image is not linked to editable content. Check how the template builds the alt attribute (developer task).</source>
+                <target>Den visade alternativtexten är för kort, även om den sparade texten är längre eller bilden inte är kopplad till redigerbart innehåll. Kontrollera hur mallen skapar alt-attributet (uppgift för utvecklaren).</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.help">
+                <source>Image alternative text should not start with "image of" or "photo of"</source>
+                <target>En bilds alternativtext bör inte börja med ”Bild av” eller ”Foto av”</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.description">
+                <source>Ensures an image's alternative text describes the content without announcing that it is an image, which screen readers already do.</source>
+                <target>Säkerställer att en bilds alternativtext beskriver innehållet utan att meddela att det är en bild, vilket skärmläsare redan gör.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix">
+                <source>In the image settings of the content element, remove words like "Photo of" or "Image of" from the start of the alternative text and describe the content directly.</source>
+                <target>Ta bort i bildinställningarna för innehållselementet ord som ”Foto av” eller ”Bild av” från början av alternativtexten och beskriv innehållet direkt.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix.developer">
+                <source>The rendered alternative text starts with words like "Photo of", although the stored text does not or the image is not linked to editable content. Check whether the template adds such a prefix (developer task).</source>
+                <target>Den visade alternativtexten börjar med ord som ”Foto av”, även om den sparade texten inte gör det eller bilden inte är kopplad till redigerbart innehåll. Kontrollera om mallen lägger till ett sådant prefix (uppgift för utvecklaren).</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.help">
+                <source>Image alternative text must not be a file name</source>
+                <target>En bilds alternativtext får inte vara ett filnamn</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.description">
+                <source>Ensures an image's alternative text is not its file name or a camera-generated name such as IMG_1234, which tells users nothing about the image.</source>
+                <target>Säkerställer att en bilds alternativtext inte är bildens filnamn eller ett kameragenererat namn som IMG_1234, eftersom det inte säger något till användarna om bilden.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename">
+                <source>The alternative text of this image is a file name. In the image settings of the content element, replace it with a description of what the image shows.</source>
+                <target>Alternativtexten för den här bilden är ett filnamn. Ersätt den i bildinställningarna för innehållselementet med en beskrivning av vad bilden visar.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename.developer">
+                <source>The rendered alternative text is a file name, although the stored text is not or the image is not linked to editable content. Check whether the template falls back to the file name for the alt attribute (developer task).</source>
+                <target>Den visade alternativtexten är ett filnamn, även om den sparade texten inte är det eller bilden inte är kopplad till redigerbart innehåll. Kontrollera om mallen använder filnamnet som reserv för alt-attributet (uppgift för utvecklaren).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Redigera innehållselementet och ändra dess rubriklayout så att rubriknivåerna inte hoppar över ett steg.</target>

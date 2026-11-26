@@ -3,7 +3,9 @@ import type { ContentFactsIndex } from '../ContentFacts';
 export interface ImageMatch {
   contentElementUid: number;
   hasAltData: boolean;
-  altEqualsTitle: boolean;
+  alternative: string;
+  title: string;
+  fileName: string;
 }
 
 export function matchImageSource(srcOrHref: string, index: ContentFactsIndex): ImageMatch | undefined {
@@ -22,6 +24,8 @@ export function matchImageSource(srcOrHref: string, index: ContentFactsIndex): I
   return {
     contentElementUid: match.contentElementUid,
     hasAltData: match.hasAltData,
-    altEqualsTitle: match.altEqualsTitle,
+    alternative: match.alternative,
+    title: match.title,
+    fileName: match.fileName,
   };
 }

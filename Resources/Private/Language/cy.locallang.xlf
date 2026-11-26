@@ -142,6 +142,54 @@
                 <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
                 <target>Mae'r teitl a ddangosir yn ailadrodd y testun amgen (alt), er bod y gwerthoedd a gadwyd yn wahanol neu nad yw'r ddelwedd wedi'i chysylltu â chynnwys y gellir ei olygu. Gwiriwch a yw'r templed yn copïo'r testun amgen i'r priodoledd title (tasg datblygwr).</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.help">
+                <source>Image alternative text must be long enough to describe the image</source>
+                <target>Rhaid i destun amgen delwedd fod yn ddigon hir i'w ddisgrifio</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.description">
+                <source>Ensures an image's alternative text has at least five characters, as shorter texts rarely describe the image's content or function.</source>
+                <target>Yn sicrhau bod testun amgen delwedd o leiaf bum nod, gan fod testunau byrrach yn anaml yn disgrifio cynnwys neu swyddogaeth y ddelwedd.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short">
+                <source>The alternative text of this image is too short to describe it. In the image settings of the content element, describe what the image shows or what it does.</source>
+                <target>Mae testun amgen y ddelwedd hon yn rhy fyr i'w ddisgrifio. Yng ngosodiadau'r ddelwedd yn yr elfen gynnwys, disgrifiwch yr hyn y mae'r ddelwedd yn ei ddangos neu beth mae'n ei wneud.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short.developer">
+                <source>The rendered alternative text is too short, although the stored text is longer or the image is not linked to editable content. Check how the template builds the alt attribute (developer task).</source>
+                <target>Mae'r testun amgen a ddangosir yn rhy fyr, er bod y testun a gadwyd yn hwy neu nad yw'r ddelwedd wedi'i chysylltu â chynnwys y gellir ei olygu. Gwiriwch sut mae'r templed yn creu'r priodoledd alt (tasg datblygwr).</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.help">
+                <source>Image alternative text should not start with "image of" or "photo of"</source>
+                <target>Ni ddylai testun amgen delwedd ddechrau gyda ‘Delwedd o’ na ‘Ffoto o’</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.description">
+                <source>Ensures an image's alternative text describes the content without announcing that it is an image, which screen readers already do.</source>
+                <target>Yn sicrhau bod testun amgen delwedd yn disgrifio'r cynnwys heb gyhoeddi mai delwedd ydyw, gan fod darllenwyr sgrin yn gwneud hynny eisoes.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix">
+                <source>In the image settings of the content element, remove words like "Photo of" or "Image of" from the start of the alternative text and describe the content directly.</source>
+                <target>Yng ngosodiadau'r ddelwedd yn yr elfen gynnwys, dilëwch eiriau fel ‘Ffoto o’ neu ‘Delwedd o’ o ddechrau'r testun amgen a disgrifiwch y cynnwys yn uniongyrchol.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix.developer">
+                <source>The rendered alternative text starts with words like "Photo of", although the stored text does not or the image is not linked to editable content. Check whether the template adds such a prefix (developer task).</source>
+                <target>Mae'r testun amgen a ddangosir yn dechrau gyda geiriau fel ‘Ffoto o’, er nad yw'r testun a gadwyd yn gwneud hynny neu nad yw'r ddelwedd wedi'i chysylltu â chynnwys y gellir ei olygu. Gwiriwch a yw'r templed yn ychwanegu rhagddodiad o'r fath (tasg datblygwr).</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.help">
+                <source>Image alternative text must not be a file name</source>
+                <target>Ni chaniateir i destun amgen delwedd fod yn enw ffeil</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.description">
+                <source>Ensures an image's alternative text is not its file name or a camera-generated name such as IMG_1234, which tells users nothing about the image.</source>
+                <target>Yn sicrhau nad enw ffeil y ddelwedd na enw a roddwyd gan gamera, fel IMG_1234, yw testun amgen delwedd, gan nad yw hynny'n dweud dim wrth ddefnyddwyr am y ddelwedd.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename">
+                <source>The alternative text of this image is a file name. In the image settings of the content element, replace it with a description of what the image shows.</source>
+                <target>Enw ffeil yw testun amgen y ddelwedd hon. Yng ngosodiadau'r ddelwedd yn yr elfen gynnwys, rhowch ddisgrifiad o'r hyn y mae'r ddelwedd yn ei ddangos yn ei le.</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename.developer">
+                <source>The rendered alternative text is a file name, although the stored text is not or the image is not linked to editable content. Check whether the template falls back to the file name for the alt attribute (developer task).</source>
+                <target>Enw ffeil yw'r testun amgen a ddangosir, er nad enw ffeil yw'r testun a gadwyd, neu nad yw'r ddelwedd wedi'i chysylltu â chynnwys y gellir ei olygu. Gwiriwch a yw'r templed yn troi at enw'r ffeil ar gyfer y priodoledd alt (tasg datblygwr).</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>Golygwch yr elfen gynnwys a newidiwch ei Chynllun Pennawd fel nad yw lefelau'r penawdau yn sgipio cam.</target>

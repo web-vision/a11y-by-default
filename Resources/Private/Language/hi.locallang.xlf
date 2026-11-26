@@ -142,6 +142,54 @@
                 <source>The rendered title repeats the alt text, although the stored values differ or the image is not linked to editable content. Check whether the template copies the alt text into the title attribute (developer task).</source>
                 <target>प्रदर्शित शीर्षक alt पाठ को दोहराता है, भले ही संग्रहीत मान अलग हों या छवि किसी संपादन योग्य सामग्री से जुड़ी न हो। जाँचें कि क्या टेम्पलेट alt पाठ को title विशेषता में कॉपी करता है (डेवलपर कार्य)।</target>
             </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.help">
+                <source>Image alternative text must be long enough to describe the image</source>
+                <target>छवि का वैकल्पिक पाठ उसका वर्णन करने के लिए पर्याप्त लंबा होना चाहिए</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-too-short.description">
+                <source>Ensures an image's alternative text has at least five characters, as shorter texts rarely describe the image's content or function.</source>
+                <target>सुनिश्चित करता है कि किसी छवि के वैकल्पिक पाठ में कम से कम पाँच अक्षर हों, क्योंकि छोटे पाठ शायद ही छवि की सामग्री या कार्य का वर्णन करते हैं।</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short">
+                <source>The alternative text of this image is too short to describe it. In the image settings of the content element, describe what the image shows or what it does.</source>
+                <target>इस छवि का वैकल्पिक पाठ उसका वर्णन करने के लिए बहुत छोटा है। सामग्री तत्व की छवि सेटिंग्स में बताएं कि छवि क्या दिखाती है या उसका क्या कार्य है।</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-too-short.developer">
+                <source>The rendered alternative text is too short, although the stored text is longer or the image is not linked to editable content. Check how the template builds the alt attribute (developer task).</source>
+                <target>प्रदर्शित वैकल्पिक पाठ बहुत छोटा है, हालांकि संग्रहीत पाठ लंबा है या छवि संपादन योग्य सामग्री से जुड़ी नहीं है। जांचें कि टेम्पलेट alt विशेषता कैसे बनाता है (डेवलपर का कार्य)।</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.help">
+                <source>Image alternative text should not start with "image of" or "photo of"</source>
+                <target>किसी छवि के वैकल्पिक पाठ की शुरुआत “छवि का” या “फ़ोटो का” से नहीं होनी चाहिए</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-redundant-prefix.description">
+                <source>Ensures an image's alternative text describes the content without announcing that it is an image, which screen readers already do.</source>
+                <target>सुनिश्चित करता है कि किसी छवि का वैकल्पिक पाठ सामग्री का वर्णन करे, बिना यह घोषणा किए कि वह छवि है, क्योंकि स्क्रीन रीडर यह पहले ही बताते हैं।</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix">
+                <source>In the image settings of the content element, remove words like "Photo of" or "Image of" from the start of the alternative text and describe the content directly.</source>
+                <target>सामग्री तत्व की छवि सेटिंग्स में वैकल्पिक पाठ की शुरुआत से “फ़ोटो का” या “छवि का” जैसे शब्द हटाएं और सामग्री का सीधा वर्णन करें।</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-redundant-prefix.developer">
+                <source>The rendered alternative text starts with words like "Photo of", although the stored text does not or the image is not linked to editable content. Check whether the template adds such a prefix (developer task).</source>
+                <target>प्रदर्शित वैकल्पिक पाठ “फ़ोटो का” जैसे शब्दों से शुरू होता है, हालांकि संग्रहीत पाठ ऐसा नहीं है या छवि संपादन योग्य सामग्री से जुड़ी नहीं है। जांचें कि क्या टेम्पलेट ऐसा उपसर्ग जोड़ता है (डेवलपर का कार्य)।</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.help">
+                <source>Image alternative text must not be a file name</source>
+                <target>किसी छवि का वैकल्पिक पाठ फ़ाइल नाम नहीं हो सकता</target>
+            </trans-unit>
+            <trans-unit id="rule.a11y-img-alt-filename.description">
+                <source>Ensures an image's alternative text is not its file name or a camera-generated name such as IMG_1234, which tells users nothing about the image.</source>
+                <target>सुनिश्चित करता है कि किसी छवि का वैकल्पिक पाठ उसका फ़ाइल नाम या कैमरे द्वारा दिया गया नाम, जैसे IMG_1234, न हो, क्योंकि ऐसा नाम उपयोगकर्ताओं को छवि के बारे में कुछ नहीं बताता।</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename">
+                <source>The alternative text of this image is a file name. In the image settings of the content element, replace it with a description of what the image shows.</source>
+                <target>इस छवि का वैकल्पिक पाठ एक फ़ाइल नाम है। सामग्री तत्व की छवि सेटिंग्स में इसे उस चीज़ के विवरण से बदलें जो छवि दिखाती है।</target>
+            </trans-unit>
+            <trans-unit id="hint.a11y-img-alt-filename.developer">
+                <source>The rendered alternative text is a file name, although the stored text is not or the image is not linked to editable content. Check whether the template falls back to the file name for the alt attribute (developer task).</source>
+                <target>प्रदर्शित वैकल्पिक पाठ एक फ़ाइल नाम है, हालांकि संग्रहीत पाठ ऐसा नहीं है या छवि संपादन योग्य सामग्री से जुड़ी नहीं है। जांचें कि क्या टेम्पलेट alt विशेषता के लिए फ़ाइल नाम को विकल्प के रूप में उपयोग करता है (डेवलपर का कार्य)।</target>
+            </trans-unit>
             <trans-unit id="hint.heading-order">
                 <source>Edit the content element and change its Header Layout so heading levels don't skip a step.</source>
                 <target>कंटेंट एलिमेंट को संपादित करें और उसका हेडर लेआउट बदलें ताकि हेडिंग स्तर कोई चरण न छोड़ें।</target>
